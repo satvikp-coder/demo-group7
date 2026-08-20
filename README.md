@@ -195,8 +195,9 @@ group-07-heritage-tourism-planner/
 Detailed academic and technical documentation is available in the [`docs/foundation/`](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation) directory:
 
 - 📄 [01_Project_Proposal.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/01_Project_Proposal.md) — *20-section project proposal, research questions (RQ1–RQ5), and evaluation criteria.*
-- 🏗️ [02_System_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/02_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
-- 🎨 [03_Frontend_Documentation.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/03_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
+- 📋 [02_Requirements_Specification.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/02_Requirements_Specification.md) — *Complete Software Requirements Specification (SRS), FR-01–FR-22, NFRs, user stories, use cases, and edge cases.*
+- 🏗️ [03_System_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/03_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
+- 🎨 [04_Frontend_Documentation.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/04_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
 
 ---
 
