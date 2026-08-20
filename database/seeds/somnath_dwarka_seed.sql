@@ -1,0 +1,32 @@
+-- Seed Data for Somnath & Dwarka
+-- Course: CSC210 Data Structures & Algorithms — Ahmedabad University
+
+-- 1. DESTINATIONS
+INSERT INTO destinations (id, name, district, category) VALUES
+('11111111-1111-1111-1111-111111111111', 'Somnath', 'Gir Somnath', 'Pilgrimage & Coastal'),
+('22222222-2222-2222-2222-222222222222', 'Dwarka', 'Devbhumi Dwarka', 'Sacred Heritage');
+
+-- 2. HOTELS (SOMNATH & DWARKA)
+INSERT INTO hotels (id, destination_id, name, lat, lng, price_per_night, rating, stay_type) VALUES
+('h1111111-1111-1111-1111-111111111111', '11111111-1111-1111-1111-111111111111', 'Premier Somnath', 20.8880, 70.4012, 2800, 4.5, 'Registered Hotel'),
+('h2222222-2222-2222-2222-222222222222', '22222222-2222-2222-2222-222222222222', 'Toran Hotel Dwarka', 22.2400, 68.9680, 1800, 4.2, 'Toran Hotel');
+
+-- 3. ATTRACTIONS (SOMNATH & DWARKA)
+INSERT INTO attractions (id, destination_id, name, lat, lng, duration_hours, rating, category, entry_fee) VALUES
+('a1111111-1111-1111-1111-111111111111', '11111111-1111-1111-1111-111111111111', 'Somnath Temple', 20.8880, 70.4012, 1.5, 4.9, 'Temple', 'Free'),
+('a1111111-1111-1111-1111-222222222222', '11111111-1111-1111-1111-111111111111', 'Bhalka Tirth', 20.9000, 70.3800, 1.0, 4.7, 'Temple', 'Free'),
+('a1111111-1111-1111-1111-333333333333', '11111111-1111-1111-1111-111111111111', 'Triveni Sangam', 20.8920, 70.4080, 1.0, 4.6, 'Sacred Site', 'Free'),
+('a1111111-1111-1111-1111-444444444444', '11111111-1111-1111-1111-111111111111', 'Somnath Beach', 20.8850, 70.4000, 1.5, 4.4, 'Nature', 'Free'),
+('a2222222-2222-2222-2222-111111111111', '22222222-2222-2222-2222-222222222222', 'Dwarkadhish Temple', 22.2376, 68.9675, 2.0, 4.9, 'Temple', 'Free'),
+('a2222222-2222-2222-2222-222222222222', '22222222-2222-2222-2222-222222222222', 'Nageshwar Jyotirlinga', 22.3321, 69.0062, 1.5, 4.8, 'Temple', 'Free');
+
+-- 4. INTRA-CITY ROUTES (SOMNATH)
+INSERT INTO routes (source_attraction_id, destination_attraction_id, destination_id, distance_km, travel_time_minutes) VALUES
+('a1111111-1111-1111-1111-111111111111', 'a1111111-1111-1111-1111-333333333333', '11111111-1111-1111-1111-111111111111', 2.0, 8),
+('a1111111-1111-1111-1111-111111111111', 'a1111111-1111-1111-1111-444444444444', '11111111-1111-1111-1111-111111111111', 1.2, 5),
+('a1111111-1111-1111-1111-222222222222', 'a1111111-1111-1111-1111-333333333333', '11111111-1111-1111-1111-111111111111', 4.0, 12);
+
+-- 5. RESTAURANTS (SOMNATH & DWARKA)
+INSERT INTO restaurants (id, destination_id, name, lat, lng, rating, avg_cost_per_person) VALUES
+('r1111111-1111-1111-1111-111111111111', '11111111-1111-1111-1111-111111111111', 'Toran Dining Hall Somnath', 20.8870, 70.4010, 4.5, 180),
+('r2222222-2222-2222-2222-111111111111', '22222222-2222-2222-2222-222222222222', 'Toran Dining Hall Dwarka', 22.2405, 68.9682, 4.4, 200);
