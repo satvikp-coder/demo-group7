@@ -24,5 +24,5 @@
 ## 📋 Data Collection Protocols & Compliance
 
 1. **Validation Protocol:** All collected CSV entries must be validated against the schema rules in `docs/foundation/07_Data_Collection_Plan.md`.
-2. **Provenance Logging:** Data collectors must log all source URLs and collection timestamps in `Frontend/src/data/CHANGELOG.md`.
+2. **Provenance Logging:** Data collectors must log all source URLs and collection timestamps in `frontend/src/data/CHANGELOG.md`.
 3. **No Unverified Data:** Placeholder data must be explicitly flagged with `UNVERIFIED` tags until primary source confirmation is complete.

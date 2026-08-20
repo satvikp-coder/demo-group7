@@ -11,7 +11,7 @@
 ```
 group-07-heritage-tourism-planner/
 │
-├── Frontend/                          [BUILT — see 05_Frontend_Documentation.md]
+├── frontend/                          [BUILT — see 05_Frontend_Documentation.md]
 │   ├── src/
 │   │   ├── components/                # React components (Navbar, Hero, ExploreView, PlannerModal,
 │   │   │                               # ItineraryView, DijkstraVisualizer, BudgetPlannerView,

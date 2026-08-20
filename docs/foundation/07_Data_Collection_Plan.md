@@ -129,5 +129,5 @@ flowchart LR
 
 ## 8. Versioning & Provenance Tracking
 
-- **Location:** `Frontend/src/data/CHANGELOG.md`
+- **Location:** `frontend/src/data/CHANGELOG.md`
 - **Rule:** Any additions or edits to CSV datasets must log the date, city updated, fields changed, and contributor name.
