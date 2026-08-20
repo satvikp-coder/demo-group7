@@ -1,0 +1,4 @@
+# STATUS: NOT STARTED for any city -- top priority for meal break engine (see Data Collection Plan)
+restaurant_id,destination_id,name,latitude,longitude,rating,avg_cost_per_person,source
+r101,somnath,Toran Dining Hall Somnath,20.887000,70.401000,4.5,180,Google Maps 2026
+r201,dwarka,Toran Dining Hall Dwarka,22.240500,68.968200,4.4,200,Google Maps 2026

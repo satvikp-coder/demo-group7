@@ -1,0 +1,4 @@
+# STATUS: Somnath + Dwarka verified real data; 6 remaining cities pending collection (see Data Collection Plan)
+hotel_id,destination_id,hotel_name,price_per_night,rating,stay_type,latitude,longitude,source
+h101,somnath,Premier Somnath,2800,4.5,Registered Hotel,20.888000,70.401200,Holidify/Momondo 2026
+h201,dwarka,Toran Hotel Dwarka,1800,4.2,Toran Hotel,22.240000,68.968000,Gujarat Tourism Official 2026

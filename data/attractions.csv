@@ -1,0 +1,8 @@
+# STATUS: Somnath + Dwarka verified real data; 6 remaining cities pending collection (see Data Collection Plan)
+attraction_id,destination_id,name,category,latitude,longitude,entry_fee,average_visit_duration_hours,opening_time,closing_time,rating,source
+a101,somnath,Somnath Temple,Temple,20.888000,70.401200,Free,1.5,06:00,21:00,4.9,Gujarat Tourism Official 2026
+a102,somnath,Bhalka Tirth,Temple,20.900000,70.380000,Free,1.0,06:00,20:00,4.7,Gujarat Tourism Official 2026
+a103,somnath,Triveni Sangam,Sacred Site,20.892000,70.408000,Free,1.0,06:00,19:00,4.6,Gujarat Tourism Official 2026
+a104,somnath,Somnath Beach,Nature,20.885000,70.400000,Free,1.5,06:00,22:00,4.4,Google Maps 2026
+a201,dwarka,Dwarkadhish Temple,Temple,22.237600,68.967500,Free,2.0,06:30,21:30,4.9,Gujarat Tourism Official 2026
+a202,dwarka,Nageshwar Jyotirlinga,Temple,22.332100,69.006200,Free,1.5,06:00,21:00,4.8,Gujarat Tourism Official 2026
