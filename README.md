@@ -200,6 +200,7 @@ Detailed academic and technical documentation is available in the [`docs/foundat
 - 🧮 [04_DSA_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/04_DSA_Architecture.md) — *Master DSA specification for Graph, Dijkstra, Min-Heap, Greedy heuristics, Trie, Hash Table, and Merge Sort.*
 - 🎨 [05_Frontend_Documentation.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/05_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
 - 🗄️ [06_Database_Design.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/06_Database_Design.md) — *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*
+- 📊 [07_Data_Collection_Plan.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/07_Data_Collection_Plan.md) — *Data collection standards, 4 CSV schemas (attractions, routes, hotels, restaurants), quality rules, prioritization phases, and team assignments.*
 
 ---
 
