@@ -19,14 +19,14 @@
 
 | Destination City | Attractions Data Status | Hotels Data Status | Restaurants Data Status | Intra-City Routes Data Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Somnath** | Verified Real Data | Sourced & Cited (Holidify/Momondo) | Placeholder / Estimated | 🚨 **Missing (Urgent)** |
-| **Dwarka** | Verified Real Data | Sourced & Cited (Holidify/Momondo) | Placeholder / Estimated | 🚨 **Missing (Urgent)** |
-| **Ahmedabad** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | 🚨 **Missing** |
-| **Modhera** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | 🚨 **Missing** |
-| **Champaner** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | 🚨 **Missing** |
-| **Gir** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | 🚨 **Missing** |
-| **Rann of Kutch** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | 🚨 **Missing** |
-| **Saputara** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | 🚨 **Missing** |
+| **Somnath** | Verified Real Data | Sourced & Cited (Holidify/Momondo) | Placeholder / Estimated | **Missing (Urgent)** |
+| **Dwarka** | Verified Real Data | Sourced & Cited (Holidify/Momondo) | Placeholder / Estimated | **Missing (Urgent)** |
+| **Ahmedabad** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |
+| **Modhera** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |
+| **Champaner** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |
+| **Gir** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |
+| **Rann of Kutch** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |
+| **Saputara** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |
 
 ---
 

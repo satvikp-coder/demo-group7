@@ -6,7 +6,7 @@
 
 ---
 
-## 🏗️ Repository Layout & Status Markers
+## Repository Layout & Status Markers
 
 ```
 group-07-heritage-tourism-planner/
@@ -68,7 +68,7 @@ group-07-heritage-tourism-planner/
 │   ├── attractions.csv                 # Somnath + Dwarka verified; 6 cities pending
 │   ├── hotels.csv                      # Somnath + Dwarka verified; 6 cities pending
 │   ├── restaurants.csv                 # Target 2-4 per city
-│   ├── routes.csv                      # 🚨 INTRA-CITY ONLY (attraction-to-attraction pairs within city)
+│ ├── routes.csv # INTRA-CITY ONLY (attraction-to-attraction pairs within city)
 │   └── CHANGELOG.md                    # Dataset versioning log (see 07_Data_Collection_Plan.md)
 │
 ├── docs/                               [COMPLETE — Foundation Suite 00-07]
@@ -96,7 +96,7 @@ group-07-heritage-tourism-planner/
 
 ---
 
-## 🌿 Git Branching Strategy
+## Git Branching Strategy
 
 For efficient group collaboration:
 - **`main`**: Production-ready, demo-capable baseline codebase.
@@ -107,7 +107,7 @@ For efficient group collaboration:
 
 ---
 
-## 📍 Key Structural Rules
+## Key Structural Rules
 
 1. **Standalone `dsa/` Directory:** The `dsa/` folder is decoupled from `backend/services/`. This architecture proves to evaluators that DSA modules are real, standalone, independently testable algorithms rather than logic hidden inside route handlers.
 2. **`data/routes.csv` Priority Gap:** The `data/routes.csv` file records intra-city road distances between attraction pairs within each destination city. It is explicitly tracked as the top data collection priority in `07_Data_Collection_Plan.md`.

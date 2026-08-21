@@ -282,9 +282,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   {activeCity.description}
                 </p>
                 <div className="flex items-center gap-4 text-xs font-mono text-gold pt-1 border-t border-stone/30">
-                  <span>🏛️ {activeCity.attractions.length} Attractions</span>
-                  <span>🏨 {activeCity.hotels.length} Hotel Options</span>
-                  <span>🍽️ {activeCity.restaurants.length} Restaurants</span>
+                  <span> {activeCity.attractions.length} Attractions</span>
+                  <span> {activeCity.hotels.length} Hotel Options</span>
+                  <span> {activeCity.restaurants.length} Restaurants</span>
                 </div>
               </div>
             </div>
@@ -391,7 +391,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </select>
                 {startingHotelObj && (
                   <div className="font-mono text-[11px] text-stone space-y-1">
-                    <p>📍 {startingHotelObj.location} • {startingHotelObj.stayType}</p>
+                    <p> {startingHotelObj.location} • {startingHotelObj.stayType}</p>
                     {preferredHotels?.[selectedCityId] === startingHotelObj.id ? (
                       <p className="text-emerald-800 font-bold flex items-center gap-1">
                         <Check className="w-3.5 h-3.5 text-emerald-800" />
@@ -494,7 +494,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               </div>
 
               <div className="p-3 bg-gold/10 border border-gold/40 font-mono text-xs text-stone space-y-1">
-                <p className="text-gold font-bold">🔁 Circular Intra-City Routing Strategy:</p>
+                <p className="text-gold font-bold"> Circular Intra-City Routing Strategy:</p>
                 <p className="text-[11px]">
                   Daily sequence: <strong>{startingHotelObj?.name}</strong> → City Attractions → Automatic Lunch/Dinner Stops → <strong>{startingHotelObj?.name}</strong>.
                 </p>

@@ -1,11 +1,11 @@
-# Heritage Tourism Planner for Gujarat 🏛️✨
+# Heritage Tourism Planner for Gujarat
 > **Course:** CSC210 Introduction to Data Structures & Algorithms — Ahmedabad University  
 > **Group:** Group 07  
 > **Status:** Frontend Built & Verified | Architecture & Specification Complete
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 The **Heritage Tourism Planner for Gujarat** is an intra-city algorithmic itinerary generator and budget optimization engine designed specifically for historic, cultural, and eco-tourism destinations across Gujarat, India. 
 
@@ -15,7 +15,7 @@ Our system models each destination city as a dedicated spatial road graph and ap
 
 ---
 
-## 🎯 Scope Statement (Intra-City Focus)
+## Scope Statement (Intra-City Focus)
 
 > [!IMPORTANT]
 > **Single-City Scope Notice:** The user selects **one city at a time** from 8 fixed Gujarat heritage destinations (*Somnath, Dwarka, Rann of Kutch, Gir, Modhera, Champaner, Saputara, Ahmedabad*) and receives a **circular multi-day plan**:  
@@ -24,20 +24,20 @@ Our system models each destination city as a dedicated spatial road graph and ap
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🔍 **Trie-Backed Autocomplete Search:** Instant $O(L)$ prefix search across cities and heritage attractions (`Dw` $\rightarrow$ `Dwarka`).
-- 🗺️ **Circular Intra-City Itinerary Generation:** Builds day-by-day schedules starting and ending at the user's selected hotel with exact arrival/departure times.
-- 🍱 **Automated Meal Break Insertion:** Automatically injects 60-minute lunch (12:30 PM – 2:30 PM) and dinner (7:30 PM – 9:30 PM) windows without violating daily schedule bounds.
-- 🏨 **Hotel Suggestions & Priority Queue Ranking:** Recommends and ranks accommodation options based on user budget tier and rating-per-cost efficiency.
-- 💰 **Interactive Budget Breakdown:** Provides dynamic itemized financial tracking across Hotels, Entry Fees, Meals, and Intra-City Transit.
-- 🔬 **Interactive Dijkstra Visualizer:** Features an educational step-by-step visualizer illustrating node relaxation, priority queue updates, and shortest-path construction.
-- 🛠️ **Tour Operator Admin Dashboard:** CMS panel allowing tourism operators to manage destinations, attractions, hotels, and restaurants.
-- 📄 **PDF Itinerary Export:** Instant single-click PDF generation of day-by-day itineraries using `jspdf` and `html2canvas`.
+- **Trie-Backed Autocomplete Search:** Instant $O(L)$ prefix search across cities and heritage attractions (`Dw` $\rightarrow$ `Dwarka`).
+- **Circular Intra-City Itinerary Generation:** Builds day-by-day schedules starting and ending at the user's selected hotel with exact arrival/departure times.
+- **Automated Meal Break Insertion:** Automatically injects 60-minute lunch (12:30 PM – 2:30 PM) and dinner (7:30 PM – 9:30 PM) windows without violating daily schedule bounds.
+- **Hotel Suggestions & Priority Queue Ranking:** Recommends and ranks accommodation options based on user budget tier and rating-per-cost efficiency.
+- **Interactive Budget Breakdown:** Provides dynamic itemized financial tracking across Hotels, Entry Fees, Meals, and Intra-City Transit.
+- **Interactive Dijkstra Visualizer:** Features an educational step-by-step visualizer illustrating node relaxation, priority queue updates, and shortest-path construction.
+- **Tour Operator Admin Dashboard:** CMS panel allowing tourism operators to manage destinations, attractions, hotels, and restaurants.
+- **PDF Itinerary Export:** Instant single-click PDF generation of day-by-day itineraries using `jspdf` and `html2canvas`.
 
 ---
 
-## 📐 System Architecture
+## System Architecture
 
 ```mermaid
 flowchart TD
@@ -93,7 +93,7 @@ flowchart TD
 
 ---
 
-## 🧮 Data Structures & Algorithms (DSA Engine)
+## Data Structures & Algorithms (DSA Engine)
 
 | DSA / Algorithm | Scope | Role in System | Technical Justification |
 | :--- | :--- | :--- | :--- |
@@ -105,13 +105,13 @@ flowchart TD
 | **Greedy Heuristic** | Single City | Itinerary Builder & Time Budgeting | Builds circular routes via nearest-neighbor, splits attractions across days by remaining time budget (not fixed count), and allocates money across categories. |
 | **Merge Sort** | System-Wide | Custom Display Ranking | Sorts destinations, hotels, and attractions by rating, price, or distance in $O(N \log N)$ time. |
 
-### 💡 What Dijkstra Does vs. What Greedy Does
+### What Dijkstra Does vs. What Greedy Does
 - **Greedy Heuristic** is the *itinerary builder*: it decides the visiting sequence of attractions for the day, enforces time limits, and handles hotel return.
 - **Dijkstra's Algorithm** is a *utility solver*: it calculates the true shortest road path between non-adjacent attractions when direct edges do not exist in the city graph.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 group-07-heritage-tourism-planner/
@@ -136,7 +136,7 @@ group-07-heritage-tourism-planner/
 
 ---
 
-## 🏰 Supported Heritage Destinations
+## Supported Heritage Destinations
 
 1. **Ahmedabad** *(Sabarmati Ashram, Adalaj Stepwell, Kankaria Lake, Jama Masjid)*
 2. **Somnath** *(Somnath Temple, Triveni Sangam, Prabhas Patan Museum, Bhalka Tirth)*
@@ -149,7 +149,7 @@ group-07-heritage-tourism-planner/
 
 ---
 
-## 🚀 Quick Start & Local Setup
+## Quick Start & Local Setup
 
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
@@ -190,27 +190,27 @@ group-07-heritage-tourism-planner/
 
 ---
 
-## 📚 Project Documentation Index
+## Project Documentation Index
 
 Detailed academic and technical documentation is available in the [`docs/foundation/`](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation) directory:
 
-- 🔍 [00_Foundation_Audit.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/00_Foundation_Audit.md) — *Master audit checklist tracking completion of all academic and technical foundation artifacts.*
-- 📄 [01_Project_Proposal.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/01_Project_Proposal.md) — *20-section project proposal, research questions (RQ1–RQ5), and evaluation criteria.*
-- 📋 [02_Requirements_Specification.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/02_Requirements_Specification.md) — *Complete Software Requirements Specification (SRS), FR-01–FR-22, NFRs, user stories, use cases, and edge cases.*
-- 🏗️ [03_System_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/03_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
-- 🧮 [04_DSA_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/04_DSA_Architecture.md) — *Master DSA specification for Graph, Dijkstra, Min-Heap, Greedy heuristics, Trie, Hash Table, and Merge Sort.*
-- 🎨 [05_Frontend_Documentation.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/05_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
-- 🗄️ [06_Database_Design.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/06_Database_Design.md) — *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*
-- 📊 [07_Data_Collection_Plan.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/07_Data_Collection_Plan.md) — *Data collection standards, 4 CSV schemas (attractions, routes, hotels, restaurants), quality rules, prioritization phases, and team assignments.*
+- [00_Foundation_Audit.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/00_Foundation_Audit.md) — *Master audit checklist tracking completion of all academic and technical foundation artifacts.*
+- [01_Project_Proposal.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/01_Project_Proposal.md) — *20-section project proposal, research questions (RQ1–RQ5), and evaluation criteria.*
+- [02_Requirements_Specification.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/02_Requirements_Specification.md) — *Complete Software Requirements Specification (SRS), FR-01–FR-22, NFRs, user stories, use cases, and edge cases.*
+- [03_System_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/03_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
+- [04_DSA_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/04_DSA_Architecture.md) — *Master DSA specification for Graph, Dijkstra, Min-Heap, Greedy heuristics, Trie, Hash Table, and Merge Sort.*
+- [05_Frontend_Documentation.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/05_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
+- [06_Database_Design.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/06_Database_Design.md) — *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*
+- [07_Data_Collection_Plan.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/07_Data_Collection_Plan.md) — *Data collection standards, 4 CSV schemas (attractions, routes, hotels, restaurants), quality rules, prioritization phases, and team assignments.*
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the **MIT License**. See [`LICENSE`](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/LICENSE) for more information.
 
 ---
 
 <p center align="center">
-  Crafted with ❤️ for <b>CSC210 Data Structures & Algorithms</b> — Ahmedabad University
+  Crafted for <b>CSC210 Data Structures & Algorithms</b> — Ahmedabad University
 </p>

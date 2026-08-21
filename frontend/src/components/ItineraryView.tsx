@@ -508,7 +508,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   </div>
 
                   <div className="flex items-center gap-3 font-mono text-xs text-stone">
-                    <span>🚗 {day.totalKm} km local circuit</span>
+                    <span> {day.totalKm} km local circuit</span>
                     <span className="font-bold text-ink">Est. Day Cost: ₹{day.totalCost.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
@@ -593,7 +593,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 {/* Day Summary Loop Banner */}
                 <div className="p-3 bg-salt border border-stone/30 font-mono text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-stone">
                   <span className="flex items-center gap-1.5 text-ink font-bold">
-                    <span>🔁 Circular Route Loop:</span>
+                    <span> Circular Route Loop:</span>
                     <span className="font-normal text-stone">
                       Start at {startingHotel.name} → {day.stops.length - 2} Stops → Return to {startingHotel.name}
                     </span>

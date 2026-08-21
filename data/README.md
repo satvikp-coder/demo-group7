@@ -10,5 +10,5 @@ Contains raw and cleaned CSV datasets for destinations, attractions, hotels, res
 - `attractions.csv` — Heritage attraction listings
 - `hotels.csv` — Accommodation options
 - `restaurants.csv` — Dining options for meal breaks
-- `routes.csv` — 🚨 **INTRA-CITY ONLY** attraction-to-attraction road distances and travel times (Top Priority Gap)
+- `routes.csv` — **INTRA-CITY ONLY** attraction-to-attraction road distances and travel times (Top Priority Gap)
 - `CHANGELOG.md` — Dataset versioning and provenance tracking log

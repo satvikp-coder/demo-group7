@@ -6,7 +6,7 @@
 
 ---
 
-## 👥 Module & Deliverable Ownership Matrix
+## Module & Deliverable Ownership Matrix
 
 | Workstream / Deliverable | Target Deadline | Primary Owner | Secondary Reviewer | Deliverable Description |
 | :--- | :--- | :--- | :--- | :--- |
@@ -21,7 +21,7 @@
 
 ---
 
-## 📋 Data Collection Protocols & Compliance
+## Data Collection Protocols & Compliance
 
 1. **Validation Protocol:** All collected CSV entries must be validated against the schema rules in `docs/foundation/07_Data_Collection_Plan.md`.
 2. **Provenance Logging:** Data collectors must log all source URLs and collection timestamps in `frontend/src/data/CHANGELOG.md`.
