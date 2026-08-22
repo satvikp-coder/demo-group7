@@ -1,18 +1,30 @@
-import React, { useState, useRef, useMemo, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Destination, GUJARAT_DESTINATIONS, getCityById, Attraction, Hotel, Restaurant } from '../data/destinations';
-import { DijkstraVisualizer } from './DijkstraVisualizer';
-import { OfflineRouteMap } from './OfflineRouteMap';
-import { saveTripToOfflineCache } from '../utils/offlineStorage';
-import { useLanguage } from '../context/LanguageContext';
-import { OptimizationStrategy, generateStrategyItinerary, PlannerConfigPayload } from '../utils/itineraryPlanner';
-import { StrategyComparisonModal } from './StrategyComparisonModal';
-import { AlgorithmStatsPanel } from './AlgorithmStatsPanel';
-import { WhatIfPanel } from './WhatIfPanel';
-import { AccessibilityBadge } from './AccessibilityBadge';
-import { BestTimeNote } from './BestTimeNote';
-import { checkBestTimeConflict } from '../utils/bestTimeChecker';
-import { ShareItineraryModal } from './ShareItineraryModal';
+import React, { useState, useRef, useMemo, useEffect } from "react";
+import { DESIGN_TOKENS } from "../data/colors";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Destination,
+  GUJARAT_DESTINATIONS,
+  getCityById,
+  Attraction,
+  Hotel,
+  Restaurant,
+} from "../data/destinations";
+import { DijkstraVisualizer } from "./DijkstraVisualizer";
+import { OfflineRouteMap } from "./OfflineRouteMap";
+import { saveTripToOfflineCache } from "../utils/offlineStorage";
+import { useLanguage } from "../context/LanguageContext";
+import {
+  OptimizationStrategy,
+  generateStrategyItinerary,
+  PlannerConfigPayload,
+} from "../utils/itineraryPlanner";
+import { StrategyComparisonModal } from "./StrategyComparisonModal";
+import { AlgorithmStatsPanel } from "./AlgorithmStatsPanel";
+import { WhatIfPanel } from "./WhatIfPanel";
+import { AccessibilityBadge } from "./AccessibilityBadge";
+import { BestTimeNote } from "./BestTimeNote";
+import { checkBestTimeConflict } from "../utils/bestTimeChecker";
+import { ShareItineraryModal } from "./ShareItineraryModal";
 import {
   ArrowLeft,
   Calendar,
@@ -36,8 +48,8 @@ import {
   Sparkles,
   AlertTriangle,
   Hospital,
-  Shield
-} from 'lucide-react';
+  Shield,
+} from "lucide-react";
 
 export interface ItineraryConfig {
   cityId: string;
@@ -62,7 +74,7 @@ interface ItineraryViewProps {
 
 interface ItineraryStop {
   id: string;
-  type: 'hotel' | 'attraction' | 'meal';
+  type: "hotel" | "attraction" | "meal";
   name: string;
   category: string;
   arrivalTime: string;
@@ -89,7 +101,7 @@ function formatTime(minutesFromMidnight: number): string {
   const mins = Math.floor(minutesFromMidnight) % (24 * 60);
   const hours = Math.floor(mins / 60);
   const m = mins % 60;
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const ampm = hours >= 12 ? "PM" : "AM";
   const displayHours = hours % 12 === 0 ? 12 : hours % 12;
   const displayMins = m < 10 ? `0${m}` : m;
   return `${displayHours}:${displayMins} ${ampm}`;
@@ -97,14 +109,14 @@ function formatTime(minutesFromMidnight: number): string {
 
 function parseTimeToMinutes(timeStr?: string): number {
   if (!timeStr) return 8 * 60;
-  const parts = timeStr.trim().split(' ');
+  const parts = timeStr.trim().split(" ");
   if (parts.length < 2) return 8 * 60;
-  const [hStr, mStr] = parts[0].split(':');
+  const [hStr, mStr] = parts[0].split(":");
   let hours = parseInt(hStr, 10) || 8;
   const mins = parseInt(mStr, 10) || 0;
   const ampm = parts[1].toUpperCase();
-  if (ampm === 'PM' && hours < 12) hours += 12;
-  if (ampm === 'AM' && hours === 12) hours = 0;
+  if (ampm === "PM" && hours < 12) hours += 12;
+  if (ampm === "AM" && hours === 12) hours = 0;
   return hours * 60 + mins;
 }
 
@@ -125,22 +137,32 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
   const preferredHotelId = preferredHotels?.[config.cityId];
 
-  const [tripTitle, setTripTitle] = useState<string>(`${cityName} Circular Heritage Circuit`);
+  const [tripTitle, setTripTitle] = useState<string>(
+    `${cityName} Circular Heritage Circuit`,
+  );
   const [showAlgorithm, setShowAlgorithm] = useState<boolean>(false);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState<boolean>(false);
-  const [showComparisonModal, setShowComparisonModal] = useState<boolean>(false);
+  const [showComparisonModal, setShowComparisonModal] =
+    useState<boolean>(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
 
   const pdfContainerRef = useRef<HTMLDivElement>(null);
 
   const [activeConfig, setActiveConfig] = useState<ItineraryConfig>(config);
   const [isWhatIfOpen, setIsWhatIfOpen] = useState<boolean>(false);
-  const [sliderBudget, setSliderBudget] = useState<number>(config.budget || 8500);
+  const [sliderBudget, setSliderBudget] = useState<number>(
+    config.budget || 8500,
+  );
   const [sliderDays, setSliderDays] = useState<number>(config.tripDays || 2);
-  const [debouncedBudget, setDebouncedBudget] = useState<number>(config.budget || 8500);
-  const [debouncedDays, setDebouncedDays] = useState<number>(config.tripDays || 2);
-  const [isSavedWhatIfNotice, setIsSavedWhatIfNotice] = useState<boolean>(false);
+  const [debouncedBudget, setDebouncedBudget] = useState<number>(
+    config.budget || 8500,
+  );
+  const [debouncedDays, setDebouncedDays] = useState<number>(
+    config.tripDays || 2,
+  );
+  const [isSavedWhatIfNotice, setIsSavedWhatIfNotice] =
+    useState<boolean>(false);
 
   useEffect(() => {
     setActiveConfig(config);
@@ -158,47 +180,75 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     return () => clearTimeout(handler);
   }, [sliderBudget, sliderDays]);
 
-  const activeStrategy = activeConfig.strategy || config.strategy || 'distance-first';
+  const activeStrategy =
+    activeConfig.strategy || config.strategy || "distance-first";
 
   // Original Baseline Result (from initial config prop)
   const baselineResult = useMemo(() => {
-    return generateStrategyItinerary({
-      cityId: config.cityId,
-      tripDays: config.tripDays || 2,
-      budget: config.budget || 8500,
-      startingHotelId: config.startingHotelId || (activeCity.hotels[0]?.id || ''),
-      startTime: config.startTime || '08:00 AM',
-      strategy: activeStrategy
-    }, activeStrategy, language);
+    return generateStrategyItinerary(
+      {
+        cityId: config.cityId,
+        tripDays: config.tripDays || 2,
+        budget: config.budget || 8500,
+        startingHotelId:
+          config.startingHotelId || activeCity.hotels[0]?.id || "",
+        startTime: config.startTime || "08:00 AM",
+        strategy: activeStrategy,
+      },
+      activeStrategy,
+      language,
+    );
   }, [config, activeStrategy, language, activeCity.hotels]);
 
   // Active Plan Result (from activeConfig)
   const activeResult = useMemo(() => {
-    return generateStrategyItinerary({
-      cityId: activeConfig.cityId,
-      tripDays: activeConfig.tripDays || 2,
-      budget: activeConfig.budget || 8500,
-      startingHotelId: activeConfig.startingHotelId || (activeCity.hotels[0]?.id || ''),
-      startTime: activeConfig.startTime || '08:00 AM',
-      strategy: activeStrategy
-    }, activeStrategy, language);
+    return generateStrategyItinerary(
+      {
+        cityId: activeConfig.cityId,
+        tripDays: activeConfig.tripDays || 2,
+        budget: activeConfig.budget || 8500,
+        startingHotelId:
+          activeConfig.startingHotelId || activeCity.hotels[0]?.id || "",
+        startTime: activeConfig.startTime || "08:00 AM",
+        strategy: activeStrategy,
+      },
+      activeStrategy,
+      language,
+    );
   }, [activeConfig, activeStrategy, language, activeCity.hotels]);
 
   // Live Result (reflects debounced What-If sliders)
   const liveResult = useMemo(() => {
     if (!isWhatIfOpen) return activeResult;
-    if (debouncedBudget === activeConfig.budget && debouncedDays === activeConfig.tripDays) {
+    if (
+      debouncedBudget === activeConfig.budget &&
+      debouncedDays === activeConfig.tripDays
+    ) {
       return activeResult;
     }
-    return generateStrategyItinerary({
-      cityId: activeConfig.cityId,
-      tripDays: debouncedDays,
-      budget: debouncedBudget,
-      startingHotelId: activeConfig.startingHotelId || (activeCity.hotels[0]?.id || ''),
-      startTime: activeConfig.startTime || '08:00 AM',
-      strategy: activeStrategy
-    }, activeStrategy, language);
-  }, [isWhatIfOpen, activeConfig, debouncedBudget, debouncedDays, activeStrategy, language, activeCity.hotels, activeResult]);
+    return generateStrategyItinerary(
+      {
+        cityId: activeConfig.cityId,
+        tripDays: debouncedDays,
+        budget: debouncedBudget,
+        startingHotelId:
+          activeConfig.startingHotelId || activeCity.hotels[0]?.id || "",
+        startTime: activeConfig.startTime || "08:00 AM",
+        strategy: activeStrategy,
+      },
+      activeStrategy,
+      language,
+    );
+  }, [
+    isWhatIfOpen,
+    activeConfig,
+    debouncedBudget,
+    debouncedDays,
+    activeStrategy,
+    language,
+    activeCity.hotels,
+    activeResult,
+  ]);
 
   const generatedResult = isWhatIfOpen ? liveResult : activeResult;
 
@@ -213,7 +263,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     const updated = {
       ...activeConfig,
       budget: debouncedBudget,
-      tripDays: debouncedDays
+      tripDays: debouncedDays,
     };
     setActiveConfig(updated);
     setIsSavedWhatIfNotice(true);
@@ -235,8 +285,20 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const estimatedTotalCost = generatedResult.totalCost;
 
   const totalHotelCost = (startingHotel.priceNumeric || 0) * numDays;
-  const totalAttractionCost = dayPlans.reduce((acc, d) => acc + d.stops.filter(s => s.type === 'attraction').reduce((a, s) => a + s.cost, 0), 0);
-  const totalMealCost = dayPlans.reduce((acc, d) => acc + d.stops.filter(s => s.type === 'meal').reduce((a, s) => a + s.cost, 0), 0);
+  const totalAttractionCost = dayPlans.reduce(
+    (acc, d) =>
+      acc +
+      d.stops
+        .filter((s) => s.type === "attraction")
+        .reduce((a, s) => a + s.cost, 0),
+    0,
+  );
+  const totalMealCost = dayPlans.reduce(
+    (acc, d) =>
+      acc +
+      d.stops.filter((s) => s.type === "meal").reduce((a, s) => a + s.cost, 0),
+    0,
+  );
   const totalTransportCost = numDays * 350;
 
   const handleDownloadPdf = async () => {
@@ -244,8 +306,8 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     setIsGeneratingPdf(true);
     try {
       const [jspdfModule, html2canvasModule] = await Promise.all([
-        import('jspdf'),
-        import('html2canvas')
+        import("jspdf"),
+        import("html2canvas"),
       ]);
       const jsPDF = jspdfModule.default;
       const html2canvas = html2canvasModule.default;
@@ -255,11 +317,11 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         scale: 2,
         useCORS: true,
         logging: false,
-        backgroundColor: '#F6F4EF'
+        backgroundColor: DESIGN_TOKENS.salt,
       });
 
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
       const imgWidth = pdfWidth;
@@ -268,20 +330,23 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       let heightLeft = imgHeight;
       let position = 0;
 
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
       heightLeft -= pdfHeight;
 
       while (heightLeft > 0) {
         position = heightLeft - imgHeight;
         pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
         heightLeft -= pdfHeight;
       }
 
-      const sanitizeName = tripTitle.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
+      const sanitizeName = tripTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "-")
+        .replace(/-+/g, "-");
       pdf.save(`${sanitizeName}-itinerary.pdf`);
     } catch (err) {
-      console.error('Error generating itinerary PDF:', err);
+      console.error("Error generating itinerary PDF:", err);
     } finally {
       setIsGeneratingPdf(false);
     }
@@ -297,16 +362,19 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-7xl mx-auto space-y-8">
-
         {/* Read-Only Shared Itinerary Banner */}
         {isReadOnly && (
           <div className="bg-ink border-2 border-gold p-4 text-salt flex flex-wrap items-center justify-between gap-4 shadow-md font-mono">
             <div className="flex items-center gap-3">
               <span className="inline-block w-2.5 h-2.5 bg-gold rounded-full animate-pulse shrink-0" />
               <div>
-                <span className="text-gold font-bold uppercase tracking-wider text-[10px] block">Read-Only View</span>
+                <span className="text-gold font-bold uppercase tracking-wider text-[10px] block">
+                  Read-Only View
+                </span>
                 <span className="text-sm font-sans font-medium text-salt">
-                  Shared itinerary for <strong className="text-gold font-bold">{cityName}</strong> — viewing only
+                  Shared itinerary for{" "}
+                  <strong className="text-gold font-bold">{cityName}</strong> —
+                  viewing only
                 </span>
               </div>
             </div>
@@ -330,7 +398,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
                 >
                   <SlidersHorizontal className="w-3.5 h-3.5 text-ink" />
-                  <span>{language === 'gu' ? 'યોજનામાં ફેરફાર કરો' : language === 'hi' ? 'योजना में बदलाव करें' : 'Adjust plan'}</span>
+                  <span>
+                    {language === "gu"
+                      ? "યોજનામાં ફેરફાર કરો"
+                      : language === "hi"
+                        ? "योजना में बदलाव करें"
+                        : "Adjust plan"}
+                  </span>
                 </button>
 
                 <button
@@ -338,13 +412,19 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   onClick={() => setIsWhatIfOpen(!isWhatIfOpen)}
                   className={`inline-flex items-center gap-2 border text-xs font-mono font-bold px-4 py-2 transition-colors cursor-pointer ${
                     isWhatIfOpen
-                      ? 'bg-gold text-ink border-gold shadow-xs'
-                      : 'bg-salt hover:bg-gold/10 text-charcoal border-gold/70'
+                      ? "bg-gold text-ink border-gold shadow-xs"
+                      : "bg-salt hover:bg-gold/10 text-charcoal border-gold/70"
                   }`}
                 >
-                  <Sparkles className={`w-3.5 h-3.5 ${isWhatIfOpen ? 'text-ink' : 'text-gold'}`} />
+                  <Sparkles
+                    className={`w-3.5 h-3.5 ${isWhatIfOpen ? "text-ink" : "text-gold"}`}
+                  />
                   <span>What if?</span>
-                  {isWhatIfOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                  {isWhatIfOpen ? (
+                    <ChevronUp className="w-3.5 h-3.5" />
+                  ) : (
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  )}
                 </button>
               </>
             )}
@@ -358,7 +438,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt border border-madder text-xs font-mono font-bold px-4 py-2 transition-colors shadow-xs cursor-pointer"
             >
               <DollarSign className="w-3.5 h-3.5 text-salt" />
-              <span>{language === 'gu' ? 'બજેટ જુઓ' : language === 'hi' ? 'बजट देखें' : 'View budget breakdown'}</span>
+              <span>
+                {language === "gu"
+                  ? "બજેટ જુઓ"
+                  : language === "hi"
+                    ? "बजट देखें"
+                    : "View budget breakdown"}
+              </span>
             </button>
           </div>
 
@@ -368,7 +454,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
-              <span>{language === 'gu' ? 'શેર કરો' : language === 'hi' ? 'शेयर करें' : 'Share Route'}</span>
+              <span>
+                {language === "gu"
+                  ? "શેર કરો"
+                  : language === "hi"
+                    ? "शेयर करें"
+                    : "Share Route"}
+              </span>
             </button>
 
             <button
@@ -376,7 +468,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5 text-gold" />
-              <span>{language === 'gu' ? 'પ્રિન્ટ કરો' : language === 'hi' ? 'प्रिंट करें' : 'Print Ledger'}</span>
+              <span>
+                {language === "gu"
+                  ? "પ્રિન્ટ કરો"
+                  : language === "hi"
+                    ? "प्रिंट करें"
+                    : "Print Ledger"}
+              </span>
             </button>
 
             <button
@@ -429,8 +527,10 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         )}
 
         {/* Printable Container */}
-        <div ref={pdfContainerRef} className="space-y-8 bg-salt p-2 sm:p-4 border border-stone/20">
-
+        <div
+          ref={pdfContainerRef}
+          className="space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
+        >
           {/* Header Banner */}
           <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-stepwell-pattern opacity-10 pointer-events-none" />
@@ -452,7 +552,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 </span>
                 <span className="flex items-center gap-1.5">
                   <HotelIcon className="w-4 h-4 text-gold" />
-                  <span>Base Hotel: <strong>{startingHotel.name}</strong></span>
+                  <span>
+                    Base Hotel: <strong>{startingHotel.name}</strong>
+                  </span>
                   {isPreferredBase && (
                     <span className="bg-gold text-ink font-bold text-[10px] px-1.5 py-0.5 border border-gold uppercase">
                       ✓ Preferred Stay
@@ -461,7 +563,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="w-4 h-4 text-gold" />
-                  Start Time: {config.startTime || '08:00 AM'}
+                  Start Time: {config.startTime || "08:00 AM"}
                 </span>
                 <span className="flex items-center gap-1.5 text-gold font-bold">
                   <RotateCcw className="w-4 h-4 text-gold" />
@@ -472,28 +574,37 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           </div>
 
           {/* Remote & Wildlife Destination Facility Callout */}
-          {['gir', 'rann-of-kutch', 'saputara'].includes(activeCity.id) && (activeCity.nearestHospital || activeCity.nearestPoliceStation) && (
-            <div className="bg-salt border border-stone/30 p-4 font-mono text-xs text-stone space-y-2 shadow-xs">
-              <div className="flex items-center gap-2 text-charcoal font-bold text-[11px] uppercase tracking-wider">
-                <Shield className="w-4 h-4 text-gold shrink-0" />
-                <span>Travel Preparation Note — {cityName} Remote Sector</span>
+          {["gir", "rann-of-kutch", "saputara"].includes(activeCity.id) &&
+            (activeCity.nearestHospital || activeCity.nearestPoliceStation) && (
+              <div className="bg-salt border border-stone/30 p-4 font-mono text-xs text-stone space-y-2 shadow-xs">
+                <div className="flex items-center gap-2 text-charcoal font-bold text-[11px] uppercase tracking-wider">
+                  <Shield className="w-4 h-4 text-gold shrink-0" />
+                  <span>
+                    Travel Preparation Note — {cityName} Remote Sector
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-stone">
+                  {activeCity.nearestHospital && (
+                    <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
+                      <Hospital className="w-3.5 h-3.5 text-emerald-800 shrink-0" />
+                      <span>
+                        <strong>Nearest hospital:</strong>{" "}
+                        {activeCity.nearestHospital} (from your starting hotel)
+                      </span>
+                    </div>
+                  )}
+                  {activeCity.nearestPoliceStation && (
+                    <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
+                      <Shield className="w-3.5 h-3.5 text-stone shrink-0" />
+                      <span>
+                        <strong>Nearest police station:</strong>{" "}
+                        {activeCity.nearestPoliceStation}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-stone">
-                {activeCity.nearestHospital && (
-                  <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
-                    <Hospital className="w-3.5 h-3.5 text-emerald-800 shrink-0" />
-                    <span><strong>Nearest hospital:</strong> {activeCity.nearestHospital} (from your starting hotel)</span>
-                  </div>
-                )}
-                {activeCity.nearestPoliceStation && (
-                  <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
-                    <Shield className="w-3.5 h-3.5 text-stone shrink-0" />
-                    <span><strong>Nearest police station:</strong> {activeCity.nearestPoliceStation}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
+            )}
 
           {/* Slim Collapsible Algorithm Execution Stats Strip */}
           {generatedResult.stats && (
@@ -511,7 +622,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             cityName={cityName}
             startingHotelName={startingHotel.name}
             totalDistanceKm={totalDistanceKm}
-            isOffline={typeof navigator !== 'undefined' ? !navigator.onLine : false}
+            isOffline={
+              typeof navigator !== "undefined" ? !navigator.onLine : false
+            }
           />
 
           {/* Dijkstra Supporting Algorithm Visualizer Accordion */}
@@ -525,13 +638,21 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 onClick={() => setShowAlgorithm(!showAlgorithm)}
                 className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 font-mono text-xs font-bold px-3 py-1 flex items-center gap-1 cursor-pointer"
               >
-                <span>{showAlgorithm ? 'Hide Visualizer' : 'Expand Visualizer'}</span>
-                {showAlgorithm ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                <span>
+                  {showAlgorithm ? "Hide Visualizer" : "Expand Visualizer"}
+                </span>
+                {showAlgorithm ? (
+                  <ChevronUp className="w-4 h-4" />
+                ) : (
+                  <ChevronDown className="w-4 h-4" />
+                )}
               </button>
             </div>
 
             <p className="font-mono text-xs text-stone italic border-l-2 border-gold pl-2">
-              "Dijkstra finds the shortest path between two attractions when they aren't directly connected -- most stops in your route are direct, this shows what happens when one isn't."
+              "Dijkstra finds the shortest path between two attractions when
+              they aren't directly connected -- most stops in your route are
+              direct, this shows what happens when one isn't."
             </p>
 
             {showAlgorithm && (
@@ -554,7 +675,6 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   transition={{ duration: 0.3, delay: dayIdx * 0.05 }}
                   className="bg-white border-2 border-stone/40 p-5 sm:p-6 space-y-6 shadow-sm"
                 >
-                  
                   {/* Day Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-gold pb-3">
                     <div>
@@ -568,7 +688,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
                     <div className="flex items-center gap-3 font-mono text-xs text-stone">
                       <span>{day.totalKm} km local circuit</span>
-                      <span className="font-bold text-ink">Est. Day Cost: ₹{day.totalCost.toLocaleString('en-IN')}</span>
+                      <span className="font-bold text-ink">
+                        Est. Day Cost: ₹{day.totalCost.toLocaleString("en-IN")}
+                      </span>
                     </div>
                   </div>
 
@@ -579,13 +701,14 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                         const stopNumber = idx + 1;
                         const isFinalStop = idx === day.stops.length - 1;
 
-                        const accessibleLabel = stop.type === 'meal'
-                          ? `Stop ${stopNumber} of ${day.stops.length}: Lunch break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${stop.cost.toLocaleString('en-IN')}`
-                          : stop.type === 'hotel'
-                          ? isFinalStop
-                            ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, completing circular route`
-                            : `Stop ${stopNumber} of ${day.stops.length} (Start): Depart ${stop.name}, depart at ${stop.departureTime}`
-                          : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stop.cost > 0 ? '₹' + stop.cost.toLocaleString('en-IN') : 'Free'}`;
+                        const accessibleLabel =
+                          stop.type === "meal"
+                            ? `Stop ${stopNumber} of ${day.stops.length}: Lunch break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${stop.cost.toLocaleString("en-IN")}`
+                            : stop.type === "hotel"
+                              ? isFinalStop
+                                ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, completing circular route`
+                                : `Stop ${stopNumber} of ${day.stops.length} (Start): Depart ${stop.name}, depart at ${stop.departureTime}`
+                              : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stop.cost > 0 ? "₹" + stop.cost.toLocaleString("en-IN") : "Free"}`;
 
                         return (
                           <motion.div
@@ -598,18 +721,20 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             tabIndex={0}
                             aria-label={accessibleLabel}
                             className={`p-4 border text-xs font-mono transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-gold ${
-                              stop.type === 'meal'
-                                ? 'bg-amber-50/70 border-gold/80'
-                                : stop.type === 'hotel'
-                                ? 'bg-salt border-stone/40'
-                                : 'bg-white border-stone/30 hover:border-gold'
+                              stop.type === "meal"
+                                ? "bg-amber-50/70 border-gold/80"
+                                : stop.type === "hotel"
+                                  ? "bg-salt border-stone/40"
+                                  : "bg-white border-stone/30 hover:border-gold"
                             }`}
                           >
                             {(() => {
-                              const conflict = checkBestTimeConflict(stop.arrivalTime, stop.bestTimeNote);
+                              const conflict = checkBestTimeConflict(
+                                stop.arrivalTime,
+                                stop.bestTimeNote,
+                              );
                               return (
                                 <div className="flex items-start gap-3 w-full sm:w-auto">
-                                  
                                   {/* Stop Number Badge */}
                                   <div className="bg-gold text-ink font-bold px-2 py-1 text-[11px] border border-ink shrink-0 text-center">
                                     <span>#{stopNumber}</span>
@@ -617,19 +742,25 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
                                   {/* Timed Badge */}
                                   <div className="bg-ink text-salt px-2.5 py-1 text-[11px] font-bold border border-gold shrink-0 text-center">
-                                    <span className="block text-gold text-[10px] uppercase">Arrival - Depart</span>
-                                    <span>{stop.arrivalTime} - {stop.departureTime}</span>
+                                    <span className="block text-gold text-[10px] uppercase">
+                                      Arrival - Depart
+                                    </span>
+                                    <span>
+                                      {stop.arrivalTime} - {stop.departureTime}
+                                    </span>
                                   </div>
 
                                   {/* Stop Icon & Description */}
                                   <div>
                                     <div className="flex flex-wrap items-center gap-2 font-bold text-sm text-ink">
-                                      {stop.type === 'meal' ? (
+                                      {stop.type === "meal" ? (
                                         <>
                                           <Utensils className="w-4 h-4 text-gold shrink-0" />
-                                          <span className="bg-gold/20 text-ink px-1.5 py-0.5 text-[10px] uppercase font-mono border border-gold/40">Meal Break</span>
+                                          <span className="bg-gold/20 text-ink px-1.5 py-0.5 text-[10px] uppercase font-mono border border-gold/40">
+                                            Meal Break
+                                          </span>
                                         </>
-                                      ) : stop.type === 'hotel' ? (
+                                      ) : stop.type === "hotel" ? (
                                         <HotelIcon className="w-4 h-4 text-ink shrink-0" />
                                       ) : (
                                         <Ticket className="w-4 h-4 text-madder shrink-0" />
@@ -646,11 +777,14 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                       )}
                                     </div>
 
-                                    {stop.type === 'attraction' && stop.bestTimeNote && (
-                                      <div className="mt-1">
-                                        <BestTimeNote note={stop.bestTimeNote} />
-                                      </div>
-                                    )}
+                                    {stop.type === "attraction" &&
+                                      stop.bestTimeNote && (
+                                        <div className="mt-1">
+                                          <BestTimeNote
+                                            note={stop.bestTimeNote}
+                                          />
+                                        </div>
+                                      )}
 
                                     {conflict.hasConflict && (
                                       <p className="text-[11px] text-amber-900 bg-amber-50 border border-amber-300 px-2.5 py-1 mt-1.5 font-mono flex items-center gap-1.5">
@@ -659,18 +793,25 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                       </p>
                                     )}
 
-                                    <p className="text-stone text-[11px] mt-1">{stop.description}</p>
+                                    <p className="text-stone text-[11px] mt-1">
+                                      {stop.description}
+                                    </p>
                                     <span className="text-[10px] text-stone/80 uppercase tracking-wider block mt-1">
                                       {stop.category} • {stop.location}
                                     </span>
-                                    {stop.type === 'attraction' && (stop.wheelchairAccessible !== undefined || stop.physicalDemand) && (
-                                      <div className="mt-1.5">
-                                        <AccessibilityBadge
-                                          wheelchairAccessible={stop.wheelchairAccessible}
-                                          physicalDemand={stop.physicalDemand}
-                                        />
-                                      </div>
-                                    )}
+                                    {stop.type === "attraction" &&
+                                      (stop.wheelchairAccessible !==
+                                        undefined ||
+                                        stop.physicalDemand) && (
+                                        <div className="mt-1.5">
+                                          <AccessibilityBadge
+                                            wheelchairAccessible={
+                                              stop.wheelchairAccessible
+                                            }
+                                            physicalDemand={stop.physicalDemand}
+                                          />
+                                        </div>
+                                      )}
                                   </div>
                                 </div>
                               );
@@ -679,7 +820,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             {/* Cost & Duration */}
                             <div className="text-right shrink-0 self-end sm:self-auto border-t sm:border-t-0 pt-2 sm:pt-0 border-stone/20 w-full sm:w-auto flex sm:flex-col justify-between items-center sm:items-end">
                               <span className="font-bold text-ink text-sm">
-                                {stop.cost > 0 ? `₹${stop.cost.toLocaleString('en-IN')}` : 'Free / Included'}
+                                {stop.cost > 0
+                                  ? `₹${stop.cost.toLocaleString("en-IN")}`
+                                  : "Free / Included"}
                               </span>
                               <span className="text-[10px] text-stone">
                                 Duration: {stop.durationMinutes} mins
@@ -696,12 +839,14 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     <span className="flex items-center gap-1.5 text-ink font-bold">
                       <span>Circular Route Loop:</span>
                       <span className="font-normal text-stone">
-                        Start at {startingHotel.name} → {day.stops.length - 2} Stops → Return to {startingHotel.name}
+                        Start at {startingHotel.name} → {day.stops.length - 2}{" "}
+                        Stops → Return to {startingHotel.name}
                       </span>
                     </span>
-                    <span className="font-bold text-ink shrink-0">{day.stops.length} Timed Stops Complete</span>
+                    <span className="font-bold text-ink shrink-0">
+                      {day.stops.length} Timed Stops Complete
+                    </span>
                   </div>
-
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -714,31 +859,47 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
               <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">Hotels ({numDays} Nights)</span>
-                <span className="font-bold text-salt text-sm">₹{totalHotelCost.toLocaleString('en-IN')}</span>
+                <span className="text-stone text-[10px] uppercase block">
+                  Hotels ({numDays} Nights)
+                </span>
+                <span className="font-bold text-salt text-sm">
+                  ₹{totalHotelCost.toLocaleString("en-IN")}
+                </span>
               </div>
               <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">Attraction Entry Fees</span>
-                <span className="font-bold text-salt text-sm">₹{totalAttractionCost.toLocaleString('en-IN')}</span>
+                <span className="text-stone text-[10px] uppercase block">
+                  Attraction Entry Fees
+                </span>
+                <span className="font-bold text-salt text-sm">
+                  ₹{totalAttractionCost.toLocaleString("en-IN")}
+                </span>
               </div>
               <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">Meals (Restaurants)</span>
-                <span className="font-bold text-gold text-sm">₹{totalMealCost.toLocaleString('en-IN')}</span>
+                <span className="text-stone text-[10px] uppercase block">
+                  Meals (Restaurants)
+                </span>
+                <span className="font-bold text-gold text-sm">
+                  ₹{totalMealCost.toLocaleString("en-IN")}
+                </span>
               </div>
               <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">Local Transport</span>
-                <span className="font-bold text-salt text-sm">₹{totalTransportCost.toLocaleString('en-IN')}</span>
+                <span className="text-stone text-[10px] uppercase block">
+                  Local Transport
+                </span>
+                <span className="font-bold text-salt text-sm">
+                  ₹{totalTransportCost.toLocaleString("en-IN")}
+                </span>
               </div>
             </div>
 
             <div className="flex items-center justify-between pt-2 border-t border-stone/30 font-mono text-sm">
               <span className="text-stone">Estimated Total Outlay:</span>
-              <span className="font-bold text-gold text-lg">₹{estimatedTotalCost.toLocaleString('en-IN')}</span>
+              <span className="font-bold text-gold text-lg">
+                ₹{estimatedTotalCost.toLocaleString("en-IN")}
+              </span>
             </div>
           </div>
-
         </div>
-
       </div>
 
       {/* Share Itinerary Modal */}

@@ -1,13 +1,13 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from "react";
 import {
   PlannerConfigPayload,
   OptimizationStrategy,
   GeneratedItineraryResult,
   generateStrategyItinerary,
-  generateComparisonTakeaway
-} from '../utils/itineraryPlanner';
-import { useLanguage } from '../context/LanguageContext';
-import { AlgorithmStatsPanel } from './AlgorithmStatsPanel';
+  generateComparisonTakeaway,
+} from "../utils/itineraryPlanner";
+import { useLanguage } from "../context/LanguageContext";
+import { AlgorithmStatsPanel } from "./AlgorithmStatsPanel";
 import {
   X,
   SlidersHorizontal,
@@ -21,8 +21,8 @@ import {
   Zap,
   TrendingDown,
   Navigation,
-  Sparkles
-} from 'lucide-react';
+  Sparkles,
+} from "lucide-react";
 
 interface StrategyComparisonModalProps {
   isOpen: boolean;
@@ -31,22 +31,20 @@ interface StrategyComparisonModalProps {
   onSelectStrategy: (strategy: OptimizationStrategy) => void;
 }
 
-export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = ({
-  isOpen,
-  onClose,
-  config,
-  onSelectStrategy,
-}) => {
+export const StrategyComparisonModal: React.FC<
+  StrategyComparisonModalProps
+> = ({ isOpen, onClose, config, onSelectStrategy }) => {
   const { language, t, getName } = useLanguage();
-  const [activeMobileTab, setActiveMobileTab] = useState<OptimizationStrategy>('budget-first');
+  const [activeMobileTab, setActiveMobileTab] =
+    useState<OptimizationStrategy>("budget-first");
 
   // Compute all 3 strategy itineraries simultaneously
   const results: GeneratedItineraryResult[] = useMemo(() => {
     if (!isOpen) return [];
     return [
-      generateStrategyItinerary(config, 'budget-first', language),
-      generateStrategyItinerary(config, 'rating-first', language),
-      generateStrategyItinerary(config, 'distance-first', language)
+      generateStrategyItinerary(config, "budget-first", language),
+      generateStrategyItinerary(config, "rating-first", language),
+      generateStrategyItinerary(config, "distance-first", language),
     ];
   }, [isOpen, config, language]);
 
@@ -57,33 +55,41 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
   const distanceResult = results[2];
 
   // Compute winning values for each metric row/column in comparison table
-  const winningDistance = Math.min(...results.map(r => r.totalDistanceKm));
-  const winningCost = Math.min(...results.map(r => r.totalCost));
-  const winningAttractions = Math.max(...results.map(r => r.attractionCount));
-  const winningRuntime = Math.min(...results.map(r => r.totalRuntimeMinutes));
+  const winningDistance = Math.min(...results.map((r) => r.totalDistanceKm));
+  const winningCost = Math.min(...results.map((r) => r.totalCost));
+  const winningAttractions = Math.max(...results.map((r) => r.attractionCount));
+  const winningRuntime = Math.min(...results.map((r) => r.totalRuntimeMinutes));
 
   // Dynamic One-line Takeaway
   const takeawayText = generateComparisonTakeaway(results);
 
-  const strategyMeta: Record<OptimizationStrategy, { title: string; subtitle: string; icon: React.ReactNode; badgeColor: string }> = {
-    'budget-first': {
-      title: 'Budget-first',
-      subtitle: 'Greedy cost & fee minimization',
-      icon: <TrendingDown className="w-4 h-4 text-emerald-400" />,
-      badgeColor: 'border-emerald-600/50 bg-emerald-950/20 text-emerald-300'
-    },
-    'rating-first': {
-      title: 'Rating-first',
-      subtitle: 'Top-rated heritage quality',
-      icon: <Star className="w-4 h-4 text-gold" />,
-      badgeColor: 'border-gold/50 bg-amber-950/20 text-gold'
-    },
-    'distance-first': {
-      title: 'Distance-first',
-      subtitle: 'Nearest-neighbor distance minimization',
-      icon: <Navigation className="w-4 h-4 text-sky-400" />,
-      badgeColor: 'border-sky-600/50 bg-sky-950/20 text-sky-300'
+  const strategyMeta: Record<
+    OptimizationStrategy,
+    {
+      title: string;
+      subtitle: string;
+      icon: React.ReactNode;
+      badgeColor: string;
     }
+  > = {
+    "budget-first": {
+      title: "Budget-first",
+      subtitle: "Greedy cost & fee minimization",
+      icon: <TrendingDown className="w-4 h-4 text-emerald-400" />,
+      badgeColor: "border-emerald-600/50 bg-emerald-950/20 text-emerald-300",
+    },
+    "rating-first": {
+      title: "Rating-first",
+      subtitle: "Top-rated heritage quality",
+      icon: <Star className="w-4 h-4 text-gold" />,
+      badgeColor: "border-gold/50 bg-amber-950/20 text-gold",
+    },
+    "distance-first": {
+      title: "Distance-first",
+      subtitle: "Nearest-neighbor distance minimization",
+      icon: <Navigation className="w-4 h-4 text-sky-400" />,
+      badgeColor: "border-sky-600/50 bg-sky-950/20 text-sky-300",
+    },
   };
 
   return (
@@ -100,10 +106,13 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
               <span>Stepwell Optimization Comparison Mode</span>
             </div>
             <h2 className="font-display text-2xl sm:text-3xl text-ink font-bold">
-              Compare Optimization Strategies — {getName(budgetResult.activeCity)}
+              Compare Optimization Strategies —{" "}
+              {getName(budgetResult.activeCity)}
             </h2>
             <p className="font-body text-xs text-stone mt-1">
-              Evaluating 3 greedy route algorithms for your {config.tripDays}-day trip with a budget cap of ₹{config.budget.toLocaleString('en-IN')}.
+              Evaluating 3 greedy route algorithms for your {config.tripDays}
+              -day trip with a budget cap of ₹
+              {config.budget.toLocaleString("en-IN")}.
             </p>
           </div>
           <button
@@ -117,7 +126,6 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
 
         {/* Scrollable Container for Modal Body */}
         <div className="overflow-y-auto space-y-6 pr-1">
-
           {/* ================= 1. DYNAMIC ONE-LINE TAKEAWAY BANNER ================= */}
           <div className="bg-ink text-salt border-2 border-gold p-4 relative shadow-md bg-stepwell-pattern">
             <div className="flex items-start gap-3">
@@ -140,7 +148,8 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
             <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-charcoal mb-3 flex items-center justify-between">
               <span>Strategy Metrics Overview</span>
               <span className="text-[10px] font-normal text-stone font-mono">
-                <span className="text-gold font-bold">★ Gold</span> = Winning stat per metric
+                <span className="text-gold font-bold">★ Gold</span> = Winning
+                stat per metric
               </span>
             </h3>
 
@@ -158,17 +167,27 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                 <tbody className="divide-y divide-stone/20">
                   {results.map((res) => {
                     const meta = strategyMeta[res.strategy];
-                    const isWinningDist = res.totalDistanceKm === winningDistance;
+                    const isWinningDist =
+                      res.totalDistanceKm === winningDistance;
                     const isWinningCost = res.totalCost === winningCost;
-                    const isWinningAttr = res.attractionCount === winningAttractions;
-                    const isWinningRuntime = res.totalRuntimeMinutes === winningRuntime;
+                    const isWinningAttr =
+                      res.attractionCount === winningAttractions;
+                    const isWinningRuntime =
+                      res.totalRuntimeMinutes === winningRuntime;
 
                     return (
-                      <tr key={res.strategy} className="hover:bg-salt/60 transition-colors">
+                      <tr
+                        key={res.strategy}
+                        className="hover:bg-salt/60 transition-colors"
+                      >
                         <td className="p-2.5 font-bold text-ink flex items-center gap-2">
                           {meta.icon}
-                          <span className="font-body text-sm font-semibold">{meta.title}</span>
-                          <span className={`text-[10px] px-1.5 py-0.5 border font-mono ${meta.badgeColor}`}>
+                          <span className="font-body text-sm font-semibold">
+                            {meta.title}
+                          </span>
+                          <span
+                            className={`text-[10px] px-1.5 py-0.5 border font-mono ${meta.badgeColor}`}
+                          >
                             {res.strategy}
                           </span>
                         </td>
@@ -178,11 +197,13 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                           <span
                             className={`font-mono text-xs px-2 py-1 ${
                               isWinningDist
-                                ? 'bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs'
-                                : 'text-charcoal'
+                                ? "bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs"
+                                : "text-charcoal"
                             }`}
                           >
-                            {isWinningDist && <span className="text-gold mr-1">★</span>}
+                            {isWinningDist && (
+                              <span className="text-gold mr-1">★</span>
+                            )}
                             {res.totalDistanceKm} km
                           </span>
                         </td>
@@ -192,12 +213,14 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                           <span
                             className={`font-mono text-xs px-2 py-1 ${
                               isWinningCost
-                                ? 'bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs'
-                                : 'text-charcoal'
+                                ? "bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs"
+                                : "text-charcoal"
                             }`}
                           >
-                            {isWinningCost && <span className="text-gold mr-1">★</span>}
-                            ₹{res.totalCost.toLocaleString('en-IN')}
+                            {isWinningCost && (
+                              <span className="text-gold mr-1">★</span>
+                            )}
+                            ₹{res.totalCost.toLocaleString("en-IN")}
                           </span>
                         </td>
 
@@ -206,11 +229,13 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                           <span
                             className={`font-mono text-xs px-2 py-1 ${
                               isWinningAttr
-                                ? 'bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs'
-                                : 'text-charcoal'
+                                ? "bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs"
+                                : "text-charcoal"
                             }`}
                           >
-                            {isWinningAttr && <span className="text-gold mr-1">★</span>}
+                            {isWinningAttr && (
+                              <span className="text-gold mr-1">★</span>
+                            )}
                             {res.attractionCount} sites
                           </span>
                         </td>
@@ -220,11 +245,13 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                           <span
                             className={`font-mono text-xs px-2 py-1 ${
                               isWinningRuntime
-                                ? 'bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs'
-                                : 'text-charcoal'
+                                ? "bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs"
+                                : "text-charcoal"
                             }`}
                           >
-                            {isWinningRuntime && <span className="text-gold mr-1">★</span>}
+                            {isWinningRuntime && (
+                              <span className="text-gold mr-1">★</span>
+                            )}
                             {res.totalRuntimeHours}
                           </span>
                         </td>
@@ -248,8 +275,8 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                   onClick={() => setActiveMobileTab(res.strategy)}
                   className={`flex-1 py-2 px-2 text-xs font-mono font-bold flex items-center justify-center gap-1 cursor-pointer transition-all ${
                     isActive
-                      ? 'bg-ink text-gold border-b-2 border-gold'
-                      : 'text-stone hover:text-charcoal bg-stone/10'
+                      ? "bg-ink text-gold border-b-2 border-gold"
+                      : "text-stone hover:text-charcoal bg-stone/10"
                   }`}
                 >
                   {meta.icon}
@@ -264,14 +291,15 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
             {results.map((res, idx) => {
               const meta = strategyMeta[res.strategy];
               // Offset middle and right columns slightly to form terrace grid pattern
-              const terraceClass = idx === 0 ? 'mt-0' : idx === 1 ? 'md:mt-3' : 'md:mt-6';
+              const terraceClass =
+                idx === 0 ? "mt-0" : idx === 1 ? "md:mt-3" : "md:mt-6";
               const isMobileHidden = activeMobileTab !== res.strategy;
 
               return (
                 <div
                   key={res.strategy}
                   className={`bg-white border-2 border-stone/30 shadow-lg flex flex-col transition-all ${terraceClass} ${
-                    isMobileHidden ? 'hidden md:flex' : 'flex'
+                    isMobileHidden ? "hidden md:flex" : "flex"
                   }`}
                 >
                   {/* Column Terrace Header */}
@@ -285,27 +313,47 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                         Terrace Step {idx + 1}
                       </span>
                     </div>
-                    <h4 className="font-display text-xl font-bold text-salt">{meta.title}</h4>
-                    <p className="font-body text-xs text-stone/80 mt-0.5">{meta.subtitle}</p>
+                    <h4 className="font-display text-xl font-bold text-salt">
+                      {meta.title}
+                    </h4>
+                    <p className="font-body text-xs text-stone/80 mt-0.5">
+                      {meta.subtitle}
+                    </p>
                   </div>
 
                   {/* Column Key Metrics Cards (IBM Plex Mono) */}
                   <div className="p-4 bg-salt border-b border-stone/20 grid grid-cols-2 gap-2 font-mono text-xs">
                     <div className="bg-white p-2.5 border border-stone/30">
-                      <span className="text-[10px] text-stone uppercase block">Total Cost</span>
-                      <span className="font-bold text-ink text-sm">₹{res.totalCost.toLocaleString('en-IN')}</span>
+                      <span className="text-[10px] text-stone uppercase block">
+                        Total Cost
+                      </span>
+                      <span className="font-bold text-ink text-sm">
+                        ₹{res.totalCost.toLocaleString("en-IN")}
+                      </span>
                     </div>
                     <div className="bg-white p-2.5 border border-stone/30">
-                      <span className="text-[10px] text-stone uppercase block">Distance</span>
-                      <span className="font-bold text-ink text-sm">{res.totalDistanceKm} km</span>
+                      <span className="text-[10px] text-stone uppercase block">
+                        Distance
+                      </span>
+                      <span className="font-bold text-ink text-sm">
+                        {res.totalDistanceKm} km
+                      </span>
                     </div>
                     <div className="bg-white p-2.5 border border-stone/30">
-                      <span className="text-[10px] text-stone uppercase block">Attractions</span>
-                      <span className="font-bold text-ink text-sm">{res.attractionCount} sites</span>
+                      <span className="text-[10px] text-stone uppercase block">
+                        Attractions
+                      </span>
+                      <span className="font-bold text-ink text-sm">
+                        {res.attractionCount} sites
+                      </span>
                     </div>
                     <div className="bg-white p-2.5 border border-stone/30">
-                      <span className="text-[10px] text-stone uppercase block">Est. Runtime</span>
-                      <span className="font-bold text-ink text-sm">{res.totalRuntimeHours}</span>
+                      <span className="text-[10px] text-stone uppercase block">
+                        Est. Runtime
+                      </span>
+                      <span className="font-bold text-ink text-sm">
+                        {res.totalRuntimeHours}
+                      </span>
                     </div>
                   </div>
 
@@ -326,8 +374,12 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                     {res.dayPlans.map((day) => (
                       <div key={day.dayNumber} className="space-y-2">
                         <div className="flex items-center justify-between border-b border-stone/30 pb-1">
-                          <span className="font-mono text-xs font-bold text-gold uppercase">{day.dateLabel}</span>
-                          <span className="font-mono text-[10px] text-stone">{day.totalKm} km • ₹{day.totalCost}</span>
+                          <span className="font-mono text-xs font-bold text-gold uppercase">
+                            {day.dateLabel}
+                          </span>
+                          <span className="font-mono text-[10px] text-stone">
+                            {day.totalKm} km • ₹{day.totalCost}
+                          </span>
                         </div>
 
                         <div className="space-y-2 pl-1 border-l-2 border-gold/40">
@@ -340,7 +392,9 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                                 <span className="bg-ink/10 text-ink px-1.5 py-0.5 font-bold">
                                   {stop.arrivalTime}
                                 </span>
-                                <span className="text-stone truncate max-w-[110px]">{stop.category}</span>
+                                <span className="text-stone truncate max-w-[110px]">
+                                  {stop.category}
+                                </span>
                               </div>
                               <div className="font-body font-semibold text-charcoal text-xs leading-tight line-clamp-1">
                                 {stop.name}
@@ -362,18 +416,16 @@ export const StrategyComparisonModal: React.FC<StrategyComparisonModalProps> = (
                     <button
                       type="button"
                       onClick={() => onSelectStrategy(res.strategy)}
-                      className="w-full bg-[#A63D40] hover:bg-[#1E2A46] text-salt border border-[#A63D40] font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all"
+                      className="w-full bg-madder hover:bg-ink text-salt border border-madder font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all"
                     >
                       <Check className="w-4 h-4 text-salt" />
                       <span>Use this plan</span>
                     </button>
                   </div>
-
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </div>
