@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Destination, GUJARAT_DESTINATIONS } from '../data/destinations';
 import { ItineraryConfig } from './ItineraryView';
+import { useLanguage } from '../context/LanguageContext';
+import { getLatestOfflineTrip } from '../utils/offlineStorage';
 import {
   DollarSign,
   ArrowLeft,
@@ -16,9 +18,7 @@ import {
   Share2,
   Check,
   TrendingDown,
-  Layers,
-  Info,
-  Layers3
+  Info
 } from 'lucide-react';
 
 interface BudgetPlannerViewProps {
@@ -34,37 +34,32 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   onBackToPlanner,
   onSelectDestination,
 }) => {
-  // Use config or worked example fallback (3-day Modhera -> Champaner -> Ahmedabad)
+  const { language, t, getName } = useLanguage();
+
+  const cachedTrip = getLatestOfflineTrip();
+  const activeConfig = config || cachedTrip?.config || null;
+
   const defaultWorkedIds = ['modhera', 'champaner', 'adalaj'];
-  const userSelected = config?.selectedSites
-    ? GUJARAT_DESTINATIONS.filter(d => config.selectedSites.includes(d.id))
+  const userSelected = activeConfig?.selectedSites
+    ? GUJARAT_DESTINATIONS.filter(d => activeConfig.selectedSites.includes(d.id))
     : [];
   
   const displayDestinations = userSelected.length >= 3
     ? userSelected
     : GUJARAT_DESTINATIONS.filter(d => defaultWorkedIds.includes(d.id));
 
-  const tripDays = config?.tripDays || 3;
-  
-  // Budget allocation state (allow live adjustment slider/input to test over-budget states)
-  const [allocatedBudget, setAllocatedBudget] = useState<number>(config?.budget || 12000);
+  const tripDays = activeConfig?.tripDays || 3;
+  const [allocatedBudget, setAllocatedBudget] = useState<number>(activeConfig?.budget || 12000);
 
-  // Worked expense breakdown based on real Modhera -> Champaner -> Ahmedabad route
-  const travelCost = 3850;   // 305 km private AC chauffeur + fuel
-  const hotelCost = 6800;    // 2 nights heritage stay
-  const entryCost = 750;     // ASI entry tariffs for Modhera, Champaner, Adalaj
-  const foodCost = 1400;      // Kathiawadi Thali & culinary stops
+  const travelCost = 3850;
+  const hotelCost = 6800;
+  const entryCost = 750;
+  const foodCost = 1400;
 
-  const totalEstimatedCost = travelCost + hotelCost + entryCost + foodCost; // ₹12,800
-  const isOverBudget = totalEstimatedCost > allocatedBudget;
-  const overAmount = totalEstimatedCost - allocatedBudget;
-  const costFillPercent = Math.min(100, Math.round((totalEstimatedCost / allocatedBudget) * 100));
-
-  // Applied tip savings state
+  const totalEstimatedCost = travelCost + hotelCost + entryCost + foodCost;
   const [appliedTips, setAppliedTips] = useState<string[]>([]);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
 
-  // Calculate tip adjusted total
   let tipSavings = 0;
   if (appliedTips.includes('hotel')) tipSavings += 2200;
   if (appliedTips.includes('pass')) tipSavings += 200;
@@ -75,8 +70,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   const currentOverAmount = currentEffectiveCost - allocatedBudget;
   const currentFillPercent = Math.min(100, Math.round((currentEffectiveCost / allocatedBudget) * 100));
 
-  // Day-by-day cost breakdown data
-  const datesList = ['OCT 12, 2026', 'OCT 13, 2026', 'OCT 14, 2026'];
+  const datesList = ['DAY 1', 'DAY 2', 'DAY 3'];
   const dayTitles = [
     'Day 01 • Modhera & Mehsana Stepwell Foundations',
     'Day 02 • Champaner-Pavagadh UNESCO Citadel',
@@ -150,7 +144,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 text-salt border border-gold text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-gold" />
-              <span>Return to Itinerary View</span>
+              <span>{language === 'gu' ? 'પ્રવાસ પ્લાનર પર પાછા ફરો' : language === 'hi' ? 'यात्रा प्लानर पर वापस जाएं' : 'Return to Itinerary View'}</span>
             </button>
 
             <button
@@ -158,25 +152,25 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
             >
               <SlidersHorizontal className="w-3.5 h-3.5 text-ink" />
-              <span>Adjust Trip Parameters</span>
+              <span>{language === 'gu' ? 'મુખ્ય પ્લાનરમાં ફેરફાર કરો' : language === 'hi' ? 'मुख्य प्लानर में बदलाव करें' : 'Adjust Trip Parameters'}</span>
             </button>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handleShare}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
-              <span>Share Ledger</span>
+              <span>{language === 'gu' ? 'શેર કરો' : language === 'hi' ? 'શેર કરેં' : 'Share Ledger'}</span>
             </button>
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5 text-gold" />
-              <span>Print Ledger</span>
+              <span>{language === 'gu' ? 'પ્રિન્ટ લેજર' : language === 'hi' ? 'प्रिंट लेजर' : 'Print Ledger'}</span>
             </button>
           </div>
         </div>
@@ -198,7 +192,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <span>Financial Monograph & Circuit Audit</span>
               </div>
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
-                Solanki Heritage Budget Planner
+                {t('nav.budget', 'Solanki Heritage Budget Planner')}
               </h1>
             </div>
 
@@ -223,7 +217,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             </div>
           </div>
 
-          {/* LEDGER BAR HEADER DISPLAY (IBM Plex Mono) */}
+          {/* LEDGER BAR HEADER DISPLAY */}
           <div className="space-y-3 font-mono">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between text-xs sm:text-sm gap-2">
               <div>
@@ -245,7 +239,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               </div>
             </div>
 
-            {/* HORIZONTAL PROGRESS BAR: Thin bar with Madder Red fill against Stone Grey track */}
+            {/* HORIZONTAL PROGRESS BAR */}
             <div className="space-y-1">
               <div className="w-full h-3 bg-stone/40 border border-stone/60 overflow-hidden relative">
                 <div
@@ -282,7 +276,6 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         </div>
 
         {/* ================= 2. BREAKDOWN BY CATEGORY ================= */}
-        {/* Simple horizontal list of rows (label left, amount right in IBM Plex Mono), NOT a pie chart */}
         <div className="bg-white border-2 border-stone/40 p-6 space-y-4 shadow-2xs">
           <div className="border-b border-stone/30 pb-3 flex items-center justify-between">
             <div>
@@ -299,320 +292,145 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
           </div>
 
           <div className="space-y-3 font-mono text-xs">
-            {/* Travel Row */}
-            <div className="p-3.5 bg-salt border border-stone/30 hover:border-gold transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            
+            {/* Travel */}
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-ink text-gold border border-gold shrink-0">
-                  <Car className="w-4 h-4" />
-                </div>
+                <Car className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal text-sm block">Travel & Inter-District Transit</span>
-                  <span className="text-[11px] text-stone">Private AC Chauffeur, Highway Tolls & Fuel (305 km total)</span>
+                  <span className="font-bold text-charcoal block">Transit & Transport (AC Chauffeur & Fuel)</span>
+                  <span className="text-[10px] text-stone">Inter-city private vehicle & toll charges</span>
                 </div>
               </div>
-              <div className="text-right shrink-0">
-                <span className="font-bold text-ink text-base">₹{travelCost.toLocaleString()}</span>
-                <span className="text-[10px] text-stone block">
-                  ({Math.round((travelCost / totalEstimatedCost) * 100)}% of total)
-                </span>
-              </div>
+              <span className="font-bold text-charcoal text-sm">₹{travelCost.toLocaleString()}</span>
             </div>
 
-            {/* Hotels Row */}
-            <div className="p-3.5 bg-salt border border-stone/30 hover:border-gold transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            {/* Hotel */}
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-ink text-gold border border-gold shrink-0">
-                  <Hotel className="w-4 h-4" />
-                </div>
+                <Hotel className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal text-sm block">Hotels & Heritage Stays</span>
-                  <span className="text-[11px] text-stone">House of MG (Ahmedabad) & Champaner Toran Heritage Haven</span>
+                  <span className="font-bold text-charcoal block">Heritage Stays & TCGL Toran Accommodations</span>
+                  <span className="text-[10px] text-stone">2 nights verified government/heritage room rates</span>
                 </div>
               </div>
-              <div className="text-right shrink-0">
-                <span className="font-bold text-ink text-base">₹{hotelCost.toLocaleString()}</span>
-                <span className="text-[10px] text-stone block">
-                  ({Math.round((hotelCost / totalEstimatedCost) * 100)}% of total)
-                </span>
-              </div>
+              <span className="font-bold text-charcoal text-sm">₹{(hotelCost - (appliedTips.includes('hotel') ? 2200 : 0)).toLocaleString()}</span>
             </div>
 
-            {/* Entry Fees Row */}
-            <div className="p-3.5 bg-salt border border-stone/30 hover:border-gold transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            {/* Entry Tariffs */}
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-ink text-gold border border-gold shrink-0">
-                  <Ticket className="w-4 h-4" />
-                </div>
+                <Ticket className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal text-sm block">ASI Monument Entry Fees</span>
-                  <span className="text-[11px] text-stone">Official ASI Tariffs for Modhera, Champaner & Adalaj Ni Vav</span>
+                  <span className="font-bold text-charcoal block">ASI Monument Tariffs & Camera Permits</span>
+                  <span className="text-[10px] text-stone">Verified entry fees for Modhera, Champaner & Adalaj</span>
                 </div>
               </div>
-              <div className="text-right shrink-0">
-                <span className="font-bold text-ink text-base">₹{entryCost.toLocaleString()}</span>
-                <span className="text-[10px] text-stone block">
-                  ({Math.round((entryCost / totalEstimatedCost) * 100)}% of total)
-                </span>
-              </div>
+              <span className="font-bold text-charcoal text-sm">₹{(entryCost - (appliedTips.includes('pass') ? 200 : 0)).toLocaleString()}</span>
             </div>
 
-            {/* Meals & Culinary Row */}
-            <div className="p-3.5 bg-salt border border-stone/30 hover:border-gold transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            {/* Food */}
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-ink text-gold border border-gold shrink-0">
-                  <Utensils className="w-4 h-4" />
-                </div>
+                <Utensils className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal text-sm block">Kathiawadi Meals & Local Food</span>
-                  <span className="text-[11px] text-stone">Traditional Unlimited Gujarati Thalis & Highway Chai Stops</span>
+                  <span className="font-bold text-charcoal block">Authentic Gujarati Thali & Dining</span>
+                  <span className="text-[10px] text-stone">Local culinary stops & tea breaks</span>
                 </div>
               </div>
-              <div className="text-right shrink-0">
-                <span className="font-bold text-ink text-base">₹{foodCost.toLocaleString()}</span>
-                <span className="text-[10px] text-stone block">
-                  ({Math.round((foodCost / totalEstimatedCost) * 100)}% of total)
-                </span>
-              </div>
+              <span className="font-bold text-charcoal text-sm">₹{foodCost.toLocaleString()}</span>
             </div>
+
           </div>
         </div>
 
-        {/* ================= 3. MAIN TWO-COLUMN LAYOUT: DAY-BY-DAY & BUDGET TIPS ASIDE ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-          {/* LEFT COLUMN: BREAKDOWN BY DAY USING TERRACE-STEPPED DAY BLOCKS (8 Cols) */}
-          <div className="lg:col-span-8 space-y-6">
-
-            <div className="border-b border-stone/30 pb-3">
-              <span className="font-mono text-xs text-gold uppercase tracking-widest block">
-                Sequential Daily Ledger
-              </span>
-              <h2 className="font-display text-2xl text-charcoal font-bold">
-                Breakdown by Day
-              </h2>
+        {/* ================= 3. OPTIMIZATION TIPS ================= */}
+        <div className="bg-ink text-salt p-6 border-2 border-gold space-y-4">
+          <div className="border-b border-stone/30 pb-3 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-gold" />
+              <h3 className="font-display text-lg text-salt font-bold">
+                Budget Optimization Strategy
+              </h3>
             </div>
-
-            {/* TERRACE GRID PATTERN VERTICALLY REUSED */}
-            <div className="space-y-6 relative">
-              {dayCosts.map((day, index) => {
-                const dayTotal = day.travel + day.hotel + day.entry + day.food;
-
-                // Stepped terrace offset logic for desktop:
-                // Day 1 highest (ml-0), Day 2 (sm:ml-8), Day 3 (sm:ml-16)
-                // Collapses to plain stacked list on mobile
-                const terraceIndentClasses = [
-                  'sm:ml-0',
-                  'sm:ml-6 lg:ml-8',
-                  'sm:ml-12 lg:ml-16',
-                ][index % 3];
-
-                return (
-                  <div
-                    key={day.dayNum}
-                    className={`transition-all duration-300 ${terraceIndentClasses} relative group`}
-                  >
-                    <div className="bg-white border-2 border-stone/40 hover:border-gold transition-all shadow-sm">
-                      
-                      {/* Day Header Bar */}
-                      <div className="p-4 bg-ink text-salt flex flex-wrap items-center justify-between gap-2 border-b border-gold/40">
-                        <div className="flex items-center gap-3">
-                          <div className="bg-gold text-ink font-mono text-xs font-bold px-3 py-1 uppercase tracking-wider">
-                            Day 0{day.dayNum}
-                          </div>
-                          <div>
-                            <span className="font-display text-xs text-gold uppercase tracking-widest block">
-                              {day.date}
-                            </span>
-                            <h3 className="font-display text-base font-bold text-salt">
-                              {day.title}
-                            </h3>
-                          </div>
-                        </div>
-
-                        {/* Day Cost Total */}
-                        <div className="font-mono text-xs text-gold font-bold bg-salt/10 px-3 py-1 border border-stone/40">
-                          Day Total: ₹{dayTotal.toLocaleString()}
-                        </div>
-                      </div>
-
-                      {/* Day Body: One-line Cost Breakdown */}
-                      <div className="p-5 space-y-3 bg-salt/20 font-mono text-xs">
-                        <div className="text-stone text-[11px] font-bold uppercase tracking-wider">
-                          Monuments & Circuit Stops: {day.sites.join(' • ')}
-                        </div>
-
-                        {/* ONE-LINE COST BREAKDOWN (travel / hotel / entry / food) */}
-                        <div className="p-3 bg-white border border-stone/30 flex flex-wrap items-center justify-between gap-3 text-charcoal">
-                          <div className="flex flex-wrap items-center gap-4 text-[11px]">
-                            <span className="flex items-center gap-1.5">
-                              <Car className="w-3.5 h-3.5 text-gold" />
-                              <span>Travel: <strong className="text-ink">₹{day.travel.toLocaleString()}</strong></span>
-                            </span>
-
-                            <span className="text-stone/40">•</span>
-
-                            <span className="flex items-center gap-1.5">
-                              <Hotel className="w-3.5 h-3.5 text-gold" />
-                              <span>Hotel: <strong className="text-ink">₹{day.hotel.toLocaleString()}</strong></span>
-                            </span>
-
-                            <span className="text-stone/40">•</span>
-
-                            <span className="flex items-center gap-1.5">
-                              <Ticket className="w-3.5 h-3.5 text-gold" />
-                              <span>Entry: <strong className="text-ink">₹{day.entry.toLocaleString()}</strong></span>
-                            </span>
-
-                            <span className="text-stone/40">•</span>
-
-                            <span className="flex items-center gap-1.5">
-                              <Utensils className="w-3.5 h-3.5 text-gold" />
-                              <span>Food: <strong className="text-ink">₹{day.food.toLocaleString()}</strong></span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
+            <span className="font-mono text-xs text-gold font-bold">
+              Tip Savings Available: ₹3,500
+            </span>
           </div>
 
-          {/* RIGHT COLUMN: "BUDGET TIPS" ASIDE WITH STEPPED-CHEVRON MOTIF (4 Cols) */}
-          <div className="lg:col-span-4 space-y-6">
+          <p className="text-xs font-mono text-stone">
+            Select optimization measures below to dynamically apply cost reductions to your active itinerary ledger:
+          </p>
 
-            <div className="bg-ink text-salt p-5 border-2 border-gold space-y-4 shadow-md">
-              <div className="flex items-center justify-between border-b border-stone/30 pb-3">
-                <div className="flex items-center gap-2">
-                  {/* Stepped-Chevron Motif Icon */}
-                  <div className="flex items-center -space-x-1">
-                    <ChevronRight className="w-4 h-4 text-gold" />
-                    <ChevronRight className="w-4 h-4 text-gold/70" />
-                    <ChevronRight className="w-4 h-4 text-gold/40" />
-                  </div>
-                  <h3 className="font-display text-lg text-salt font-bold">
-                    Budget Tips & Optimization
-                  </h3>
-                </div>
-                <span className="font-mono text-[10px] bg-gold text-ink font-bold px-2 py-0.5 uppercase">
-                  ASI Expert
-                </span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+            
+            {/* Tip 1 */}
+            <button
+              onClick={() => toggleTip('hotel')}
+              className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
+                appliedTips.includes('hotel')
+                  ? 'bg-gold text-ink border-gold font-bold shadow-md'
+                  : 'bg-salt/10 text-salt border-stone/40 hover:border-gold'
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-wider text-stone">Stay Saver</span>
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">Save ₹2,200</span>
               </div>
-
-              <p className="font-mono text-xs text-stone leading-relaxed">
-                Plain-language cost reduction options tailored specifically for the Modhera-Champaner-Ahmedabad heritage loop.
+              <h4 className="font-display text-sm font-bold">Switch to Toran Guest House</h4>
+              <p className="text-[11px] opacity-90 font-normal">
+                Opt for Gujarat Tourism (TCGL) Toran guest houses over private heritage stays.
               </p>
-
-              {/* 2-3 Plain-Language Suggestions with Stepped-Chevron Motif */}
-              <div className="space-y-3 font-mono text-xs">
-
-                {/* Tip 1 */}
-                <div
-                  onClick={() => toggleTip('hotel')}
-                  className={`p-3.5 border transition-all cursor-pointer space-y-2 ${
-                    appliedTips.includes('hotel')
-                      ? 'bg-gold/20 border-gold text-salt'
-                      : 'bg-salt/5 border-stone/40 hover:border-gold text-stone'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-1.5 font-bold text-salt">
-                      <Layers3 className="w-4 h-4 text-gold shrink-0" />
-                      <span>Swap House of MG Hotel</span>
-                    </div>
-                    <span className="text-gold font-bold shrink-0">Save ~₹2,200</span>
-                  </div>
-
-                  <p className="text-[11px] leading-relaxed">
-                    Swap House of MG for Toran Heritage Guest House near Ahmedabad Old City to save ~₹2,200 on overnight stays.
-                  </p>
-
-                  <button className="text-[10px] text-gold uppercase font-bold underline">
-                    {appliedTips.includes('hotel') ? '✓ Applied in ledger' : '+ Test option'}
-                  </button>
-                </div>
-
-                {/* Tip 2 */}
-                <div
-                  onClick={() => toggleTip('transit')}
-                  className={`p-3.5 border transition-all cursor-pointer space-y-2 ${
-                    appliedTips.includes('transit')
-                      ? 'bg-gold/20 border-gold text-salt'
-                      : 'bg-salt/5 border-stone/40 hover:border-gold text-stone'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-1.5 font-bold text-salt">
-                      <Layers3 className="w-4 h-4 text-gold shrink-0" />
-                      <span>Group Transit Sharing</span>
-                    </div>
-                    <span className="text-gold font-bold shrink-0">Save ~₹1,100</span>
-                  </div>
-
-                  <p className="text-[11px] leading-relaxed">
-                    Share private AC transit costs across 3 co-travelers to lower individual transit expenditure.
-                  </p>
-
-                  <button className="text-[10px] text-gold uppercase font-bold underline">
-                    {appliedTips.includes('transit') ? '✓ Applied in ledger' : '+ Test option'}
-                  </button>
-                </div>
-
-                {/* Tip 3 */}
-                <div
-                  onClick={() => toggleTip('pass')}
-                  className={`p-3.5 border transition-all cursor-pointer space-y-2 ${
-                    appliedTips.includes('pass')
-                      ? 'bg-gold/20 border-gold text-salt'
-                      : 'bg-salt/5 border-stone/40 hover:border-gold text-stone'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-1.5 font-bold text-salt">
-                      <Layers3 className="w-4 h-4 text-gold shrink-0" />
-                      <span>Digital ASI Heritage Pass</span>
-                    </div>
-                    <span className="text-gold font-bold shrink-0">Save ~₹200</span>
-                  </div>
-
-                  <p className="text-[11px] leading-relaxed">
-                    Pre-book online digital ASI entry tickets for Modhera and Champaner to skip queue surcharges.
-                  </p>
-
-                  <button className="text-[10px] text-gold uppercase font-bold underline">
-                    {appliedTips.includes('pass') ? '✓ Applied in ledger' : '+ Test option'}
-                  </button>
-                </div>
-
+              <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
+                {appliedTips.includes('hotel') ? '✓ Applied to Ledger' : '+ Apply Saving'}
               </div>
+            </button>
 
-              {appliedTips.length > 0 && (
-                <div className="p-3 bg-gold/10 border border-gold font-mono text-xs flex items-center justify-between text-gold">
-                  <span>Total Tip Savings Applied:</span>
-                  <span className="font-bold">₹{tipSavings.toLocaleString()}</span>
-                </div>
-              )}
-            </div>
+            {/* Tip 2 */}
+            <button
+              onClick={() => toggleTip('pass')}
+              className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
+                appliedTips.includes('pass')
+                  ? 'bg-gold text-ink border-gold font-bold shadow-md'
+                  : 'bg-salt/10 text-salt border-stone/40 hover:border-gold'
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-wider text-stone">ASI Tariff Pass</span>
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">Save ₹200</span>
+              </div>
+              <h4 className="font-display text-sm font-bold">Book Online ASI Combination Ticket</h4>
+              <p className="text-[11px] opacity-90 font-normal">
+                Purchase digital QR tickets online via the ASI portal to receive a 10% discount.
+              </p>
+              <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
+                {appliedTips.includes('pass') ? '✓ Applied to Ledger' : '+ Apply Saving'}
+              </div>
+            </button>
 
-            {/* Quick Summary Action Card */}
-            <div className="bg-white border-2 border-stone/40 p-5 space-y-3 font-mono text-xs shadow-xs">
-              <span className="font-bold text-charcoal uppercase block">
-                Trip Actions:
-              </span>
-              <button
-                onClick={onBackToItinerary}
-                className="w-full bg-ink hover:bg-ink/90 text-salt border border-gold py-2.5 px-3 text-xs font-bold uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <ArrowLeft className="w-4 h-4 text-gold" />
-                <span>Return to Itinerary View</span>
-              </button>
-            </div>
+            {/* Tip 3 */}
+            <button
+              onClick={() => toggleTip('transit')}
+              className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
+                appliedTips.includes('transit')
+                  ? 'bg-gold text-ink border-gold font-bold shadow-md'
+                  : 'bg-salt/10 text-salt border-stone/40 hover:border-gold'
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-wider text-stone">GSRTC Express Transit</span>
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">Save ₹1,100</span>
+              </div>
+              <h4 className="font-display text-sm font-bold">GSRTC Volvo Bus for Inter-City Legs</h4>
+              <p className="text-[11px] opacity-90 font-normal">
+                Use GSRTC Volvo AC coach between Ahmedabad, Mehsana, and Vadodara.
+              </p>
+              <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
+                {appliedTips.includes('transit') ? '✓ Applied to Ledger' : '+ Apply Saving'}
+              </div>
+            </button>
 
           </div>
-
         </div>
 
       </div>

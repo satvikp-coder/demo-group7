@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Destination, GUJARAT_DESTINATIONS, Hotel } from '../data/destinations';
+import { useLanguage } from '../context/LanguageContext';
 import {
   Building2,
   Star,
@@ -32,22 +33,19 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
   onSelectDestination,
   onOpenPlanner
 }) => {
-  // Scoped active destination based on passed selectedCityId or default 'somnath'
+  const { language, t, getName } = useLanguage();
+
   const activeDestination = GUJARAT_DESTINATIONS.find(d => d.id === selectedCityId) || GUJARAT_DESTINATIONS[0];
+  const cityName = getName(activeDestination);
   const currentHotels: Hotel[] = activeDestination.hotels || [];
   
-  // Sort / Re-rank state (default: 'value')
   const [sortOrder, setSortOrder] = useState<SortCriterion>('value');
-
-  // Local state fallback if preferredHotels prop not passed
   const [localPreferredMap, setLocalPreferredMap] = useState<Record<string, string>>({});
   const activePreferredMap = preferredHotels || localPreferredMap;
   const currentPreferredHotelId = activePreferredMap[activeDestination.id] || currentHotels[0]?.id;
 
-  // Toast / notification state for hotel assignment
   const [assignedNotice, setAssignedNotice] = useState<string | null>(null);
 
-  // CLIENT-SIDE SORT LOGIC SIMULATING PRIORITY-QUEUE BASED RE-RANKING
   const sortedHotels = [...currentHotels].sort((a, b) => {
     if (sortOrder === 'value') {
       return b.valueScore - a.valueScore;
@@ -71,13 +69,12 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
       }));
     }
 
-    setAssignedNotice(`Set "${hotel.name}" as preferred stay for ${activeDestination.name}. Saved to itinerary engine.`);
+    setAssignedNotice(`Set "${hotel.name}" as preferred stay for ${cityName}. Saved to itinerary engine.`);
     setTimeout(() => {
       setAssignedNotice(null);
     }, 4000);
   };
 
-  // Helper function to render stay type badge
   const renderStayBadge = (stayType: HotelData['stayType']) => {
     switch (stayType) {
       case 'Toran Hotel':
@@ -129,11 +126,10 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                 <span>Priority-Queue Stay Audit</span>
               </div>
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
-                Hotels in {activeDestination.name}
+                {t('nav.hotels', 'Hotels')} - {cityName}
               </h1>
             </div>
 
-            {/* Total Stays Assigned Badge */}
             <div className="bg-salt/10 border border-stone/40 p-3 font-mono text-xs text-right">
               <span className="text-stone text-[10px] uppercase block tracking-wider">
                 Preferred Stays:
@@ -145,7 +141,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           </div>
 
           <p className="font-mono text-xs text-stone leading-relaxed max-w-2xl">
-            Official TCGL Toran Hotels, registered heritage havelis, and artisan homestays in {activeDestination.name} ranked using our algorithmic value score index.
+            Official TCGL Toran Hotels, registered heritage havelis, and artisan homestays in {cityName} ranked using our algorithmic value score index.
           </p>
         </div>
 
@@ -165,7 +161,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-madder shrink-0" />
             <span>
-              Showing hotels in <strong className="text-ink font-bold">{activeDestination.name}</strong> — part of your current trip.
+              Showing hotels in <strong className="text-ink font-bold">{cityName}</strong> — part of your current trip.
             </span>
           </div>
 
@@ -192,7 +188,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-stone text-[11px]">Sort By:</span>
 
-            {/* Best Value */}
             <button
               onClick={() => setSortOrder('value')}
               className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
@@ -204,7 +199,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
               Best Value (Rating/Cost)
             </button>
 
-            {/* Highest Rated */}
             <button
               onClick={() => setSortOrder('rating')}
               className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
@@ -216,7 +210,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
               Highest Rated
             </button>
 
-            {/* Lowest Price */}
             <button
               onClick={() => setSortOrder('price')}
               className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
@@ -231,8 +224,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
         </div>
 
-        {/* ================= 3. RANKED LIST OF HOTELS (NOT A GRID) ================= */}
-        {/* Single-column vertical list of hotel rows numbered 1, 2, 3... in Fraunces font */}
+        {/* ================= 3. RANKED LIST OF HOTELS ================= */}
         <div className="space-y-4">
           
           {sortedHotels.map((hotel, index) => {
@@ -250,15 +242,12 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   
-                  {/* LEFT: RANK NUMBER + MAIN CONTENT */}
                   <div className="flex items-start gap-4">
                     
-                    {/* FRAUNCES RANK NUMBER BADGE (1, 2, 3...) */}
                     <div className="font-display font-bold text-xl sm:text-2xl text-gold bg-ink w-10 h-10 border border-gold flex items-center justify-center shrink-0 shadow-xs">
                       {rankNumber}
                     </div>
 
-                    {/* HOTEL THUMBNAIL IMAGE WITH DESCRIPTIVE ALT */}
                     {hotel.imageUrl && (
                       <img
                         src={hotel.imageUrl}
@@ -269,7 +258,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
                     <div className="space-y-2">
                       
-                      {/* HOTEL NAME & STAY TYPE BADGE */}
                       <div className="flex flex-wrap items-center gap-2.5">
                         <h3 className="font-display text-lg sm:text-xl font-bold text-charcoal">
                           {hotel.name}
@@ -283,7 +271,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                         )}
                       </div>
 
-                      {/* LOCATION & IBM PLEX MONO PRICE / RATING */}
                       <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-charcoal">
                         <span className="text-stone">{hotel.location}</span>
                         <span className="text-stone/40">•</span>
@@ -295,12 +282,10 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                         </span>
                       </div>
 
-                      {/* SHORT ONE-LINE DESCRIPTION */}
                       <p className="font-body text-xs text-charcoal/90 leading-relaxed max-w-xl">
                         {hotel.description}
                       </p>
 
-                      {/* RATING-PER-COST INDICATOR: Small filled bar using Stepwell Gold */}
                       <div className="space-y-1 pt-1 max-w-xs font-mono text-[10px]">
                         <div className="flex justify-between text-stone">
                           <span>Rating-Per-Cost Value Index:</span>
@@ -318,8 +303,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
                   </div>
 
-                  {/* RIGHT: SELECT BUTTON */}
-                  {/* "Select for [destination]" button (Stone Grey outline, Madder Red on hover) */}
                   <div className="shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-stone/20 flex md:flex-col items-center justify-end gap-2">
                     <button
                       onClick={() => handleSelectHotel(hotel)}
@@ -366,7 +349,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
           <button
             onClick={() => onOpenPlanner && onOpenPlanner()}
-            className="text-ink hover:text-gold font-bold underline whitespace-nowrap"
+            className="text-ink hover:text-gold font-bold underline whitespace-nowrap cursor-pointer"
           >
             Open Circuit Planner →
           </button>

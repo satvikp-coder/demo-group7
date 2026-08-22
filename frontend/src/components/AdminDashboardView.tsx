@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GUJARAT_DESTINATIONS, Destination, Attraction, Restaurant } from '../data/destinations';
 import { HotelData } from './HotelsView';
+import { useLanguage } from '../context/LanguageContext';
 import {
   Building2,
   MapPin,
@@ -151,16 +152,14 @@ interface AdminDashboardViewProps {
 export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
   onBackToProfile
 }) => {
-  // Navigation tab state: 'destinations' | 'hotels' | 'attractions' | 'restaurants'
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'destinations' | 'hotels' | 'attractions' | 'restaurants'>('destinations');
 
-  // Datasets state
   const [destinations, setDestinations] = useState<AdminDestinationItem[]>(INITIAL_DESTINATIONS);
   const [hotels, setHotels] = useState<AdminHotelItem[]>(INITIAL_HOTELS);
   const [attractions, setAttractions] = useState<AdminAttractionItem[]>(INITIAL_ATTRACTIONS);
   const [restaurants, setRestaurants] = useState<AdminRestaurantItem[]>(INITIAL_RESTAURANTS);
 
-  // Side Panel / Drawer state
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [editingItem, setEditingItem] = useState<{
     type: 'destinations' | 'hotels' | 'attractions' | 'restaurants';
@@ -293,480 +292,278 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink font-mono text-xs">
       <div className="max-w-7xl mx-auto space-y-8">
 
-        {/* Back to Profile */}
         {onBackToProfile && (
           <div className="flex items-center justify-between border-b border-stone/30 pb-4">
             <button
               onClick={onBackToProfile}
-              className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 bg-ink text-salt border border-gold hover:bg-ink/90 px-4 py-2 cursor-pointer font-bold transition-colors"
             >
-              <ArrowLeft className="w-3.5 h-3.5 text-ink" />
-              <span>Back to Officer Dashboard</span>
+              <ArrowLeft className="w-3.5 h-3.5 text-gold" />
+              <span>Back to Profile Console</span>
             </button>
-            <span className="text-stone text-[11px] uppercase tracking-wider">
-              Tourism Administrative Ledger
-            </span>
+            <span className="text-stone">Authorized Tourism Guild Admin</span>
           </div>
         )}
 
-        {/* Header Banner */}
-        <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg">
+        {/* HEADER */}
+        <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone/30 pb-4">
             <div>
-              <div className="flex items-center gap-2 text-gold uppercase tracking-widest text-[11px] mb-1">
-                <Building2 className="w-4 h-4 text-gold" />
-                <span>State Tourism Registry Management</span>
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-gold mb-1">
+                <Sparkles className="w-4 h-4 text-gold" />
+                <span>ASI & TCGL Dataset Registry</span>
               </div>
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
-                Gujarat Tourism Admin Ledger
+                {t('nav.admin', 'Admin Content Dashboard')}
               </h1>
             </div>
 
             <button
               onClick={handleOpenAddDrawer}
-              aria-label={`Add new ${activeTab.slice(0, -1)}`}
-              className="bg-gold hover:bg-ink hover:text-gold text-ink border-2 border-gold font-mono text-xs font-bold px-5 py-2.5 uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-md self-start md:self-auto"
+              className="bg-madder hover:bg-madder/90 text-salt border border-madder font-bold px-4 py-2.5 flex items-center gap-2 shadow-xs cursor-pointer shrink-0"
             >
-              <Plus className="w-4 h-4" />
-              <span>Add New {activeTab === 'destinations' ? 'City' : activeTab === 'hotels' ? 'Hotel' : activeTab === 'attractions' ? 'Attraction' : 'Restaurant'}</span>
+              <Plus className="w-4 h-4 text-salt" />
+              <span>Add New Record</span>
             </button>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-6 text-stone text-[11px]">
+            <span>Destinations: <strong>{destinations.length}</strong></span>
+            <span>•</span>
+            <span>Hotels: <strong>{hotels.length}</strong></span>
+            <span>•</span>
+            <span>Attractions: <strong>{attractions.length}</strong></span>
+            <span>•</span>
+            <span>Restaurants: <strong>{restaurants.length}</strong></span>
           </div>
         </div>
 
         {notice && (
-          <div className="p-3 bg-emerald-900 text-salt border-2 border-emerald-400 text-xs font-mono flex items-center gap-2 shadow-md animate-fadeIn">
-            <CheckCircle2 className="w-4 h-4 text-emerald-300" />
+          <div className="p-3 bg-emerald-900 text-salt border-2 border-emerald-400 flex items-center gap-2 shadow-md animate-fadeIn">
+            <Check className="w-4 h-4 text-emerald-300" />
             <span className="font-bold">{notice}</span>
           </div>
         )}
 
-        {/* TABS HEADER */}
-        <div className="flex items-center gap-2 border-b-2 border-stone/30 pb-0 overflow-x-auto scrollbar-thin">
+        {/* TAB CONTROLS */}
+        <div className="flex flex-wrap items-center gap-2 border-b-2 border-gold pb-3">
           <button
             onClick={() => setActiveTab('destinations')}
-            className={`px-5 py-3 font-mono text-xs uppercase tracking-wider font-bold border-t-2 border-x-2 transition-all cursor-pointer ${
-              activeTab === 'destinations'
-                ? 'bg-ink text-gold border-gold -mb-[2px] shadow-sm'
-                : 'bg-salt text-stone border-transparent hover:text-charcoal'
+            className={`px-4 py-2 border font-bold transition-colors cursor-pointer flex items-center gap-2 ${
+              activeTab === 'destinations' ? 'bg-gold text-ink border-ink' : 'bg-white text-charcoal border-stone/30 hover:border-gold'
             }`}
           >
-            Cities ({destinations.length})
+            <Compass className="w-4 h-4" />
+            <span>Destinations ({destinations.length})</span>
           </button>
 
           <button
             onClick={() => setActiveTab('hotels')}
-            className={`px-5 py-3 font-mono text-xs uppercase tracking-wider font-bold border-t-2 border-x-2 transition-all cursor-pointer ${
-              activeTab === 'hotels'
-                ? 'bg-ink text-gold border-gold -mb-[2px] shadow-sm'
-                : 'bg-salt text-stone border-transparent hover:text-charcoal'
+            className={`px-4 py-2 border font-bold transition-colors cursor-pointer flex items-center gap-2 ${
+              activeTab === 'hotels' ? 'bg-gold text-ink border-ink' : 'bg-white text-charcoal border-stone/30 hover:border-gold'
             }`}
           >
-            Hotels ({hotels.length})
+            <Building2 className="w-4 h-4" />
+            <span>Hotels & Stays ({hotels.length})</span>
           </button>
 
           <button
             onClick={() => setActiveTab('attractions')}
-            className={`px-5 py-3 font-mono text-xs uppercase tracking-wider font-bold border-t-2 border-x-2 transition-all cursor-pointer ${
-              activeTab === 'attractions'
-                ? 'bg-ink text-gold border-gold -mb-[2px] shadow-sm'
-                : 'bg-salt text-stone border-transparent hover:text-charcoal'
+            className={`px-4 py-2 border font-bold transition-colors cursor-pointer flex items-center gap-2 ${
+              activeTab === 'attractions' ? 'bg-gold text-ink border-ink' : 'bg-white text-charcoal border-stone/30 hover:border-gold'
             }`}
           >
-            Attractions ({attractions.length})
+            <Layers className="w-4 h-4" />
+            <span>Attractions ({attractions.length})</span>
           </button>
 
           <button
             onClick={() => setActiveTab('restaurants')}
-            className={`px-5 py-3 font-mono text-xs uppercase tracking-wider font-bold border-t-2 border-x-2 transition-all cursor-pointer ${
-              activeTab === 'restaurants'
-                ? 'bg-ink text-gold border-gold -mb-[2px] shadow-sm'
-                : 'bg-salt text-stone border-transparent hover:text-charcoal'
+            className={`px-4 py-2 border font-bold transition-colors cursor-pointer flex items-center gap-2 ${
+              activeTab === 'restaurants' ? 'bg-gold text-ink border-ink' : 'bg-white text-charcoal border-stone/30 hover:border-gold'
             }`}
           >
-            Restaurants ({restaurants.length})
+            <Utensils className="w-4 h-4" />
+            <span>Restaurants ({restaurants.length})</span>
           </button>
         </div>
 
-        {/* DATA TABLE AREA */}
-        <div className="bg-white border-2 border-stone/40 p-4 sm:p-6 shadow-sm overflow-x-auto">
-          
-          {/* 1. CITIES TAB */}
-          {activeTab === 'destinations' && (
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b-2 border-stone/30 text-stone text-[11px] uppercase tracking-wider bg-salt">
-                  <th className="p-3">City Name</th>
-                  <th className="p-3">District</th>
-                  <th className="p-3">Category</th>
-                  <th className="p-3">Rating</th>
-                  <th className="p-3 text-right">Actions</th>
+        {/* DATA TABLE */}
+        <div className="bg-white border-2 border-stone/40 shadow-sm overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-ink text-salt uppercase text-[10px] tracking-wider border-b border-stone/40">
+                <th className="p-3 border-r border-stone/30">ID / Name</th>
+                <th className="p-3 border-r border-stone/30">District / Location</th>
+                <th className="p-3 border-r border-stone/30">Category / Type</th>
+                <th className="p-3 border-r border-stone/30">Metrics</th>
+                <th className="p-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-stone/20">
+              {activeTab === 'destinations' && destinations.map((d) => (
+                <tr key={d.id} className="hover:bg-salt/60 transition-colors">
+                  <td className="p-3 border-r border-stone/20 font-bold text-ink">{d.name} <span className="text-[10px] text-stone font-normal block">{d.id}</span></td>
+                  <td className="p-3 border-r border-stone/20">{d.district}</td>
+                  <td className="p-3 border-r border-stone/20"><span className="bg-salt border border-stone/30 px-2 py-0.5 text-[10px] uppercase">{d.category}</span></td>
+                  <td className="p-3 border-r border-stone/20">₹{d.estimatedCost} • ★ {d.rating}</td>
+                  <td className="p-3 text-right space-x-2 whitespace-nowrap">
+                    <button onClick={() => handleOpenEditDrawer(d)} className="bg-salt hover:bg-stone/20 text-ink border border-stone/40 px-2.5 py-1 cursor-pointer">Edit</button>
+                    <button onClick={() => setDeletingId(d.id)} className="bg-salt hover:bg-madder/10 text-madder border border-stone/40 px-2.5 py-1 cursor-pointer">Delete</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-stone/20">
-                {destinations.map(d => (
-                  <tr key={d.id} className="hover:bg-salt/50 transition-colors">
-                    <td className="p-3 font-bold text-ink text-sm">{d.name}</td>
-                    <td className="p-3 text-charcoal">{d.district}</td>
-                    <td className="p-3 text-stone">{d.category}</td>
-                    <td className="p-3 text-gold font-bold">{d.rating} ★</td>
-                    <td className="p-3 text-right space-x-2">
-                      <button
-                        onClick={() => handleOpenEditDrawer(d)}
-                        title="Edit Destination"
-                        aria-label="Edit Destination"
-                        className="p-1.5 bg-salt hover:bg-stone/30 border border-stone/40 text-charcoal cursor-pointer"
-                      >
-                        <Edit2 className="w-3.5 h-3.5 text-ink" />
-                      </button>
-                      <button
-                        onClick={() => setDeletingId(d.id)}
-                        title="Delete Destination"
-                        aria-label="Delete Destination"
-                        className="p-1.5 bg-madder/10 hover:bg-madder text-madder hover:text-salt border border-madder cursor-pointer"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+              ))}
 
-          {/* 2. HOTELS TAB */}
-          {activeTab === 'hotels' && (
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b-2 border-stone/30 text-stone text-[11px] uppercase tracking-wider bg-salt">
-                  <th className="p-3">Hotel Name</th>
-                  <th className="p-3">District</th>
-                  <th className="p-3">Stay Type</th>
-                  <th className="p-3">Rate / Night</th>
-                  <th className="p-3">Rating</th>
-                  <th className="p-3 text-right">Actions</th>
+              {activeTab === 'hotels' && hotels.map((h) => (
+                <tr key={h.id} className="hover:bg-salt/60 transition-colors">
+                  <td className="p-3 border-r border-stone/20 font-bold text-ink">{h.name} <span className="text-[10px] text-stone font-normal block">{h.id}</span></td>
+                  <td className="p-3 border-r border-stone/20">{h.district} ({h.destinationId})</td>
+                  <td className="p-3 border-r border-stone/20"><span className="bg-gold/20 text-ink border border-gold px-2 py-0.5 text-[10px] uppercase font-bold">{h.stayType}</span></td>
+                  <td className="p-3 border-r border-stone/20">₹{h.pricePerNight}/night • ★ {h.rating}</td>
+                  <td className="p-3 text-right space-x-2 whitespace-nowrap">
+                    <button onClick={() => handleOpenEditDrawer(h)} className="bg-salt hover:bg-stone/20 text-ink border border-stone/40 px-2.5 py-1 cursor-pointer">Edit</button>
+                    <button onClick={() => setDeletingId(h.id)} className="bg-salt hover:bg-madder/10 text-madder border border-stone/40 px-2.5 py-1 cursor-pointer">Delete</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-stone/20">
-                {hotels.map(h => (
-                  <tr key={h.id} className="hover:bg-salt/50 transition-colors">
-                    <td className="p-3 font-bold text-ink text-sm">{h.name}</td>
-                    <td className="p-3 text-charcoal">{h.district}</td>
-                    <td className="p-3 text-stone">{h.stayType}</td>
-                    <td className="p-3 font-bold text-ink">₹{h.pricePerNight.toLocaleString()}</td>
-                    <td className="p-3 text-gold font-bold">{h.rating} ★</td>
-                    <td className="p-3 text-right space-x-2">
-                      <button
-                        onClick={() => handleOpenEditDrawer(h)}
-                        title="Edit Hotel"
-                        aria-label="Edit Hotel"
-                        className="p-1.5 bg-salt hover:bg-stone/30 border border-stone/40 text-charcoal cursor-pointer"
-                      >
-                        <Edit2 className="w-3.5 h-3.5 text-ink" />
-                      </button>
-                      <button
-                        onClick={() => setDeletingId(h.id)}
-                        title="Delete Hotel"
-                        aria-label="Delete Hotel"
-                        className="p-1.5 bg-madder/10 hover:bg-madder text-madder hover:text-salt border border-madder cursor-pointer"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+              ))}
 
-          {/* 3. ATTRACTIONS TAB */}
-          {activeTab === 'attractions' && (
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b-2 border-stone/30 text-stone text-[11px] uppercase tracking-wider bg-salt">
-                  <th className="p-3">Attraction</th>
-                  <th className="p-3">City</th>
-                  <th className="p-3">Category</th>
-                  <th className="p-3">Duration</th>
-                  <th className="p-3">Entry Fee</th>
-                  <th className="p-3">Rating</th>
-                  <th className="p-3 text-right">Actions</th>
+              {activeTab === 'attractions' && attractions.map((a) => (
+                <tr key={a.id} className="hover:bg-salt/60 transition-colors">
+                  <td className="p-3 border-r border-stone/20 font-bold text-ink">{a.name} <span className="text-[10px] text-stone font-normal block">{a.id}</span></td>
+                  <td className="p-3 border-r border-stone/20">{a.destinationName} ({a.district})</td>
+                  <td className="p-3 border-r border-stone/20"><span className="bg-salt border border-stone/30 px-2 py-0.5 text-[10px] uppercase">{a.category}</span></td>
+                  <td className="p-3 border-r border-stone/20">{a.entryFee} • {a.visitDurationHours} hrs</td>
+                  <td className="p-3 text-right space-x-2 whitespace-nowrap">
+                    <button onClick={() => handleOpenEditDrawer(a)} className="bg-salt hover:bg-stone/20 text-ink border border-stone/40 px-2.5 py-1 cursor-pointer">Edit</button>
+                    <button onClick={() => setDeletingId(a.id)} className="bg-salt hover:bg-madder/10 text-madder border border-stone/40 px-2.5 py-1 cursor-pointer">Delete</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-stone/20">
-                {attractions.map(a => (
-                  <tr key={a.id} className="hover:bg-salt/50 transition-colors">
-                    <td className="p-3 font-bold text-ink text-sm">{a.name}</td>
-                    <td className="p-3 text-charcoal">{a.destinationName}</td>
-                    <td className="p-3 text-stone">{a.category}</td>
-                    <td className="p-3 text-charcoal">{a.visitDurationHours} hrs</td>
-                    <td className="p-3 font-bold text-ink">{a.entryFee}</td>
-                    <td className="p-3 text-gold font-bold">{a.rating} ★</td>
-                    <td className="p-3 text-right space-x-2">
-                      <button
-                        onClick={() => handleOpenEditDrawer(a)}
-                        title="Edit Attraction"
-                        aria-label="Edit Attraction"
-                        className="p-1.5 bg-salt hover:bg-stone/30 border border-stone/40 text-charcoal cursor-pointer"
-                      >
-                        <Edit2 className="w-3.5 h-3.5 text-ink" />
-                      </button>
-                      <button
-                        onClick={() => setDeletingId(a.id)}
-                        title="Delete Attraction"
-                        aria-label="Delete Attraction"
-                        className="p-1.5 bg-madder/10 hover:bg-madder text-madder hover:text-salt border border-madder cursor-pointer"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+              ))}
 
-          {/* 4. RESTAURANTS TAB */}
-          {activeTab === 'restaurants' && (
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b-2 border-stone/30 text-stone text-[11px] uppercase tracking-wider bg-salt">
-                  <th className="p-3">Restaurant</th>
-                  <th className="p-3">City</th>
-                  <th className="p-3">Location</th>
-                  <th className="p-3">Cuisine</th>
-                  <th className="p-3">Avg Cost / Person</th>
-                  <th className="p-3">Rating</th>
-                  <th className="p-3 text-right">Actions</th>
+              {activeTab === 'restaurants' && restaurants.map((r) => (
+                <tr key={r.id} className="hover:bg-salt/60 transition-colors">
+                  <td className="p-3 border-r border-stone/20 font-bold text-ink">{r.name} <span className="text-[10px] text-stone font-normal block">{r.id}</span></td>
+                  <td className="p-3 border-r border-stone/20">{r.location} ({r.city})</td>
+                  <td className="p-3 border-r border-stone/20"><span className="bg-salt border border-stone/30 px-2 py-0.5 text-[10px] uppercase">{r.cuisine}</span></td>
+                  <td className="p-3 border-r border-stone/20">₹{r.avgCostPerPerson}/head • ★ {r.rating}</td>
+                  <td className="p-3 text-right space-x-2 whitespace-nowrap">
+                    <button onClick={() => handleOpenEditDrawer(r)} className="bg-salt hover:bg-stone/20 text-ink border border-stone/40 px-2.5 py-1 cursor-pointer">Edit</button>
+                    <button onClick={() => setDeletingId(r.id)} className="bg-salt hover:bg-madder/10 text-madder border border-stone/40 px-2.5 py-1 cursor-pointer">Delete</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-stone/20">
-                {restaurants.map(r => (
-                  <tr key={r.id} className="hover:bg-salt/50 transition-colors">
-                    <td className="p-3 font-bold text-ink text-sm">{r.name}</td>
-                    <td className="p-3 text-charcoal">{r.city}</td>
-                    <td className="p-3 text-stone">{r.location}</td>
-                    <td className="p-3 text-stone">{r.cuisine}</td>
-                    <td className="p-3 font-bold text-ink">₹{r.avgCostPerPerson.toLocaleString()}</td>
-                    <td className="p-3 text-gold font-bold">{r.rating} ★</td>
-                    <td className="p-3 text-right space-x-2">
-                      <button
-                        onClick={() => handleOpenEditDrawer(r)}
-                        title="Edit Restaurant"
-                        aria-label="Edit Restaurant"
-                        className="p-1.5 bg-salt hover:bg-stone/30 border border-stone/40 text-charcoal cursor-pointer"
-                      >
-                        <Edit2 className="w-3.5 h-3.5 text-ink" />
-                      </button>
-                      <button
-                        onClick={() => setDeletingId(r.id)}
-                        title="Delete Restaurant"
-                        aria-label="Delete Restaurant"
-                        className="p-1.5 bg-madder/10 hover:bg-madder text-madder hover:text-salt border border-madder cursor-pointer"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        {/* DELETE CONFIRM BAR */}
-        {deletingId && (
-          <div className="p-4 bg-madder text-salt border-2 border-gold flex items-center justify-between gap-4 font-mono text-xs animate-fadeIn shadow-lg">
-            <div className="flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-gold shrink-0" />
-              <span className="font-bold">Are you sure you want to delete this record?</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => handleConfirmDelete(deletingId)}
-                aria-label="Confirm delete"
-                className="bg-salt text-madder hover:bg-salt/90 font-bold px-3 py-1.5 uppercase cursor-pointer"
-              >
-                Confirm Delete
-              </button>
-              <button
-                onClick={() => setDeletingId(null)}
-                aria-label="Cancel delete"
-                className="bg-ink text-salt hover:bg-ink/90 border border-salt font-bold px-3 py-1.5 uppercase cursor-pointer"
-              >
-                Cancel
-              </button>
+        {/* DRAWER MODAL */}
+        {isDrawerOpen && editingItem && (
+          <div className="fixed inset-0 bg-ink/70 backdrop-blur-xs z-50 flex justify-end animate-fadeIn">
+            <div className="w-full max-w-md bg-salt h-full border-l-2 border-gold p-6 space-y-6 overflow-y-auto shadow-2xl flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-stone/30 pb-3">
+                  <h3 className="font-display text-lg text-ink font-bold uppercase">
+                    {editingItem.id ? 'Edit Record' : 'Add New Record'} ({editingItem.type})
+                  </h3>
+                  <button onClick={() => setIsDrawerOpen(false)} className="text-stone hover:text-charcoal cursor-pointer">
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {formError && (
+                  <div className="p-3 bg-madder/10 border-l-4 border-madder text-madder text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{formError}</span>
+                  </div>
+                )}
+
+                <div className="space-y-3">
+                  <div>
+                    <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Record Title / Name *</label>
+                    <input
+                      type="text"
+                      value={editingItem.data.name || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, name: e.target.value } })}
+                      className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold"
+                      required
+                    />
+                  </div>
+
+                  {editingItem.type === 'destinations' && (
+                    <>
+                      <div>
+                        <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">District</label>
+                        <input
+                          type="text"
+                          value={editingItem.data.district || ''}
+                          onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, district: e.target.value } })}
+                          className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Category</label>
+                        <select
+                          value={editingItem.data.category || CATEGORY_TAXONOMY[0]}
+                          onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, category: e.target.value } })}
+                          className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold"
+                        >
+                          {CATEGORY_TAXONOMY.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+                        </select>
+                      </div>
+                    </>
+                  )}
+
+                  {editingItem.type === 'hotels' && (
+                    <>
+                      <div>
+                        <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Stay Type Taxonomy</label>
+                        <select
+                          value={editingItem.data.stayType || STAY_TYPE_TAXONOMY[0]}
+                          onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, stayType: e.target.value } })}
+                          className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold"
+                        >
+                          {STAY_TYPE_TAXONOMY.map(st => <option key={st} value={st}>{st}</option>)}
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Price Per Night (₹)</label>
+                        <input
+                          type="number"
+                          value={editingItem.data.pricePerNight || 0}
+                          onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, pricePerNight: Number(e.target.value) } })}
+                          className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold"
+                        />
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-stone/30 flex items-center justify-end gap-2">
+                <button onClick={() => setIsDrawerOpen(false)} className="px-4 py-2 bg-salt border border-stone/40 text-charcoal hover:bg-stone/20 cursor-pointer">Cancel</button>
+                <button onClick={handleSaveDrawerItem} className="px-4 py-2 bg-gold text-ink font-bold border border-ink hover:bg-gold/90 cursor-pointer">Save Record</button>
+              </div>
             </div>
           </div>
         )}
 
-        {/* DRAWER / SIDE MODAL FOR ADD / EDIT */}
-        {isDrawerOpen && editingItem && (
-          <div className="fixed inset-0 z-50 bg-ink/80 backdrop-blur-xs flex justify-end">
-            <div className="bg-salt border-l-2 border-gold max-w-md w-full h-full p-6 space-y-6 overflow-y-auto">
-              
-              <div className="flex items-center justify-between border-b border-stone/30 pb-3">
-                <h3 className="font-display text-xl font-bold text-ink">
-                  {editingItem.id ? 'Edit' : 'Add New'} {editingItem.type.slice(0, -1)}
-                </h3>
-                <button
-                  onClick={() => setIsDrawerOpen(false)}
-                  className="p-1 text-stone hover:text-ink cursor-pointer"
-                  aria-label="Close drawer"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+        {/* DELETE CONFIRMATION DIALOG */}
+        {deletingId && (
+          <div className="fixed inset-0 bg-ink/70 backdrop-blur-xs z-50 flex items-center justify-center p-4 animate-fadeIn">
+            <div className="bg-salt border-2 border-madder p-6 max-w-sm w-full space-y-4 shadow-2xl">
+              <h4 className="font-display text-lg text-madder font-bold flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-madder" />
+                <span>Confirm Record Deletion</span>
+              </h4>
+              <p className="text-stone leading-relaxed">
+                Are you sure you want to delete this entry from the dataset? This action cannot be undone.
+              </p>
+              <div className="flex items-center justify-end gap-2 pt-2">
+                <button onClick={() => setDeletingId(null)} className="px-3 py-1.5 bg-salt border border-stone/40 text-charcoal cursor-pointer">Cancel</button>
+                <button onClick={() => handleConfirmDelete(deletingId)} className="px-3 py-1.5 bg-madder text-salt font-bold border border-madder cursor-pointer">Delete Record</button>
               </div>
-
-              {formError && (
-                <div className="p-3 bg-madder/10 border border-madder text-madder font-mono text-xs font-bold flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0" />
-                  <span>{formError}</span>
-                </div>
-              )}
-
-              <div className="space-y-4 text-xs font-mono">
-                <div>
-                  <label htmlFor="admin-drawer-name" className="block text-stone uppercase mb-1">Name</label>
-                  <input
-                    id="admin-drawer-name"
-                    type="text"
-                    value={editingItem.data.name || ''}
-                    onChange={(e) => {
-                      setFormError(null);
-                      setEditingItem({ ...editingItem, data: { ...editingItem.data, name: e.target.value } });
-                    }}
-                    className="w-full bg-white border border-stone/40 p-2 text-ink font-bold outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                  />
-                </div>
-
-                {/* ATTRACTION SPECIFIC REAL FIELDS */}
-                {editingItem.type === 'attractions' && (
-                  <>
-                    <div>
-                      <label htmlFor="admin-drawer-category" className="block text-stone uppercase mb-1">Category</label>
-                      <input
-                        id="admin-drawer-category"
-                        type="text"
-                        value={editingItem.data.category || ''}
-                        onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, category: e.target.value } })}
-                        className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="admin-drawer-visit-duration" className="block text-stone uppercase mb-1">Visit Duration (Hours)</label>
-                      <input
-                        id="admin-drawer-visit-duration"
-                        type="number"
-                        step="0.5"
-                        value={editingItem.data.visitDurationHours || 1.5}
-                        onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, visitDurationHours: Number(e.target.value) } })}
-                        className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div>
-                        <label htmlFor="admin-drawer-lat" className="block text-stone uppercase mb-1">Latitude</label>
-                        <input
-                          id="admin-drawer-lat"
-                          type="number"
-                          step="0.0001"
-                          value={editingItem.data.lat || 20.888}
-                          onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, lat: Number(e.target.value) } })}
-                          className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="admin-drawer-lng" className="block text-stone uppercase mb-1">Longitude</label>
-                        <input
-                          id="admin-drawer-lng"
-                          type="number"
-                          step="0.0001"
-                          value={editingItem.data.lng || 70.4012}
-                          onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, lng: Number(e.target.value) } })}
-                          className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="admin-drawer-entry-fee" className="block text-stone uppercase mb-1">Entry Fee</label>
-                      <input
-                        id="admin-drawer-entry-fee"
-                        type="text"
-                        value={editingItem.data.entryFee || 'Free'}
-                        onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, entryFee: e.target.value } })}
-                        className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                      />
-                    </div>
-                  </>
-                )}
-
-                {/* RESTAURANT SPECIFIC FIELDS */}
-                {editingItem.type === 'restaurants' && (
-                  <>
-                    <div>
-                      <label htmlFor="admin-drawer-city" className="block text-stone uppercase mb-1">City</label>
-                      <input
-                        id="admin-drawer-city"
-                        type="text"
-                        value={editingItem.data.city || ''}
-                        onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, city: e.target.value } })}
-                        className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="admin-drawer-location" className="block text-stone uppercase mb-1">Location</label>
-                      <input
-                        id="admin-drawer-location"
-                        type="text"
-                        value={editingItem.data.location || ''}
-                        onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, location: e.target.value } })}
-                        className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="admin-drawer-avg-cost" className="block text-stone uppercase mb-1">Avg Cost / Person (₹)</label>
-                      <input
-                        id="admin-drawer-avg-cost"
-                        type="number"
-                        value={editingItem.data.avgCostPerPerson || 250}
-                        onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, avgCostPerPerson: Number(e.target.value) } })}
-                        className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                      />
-                    </div>
-                  </>
-                )}
-
-                <div>
-                  <label htmlFor="admin-drawer-rating" className="block text-stone uppercase mb-1">Rating</label>
-                  <input
-                    id="admin-drawer-rating"
-                    type="number"
-                    step="0.1"
-                    min="1"
-                    max="5"
-                    value={editingItem.data.rating || 4.5}
-                    onChange={(e) => setEditingItem({ ...editingItem, data: { ...editingItem.data, rating: Number(e.target.value) } })}
-                    className="w-full bg-white border border-stone/40 p-2 text-ink outline-none focus:border-gold focus:ring-1 focus:ring-gold"
-                  />
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-stone/30 flex justify-end gap-2">
-                <button
-                  onClick={() => setIsDrawerOpen(false)}
-                  className="bg-stone/20 text-charcoal px-4 py-2 font-mono uppercase cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleSaveDrawerItem}
-                  className="bg-gold text-ink font-bold px-5 py-2 font-mono uppercase cursor-pointer"
-                >
-                  Save Record
-                </button>
-              </div>
-
             </div>
           </div>
         )}

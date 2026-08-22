@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Destination, GUJARAT_DESTINATIONS, getCityById } from '../data/destinations';
-import { X, Calendar, Check, ArrowRight, ArrowLeft, Plus, Minus, MapPin, Hotel, Clock, Compass, ShieldCheck } from 'lucide-react';
+import { X, Calendar, Check, ArrowRight, ArrowLeft, Plus, Minus, Hotel, Clock, Compass, SlidersHorizontal, Accessibility } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { StrategyComparisonModal } from './StrategyComparisonModal';
+import { OptimizationStrategy, PlannerConfigPayload } from '../utils/itineraryPlanner';
 
-export interface PlannerConfigPayload {
-  cityId: string;
-  tripDays: number;
-  budget: number;
-  startingHotelId: string;
-  startTime: string;
-}
+export type { PlannerConfigPayload };
 
 interface PlannerModalProps {
   isOpen: boolean;
@@ -29,6 +26,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   onGenerateItinerary,
 }) => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
+  const { language, t, getName } = useLanguage();
 
   // Step 1: Selected single city ID
   const [selectedCityId, setSelectedCityId] = useState<string>(() => {
@@ -40,6 +38,10 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   const [budget, setBudget] = useState<number>(8500);
   const [startingHotelId, setStartingHotelId] = useState<string>('');
   const [startTime, setStartTime] = useState<string>('08:00 AM');
+  const [wheelchairOnly, setWheelchairOnly] = useState<boolean>(false);
+
+  // Step 3: Comparison Modal trigger state
+  const [showComparisonModal, setShowComparisonModal] = useState<boolean>(false);
 
   // Active City
   const activeCity = getCityById(selectedCityId) || GUJARAT_DESTINATIONS[0];
@@ -88,6 +90,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
       budget,
       startingHotelId: startingHotelId || (activeCity.hotels[0]?.id || ''),
       startTime: startTime || '08:00 AM',
+      wheelchairAccessibleOnly: wheelchairOnly,
     });
     onClose();
   };
@@ -108,7 +111,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <span>Stepwell Single-City Day Planner</span>
             </div>
             <h2 className="font-display text-2xl sm:text-3xl text-ink font-semibold">
-              Plan Your {activeCity.name} Experience
+              {language === 'gu' ? `${getName(activeCity)} પ્રવાસ આયોજન` : language === 'hi' ? `${getName(activeCity)} यात्रा योजना` : `Plan Your ${getName(activeCity)} Experience`}
             </h2>
           </div>
           <button
@@ -141,7 +144,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             }`}
           >
             <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider">
-              <span>01. Confirm City</span>
+              <span>01. {language === 'gu' ? 'સ્થળ પસંદગી' : language === 'hi' ? 'शहर चयन' : 'Confirm City'}</span>
               {step > 1 ? (
                 <div className="w-4 h-4 rounded-full bg-ink text-gold flex items-center justify-center">
                   <Check className="w-3 h-3" />
@@ -150,7 +153,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 <span className="text-[10px] opacity-80">Terrace 1</span>
               )}
             </div>
-            <div className="font-display text-sm mt-1 truncate">{activeCity.name}</div>
+            <div className="font-display text-sm mt-1 truncate">{getName(activeCity)}</div>
           </button>
 
           {/* STEP 2 BLOCK */}
@@ -169,7 +172,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             }`}
           >
             <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider">
-              <span>02. Logistics</span>
+              <span>02. {language === 'gu' ? 'લોજિસ્ટિક્સ' : language === 'hi' ? 'लॉजिस्टिक्स' : 'Logistics'}</span>
               {step > 2 ? (
                 <div className="w-4 h-4 rounded-full bg-ink text-gold flex items-center justify-center">
                   <Check className="w-3 h-3" />
@@ -178,7 +181,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 <span className="text-[10px] opacity-80">Terrace 2</span>
               )}
             </div>
-            <div className="font-display text-sm mt-1 truncate">Hotel & Schedule</div>
+            <div className="font-display text-sm mt-1 truncate">{language === 'gu' ? 'હોટેલ અને સમય' : language === 'hi' ? 'होटल और समय' : 'Hotel & Schedule'}</div>
           </button>
 
           {/* STEP 3 BLOCK */}
@@ -195,10 +198,10 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             }`}
           >
             <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider">
-              <span>03. Review</span>
+              <span>03. {language === 'gu' ? 'સમીક્ષા' : language === 'hi' ? 'समीक्षा' : 'Review'}</span>
               <span className="text-[10px] opacity-80">Terrace 3</span>
             </div>
-            <div className="font-display text-sm mt-1 truncate">Generate Itinerary</div>
+            <div className="font-display text-sm mt-1 truncate">{language === 'gu' ? 'રૂટ જનરેટ કરો' : language === 'hi' ? 'रूट जनरेट करें' : 'Generate Itinerary'}</div>
           </button>
 
         </div>
@@ -229,10 +232,10 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20 pb-3">
               <div>
                 <h3 className="font-display text-xl text-ink font-bold">
-                  Select Target Heritage City
+                  {language === 'gu' ? 'લક્ષ્ય હેરિટેજ શહેર પસંદ કરો' : language === 'hi' ? 'लक्ष्य हेरिटेज शहर चुनें' : 'Select Target Heritage City'}
                 </h3>
                 <p className="text-xs text-stone font-body">
-                  Pick one city for a dedicated intra-city day-by-day circular itinerary.
+                  {language === 'gu' ? 'એક શહેર પસંદ કરો જેથી દૈનિક પ્રવાસ યોજના તૈયાર કરી શકાય.' : language === 'hi' ? 'एक शहर चुनें ताकि दैनिक यात्रा योजना तैयार की जा सके।' : 'Pick one city for a dedicated intra-city day-by-day circular itinerary.'}
                 </p>
               </div>
             </div>
@@ -252,7 +255,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                         : 'bg-salt hover:bg-stone/20 text-charcoal border-stone/30'
                     }`}
                   >
-                    <div className="font-display text-xs truncate">{c.name}</div>
+                    <div className="font-display text-xs truncate">{getName(c)}</div>
                     <div className={`text-[10px] font-mono ${isSelected ? 'text-gold' : 'text-stone'}`}>
                       {c.district}
                     </div>
@@ -265,7 +268,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="bg-ink text-salt border-2 border-gold p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
               <img
                 src={activeCity.imageUrl}
-                alt={activeCity.name}
+                alt={getName(activeCity)}
                 className="w-full sm:w-40 h-28 object-cover border border-gold shrink-0"
               />
               <div className="space-y-2 text-left w-full">
@@ -277,14 +280,14 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     {activeCity.rating}
                   </span>
                 </div>
-                <h4 className="font-display text-xl font-bold text-salt">{activeCity.name}</h4>
+                <h4 className="font-display text-xl font-bold text-salt">{getName(activeCity)}</h4>
                 <p className="font-mono text-xs text-stone line-clamp-2">
                   {activeCity.description}
                 </p>
                 <div className="flex items-center gap-4 text-xs font-mono text-gold pt-1 border-t border-stone/30">
-                  <span> {activeCity.attractions.length} Attractions</span>
-                  <span> {activeCity.hotels.length} Hotel Options</span>
-                  <span> {activeCity.restaurants.length} Restaurants</span>
+                  <span>{activeCity.attractions.length} {language === 'gu' ? 'આકર્ષણો' : language === 'hi' ? 'आकर्षण' : 'Attractions'}</span>
+                  <span>{activeCity.hotels.length} {language === 'gu' ? 'હોટેલ્સ' : language === 'hi' ? 'होटल' : 'Hotel Options'}</span>
+                  <span>{activeCity.restaurants.length} {language === 'gu' ? 'રેસ્ટોરન્ટ્સ' : language === 'hi' ? 'रेस्तरां' : 'Restaurants'}</span>
                 </div>
               </div>
             </div>
@@ -295,19 +298,19 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 onClick={() => setStep(2)}
                 className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-gold"
               >
-                <span>Continue to Logistics</span>
+                <span>{language === 'gu' ? 'લોજિસ્ટિક્સ તરફ આગળ વધો' : language === 'hi' ? 'लॉजिस्टिक्स की ओर बढ़ें' : 'Continue to Logistics'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
         )}
 
-        {/* STEP 2: LOGISTICS (DAYS, BUDGET, STARTING HOTEL, START TIME) */}
+        {/* STEP 2: LOGISTICS */}
         {step === 2 && (
           <div className="space-y-6 animate-fadeIn">
             <div>
               <h3 className="font-display text-xl text-ink font-bold border-b border-stone/20 pb-2">
-                Trip Logistics for {activeCity.name}
+                {language === 'gu' ? `${getName(activeCity)} માટે લોજિસ્ટિક્સ` : language === 'hi' ? `${getName(activeCity)} के लिए लॉजिस्टिक्स` : `Trip Logistics for ${getName(activeCity)}`}
               </h3>
               <p className="text-xs text-stone font-body mt-1">
                 Configure duration, budget, starting accommodation, and daily morning start time.
@@ -320,7 +323,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <div className="bg-white border border-stone/40 p-4 space-y-3">
                 <label htmlFor="planner-trip-days" className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-gold" />
-                  1. Trip Duration
+                  1. {t('planner.days', 'Trip Duration')}
                 </label>
                 <div className="flex items-center justify-between border border-stone/30 bg-salt p-2">
                   <button
@@ -333,7 +336,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   </button>
                   <div className="text-center">
                     <span id="planner-trip-days" className="font-display text-xl font-bold text-ink">{tripDays}</span>
-                    <span className="font-mono text-xs text-stone block">Days</span>
+                    <span className="font-mono text-xs text-stone block">{language === 'gu' ? 'દિવસો' : language === 'hi' ? 'दिन' : 'Days'}</span>
                   </div>
                   <button
                     type="button"
@@ -349,7 +352,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               {/* Budget Limit Input */}
               <div className="bg-white border border-stone/40 p-4 space-y-3">
                 <label htmlFor="planner-budget-input" className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center justify-between">
-                  <span>2. Total Budget (₹)</span>
+                  <span>2. {t('planner.budget', 'Total Budget (₹)')}</span>
                   <span className="text-gold font-bold text-sm">₹{budget.toLocaleString('en-IN')}</span>
                 </label>
                 <input
@@ -372,7 +375,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <div className="bg-white border border-stone/40 p-4 space-y-3">
                 <label htmlFor="planner-starting-hotel" className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center gap-2">
                   <Hotel className="w-4 h-4 text-gold" />
-                  3. Starting Hotel / Stay
+                  3. {t('planner.startingHotel', 'Starting Hotel / Stay')}
                 </label>
                 <select
                   id="planner-starting-hotel"
@@ -391,17 +394,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </select>
                 {startingHotelObj && (
                   <div className="font-mono text-[11px] text-stone space-y-1">
-                    <p> {startingHotelObj.location} • {startingHotelObj.stayType}</p>
-                    {preferredHotels?.[selectedCityId] === startingHotelObj.id ? (
-                      <p className="text-emerald-800 font-bold flex items-center gap-1">
-                        <Check className="w-3.5 h-3.5 text-emerald-800" />
-                        <span>Loaded as your preferred stay for {activeCity.name}.</span>
-                      </p>
-                    ) : (
-                      <p className="text-stone italic text-[10px]">
-                        Changing selection sets your new preferred stay for {activeCity.name}.
-                      </p>
-                    )}
+                    <p>{startingHotelObj.location} • {startingHotelObj.stayType}</p>
                   </div>
                 )}
               </div>
@@ -410,7 +403,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <div className="bg-white border border-stone/40 p-4 space-y-3">
                 <label htmlFor="planner-start-time" className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center gap-2">
                   <Clock className="w-4 h-4 text-gold" />
-                  4. Daily Start Time
+                  4. {t('planner.dailyStartTime', 'Daily Start Time')}
                 </label>
                 <select
                   id="planner-start-time"
@@ -424,9 +417,27 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <option value="10:00 AM">10:00 AM (Relaxed)</option>
                   <option value="11:00 AM">11:00 AM (Late Start)</option>
                 </select>
-                <p className="font-mono text-[11px] text-stone">
-                  Daily circular route will start & finish at your starting hotel.
-                </p>
+              </div>
+
+              {/* 5. Accessibility Constraint Toggle */}
+              <div className="bg-emerald-50/50 border border-emerald-300 p-4 space-y-2 col-span-1 md:col-span-2">
+                <label className="flex items-start sm:items-center justify-between gap-3 cursor-pointer">
+                  <div className="space-y-0.5">
+                    <span className="font-mono text-xs font-bold text-emerald-950 uppercase tracking-wider flex items-center gap-2">
+                      <Accessibility className="w-4 h-4 text-emerald-800" />
+                      5. Accessibility Constraint: Wheelchair-Only Route
+                    </span>
+                    <p className="text-xs text-stone font-body">
+                      Filter the Greedy routing algorithm to visit only wheelchair-accessible monuments (ramps, wide plazas, flat ground).
+                    </p>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={wheelchairOnly}
+                    onChange={(e) => setWheelchairOnly(e.target.checked)}
+                    className="w-5 h-5 accent-emerald-800 shrink-0 cursor-pointer mt-1 sm:mt-0"
+                  />
+                </label>
               </div>
 
             </div>
@@ -438,14 +449,14 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back</span>
+                <span>{language === 'gu' ? 'પાછળ' : language === 'hi' ? 'पीछे' : 'Back'}</span>
               </button>
 
               <button
                 onClick={() => setStep(3)}
                 className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-gold"
               >
-                <span>Review Plan</span>
+                <span>{language === 'gu' ? 'યોજના સમીક્ષા કરો' : language === 'hi' ? 'योजना समीक्षा करें' : 'Review Plan'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -457,11 +468,8 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
           <div className="space-y-6 animate-fadeIn">
             <div>
               <h3 className="font-display text-xl text-ink font-bold border-b border-stone/20 pb-2">
-                Review Circular Route Settings
+                {language === 'gu' ? 'ગોળાકાર રૂટ સેટિંગ્સની સમીક્ષા કરો' : language === 'hi' ? 'वृत्ताकार मार्ग सेटिंग्स की समीक्षा करें' : 'Review Circular Route Settings'}
               </h3>
-              <p className="text-xs text-stone font-body mt-1">
-                Your day-by-day plan will loop starting & ending at your chosen hotel, automatically scheduling meal breaks.
-              </p>
             </div>
 
             {/* Summary Card */}
@@ -471,10 +479,10 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <span className="font-mono text-[10px] text-gold uppercase tracking-widest block">
                     Target Heritage City
                   </span>
-                  <h4 className="font-display text-2xl font-bold text-salt">{activeCity.name}</h4>
+                  <h4 className="font-display text-2xl font-bold text-salt">{getName(activeCity)}</h4>
                 </div>
                 <span className="bg-gold text-ink font-mono text-xs font-bold px-3 py-1 uppercase">
-                  {tripDays} Days
+                  {tripDays} {language === 'gu' ? 'દિવસો' : language === 'hi' ? 'दिन' : 'Days'}
                 </span>
               </div>
 
@@ -492,38 +500,71 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <span className="font-bold text-gold block">₹{budget.toLocaleString('en-IN')}</span>
                 </div>
               </div>
-
-              <div className="p-3 bg-gold/10 border border-gold/40 font-mono text-xs text-stone space-y-1">
-                <p className="text-gold font-bold"> Circular Intra-City Routing Strategy:</p>
-                <p className="text-[11px]">
-                  Daily sequence: <strong>{startingHotelObj?.name}</strong> → City Attractions → Automatic Lunch/Dinner Stops → <strong>{startingHotelObj?.name}</strong>.
-                </p>
-              </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-4 border-t border-stone/30 flex justify-between items-center">
+            <div className="pt-4 border-t border-stone/30 flex flex-col sm:flex-row gap-3 justify-between items-stretch sm:items-center">
               <button
+                type="button"
                 onClick={() => setStep(2)}
-                className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer"
+                className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Adjust Logistics</span>
+                <span>{language === 'gu' ? 'લોજિસ્ટિક્સ બદલો' : language === 'hi' ? 'लॉजिस्टिक्स बदलें' : 'Adjust Logistics'}</span>
               </button>
 
-              <button
-                onClick={handleGenerate}
-                className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-8 py-3.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-xl transition-all"
-              >
-                <Compass className="w-5 h-5 text-ink hover:text-gold" />
-                <span>Generate Day-by-Day Circular Plan</span>
-              </button>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowComparisonModal(true)}
+                  className="bg-salt hover:bg-ink hover:text-salt text-ink border-2 border-gold font-mono text-xs font-bold px-5 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md transition-all"
+                >
+                  <SlidersHorizontal className="w-4 h-4 text-gold" />
+                  <span>Compare optimization strategies</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleGenerate}
+                  className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl transition-all"
+                >
+                  <Compass className="w-4 h-4 text-ink hover:text-gold" />
+                  <span>{t('planner.generateItinerary', 'Generate Circular Plan')}</span>
+                </button>
+              </div>
             </div>
           </div>
         )}
 
         </div>
       </div>
+
+      {/* Strategy Comparison Modal Overlay */}
+      {showComparisonModal && (
+        <StrategyComparisonModal
+          isOpen={showComparisonModal}
+          onClose={() => setShowComparisonModal(false)}
+          config={{
+            cityId: activeCity.id,
+            tripDays,
+            budget,
+            startingHotelId: startingHotelId || (activeCity.hotels[0]?.id || ''),
+            startTime: startTime || '08:00 AM',
+          }}
+          onSelectStrategy={(strategy: OptimizationStrategy) => {
+            setShowComparisonModal(false);
+            onGenerateItinerary({
+              cityId: activeCity.id,
+              tripDays,
+              budget,
+              startingHotelId: startingHotelId || (activeCity.hotels[0]?.id || ''),
+              startTime: startTime || '08:00 AM',
+              strategy,
+            });
+            onClose();
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Compass, Route, ArrowLeft, AlertCircle, CheckCircle2, Lock, Mail, User, Eye, EyeOff } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface AuthViewProps {
   initialMode?: 'login' | 'register';
@@ -12,6 +13,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
   onCloseOrGuest,
   onAuthSuccess,
 }) => {
+  const { t } = useLanguage();
   const [mode, setMode] = useState<'login' | 'register'>(initialMode);
 
   // Form Fields
@@ -69,7 +71,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
       return;
     }
 
-    // Check mock credentials or simulate
     if (email === 'demo@heritage.in' && password !== 'gujarat123') {
       setPasswordError("That password doesn't match our records. Try again.");
       return;
@@ -137,20 +138,17 @@ export const AuthView: React.FC<AuthViewProps> = ({
     <div id="account" className="min-h-[85vh] flex items-center justify-center p-4 sm:p-6 bg-salt my-6">
       <div className="w-full max-w-5xl bg-salt border-2 border-stone/40 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 relative">
         
-        {/* LEFT COLUMN: Ink Indigo Banner with Stepped-Chevron Motif */}
+        {/* LEFT COLUMN: Ink Indigo Banner */}
         <div className="md:col-span-5 bg-ink text-salt p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden min-h-[260px] md:min-h-[580px]">
-          
-          {/* Stepped Chevron Motif as large background watermark */}
           <div
             className="absolute inset-0 bg-stepwell-pattern opacity-25 pointer-events-none"
             aria-hidden="true"
           />
 
-          {/* Top Logo / Navigation Back Link */}
           <div className="relative z-10 space-y-4">
             <button
               onClick={onCloseOrGuest}
-              className="inline-flex items-center gap-2 text-xs font-mono text-stone hover:text-gold transition-colors py-1 px-2 border border-stone/30 bg-ink/80"
+              className="inline-flex items-center gap-2 text-xs font-mono text-stone hover:text-gold transition-colors py-1 px-2 border border-stone/30 bg-ink/80 cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-gold" />
               <span>Back to Destinations</span>
@@ -166,7 +164,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
             </div>
           </div>
 
-          {/* Reassuring Copy in Fraunces */}
           <div className="relative z-10 my-8 space-y-3">
             <span className="font-mono text-xs text-gold uppercase tracking-widest block">
               {mode === 'login' ? 'Gujarat Route Ledger Access' : 'Join The Heritage Network'}
@@ -181,7 +178,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
             </p>
           </div>
 
-          {/* Bottom Accent */}
           <div className="relative z-10 pt-4 border-t border-stone/30 flex items-center justify-between text-[11px] font-mono text-stone">
             <span>Stepwell System v2.4</span>
             <span className="text-gold">Encrypted & Private</span>
@@ -193,7 +189,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
         <div className="md:col-span-7 bg-salt text-charcoal p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
           
           <div>
-            {/* Mode Switcher Bar */}
             <div className="flex items-center justify-between border-b border-stone/30 pb-4 mb-8">
               <div className="flex items-center gap-6">
                 <button
@@ -204,13 +199,13 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     setPasswordError('');
                     setFormGeneralError('');
                   }}
-                  className={`font-display text-xl sm:text-2xl transition-colors ${
+                  className={`font-display text-xl sm:text-2xl transition-colors cursor-pointer ${
                     mode === 'login'
                       ? 'text-ink font-semibold border-b-2 border-gold pb-1 -mb-[18px]'
                       : 'text-stone hover:text-charcoal'
                   }`}
                 >
-                  Log In
+                  {t('nav.login', 'Log In')}
                 </button>
 
                 <button
@@ -221,27 +216,25 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     setPasswordError('');
                     setFormGeneralError('');
                   }}
-                  className={`font-display text-xl sm:text-2xl transition-colors ${
+                  className={`font-display text-xl sm:text-2xl transition-colors cursor-pointer ${
                     mode === 'register'
                       ? 'text-ink font-semibold border-b-2 border-gold pb-1 -mb-[18px]'
                       : 'text-stone hover:text-charcoal'
                   }`}
                 >
-                  Register
+                  {t('auth.register', 'Register')}
                 </button>
               </div>
 
-              {/* Guest Link */}
               <button
                 type="button"
                 onClick={onCloseOrGuest}
-                className="text-xs font-mono text-stone hover:text-ink underline transition-colors"
+                className="text-xs font-mono text-stone hover:text-ink underline transition-colors cursor-pointer"
               >
-                Continue as guest to browse
+                Continue as guest
               </button>
             </div>
 
-            {/* Success Message Banner */}
             {successMsg && (
               <div className="mb-6 p-4 bg-ink text-salt border-2 border-gold font-mono text-xs flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
@@ -249,7 +242,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
               </div>
             )}
 
-            {/* General Form Error Banner */}
             {formGeneralError && (
               <div className="mb-6 p-4 bg-madder/10 border-l-4 border-madder text-madder font-mono text-xs flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 shrink-0" />
@@ -257,14 +249,11 @@ export const AuthView: React.FC<AuthViewProps> = ({
               </div>
             )}
 
-            {/* ---------------- LOGIN FORM ---------------- */}
             {mode === 'login' ? (
               <form onSubmit={handleLoginSubmit} className="space-y-6" noValidate>
-                
-                {/* Email Field */}
                 <div className="space-y-1.5">
                   <label htmlFor="login-email" className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
-                    Email Address
+                    {t('auth.email', 'Email Address')}
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone">
@@ -293,16 +282,15 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   )}
                 </div>
 
-                {/* Password Field */}
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
                     <label htmlFor="login-password" className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
-                      Password
+                      {t('auth.password', 'Password')}
                     </label>
                     <button
                       type="button"
                       onClick={() => alert("Password reset link sent to registered email.")}
-                      className="text-xs font-mono text-stone hover:text-gold transition-colors"
+                      className="text-xs font-mono text-stone hover:text-gold transition-colors cursor-pointer"
                     >
                       Forgot password?
                     </button>
@@ -328,7 +316,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone hover:text-charcoal"
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone hover:text-charcoal cursor-pointer"
                       aria-label={showPassword ? 'Hide password' : 'Show password'}
                     >
                       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -342,15 +330,13 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   )}
                 </div>
 
-                {/* Submit Button (Madder Red, Full Width) */}
                 <button
                   type="submit"
                   className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer"
                 >
-                  Log in
+                  {t('nav.login', 'Log In')}
                 </button>
 
-                {/* Switch to Register footer line */}
                 <div className="text-center pt-2 text-xs font-body text-stone">
                   Need a new account?{' '}
                   <button
@@ -360,7 +346,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       setEmailError('');
                       setPasswordError('');
                     }}
-                    className="font-medium text-ink hover:text-gold underline"
+                    className="font-medium text-ink hover:text-gold underline cursor-pointer"
                   >
                     Register here
                   </button>
@@ -368,17 +354,12 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
               </form>
             ) : (
-              /* ---------------- REGISTER FORM ---------------- */
               <form onSubmit={handleRegisterSubmit} className="space-y-5" noValidate>
-                
-                {/* Role Selector: Two side-by-side selectable cards */}
                 <div className="space-y-2">
                   <label className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
                     Select Account Role:
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    
-                    {/* Tourist Card */}
                     <button
                       type="button"
                       onClick={() => setRole('tourist')}
@@ -397,7 +378,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       </p>
                     </button>
 
-                    {/* Tour Operator Card */}
                     <button
                       type="button"
                       onClick={() => setRole('operator')}
@@ -415,11 +395,9 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         List heritage stays, guided stepwell tours & manage bookings.
                       </p>
                     </button>
-
                   </div>
                 </div>
 
-                {/* Name Field */}
                 <div className="space-y-1">
                   <label htmlFor="reg-name" className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
                     Full Name
@@ -451,10 +429,9 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   )}
                 </div>
 
-                {/* Email Field */}
                 <div className="space-y-1">
                   <label htmlFor="reg-email" className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
-                    Email Address
+                    {t('auth.email', 'Email Address')}
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone">
@@ -483,13 +460,10 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   )}
                 </div>
 
-                {/* Password & Confirm Password Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  
-                  {/* Password */}
                   <div className="space-y-1">
                     <label htmlFor="reg-password" className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
-                      Password
+                      {t('auth.password', 'Password')}
                     </label>
                     <input
                       id="reg-password"
@@ -510,7 +484,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     )}
                   </div>
 
-                  {/* Confirm Password */}
                   <div className="space-y-1">
                     <label htmlFor="reg-confirm" className="block text-xs font-mono text-charcoal font-medium uppercase tracking-wider">
                       Confirm Password
@@ -533,18 +506,15 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       <p className="text-[11px] font-mono text-madder pt-0.5">{confirmPasswordError}</p>
                     )}
                   </div>
-
                 </div>
 
-                {/* Submit Button (Madder Red, Full Width) */}
                 <button
                   type="submit"
                   className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer"
                 >
-                  Create account
+                  {t('auth.register', 'Register')}
                 </button>
 
-                {/* Switch to Login footer line */}
                 <div className="text-center pt-1 text-xs font-body text-stone">
                   Already registered?{' '}
                   <button
@@ -554,7 +524,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       setEmailError('');
                       setPasswordError('');
                     }}
-                    className="font-medium text-ink hover:text-gold underline"
+                    className="font-medium text-ink hover:text-gold underline cursor-pointer"
                   >
                     Log in here
                   </button>
@@ -565,14 +535,13 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
           </div>
 
-          {/* Footer Guest link */}
           <div className="pt-6 mt-6 border-t border-stone/30 text-center">
             <button
               type="button"
               onClick={onCloseOrGuest}
-              className="text-xs font-mono text-stone hover:text-charcoal transition-colors"
+              className="text-xs font-mono text-stone hover:text-charcoal transition-colors cursor-pointer"
             >
-              Continue as guest to browse heritage directory →
+              Continue as guest →
             </button>
           </div>
 

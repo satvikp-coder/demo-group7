@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ValueProps } from './components/ValueProps';
@@ -12,8 +14,14 @@ import { AdminDashboardView } from './components/AdminDashboardView';
 import { Footer } from './components/Footer';
 import { PlannerModal } from './components/PlannerModal';
 import { AuthView } from './components/AuthView';
+import { HomeTransitionOverlay } from './components/HomeTransitionOverlay';
+import { OfflineBanner } from './components/OfflineBanner';
+import { PwaInstallPrompt } from './components/PwaInstallPrompt';
+import { getLatestOfflineTrip } from './utils/offlineStorage';
+import { getSharedFromUrl, clearSharedUrl } from './utils/shareUrl';
 import { Destination, GUJARAT_DESTINATIONS } from './data/destinations';
 import { MapPin } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
@@ -22,10 +30,87 @@ export default function App() {
   
   // Active Generated Itinerary Config & View Mode
   const [activeItinerary, setActiveItinerary] = useState<ItineraryConfig | null>(null);
+  const [isReadOnlyItinerary, setIsReadOnlyItinerary] = useState<boolean>(false);
   const [showBudgetPlanner, setShowBudgetPlanner] = useState<boolean>(false);
   const [showHotels, setShowHotels] = useState<boolean>(false);
   const [showProfile, setShowProfile] = useState<boolean>(false);
   const [showAdminDashboard, setShowAdminDashboard] = useState<boolean>(false);
+
+  // Parse URL for shared read-only itinerary on mount
+  useEffect(() => {
+    const sharedData = getSharedFromUrl();
+    if (sharedData) {
+      setActiveItinerary(sharedData.config);
+      setIsReadOnlyItinerary(true);
+      setSelectedDestination(null);
+      setShowHotels(false);
+      setShowProfile(false);
+      setShowAdminDashboard(false);
+      setShowBudgetPlanner(false);
+    }
+  }, []);
+
+  // Offline & PWA Install State
+  const [isOffline, setIsOffline] = useState<boolean>(typeof navigator !== 'undefined' ? !navigator.onLine : false);
+  const [offlineCityName, setOfflineCityName] = useState<string>('');
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [showPwaPrompt, setShowPwaPrompt] = useState<boolean>(false);
+
+  // 1. Offline detection and auto-routing to cached itinerary
+  useEffect(() => {
+    const handleOnline = () => setIsOffline(false);
+    const handleOffline = () => {
+      setIsOffline(true);
+      const cached = getLatestOfflineTrip();
+      if (cached) {
+        setOfflineCityName(cached.cityName);
+        setActiveItinerary(cached.config);
+        setSelectedDestination(null);
+        setShowHotels(false);
+        setShowProfile(false);
+        setShowAdminDashboard(false);
+        setAuthMode(null);
+      }
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      handleOffline();
+    }
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  // 2. Capture native beforeinstallprompt PWA event
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  // 3. Surface PWA prompt ONCE non-intrusively AFTER user views a generated itinerary
+  useEffect(() => {
+    if (activeItinerary) {
+      const isDismissed = localStorage.getItem('heritage_pwa_prompt_dismissed_v1');
+      if (!isDismissed) {
+        const timer = setTimeout(() => {
+          setShowPwaPrompt(true);
+        }, 1200);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [activeItinerary]);
 
   // In-memory Trip Builder list state
   const [tripList, setTripList] = useState<Destination[]>([]);
@@ -148,8 +233,18 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-salt text-charcoal font-body flex flex-col selection:bg-gold selection:text-ink">
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="min-h-screen bg-salt text-charcoal font-body flex flex-col selection:bg-gold selection:text-ink">
       
+      {/* Persistent Offline Banner */}
+      {isOffline && (
+        <OfflineBanner
+          cityName={offlineCityName || activeItinerary?.cityId}
+          hasCachedItinerary={!!getLatestOfflineTrip()}
+        />
+      )}
+
       {/* 1. Nav bar */}
       <Navbar
         onOpenPlanner={() => {
@@ -170,220 +265,294 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-grow">
-        
-        {/* If a single Destination is selected, display the full Destination Details View */}
-        {selectedDestination ? (
-          <DestinationDetailView
-            destination={selectedDestination}
-            preferredHotels={preferredHotels}
-            onSelectPreferredHotel={handleSetPreferredHotel}
-            onBack={() => {
-              setSelectedDestination(null);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onAddToTrip={handleToggleTripItem}
-            isAddedToTrip={tripList.some(d => d.id === selectedDestination.id)}
-            onSelectNearbyDestination={handleSelectNearby}
-            onOpenPlannerWithSite={handleOpenPlannerWithSite}
-          />
-        ) : authMode ? (
-          /* If Auth Mode active, display full Auth View */
-          <AuthView
-            initialMode={authMode}
-            onCloseOrGuest={() => setAuthMode(null)}
-            onAuthSuccess={(user) => {
-              setCurrentUser(user);
-              setAuthMode(null);
-              setShowProfile(true);
-            }}
-          />
-        ) : showAdminDashboard ? (
-          /* Display Admin Dashboard View */
-          <AdminDashboardView
-            onBackToProfile={() => {
-              setShowAdminDashboard(false);
-              setShowProfile(true);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
-        ) : showProfile ? (
-          /* Display Profile & Dashboard View */
-          <ProfileDashboardView
-            currentUser={currentUser}
-            onOpenItinerary={(config) => {
-              setActiveItinerary(config);
-              setShowProfile(false);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onOpenExplore={() => {
-              setShowProfile(false);
-              handleNavigateSection('explore');
-            }}
-            onOpenPlanner={() => {
-              setShowProfile(false);
-              setPlannerOpen(true);
-            }}
-            onOpenAdminDashboard={() => {
-              setShowProfile(false);
-              setShowAdminDashboard(true);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onLogout={() => {
-              setCurrentUser(null);
-              setShowProfile(false);
-            }}
-          />
-        ) : showHotels ? (
-          /* Display Ranked Hotels Page */
-          <HotelsView
-            preferredHotels={preferredHotels}
-            onSelectPreferredHotel={handleSetPreferredHotel}
-            onSelectDestination={(dest) => {
-              setSelectedDestination(dest);
-              setShowHotels(false);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onOpenPlanner={() => {
-              setShowHotels(false);
-              setPlannerOpen(true);
-            }}
-          />
-        ) : showBudgetPlanner ? (
-          /* Display Budget Planner Page */
-          <BudgetPlannerView
-            config={activeItinerary}
-            onBackToItinerary={() => {
-              if (!activeItinerary) {
-                // If no active itinerary config yet, create default worked example config
-                setActiveItinerary({
-                  cityId: 'somnath',
-                  tripDays: 2,
-                  budget: 8500,
-                  startingHotelId: preferredHotels['somnath'] || 'premier-somnath',
-                  startTime: '08:00 AM'
-                });
-              }
-              setShowBudgetPlanner(false);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onBackToPlanner={() => {
-              setShowBudgetPlanner(false);
-              setPlannerOpen(true);
-            }}
-            onSelectDestination={(dest) => {
-              setSelectedDestination(dest);
-              setShowBudgetPlanner(false);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
-        ) : activeItinerary ? (
-          /* Display Generated Itinerary View */
-          <ItineraryView
-            config={activeItinerary}
-            preferredHotels={preferredHotels}
-            onSelectPreferredHotel={handleSetPreferredHotel}
-            onBackToPlanner={() => setPlannerOpen(true)}
-            onSelectDestination={(dest) => {
-              setSelectedDestination(dest);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onOpenBudgetPlanner={() => {
-              setShowBudgetPlanner(true);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
-        ) : (
-          /* Landing Page & Explore Views */
-          <>
-            {/* 2. Hero Section */}
-            <Hero
-              onStartPlanning={() => {
-                setPreselectedForPlanner(null);
-                setPlannerOpen(true);
-              }}
-              onExploreClick={() => handleNavigateSection('explore')}
-            />
+        <AnimatePresence mode="wait">
+          {/* If a single Destination is selected, display the full Destination Details View */}
+          {selectedDestination ? (
+            <motion.div
+              key="destination-detail"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <DestinationDetailView
+                destination={selectedDestination}
+                preferredHotels={preferredHotels}
+                onSelectPreferredHotel={handleSetPreferredHotel}
+                onBack={() => {
+                  setSelectedDestination(null);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onAddToTrip={handleToggleTripItem}
+                isAddedToTrip={tripList.some(d => d.id === selectedDestination.id)}
+                onSelectNearbyDestination={handleSelectNearby}
+                onOpenPlannerWithSite={handleOpenPlannerWithSite}
+              />
+            </motion.div>
+          ) : authMode ? (
+            /* If Auth Mode active, display full Auth View */
+            <motion.div
+              key="auth-view"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.3 }}
+            >
+              <AuthView
+                initialMode={authMode}
+                onCloseOrGuest={() => setAuthMode(null)}
+                onAuthSuccess={(user) => {
+                  setCurrentUser(user);
+                  setAuthMode(null);
+                  setShowProfile(true);
+                }}
+              />
+            </motion.div>
+          ) : showAdminDashboard ? (
+            /* Display Admin Dashboard View */
+            <motion.div
+              key="admin-dashboard"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+            >
+              <AdminDashboardView
+                onBackToProfile={() => {
+                  setShowAdminDashboard(false);
+                  setShowProfile(true);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            </motion.div>
+          ) : showProfile ? (
+            /* Display Profile & Dashboard View */
+            <motion.div
+              key="profile-view"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+            >
+              <ProfileDashboardView
+                currentUser={currentUser}
+                onOpenItinerary={(config) => {
+                  setActiveItinerary(config);
+                  setShowProfile(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onOpenExplore={() => {
+                  setShowProfile(false);
+                  handleNavigateSection('explore');
+                }}
+                onOpenPlanner={() => {
+                  setShowProfile(false);
+                  setPlannerOpen(true);
+                }}
+                onOpenAdminDashboard={() => {
+                  setShowProfile(false);
+                  setShowAdminDashboard(true);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onLogout={() => {
+                  setCurrentUser(null);
+                  setShowProfile(false);
+                }}
+              />
+            </motion.div>
+          ) : showHotels ? (
+            /* Display Ranked Hotels Page */
+            <motion.div
+              key="hotels-view"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+            >
+              <HotelsView
+                preferredHotels={preferredHotels}
+                onSelectPreferredHotel={handleSetPreferredHotel}
+                onSelectDestination={(dest) => {
+                  setSelectedDestination(dest);
+                  setShowHotels(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onOpenPlanner={() => {
+                  setShowHotels(false);
+                  setPlannerOpen(true);
+                }}
+              />
+            </motion.div>
+          ) : showBudgetPlanner ? (
+            /* Display Budget Planner Page */
+            <motion.div
+              key="budget-view"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+            >
+              <BudgetPlannerView
+                config={activeItinerary}
+                onBackToItinerary={() => {
+                  if (!activeItinerary) {
+                    // If no active itinerary config yet, create default worked example config
+                    setActiveItinerary({
+                      cityId: 'somnath',
+                      tripDays: 2,
+                      budget: 8500,
+                      startingHotelId: preferredHotels['somnath'] || 'premier-somnath',
+                      startTime: '08:00 AM'
+                    });
+                  }
+                  setShowBudgetPlanner(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onBackToPlanner={() => {
+                  setShowBudgetPlanner(false);
+                  setPlannerOpen(true);
+                }}
+                onSelectDestination={(dest) => {
+                  setSelectedDestination(dest);
+                  setShowBudgetPlanner(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            </motion.div>
+          ) : activeItinerary ? (
+            /* Display Generated Itinerary View */
+            <motion.div
+              key="itinerary-view"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+            >
+              <ItineraryView
+                config={activeItinerary}
+                preferredHotels={preferredHotels}
+                onSelectPreferredHotel={handleSetPreferredHotel}
+                onBackToPlanner={() => setPlannerOpen(true)}
+                onSelectDestination={(dest) => {
+                  setSelectedDestination(dest);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onOpenBudgetPlanner={() => {
+                  setShowBudgetPlanner(true);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                isReadOnly={isReadOnlyItinerary}
+                onPlanOwnTrip={() => {
+                  clearSharedUrl();
+                  setIsReadOnlyItinerary(false);
+                  setActiveItinerary(null);
+                  setSelectedDestination(null);
+                  setPlannerOpen(true);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            </motion.div>
+          ) : (
+            /* Landing Page & Explore Views (Home Screen) */
+            <motion.div
+              key="home-screen"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Home Screen Entrance Transition Overlay & Gold Sweep */}
+              <HomeTransitionOverlay />
 
-            {/* 3. "Why this exists" Section */}
-            <ValueProps />
+              {/* 2. Hero Section */}
+              <Hero
+                onStartPlanning={() => {
+                  setPreselectedForPlanner(null);
+                  setPlannerOpen(true);
+                }}
+                onExploreClick={() => handleNavigateSection('explore')}
+              />
 
-            {/* 4. Full Explore & Search Page (Main Terrace Grid Search & Browse) */}
-            <ExploreView
-              onSelectDestination={(dest) => {
-                setSelectedDestination(dest);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              onStartTripWithDestination={handleOpenPlannerWithSite}
-            />
+              {/* 3. "Why this exists" Section */}
+              <ValueProps />
 
-            {/* Heritage Haveli & Stays Section (For "Hotels" link) */}
-            <section id="hotels" className="bg-salt py-16 border-b border-stone/30">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="border-l-2 border-gold pl-4 mb-8">
-                  <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
-                    Preserved Heritage Accommodations
-                  </span>
-                  <h2 className="font-display text-2xl sm:text-3xl text-charcoal tracking-tight">
-                    Heritage Havelis & Royal Palaces
-                  </h2>
-                  <p className="text-xs text-stone font-mono mt-1">
-                    Authentic heritage homestays and restored royal guest palaces near Gujarat’s monuments.
-                  </p>
+              {/* 4. Full Explore & Search Page (Main Terrace Grid Search & Browse) */}
+              <ExploreView
+                onSelectDestination={(dest) => {
+                  setSelectedDestination(dest);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onStartTripWithDestination={handleOpenPlannerWithSite}
+              />
+
+              {/* Heritage Haveli & Stays Section (For "Hotels" link) */}
+              <section id="hotels" className="bg-salt py-16 border-b border-stone/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="border-l-2 border-gold pl-4 mb-8">
+                    <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
+                      Preserved Heritage Accommodations
+                    </span>
+                    <h2 className="font-display text-2xl sm:text-3xl text-charcoal tracking-tight">
+                      Heritage Havelis & Royal Palaces
+                    </h2>
+                    <p className="text-xs text-stone font-mono mt-1">
+                      Authentic heritage homestays and restored royal guest palaces near Gujarat’s monuments.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      {
+                        name: "House of MG",
+                        location: "Old City, Ahmedabad",
+                        type: "1924 Textile Merchant Mansion",
+                        rate: "₹6,200 / night",
+                        dist: "Opposite Sidi Saiyyed Mosque",
+                        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
+                      },
+                      {
+                        name: "Royal Oasis Palace",
+                        location: "Wankaner, Morbi",
+                        type: "Indo-Gothic Royal Estate",
+                        rate: "₹7,800 / night",
+                        dist: "Near Modhera & Sun Temple Circuit",
+                        img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
+                      },
+                      {
+                        name: "Rann Riders Safari Resort",
+                        location: "Dasada, Little Rann",
+                        type: "Traditional Bhunga Cottages",
+                        rate: "₹5,500 / night",
+                        dist: "Wild Ass Sanctuary & Salt Flats",
+                        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800"
+                      }
+                    ].map((hotel, idx) => (
+                      <div key={idx} className="bg-ink text-salt p-4 border border-stone/40 space-y-3">
+                        <div className="relative h-44 overflow-hidden border border-stone/30">
+                          <img src={hotel.img} alt={hotel.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                          <span className="absolute top-2 left-2 bg-salt text-ink font-mono text-[10px] px-2 py-0.5 uppercase">
+                            {hotel.type}
+                          </span>
+                        </div>
+                        <div>
+                          <h3 className="font-display text-lg font-semibold text-salt">{hotel.name}</h3>
+                          <span className="text-xs font-mono text-stone flex items-center gap-1">
+                            <MapPin className="w-3 h-3 text-gold" />
+                            {hotel.location}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between text-xs font-mono pt-2 border-t border-stone/30">
+                          <span className="text-stone">{hotel.dist}</span>
+                          <span className="text-gold font-semibold">{hotel.rate}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    {
-                      name: "House of MG",
-                      location: "Old City, Ahmedabad",
-                      type: "1924 Textile Merchant Mansion",
-                      rate: "₹6,200 / night",
-                      dist: "Opposite Sidi Saiyyed Mosque",
-                      img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
-                    },
-                    {
-                      name: "Royal Oasis Palace",
-                      location: "Wankaner, Morbi",
-                      type: "Indo-Gothic Royal Estate",
-                      rate: "₹7,800 / night",
-                      dist: "Near Modhera & Sun Temple Circuit",
-                      img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800"
-                    },
-                    {
-                      name: "Rann Riders Safari Resort",
-                      location: "Dasada, Little Rann",
-                      type: "Traditional Bhunga Cottages",
-                      rate: "₹5,500 / night",
-                      dist: "Wild Ass Sanctuary & Salt Flats",
-                      img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800"
-                    }
-                  ].map((hotel, idx) => (
-                    <div key={idx} className="bg-ink text-salt p-4 border border-stone/40 space-y-3">
-                      <div className="relative h-44 overflow-hidden border border-stone/30">
-                        <img src={hotel.img} alt={hotel.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
-                        <span className="absolute top-2 left-2 bg-salt text-ink font-mono text-[10px] px-2 py-0.5 uppercase">
-                          {hotel.type}
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="font-display text-lg font-semibold text-salt">{hotel.name}</h3>
-                        <span className="text-xs font-mono text-stone flex items-center gap-1">
-                          <MapPin className="w-3 h-3 text-gold" />
-                          {hotel.location}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between text-xs font-mono pt-2 border-t border-stone/30">
-                        <span className="text-stone">{hotel.dist}</span>
-                        <span className="text-gold font-semibold">{hotel.rate}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </>
-        )}
-
+              </section>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
 
       {/* 5. Footer */}
@@ -411,7 +580,24 @@ export default function App() {
         }}
       />
 
+      {/* Non-intrusive PWA Add to Home Screen Prompt */}
+      {showPwaPrompt && (
+        <PwaInstallPrompt
+          deferredPrompt={deferredPrompt}
+          onDismiss={() => {
+            localStorage.setItem('heritage_pwa_prompt_dismissed_v1', 'true');
+            setShowPwaPrompt(false);
+          }}
+          onInstalled={() => {
+            localStorage.setItem('heritage_pwa_prompt_dismissed_v1', 'true');
+            setShowPwaPrompt(false);
+          }}
+        />
+      )}
+
     </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

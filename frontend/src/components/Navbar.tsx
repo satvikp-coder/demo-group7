@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Compass, Calendar, Building2, DollarSign, UserCheck, Menu, X } from 'lucide-react';
+import { Compass, Calendar, Building2, DollarSign, UserCheck, Menu, X, Sun, Moon } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenPlanner: () => void;
@@ -19,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   tripCount = 0,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const handleNavClick = (sectionId: string) => {
     setMobileMenuOpen(false);
@@ -33,6 +36,68 @@ export const Navbar: React.FC<NavbarProps> = ({
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const { theme, toggleTheme } = useTheme();
+
+  const ThemeToggle = () => (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={theme === 'dusk' ? 'Switch to Stepwell Light Theme' : 'Switch to Dusk Evening Theme'}
+      title={theme === 'dusk' ? 'Switch to Light Theme' : 'Switch to Dusk (Rann of Kutch Evening) Theme'}
+      className="p-1.5 bg-ink border border-stone/40 text-gold hover:text-salt hover:bg-stone/20 transition-all cursor-pointer inline-flex items-center justify-center shadow-sm"
+    >
+      {theme === 'dusk' ? <Sun className="w-4 h-4 text-gold" /> : <Moon className="w-4 h-4 text-gold" />}
+    </button>
+  );
+
+  const LanguageToggle = () => (
+    <div
+      className="inline-flex items-center bg-ink border border-stone/40 p-0.5 rounded-none shadow-sm"
+      role="group"
+      aria-label="Language selection"
+    >
+      <button
+        type="button"
+        onClick={() => setLanguage('en')}
+        aria-label="Switch to English"
+        aria-pressed={language === 'en'}
+        className={`px-2 py-1 text-xs font-mono transition-all duration-150 cursor-pointer ${
+          language === 'en'
+            ? 'bg-gold text-ink font-bold border border-gold shadow-sm'
+            : 'text-salt/80 hover:text-salt hover:bg-stone/20'
+        }`}
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        onClick={() => setLanguage('gu')}
+        aria-label="Switch to Gujarati"
+        aria-pressed={language === 'gu'}
+        className={`px-2 py-1 text-xs font-mono transition-all duration-150 cursor-pointer ${
+          language === 'gu'
+            ? 'bg-gold text-ink font-bold border border-gold shadow-sm'
+            : 'text-salt/80 hover:text-salt hover:bg-stone/20'
+        }`}
+      >
+        ગુજ
+      </button>
+      <button
+        type="button"
+        onClick={() => setLanguage('hi')}
+        aria-label="Switch to Hindi"
+        aria-pressed={language === 'hi'}
+        className={`px-2 py-1 text-xs font-mono transition-all duration-150 cursor-pointer ${
+          language === 'hi'
+            ? 'bg-gold text-ink font-bold border border-gold shadow-sm'
+            : 'text-salt/80 hover:text-salt hover:bg-stone/20'
+        }`}
+      >
+        हिं
+      </button>
+    </div>
+  );
 
   return (
     <nav className="sticky top-0 z-50 bg-ink border-b border-stone/30 text-salt shadow-md">
@@ -51,30 +116,30 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div>
               <span className="font-display text-xl sm:text-2xl tracking-tight text-salt block leading-none">
-                Heritage Tourism Planner
+                {t('nav.brand', 'Gujarat Heritage Directory')}
               </span>
               <span className="font-mono text-[10px] text-stone tracking-wider uppercase mt-1 block">
-                Gujarat Heritage Directory & Route Ledger
+                {t('nav.subtitle', 'Stepwell Geometric Itinerary Engine')}
               </span>
             </div>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
             <button
               onClick={() => handleNavClick('explore')}
-              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5"
+              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
             >
               <Compass className="w-4 h-4 text-gold/80" />
-              <span>Explore</span>
+              <span>{t('nav.explore', 'Explore')}</span>
             </button>
 
             <button
               onClick={onOpenPlanner}
-              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5 relative"
+              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5 relative cursor-pointer"
             >
               <Calendar className="w-4 h-4 text-gold/80" />
-              <span>Plan a Trip</span>
+              <span>{t('nav.planItinerary', 'Plan Itinerary')}</span>
               {tripCount > 0 && (
                 <span className="bg-gold text-ink font-mono text-[10px] font-bold px-1.5 py-0.2 rounded-full border border-ink">
                   {tripCount}
@@ -84,18 +149,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('hotels')}
-              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5"
+              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
             >
               <Building2 className="w-4 h-4 text-gold/80" />
-              <span>Hotels & Heritage Stays</span>
+              <span>{t('nav.hotels', 'Ranked Stays')}</span>
             </button>
 
             <button
               onClick={() => handleNavClick('budget')}
-              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5"
+              className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
             >
               <DollarSign className="w-4 h-4 text-gold/80" />
-              <span>Budget Planner</span>
+              <span>{t('nav.budget', 'Budget Planner')}</span>
             </button>
 
             {user ? (
@@ -112,24 +177,30 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={onLogout}
                   className="text-xs font-mono text-stone hover:text-salt underline cursor-pointer"
                 >
-                  Log out
+                  {t('profile.signOut', 'Sign Out')}
                 </button>
               </div>
             ) : (
               <button
                 onClick={() => onOpenAuth ? onOpenAuth('login') : handleNavClick('account')}
-                className="border border-stone/40 hover:border-gold px-3.5 py-1.5 text-xs text-salt/90 hover:text-salt transition-colors duration-150 flex items-center gap-1.5"
+                className="border border-stone/40 hover:border-gold px-3 py-1.5 text-xs text-salt/90 hover:text-salt transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
               >
                 <UserCheck className="w-3.5 h-3.5 text-stone" />
-                <span>Login / Register</span>
+                <span>{t('nav.signIn', 'Sign In')}</span>
               </button>
             )}
 
+            {/* Language & Theme Toggle Controls */}
+            <div className="flex items-center gap-2">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
+
             <button
               onClick={onOpenPlanner}
-              className="bg-madder hover:bg-madder/90 text-salt px-4 py-2 text-xs uppercase tracking-wider font-semibold transition-colors duration-150 border border-madder flex items-center gap-2"
+              className="bg-madder hover:bg-madder/90 text-salt px-3.5 py-2 text-xs uppercase tracking-wider font-semibold transition-colors duration-150 border border-madder flex items-center gap-2 cursor-pointer"
             >
-              <span>Plan This Trip</span>
+              <span>{t('nav.planItinerary', 'Plan Itinerary')}</span>
               {tripCount > 0 && (
                 <span className="bg-salt text-madder font-mono text-[10px] font-bold px-1.5 py-0.2">
                   {tripCount}
@@ -138,8 +209,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button & Compact Language/Theme Toggles */}
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-salt hover:text-gold p-2 border border-stone/30"
@@ -158,7 +231,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => handleNavClick('explore')}
             className="w-full text-left py-2 text-salt hover:text-gold text-sm font-medium border-b border-stone/20 flex items-center justify-between"
           >
-            <span>Explore Destinations</span>
+            <span>{t('nav.explore', 'Explore')}</span>
             <Compass className="w-4 h-4 text-gold" />
           </button>
           <button
@@ -168,22 +241,29 @@ export const Navbar: React.FC<NavbarProps> = ({
             }}
             className="w-full text-left py-2 text-salt hover:text-gold text-sm font-medium border-b border-stone/20 flex items-center justify-between"
           >
-            <span>Plan a Trip</span>
+            <span>{t('nav.planItinerary', 'Plan Itinerary')}</span>
             <Calendar className="w-4 h-4 text-gold" />
           </button>
           <button
             onClick={() => handleNavClick('hotels')}
             className="w-full text-left py-2 text-salt hover:text-gold text-sm font-medium border-b border-stone/20 flex items-center justify-between"
           >
-            <span>Hotels & Heritage Stays</span>
+            <span>{t('nav.hotels', 'Ranked Stays')}</span>
             <Building2 className="w-4 h-4 text-gold" />
+          </button>
+          <button
+            onClick={() => handleNavClick('budget')}
+            className="w-full text-left py-2 text-salt hover:text-gold text-sm font-medium border-b border-stone/20 flex items-center justify-between"
+          >
+            <span>{t('nav.budget', 'Budget Planner')}</span>
+            <DollarSign className="w-4 h-4 text-gold" />
           </button>
           {user ? (
             <button
               onClick={() => handleNavClick('profile')}
               className="w-full text-left py-2 text-gold hover:text-salt text-sm font-medium border-b border-stone/20 flex items-center justify-between"
             >
-              <span>My Profile & Saved Trips</span>
+              <span>{t('nav.profile', 'Profile & History')}</span>
               <UserCheck className="w-4 h-4 text-gold" />
             </button>
           ) : (
@@ -191,7 +271,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNavClick('account')}
               className="w-full text-left py-2 text-salt hover:text-gold text-sm font-medium border-b border-stone/20 flex items-center justify-between"
             >
-              <span>Login / Register</span>
+              <span>{t('nav.signIn', 'Sign In')}</span>
               <UserCheck className="w-4 h-4 text-gold" />
             </button>
           )}
@@ -203,7 +283,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
               className="w-full bg-madder hover:bg-madder/90 text-salt py-3 text-center text-sm font-semibold uppercase tracking-wider"
             >
-              Plan This Trip
+              {t('nav.planItinerary', 'Plan Itinerary')}
             </button>
           </div>
         </div>

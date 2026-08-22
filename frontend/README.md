@@ -1,27 +1,20 @@
-# Frontend — Heritage Tourism Planner for Gujarat
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-This directory contains the React 19 + TypeScript + Vite 6 + Tailwind CSS v4 web application for the Heritage Tourism Planner.
+# Run and deploy your AI Studio app
 
-## Tech Stack
-- **Framework:** React 19
-- **Build Tool:** Vite 6
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`)
-- **Icons:** Lucide React (`lucide-react`)
-- **PDF Export:** jsPDF + html2canvas
+This contains everything you need to run your app locally.
 
-## Local Development
+View your app in AI Studio: https://ai.studio/apps/1d0359f4-1597-4bb7-a0f9-36510e6dbc73
 
-```bash
-# Install dependencies
-npm install
+## Run Locally
 
-# Start local dev server (http://localhost:3000)
-npm run dev
+**Prerequisites:**  Node.js
 
-# Type-check codebase
-npx tsc --noEmit
 
-# Production build
-npm run build
-```
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

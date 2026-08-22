@@ -11,7 +11,7 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
   onSelectDestination,
   onStartTripWithDestination,
 }) => {
-  // Filter featured 6 heritage destinations: Somnath, Dwarka, Rann of Kutch, Gir, Modhera, Champaner
+  // Filter the featured 6 sites asked by user prompt: Somnath, Dwarka, Rann of Kutch, Gir, Modhera, Champaner
   const featuredIds = ['somnath', 'dwarka', 'rann-of-kutch', 'gir', 'modhera', 'champaner'];
   const featuredDestinations = GUJARAT_DESTINATIONS.filter(d => featuredIds.includes(d.id));
 

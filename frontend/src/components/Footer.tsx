@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FooterProps {
   onNavigateSection?: (sectionId: string) => void;
@@ -6,6 +7,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPlanner }) => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-ink text-salt border-t border-stone/30 pt-16 pb-12 relative overflow-hidden">
       
@@ -22,12 +25,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPlanner
                 <div className="w-full h-full bg-gold/80"></div>
               </div>
               <span className="font-display text-2xl text-salt tracking-tight">
-                Heritage Tourism Planner
+                {t('footer.brand', 'Heritage Tourism Planner')}
               </span>
             </div>
 
             <p className="text-xs text-stone font-body leading-relaxed max-w-sm">
-              An architectural and cultural route ledger for Gujarat’s stepwells, sun temples, salt deserts, and sacred coastlines. Structured for conscious travelers and heritage preservation.
+              {t('footer.description', 'An architectural and cultural route ledger for Gujarat’s stepwells, sun temples, salt deserts, and sacred coastlines. Structured for conscious travelers and heritage preservation.')}
             </p>
 
             <div className="font-mono text-[11px] text-gold/80 flex items-center gap-2">
@@ -56,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPlanner
             </h4>
             <ul className="space-y-2 text-xs text-salt/80 font-body">
               <li>
-                <button onClick={onOpenPlanner} className="hover:text-gold transition-colors text-left">
+                <button onClick={onOpenPlanner} className="hover:text-gold transition-colors text-left cursor-pointer">
                   Terrace Itinerary Generator
                 </button>
               </li>
@@ -77,9 +80,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPlanner
             <div className="pt-2">
               <button
                 onClick={onOpenPlanner}
-                className="w-full bg-madder hover:bg-madder/90 text-salt py-2 px-3 text-xs uppercase font-mono tracking-wider transition-colors border border-madder"
+                className="w-full bg-madder hover:bg-madder/90 text-salt py-2 px-3 text-xs uppercase font-mono tracking-wider transition-colors border border-madder cursor-pointer"
               >
-                Plan Custom Route
+                {t('common.plan_trip', 'Plan Custom Route')}
               </button>
             </div>
           </div>
@@ -89,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPlanner
         {/* Copyright & Technical Stamp */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-stone gap-4">
           <div>
-            © 2026 Heritage Tourism Planner. All rights reserved.
+            {t('footer.rights', '© 2026 Heritage Tourism Planner. All rights reserved.')}
           </div>
           <div className="flex items-center gap-4">
             <span className="text-gold/80">Colors: Ink Indigo, Salt White, Madder Red, Stepwell Gold</span>
