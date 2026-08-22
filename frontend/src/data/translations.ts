@@ -1,4 +1,4 @@
-export type Language = 'en' | 'gu' | 'hi';
+export type Language = "en" | "gu" | "hi";
 
 export interface TranslationDictionary {
   [key: string]: string;
@@ -33,7 +33,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 
     // Hero Section
     "hero.badge": "Stepwell Geometric Itinerary Engine",
-    "hero.tagline": "Explore 10 Gujarat heritage sites—from the 11th-century carved sun temple of Modhera to the salt expanses of Kutch and Gir lion reserves. Structured routes, authentic craft guilds, and ledger-precise travel expenses.",
+    "hero.tagline":
+      "Explore 10 Gujarat heritage sites—from the 11th-century carved sun temple of Modhera to the salt expanses of Kutch and Gir lion reserves. Structured routes, authentic craft guilds, and ledger-precise travel expenses.",
     "hero.startPlanning": "Start planning",
     "hero.browseSites": "Browse 10 Heritage Sites",
     "hero.statSites": "10 Monuments",
@@ -44,11 +45,14 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "valueProps.headerBadge": "System Architecture & Purpose",
     "valueProps.title": "Why this exists",
     "valueProps.prop1Title": "Geometric Route Precision",
-    "valueProps.prop1Desc": "Calculates intra-city distances, visitation times, and daily circular legs starting and ending at your accommodation base.",
+    "valueProps.prop1Desc":
+      "Calculates intra-city distances, visitation times, and daily circular legs starting and ending at your accommodation base.",
     "valueProps.prop2Title": "Authentic Heritage Stays",
-    "valueProps.prop2Desc": "Verified Toran government hotels, restored 1920s merchant havelis, and eco-homestays ranked by location and hospitality.",
+    "valueProps.prop2Desc":
+      "Verified Toran government hotels, restored 1920s merchant havelis, and eco-homestays ranked by location and hospitality.",
     "valueProps.prop3Title": "Verified Expenses",
-    "valueProps.prop3Desc": "Exact ASI monument entry fees, local thali dining rates, and transit fuel estimates logged in an exportable budget ledger.",
+    "valueProps.prop3Desc":
+      "Exact ASI monument entry fees, local thali dining rates, and transit fuel estimates logged in an exportable budget ledger.",
 
     // Explore View
     "explore.title": "Explore Heritage Monuments",
@@ -58,7 +62,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "explore.inspectSite": "Inspect Site",
     "explore.plan": "Plan",
     "explore.emptyTitle": "No Heritage Destinations Found",
-    "explore.emptyText": "No monuments match your current search terms or category selection.",
+    "explore.emptyText":
+      "No monuments match your current search terms or category selection.",
 
     // Destination Detail View
     "destination.back": "Back to All Sites",
@@ -98,7 +103,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 
     // Shortest Path Route Calculator (Dijkstra)
     "dijkstra.title": "Shortest Path Route Calculator",
-    "dijkstra.subtitle": "Dijkstra Graph Algorithm Engine across Gujarat Circuit Nodes",
+    "dijkstra.subtitle":
+      "Dijkstra Graph Algorithm Engine across Gujarat Circuit Nodes",
     "dijkstra.source": "Select Source City",
     "dijkstra.target": "Select Target City",
     "dijkstra.calculate": "Calculate Optimal Route",
@@ -139,10 +145,11 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "auth.guest": "Continue as Guest",
 
     "footer.brand": "Heritage Tourism Planner",
-    "footer.description": "An architectural and cultural route ledger for Gujarat’s stepwells, sun temples, salt deserts, and sacred coastlines. Structured for conscious travelers and heritage preservation.",
+    "footer.description":
+      "An architectural and cultural route ledger for Gujarat’s stepwells, sun temples, salt deserts, and sacred coastlines. Structured for conscious travelers and heritage preservation.",
     "footer.rights": "All rights reserved. Gujarat Heritage Tourism Board.",
 
-    "common.plan_trip": "Plan Custom Route"
+    "common.plan_trip": "Plan Custom Route",
   },
   gu: {
     // Navbar & Navigation
@@ -172,7 +179,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 
     // Hero Section
     "hero.badge": "સ્ટેપવેલ ભૌમિતિક યાત્રા એન્જિન",
-    "hero.tagline": "ગુજરાતના ૧૦ વારસા સ્થળો શોધો—મોઢેરાના ૧૧મી સદીના સૂર્ય મંદિરથી લઈને કચ્છના રણ અને ગીર સિંહ અભયારણ્ય સુધી. સુઆયોજિત માર્ગો અને બજેટ કેલ્ક્યુલેટર.",
+    "hero.tagline":
+      "ગુજરાતના ૧૦ વારસા સ્થળો શોધો—મોઢેરાના ૧૧મી સદીના સૂર્ય મંદિરથી લઈને કચ્છના રણ અને ગીર સિંહ અભયારણ્ય સુધી. સુઆયોજિત માર્ગો અને બજેટ કેલ્ક્યુલેટર.",
     "hero.startPlanning": "આયોજન શરૂ કરો",
     "hero.browseSites": "૧૦ વારસાગત સ્થળો જુઓ",
     "hero.statSites": "૧૦ સ્મારકો",
@@ -183,11 +191,14 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "valueProps.headerBadge": "સિસ્ટમ આર્કિટેક્ચર અને હેતુ",
     "valueProps.title": "આ શા માટે અસ્તિત્વમાં છે",
     "valueProps.prop1Title": "ભૌમિતિક રૂટની ચોકસાઈ",
-    "valueProps.prop1Desc": "શહેરની અંદરનું અંતર, મુલાકાતનો સમય અને દૈનિક ગોળાકાર માર્ગોની ગણતરી કરે છે.",
+    "valueProps.prop1Desc":
+      "શહેરની અંદરનું અંતર, મુલાકાતનો સમય અને દૈનિક ગોળાકાર માર્ગોની ગણતરી કરે છે.",
     "valueProps.prop2Title": "પ્રમાણિક વારસાગત રોકાણ",
-    "valueProps.prop2Desc": "ચકાસાયેલ તોરણ સરકારી હોટેલો, પુનઃસ્થાપિત હવેલીઓ અને હોમસ્ટે.",
+    "valueProps.prop2Desc":
+      "ચકાસાયેલ તોરણ સરકારી હોટેલો, પુનઃસ્થાપિત હવેલીઓ અને હોમસ્ટે.",
     "valueProps.prop3Title": "ચકાસાયેલ ખર્ચ",
-    "valueProps.prop3Desc": "ચોક્કસ ASI સ્મારક પ્રવેશ ફી, સ્થાનિક થાળીના દર અને પરિવહન બજેટ ખાતાવહી.",
+    "valueProps.prop3Desc":
+      "ચોક્કસ ASI સ્મારક પ્રવેશ ફી, સ્થાનિક થાળીના દર અને પરિવહન બજેટ ખાતાવહી.",
 
     // Explore View
     "explore.title": "વારસાગત સ્મારકો શોધો",
@@ -197,7 +208,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "explore.inspectSite": "સ્થળની તપાસ કરો",
     "explore.plan": "આયોજન",
     "explore.emptyTitle": "કોઈ વારસાગત સ્થળો મળ્યા નથી",
-    "explore.emptyText": "તમારી શોધ અથવા શ્રેણી પસંદગી સાથે કોઈ સ્મારકો મળતા નથી.",
+    "explore.emptyText":
+      "તમારી શોધ અથવા શ્રેણી પસંદગી સાથે કોઈ સ્મારકો મળતા નથી.",
 
     // Destination Detail View
     "destination.back": "તમામ સ્થળો પર પાછા જાઓ",
@@ -237,7 +249,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 
     // Shortest Path Route Calculator (Dijkstra)
     "dijkstra.title": "ટૂંકામાં ટૂંકા માર્ગનું કેલ્ક્યુલેટર",
-    "dijkstra.subtitle": "ગુજરાત સર્કિટ નોડ્સ પર ડાઇકસ્ટ્રા ગ્રાફ એલ્ગોરિધમ એન્જિન",
+    "dijkstra.subtitle":
+      "ગુજરાત સર્કિટ નોડ્સ પર ડાઇકસ્ટ્રા ગ્રાફ એલ્ગોરિધમ એન્જિન",
     "dijkstra.source": "પ્રારંભિક શહેર પસંદ કરો",
     "dijkstra.target": "લક્ષ્ય શહેર પસંદ કરો",
     "dijkstra.calculate": "ઉત્તમ માર્ગની ગણતરી કરો",
@@ -278,10 +291,11 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "auth.guest": "મહેમાન તરીકે આગળ વધો",
 
     "footer.brand": "હેરિટેજ ટૂરિઝમ પ્લાનર",
-    "footer.description": "ગુજરાતના વાવ, સૂર્ય મંદિરો અને સમુદ્રકિનારાઓ માટે સાંસ્કૃતિક માર્ગ દર્શિકા.",
+    "footer.description":
+      "ગુજરાતના વાવ, સૂર્ય મંદિરો અને સમુદ્રકિનારાઓ માટે સાંસ્કૃતિક માર્ગ દર્શિકા.",
     "footer.rights": "સર્વાધિકાર સુરક્ષિત. ગુજરાત હેરિટેજ ટુરિઝમ બોર્ડ.",
 
-    "common.plan_trip": "કસ્ટમ રૂટનું આયોજન કરો"
+    "common.plan_trip": "કસ્ટમ રૂટનું આયોજન કરો",
   },
   hi: {
     // Navbar & Navigation
@@ -311,7 +325,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 
     // Hero Section
     "hero.badge": "स्टेपवेल ज्यामितीय यात्रा इंजन",
-    "hero.tagline": "गुजरात के 10 विरासत स्थलों की खोज करें—मोढेरा के 11वीं सदी के सूर्य मंदिर से लेकर कच्छ के रण और गिर सिंह अभयारण्य तक। व्यवस्थित मार्ग और सटीक बजट गणना।",
+    "hero.tagline":
+      "गुजरात के 10 विरासत स्थलों की खोज करें—मोढेरा के 11वीं सदी के सूर्य मंदिर से लेकर कच्छ के रण और गिर सिंह अभयारण्य तक। व्यवस्थित मार्ग और सटीक बजट गणना।",
     "hero.startPlanning": "योजना शुरू करें",
     "hero.browseSites": "10 विरासत स्थल देखें",
     "hero.statSites": "10 स्मारक",
@@ -322,11 +337,14 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "valueProps.headerBadge": "सिस्टम आर्किटेक्चर और उद्देश्य",
     "valueProps.title": "यह क्यों बनाया गया है",
     "valueProps.prop1Title": "ज्यामितीय मार्ग सटीकता",
-    "valueProps.prop1Desc": "शहर के भीतर की दूरी, दर्शन समय और दैनिक वृत्ताकार मार्गों की गणना करता है।",
+    "valueProps.prop1Desc":
+      "शहर के भीतर की दूरी, दर्शन समय और दैनिक वृत्ताकार मार्गों की गणना करता है।",
     "valueProps.prop2Title": "प्रामाणिक विरासत आवास",
-    "valueProps.prop2Desc": "सत्यापित तोरण सरकारी होटल, पुनर्निर्मित हवेलियां और होमस्टे।",
+    "valueProps.prop2Desc":
+      "सत्यापित तोरण सरकारी होटल, पुनर्निर्मित हवेलियां और होमस्टे।",
     "valueProps.prop3Title": "सत्यापित व्यय",
-    "valueProps.prop3Desc": "सटीक एएसआई स्मारक प्रवेश शुल्क, स्थानीय थाली दरें और परिवहन बजट बहीखाता।",
+    "valueProps.prop3Desc":
+      "सटीक एएसआई स्मारक प्रवेश शुल्क, स्थानीय थाली दरें और परिवहन बजट बहीखाता।",
 
     // Explore View
     "explore.title": "विरासत स्मारकों की खोज करें",
@@ -336,7 +354,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "explore.inspectSite": "स्थल देखें",
     "explore.plan": "योजना",
     "explore.emptyTitle": "कोई विरासत गंतव्य नहीं मिला",
-    "explore.emptyText": "आपकी खोज या श्रेणी चयन से कोई भी स्मारक मेल नहीं खाता।",
+    "explore.emptyText":
+      "आपकी खोज या श्रेणी चयन से कोई भी स्मारक मेल नहीं खाता।",
 
     // Destination Detail View
     "destination.back": "सभी स्थलों पर वापस जाएं",
@@ -376,7 +395,8 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 
     // Shortest Path Route Calculator (Dijkstra)
     "dijkstra.title": "न्यूनतम पथ मार्ग कैलकुलेटर",
-    "dijkstra.subtitle": "गुजरात सर्किट नोड्स पर डाइकस्ट्रा ग्राफ एल्गोरिदम इंजन",
+    "dijkstra.subtitle":
+      "गुजरात सर्किट नोड्स पर डाइकस्ट्रा ग्राफ एल्गोरिदम इंजन",
     "dijkstra.source": "प्रारंभिक शहर चुनें",
     "dijkstra.target": "लक्ष्य शहर चुनें",
     "dijkstra.calculate": "अनुकूलतम मार्ग की गणना करें",
@@ -417,11 +437,12 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "auth.guest": "अतिथि के रूप में जारी रखें",
 
     "footer.brand": "हेरिटेज टूरिज़्म प्लानर",
-    "footer.description": "गुजरात की वाव, सूर्य मंदिरों और तटरेखाओं के लिए सांस्कृतिक मार्ग दर्शिका।",
+    "footer.description":
+      "गुजरात की वाव, सूर्य मंदिरों और तटरेखाओं के लिए सांस्कृतिक मार्ग दर्शिका।",
     "footer.rights": "सर्वाधिकार सुरक्षित। गुजरात हेरिटेज टूरिज़्म बोर्ड।",
 
-    "common.plan_trip": "कस्टम मार्ग की योजना बनाएं"
-  }
+    "common.plan_trip": "कस्टम मार्ग की योजना बनाएं",
+  },
 };
 
 // Backward compatibility map for any legacy UI_TRANSLATIONS access
@@ -433,12 +454,15 @@ export interface UIStrings {
   };
 }
 
-export const UI_TRANSLATIONS: UIStrings = new Proxy({}, {
-  get: (_, key: string) => {
-    return {
-      en: TRANSLATIONS.en[key] || key,
-      gu: TRANSLATIONS.gu[key] || TRANSLATIONS.en[key] || key,
-      hi: TRANSLATIONS.hi[key] || TRANSLATIONS.en[key] || key,
-    };
-  }
-});
+export const UI_TRANSLATIONS: UIStrings = new Proxy(
+  {},
+  {
+    get: (_, key: string) => {
+      return {
+        en: TRANSLATIONS.en[key] || key,
+        gu: TRANSLATIONS.gu[key] || TRANSLATIONS.en[key] || key,
+        hi: TRANSLATIONS.hi[key] || TRANSLATIONS.en[key] || key,
+      };
+    },
+  },
+);

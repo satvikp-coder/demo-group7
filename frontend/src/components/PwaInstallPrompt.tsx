@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Smartphone, Download, X, Sparkles, Check } from 'lucide-react';
+import React, { useState } from "react";
+import { Smartphone, Download, X, Sparkles, Check } from "lucide-react";
 
 interface PwaInstallPromptProps {
   deferredPrompt: any;
@@ -10,7 +10,7 @@ interface PwaInstallPromptProps {
 export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
   deferredPrompt,
   onDismiss,
-  onInstalled
+  onInstalled,
 }) => {
   const [isInstalling, setIsInstalling] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -18,7 +18,9 @@ export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
   const handleInstallClick = async () => {
     if (!deferredPrompt) {
       // Fallback instructions if native prompt isn't supported or directly available
-      alert('To install, tap your browser menu (⋮ or Share icon) and select "Add to Home Screen".');
+      alert(
+        'To install, tap your browser menu (⋮ or Share icon) and select "Add to Home Screen".',
+      );
       onDismiss();
       return;
     }
@@ -27,7 +29,7 @@ export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
     try {
       deferredPrompt.prompt();
       const choiceResult = await deferredPrompt.userChoice;
-      if (choiceResult.outcome === 'accepted') {
+      if (choiceResult.outcome === "accepted") {
         setIsSuccess(true);
         setTimeout(() => {
           onInstalled();
@@ -36,7 +38,7 @@ export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
         onDismiss();
       }
     } catch (err) {
-      console.warn('Error during PWA installation prompt:', err);
+      console.warn("Error during PWA installation prompt:", err);
       onDismiss();
     } finally {
       setIsInstalling(false);
@@ -74,7 +76,8 @@ export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
       </div>
 
       <p className="text-stone font-body text-xs leading-relaxed">
-        Save this itinerary for offline use in signal-blind heritage areas (stepwells, temples, wildlife sanctuaries).
+        Save this itinerary for offline use in signal-blind heritage areas
+        (stepwells, temples, wildlife sanctuaries).
       </p>
 
       {isSuccess ? (
@@ -90,14 +93,14 @@ export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
           >
             Maybe Later
           </button>
-          
+
           <button
             onClick={handleInstallClick}
             disabled={isInstalling}
             className="px-4 py-1.5 bg-gold hover:bg-gold/90 text-ink font-bold border border-ink shadow-xs flex items-center gap-1.5 transition-colors cursor-pointer"
           >
             <Download className="w-3.5 h-3.5 text-ink" />
-            <span>{isInstalling ? 'Installing...' : 'Add to Home Screen'}</span>
+            <span>{isInstalling ? "Installing..." : "Add to Home Screen"}</span>
           </button>
         </div>
       )}

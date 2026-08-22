@@ -1,6 +1,15 @@
-import React from 'react';
-import { Destination } from '../data/destinations';
-import { X, MapPin, Star, Ticket, Clock, ArrowRight, ShieldCheck, Landmark } from 'lucide-react';
+import React from "react";
+import { Destination } from "../data/destinations";
+import {
+  X,
+  MapPin,
+  Star,
+  Ticket,
+  Clock,
+  ArrowRight,
+  ShieldCheck,
+  Landmark,
+} from "lucide-react";
 
 interface DestinationModalProps {
   destination: Destination | null;
@@ -50,7 +59,9 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
             <Star className="w-3.5 h-3.5 fill-gold text-gold" />
             {destination.rating}
           </span>
-          <span className="text-stone">Distance: {destination.distanceFromAhmedabad}</span>
+          <span className="text-stone">
+            Distance: {destination.distanceFromAhmedabad}
+          </span>
         </div>
 
         {/* Image */}
@@ -88,16 +99,28 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
         {/* Ledger Details Grid in IBM Plex Mono */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 bg-ink text-salt border border-stone/40 font-mono text-xs mb-6">
           <div>
-            <span className="text-stone block uppercase text-[10px]">Entry Fee Ledger</span>
-            <span className="text-gold font-semibold text-xs sm:text-sm">{destination.entryFee}</span>
+            <span className="text-stone block uppercase text-[10px]">
+              Entry Fee Ledger
+            </span>
+            <span className="text-gold font-semibold text-xs sm:text-sm">
+              {destination.entryFee}
+            </span>
           </div>
           <div>
-            <span className="text-stone block uppercase text-[10px]">Optimal Season</span>
-            <span className="text-salt font-semibold text-xs sm:text-sm">{destination.bestTime}</span>
+            <span className="text-stone block uppercase text-[10px]">
+              Optimal Season
+            </span>
+            <span className="text-salt font-semibold text-xs sm:text-sm">
+              {destination.bestTime}
+            </span>
           </div>
           <div className="col-span-2 sm:col-span-1">
-            <span className="text-stone block uppercase text-[10px]">Recommended Stay</span>
-            <span className="text-salt font-semibold text-xs sm:text-sm">{destination.duration}</span>
+            <span className="text-stone block uppercase text-[10px]">
+              Recommended Stay
+            </span>
+            <span className="text-salt font-semibold text-xs sm:text-sm">
+              {destination.duration}
+            </span>
           </div>
         </div>
 
@@ -121,7 +144,6 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
             Close
           </button>
         </div>
-
       </div>
     </div>
   );

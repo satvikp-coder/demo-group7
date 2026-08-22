@@ -1,6 +1,6 @@
-import { ItineraryConfig } from '../components/ItineraryView';
-import { getCityById } from '../data/destinations';
-import { GeneratedItineraryResult } from './itineraryPlanner';
+import { ItineraryConfig } from "../components/ItineraryView";
+import { getCityById } from "../data/destinations";
+import { GeneratedItineraryResult } from "./itineraryPlanner";
 
 export interface CachedTripData {
   id: string;
@@ -12,19 +12,19 @@ export interface CachedTripData {
   updatedAt: string;
 }
 
-const STORAGE_KEY_TRIPS = 'heritage_pwa_cached_trips';
-const STORAGE_KEY_LATEST_ID = 'heritage_pwa_latest_trip_id';
+const STORAGE_KEY_TRIPS = "heritage_pwa_cached_trips";
+const STORAGE_KEY_LATEST_ID = "heritage_pwa_latest_trip_id";
 
 /**
  * Save full generated itinerary data to browser storage (localStorage & ServiceWorker Cache)
  */
 export function saveTripToOfflineCache(
   config: ItineraryConfig,
-  result: GeneratedItineraryResult
+  result: GeneratedItineraryResult,
 ): CachedTripData {
   const city = getCityById(config.cityId);
   const cityName = city?.name || config.cityId;
-  const tripId = `trip_${config.cityId}_${config.tripDays}d_${config.budget}_${config.strategy || 'distance-first'}`;
+  const tripId = `trip_${config.cityId}_${config.tripDays}d_${config.budget}_${config.strategy || "distance-first"}`;
 
   const nowIso = new Date().toISOString();
 
@@ -35,7 +35,7 @@ export function saveTripToOfflineCache(
     config,
     result,
     timestamp: nowIso,
-    updatedAt: nowIso
+    updatedAt: nowIso,
   };
 
   try {
@@ -46,15 +46,15 @@ export function saveTripToOfflineCache(
     localStorage.setItem(STORAGE_KEY_LATEST_ID, tripId);
 
     // 2. Notify Service Worker Cache if active
-    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+    if ("serviceWorker" in navigator && navigator.serviceWorker.controller) {
       navigator.serviceWorker.controller.postMessage({
-        type: 'CACHE_TRIP_DATA',
+        type: "CACHE_TRIP_DATA",
         tripId,
-        payload
+        payload,
       });
     }
   } catch (err) {
-    console.warn('Failed to store itinerary in localStorage:', err);
+    console.warn("Failed to store itinerary in localStorage:", err);
   }
 
   return payload;
@@ -68,7 +68,7 @@ function getAllOfflineTripsMap(): Record<string, CachedTripData> {
     const raw = localStorage.getItem(STORAGE_KEY_TRIPS);
     return raw ? JSON.parse(raw) : {};
   } catch (err) {
-    console.warn('Error reading cached trips from localStorage:', err);
+    console.warn("Error reading cached trips from localStorage:", err);
     return {};
   }
 }
@@ -79,7 +79,7 @@ function getAllOfflineTripsMap(): Record<string, CachedTripData> {
 export function getAllOfflineTrips(): CachedTripData[] {
   const map = getAllOfflineTripsMap();
   return Object.values(map).sort(
-    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
   );
 }
 
@@ -104,15 +104,18 @@ export function getLatestOfflineTrip(): CachedTripData | null {
  * Register Service Worker for PWA functionality
  */
 export function registerServiceWorker(): void {
-  if ('serviceWorker' in navigator && process.env.NODE_ENV !== 'development') {
-    window.addEventListener('load', () => {
+  if ("serviceWorker" in navigator && process.env.NODE_ENV !== "development") {
+    window.addEventListener("load", () => {
       navigator.serviceWorker
-        .register('/sw.js')
+        .register("/sw.js")
         .then((reg) => {
-          console.log('Heritage PWA ServiceWorker registered with scope:', reg.scope);
+          console.log(
+            "Heritage PWA ServiceWorker registered with scope:",
+            reg.scope,
+          );
         })
         .catch((err) => {
-          console.warn('ServiceWorker registration failed:', err);
+          console.warn("ServiceWorker registration failed:", err);
         });
     });
   }

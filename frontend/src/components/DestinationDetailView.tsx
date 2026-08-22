@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
-import { Destination } from '../data/destinations';
-import { ArrowLeft, Star, MapPin, Clock, Ticket, Calendar, ShieldCheck, Hotel, PlusCircle, CheckCircle2, ChevronRight, Compass, Accessibility, Hospital, Shield } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
-import { AccessibilityBadge } from './AccessibilityBadge';
-import { BestTimeNote } from './BestTimeNote';
+import React, { useState } from "react";
+import { Destination } from "../data/destinations";
+import {
+  ArrowLeft,
+  Star,
+  MapPin,
+  Clock,
+  Ticket,
+  Calendar,
+  ShieldCheck,
+  Hotel,
+  PlusCircle,
+  CheckCircle2,
+  ChevronRight,
+  Compass,
+  Accessibility,
+  Hospital,
+  Shield,
+} from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { AccessibilityBadge } from "./AccessibilityBadge";
+import { BestTimeNote } from "./BestTimeNote";
 
 interface DestinationDetailViewProps {
   destination: Destination;
@@ -31,23 +47,28 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
 }) => {
   const { language, t, getName } = useLanguage();
   const [wheelchairOnly, setWheelchairOnly] = useState<boolean>(false);
-  const [selectedDemands, setSelectedDemands] = useState<('low' | 'moderate' | 'high')[]>([]);
+  const [selectedDemands, setSelectedDemands] = useState<
+    ("low" | "moderate" | "high")[]
+  >([]);
 
-  const toggleDemandFilter = (level: 'low' | 'moderate' | 'high') => {
-    setSelectedDemands(prev =>
-      prev.includes(level) ? prev.filter(d => d !== level) : [...prev, level]
+  const toggleDemandFilter = (level: "low" | "moderate" | "high") => {
+    setSelectedDemands((prev) =>
+      prev.includes(level) ? prev.filter((d) => d !== level) : [...prev, level],
     );
   };
 
-  const filteredAttractions = (destination.attractions || []).filter(attr => {
+  const filteredAttractions = (destination.attractions || []).filter((attr) => {
     if (wheelchairOnly && !attr.wheelchairAccessible) return false;
-    if (selectedDemands.length > 0 && !selectedDemands.includes(attr.physicalDemand)) return false;
+    if (
+      selectedDemands.length > 0 &&
+      !selectedDemands.includes(attr.physicalDemand)
+    )
+      return false;
     return true;
   });
 
   return (
     <div className="bg-salt min-h-screen border-b border-stone/30 animate-fadeIn">
-      
       {/* 1. FULL-WIDTH HERO IMAGE BAND */}
       <div className="relative h-80 sm:h-96 md:h-[480px] w-full bg-ink overflow-hidden">
         {/* Background Image */}
@@ -67,19 +88,29 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             className="inline-flex items-center gap-2 bg-ink/80 hover:bg-ink text-salt border border-stone/40 hover:border-gold text-xs font-mono px-3.5 py-1.5 backdrop-blur-sm transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-gold" />
-            <span>{language === 'gu' ? 'બધા સ્થળો પર પાછા જાઓ' : language === 'hi' ? 'सभी स्थलों पर वापस जाएं' : 'Back to All Destinations'}</span>
+            <span>
+              {language === "gu"
+                ? "બધા સ્થળો પર પાછા જાઓ"
+                : language === "hi"
+                  ? "सभी स्थलों पर वापस जाएं"
+                  : "Back to All Destinations"}
+            </span>
           </button>
         </div>
 
         {/* Overlaid Hero Content */}
         <div className="absolute bottom-0 inset-x-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 z-10 space-y-3">
-          
           <div className="flex flex-wrap items-center gap-2">
             <span className="bg-gold text-ink font-mono text-[11px] font-bold px-3 py-1 uppercase tracking-wider">
               {destination.officialCategory}
             </span>
             <span className="bg-ink/80 text-salt font-mono text-[11px] px-3 py-1 border border-stone/40 uppercase">
-              {destination.district} {language === 'gu' ? 'જિલ્લો' : language === 'hi' ? 'ज़िला' : 'District'}
+              {destination.district}{" "}
+              {language === "gu"
+                ? "જિલ્લો"
+                : language === "hi"
+                  ? "ज़िला"
+                  : "District"}
             </span>
             <span className="text-gold font-mono text-sm font-bold flex items-center gap-1 bg-ink/80 px-2.5 py-0.5 border border-gold/40">
               <Star className="w-3.5 h-3.5 fill-gold text-gold" />
@@ -93,62 +124,81 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
 
           <p className="font-mono text-xs text-stone/90 max-w-2xl flex items-center gap-2">
             <Compass className="w-4 h-4 text-gold shrink-0" />
-            <span>{destination.tag} • {destination.distanceFromAhmedabad} {language === 'gu' ? 'અમદાવાદથી' : language === 'hi' ? 'अहमदाबाद से' : 'from Ahmedabad'}</span>
+            <span>
+              {destination.tag} • {destination.distanceFromAhmedabad}{" "}
+              {language === "gu"
+                ? "અમદાવાદથી"
+                : language === "hi"
+                  ? "अहमदाबाद से"
+                  : "from Ahmedabad"}
+            </span>
           </p>
-
         </div>
       </div>
 
       {/* 1.5 SEASONAL ADVISORY BANNER */}
-      {destination.seasonalAdvisory && (() => {
-        const nowMonth = new Date().getMonth() + 1; // 1..12
-        const isActive = destination.seasonalAdvisory.activeMonths.some(m => {
-          const diff = Math.abs(m - nowMonth);
-          return diff === 0 || diff === 1 || diff === 11;
-        });
-        if (!isActive) return null;
+      {destination.seasonalAdvisory &&
+        (() => {
+          const nowMonth = new Date().getMonth() + 1; // 1..12
+          const isActive = destination.seasonalAdvisory.activeMonths.some(
+            (m) => {
+              const diff = Math.abs(m - nowMonth);
+              return diff === 0 || diff === 1 || diff === 11;
+            },
+          );
+          if (!isActive) return null;
 
-        return (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 -mb-4">
-            <div className="bg-white border-l-4 border-gold border-y border-r border-stone/30 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
-              <div className="flex items-start gap-3">
-                <Calendar className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-mono text-xs font-bold text-gold uppercase tracking-wider">
-                      {language === 'gu' ? 'મોસમી મુસાફરી સલાહ' : language === 'hi' ? 'मौसमी यात्रा सलाह' : 'Seasonal Travel Advisory'}
-                    </span>
-                    {destination.seasonalAdvisory.peakWindowLabel && (
-                      <span className="bg-gold/10 text-gold border border-gold/30 font-mono text-[10px] px-2 py-0.5 rounded-none font-medium">
-                        {destination.seasonalAdvisory.peakWindowLabel}
+          return (
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 -mb-4">
+              <div className="bg-white border-l-4 border-gold border-y border-r border-stone/30 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <Calendar className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-mono text-xs font-bold text-gold uppercase tracking-wider">
+                        {language === "gu"
+                          ? "મોસમી મુસાફરી સલાહ"
+                          : language === "hi"
+                            ? "मौसमी यात्रा सलाह"
+                            : "Seasonal Travel Advisory"}
                       </span>
-                    )}
+                      {destination.seasonalAdvisory.peakWindowLabel && (
+                        <span className="bg-gold/10 text-gold border border-gold/30 font-mono text-[10px] px-2 py-0.5 rounded-none font-medium">
+                          {destination.seasonalAdvisory.peakWindowLabel}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs sm:text-sm text-charcoal/90 font-body leading-relaxed">
+                      {destination.seasonalAdvisory.note}
+                    </p>
                   </div>
-                  <p className="text-xs sm:text-sm text-charcoal/90 font-body leading-relaxed">
-                    {destination.seasonalAdvisory.note}
-                  </p>
                 </div>
               </div>
             </div>
-          </div>
-        );
-      })()}
+          );
+        })()}
 
       {/* 2. TWO-COLUMN MAIN CONTENT LAYOUT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          
           {/* LEFT COLUMN (WIDER - lg:col-span-8) */}
           <div className="lg:col-span-8 space-y-10">
-            
             {/* Detailed Description Section */}
             <div className="bg-white p-6 sm:p-8 border border-stone/30 space-y-6 shadow-sm">
               <div>
                 <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
-                  {language === 'gu' ? 'ઐતિહાસિક વિવરણ અને સ્થાપત્ય સમીક્ષા' : language === 'hi' ? 'ऐतिहासिक विवरण और वास्तुकला समीक्षा' : 'Heritage Monograph & Architectural Overview'}
+                  {language === "gu"
+                    ? "ઐતિહાસિક વિવરણ અને સ્થાપત્ય સમીક્ષા"
+                    : language === "hi"
+                      ? "ऐतिहासिक विवरण और वास्तुकला समीक्षा"
+                      : "Heritage Monograph & Architectural Overview"}
                 </span>
                 <h2 className="font-display text-2xl sm:text-3xl text-charcoal font-bold">
-                  {language === 'gu' ? `${getName(destination)} વિશે` : language === 'hi' ? `${getName(destination)} के बारे में` : `About ${getName(destination)}`}
+                  {language === "gu"
+                    ? `${getName(destination)} વિશે`
+                    : language === "hi"
+                      ? `${getName(destination)} के बारे में`
+                      : `About ${getName(destination)}`}
                 </h2>
               </div>
 
@@ -160,11 +210,18 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               {destination.highlights && destination.highlights.length > 0 && (
                 <div className="pt-4 border-t border-stone/20 space-y-3">
                   <h3 className="font-mono text-xs text-charcoal uppercase tracking-wider font-semibold">
-                    {language === 'gu' ? 'મુખ્ય ઐતિહાસિક અને સ્થાપત્ય વિશેષતાઓ:' : language === 'hi' ? 'प्रमुख ऐतिहासिक और वास्तुशिल्प विशेषताएं:' : 'Key Historical & Architectural Highlights:'}
+                    {language === "gu"
+                      ? "મુખ્ય ઐતિહાસિક અને સ્થાપત્ય વિશેષતાઓ:"
+                      : language === "hi"
+                        ? "प्रमुख ऐतिहासिक और वास्तुशिल्प विशेषताएं:"
+                        : "Key Historical & Architectural Highlights:"}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {destination.highlights.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs font-mono text-stone bg-salt/60 p-2.5 border border-stone/20">
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2 text-xs font-mono text-stone bg-salt/60 p-2.5 border border-stone/20"
+                      >
                         <ShieldCheck className="w-4 h-4 text-gold shrink-0" />
                         <span>{item}</span>
                       </div>
@@ -177,52 +234,77 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             {/* Visiting Information Panel */}
             <div className="bg-ink text-salt p-6 sm:p-8 border border-stone/40 space-y-6">
               <span className="font-mono text-xs text-gold uppercase tracking-widest block">
-                {language === 'gu' ? 'મુલાકાતી અનુભવ અને સમયપત્રક' : language === 'hi' ? 'सैलानी अनुभव और समय सारिणी' : 'Visitor Experience & Timing Parameters'}
+                {language === "gu"
+                  ? "મુલાકાતી અનુભવ અને સમયપત્રક"
+                  : language === "hi"
+                    ? "सैलानी अनुभव और समय सारिणी"
+                    : "Visitor Experience & Timing Parameters"}
               </span>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono text-xs">
-                
                 <div className="space-y-1 border-l-2 border-gold pl-3">
                   <span className="text-stone uppercase text-[10px]">
-                    {language === 'gu' ? 'ઉત્તમ સમય' : language === 'hi' ? 'उत्तम समय' : 'Best Season'}
+                    {language === "gu"
+                      ? "ઉત્તમ સમય"
+                      : language === "hi"
+                        ? "उत्तम समय"
+                        : "Best Season"}
                   </span>
                   <div className="font-bold text-salt text-sm flex items-center gap-1.5">
                     <Calendar className="w-4 h-4 text-gold shrink-0" />
                     <span>{destination.bestTime}</span>
                   </div>
                   <p className="text-[11px] text-stone/80">
-                    {language === 'gu' ? 'અનુકૂળ હવામાન' : language === 'hi' ? 'अनुकूल मौसम' : 'Optimal climate for heritage walks'}
+                    {language === "gu"
+                      ? "અનુકૂળ હવામાન"
+                      : language === "hi"
+                        ? "अनुकूल मौसम"
+                        : "Optimal climate for heritage walks"}
                   </p>
                 </div>
 
                 <div className="space-y-1 border-l-2 border-gold pl-3">
                   <span className="text-stone uppercase text-[10px]">
-                    {language === 'gu' ? 'સરેરાશ સમય' : language === 'hi' ? 'औसत समय' : 'Avg Visit Time'}
+                    {language === "gu"
+                      ? "સરેરાશ સમય"
+                      : language === "hi"
+                        ? "औसत समय"
+                        : "Avg Visit Time"}
                   </span>
                   <div className="font-bold text-salt text-sm flex items-center gap-1.5">
                     <Clock className="w-4 h-4 text-gold shrink-0" />
                     <span>{destination.avgVisitTime}</span>
                   </div>
                   <p className="text-[11px] text-stone/80">
-                    {language === 'gu' ? 'ભલામણ કરેલ સમયગાળો' : language === 'hi' ? 'अनुशंसित समय अवधि' : 'Recommended exploration duration'}
+                    {language === "gu"
+                      ? "ભલામણ કરેલ સમયગાળો"
+                      : language === "hi"
+                        ? "अनुशंसित समय अवधि"
+                        : "Recommended exploration duration"}
                   </p>
                 </div>
 
                 <div className="space-y-1 border-l-2 border-gold pl-3">
                   <span className="text-stone uppercase text-[10px]">
-                    {language === 'gu' ? 'પ્રવેશ ટિકિટ' : language === 'hi' ? 'प्रवेश टिकट' : 'Entry Ticket'}
+                    {language === "gu"
+                      ? "પ્રવેશ ટિકિટ"
+                      : language === "hi"
+                        ? "प्रवेश टिकट"
+                        : "Entry Ticket"}
                   </span>
                   <div className="font-bold text-gold text-sm flex items-center gap-1.5">
                     <Ticket className="w-4 h-4 text-gold shrink-0" />
                     <span>{destination.entryFee}</span>
                   </div>
-                  <p className="text-[11px] text-stone/80">Official ASI / TCGL tariff</p>
+                  <p className="text-[11px] text-stone/80">
+                    Official ASI / TCGL tariff
+                  </p>
                 </div>
-
               </div>
 
               {/* Safety & Essential Services Block */}
-              {(destination.nearestHospital || destination.nearestPoliceStation) && (
+              {(destination.nearestHospital ||
+                destination.nearestPoliceStation) && (
                 <div className="pt-4 border-t border-stone/30 font-mono text-xs text-stone space-y-1.5">
                   <span className="text-[11px] uppercase tracking-wider font-semibold text-stone/90 block">
                     Good to know.
@@ -231,13 +313,17 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                     {destination.nearestHospital && (
                       <div className="flex items-center gap-1.5">
                         <Hospital className="w-3.5 h-3.5 text-stone shrink-0" />
-                        <span>Nearest hospital: {destination.nearestHospital}</span>
+                        <span>
+                          Nearest hospital: {destination.nearestHospital}
+                        </span>
                       </div>
                     )}
                     {destination.nearestPoliceStation && (
                       <div className="flex items-center gap-1.5">
                         <Shield className="w-3.5 h-3.5 text-stone shrink-0" />
-                        <span>Nearest police: {destination.nearestPoliceStation}</span>
+                        <span>
+                          Nearest police: {destination.nearestPoliceStation}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -251,14 +337,23 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone/20 pb-4">
                   <div>
                     <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
-                      {language === 'gu' ? 'શહેરના સ્મારકો અને આકર્ષણો' : language === 'hi' ? 'शहर के स्मारक और आकर्षण' : 'Monuments & Intra-City Heritage Attractions'}
+                      {language === "gu"
+                        ? "શહેરના સ્મારકો અને આકર્ષણો"
+                        : language === "hi"
+                          ? "शहर के स्मारक और आकर्षण"
+                          : "Monuments & Intra-City Heritage Attractions"}
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl text-charcoal font-bold">
-                      {language === 'gu' ? `${getName(destination)} મુખ્ય આકર્ષણો` : language === 'hi' ? `${getName(destination)} मुख्य आकर्षण` : `Key Monuments in ${getName(destination)}`}
+                      {language === "gu"
+                        ? `${getName(destination)} મુખ્ય આકર્ષણો`
+                        : language === "hi"
+                          ? `${getName(destination)} मुख्य आकर्षण`
+                          : `Key Monuments in ${getName(destination)}`}
                     </h3>
                   </div>
                   <span className="font-mono text-xs text-stone">
-                    Showing {filteredAttractions.length} of {destination.attractions.length} sites
+                    Showing {filteredAttractions.length} of{" "}
+                    {destination.attractions.length} sites
                   </span>
                 </div>
 
@@ -269,27 +364,41 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                     onClick={() => setWheelchairOnly(!wheelchairOnly)}
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 border transition-all cursor-pointer font-semibold ${
                       wheelchairOnly
-                        ? 'bg-emerald-800 text-salt border-emerald-900 shadow-xs'
-                        : 'bg-white text-emerald-950 border-emerald-400 hover:bg-emerald-50'
+                        ? "bg-emerald-800 text-salt border-emerald-900 shadow-xs"
+                        : "bg-white text-emerald-950 border-emerald-400 hover:bg-emerald-50"
                     }`}
                   >
-                    <Accessibility className={`w-4 h-4 ${wheelchairOnly ? 'text-emerald-300' : 'text-emerald-700'}`} />
+                    <Accessibility
+                      className={`w-4 h-4 ${wheelchairOnly ? "text-emerald-300" : "text-emerald-700"}`}
+                    />
                     <span>Wheelchair Accessible</span>
-                    {wheelchairOnly && <span className="text-[10px] bg-emerald-950 text-salt px-1">ACTIVE</span>}
+                    {wheelchairOnly && (
+                      <span className="text-[10px] bg-emerald-950 text-salt px-1">
+                        ACTIVE
+                      </span>
+                    )}
                   </button>
 
                   <span className="text-stone/40 hidden sm:inline">|</span>
 
                   <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="text-stone font-semibold uppercase text-[10px]">Physical Demand:</span>
-                    {(['low', 'moderate', 'high'] as const).map((level) => {
+                    <span className="text-stone font-semibold uppercase text-[10px]">
+                      Physical Demand:
+                    </span>
+                    {(["low", "moderate", "high"] as const).map((level) => {
                       const isSelected = selectedDemands.includes(level);
                       const badgeStyle =
-                        level === 'low'
-                          ? isSelected ? 'bg-emerald-800 text-salt border-emerald-900' : 'bg-white text-emerald-900 border-stone/30 hover:border-emerald-500'
-                          : level === 'moderate'
-                          ? isSelected ? 'bg-amber-800 text-salt border-amber-900' : 'bg-white text-amber-900 border-stone/30 hover:border-amber-500'
-                          : isSelected ? 'bg-madder text-salt border-red-900' : 'bg-white text-madder border-stone/30 hover:border-red-500';
+                        level === "low"
+                          ? isSelected
+                            ? "bg-emerald-800 text-salt border-emerald-900"
+                            : "bg-white text-emerald-900 border-stone/30 hover:border-emerald-500"
+                          : level === "moderate"
+                            ? isSelected
+                              ? "bg-amber-800 text-salt border-amber-900"
+                              : "bg-white text-amber-900 border-stone/30 hover:border-amber-500"
+                            : isSelected
+                              ? "bg-madder text-salt border-red-900"
+                              : "bg-white text-madder border-stone/30 hover:border-red-500";
 
                       return (
                         <button
@@ -307,7 +416,10 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   {(wheelchairOnly || selectedDemands.length > 0) && (
                     <button
                       type="button"
-                      onClick={() => { setWheelchairOnly(false); setSelectedDemands([]); }}
+                      onClick={() => {
+                        setWheelchairOnly(false);
+                        setSelectedDemands([]);
+                      }}
                       className="text-stone hover:text-madder text-[10px] underline ml-auto uppercase font-semibold cursor-pointer"
                     >
                       Reset Filters
@@ -351,8 +463,18 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                         />
 
                         <div className="flex items-center justify-between font-mono text-[11px] text-stone">
-                          <span>Fee: <strong className="text-charcoal">{attr.entryFee}</strong></span>
-                          <span>Time: <strong className="text-charcoal">{attr.durationHours}h</strong></span>
+                          <span>
+                            Fee:{" "}
+                            <strong className="text-charcoal">
+                              {attr.entryFee}
+                            </strong>
+                          </span>
+                          <span>
+                            Time:{" "}
+                            <strong className="text-charcoal">
+                              {attr.durationHours}h
+                            </strong>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -362,57 +484,70 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             )}
 
             {/* NEARBY ATTRACTIONS TERRACE-MINI-GRID */}
-            {destination.nearbyAttractions && destination.nearbyAttractions.length > 0 && (
-              <div className="space-y-4">
-                <div className="border-l-2 border-gold pl-3">
-                  <span className="font-mono text-xs text-gold uppercase tracking-widest block">
-                    {language === 'gu' ? 'પ્રાદેશિક સર્કિટ' : language === 'hi' ? 'क्षेत्रीय सर्किट' : 'Regional Circuit'}
-                  </span>
-                  <h3 className="font-display text-2xl text-charcoal font-bold">
-                    {language === 'gu' ? 'નજીકના સ્મારકો અને આકર્ષણો' : language === 'hi' ? 'निकटतम स्मारक और आकर्षण' : 'Nearby Monuments & Heritage Attractions'}
-                  </h3>
-                </div>
+            {destination.nearbyAttractions &&
+              destination.nearbyAttractions.length > 0 && (
+                <div className="space-y-4">
+                  <div className="border-l-2 border-gold pl-3">
+                    <span className="font-mono text-xs text-gold uppercase tracking-widest block">
+                      {language === "gu"
+                        ? "પ્રાદેશિક સર્કિટ"
+                        : language === "hi"
+                          ? "क्षेत्रीय सर्किट"
+                          : "Regional Circuit"}
+                    </span>
+                    <h3 className="font-display text-2xl text-charcoal font-bold">
+                      {language === "gu"
+                        ? "નજીકના સ્મારકો અને આકર્ષણો"
+                        : language === "hi"
+                          ? "निकटतम स्मारक और आकर्षण"
+                          : "Nearby Monuments & Heritage Attractions"}
+                    </h3>
+                  </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {destination.nearbyAttractions.map((attraction) => (
-                    <div
-                      key={attraction.id}
-                      onClick={() => onSelectNearbyDestination && onSelectNearbyDestination(attraction.id)}
-                      className="group bg-white p-3.5 border border-stone/30 hover:border-gold transition-all duration-200 cursor-pointer flex gap-3 items-center"
-                    >
-                      <img
-                        src={attraction.imageUrl}
-                        alt={getName(attraction)}
-                        className="w-20 h-20 object-cover grayscale group-hover:grayscale-0 transition-all shrink-0 border border-stone/20"
-                      />
-                      <div className="space-y-1 flex-1 min-w-0">
-                        <span className="text-[10px] font-mono text-gold uppercase block truncate">
-                          {attraction.category}
-                        </span>
-                        <h4 className="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors truncate">
-                          {getName(attraction)}
-                        </h4>
-                        <span className="text-xs font-mono text-stone flex items-center gap-1">
-                          <MapPin className="w-3 h-3 text-gold" />
-                          {attraction.distance}
-                        </span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {destination.nearbyAttractions.map((attraction) => (
+                      <div
+                        key={attraction.id}
+                        onClick={() =>
+                          onSelectNearbyDestination &&
+                          onSelectNearbyDestination(attraction.id)
+                        }
+                        className="group bg-white p-3.5 border border-stone/30 hover:border-gold transition-all duration-200 cursor-pointer flex gap-3 items-center"
+                      >
+                        <img
+                          src={attraction.imageUrl}
+                          alt={getName(attraction)}
+                          className="w-20 h-20 object-cover grayscale group-hover:grayscale-0 transition-all shrink-0 border border-stone/20"
+                        />
+                        <div className="space-y-1 flex-1 min-w-0">
+                          <span className="text-[10px] font-mono text-gold uppercase block truncate">
+                            {attraction.category}
+                          </span>
+                          <h4 className="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors truncate">
+                            {getName(attraction)}
+                          </h4>
+                          <span className="text-xs font-mono text-stone flex items-center gap-1">
+                            <MapPin className="w-3 h-3 text-gold" />
+                            {attraction.distance}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-
+              )}
           </div>
 
           {/* RIGHT COLUMN (NARROWER - lg:col-span-4, STICKY ON DESKTOP) */}
           <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
-            
             <div className="bg-ink text-salt p-6 border-2 border-gold/60 space-y-6 shadow-md">
-              
               <div className="border-b border-stone/30 pb-4">
                 <span className="font-mono text-xs text-gold uppercase tracking-wider block mb-1">
-                  {language === 'gu' ? 'સત્તાવાર સંક્ષેપ' : language === 'hi' ? 'आधिकारिक सारांश' : 'Official Heritage Summary'}
+                  {language === "gu"
+                    ? "સત્તાવાર સંક્ષેપ"
+                    : language === "hi"
+                      ? "आधिकारिक सारांश"
+                      : "Official Heritage Summary"}
                 </span>
                 <h3 className="font-display text-2xl font-bold text-salt">
                   {getName(destination)}
@@ -421,39 +556,83 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
 
               {/* IBM Plex Mono Logistical Specs Panel */}
               <div className="space-y-3 font-mono text-xs">
-                
                 <div className="flex items-center justify-between py-2 border-b border-stone/30">
-                  <span className="text-stone uppercase">{language === 'gu' ? 'પ્રવેશ ફી' : language === 'hi' ? 'प्रवेश शुल्क' : 'Entry Fee'}</span>
-                  <span className="text-gold font-bold">{destination.entryFee}</span>
+                  <span className="text-stone uppercase">
+                    {language === "gu"
+                      ? "પ્રવેશ ફી"
+                      : language === "hi"
+                        ? "प्रवेश शुल्क"
+                        : "Entry Fee"}
+                  </span>
+                  <span className="text-gold font-bold">
+                    {destination.entryFee}
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between py-2 border-b border-stone/30">
-                  <span className="text-stone uppercase">{language === 'gu' ? 'સરેરાશ સમય' : language === 'hi' ? 'औसत समय' : 'Avg Visit Time'}</span>
-                  <span className="text-salt font-semibold">{destination.avgVisitTime}</span>
+                  <span className="text-stone uppercase">
+                    {language === "gu"
+                      ? "સરેરાશ સમય"
+                      : language === "hi"
+                        ? "औसत समय"
+                        : "Avg Visit Time"}
+                  </span>
+                  <span className="text-salt font-semibold">
+                    {destination.avgVisitTime}
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between py-2 border-b border-stone/30">
-                  <span className="text-stone uppercase">{language === 'gu' ? 'જિલ્લો' : language === 'hi' ? 'ज़िला' : 'District'}</span>
-                  <span className="text-salt font-semibold">{destination.district}</span>
+                  <span className="text-stone uppercase">
+                    {language === "gu"
+                      ? "જિલ્લો"
+                      : language === "hi"
+                        ? "ज़िला"
+                        : "District"}
+                  </span>
+                  <span className="text-salt font-semibold">
+                    {destination.district}
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between py-2 border-b border-stone/30">
-                  <span className="text-stone uppercase">{language === 'gu' ? 'શ્રેણી' : language === 'hi' ? 'श्रेणी' : 'Category'}</span>
+                  <span className="text-stone uppercase">
+                    {language === "gu"
+                      ? "શ્રેણી"
+                      : language === "hi"
+                        ? "श्रेणी"
+                        : "Category"}
+                  </span>
                   <span className="text-salt font-semibold text-[11px] truncate max-w-[150px]">
                     {destination.officialCategory}
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between py-2 border-b border-stone/30">
-                  <span className="text-stone uppercase">{language === 'gu' ? 'અમદાવાદથી' : language === 'hi' ? 'अहमदाबाद से' : 'From Ahmedabad'}</span>
-                  <span className="text-salt font-semibold">{destination.distanceFromAhmedabad}</span>
+                  <span className="text-stone uppercase">
+                    {language === "gu"
+                      ? "અમદાવાદથી"
+                      : language === "hi"
+                        ? "अहमदाबाद से"
+                        : "From Ahmedabad"}
+                  </span>
+                  <span className="text-salt font-semibold">
+                    {destination.distanceFromAhmedabad}
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between py-2">
-                  <span className="text-stone uppercase">{language === 'gu' ? 'રેટિંગ' : language === 'hi' ? 'रेटिंग' : 'Visitor Rating'}</span>
-                  <span className="text-gold font-bold">{destination.rating}</span>
+                  <span className="text-stone uppercase">
+                    {language === "gu"
+                      ? "રેટિંગ"
+                      : language === "hi"
+                        ? "रेटिंग"
+                        : "Visitor Rating"}
+                  </span>
+                  <span className="text-gold font-bold">
+                    {destination.rating}
+                  </span>
                 </div>
-
               </div>
 
               {/* MADDER RED ACTION BUTTON: "Add to Trip Plan" */}
@@ -462,19 +641,25 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   onClick={() => onAddToTrip(destination)}
                   className={`w-full py-3.5 px-4 text-xs font-mono uppercase tracking-wider font-bold transition-all duration-200 flex items-center justify-center gap-2 border cursor-pointer ${
                     isAddedToTrip
-                      ? 'bg-emerald-800 text-salt border-emerald-600'
-                      : 'bg-madder hover:bg-madder/90 text-salt border-madder'
+                      ? "bg-emerald-800 text-salt border-emerald-600"
+                      : "bg-madder hover:bg-madder/90 text-salt border-madder"
                   }`}
                 >
                   {isAddedToTrip ? (
                     <>
                       <CheckCircle2 className="w-4 h-4 text-emerald-300" />
-                      <span>{language === 'gu' ? 'યોજનામાં ઉમેરાયેલ' : language === 'hi' ? 'योजना में जोड़ा गया' : 'Added to Trip Plan'}</span>
+                      <span>
+                        {language === "gu"
+                          ? "યોજનામાં ઉમેરાયેલ"
+                          : language === "hi"
+                            ? "योजना में जोड़ा गया"
+                            : "Added to Trip Plan"}
+                      </span>
                     </>
                   ) : (
                     <>
                       <PlusCircle className="w-4 h-4 text-salt" />
-                      <span>{t('explore.plan', 'Add to Trip Plan')}</span>
+                      <span>{t("explore.plan", "Add to Trip Plan")}</span>
                     </>
                   )}
                 </button>
@@ -484,33 +669,47 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                     onClick={() => onOpenPlannerWithSite(destination)}
                     className="w-full py-2.5 px-4 bg-transparent hover:bg-salt/10 text-gold hover:text-salt border border-gold/40 text-xs font-mono uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                   >
-                    <span>{language === 'gu' ? 'કસ્ટમ યાત્રા પ્લાન કરો' : language === 'hi' ? 'कस्टम यात्रा प्लान करें' : 'Build Custom Itinerary'}</span>
+                    <span>
+                      {language === "gu"
+                        ? "કસ્ટમ યાત્રા પ્લાન કરો"
+                        : language === "hi"
+                          ? "कस्टम यात्रा प्लान करें"
+                          : "Build Custom Itinerary"}
+                    </span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 )}
               </div>
 
               <p className="text-[10px] font-mono text-stone text-center">
-                {language === 'gu' ? 'સાઇટને સીધા તમારા સક્રિય રૂટ પ્લાનરમાં ઉમેરે છે.' : language === 'hi' ? 'साइट को सीधे आपके सक्रिय रूट प्लानर में जोड़ता है।' : 'Adds site directly to your active route builder in the navigation bar.'}
+                {language === "gu"
+                  ? "સાઇટને સીધા તમારા સક્રિય રૂટ પ્લાનરમાં ઉમેરે છે."
+                  : language === "hi"
+                    ? "साइट को सीधे आपके सक्रिय रूट प्लानर में जोड़ता है।"
+                    : "Adds site directly to your active route builder in the navigation bar."}
               </p>
-
             </div>
-
           </div>
-
         </div>
 
         {/* 3. SUGGESTED HOTELS NEAR HERE STRIP */}
         {destination.nearbyHotels && destination.nearbyHotels.length > 0 && (
           <div className="mt-16 pt-10 border-t border-stone/30 space-y-6">
-            
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-l-2 border-gold pl-3">
               <div>
                 <span className="font-mono text-xs text-gold uppercase tracking-widest block">
-                  {language === 'gu' ? 'હેરિટેજ સ્ટે રોકાણ' : language === 'hi' ? 'हेरिटेज स्टे निवास' : 'Heritage Stay Accommodations'}
+                  {language === "gu"
+                    ? "હેરિટેજ સ્ટે રોકાણ"
+                    : language === "hi"
+                      ? "हेरिटेज स्टे निवास"
+                      : "Heritage Stay Accommodations"}
                 </span>
                 <h3 className="font-display text-2xl text-charcoal font-bold">
-                  {language === 'gu' ? `${getName(destination)} નજીકની હોટલો` : language === 'hi' ? `${getName(destination)} के निकटतम होटल` : `Suggested Hotels Near ${getName(destination)}`}
+                  {language === "gu"
+                    ? `${getName(destination)} નજીકની હોટલો`
+                    : language === "hi"
+                      ? `${getName(destination)} के निकटतम होटल`
+                      : `Suggested Hotels Near ${getName(destination)}`}
                 </h3>
               </div>
               <span className="font-mono text-xs text-stone">
@@ -531,7 +730,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       alt={hotel.name}
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
                     />
-                    
+
                     {/* Official Stay Type Badge */}
                     <span className="absolute top-2 left-2 bg-salt text-ink font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
                       {hotel.stayType}
@@ -554,38 +753,57 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t border-stone/30 text-xs font-mono">
-                    <span className="text-stone">{language === 'gu' ? 'ભાડું:' : language === 'hi' ? 'किराया:' : 'Tariff:'}</span>
-                    <span className="text-gold font-bold">{hotel.pricePerNight}</span>
+                    <span className="text-stone">
+                      {language === "gu"
+                        ? "ભાડું:"
+                        : language === "hi"
+                          ? "किराया:"
+                          : "Tariff:"}
+                    </span>
+                    <span className="text-gold font-bold">
+                      {hotel.pricePerNight}
+                    </span>
                   </div>
 
                   {onSelectPreferredHotel && (
                     <button
-                      onClick={() => onSelectPreferredHotel(destination.id, hotel.id)}
+                      onClick={() =>
+                        onSelectPreferredHotel(destination.id, hotel.id)
+                      }
                       className={`w-full py-2 px-3 text-xs font-mono font-bold uppercase transition-all cursor-pointer flex items-center justify-center gap-1.5 border ${
                         preferredHotels?.[destination.id] === hotel.id
-                          ? 'bg-gold text-ink border-gold shadow-xs'
-                          : 'bg-salt/10 hover:bg-gold hover:text-ink text-salt border-stone/40'
+                          ? "bg-gold text-ink border-gold shadow-xs"
+                          : "bg-salt/10 hover:bg-gold hover:text-ink text-salt border-stone/40"
                       }`}
                     >
                       {preferredHotels?.[destination.id] === hotel.id ? (
                         <>
                           <CheckCircle2 className="w-3.5 h-3.5 text-ink shrink-0" />
-                          <span>{language === 'gu' ? 'પસંદ કરેલ સ્થાન' : language === 'hi' ? 'चयनित स्थान' : 'Preferred Stay Selected'}</span>
+                          <span>
+                            {language === "gu"
+                              ? "પસંદ કરેલ સ્થાન"
+                              : language === "hi"
+                                ? "चयनित स्थान"
+                                : "Preferred Stay Selected"}
+                          </span>
                         </>
                       ) : (
-                        <span>{language === 'gu' ? 'પસંદગી સ્થાપિત કરો' : language === 'hi' ? 'पसंदीदा स्थान चुनें' : 'Set as Preferred Stay'}</span>
+                        <span>
+                          {language === "gu"
+                            ? "પસંદગી સ્થાપિત કરો"
+                            : language === "hi"
+                              ? "पसंदीदा स्थान चुनें"
+                              : "Set as Preferred Stay"}
+                        </span>
                       )}
                     </button>
                   )}
                 </div>
               ))}
             </div>
-
           </div>
         )}
-
       </div>
-
     </div>
   );
 };

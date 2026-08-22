@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Destination, GUJARAT_DESTINATIONS } from '../data/destinations';
-import { ItineraryConfig } from './ItineraryView';
-import { useLanguage } from '../context/LanguageContext';
-import { getLatestOfflineTrip } from '../utils/offlineStorage';
+import React, { useState } from "react";
+import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
+import { ItineraryConfig } from "./ItineraryView";
+import { useLanguage } from "../context/LanguageContext";
+import { getLatestOfflineTrip } from "../utils/offlineStorage";
 import {
   DollarSign,
   ArrowLeft,
@@ -18,8 +18,8 @@ import {
   Share2,
   Check,
   TrendingDown,
-  Info
-} from 'lucide-react';
+  Info,
+} from "lucide-react";
 
 interface BudgetPlannerViewProps {
   config: ItineraryConfig | null;
@@ -39,17 +39,22 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   const cachedTrip = getLatestOfflineTrip();
   const activeConfig = config || cachedTrip?.config || null;
 
-  const defaultWorkedIds = ['modhera', 'champaner', 'adalaj'];
+  const defaultWorkedIds = ["modhera", "champaner", "adalaj"];
   const userSelected = activeConfig?.selectedSites
-    ? GUJARAT_DESTINATIONS.filter(d => activeConfig.selectedSites.includes(d.id))
+    ? GUJARAT_DESTINATIONS.filter((d) =>
+        activeConfig.selectedSites.includes(d.id),
+      )
     : [];
-  
-  const displayDestinations = userSelected.length >= 3
-    ? userSelected
-    : GUJARAT_DESTINATIONS.filter(d => defaultWorkedIds.includes(d.id));
+
+  const displayDestinations =
+    userSelected.length >= 3
+      ? userSelected
+      : GUJARAT_DESTINATIONS.filter((d) => defaultWorkedIds.includes(d.id));
 
   const tripDays = activeConfig?.tripDays || 3;
-  const [allocatedBudget, setAllocatedBudget] = useState<number>(activeConfig?.budget || 12000);
+  const [allocatedBudget, setAllocatedBudget] = useState<number>(
+    activeConfig?.budget || 12000,
+  );
 
   const travelCost = 3850;
   const hotelCost = 6800;
@@ -61,20 +66,23 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
 
   let tipSavings = 0;
-  if (appliedTips.includes('hotel')) tipSavings += 2200;
-  if (appliedTips.includes('pass')) tipSavings += 200;
-  if (appliedTips.includes('transit')) tipSavings += 1100;
+  if (appliedTips.includes("hotel")) tipSavings += 2200;
+  if (appliedTips.includes("pass")) tipSavings += 200;
+  if (appliedTips.includes("transit")) tipSavings += 1100;
 
   const currentEffectiveCost = Math.max(0, totalEstimatedCost - tipSavings);
   const currentIsOver = currentEffectiveCost > allocatedBudget;
   const currentOverAmount = currentEffectiveCost - allocatedBudget;
-  const currentFillPercent = Math.min(100, Math.round((currentEffectiveCost / allocatedBudget) * 100));
+  const currentFillPercent = Math.min(
+    100,
+    Math.round((currentEffectiveCost / allocatedBudget) * 100),
+  );
 
-  const datesList = ['DAY 1', 'DAY 2', 'DAY 3'];
+  const datesList = ["DAY 1", "DAY 2", "DAY 3"];
   const dayTitles = [
-    'Day 01 • Modhera & Mehsana Stepwell Foundations',
-    'Day 02 • Champaner-Pavagadh UNESCO Citadel',
-    'Day 03 • Ahmedabad Sabarmati & Subterranean Terraces'
+    "Day 01 • Modhera & Mehsana Stepwell Foundations",
+    "Day 02 • Champaner-Pavagadh UNESCO Citadel",
+    "Day 03 • Ahmedabad Sabarmati & Subterranean Terraces",
   ];
 
   const dayCosts = [
@@ -86,7 +94,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
       hotel: 3200,
       entry: 250,
       food: 450,
-      sites: ['Modhera Sun Temple', 'Mehsana Rani Ki Vav']
+      sites: ["Modhera Sun Temple", "Mehsana Rani Ki Vav"],
     },
     {
       dayNum: 2,
@@ -96,7 +104,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
       hotel: 2600,
       entry: 300,
       food: 500,
-      sites: ['Champaner-Pavagadh Archeological Park']
+      sites: ["Champaner-Pavagadh Archeological Park"],
     },
     {
       dayNum: 3,
@@ -106,19 +114,21 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
       hotel: 1000,
       entry: 200,
       food: 450,
-      sites: ['Adalaj Ni Vav', 'Sabarmati Ashram']
-    }
+      sites: ["Adalaj Ni Vav", "Sabarmati Ashram"],
+    },
   ];
 
   const handlePrint = () => window.print();
 
   const handleShare = () => {
     if (navigator.share) {
-      navigator.share({
-        title: 'Gujarat Solanki Circuit Budget Ledger',
-        text: `Financial breakdown for my ${tripDays}-day Gujarat Heritage trip: Total ₹${currentEffectiveCost.toLocaleString()}`,
-        url: window.location.href,
-      }).catch(() => {});
+      navigator
+        .share({
+          title: "Gujarat Solanki Circuit Budget Ledger",
+          text: `Financial breakdown for my ${tripDays}-day Gujarat Heritage trip: Total ₹${currentEffectiveCost.toLocaleString()}`,
+          url: window.location.href,
+        })
+        .catch(() => {});
     } else {
       navigator.clipboard.writeText(window.location.href);
       setSavedShareNotice(true);
@@ -127,15 +137,14 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   };
 
   const toggleTip = (tipId: string) => {
-    setAppliedTips(prev =>
-      prev.includes(tipId) ? prev.filter(t => t !== tipId) : [...prev, tipId]
+    setAppliedTips((prev) =>
+      prev.includes(tipId) ? prev.filter((t) => t !== tipId) : [...prev, tipId],
     );
   };
 
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-6xl mx-auto space-y-8">
-
         {/* Navigation Action Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
           <div className="flex items-center gap-3">
@@ -144,7 +153,13 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 text-salt border border-gold text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-gold" />
-              <span>{language === 'gu' ? 'પ્રવાસ પ્લાનર પર પાછા ફરો' : language === 'hi' ? 'यात्रा प्लानर पर वापस जाएं' : 'Return to Itinerary View'}</span>
+              <span>
+                {language === "gu"
+                  ? "પ્રવાસ પ્લાનર પર પાછા ફરો"
+                  : language === "hi"
+                    ? "यात्रा प्लानर पर वापस जाएं"
+                    : "Return to Itinerary View"}
+              </span>
             </button>
 
             <button
@@ -152,7 +167,13 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
             >
               <SlidersHorizontal className="w-3.5 h-3.5 text-ink" />
-              <span>{language === 'gu' ? 'મુખ્ય પ્લાનરમાં ફેરફાર કરો' : language === 'hi' ? 'मुख्य प्लानर में बदलाव करें' : 'Adjust Trip Parameters'}</span>
+              <span>
+                {language === "gu"
+                  ? "મુખ્ય પ્લાનરમાં ફેરફાર કરો"
+                  : language === "hi"
+                    ? "मुख्य प्लानर में बदलाव करें"
+                    : "Adjust Trip Parameters"}
+              </span>
             </button>
           </div>
 
@@ -162,7 +183,13 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
-              <span>{language === 'gu' ? 'શેર કરો' : language === 'hi' ? 'શેર કરેં' : 'Share Ledger'}</span>
+              <span>
+                {language === "gu"
+                  ? "શેર કરો"
+                  : language === "hi"
+                    ? "શેર કરેં"
+                    : "Share Ledger"}
+              </span>
             </button>
 
             <button
@@ -170,7 +197,13 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5 text-gold" />
-              <span>{language === 'gu' ? 'પ્રિન્ટ લેજર' : language === 'hi' ? 'प्रिंट लेजर' : 'Print Ledger'}</span>
+              <span>
+                {language === "gu"
+                  ? "પ્રિન્ટ લેજર"
+                  : language === "hi"
+                    ? "प्रिंट लेजर"
+                    : "Print Ledger"}
+              </span>
             </button>
           </div>
         </div>
@@ -184,7 +217,6 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
         {/* ================= 1. HEADER: BUDGET VS ESTIMATED COST BAR ================= */}
         <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative shadow-lg">
-          
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone/30 pb-4">
             <div>
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold mb-1">
@@ -192,7 +224,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <span>Financial Monograph & Circuit Audit</span>
               </div>
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
-                {t('nav.budget', 'Solanki Heritage Budget Planner')}
+                {t("nav.budget", "Solanki Heritage Budget Planner")}
               </h1>
             </div>
 
@@ -209,7 +241,9 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                   min="5000"
                   max="30000"
                   value={allocatedBudget}
-                  onChange={(e) => setAllocatedBudget(Number(e.target.value) || 0)}
+                  onChange={(e) =>
+                    setAllocatedBudget(Number(e.target.value) || 0)
+                  }
                   className="bg-salt text-ink font-mono font-bold text-base px-2 py-1 border border-gold outline-none w-28"
                 />
                 <span className="text-stone text-[10px]">INR</span>
@@ -233,7 +267,9 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <span className="text-stone text-[11px] uppercase tracking-wider block">
                   Estimated Total Cost:
                 </span>
-                <span className={`font-bold text-lg sm:text-xl ${currentIsOver ? 'text-madder' : 'text-gold'}`}>
+                <span
+                  className={`font-bold text-lg sm:text-xl ${currentIsOver ? "text-madder" : "text-gold"}`}
+                >
                   ₹{currentEffectiveCost.toLocaleString()}
                 </span>
               </div>
@@ -245,7 +281,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <div
                   style={{ width: `${currentFillPercent}%` }}
                   className={`h-full transition-all duration-500 ${
-                    currentIsOver ? 'bg-madder' : 'bg-gold'
+                    currentIsOver ? "bg-madder" : "bg-gold"
                   }`}
                 />
               </div>
@@ -263,16 +299,17 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <AlertTriangle className="w-4 h-4 text-madder shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
                   <span className="font-bold text-salt block">
-                    This plan is Rs.{currentOverAmount.toLocaleString()} over your budget.
+                    This plan is Rs.{currentOverAmount.toLocaleString()} over
+                    your budget.
                   </span>
                   <span className="text-stone text-[11px] block">
-                    Remove a stop or extend your trip to fit it, or apply one of our optimization tips below.
+                    Remove a stop or extend your trip to fit it, or apply one of
+                    our optimization tips below.
                   </span>
                 </div>
               </div>
             )}
           </div>
-
         </div>
 
         {/* ================= 2. BREAKDOWN BY CATEGORY ================= */}
@@ -292,17 +329,22 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
           </div>
 
           <div className="space-y-3 font-mono text-xs">
-            
             {/* Travel */}
             <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
               <div className="flex items-center gap-3">
                 <Car className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal block">Transit & Transport (AC Chauffeur & Fuel)</span>
-                  <span className="text-[10px] text-stone">Inter-city private vehicle & toll charges</span>
+                  <span className="font-bold text-charcoal block">
+                    Transit & Transport (AC Chauffeur & Fuel)
+                  </span>
+                  <span className="text-[10px] text-stone">
+                    Inter-city private vehicle & toll charges
+                  </span>
                 </div>
               </div>
-              <span className="font-bold text-charcoal text-sm">₹{travelCost.toLocaleString()}</span>
+              <span className="font-bold text-charcoal text-sm">
+                ₹{travelCost.toLocaleString()}
+              </span>
             </div>
 
             {/* Hotel */}
@@ -310,11 +352,20 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               <div className="flex items-center gap-3">
                 <Hotel className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal block">Heritage Stays & TCGL Toran Accommodations</span>
-                  <span className="text-[10px] text-stone">2 nights verified government/heritage room rates</span>
+                  <span className="font-bold text-charcoal block">
+                    Heritage Stays & TCGL Toran Accommodations
+                  </span>
+                  <span className="text-[10px] text-stone">
+                    2 nights verified government/heritage room rates
+                  </span>
                 </div>
               </div>
-              <span className="font-bold text-charcoal text-sm">₹{(hotelCost - (appliedTips.includes('hotel') ? 2200 : 0)).toLocaleString()}</span>
+              <span className="font-bold text-charcoal text-sm">
+                ₹
+                {(
+                  hotelCost - (appliedTips.includes("hotel") ? 2200 : 0)
+                ).toLocaleString()}
+              </span>
             </div>
 
             {/* Entry Tariffs */}
@@ -322,11 +373,20 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               <div className="flex items-center gap-3">
                 <Ticket className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal block">ASI Monument Tariffs & Camera Permits</span>
-                  <span className="text-[10px] text-stone">Verified entry fees for Modhera, Champaner & Adalaj</span>
+                  <span className="font-bold text-charcoal block">
+                    ASI Monument Tariffs & Camera Permits
+                  </span>
+                  <span className="text-[10px] text-stone">
+                    Verified entry fees for Modhera, Champaner & Adalaj
+                  </span>
                 </div>
               </div>
-              <span className="font-bold text-charcoal text-sm">₹{(entryCost - (appliedTips.includes('pass') ? 200 : 0)).toLocaleString()}</span>
+              <span className="font-bold text-charcoal text-sm">
+                ₹
+                {(
+                  entryCost - (appliedTips.includes("pass") ? 200 : 0)
+                ).toLocaleString()}
+              </span>
             </div>
 
             {/* Food */}
@@ -334,13 +394,18 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               <div className="flex items-center gap-3">
                 <Utensils className="w-4 h-4 text-gold shrink-0" />
                 <div>
-                  <span className="font-bold text-charcoal block">Authentic Gujarati Thali & Dining</span>
-                  <span className="text-[10px] text-stone">Local culinary stops & tea breaks</span>
+                  <span className="font-bold text-charcoal block">
+                    Authentic Gujarati Thali & Dining
+                  </span>
+                  <span className="text-[10px] text-stone">
+                    Local culinary stops & tea breaks
+                  </span>
                 </div>
               </div>
-              <span className="font-bold text-charcoal text-sm">₹{foodCost.toLocaleString()}</span>
+              <span className="font-bold text-charcoal text-sm">
+                ₹{foodCost.toLocaleString()}
+              </span>
             </div>
-
           </div>
         </div>
 
@@ -359,80 +424,105 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
           </div>
 
           <p className="text-xs font-mono text-stone">
-            Select optimization measures below to dynamically apply cost reductions to your active itinerary ledger:
+            Select optimization measures below to dynamically apply cost
+            reductions to your active itinerary ledger:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-            
             {/* Tip 1 */}
             <button
-              onClick={() => toggleTip('hotel')}
+              onClick={() => toggleTip("hotel")}
               className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
-                appliedTips.includes('hotel')
-                  ? 'bg-gold text-ink border-gold font-bold shadow-md'
-                  : 'bg-salt/10 text-salt border-stone/40 hover:border-gold'
+                appliedTips.includes("hotel")
+                  ? "bg-gold text-ink border-gold font-bold shadow-md"
+                  : "bg-salt/10 text-salt border-stone/40 hover:border-gold"
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase tracking-wider text-stone">Stay Saver</span>
-                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">Save ₹2,200</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone">
+                  Stay Saver
+                </span>
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">
+                  Save ₹2,200
+                </span>
               </div>
-              <h4 className="font-display text-sm font-bold">Switch to Toran Guest House</h4>
+              <h4 className="font-display text-sm font-bold">
+                Switch to Toran Guest House
+              </h4>
               <p className="text-[11px] opacity-90 font-normal">
-                Opt for Gujarat Tourism (TCGL) Toran guest houses over private heritage stays.
+                Opt for Gujarat Tourism (TCGL) Toran guest houses over private
+                heritage stays.
               </p>
               <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
-                {appliedTips.includes('hotel') ? '✓ Applied to Ledger' : '+ Apply Saving'}
+                {appliedTips.includes("hotel")
+                  ? "✓ Applied to Ledger"
+                  : "+ Apply Saving"}
               </div>
             </button>
 
             {/* Tip 2 */}
             <button
-              onClick={() => toggleTip('pass')}
+              onClick={() => toggleTip("pass")}
               className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
-                appliedTips.includes('pass')
-                  ? 'bg-gold text-ink border-gold font-bold shadow-md'
-                  : 'bg-salt/10 text-salt border-stone/40 hover:border-gold'
+                appliedTips.includes("pass")
+                  ? "bg-gold text-ink border-gold font-bold shadow-md"
+                  : "bg-salt/10 text-salt border-stone/40 hover:border-gold"
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase tracking-wider text-stone">ASI Tariff Pass</span>
-                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">Save ₹200</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone">
+                  ASI Tariff Pass
+                </span>
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">
+                  Save ₹200
+                </span>
               </div>
-              <h4 className="font-display text-sm font-bold">Book Online ASI Combination Ticket</h4>
+              <h4 className="font-display text-sm font-bold">
+                Book Online ASI Combination Ticket
+              </h4>
               <p className="text-[11px] opacity-90 font-normal">
-                Purchase digital QR tickets online via the ASI portal to receive a 10% discount.
+                Purchase digital QR tickets online via the ASI portal to receive
+                a 10% discount.
               </p>
               <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
-                {appliedTips.includes('pass') ? '✓ Applied to Ledger' : '+ Apply Saving'}
+                {appliedTips.includes("pass")
+                  ? "✓ Applied to Ledger"
+                  : "+ Apply Saving"}
               </div>
             </button>
 
             {/* Tip 3 */}
             <button
-              onClick={() => toggleTip('transit')}
+              onClick={() => toggleTip("transit")}
               className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
-                appliedTips.includes('transit')
-                  ? 'bg-gold text-ink border-gold font-bold shadow-md'
-                  : 'bg-salt/10 text-salt border-stone/40 hover:border-gold'
+                appliedTips.includes("transit")
+                  ? "bg-gold text-ink border-gold font-bold shadow-md"
+                  : "bg-salt/10 text-salt border-stone/40 hover:border-gold"
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase tracking-wider text-stone">GSRTC Express Transit</span>
-                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">Save ₹1,100</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone">
+                  GSRTC Express Transit
+                </span>
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">
+                  Save ₹1,100
+                </span>
               </div>
-              <h4 className="font-display text-sm font-bold">GSRTC Volvo Bus for Inter-City Legs</h4>
+              <h4 className="font-display text-sm font-bold">
+                GSRTC Volvo Bus for Inter-City Legs
+              </h4>
               <p className="text-[11px] opacity-90 font-normal">
-                Use GSRTC Volvo AC coach between Ahmedabad, Mehsana, and Vadodara.
+                Use GSRTC Volvo AC coach between Ahmedabad, Mehsana, and
+                Vadodara.
               </p>
               <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
-                {appliedTips.includes('transit') ? '✓ Applied to Ledger' : '+ Apply Saving'}
+                {appliedTips.includes("transit")
+                  ? "✓ Applied to Ledger"
+                  : "+ Apply Saving"}
               </div>
             </button>
-
           </div>
         </div>
-
       </div>
     </div>
   );

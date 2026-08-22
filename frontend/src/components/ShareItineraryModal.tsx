@@ -1,9 +1,9 @@
 // NOTE: Once a backend exists, this client-side URL encoding approach should be replaced with a database-backed share link (e.g. /trips/:id/share/:token) to avoid long URLs for complex itineraries -- this client-only version is a reasonable interim approach given no backend yet.
 
-import React, { useState } from 'react';
-import { X, Copy, Check, Share2, Link, Sparkles } from 'lucide-react';
-import { ItineraryConfig } from './ItineraryView';
-import { getShareableUrl } from '../utils/shareUrl';
+import React, { useState } from "react";
+import { X, Copy, Check, Share2, Link, Sparkles } from "lucide-react";
+import { ItineraryConfig } from "./ItineraryView";
+import { getShareableUrl } from "../utils/shareUrl";
 
 interface ShareItineraryModalProps {
   config: ItineraryConfig;
@@ -16,14 +16,14 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
   config,
   cityName,
   isOpen,
-  onClose
+  onClose,
 }) => {
   const [copied, setCopied] = useState<boolean>(false);
 
   if (!isOpen) return null;
 
   const shareUrl = getShareableUrl(config);
-  const canNativeShare = typeof navigator !== 'undefined' && !!navigator.share;
+  const canNativeShare = typeof navigator !== "undefined" && !!navigator.share;
 
   const handleCopy = async () => {
     try {
@@ -31,7 +31,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch (err) {
-      console.error('Failed to copy link:', err);
+      console.error("Failed to copy link:", err);
     }
   };
 
@@ -41,17 +41,16 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
       await navigator.share({
         title: `Shared Itinerary for ${cityName}`,
         text: `Check out this circular ${config.tripDays || 2}-day heritage itinerary for ${cityName}!`,
-        url: shareUrl
+        url: shareUrl,
       });
     } catch (err) {
-      console.log('Native share closed or failed:', err);
+      console.log("Native share closed or failed:", err);
     }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-xs animate-fadeIn">
       <div className="bg-salt border-2 border-gold max-w-lg w-full p-6 shadow-2xl relative font-sans">
-        
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -78,7 +77,8 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
 
         {/* Info Banner */}
         <p className="text-xs text-charcoal bg-white border border-stone/30 p-3 mb-4 font-mono leading-relaxed">
-          Generates a read-only shareable link containing the complete itinerary routing, timed stops, and daily breakdown.
+          Generates a read-only shareable link containing the complete itinerary
+          routing, timed stops, and daily breakdown.
         </p>
 
         {/* Link Input + Copy Button */}
@@ -102,8 +102,8 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
               onClick={handleCopy}
               className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold border transition-colors cursor-pointer shrink-0 ${
                 copied
-                  ? 'bg-emerald-800 text-white border-emerald-900 shadow-xs'
-                  : 'bg-gold hover:bg-gold/90 text-ink border-ink shadow-xs'
+                  ? "bg-emerald-800 text-white border-emerald-900 shadow-xs"
+                  : "bg-gold hover:bg-gold/90 text-ink border-ink shadow-xs"
               }`}
             >
               {copied ? (
@@ -144,7 +144,6 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
             Close
           </button>
         </div>
-
       </div>
     </div>
   );

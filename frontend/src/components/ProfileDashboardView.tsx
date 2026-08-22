@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Destination, GUJARAT_DESTINATIONS } from '../data/destinations';
-import { ItineraryConfig } from './ItineraryView';
-import { useLanguage } from '../context/LanguageContext';
+import React, { useState } from "react";
+import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
+import { ItineraryConfig } from "./ItineraryView";
+import { useLanguage } from "../context/LanguageContext";
 import {
   User,
   Mail,
@@ -21,8 +21,8 @@ import {
   Check,
   Edit3,
   ExternalLink,
-  Plus
-} from 'lucide-react';
+  Plus,
+} from "lucide-react";
 
 export interface SavedTrip {
   id: string;
@@ -38,7 +38,11 @@ export interface SavedTrip {
 }
 
 interface ProfileDashboardViewProps {
-  currentUser: { name: string; email: string; role: 'tourist' | 'operator' } | null;
+  currentUser: {
+    name: string;
+    email: string;
+    role: "tourist" | "operator";
+  } | null;
   onOpenItinerary: (config: ItineraryConfig) => void;
   onOpenExplore: () => void;
   onOpenPlanner: () => void;
@@ -55,82 +59,97 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
   onLogout,
 }) => {
   const { t } = useLanguage();
-  const [role, setRole] = useState<'tourist' | 'operator'>(currentUser?.role || 'tourist');
+  const [role, setRole] = useState<"tourist" | "operator">(
+    currentUser?.role || "tourist",
+  );
 
-  const [name, setName] = useState<string>(currentUser?.name || 'Vidyadhar Solanki');
-  const [email, setEmail] = useState<string>(currentUser?.email || 'solanki@heritage.in');
-  const [currentPassword, setCurrentPassword] = useState<string>('');
-  const [newPassword, setNewPassword] = useState<string>('');
-  const [saveSuccessNotice, setSaveSuccessNotice] = useState<string | null>(null);
+  const [name, setName] = useState<string>(
+    currentUser?.name || "Vidyadhar Solanki",
+  );
+  const [email, setEmail] = useState<string>(
+    currentUser?.email || "solanki@heritage.in",
+  );
+  const [currentPassword, setCurrentPassword] = useState<string>("");
+  const [newPassword, setNewPassword] = useState<string>("");
+  const [saveSuccessNotice, setSaveSuccessNotice] = useState<string | null>(
+    null,
+  );
 
   const [savedTrips, setSavedTrips] = useState<SavedTrip[]>([
     {
-      id: 'trip-solanki-3d',
-      title: '3-Day Solanki & Heritage Stepwell Circuit',
-      dates: 'OCT 12 - 14, 2026',
+      id: "trip-solanki-3d",
+      title: "3-Day Solanki & Heritage Stepwell Circuit",
+      dates: "OCT 12 - 14, 2026",
       daysCount: 3,
       totalCost: 12800,
       planningProgress: 80,
-      statusLabel: '3 of 4 Stays Booked',
+      statusLabel: "3 of 4 Stays Booked",
       sitesCount: 3,
-      sitesList: ['Modhera Sun Temple', 'Champaner-Pavagadh', 'Adalaj Ni Vav'],
+      sitesList: ["Modhera Sun Temple", "Champaner-Pavagadh", "Adalaj Ni Vav"],
       config: {
-        selectedSites: ['modhera', 'champaner', 'adalaj'],
+        selectedSites: ["modhera", "champaner", "adalaj"],
         tripDays: 3,
-        budget: 12000
-      }
+        budget: 12000,
+      },
     },
     {
-      id: 'trip-kutch-5d',
-      title: '5-Day Great Rann & Kutchi Craft Trail',
-      dates: 'NOV 04 - 08, 2026',
+      id: "trip-kutch-5d",
+      title: "5-Day Great Rann & Kutchi Craft Trail",
+      dates: "NOV 04 - 08, 2026",
       daysCount: 5,
       totalCost: 24500,
       planningProgress: 45,
-      statusLabel: 'In Draft • Permit Pending',
+      statusLabel: "In Draft • Permit Pending",
       sitesCount: 4,
-      sitesList: ['Rann of Kutch', 'Hodka Crafts', 'Bhuj Palace', 'Somnath Temple'],
+      sitesList: [
+        "Rann of Kutch",
+        "Hodka Crafts",
+        "Bhuj Palace",
+        "Somnath Temple",
+      ],
       config: {
-        selectedSites: ['rann-of-kutch', 'somnath', 'gir'],
+        selectedSites: ["rann-of-kutch", "somnath", "gir"],
         tripDays: 5,
-        budget: 25000
-      }
-    }
+        budget: 25000,
+      },
+    },
   ]);
 
   const [operatorListings, setOperatorListings] = useState([
     {
-      id: 'op-1',
-      name: 'Champaner Toran Heritage Haven',
-      type: 'Toran Hotel',
-      destination: 'Champaner-Pavagadh',
-      status: 'Verified & Active',
-      lastUpdated: '2 days ago',
-      price: '₹2,000 / night'
+      id: "op-1",
+      name: "Champaner Toran Heritage Haven",
+      type: "Toran Hotel",
+      destination: "Champaner-Pavagadh",
+      status: "Verified & Active",
+      lastUpdated: "2 days ago",
+      price: "₹2,000 / night",
     },
     {
-      id: 'op-2',
-      name: 'Modhera Sun Temple Heritage Lodge',
-      type: 'Registered Hotel',
-      destination: 'Modhera',
-      status: 'Under ASI Audit',
-      lastUpdated: 'Oct 1, 2026',
-      price: '₹3,200 / night'
+      id: "op-2",
+      name: "Modhera Sun Temple Heritage Lodge",
+      type: "Registered Hotel",
+      destination: "Modhera",
+      status: "Under ASI Audit",
+      lastUpdated: "Oct 1, 2026",
+      price: "₹3,200 / night",
     },
     {
-      id: 'op-3',
-      name: 'Hodka Artisans Homestay',
-      type: 'Homestay',
-      destination: 'Rann of Kutch',
-      status: 'Verified & Active',
-      lastUpdated: 'Sep 28, 2026',
-      price: '₹2,200 / night'
-    }
+      id: "op-3",
+      name: "Hodka Artisans Homestay",
+      type: "Homestay",
+      destination: "Rann of Kutch",
+      status: "Verified & Active",
+      lastUpdated: "Sep 28, 2026",
+      price: "₹2,200 / night",
+    },
   ]);
 
   const handleSettingsSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSaveSuccessNotice('Account details updated successfully in heritage ledger!');
+    setSaveSuccessNotice(
+      "Account details updated successfully in heritage ledger!",
+    );
     setTimeout(() => {
       setSaveSuccessNotice(null);
     }, 4000);
@@ -138,22 +157,23 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
   const handleDeleteTrip = (tripId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    setSavedTrips(prev => prev.filter(t => t.id !== tripId));
+    setSavedTrips((prev) => prev.filter((t) => t.id !== tripId));
   };
 
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-5xl mx-auto space-y-10">
-
         {/* HEADER */}
         <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-stepwell-pattern opacity-10 pointer-events-none" />
-          
+
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone/30 pb-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <span className="bg-gold text-ink font-mono text-[11px] uppercase font-bold px-2.5 py-0.5 tracking-wider border border-ink">
-                  {role === 'operator' ? 'Registered Tour Operator' : 'Heritage Tourist'}
+                  {role === "operator"
+                    ? "Registered Tour Operator"
+                    : "Heritage Tourist"}
                 </span>
                 <span className="font-mono text-[10px] text-stone">
                   • Verified Account
@@ -161,18 +181,22 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
               </div>
 
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
-                Welcome back, {name || 'Traveler'}
+                Welcome back, {name || "Traveler"}
               </h1>
             </div>
 
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
               <button
-                onClick={() => setRole(role === 'tourist' ? 'operator' : 'tourist')}
+                onClick={() =>
+                  setRole(role === "tourist" ? "operator" : "tourist")
+                }
                 className="bg-salt/10 hover:bg-salt/20 text-gold border border-gold/40 px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5"
                 title="Toggle between Tourist and Tour Operator mode to test both layouts"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-gold" />
-                <span>View Mode: {role === 'tourist' ? 'Tourist' : 'Operator'}</span>
+                <span>
+                  View Mode: {role === "tourist" ? "Tourist" : "Operator"}
+                </span>
               </button>
 
               {onOpenAdminDashboard && (
@@ -215,7 +239,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
         )}
 
         {/* ROLE BASED MAIN VIEW */}
-        {role === 'tourist' ? (
+        {role === "tourist" ? (
           <div className="space-y-6">
             <div className="border-b-2 border-gold pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
@@ -238,7 +262,9 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
             {savedTrips.length === 0 ? (
               <div className="bg-white border-2 border-dashed border-stone/40 p-8 text-center space-y-4">
-                <p className="font-mono text-xs text-stone">No saved trips in your heritage ledger.</p>
+                <p className="font-mono text-xs text-stone">
+                  No saved trips in your heritage ledger.
+                </p>
                 <button
                   onClick={onOpenPlanner}
                   className="bg-gold text-ink font-mono text-xs font-bold px-4 py-2 border border-ink cursor-pointer"
@@ -260,7 +286,8 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                             {trip.dates}
                           </span>
                           <span className="font-mono text-xs text-stone">
-                            {trip.daysCount} Days • {trip.sitesCount} Destinations
+                            {trip.daysCount} Days • {trip.sitesCount}{" "}
+                            Destinations
                           </span>
                         </div>
                         <h3 className="font-display text-xl text-charcoal font-bold mt-1 group-hover:text-ink transition-colors">
@@ -269,17 +296,26 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                       </div>
 
                       <div className="text-right shrink-0 font-mono">
-                        <span className="text-[10px] text-stone uppercase block">Est. Total Outlay</span>
-                        <span className="text-lg font-bold text-ink">₹{trip.totalCost.toLocaleString()}</span>
+                        <span className="text-[10px] text-stone uppercase block">
+                          Est. Total Outlay
+                        </span>
+                        <span className="text-lg font-bold text-ink">
+                          ₹{trip.totalCost.toLocaleString()}
+                        </span>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
                       <div className="space-y-1 max-w-lg">
-                        <span className="text-stone text-[10px] uppercase block">Circuit Destinations:</span>
+                        <span className="text-stone text-[10px] uppercase block">
+                          Circuit Destinations:
+                        </span>
                         <div className="flex flex-wrap items-center gap-1.5">
                           {trip.sitesList.map((site, i) => (
-                            <span key={i} className="bg-salt border border-stone/30 text-charcoal px-2 py-0.5 text-[11px]">
+                            <span
+                              key={i}
+                              className="bg-salt border border-stone/30 text-charcoal px-2 py-0.5 text-[11px]"
+                            >
                               {site}
                             </span>
                           ))}
@@ -322,7 +358,11 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
               </div>
 
               <button
-                onClick={() => alert('New listing application initialized. Tourism guild form submitted.')}
+                onClick={() =>
+                  alert(
+                    "New listing application initialized. Tourism guild form submitted.",
+                  )
+                }
                 className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt text-xs font-mono font-bold px-4 py-2 border border-madder shadow-xs transition-colors cursor-pointer shrink-0"
               >
                 <Plus className="w-4 h-4 text-salt" />
@@ -332,22 +372,32 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
             <div className="grid grid-cols-1 gap-4">
               {operatorListings.map((item) => (
-                <div key={item.id} className="bg-white border-2 border-stone/40 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs">
+                <div
+                  key={item.id}
+                  className="bg-white border-2 border-stone/40 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs"
+                >
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <Building2 className="w-4 h-4 text-gold shrink-0" />
-                      <span className="font-bold text-charcoal text-sm">{item.name}</span>
+                      <span className="font-bold text-charcoal text-sm">
+                        {item.name}
+                      </span>
                       <span className="bg-salt text-charcoal border border-stone/40 text-[10px] px-2 py-0.5 uppercase">
                         {item.type}
                       </span>
                     </div>
                     <p className="text-stone text-[11px]">
-                      Destination: {item.destination} • Status: <strong className="text-emerald-800">{item.status}</strong>
+                      Destination: {item.destination} • Status:{" "}
+                      <strong className="text-emerald-800">
+                        {item.status}
+                      </strong>
                     </p>
                   </div>
 
                   <div className="flex items-center gap-3 shrink-0 self-end sm:self-auto">
-                    <span className="font-bold text-ink text-sm">{item.price}</span>
+                    <span className="font-bold text-ink text-sm">
+                      {item.price}
+                    </span>
                     <button
                       onClick={() => alert(`Editing listing "${item.name}"...`)}
                       className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 px-3 py-1.5 cursor-pointer flex items-center gap-1"
@@ -373,7 +423,10 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
             </h2>
           </div>
 
-          <form onSubmit={handleSettingsSubmit} className="space-y-5 max-w-2xl font-mono text-xs">
+          <form
+            onSubmit={handleSettingsSubmit}
+            className="space-y-5 max-w-2xl font-mono text-xs"
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1.5">
                 <label className="block text-charcoal uppercase tracking-wider text-[11px] font-bold">
@@ -440,7 +493,6 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
             </div>
           </form>
         </div>
-
       </div>
     </div>
   );

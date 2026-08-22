@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Destination, GUJARAT_DESTINATIONS, Hotel } from '../data/destinations';
-import { useLanguage } from '../context/LanguageContext';
+import React, { useState } from "react";
+import { Destination, GUJARAT_DESTINATIONS, Hotel } from "../data/destinations";
+import { useLanguage } from "../context/LanguageContext";
 import {
   Building2,
   Star,
@@ -11,12 +11,12 @@ import {
   MapPin,
   CheckCircle2,
   Hotel as HotelIcon,
-  Info
-} from 'lucide-react';
+  Info,
+} from "lucide-react";
 
 export type HotelData = Hotel;
 
-type SortCriterion = 'value' | 'rating' | 'price';
+type SortCriterion = "value" | "rating" | "price";
 
 interface HotelsViewProps {
   selectedCityId?: string;
@@ -31,29 +31,34 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
   preferredHotels,
   onSelectPreferredHotel,
   onSelectDestination,
-  onOpenPlanner
+  onOpenPlanner,
 }) => {
   const { language, t, getName } = useLanguage();
 
-  const activeDestination = GUJARAT_DESTINATIONS.find(d => d.id === selectedCityId) || GUJARAT_DESTINATIONS[0];
+  const activeDestination =
+    GUJARAT_DESTINATIONS.find((d) => d.id === selectedCityId) ||
+    GUJARAT_DESTINATIONS[0];
   const cityName = getName(activeDestination);
   const currentHotels: Hotel[] = activeDestination.hotels || [];
-  
-  const [sortOrder, setSortOrder] = useState<SortCriterion>('value');
-  const [localPreferredMap, setLocalPreferredMap] = useState<Record<string, string>>({});
+
+  const [sortOrder, setSortOrder] = useState<SortCriterion>("value");
+  const [localPreferredMap, setLocalPreferredMap] = useState<
+    Record<string, string>
+  >({});
   const activePreferredMap = preferredHotels || localPreferredMap;
-  const currentPreferredHotelId = activePreferredMap[activeDestination.id] || currentHotels[0]?.id;
+  const currentPreferredHotelId =
+    activePreferredMap[activeDestination.id] || currentHotels[0]?.id;
 
   const [assignedNotice, setAssignedNotice] = useState<string | null>(null);
 
   const sortedHotels = [...currentHotels].sort((a, b) => {
-    if (sortOrder === 'value') {
+    if (sortOrder === "value") {
       return b.valueScore - a.valueScore;
     }
-    if (sortOrder === 'rating') {
+    if (sortOrder === "rating") {
       return b.ratingNumeric - a.ratingNumeric;
     }
-    if (sortOrder === 'price') {
+    if (sortOrder === "price") {
       return a.priceNumeric - b.priceNumeric;
     }
     return 0;
@@ -63,42 +68,44 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
     if (onSelectPreferredHotel) {
       onSelectPreferredHotel(activeDestination.id, hotel.id);
     } else {
-      setLocalPreferredMap(prev => ({
+      setLocalPreferredMap((prev) => ({
         ...prev,
-        [activeDestination.id]: hotel.id
+        [activeDestination.id]: hotel.id,
       }));
     }
 
-    setAssignedNotice(`Set "${hotel.name}" as preferred stay for ${cityName}. Saved to itinerary engine.`);
+    setAssignedNotice(
+      `Set "${hotel.name}" as preferred stay for ${cityName}. Saved to itinerary engine.`,
+    );
     setTimeout(() => {
       setAssignedNotice(null);
     }, 4000);
   };
 
-  const renderStayBadge = (stayType: HotelData['stayType']) => {
+  const renderStayBadge = (stayType: HotelData["stayType"]) => {
     switch (stayType) {
-      case 'Toran Hotel':
+      case "Toran Hotel":
         return (
           <span className="inline-flex items-center gap-1 bg-ink text-gold border border-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
             <Building2 className="w-3 h-3 text-gold" />
             TCGL Official Toran Hotel
           </span>
         );
-      case 'Heritage Hotel':
+      case "Heritage Hotel":
         return (
           <span className="inline-flex items-center gap-1 bg-madder text-salt border border-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
             <Award className="w-3 h-3 text-gold" />
             Heritage Royal Palace
           </span>
         );
-      case 'Homestay':
+      case "Homestay":
         return (
           <span className="inline-flex items-center gap-1 bg-emerald-900 text-emerald-100 border border-emerald-500 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
             <CheckCircle2 className="w-3 h-3 text-emerald-300" />
             Artisan Village Homestay
           </span>
         );
-      case 'Registered Hotel':
+      case "Registered Hotel":
       default:
         return (
           <span className="inline-flex items-center gap-1 bg-salt text-charcoal border border-stone/50 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
@@ -114,11 +121,10 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-5xl mx-auto space-y-8">
-
         {/* PAGE HEADER */}
         <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-stepwell-pattern opacity-10 pointer-events-none" />
-          
+
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone/30 pb-4">
             <div>
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold mb-1">
@@ -126,7 +132,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                 <span>Priority-Queue Stay Audit</span>
               </div>
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
-                {t('nav.hotels', 'Hotels')} - {cityName}
+                {t("nav.hotels", "Hotels")} - {cityName}
               </h1>
             </div>
 
@@ -141,7 +147,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           </div>
 
           <p className="font-mono text-xs text-stone leading-relaxed max-w-2xl">
-            Official TCGL Toran Hotels, registered heritage havelis, and artisan homestays in {cityName} ranked using our algorithmic value score index.
+            Official TCGL Toran Hotels, registered heritage havelis, and artisan
+            homestays in {cityName} ranked using our algorithmic value score
+            index.
           </p>
         </div>
 
@@ -152,7 +160,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
               <Check className="w-4 h-4 text-emerald-300" />
               <span className="font-bold">{assignedNotice}</span>
             </div>
-            <span className="text-[10px] text-emerald-300 uppercase font-mono">Itinerary Engine Synchronized</span>
+            <span className="text-[10px] text-emerald-300 uppercase font-mono">
+              Itinerary Engine Synchronized
+            </span>
           </div>
         )}
 
@@ -161,7 +171,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-madder shrink-0" />
             <span>
-              Showing hotels in <strong className="text-ink font-bold">{cityName}</strong> — part of your current trip.
+              Showing hotels in{" "}
+              <strong className="text-ink font-bold">{cityName}</strong> — part
+              of your current trip.
             </span>
           </div>
 
@@ -177,7 +189,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
         {/* ================= 2. SORT / RE-RANK CONTROL ================= */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border-2 border-stone/40 p-4 shadow-2xs font-mono text-xs">
-          
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="w-4 h-4 text-gold" />
             <span className="font-bold text-charcoal uppercase tracking-wider">
@@ -189,44 +200,42 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
             <span className="text-stone text-[11px]">Sort By:</span>
 
             <button
-              onClick={() => setSortOrder('value')}
+              onClick={() => setSortOrder("value")}
               className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
-                sortOrder === 'value'
-                  ? 'bg-gold text-ink border-ink shadow-xs'
-                  : 'bg-salt hover:bg-stone/20 text-charcoal border-stone/30'
+                sortOrder === "value"
+                  ? "bg-gold text-ink border-ink shadow-xs"
+                  : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
               }`}
             >
               Best Value (Rating/Cost)
             </button>
 
             <button
-              onClick={() => setSortOrder('rating')}
+              onClick={() => setSortOrder("rating")}
               className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
-                sortOrder === 'rating'
-                  ? 'bg-gold text-ink border-ink shadow-xs'
-                  : 'bg-salt hover:bg-stone/20 text-charcoal border-stone/30'
+                sortOrder === "rating"
+                  ? "bg-gold text-ink border-ink shadow-xs"
+                  : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
               }`}
             >
               Highest Rated
             </button>
 
             <button
-              onClick={() => setSortOrder('price')}
+              onClick={() => setSortOrder("price")}
               className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
-                sortOrder === 'price'
-                  ? 'bg-gold text-ink border-ink shadow-xs'
-                  : 'bg-salt hover:bg-stone/20 text-charcoal border-stone/30'
+                sortOrder === "price"
+                  ? "bg-gold text-ink border-ink shadow-xs"
+                  : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
               }`}
             >
               Lowest Price
             </button>
           </div>
-
         </div>
 
         {/* ================= 3. RANKED LIST OF HOTELS ================= */}
         <div className="space-y-4">
-          
           {sortedHotels.map((hotel, index) => {
             const rankNumber = index + 1;
             const isChosen = currentPreferredHotelId === hotel.id;
@@ -236,14 +245,12 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                 key={hotel.id}
                 className={`bg-white border-2 transition-all duration-200 p-4 sm:p-6 shadow-2xs relative ${
                   isChosen
-                    ? 'border-gold bg-gold/5'
-                    : 'border-stone/40 hover:border-gold'
+                    ? "border-gold bg-gold/5"
+                    : "border-stone/40 hover:border-gold"
                 }`}
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  
                   <div className="flex items-start gap-4">
-                    
                     <div className="font-display font-bold text-xl sm:text-2xl text-gold bg-ink w-10 h-10 border border-gold flex items-center justify-center shrink-0 shadow-xs">
                       {rankNumber}
                     </div>
@@ -257,7 +264,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                     )}
 
                     <div className="space-y-2">
-                      
                       <div className="flex flex-wrap items-center gap-2.5">
                         <h3 className="font-display text-lg sm:text-xl font-bold text-charcoal">
                           {hotel.name}
@@ -274,7 +280,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                       <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-charcoal">
                         <span className="text-stone">{hotel.location}</span>
                         <span className="text-stone/40">•</span>
-                        <span className="font-bold text-ink text-sm">{hotel.pricePerNight} / night</span>
+                        <span className="font-bold text-ink text-sm">
+                          {hotel.pricePerNight} / night
+                        </span>
                         <span className="text-stone/40">•</span>
                         <span className="font-bold text-gold flex items-center gap-1">
                           <Star className="w-3.5 h-3.5 fill-gold text-gold" />
@@ -289,7 +297,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                       <div className="space-y-1 pt-1 max-w-xs font-mono text-[10px]">
                         <div className="flex justify-between text-stone">
                           <span>Rating-Per-Cost Value Index:</span>
-                          <span className="font-bold text-ink">{hotel.valueScore}/100</span>
+                          <span className="font-bold text-ink">
+                            {hotel.valueScore}/100
+                          </span>
                         </div>
                         <div className="w-full h-2 bg-stone/20 border border-stone/40 overflow-hidden">
                           <div
@@ -298,9 +308,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                           />
                         </div>
                       </div>
-
                     </div>
-
                   </div>
 
                   <div className="shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-stone/20 flex md:flex-col items-center justify-end gap-2">
@@ -308,8 +316,8 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                       onClick={() => handleSelectHotel(hotel)}
                       className={`w-full md:w-auto text-xs font-mono font-bold px-4 py-2.5 border transition-all cursor-pointer flex items-center justify-center gap-2 ${
                         isChosen
-                          ? 'bg-ink text-gold border-gold shadow-xs'
-                          : 'bg-salt text-charcoal border-stone/40 hover:bg-madder hover:text-salt hover:border-madder'
+                          ? "bg-ink text-gold border-gold shadow-xs"
+                          : "bg-salt text-charcoal border-stone/40 hover:bg-madder hover:text-salt hover:border-madder"
                       }`}
                     >
                       {isChosen ? (
@@ -332,19 +340,20 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                       </span>
                     )}
                   </div>
-
                 </div>
               </div>
             );
           })}
-
         </div>
 
         {/* BOTTOM HELPER FOOTER */}
         <div className="p-4 bg-white border border-stone/30 font-mono text-xs text-stone flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <Info className="w-4 h-4 text-gold shrink-0" />
-            <span>All official TCGL Toran stays offer guaranteed ASI monument access permits.</span>
+            <span>
+              All official TCGL Toran stays offer guaranteed ASI monument access
+              permits.
+            </span>
           </div>
 
           <button
@@ -354,7 +363,6 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
             Open Circuit Planner →
           </button>
         </div>
-
       </div>
     </div>
   );

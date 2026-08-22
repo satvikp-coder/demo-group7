@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Compass, Sparkles, Building2, ChevronRight } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Compass, Sparkles, Building2, ChevronRight } from "lucide-react";
 
 interface HomeTransitionOverlayProps {
   isVisible?: boolean;
 }
 
-export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({ isVisible = true }) => {
+export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({
+  isVisible = true,
+}) => {
   const [showBanner, setShowBanner] = useState(true);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({ is
             initial={{ opacity: 0, y: -20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="pointer-events-auto max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-1"
           >
             <div className="bg-ink text-salt border border-gold/50 shadow-lg p-2.5 sm:p-3 flex items-center justify-between gap-3 text-xs font-mono">
@@ -47,7 +49,8 @@ export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({ is
                     ✦ Welcome to Gujarat Heritage Directory
                   </span>
                   <span className="text-stone text-[10px] hidden sm:block">
-                    Explore 10 monuments, preserved heritage stays, & ledger-precise route planning.
+                    Explore 10 monuments, preserved heritage stays, &
+                    ledger-precise route planning.
                   </span>
                 </div>
               </div>

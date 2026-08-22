@@ -1,6 +1,14 @@
-import { Destination, Attraction, Hotel, Restaurant, getCityById, GUJARAT_DESTINATIONS } from '../data/destinations';
+import {
+  Destination,
+  Attraction,
+  Hotel,
+  Restaurant,
+  getCityById,
+  GUJARAT_DESTINATIONS,
+} from "../data/destinations";
 
-export type OptimizationStrategy = 'budget-first' | 'rating-first' | 'distance-first';
+export type OptimizationStrategy =
+  "budget-first" | "rating-first" | "distance-first";
 
 export interface PlannerConfigPayload {
   cityId: string;
@@ -14,7 +22,7 @@ export interface PlannerConfigPayload {
 
 export interface ItineraryStop {
   id: string;
-  type: 'hotel' | 'attraction' | 'meal';
+  type: "hotel" | "attraction" | "meal";
   name: string;
   category: string;
   arrivalTime: string;
@@ -27,7 +35,7 @@ export interface ItineraryStop {
   lat?: number;
   lng?: number;
   wheelchairAccessible?: boolean;
-  physicalDemand?: 'low' | 'moderate' | 'high';
+  physicalDemand?: "low" | "moderate" | "high";
   bestTimeNote?: string;
 }
 
@@ -69,7 +77,7 @@ export function formatTime(minutesFromMidnight: number): string {
   const mins = Math.floor(minutesFromMidnight) % (24 * 60);
   const hours = Math.floor(mins / 60);
   const m = mins % 60;
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const ampm = hours >= 12 ? "PM" : "AM";
   const displayHours = hours % 12 === 0 ? 12 : hours % 12;
   const displayMins = m < 10 ? `0${m}` : m;
   return `${displayHours}:${displayMins} ${ampm}`;
@@ -77,19 +85,29 @@ export function formatTime(minutesFromMidnight: number): string {
 
 export function parseTimeToMinutes(timeStr?: string): number {
   if (!timeStr) return 8 * 60;
-  const parts = timeStr.trim().split(' ');
+  const parts = timeStr.trim().split(" ");
   if (parts.length < 2) return 8 * 60;
-  const [hStr, mStr] = parts[0].split(':');
+  const [hStr, mStr] = parts[0].split(":");
   let hours = parseInt(hStr, 10) || 8;
   const mins = parseInt(mStr, 10) || 0;
   const ampm = parts[1].toUpperCase();
-  if (ampm === 'PM' && hours < 12) hours += 12;
-  if (ampm === 'AM' && hours === 12) hours = 0;
+  if (ampm === "PM" && hours < 12) hours += 12;
+  if (ampm === "AM" && hours === 12) hours = 0;
   return hours * 60 + mins;
 }
 
-export function getDistanceKm(lat1?: number, lng1?: number, lat2?: number, lng2?: number): number {
-  if (lat1 === undefined || lng1 === undefined || lat2 === undefined || lng2 === undefined) {
+export function getDistanceKm(
+  lat1?: number,
+  lng1?: number,
+  lat2?: number,
+  lng2?: number,
+): number {
+  if (
+    lat1 === undefined ||
+    lng1 === undefined ||
+    lat2 === undefined ||
+    lng2 === undefined
+  ) {
     return 3.5;
   }
   const R = 6371; // Earth radius km
@@ -97,8 +115,10 @@ export function getDistanceKm(lat1?: number, lng1?: number, lat2?: number, lng2?
   const dLng = (lng2 - lng1) * (Math.PI / 180);
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLng / 2) *
+      Math.sin(dLng / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const dist = R * c;
   const roadDist = dist < 0.5 ? 1.2 : dist * 1.35;
@@ -112,11 +132,16 @@ function scoreAttraction(
   attraction: Attraction,
   currentLocation: { lat: number; lng: number },
   remainingBudget: number,
-  strategy: OptimizationStrategy
+  strategy: OptimizationStrategy,
 ): number {
   const fee = attraction.entryFeeNumeric || 0;
   const rating = attraction.rating || 4.5;
-  const dist = getDistanceKm(currentLocation.lat, currentLocation.lng, attraction.lat, attraction.lng);
+  const dist = getDistanceKm(
+    currentLocation.lat,
+    currentLocation.lng,
+    attraction.lat,
+    attraction.lng,
+  );
 
   // If attraction fee exceeds remaining budget, give severe penalty
   if (fee > remainingBudget && remainingBudget > 0) {
@@ -124,15 +149,15 @@ function scoreAttraction(
   }
 
   switch (strategy) {
-    case 'budget-first':
+    case "budget-first":
       // Minimize cost primarily, higher rating as tie-breaker, minimal distance impact
       return -fee * 10 + rating * 8 - dist * 0.2;
 
-    case 'rating-first':
+    case "rating-first":
       // Maximize rating primarily, low cost impact, moderate distance penalty
       return rating * 100 - fee * 0.15 - dist * 0.8;
 
-    case 'distance-first':
+    case "distance-first":
     default:
       // Minimize travel distance primarily (nearest neighbor), rating & cost secondary
       return -dist * 50 + rating * 6 - fee * 0.05;
@@ -145,7 +170,7 @@ function scoreAttraction(
 function evaluateRouteLeg(
   from: { lat?: number; lng?: number },
   to: { lat?: number; lng?: number },
-  cityNodes: { lat?: number; lng?: number }[]
+  cityNodes: { lat?: number; lng?: number }[],
 ): {
   distanceKm: number;
   isDirect: boolean;
@@ -153,13 +178,13 @@ function evaluateRouteLeg(
   edgesRelaxed: number;
 } {
   const directDist = getDistanceKm(from.lat, from.lng, to.lat, to.lng);
-  
+
   if (directDist <= 2.2) {
     return {
       distanceKm: directDist,
       isDirect: true,
       nodesVisited: 0,
-      edgesRelaxed: 0
+      edgesRelaxed: 0,
     };
   }
 
@@ -179,12 +204,22 @@ function evaluateRouteLeg(
   let minTargetDist = Infinity;
 
   for (let i = 0; i < N; i++) {
-    const dFrom = getDistanceKm(from.lat, from.lng, cityNodes[i].lat, cityNodes[i].lng);
+    const dFrom = getDistanceKm(
+      from.lat,
+      from.lng,
+      cityNodes[i].lat,
+      cityNodes[i].lng,
+    );
     if (dFrom < minStartDist) {
       minStartDist = dFrom;
       startIdx = i;
     }
-    const dTo = getDistanceKm(to.lat, to.lng, cityNodes[i].lat, cityNodes[i].lng);
+    const dTo = getDistanceKm(
+      to.lat,
+      to.lng,
+      cityNodes[i].lat,
+      cityNodes[i].lng,
+    );
     if (dTo < minTargetDist) {
       minTargetDist = dTo;
       targetIdx = i;
@@ -217,7 +252,12 @@ function evaluateRouteLeg(
 
     for (let v = 0; v < N; v++) {
       if (u === v) continue;
-      const dUV = getDistanceKm(cityNodes[u].lat, cityNodes[u].lng, cityNodes[v].lat, cityNodes[v].lng);
+      const dUV = getDistanceKm(
+        cityNodes[u].lat,
+        cityNodes[u].lng,
+        cityNodes[v].lat,
+        cityNodes[v].lng,
+      );
       const hasEdge = dUV <= 2.5 || Math.abs(u - v) === 1;
       if (hasEdge) {
         edgesRelaxed++;
@@ -228,13 +268,16 @@ function evaluateRouteLeg(
     }
   }
 
-  const pathDist = dists[targetIdx] !== Infinity ? Math.round(dists[targetIdx] * 10) / 10 : directDist;
+  const pathDist =
+    dists[targetIdx] !== Infinity
+      ? Math.round(dists[targetIdx] * 10) / 10
+      : directDist;
 
   return {
     distanceKm: pathDist > 0 ? pathDist : directDist,
     isDirect: false,
     nodesVisited,
-    edgesRelaxed
+    edgesRelaxed,
   };
 }
 
@@ -244,7 +287,7 @@ function evaluateRouteLeg(
 export function generateStrategyItinerary(
   config: PlannerConfigPayload,
   strategy: OptimizationStrategy,
-  language: string = 'en'
+  language: string = "en",
 ): GeneratedItineraryResult {
   const startTimeMs = performance.now();
 
@@ -256,7 +299,7 @@ export function generateStrategyItinerary(
   const cityNodes = [
     ...activeCity.hotels,
     ...activeCity.attractions,
-    ...activeCity.restaurants
+    ...activeCity.restaurants,
   ];
 
   let directRoadConnectionsUsed = 0;
@@ -265,29 +308,35 @@ export function generateStrategyItinerary(
   let totalEdgesRelaxed = 0;
 
   // Strategy metadata
-  let strategyName = 'Distance-first';
-  let strategyTagline = 'Nearest-neighbor distance minimization';
-  if (strategy === 'budget-first') {
-    strategyName = 'Budget-first';
-    strategyTagline = 'Greedy cost & fee minimization';
-  } else if (strategy === 'rating-first') {
-    strategyName = 'Rating-first';
-    strategyTagline = 'Highest-rated cultural landmarks';
+  let strategyName = "Distance-first";
+  let strategyTagline = "Nearest-neighbor distance minimization";
+  if (strategy === "budget-first") {
+    strategyName = "Budget-first";
+    strategyTagline = "Greedy cost & fee minimization";
+  } else if (strategy === "rating-first") {
+    strategyName = "Rating-first";
+    strategyTagline = "Highest-rated cultural landmarks";
   }
 
   // 1. Hotel Selection according to strategy
   let startingHotel: Hotel;
-  if (strategy === 'budget-first') {
+  if (strategy === "budget-first") {
     // Pick the most economical hotel fitting the city
-    const sortedByPrice = [...activeCity.hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
+    const sortedByPrice = [...activeCity.hotels].sort(
+      (a, b) => a.priceNumeric - b.priceNumeric,
+    );
     startingHotel = sortedByPrice[0] || activeCity.hotels[0];
-  } else if (strategy === 'rating-first') {
+  } else if (strategy === "rating-first") {
     // Pick the highest-rated hotel
-    const sortedByRating = [...activeCity.hotels].sort((a, b) => b.ratingNumeric - a.ratingNumeric);
+    const sortedByRating = [...activeCity.hotels].sort(
+      (a, b) => b.ratingNumeric - a.ratingNumeric,
+    );
     startingHotel = sortedByRating[0] || activeCity.hotels[0];
   } else {
     // Distance-first / user preference
-    startingHotel = activeCity.hotels.find(h => h.id === config.startingHotelId) || activeCity.hotels[0];
+    startingHotel =
+      activeCity.hotels.find((h) => h.id === config.startingHotelId) ||
+      activeCity.hotels[0];
   }
 
   const hotelTotalCost = startingHotel.priceNumeric * numDays;
@@ -295,7 +344,9 @@ export function generateStrategyItinerary(
 
   let attractionsPool = [...(activeCity.attractions || [])];
   if (config.wheelchairAccessibleOnly) {
-    attractionsPool = attractionsPool.filter(a => a.wheelchairAccessible === true);
+    attractionsPool = attractionsPool.filter(
+      (a) => a.wheelchairAccessible === true,
+    );
   }
   const restaurantsPool = activeCity.restaurants || [];
   const visitedAttractionIds = new Set<string>();
@@ -306,7 +357,15 @@ export function generateStrategyItinerary(
   let totalAttractionsVisited = 0;
   let totalRuntimeMinutesAcc = 0;
 
-  const datesList = ['DAY 1', 'DAY 2', 'DAY 3', 'DAY 4', 'DAY 5', 'DAY 6', 'DAY 7'];
+  const datesList = [
+    "DAY 1",
+    "DAY 2",
+    "DAY 3",
+    "DAY 4",
+    "DAY 5",
+    "DAY 6",
+    "DAY 7",
+  ];
 
   for (let d = 0; d < numDays; d++) {
     const stops: ItineraryStop[] = [];
@@ -319,9 +378,14 @@ export function generateStrategyItinerary(
     const hotelDepartMins = currentClock;
     stops.push({
       id: `${startingHotel.id}-start-day-${d + 1}`,
-      type: 'hotel',
-      name: language === 'gu' ? `રવાના: ${startingHotel.name}` : language === 'hi' ? `रवाना: ${startingHotel.name}` : `Depart ${startingHotel.name}`,
-      category: 'Starting Accommodation',
+      type: "hotel",
+      name:
+        language === "gu"
+          ? `રવાના: ${startingHotel.name}`
+          : language === "hi"
+            ? `रवाना: ${startingHotel.name}`
+            : `Depart ${startingHotel.name}`,
+      category: "Starting Accommodation",
       arrivalTime: formatTime(hotelDepartMins),
       departureTime: formatTime(hotelDepartMins + 15),
       durationMinutes: 15,
@@ -330,7 +394,7 @@ export function generateStrategyItinerary(
       imageUrl: startingHotel.imageUrl,
       description: `Morning departure from hotel base.`,
       lat: startingHotel.lat,
-      lng: startingHotel.lng
+      lng: startingHotel.lng,
     });
 
     currentClock += 15;
@@ -342,15 +406,17 @@ export function generateStrategyItinerary(
     // Max attractions per day depends on strategy & duration
     const maxAttractionsPerDay = Math.min(
       4,
-      Math.ceil(attractionsPool.length / numDays) + (strategy === 'rating-first' ? 0 : 1)
+      Math.ceil(attractionsPool.length / numDays) +
+        (strategy === "rating-first" ? 0 : 1),
     );
 
-    while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) { // until 7:00 PM
+    while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) {
+      // until 7:00 PM
       // Lunch insertion window
       if (!lunchInserted && currentClock >= 720 && restaurantsPool.length > 0) {
         const restoIndex = d % restaurantsPool.length;
         const resto = restaurantsPool[restoIndex];
-        
+
         const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
         if (routeEval.isDirect) directRoadConnectionsUsed++;
         else {
@@ -367,17 +433,22 @@ export function generateStrategyItinerary(
         const lunchEnd = lunchStart + 60;
         stops.push({
           id: `lunch-stop-day-${d + 1}`,
-          type: 'meal',
-          name: language === 'gu' ? `બપોરનું ભોજન: ${resto.name}` : language === 'hi' ? `दोपहर का भोजन: ${resto.name}` : `Lunch Break at ${resto.name}`,
-          category: 'Culinary Stop',
+          type: "meal",
+          name:
+            language === "gu"
+              ? `બપોરનું ભોજન: ${resto.name}`
+              : language === "hi"
+                ? `दोपहर का भोजन: ${resto.name}`
+                : `Lunch Break at ${resto.name}`,
+          category: "Culinary Stop",
           arrivalTime: formatTime(lunchStart),
           departureTime: formatTime(lunchEnd),
           durationMinutes: 60,
           cost: resto.avgCostPerPerson,
           location: resto.location,
-          description: `Authentic ${resto.cuisine || 'Gujarati meal'} stop.`,
+          description: `Authentic ${resto.cuisine || "Gujarati meal"} stop.`,
           lat: resto.lat,
-          lng: resto.lng
+          lng: resto.lng,
         });
 
         currentClock = lunchEnd + 15;
@@ -387,12 +458,24 @@ export function generateStrategyItinerary(
       }
 
       // Find best remaining candidate using parameterized scoreAttraction
-      const unvisited = attractionsPool.filter(a => !visitedAttractionIds.has(a.id));
+      const unvisited = attractionsPool.filter(
+        (a) => !visitedAttractionIds.has(a.id),
+      );
       if (unvisited.length === 0) break;
 
       unvisited.sort((a, b) => {
-        const scoreA = scoreAttraction(a, currentPos, remainingBudget, strategy);
-        const scoreB = scoreAttraction(b, currentPos, remainingBudget, strategy);
+        const scoreA = scoreAttraction(
+          a,
+          currentPos,
+          remainingBudget,
+          strategy,
+        );
+        const scoreB = scoreAttraction(
+          b,
+          currentPos,
+          remainingBudget,
+          strategy,
+        );
         return scoreB - scoreA;
       });
 
@@ -409,7 +492,7 @@ export function generateStrategyItinerary(
 
       const distToChosen = routeEval.distanceKm;
       const travelMins = Math.max(10, Math.round(distToChosen * 2.2));
-      
+
       dayKm += distToChosen;
       currentClock += travelMins;
       currentPos = { lat: chosen.lat, lng: chosen.lng };
@@ -424,7 +507,7 @@ export function generateStrategyItinerary(
 
       stops.push({
         id: `${chosen.id}-day-${d + 1}`,
-        type: 'attraction',
+        type: "attraction",
         name: chosen.name,
         category: chosen.category,
         arrivalTime: formatTime(attrStart),
@@ -438,7 +521,7 @@ export function generateStrategyItinerary(
         lng: chosen.lng,
         wheelchairAccessible: chosen.wheelchairAccessible,
         physicalDemand: chosen.physicalDemand,
-        bestTimeNote: chosen.bestTimeNote
+        bestTimeNote: chosen.bestTimeNote,
       });
 
       currentClock = attrEnd + 15;
@@ -466,9 +549,14 @@ export function generateStrategyItinerary(
       const dinnerEnd = dinnerStart + 60;
       stops.push({
         id: `dinner-stop-day-${d + 1}`,
-        type: 'meal',
-        name: language === 'gu' ? `સાંજનું ભોજન: ${resto.name}` : language === 'hi' ? `रात्रि का भोजन: ${resto.name}` : `Dinner Stop at ${resto.name}`,
-        category: 'Evening Dining',
+        type: "meal",
+        name:
+          language === "gu"
+            ? `સાંજનું ભોજન: ${resto.name}`
+            : language === "hi"
+              ? `रात्रि का भोजन: ${resto.name}`
+              : `Dinner Stop at ${resto.name}`,
+        category: "Evening Dining",
         arrivalTime: formatTime(dinnerStart),
         departureTime: formatTime(dinnerEnd),
         durationMinutes: 60,
@@ -476,7 +564,7 @@ export function generateStrategyItinerary(
         location: resto.location,
         description: `Evening thali & local dinner stop.`,
         lat: resto.lat,
-        lng: resto.lng
+        lng: resto.lng,
       });
 
       currentClock = dinnerEnd + 15;
@@ -499,9 +587,14 @@ export function generateStrategyItinerary(
 
     stops.push({
       id: `${startingHotel.id}-return-day-${d + 1}`,
-      type: 'hotel',
-      name: language === 'gu' ? `પાછા ફરો: ${startingHotel.name}` : language === 'hi' ? `વાપસી: ${startingHotel.name}` : `Return to ${startingHotel.name}`,
-      category: 'Night Stay Loop Complete',
+      type: "hotel",
+      name:
+        language === "gu"
+          ? `પાછા ફરો: ${startingHotel.name}`
+          : language === "hi"
+            ? `વાપસી: ${startingHotel.name}`
+            : `Return to ${startingHotel.name}`,
+      category: "Night Stay Loop Complete",
       arrivalTime: formatTime(returnStart),
       departureTime: formatTime(returnStart + 15),
       durationMinutes: 15,
@@ -510,7 +603,7 @@ export function generateStrategyItinerary(
       imageUrl: startingHotel.imageUrl,
       description: `Return to hotel completing the day's circular loop.`,
       lat: startingHotel.lat,
-      lng: startingHotel.lng
+      lng: startingHotel.lng,
     });
 
     totalRuntimeMinutesAcc += 15;
@@ -521,7 +614,7 @@ export function generateStrategyItinerary(
       title: `Day ${d + 1}: ${strategyName} ${activeCity.name} Circuit`,
       stops,
       totalKm: Math.round(dayKm * 10) / 10,
-      totalCost: dayCost
+      totalCost: dayCost,
     });
 
     grandTotalDistanceKm += dayKm;
@@ -532,7 +625,10 @@ export function generateStrategyItinerary(
   const totalRuntimeHours = `${hoursFloat} hrs`;
 
   const endTimeMs = performance.now();
-  const executionTimeMs = Math.max(0.1, Math.round((endTimeMs - startTimeMs) * 100) / 100);
+  const executionTimeMs = Math.max(
+    0.1,
+    Math.round((endTimeMs - startTimeMs) * 100) / 100,
+  );
 
   return {
     strategy,
@@ -553,38 +649,43 @@ export function generateStrategyItinerary(
       dijkstraFallbackCalls,
       nodesVisited: totalNodesVisited,
       edgesRelaxed: totalEdgesRelaxed,
-      executionTimeMs
-    }
+      executionTimeMs,
+    },
   };
 }
 
 /**
  * Computes dynamic one-line takeaway from real differences between strategy results
  */
-export function generateComparisonTakeaway(results: GeneratedItineraryResult[]): string {
-  const bRes = results.find(r => r.strategy === 'budget-first');
-  const rRes = results.find(r => r.strategy === 'rating-first');
-  const dRes = results.find(r => r.strategy === 'distance-first');
+export function generateComparisonTakeaway(
+  results: GeneratedItineraryResult[],
+): string {
+  const bRes = results.find((r) => r.strategy === "budget-first");
+  const rRes = results.find((r) => r.strategy === "rating-first");
+  const dRes = results.find((r) => r.strategy === "distance-first");
 
   if (!bRes || !rRes || !dRes) {
-    return 'Comparison generated across budget, rating, and distance optimization strategies.';
+    return "Comparison generated across budget, rating, and distance optimization strategies.";
   }
 
   const costDiff = rRes.totalCost - bRes.totalCost;
   const attrDiff = rRes.attractionCount - bRes.attractionCount;
-  
+
   // Highest distance strategy minus distance-first strategy
   const maxDist = Math.max(rRes.totalDistanceKm, bRes.totalDistanceKm);
-  const distSaved = Math.max(0, Math.round((maxDist - dRes.totalDistanceKm) * 10) / 10);
+  const distSaved = Math.max(
+    0,
+    Math.round((maxDist - dRes.totalDistanceKm) * 10) / 10,
+  );
 
-  let statement = '';
+  let statement = "";
 
   if (attrDiff < 0) {
-    statement = `Rating-first visits ${Math.abs(attrDiff)} fewer attraction${Math.abs(attrDiff) > 1 ? 's' : ''} but costs ₹${costDiff.toLocaleString('en-IN')} more than Budget-first`;
+    statement = `Rating-first visits ${Math.abs(attrDiff)} fewer attraction${Math.abs(attrDiff) > 1 ? "s" : ""} but costs ₹${costDiff.toLocaleString("en-IN")} more than Budget-first`;
   } else if (attrDiff > 0) {
-    statement = `Rating-first visits ${attrDiff} additional attraction${attrDiff > 1 ? 's' : ''} for ₹${costDiff.toLocaleString('en-IN')} more than Budget-first`;
+    statement = `Rating-first visits ${attrDiff} additional attraction${attrDiff > 1 ? "s" : ""} for ₹${costDiff.toLocaleString("en-IN")} more than Budget-first`;
   } else {
-    statement = `Rating-first achieves equal attraction coverage while costing ₹${costDiff.toLocaleString('en-IN')} more than Budget-first`;
+    statement = `Rating-first achieves equal attraction coverage while costing ₹${costDiff.toLocaleString("en-IN")} more than Budget-first`;
   }
 
   if (distSaved > 0) {

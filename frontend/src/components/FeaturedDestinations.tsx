@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Destination, GUJARAT_DESTINATIONS } from '../data/destinations';
-import { ArrowUpRight, MapPin, Ticket, Star, Clock, Info } from 'lucide-react';
+import React, { useState } from "react";
+import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
+import { ArrowUpRight, MapPin, Ticket, Star, Clock, Info } from "lucide-react";
 
 interface FeaturedDestinationsProps {
   onSelectDestination: (destination: Destination) => void;
@@ -12,13 +12,24 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
   onStartTripWithDestination,
 }) => {
   // Filter the featured 6 sites asked by user prompt: Somnath, Dwarka, Rann of Kutch, Gir, Modhera, Champaner
-  const featuredIds = ['somnath', 'dwarka', 'rann-of-kutch', 'gir', 'modhera', 'champaner'];
-  const featuredDestinations = GUJARAT_DESTINATIONS.filter(d => featuredIds.includes(d.id));
+  const featuredIds = [
+    "somnath",
+    "dwarka",
+    "rann-of-kutch",
+    "gir",
+    "modhera",
+    "champaner",
+  ];
+  const featuredDestinations = GUJARAT_DESTINATIONS.filter((d) =>
+    featuredIds.includes(d.id),
+  );
 
   return (
-    <section id="explore" className="bg-salt py-16 lg:py-24 border-b border-stone/30">
+    <section
+      id="explore"
+      className="bg-salt py-16 lg:py-24 border-b border-stone/30"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-stone/30 pb-6">
           <div>
@@ -30,7 +41,8 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
             </h2>
           </div>
           <p className="text-sm font-body text-charcoal/70 max-w-md mt-3 md:mt-0">
-            Arranged in descending terrace order. Select any site to inspect entry fee ledgers, optimal seasons, and craft connections.
+            Arranged in descending terrace order. Select any site to inspect
+            entry fee ledgers, optimal seasons, and craft connections.
           </p>
         </div>
 
@@ -42,7 +54,7 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
               <div
                 key={site.id}
                 className={`group bg-salt border border-stone/40 hover:border-gold transition-colors duration-200 p-3 flex flex-col justify-between ${
-                  isOddCol ? 'terrace-card-odd' : 'terrace-card-even'
+                  isOddCol ? "terrace-card-odd" : "terrace-card-even"
                 }`}
               >
                 <div>
@@ -91,12 +103,16 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
                 <div className="pt-3 border-t border-stone/30 px-1 space-y-2">
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-stone">Entry Fee:</span>
-                    <span className="text-ink font-semibold">{site.entryFee}</span>
+                    <span className="text-ink font-semibold">
+                      {site.entryFee}
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-stone">Ahmedabad Dist:</span>
-                    <span className="text-charcoal">{site.distanceFromAhmedabad}</span>
+                    <span className="text-charcoal">
+                      {site.distanceFromAhmedabad}
+                    </span>
                   </div>
 
                   {/* Card Actions */}
@@ -118,12 +134,10 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
                     </button>
                   </div>
                 </div>
-
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

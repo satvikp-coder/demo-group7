@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
-import { AlgorithmStats } from '../utils/itineraryPlanner';
-import { Cpu, ChevronDown, ChevronUp, Zap, MapPin, Route, Layers, Clock } from 'lucide-react';
+import React, { useState } from "react";
+import { AlgorithmStats } from "../utils/itineraryPlanner";
+import {
+  Cpu,
+  ChevronDown,
+  ChevronUp,
+  Zap,
+  MapPin,
+  Route,
+  Layers,
+  Clock,
+} from "lucide-react";
 
 export interface AlgorithmStatsPanelProps {
   stats: AlgorithmStats;
@@ -14,8 +23,8 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
   stats,
   collapsible = true,
   defaultExpanded = false,
-  title = 'Algorithm Execution Stats',
-  className = '',
+  title = "Algorithm Execution Stats",
+  className = "",
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
 
@@ -32,7 +41,7 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
           <div className="p-1 bg-gold/20 border border-gold/50 rounded-xs shrink-0">
             <Cpu className="w-3.5 h-3.5 text-gold" />
           </div>
-          
+
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
             <span className="font-mono text-xs font-bold text-gold uppercase tracking-wider shrink-0">
               {title}
@@ -40,10 +49,23 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
 
             {collapsible && !isExpanded && (
               <span className="font-mono text-xs text-stone truncate max-w-full sm:max-w-md">
-                Generated in <strong className="font-mono text-salt font-bold">{stats.executionTimeMs}ms</strong> --{' '}
-                <strong className="font-mono text-salt font-bold">{stats.attractionsVisited}</strong> attractions,{' '}
-                <strong className="font-mono text-salt font-bold">{stats.directRoadConnectionsUsed}</strong> direct routes,{' '}
-                <strong className="font-mono text-salt font-bold">{stats.dijkstraFallbackCalls}</strong> Dijkstra fallbacks.
+                Generated in{" "}
+                <strong className="font-mono text-salt font-bold">
+                  {stats.executionTimeMs}ms
+                </strong>{" "}
+                --{" "}
+                <strong className="font-mono text-salt font-bold">
+                  {stats.attractionsVisited}
+                </strong>{" "}
+                attractions,{" "}
+                <strong className="font-mono text-salt font-bold">
+                  {stats.directRoadConnectionsUsed}
+                </strong>{" "}
+                direct routes,{" "}
+                <strong className="font-mono text-salt font-bold">
+                  {stats.dijkstraFallbackCalls}
+                </strong>{" "}
+                Dijkstra fallbacks.
               </span>
             )}
           </div>
@@ -57,8 +79,14 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
             aria-expanded={isExpanded}
             aria-label="Toggle algorithm stats detail"
           >
-            <span>{isExpanded ? 'Hide algorithm stats' : 'View algorithm stats'}</span>
-            {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-gold" /> : <ChevronDown className="w-3.5 h-3.5 text-gold" />}
+            <span>
+              {isExpanded ? "Hide algorithm stats" : "View algorithm stats"}
+            </span>
+            {isExpanded ? (
+              <ChevronUp className="w-3.5 h-3.5 text-gold" />
+            ) : (
+              <ChevronDown className="w-3.5 h-3.5 text-gold" />
+            )}
           </button>
         )}
       </div>
@@ -84,7 +112,10 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Attractions
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {stats.attractionsVisited} <span className="text-stone font-normal text-xs">/ {stats.attractionsConsidered}</span>
+              {stats.attractionsVisited}{" "}
+              <span className="text-stone font-normal text-xs">
+                / {stats.attractionsConsidered}
+              </span>
             </span>
             <span className="text-[9px] text-stone">Selected by Greedy</span>
           </div>
@@ -96,7 +127,10 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Connections
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {stats.directRoadConnectionsUsed} <span className="text-stone font-normal text-xs">dir</span> • {stats.dijkstraFallbackCalls} <span className="text-stone font-normal text-xs">Dijkstra</span>
+              {stats.directRoadConnectionsUsed}{" "}
+              <span className="text-stone font-normal text-xs">dir</span> •{" "}
+              {stats.dijkstraFallbackCalls}{" "}
+              <span className="text-stone font-normal text-xs">Dijkstra</span>
             </span>
             <span className="text-[9px] text-stone">Direct vs Fallbacks</span>
           </div>
@@ -108,7 +142,10 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Graph Ops
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {stats.nodesVisited} <span className="text-stone font-normal text-xs">nodes</span> / {stats.edgesRelaxed} <span className="text-stone font-normal text-xs">edges</span>
+              {stats.nodesVisited}{" "}
+              <span className="text-stone font-normal text-xs">nodes</span> /{" "}
+              {stats.edgesRelaxed}{" "}
+              <span className="text-stone font-normal text-xs">edges</span>
             </span>
             <span className="text-[9px] text-stone">Visited & Relaxed</span>
           </div>

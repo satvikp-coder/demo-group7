@@ -1,13 +1,19 @@
-import React from 'react';
+import React from "react";
 
 interface ChevronDividerProps {
   className?: string;
   count?: number;
 }
 
-export const ChevronDivider: React.FC<ChevronDividerProps> = ({ className = '', count = 8 }) => {
+export const ChevronDivider: React.FC<ChevronDividerProps> = ({
+  className = "",
+  count = 8,
+}) => {
   return (
-    <div className={`flex items-center justify-center gap-1.5 py-4 ${className}`} aria-hidden="true">
+    <div
+      className={`flex items-center justify-center gap-1.5 py-4 ${className}`}
+      aria-hidden="true"
+    >
       {Array.from({ length: count }).map((_, idx) => (
         <svg
           key={idx}
