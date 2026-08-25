@@ -1,0 +1,282 @@
+{
+  "somnath-temple->somnath-beach": {
+    "distanceKm": 0.7,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "somnath-temple->triveni-sangam": {
+    "distanceKm": 1.2,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "bhalka-tirth->somnath-temple": {
+    "distanceKm": 4.4,
+    "travelTimeMinutes": 9,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "bhalka-tirth->somnath-beach": {
+    "distanceKm": 4.9,
+    "travelTimeMinutes": 10,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "triveni-sangam->somnath-beach": {
+    "distanceKm": 1.1,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "premier-somnath->somnath-temple": {
+    "distanceKm": 0.7,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sarovar-portico-somnath->somnath-temple": {
+    "distanceKm": 1,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "fern-residency-somnath->somnath-temple": {
+    "distanceKm": 1.6,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "premier-somnath->bhalka-tirth": {
+    "distanceKm": 4.7,
+    "travelTimeMinutes": 9,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sarovar-portico-somnath->bhalka-tirth": {
+    "distanceKm": 4.2,
+    "travelTimeMinutes": 8,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "fern-residency-somnath->bhalka-tirth": {
+    "distanceKm": 4.9,
+    "travelTimeMinutes": 10,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "premier-somnath->triveni-sangam": {
+    "distanceKm": 1,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sarovar-portico-somnath->triveni-sangam": {
+    "distanceKm": 1.5,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "fern-residency-somnath->triveni-sangam": {
+    "distanceKm": 1.6,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "premier-somnath->somnath-beach": {
+    "distanceKm": 1.3,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sarovar-portico-somnath->somnath-beach": {
+    "distanceKm": 1.7,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "fern-residency-somnath->somnath-beach": {
+    "distanceKm": 2.2,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "dwarkadhish-temple->rukmini-devi-temple": {
+    "distanceKm": 2.7,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "dwarkadhish-temple->nageshwar-jyotirlinga": {
+    "distanceKm": 20.5,
+    "travelTimeMinutes": 41,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "nageshwar-jyotirlinga->rukmini-devi-temple": {
+    "distanceKm": 17.8,
+    "travelTimeMinutes": 36,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "darshan-palace->dwarkadhish-temple": {
+    "distanceKm": 0.3,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "the-dwarika-hotel->dwarkadhish-temple": {
+    "distanceKm": 0.9,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "mercure-dwarka->dwarkadhish-temple": {
+    "distanceKm": 2,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "darshan-palace->nageshwar-jyotirlinga": {
+    "distanceKm": 20.2,
+    "travelTimeMinutes": 40,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "the-dwarika-hotel->nageshwar-jyotirlinga": {
+    "distanceKm": 19.6,
+    "travelTimeMinutes": 39,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "mercure-dwarka->nageshwar-jyotirlinga": {
+    "distanceKm": 18.5,
+    "travelTimeMinutes": 37,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "darshan-palace->rukmini-devi-temple": {
+    "distanceKm": 2.4,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "the-dwarika-hotel->rukmini-devi-temple": {
+    "distanceKm": 1.8,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "mercure-dwarka->rukmini-devi-temple": {
+    "distanceKm": 0.7,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sabarmati-ashram->calico-museum": {
+    "distanceKm": 1.7,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sabarmati-ashram->sidi-saiyyed-mosque": {
+    "distanceKm": 4.7,
+    "travelTimeMinutes": 9,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "adalaj-stepwell->sabarmati-ashram": {
+    "distanceKm": 14.8,
+    "travelTimeMinutes": 30,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "adalaj-stepwell->calico-museum": {
+    "distanceKm": 15.9,
+    "travelTimeMinutes": 32,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sidi-saiyyed-mosque->calico-museum": {
+    "distanceKm": 4,
+    "travelTimeMinutes": 8,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sidi-saiyyed-mosque->kankaria-lake": {
+    "distanceKm": 4.6,
+    "travelTimeMinutes": 9,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sarkhej-roza->sidi-saiyyed-mosque": {
+    "distanceKm": 11.8,
+    "travelTimeMinutes": 24,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "sarkhej-roza->kankaria-lake": {
+    "distanceKm": 12.6,
+    "travelTimeMinutes": 25,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "kankaria-lake->calico-museum": {
+    "distanceKm": 7.8,
+    "travelTimeMinutes": 16,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "french-haveli->sabarmati-ashram": {
+    "distanceKm": 5.5,
+    "travelTimeMinutes": 11,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "lemon-tree-premier->sabarmati-ashram": {
+    "distanceKm": 3.4,
+    "travelTimeMinutes": 7,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "house-of-mg-ahmedabad->sabarmati-ashram": {
+    "distanceKm": 4.9,
+    "travelTimeMinutes": 10,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "french-haveli->adalaj-stepwell": {
+    "distanceKm": 20.3,
+    "travelTimeMinutes": 41,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "lemon-tree-premier->adalaj-stepwell": {
+    "distanceKm": 18,
+    "travelTimeMinutes": 36,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "house-of-mg-ahmedabad->adalaj-stepwell": {
+    "distanceKm": 19.7,
+    "travelTimeMinutes": 39,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "french-haveli->sidi-saiyyed-mosque": {
+    "distanceKm": 1.2,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "lemon-tree-premier->sidi-saiyyed-mosque": {
+    "distanceKm": 1.9,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "house-of-mg-ahmedabad->sidi-saiyyed-mosque": {
+    "distanceKm": 0.2,
+    "travelTimeMinutes": 5,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "french-haveli->calico-museum": {
+    "distanceKm": 4.5,
+    "travelTimeMinutes": 9,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "lemon-tree-premier->calico-museum": {
+    "distanceKm": 3.4,
+    "travelTimeMinutes": 7,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "house-of-mg-ahmedabad->calico-museum": {
+    "distanceKm": 4.1,
+    "travelTimeMinutes": 8,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "french-haveli->sarkhej-roza": {
+    "distanceKm": 12.4,
+    "travelTimeMinutes": 25,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "lemon-tree-premier->sarkhej-roza": {
+    "distanceKm": 11.8,
+    "travelTimeMinutes": 24,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "house-of-mg-ahmedabad->sarkhej-roza": {
+    "distanceKm": 11.9,
+    "travelTimeMinutes": 24,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "french-haveli->kankaria-lake": {
+    "distanceKm": 3.5,
+    "travelTimeMinutes": 7,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "lemon-tree-premier->kankaria-lake": {
+    "distanceKm": 6.5,
+    "travelTimeMinutes": 13,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  },
+  "house-of-mg-ahmedabad->kankaria-lake": {
+    "distanceKm": 4.4,
+    "travelTimeMinutes": 9,
+    "source": "Simulated OpenRouteService Route (No API Key), 2026-08-25"
+  }
+}

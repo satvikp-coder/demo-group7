@@ -4,6 +4,8 @@ import {
   GUJARAT_DESTINATIONS,
   OFFICIAL_CATEGORIES,
 } from "../data/destinations";
+import { Trie } from "@dsa/trie/Trie";
+import { mergeSort } from "@dsa/sorting/mergeSort";
 import {
   Search,
   Star,
@@ -168,9 +170,36 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
     }
   };
 
+  // Initialize and populate Trie index of destinations
+  const searchTrie = useMemo(() => {
+    const trie = new Trie();
+    for (const dest of GUJARAT_DESTINATIONS) {
+      const id = dest.id;
+      trie.insert(dest.name, id);
+      trie.insert(getName(dest), id);
+      if (dest.gujaratiName) trie.insert(dest.gujaratiName, id);
+      if (dest.hindiName) trie.insert(dest.hindiName, id);
+      trie.insert(dest.district, id);
+      trie.insert(dest.location, id);
+      trie.insert(dest.category, id);
+      trie.insert(dest.officialCategory, id);
+      for (const h of dest.highlights) {
+        trie.insert(h, id);
+      }
+    }
+    return trie;
+  }, [getName]);
+
   // Filter & Sort Logic
   const filteredDestinations = useMemo(() => {
-    return GUJARAT_DESTINATIONS.filter((dest) => {
+    let candidates = GUJARAT_DESTINATIONS;
+
+    if (searchQuery.trim()) {
+      const matchingIds = searchTrie.searchPrefix(searchQuery.trim());
+      candidates = candidates.filter((dest) => matchingIds.includes(dest.id));
+    }
+
+    const filtered = candidates.filter((dest) => {
       // Category match
       if (
         selectedCategory !== "All Categories" &&
@@ -195,39 +224,10 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         if (!hasMatchingDemand) return false;
       }
 
-      if (searchQuery.trim()) {
-        const query = searchQuery.trim().toLowerCase();
-
-        const activeName = getName(dest).toLowerCase();
-        const englishName = dest.name.toLowerCase();
-        const gujaratiName = dest.gujaratiName
-          ? dest.gujaratiName.toLowerCase()
-          : "";
-        const hindiName = dest.hindiName ? dest.hindiName.toLowerCase() : "";
-
-        const nameMatch =
-          activeName.includes(query) ||
-          englishName.includes(query) ||
-          gujaratiName.includes(query) ||
-          hindiName.includes(query);
-        const districtMatch = dest.district.toLowerCase().includes(query);
-        const locationMatch = dest.location.toLowerCase().includes(query);
-        const categoryMatch = dest.category.toLowerCase().includes(query);
-        const highlightMatch = dest.highlights.some((h) =>
-          h.toLowerCase().includes(query),
-        );
-
-        return (
-          nameMatch ||
-          districtMatch ||
-          locationMatch ||
-          categoryMatch ||
-          highlightMatch
-        );
-      }
-
       return true;
-    }).sort((a, b) => {
+    });
+
+    return mergeSort(filtered, (a, b) => {
       if (sortBy === "rating") {
         return b.ratingValue - a.ratingValue;
       } else if (sortBy === "fee") {
@@ -247,6 +247,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
     selectedDemands,
     language,
     getName,
+    searchTrie,
   ]);
 
   const handleResetFilters = () => {

@@ -18,6 +18,7 @@ export interface Attraction {
   hindiName?: string;
   gujaratiDescription?: string;
   hindiDescription?: string;
+  transportMode?: "road" | "boat" | "other";
 }
 
 export interface Hotel {
@@ -621,6 +622,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
           "Sacred island off Okha coast believed to be the residence of Lord Krishna.",
         hindiDescription:
           "Sacred island off Okha coast believed to be the residence of Lord Krishna.",
+        transportMode: "boat",
       },
     ],
     hotels: [
@@ -2677,15 +2679,15 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         bestTimeNote:
           "Best between 9:00am-11:00am for natural light penetrating lower carved levels.",
         wheelchairAccessible: false,
-        physicalDemand: "high",
+        physicalDemand: "moderate",
         name: "Adalaj Ni Vav Stepwell",
         lat: 23.1667,
         lng: 72.5801,
         durationHours: 1.5,
         rating: 4.8,
         category: "Stepwell Architecture",
-        entryFee: "Free",
-        entryFeeNumeric: 0,
+        entryFee: "₹25",
+        entryFeeNumeric: 25,
         imageUrl:
           "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
         description:
@@ -2747,6 +2749,56 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         hindiDescription:
           "World-class collection of Indian court textiles, brocades, and double-ikat weaves.",
       },
+      {
+        id: "sarkhej-roza",
+        bestTimeNote:
+          "Best in morning or late afternoon; women are restricted from entering the main dargah tomb.",
+        wheelchairAccessible: false,
+        physicalDemand: "moderate",
+        name: "Sarkhej Roza",
+        lat: 22.9814,
+        lng: 72.5025,
+        durationHours: 1.5,
+        rating: 4.5,
+        category: "Heritage",
+        entryFee: "Free",
+        entryFeeNumeric: 0,
+        imageUrl:
+          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+        description:
+          "Historic mosque and tomb complex featuring an elegant blend of Islamic and Hindu architectural styles.",
+        gujaratiName: "સરખેજ રોઝા",
+        hindiName: "सरखेज रोजा",
+        gujaratiDescription:
+          "Historic mosque and tomb complex featuring an elegant blend of Islamic and Hindu architectural styles.",
+        hindiDescription:
+          "Historic mosque and tomb complex featuring an elegant blend of Islamic and Hindu architectural styles.",
+      },
+      {
+        id: "kankaria-lake",
+        bestTimeNote:
+          "Best in evening (5pm-9pm) for laser show and cooler temperatures; closed Mondays.",
+        wheelchairAccessible: true,
+        physicalDemand: "low",
+        name: "Kankaria Lake",
+        lat: 22.9976,
+        lng: 72.5996,
+        durationHours: 2,
+        rating: 4.4,
+        category: "Nature/Recreation",
+        entryFee: "₹25",
+        entryFeeNumeric: 25,
+        imageUrl:
+          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
+        description:
+          "Second largest lake in Ahmedabad, featuring a zoo, toy train, water rides, and food stalls.",
+        gujaratiName: "કાંકરિયા તળાવ",
+        hindiName: "कांकरिया झील",
+        gujaratiDescription:
+          "Second largest lake in Ahmedabad, featuring a zoo, toy train, water rides, and food stalls.",
+        hindiDescription:
+          "Second largest lake in Ahmedabad, featuring a zoo, toy train, water rides, and food stalls.",
+      },
     ],
     hotels: [
       {
@@ -2756,8 +2808,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         lng: 72.589,
         pricePerNight: "₹3,400",
         priceNumeric: 3400,
-        rating: "4.8 ★",
-        ratingNumeric: 4.8,
+        rating: "4.4 ★",
+        ratingNumeric: 4.4,
         tier: "Budget",
         stayType: "Homestay",
         location: "Dhal ni Pol, Old City",
@@ -2774,28 +2826,28 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
           "Restored 150-year-old carved wooden Haveli tucked inside Dhal ni Pol in the Old City.",
       },
       {
-        id: "toran-gandhi-ashram",
-        name: "Toran Gandhi Ashram Hotel",
-        lat: 23.061,
-        lng: 72.582,
-        pricePerNight: "₹2,800",
-        priceNumeric: 2800,
-        rating: "4.6 ★",
-        ratingNumeric: 4.6,
+        id: "lemon-tree-premier",
+        name: "Lemon Tree Premier",
+        lat: 23.0372,
+        lng: 72.5719,
+        pricePerNight: "₹4,000",
+        priceNumeric: 4000,
+        rating: "4.2 ★",
+        ratingNumeric: 4.2,
         tier: "Mid-range",
-        stayType: "Toran Hotel",
-        location: "Sabarmati Riverfront",
+        stayType: "Registered Hotel",
+        location: "Ashram Road, Sabarmati Riverfront",
         description:
-          "Peaceful TCGL rest house overlooking the Sabarmati Riverfront directly opposite Gandhi Ashram.",
-        valueScore: 89,
+          "Contemporary riverfront hotel featuring a fitness center, pool, and multi-cuisine restaurant.",
+        valueScore: 88,
         imageUrl:
           "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=600",
-        gujaratiName: "Toran Gandhi Ashram Hotel",
-        hindiName: "Toran Gandhi Ashram Hotel",
+        gujaratiName: "Lemon Tree Premier",
+        hindiName: "Lemon Tree Premier",
         gujaratiDescription:
-          "Peaceful TCGL rest house overlooking the Sabarmati Riverfront directly opposite Gandhi Ashram.",
+          "Contemporary riverfront hotel featuring a fitness center, pool, and multi-cuisine restaurant.",
         hindiDescription:
-          "Peaceful TCGL rest house overlooking the Sabarmati Riverfront directly opposite Gandhi Ashram.",
+          "Contemporary riverfront hotel featuring a fitness center, pool, and multi-cuisine restaurant.",
       },
       {
         id: "house-of-mg-ahmedabad",
@@ -2804,8 +2856,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         lng: 72.5825,
         pricePerNight: "₹6,200",
         priceNumeric: 6200,
-        rating: "4.9 ★",
-        ratingNumeric: 4.9,
+        rating: "4.5 ★",
+        ratingNumeric: 4.5,
         tier: "Luxury",
         stayType: "Heritage Hotel",
         location: "Opposite Sidi Saiyyed Mosque",
@@ -2829,7 +2881,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         lat: 23.0251,
         lng: 72.5826,
         rating: 4.9,
-        avgCostPerPerson: 850,
+        avgCostPerPerson: 1200,
         location: "The House of MG",
         cuisine: "Royal Gujarati Terrace Thali",
         gujaratiName: "Agashiye Terrace Restaurant",
@@ -2840,8 +2892,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         name: "Vishalla Village Restaurant",
         lat: 22.99,
         lng: 72.53,
-        rating: 4.7,
-        avgCostPerPerson: 650,
+        rating: 4.2,
+        avgCostPerPerson: 1000,
         location: "Vasna, Ahmedabad",
         cuisine: "Traditional Village Style Thali",
         gujaratiName: "Vishalla Village Restaurant",
@@ -2852,8 +2904,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         name: "Chandravilas Dining Hall",
         lat: 23.024,
         lng: 72.586,
-        rating: 4.5,
-        avgCostPerPerson: 220,
+        rating: 4.1,
+        avgCostPerPerson: 350,
         location: "Gandhi Road, Old City",
         cuisine: "Classic Gujarati Meal",
         gujaratiName: "Chandravilas Dining Hall",
@@ -2901,6 +2953,26 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         gujaratiName: "કેલિકો ટેક્સટાઈલ મ્યુઝિયમ",
         hindiName: "कैलिको टेक्सटाइल म्यूजियम",
       },
+      {
+        id: "sarkhej-roza",
+        name: "Sarkhej Roza",
+        category: "Heritage",
+        distance: "Intra-city",
+        imageUrl:
+          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+        gujaratiName: "સરખેજ રોઝા",
+        hindiName: "सरखेज रोजा",
+      },
+      {
+        id: "kankaria-lake",
+        name: "Kankaria Lake",
+        category: "Nature/Recreation",
+        distance: "Intra-city",
+        imageUrl:
+          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
+        gujaratiName: "કાંકરિયા તળાવ",
+        hindiName: "कांकरिया झील",
+      },
     ],
     nearbyHotels: [
       {
@@ -2910,8 +2982,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         lng: 72.589,
         pricePerNight: "₹3,400",
         priceNumeric: 3400,
-        rating: "4.8 ★",
-        ratingNumeric: 4.8,
+        rating: "4.4 ★",
+        ratingNumeric: 4.4,
         tier: "Budget",
         stayType: "Homestay",
         location: "Dhal ni Pol, Old City",
@@ -2922,20 +2994,20 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
           "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=600",
       },
       {
-        id: "toran-gandhi-ashram",
-        name: "Toran Gandhi Ashram Hotel",
-        lat: 23.061,
-        lng: 72.582,
-        pricePerNight: "₹2,800",
-        priceNumeric: 2800,
-        rating: "4.6 ★",
-        ratingNumeric: 4.6,
+        id: "lemon-tree-premier",
+        name: "Lemon Tree Premier",
+        lat: 23.0372,
+        lng: 72.5719,
+        pricePerNight: "₹4,000",
+        priceNumeric: 4000,
+        rating: "4.2 ★",
+        ratingNumeric: 4.2,
         tier: "Mid-range",
-        stayType: "Toran Hotel",
-        location: "Sabarmati Riverfront",
+        stayType: "Registered Hotel",
+        location: "Ashram Road, Sabarmati Riverfront",
         description:
-          "Peaceful TCGL rest house overlooking the Sabarmati Riverfront directly opposite Gandhi Ashram.",
-        valueScore: 89,
+          "Contemporary riverfront hotel featuring a fitness center, pool, and multi-cuisine restaurant.",
+        valueScore: 88,
         imageUrl:
           "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=600",
       },
@@ -2946,8 +3018,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         lng: 72.5825,
         pricePerNight: "₹6,200",
         priceNumeric: 6200,
-        rating: "4.9 ★",
-        ratingNumeric: 4.9,
+        rating: "4.5 ★",
+        ratingNumeric: 4.5,
         tier: "Luxury",
         stayType: "Heritage Hotel",
         location: "Opposite Sidi Saiyyed Mosque",

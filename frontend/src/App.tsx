@@ -18,6 +18,12 @@ import { HomeTransitionOverlay } from "./components/HomeTransitionOverlay";
 import { OfflineBanner } from "./components/OfflineBanner";
 import { PwaInstallPrompt } from "./components/PwaInstallPrompt";
 import { getLatestOfflineTrip } from "./utils/offlineStorage";
+
+const LazyResearchView = React.lazy(() =>
+  import.meta.env.DEV
+    ? import("./components/ResearchView").then((m) => ({ default: m.ResearchView }))
+    : Promise.resolve({ default: () => null as any })
+);
 import { getSharedFromUrl, clearSharedUrl } from "./utils/shareUrl";
 import { Destination, GUJARAT_DESTINATIONS } from "./data/destinations";
 import { MapPin } from "lucide-react";
@@ -39,6 +45,14 @@ export default function App() {
   const [showHotels, setShowHotels] = useState<boolean>(false);
   const [showProfile, setShowProfile] = useState<boolean>(false);
   const [showAdminDashboard, setShowAdminDashboard] = useState<boolean>(false);
+
+  // Dev-only Research Simulation Mode
+  const [showResearchMode, setShowResearchMode] = useState<boolean>(() => {
+    if (typeof window !== "undefined" && import.meta.env.DEV) {
+      return window.location.pathname === "/research";
+    }
+    return false;
+  });
 
   // Parse URL for shared read-only itinerary on mount
   useEffect(() => {
@@ -290,8 +304,26 @@ export default function App() {
           {/* Main Content Area */}
           <main className="flex-grow">
             <AnimatePresence mode="wait">
-              {/* If a single Destination is selected, display the full Destination Details View */}
-              {selectedDestination ? (
+              {showResearchMode && import.meta.env.DEV ? (
+                <motion.div
+                  key="research-view"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <React.Suspense fallback={<div className="font-mono text-center p-8">Loading Research Matrix...</div>}>
+                    <LazyResearchView
+                      onBack={() => {
+                        setShowResearchMode(false);
+                        if (typeof window !== "undefined") {
+                          window.history.pushState({}, "", "/");
+                        }
+                      }}
+                    />
+                  </React.Suspense>
+                </motion.div>
+              ) : selectedDestination ? (
                 <motion.div
                   key="destination-detail"
                   initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Destination, GUJARAT_DESTINATIONS, Hotel } from "../data/destinations";
+import { mergeSort } from "@dsa/sorting/mergeSort";
 import { useLanguage } from "../context/LanguageContext";
 import {
   Building2,
@@ -51,7 +52,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
   const [assignedNotice, setAssignedNotice] = useState<string | null>(null);
 
-  const sortedHotels = [...currentHotels].sort((a, b) => {
+  const sortedHotels = mergeSort(currentHotels, (a, b) => {
     if (sortOrder === "value") {
       return b.valueScore - a.valueScore;
     }

@@ -6,6 +6,87 @@ import {
   getCityById,
   GUJARAT_DESTINATIONS,
 } from "../data/destinations";
+import { HashTable } from "@dsa/hashTable/HashTable";
+import { mergeSort } from "@dsa/sorting/mergeSort";
+import { Graph } from "@dsa/graph/Graph";
+import { dijkstra } from "@dsa/dijkstra/dijkstra";
+import { selectStartingHotel, filterAttractionsByBudget } from "@dsa/greedy/budgetAllocator";
+import { scoreAttraction } from "@dsa/greedy/routeBuilder";
+import { getMaxAttractionsPerDay } from "@dsa/greedy/daySplitter";
+import { routesCsvText } from "../data/routesCsv";
+
+interface ParsedRoute {
+  source_attraction_id: string;
+  destination_attraction_id: string;
+  distance_km: number;
+  travel_time_minutes: number;
+}
+
+// Map short codes from routes.csv to frontend slug IDs
+const shortIdToSlug: Record<string, string> = {
+  // Somnath
+  "a101": "somnath-temple",
+  "a102": "bhalka-tirth",
+  "a103": "triveni-sangam",
+  "a104": "somnath-beach",
+  "h101": "premier-somnath",
+  "h102": "sarovar-portico-somnath",
+  "h103": "fern-residency-somnath",
+  // Dwarka
+  "a201": "dwarkadhish-temple",
+  "a202": "nageshwar-jyotirlinga",
+  "a203": "rukmini-devi-temple",
+  "a204": "bet-dwarka",
+  "h201": "darshan-palace",
+  "h202": "goverdhan-greens",
+  "h203": "mercure-dwarka",
+  "h204": "the-dwarika-hotel",
+  // Ahmedabad
+  "a301": "sabarmati-ashram",
+  "a302": "adalaj-stepwell",
+  "a303": "sidi-saiyyed-mosque",
+  "a304": "calico-museum",
+  "a305": "sarkhej-roza",
+  "a306": "kankaria-lake",
+  "h301": "french-haveli",
+  "h302": "lemon-tree-premier",
+  "h303": "house-of-mg-ahmedabad"
+};
+
+function parseRoutesCsv(csvText: string): ParsedRoute[] {
+  const lines = csvText.split("\n");
+  const routes: ParsedRoute[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const parts = trimmed.split(",");
+    if (parts[0] === "source_attraction_id") continue; // Header
+    if (parts.length >= 5) {
+      routes.push({
+        source_attraction_id: parts[0],
+        destination_attraction_id: parts[1],
+        distance_km: parseFloat(parts[3]),
+        travel_time_minutes: parseInt(parts[4], 10),
+      });
+    }
+  }
+  return routes;
+}
+
+const routesMap = new Map<string, { distanceKm: number; travelTimeMinutes: number }>();
+try {
+  const parsed = parseRoutesCsv(routesCsvText);
+  for (const r of parsed) {
+    const srcSlug = shortIdToSlug[r.source_attraction_id] || r.source_attraction_id;
+    const destSlug = shortIdToSlug[r.destination_attraction_id] || r.destination_attraction_id;
+    const k1 = `${srcSlug}->${destSlug}`;
+    const k2 = `${destSlug}->${srcSlug}`;
+    routesMap.set(k1, { distanceKm: r.distance_km, travelTimeMinutes: r.travel_time_minutes });
+    routesMap.set(k2, { distanceKm: r.distance_km, travelTimeMinutes: r.travel_time_minutes });
+  }
+} catch (err) {
+  console.warn("Failed to parse routes.csv", err);
+}
 
 export type OptimizationStrategy =
   "budget-first" | "rating-first" | "distance-first";
@@ -22,7 +103,7 @@ export interface PlannerConfigPayload {
 
 export interface ItineraryStop {
   id: string;
-  type: "hotel" | "attraction" | "meal";
+  type: "hotel" | "attraction" | "meal" | "transit";
   name: string;
   category: string;
   arrivalTime: string;
@@ -45,6 +126,8 @@ export interface DayRoute {
   title: string;
   stops: ItineraryStop[];
   totalKm: number;
+  roadKm: number;
+  boatKm: number;
   totalCost: number;
 }
 
@@ -67,6 +150,8 @@ export interface GeneratedItineraryResult {
   dayPlans: DayRoute[];
   totalCost: number;
   totalDistanceKm: number;
+  roadDistanceKm: number;
+  boatDistanceKm: number;
   attractionCount: number;
   totalRuntimeMinutes: number;
   totalRuntimeHours: string;
@@ -110,6 +195,9 @@ export function getDistanceKm(
   ) {
     return 3.5;
   }
+  if (lat1 === lat2 && lng1 === lng2) {
+    return 0;
+  }
   const R = 6371; // Earth radius km
   const dLat = (lat2 - lat1) * (Math.PI / 180);
   const dLng = (lng2 - lng1) * (Math.PI / 180);
@@ -128,156 +216,161 @@ export function getDistanceKm(
 /**
  * Single Parameterized Scoring Function for Greedy Selection
  */
-function scoreAttraction(
-  attraction: Attraction,
-  currentLocation: { lat: number; lng: number },
-  remainingBudget: number,
-  strategy: OptimizationStrategy,
-): number {
-  const fee = attraction.entryFeeNumeric || 0;
-  const rating = attraction.rating || 4.5;
-  const dist = getDistanceKm(
-    currentLocation.lat,
-    currentLocation.lng,
-    attraction.lat,
-    attraction.lng,
-  );
-
-  // If attraction fee exceeds remaining budget, give severe penalty
-  if (fee > remainingBudget && remainingBudget > 0) {
-    return -99999;
-  }
-
-  switch (strategy) {
-    case "budget-first":
-      // Minimize cost primarily, higher rating as tie-breaker, minimal distance impact
-      return -fee * 10 + rating * 8 - dist * 0.2;
-
-    case "rating-first":
-      // Maximize rating primarily, low cost impact, moderate distance penalty
-      return rating * 100 - fee * 0.15 - dist * 0.8;
-
-    case "distance-first":
-    default:
-      // Minimize travel distance primarily (nearest neighbor), rating & cost secondary
-      return -dist * 50 + rating * 6 - fee * 0.05;
-  }
-}
-
 /**
  * Evaluates route legs and counts direct road connections vs. Dijkstra fallback calls
  */
 function evaluateRouteLeg(
-  from: { lat?: number; lng?: number },
-  to: { lat?: number; lng?: number },
-  cityNodes: { lat?: number; lng?: number }[],
+  from: { lat?: number; lng?: number; id?: string; transportMode?: string },
+  to: { lat?: number; lng?: number; id?: string; transportMode?: string },
+  cityNodes: { lat?: number; lng?: number; id?: string; transportMode?: string }[],
 ): {
   distanceKm: number;
+  travelTimeMinutes: number;
   isDirect: boolean;
   nodesVisited: number;
   edgesRelaxed: number;
+  isBoat?: boolean;
 } {
   const directDist = getDistanceKm(from.lat, from.lng, to.lat, to.lng);
 
-  if (directDist <= 2.2) {
+  // Exclude boat-access attractions from road-based graph search
+  if (from.transportMode === "boat" || to.transportMode === "boat") {
     return {
       distanceKm: directDist,
+      travelTimeMinutes: 0,
+      isDirect: true,
+      nodesVisited: 0,
+      edgesRelaxed: 0,
+      isBoat: true,
+    };
+  }
+
+  // Check if a direct route exists in routes.csv
+  const routeKey = from.id && to.id ? `${from.id}->${to.id}` : null;
+  const directRoute = routeKey ? routesMap.get(routeKey) : null;
+
+  if (directRoute) {
+    return {
+      distanceKm: directRoute.distanceKm,
+      travelTimeMinutes: directRoute.travelTimeMinutes,
       isDirect: true,
       nodesVisited: 0,
       edgesRelaxed: 0,
     };
   }
 
-  const N = cityNodes.length;
+  if (directDist <= 2.2) {
+    return {
+      distanceKm: directDist,
+      travelTimeMinutes: Math.max(10, Math.round(directDist * 2.2)),
+      isDirect: true,
+      nodesVisited: 0,
+      edgesRelaxed: 0,
+    };
+  }
+
+  const filteredCityNodes = cityNodes.filter((n) => n.transportMode !== "boat");
+  const N = filteredCityNodes.length;
+
   if (N <= 1) {
     return {
       distanceKm: directDist,
+      travelTimeMinutes: Math.max(10, Math.round(directDist * 2.2)),
       isDirect: false,
       nodesVisited: Math.max(1, N),
       edgesRelaxed: Math.max(1, N),
     };
   }
 
-  let startIdx = 0;
+  // Build the virtual Graph adjacency list
+  const graph = new Graph();
+  const nodeIds: string[] = [];
+
+  for (let i = 0; i < N; i++) {
+    const node = filteredCityNodes[i];
+    const id = node.id || `node-${i}`;
+    nodeIds.push(id);
+    graph.addNode(id, node.lat || 0, node.lng || 0, node.transportMode as any);
+  }
+
+  for (let u = 0; u < N; u++) {
+    for (let v = 0; v < N; v++) {
+      if (u === v) continue;
+      
+      const key = `${nodeIds[u]}->${nodeIds[v]}`;
+      const routeInfo = routesMap.get(key);
+
+      if (routeInfo) {
+        graph.addEdge(nodeIds[u], nodeIds[v], routeInfo.distanceKm, routeInfo.travelTimeMinutes, "road");
+      } else {
+        const dUV = getDistanceKm(
+          filteredCityNodes[u].lat,
+          filteredCityNodes[u].lng,
+          filteredCityNodes[v].lat,
+          filteredCityNodes[v].lng,
+        );
+        const hasEdge = dUV <= 2.5 || Math.abs(u - v) === 1;
+        if (hasEdge) {
+          const travelMins = Math.max(10, Math.round(dUV * 2.2));
+          graph.addEdge(nodeIds[u], nodeIds[v], dUV, travelMins, "road");
+        }
+      }
+    }
+  }
+
+  // Locate starting and target node IDs
+  let startNodeId = nodeIds[0];
   let minStartDist = Infinity;
-  let targetIdx = N - 1;
+  let targetNodeId = nodeIds[N - 1];
   let minTargetDist = Infinity;
 
   for (let i = 0; i < N; i++) {
     const dFrom = getDistanceKm(
       from.lat,
       from.lng,
-      cityNodes[i].lat,
-      cityNodes[i].lng,
+      filteredCityNodes[i].lat,
+      filteredCityNodes[i].lng,
     );
     if (dFrom < minStartDist) {
       minStartDist = dFrom;
-      startIdx = i;
+      startNodeId = nodeIds[i];
     }
     const dTo = getDistanceKm(
       to.lat,
       to.lng,
-      cityNodes[i].lat,
-      cityNodes[i].lng,
+      filteredCityNodes[i].lat,
+      filteredCityNodes[i].lng,
     );
     if (dTo < minTargetDist) {
       minTargetDist = dTo;
-      targetIdx = i;
+      targetNodeId = nodeIds[i];
     }
   }
 
-  const dists = new Array(N).fill(Infinity);
-  const visited = new Set<number>();
-  dists[startIdx] = 0;
+  // Execute modular Dijkstra solver using our generic MinHeap
+  const result = dijkstra(graph, startNodeId, targetNodeId);
 
-  let nodesVisited = 0;
-  let edgesRelaxed = 0;
-
-  while (visited.size < N) {
-    let u = -1;
-    let minD = Infinity;
-    for (let i = 0; i < N; i++) {
-      if (!visited.has(i) && dists[i] < minD) {
-        minD = dists[i];
-        u = i;
+  let pathTime = 0;
+  if (result.path.length > 1) {
+    for (let i = 0; i < result.path.length - 1; i++) {
+      const u = result.path[i];
+      const v = result.path[i + 1];
+      const edges = graph.getNeighbors(u);
+      const edge = edges.find((e) => e.to === v);
+      if (edge) {
+        pathTime += edge.travelTimeMinutes;
       }
     }
-
-    if (u === -1 || minD === Infinity) break;
-
-    visited.add(u);
-    nodesVisited++;
-
-    if (u === targetIdx) break;
-
-    for (let v = 0; v < N; v++) {
-      if (u === v) continue;
-      const dUV = getDistanceKm(
-        cityNodes[u].lat,
-        cityNodes[u].lng,
-        cityNodes[v].lat,
-        cityNodes[v].lng,
-      );
-      const hasEdge = dUV <= 2.5 || Math.abs(u - v) === 1;
-      if (hasEdge) {
-        edgesRelaxed++;
-        if (dists[u] + dUV < dists[v]) {
-          dists[v] = dists[u] + dUV;
-        }
-      }
-    }
+  } else {
+    pathTime = Math.max(10, Math.round(result.distanceKm * 2.2));
   }
-
-  const pathDist =
-    dists[targetIdx] !== Infinity
-      ? Math.round(dists[targetIdx] * 10) / 10
-      : directDist;
 
   return {
-    distanceKm: pathDist > 0 ? pathDist : directDist,
+    distanceKm: result.distanceKm > 0 ? result.distanceKm : directDist,
+    travelTimeMinutes: pathTime,
     isDirect: false,
-    nodesVisited,
-    edgesRelaxed,
+    nodesVisited: result.nodesVisited,
+    edgesRelaxed: result.edgesRelaxed,
   };
 }
 
@@ -318,26 +411,14 @@ export function generateStrategyItinerary(
     strategyTagline = "Highest-rated cultural landmarks";
   }
 
-  // 1. Hotel Selection according to strategy
-  let startingHotel: Hotel;
-  if (strategy === "budget-first") {
-    // Pick the most economical hotel fitting the city
-    const sortedByPrice = [...activeCity.hotels].sort(
-      (a, b) => a.priceNumeric - b.priceNumeric,
-    );
-    startingHotel = sortedByPrice[0] || activeCity.hotels[0];
-  } else if (strategy === "rating-first") {
-    // Pick the highest-rated hotel
-    const sortedByRating = [...activeCity.hotels].sort(
-      (a, b) => b.ratingNumeric - a.ratingNumeric,
-    );
-    startingHotel = sortedByRating[0] || activeCity.hotels[0];
-  } else {
-    // Distance-first / user preference
-    startingHotel =
-      activeCity.hotels.find((h) => h.id === config.startingHotelId) ||
-      activeCity.hotels[0];
-  }
+  // 1. Hotel Selection according to strategy respecting budget
+  const startingHotel = selectStartingHotel(
+    activeCity.hotels,
+    totalBudgetCap,
+    numDays,
+    strategy,
+    config.startingHotelId
+  );
 
   const hotelTotalCost = startingHotel.priceNumeric * numDays;
   let remainingBudget = totalBudgetCap - hotelTotalCost;
@@ -349,10 +430,11 @@ export function generateStrategyItinerary(
     );
   }
   const restaurantsPool = activeCity.restaurants || [];
-  const visitedAttractionIds = new Set<string>();
+  const visitedAttractionIds = new HashTable<string, boolean>();
 
   const dayPlans: DayRoute[] = [];
-  let grandTotalDistanceKm = 0;
+  let grandTotalRoadDistanceKm = 0;
+  let grandTotalBoatDistanceKm = 0;
   let grandTotalCost = hotelTotalCost;
   let totalAttractionsVisited = 0;
   let totalRuntimeMinutesAcc = 0;
@@ -370,9 +452,10 @@ export function generateStrategyItinerary(
   for (let d = 0; d < numDays; d++) {
     const stops: ItineraryStop[] = [];
     let currentClock = startMinsBase;
-    let dayKm = 0;
+    let dayRoadKm = 0;
+    let dayBoatKm = 0;
     let dayCost = 0;
-    let currentPos = { lat: startingHotel.lat, lng: startingHotel.lng };
+    let currentPos = { lat: startingHotel.lat, lng: startingHotel.lng, transportMode: undefined as string | undefined };
 
     // Depart Hotel
     const hotelDepartMins = currentClock;
@@ -404,11 +487,7 @@ export function generateStrategyItinerary(
     let dayAttractionCount = 0;
 
     // Max attractions per day depends on strategy & duration
-    const maxAttractionsPerDay = Math.min(
-      4,
-      Math.ceil(attractionsPool.length / numDays) +
-        (strategy === "rating-first" ? 0 : 1),
-    );
+    const maxAttractionsPerDay = getMaxAttractionsPerDay(attractionsPool.length, numDays, strategy);
 
     while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) {
       // until 7:00 PM
@@ -426,8 +505,36 @@ export function generateStrategyItinerary(
         }
 
         const distToResto = routeEval.distanceKm;
-        dayKm += distToResto;
-        currentPos = { lat: resto.lat, lng: resto.lng };
+        const isLunchBoatTransition = currentPos.transportMode === "boat";
+
+        if (isLunchBoatTransition) {
+          const transitStart = currentClock;
+          const transitEnd = transitStart + 25;
+          stops.push({
+            id: `boat-transit-lunch-day-${d + 1}`,
+            type: "transit",
+            name: "Bet Dwarka to Okha Jetty Ferry",
+            category: "Ferry Transit",
+            arrivalTime: formatTime(transitStart),
+            departureTime: formatTime(transitEnd),
+            durationMinutes: 25,
+            cost: 30,
+            location: "Okha Jetty",
+            description: "Ferry return transfer from Bet Dwarka island back to mainland Okha Jetty.",
+            lat: 22.4633,
+            lng: 69.1114,
+          });
+          currentClock = transitEnd + 5;
+          dayCost += 30;
+          remainingBudget -= 30;
+          dayBoatKm += distToResto;
+        } else {
+          dayRoadKm += distToResto;
+          const travelMins = routeEval.travelTimeMinutes;
+          currentClock += travelMins;
+        }
+
+        currentPos = { lat: resto.lat, lng: resto.lng, transportMode: undefined };
 
         const lunchStart = currentClock;
         const lunchEnd = lunchStart + 60;
@@ -453,34 +560,36 @@ export function generateStrategyItinerary(
 
         currentClock = lunchEnd + 15;
         dayCost += resto.avgCostPerPerson;
+        remainingBudget -= resto.avgCostPerPerson;
         totalRuntimeMinutesAcc += 75;
         lunchInserted = true;
       }
 
-      // Find best remaining candidate using parameterized scoreAttraction
-      const unvisited = attractionsPool.filter(
-        (a) => !visitedAttractionIds.has(a.id),
-      );
+      // Find best remaining candidate that fits within the budget
+      const unvisited = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
       if (unvisited.length === 0) break;
 
-      unvisited.sort((a, b) => {
+      // Merge Sort using our manual implementation
+      const sortedCandidates = mergeSort(unvisited, (a, b) => {
         const scoreA = scoreAttraction(
           a,
           currentPos,
           remainingBudget,
           strategy,
+          getDistanceKm
         );
         const scoreB = scoreAttraction(
           b,
           currentPos,
           remainingBudget,
           strategy,
+          getDistanceKm
         );
         return scoreB - scoreA;
       });
 
-      const chosen = unvisited[0];
-      visitedAttractionIds.add(chosen.id);
+      const chosen = sortedCandidates[0];
+      visitedAttractionIds.set(chosen.id, true);
 
       const routeEval = evaluateRouteLeg(currentPos, chosen, cityNodes);
       if (routeEval.isDirect) directRoadConnectionsUsed++;
@@ -491,11 +600,42 @@ export function generateStrategyItinerary(
       }
 
       const distToChosen = routeEval.distanceKm;
-      const travelMins = Math.max(10, Math.round(distToChosen * 2.2));
+      const isBoatTransition = (currentPos.transportMode === "boat" && chosen.transportMode !== "boat") ||
+                               (currentPos.transportMode !== "boat" && chosen.transportMode === "boat");
 
-      dayKm += distToChosen;
-      currentClock += travelMins;
-      currentPos = { lat: chosen.lat, lng: chosen.lng };
+      if (isBoatTransition) {
+        // Insert boat transfer stop
+        const transitStart = currentClock;
+        const transitEnd = transitStart + 25;
+        stops.push({
+          id: `boat-transit-${chosen.id}-day-${d + 1}`,
+          type: "transit",
+          name: currentPos.transportMode === "boat" ? "Bet Dwarka to Okha Jetty Ferry" : "Okha Jetty to Bet Dwarka Ferry",
+          category: "Ferry Transit",
+          arrivalTime: formatTime(transitStart),
+          departureTime: formatTime(transitEnd),
+          durationMinutes: 25,
+          cost: 30,
+          location: "Okha Jetty",
+          description: currentPos.transportMode === "boat"
+            ? "Ferry return transfer from Bet Dwarka island to mainland Okha Jetty."
+            : "Mainland Okha Jetty ferry crossing to Bet Dwarka island (~25 mins).",
+          lat: 22.4633,
+          lng: 69.1114,
+        });
+        currentClock = transitEnd + 5; // 5 min transition buffer
+        dayCost += 30;
+        remainingBudget -= 30;
+        dayBoatKm += distToChosen;
+        totalRuntimeMinutesAcc += 30;
+      } else {
+        dayRoadKm += distToChosen;
+        const travelMins = routeEval.travelTimeMinutes;
+        currentClock += travelMins;
+        totalRuntimeMinutesAcc += travelMins;
+      }
+
+      currentPos = { lat: chosen.lat, lng: chosen.lng, transportMode: chosen.transportMode };
 
       const attrStart = currentClock;
       const durationMins = Math.round((chosen.durationHours || 1.5) * 60);
@@ -525,7 +665,7 @@ export function generateStrategyItinerary(
       });
 
       currentClock = attrEnd + 15;
-      totalRuntimeMinutesAcc += travelMins + durationMins + 15;
+      totalRuntimeMinutesAcc += durationMins + 15;
       dayAttractionCount++;
       totalAttractionsVisited++;
     }
@@ -542,8 +682,37 @@ export function generateStrategyItinerary(
       }
 
       const distToDinner = routeEval.distanceKm;
-      dayKm += distToDinner;
-      currentPos = { lat: resto.lat, lng: resto.lng };
+      const isDinnerBoatTransition = currentPos.transportMode === "boat";
+
+      if (isDinnerBoatTransition) {
+        // Insert boat transfer stop
+        const transitStart = currentClock;
+        const transitEnd = transitStart + 25;
+        stops.push({
+          id: `boat-transit-dinner-day-${d + 1}`,
+          type: "transit",
+          name: "Bet Dwarka to Okha Jetty Ferry",
+          category: "Ferry Transit",
+          arrivalTime: formatTime(transitStart),
+          departureTime: formatTime(transitEnd),
+          durationMinutes: 25,
+          cost: 30,
+          location: "Okha Jetty",
+          description: "Ferry return transfer from Bet Dwarka island back to mainland Okha Jetty.",
+          lat: 22.4633,
+          lng: 69.1114,
+        });
+        currentClock = transitEnd + 5;
+        dayCost += 30;
+        remainingBudget -= 30;
+        dayBoatKm += distToDinner;
+      } else {
+        dayRoadKm += distToDinner;
+        const travelMins = routeEval.travelTimeMinutes;
+        currentClock += travelMins;
+      }
+
+      currentPos = { lat: resto.lat, lng: resto.lng, transportMode: undefined };
 
       const dinnerStart = currentClock;
       const dinnerEnd = dinnerStart + 60;
@@ -569,6 +738,7 @@ export function generateStrategyItinerary(
 
       currentClock = dinnerEnd + 15;
       dayCost += resto.avgCostPerPerson;
+      remainingBudget -= resto.avgCostPerPerson;
       totalRuntimeMinutesAcc += 75;
     }
 
@@ -582,7 +752,36 @@ export function generateStrategyItinerary(
     }
 
     const returnDist = returnEval.distanceKm;
-    dayKm += returnDist;
+    const isReturnBoatTransition = currentPos.transportMode === "boat";
+
+    if (isReturnBoatTransition) {
+      // Insert boat transfer stop
+      const transitStart = currentClock;
+      const transitEnd = transitStart + 25;
+      stops.push({
+        id: `boat-transit-return-day-${d + 1}`,
+        type: "transit",
+        name: "Bet Dwarka to Okha Jetty Ferry",
+        category: "Ferry Transit",
+        arrivalTime: formatTime(transitStart),
+        departureTime: formatTime(transitEnd),
+        durationMinutes: 25,
+        cost: 30,
+        location: "Okha Jetty",
+        description: "Ferry return transfer from Bet Dwarka island back to mainland Okha Jetty.",
+        lat: 22.4633,
+        lng: 69.1114,
+      });
+      currentClock = transitEnd + 5;
+      dayCost += 30;
+      remainingBudget -= 30;
+      dayBoatKm += returnDist;
+    } else {
+      dayRoadKm += returnDist;
+      const returnTravelMins = returnEval.travelTimeMinutes;
+      currentClock += returnTravelMins;
+    }
+
     const returnStart = currentClock;
 
     stops.push({
@@ -613,11 +812,14 @@ export function generateStrategyItinerary(
       dateLabel: datesList[d % datesList.length],
       title: `Day ${d + 1}: ${strategyName} ${activeCity.name} Circuit`,
       stops,
-      totalKm: Math.round(dayKm * 10) / 10,
+      totalKm: Math.round((dayRoadKm + dayBoatKm) * 10) / 10,
+      roadKm: Math.round(dayRoadKm * 10) / 10,
+      boatKm: Math.round(dayBoatKm * 10) / 10,
       totalCost: dayCost,
     });
 
-    grandTotalDistanceKm += dayKm;
+    grandTotalRoadDistanceKm += dayRoadKm;
+    grandTotalBoatDistanceKm += dayBoatKm;
     grandTotalCost += dayCost;
   }
 
@@ -638,7 +840,9 @@ export function generateStrategyItinerary(
     startingHotel,
     dayPlans,
     totalCost: Math.round(grandTotalCost),
-    totalDistanceKm: Math.round(grandTotalDistanceKm * 10) / 10,
+    totalDistanceKm: Math.round((grandTotalRoadDistanceKm + grandTotalBoatDistanceKm) * 10) / 10,
+    roadDistanceKm: Math.round(grandTotalRoadDistanceKm * 10) / 10,
+    boatDistanceKm: Math.round(grandTotalBoatDistanceKm * 10) / 10,
     attractionCount: totalAttractionsVisited,
     totalRuntimeMinutes: totalRuntimeMinutesAcc,
     totalRuntimeHours,

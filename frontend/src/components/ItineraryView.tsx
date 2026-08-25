@@ -49,6 +49,7 @@ import {
   AlertTriangle,
   Hospital,
   Shield,
+  Ship,
 } from "lucide-react";
 
 export interface ItineraryConfig {
@@ -74,7 +75,7 @@ interface ItineraryViewProps {
 
 interface ItineraryStop {
   id: string;
-  type: "hotel" | "attraction" | "meal";
+  type: "hotel" | "attraction" | "meal" | "transit";
   name: string;
   category: string;
   arrivalTime: string;
@@ -725,7 +726,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                 ? "bg-amber-50/70 border-gold/80"
                                 : stop.type === "hotel"
                                   ? "bg-salt border-stone/40"
-                                  : "bg-white border-stone/30 hover:border-gold"
+                                  : stop.type === "transit"
+                                    ? "bg-sky-50 border-sky-300"
+                                    : "bg-white border-stone/30 hover:border-gold"
                             }`}
                           >
                             {(() => {
@@ -762,6 +765,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                         </>
                                       ) : stop.type === "hotel" ? (
                                         <HotelIcon className="w-4 h-4 text-ink shrink-0" />
+                                      ) : stop.type === "transit" ? (
+                                        <>
+                                          <Ship className="w-4 h-4 text-sky-700 shrink-0" />
+                                          <span className="bg-sky-100 text-sky-800 px-1.5 py-0.5 text-[10px] uppercase font-mono border border-sky-300">
+                                            Ferry Crossing
+                                          </span>
+                                        </>
                                       ) : (
                                         <Ticket className="w-4 h-4 text-madder shrink-0" />
                                       )}

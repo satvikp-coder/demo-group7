@@ -1,6 +1,7 @@
 import { ItineraryConfig } from "../components/ItineraryView";
 import { getCityById } from "../data/destinations";
 import { GeneratedItineraryResult } from "./itineraryPlanner";
+import { mergeSort } from "@dsa/sorting/mergeSort";
 
 export interface CachedTripData {
   id: string;
@@ -78,7 +79,7 @@ function getAllOfflineTripsMap(): Record<string, CachedTripData> {
  */
 export function getAllOfflineTrips(): CachedTripData[] {
   const map = getAllOfflineTripsMap();
-  return Object.values(map).sort(
+  return mergeSort(Object.values(map),
     (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
   );
 }
