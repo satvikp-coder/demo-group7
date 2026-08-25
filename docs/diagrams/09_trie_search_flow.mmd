@@ -1,0 +1,40 @@
+flowchart TD
+    subgraph TrieInsertion["Phase 1: Suffix Trie Insertion (Trie.insert)"]
+        InsertStart(["Input: word, value (entity ID)"]) --> CleanWord["Normalize: clean = word.trim().toLowerCase()"]
+        CleanWord --> SuffixLoop["For each suffix i = 0 to clean.length - 1:<br/>suffix = clean.substring(i)"]
+        
+        SuffixLoop --> InitTraverse["Set current = root"]
+        InitTraverse --> CharLoop["For each char in suffix:"]
+        
+        CharLoop --> ChildCheck{"current.children.has(char)?"}
+        ChildCheck -->|NO| CreateNode["current.children.set(char, new TrieNode())"]
+        ChildCheck -->|YES| MoveChild["current = current.children.get(char)"]
+        CreateNode --> MoveChild
+        
+        MoveChild --> AppendVal{"!current.values.includes(value)?"}
+        AppendVal -->|YES| PushVal["current.values.push(value)"]
+        AppendVal -->|NO| NextChar{"More characters in suffix?"}
+        PushVal --> NextChar
+        
+        NextChar -->|YES| CharLoop
+        NextChar -->|NO| MarkEnd["current.isEndOfWord = true"]
+        MarkEnd --> NextSuffix{"More suffixes?"}
+        NextSuffix -->|YES| SuffixLoop
+        NextSuffix -->|NO| InsertDone(["Insertion Complete"])
+    end
+
+    subgraph TrieSearch["Phase 2: Prefix Search (Trie.searchPrefix)"]
+        SearchStart(["Input: prefix string query (e.g. 'Som', 'Dw', 'temple')"]) --> CleanPrefix["Normalize: cleanPrefix = prefix.trim().toLowerCase()"]
+        CleanPrefix --> StartTraverse["Set current = root"]
+        StartTraverse --> SearchCharLoop["For each char in cleanPrefix:"]
+        
+        SearchCharLoop --> MatchCheck{"current.children.has(char)?"}
+        MatchCheck -->|NO| ReturnEmpty(["Return [] (No Prefix Match)"])
+        MatchCheck -->|YES| StepChild["current = current.children.get(char)"]
+        
+        StepChild --> MoreSearchChars{"More chars in query?"}
+        MoreSearchChars -->|YES| SearchCharLoop
+        MoreSearchChars -->|NO| ReturnResults(["Return current.values<br/>O(L) Time Complexity"])
+    end
+
+    ReturnResults --> EntityHydration["⚡ Hydrate Entities via Hash Table<br/>Instant O(1) details for matching IDs"]

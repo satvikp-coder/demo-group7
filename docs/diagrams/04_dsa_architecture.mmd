@@ -1,0 +1,35 @@
+flowchart TD
+    UserQuery["User Input / Search Query"] --> TrieModule["🌳 Trie (PrefixTrie)<br/>O(L) Prefix Search on Cities & Attractions"]
+
+    TrieModule --> CitySelected["Selected City Confirmed (1 of 8)"]
+    
+    CitySelected --> HashTableModule["⚡ Entity Hash Table (HashTable)<br/>O(1) Confirmed City Data Lookup"]
+
+    HashTableModule --> CityEntities[("City Inventory:<br/>Attractions, Hotels, Restaurants, Routes")]
+
+    CityEntities --> BudgetAllocator["💰 Greedy Budget Allocator<br/>Selects Hotel by Strategy & Hard Budget Cap"]
+    
+    CityEntities --> RoadGraph["🕸️ Adjacency List Graph<br/>Intra-City Attractions & Hotel Road Network"]
+
+    BudgetAllocator --> GreedyEngine["🔄 Greedy Itinerary Engine (routeBuilder & daySplitter)"]
+    RoadGraph --> GreedyEngine
+
+    subgraph LegEvaluation["Route Leg Evaluation & Fallback"]
+        direction TB
+        ModeCheck{"Transport Mode?"}
+        ModeCheck -->|Boat Ferry| BoatBypass["Ferry Bypass<br/>(Island leg, 0 road km)"]
+        ModeCheck -->|Road| CSVLookup{"Edge in routes.csv?"}
+        CSVLookup -->|Yes| DirectRoad["Direct Road Metric<br/>(Real distance & time)"]
+        CSVLookup -->|No| ProximityCheck{"Direct Dist <= 2.2km?"}
+        ProximityCheck -->|Yes| ProximityDirect["Direct Local Segment"]
+        ProximityCheck -->|No| DijkstraModule["📍 Dijkstra Shortest Path<br/>O((V+E) log V) via MinHeap"]
+    end
+
+    GreedyEngine --> LegEvaluation
+    LegEvaluation --> GreedyEngine
+
+    GreedyEngine --> MealInsertion["🍽️ Meal Schedule Injection<br/>(Lunch >= 12:00 PM, Dinner >= 6:30 PM)"]
+
+    MealInsertion --> MergeSortModule["📊 Merge Sort (MergeSorter)<br/>O(N log N) Hotel / Attraction Ranking"]
+
+    MergeSortModule --> FinalResult["📋 Circular Multi-Day Itinerary + Diagnostic Stats<br/>(Arrival/Departure Times, Road/Boat km, Budget Breakdown)"]

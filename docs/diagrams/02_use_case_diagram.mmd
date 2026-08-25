@@ -1,0 +1,35 @@
+flowchart LR
+    subgraph Actors
+        T["👤 Tourist"]
+        TO["🏢 Tour Operator"]
+    end
+
+    subgraph IntraCityPlanner["Heritage Tourism Planner (Intra-City Scope)"]
+        direction TB
+        UC1(["🔍 Search Cities & Attractions<br/>(Trie Prefix Search)"])
+        UC2(["📍 Select Target City & Hotel<br/>(1 of 8 Gujarat Cities)"])
+        UC3(["⚙️ Configure Constraints<br/>(Budget, 1-3 Days, Pace, Accessibility)"])
+        UC4(["🗺️ Generate Circular Itinerary<br/>(Greedy + Dijkstra Road Route)"])
+        UC5(["⚖️ Compare Optimization Strategies<br/>(Budget vs Rating vs Distance)"])
+        UC6(["📊 Inspect Algorithm Diagnostics<br/>(Execution Time, Nodes, Edges)"])
+        UC7(["🎛️ Dynamic What-If Simulation<br/>(Budget & Pace Sliders)"])
+        UC8(["📄 Export & Share PDF Itinerary"])
+        UC9(["🛠️ Manage City Inventory & Routes<br/>(Attractions, Hotels, Road Edges)"])
+    end
+
+    T --> UC1
+    T --> UC2
+    T --> UC3
+    T --> UC4
+    T --> UC5
+    T --> UC6
+    T --> UC7
+    T --> UC8
+
+    TO --> UC1
+    TO --> UC2
+    TO --> UC3
+    TO --> UC4
+    TO --> UC5
+    TO --> UC8
+    TO --> UC9

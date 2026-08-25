@@ -1,0 +1,55 @@
+flowchart TD
+    Start(["Start Itinerary Planning (config, strategy)"]) --> InitPhase["1. Greedy Budget Allocation & Hotel Selection"]
+
+    subgraph HotelSelection["Phase 1: Starting Hotel Selection (budgetAllocator.ts)"]
+        StrategyCheck{"Strategy?"}
+        StrategyCheck -->|budget-first| SortPrice["Sort hotels by price ASC<br/>Select cheapest hotel"]
+        StrategyCheck -->|rating-first| SortRating["Sort hotels by rating DESC<br/>Find highest rated with (price * days) <= totalBudget<br/>Fallback to cheapest if none fit"]
+        StrategyCheck -->|distance-first| PreferredCheck{"Preferred hotel fits<br/>(price * days) <= totalBudget?"}
+        PreferredCheck -->|YES| UsePreferred["Select preferred hotel"]
+        PreferredCheck -->|NO| BestFit["Find highest-rated hotel within budget cap"]
+    end
+
+    InitPhase --> HotelSelection
+    SortPrice --> DeductHotel["Deduct (hotelPrice * days) from remainingBudget<br/>grandTotalCost += hotelCost"]
+    SortRating --> DeductHotel
+    UsePreferred --> DeductHotel
+    BestFit --> DeductHotel
+
+    DeductHotel --> LoopDays["2. Greedy Multi-Day Schedule Generation<br/>For day d = 1 to tripDays:"]
+
+    subgraph DayLoop["Phase 2: Daily Time-Budget Execution (daySplitter.ts)"]
+        InitDay["Set currentClock = 08:00 AM (480 mins)<br/>currentPos = startingHotel<br/>lunchInserted = false, dayCost = 0"]
+        
+        FilterCandidates["Filter Unvisited Attractions:<br/>remainingBudget >= attraction.entryFee (Hard Budget Constraint)"]
+
+        CandidateCheck{"Eligible unvisited<br/>attractions exist AND<br/>currentClock < 18:00?"}
+
+        LunchCheck{"isLunchTime?<br/>(currentClock >= 12:00 PM & !lunchInserted)"}
+        LunchCheck -->|YES| InsertLunch["Insert Lunch Break (+60 mins)<br/>Deduct meal cost from remainingBudget<br/>lunchInserted = true"]
+        LunchCheck -->|NO| ScoreAttractions
+
+        InsertLunch --> ScoreAttractions["Score Each Candidate (routeBuilder.ts):<br/>- budget-first: -fee*10 + rating*8 - dist*0.2<br/>- rating-first: rating*100 - fee*0.15 - dist*0.8<br/>- distance-first: -dist*50 + rating*6 - fee*0.05<br/>(Fee > remainingBudget gives -99999 penalty)"]
+
+        ScoreAttractions --> PickBest["Greedy Choice: Pick candidate with max score"]
+        PickBest --> MoveToAttraction["Evaluate route leg to chosen attraction<br/>Advance currentClock by travel + visit duration<br/>Deduct entryFee from remainingBudget<br/>Mark attraction as visited"]
+        MoveToAttraction --> CandidateCheck
+    end
+
+    LoopDays --> InitDay
+    InitDay --> FilterCandidates
+    FilterCandidates --> CandidateCheck
+    CandidateCheck -->|YES| LunchCheck
+    CandidateCheck -->|NO| DinnerCheck{"isDinnerTime?<br/>(currentClock >= 18:30)?"}
+
+    DinnerCheck -->|YES| InsertDinner["Insert Dinner Stop (+60 mins)<br/>Deduct meal cost from remainingBudget"]
+    DinnerCheck -->|NO| ReturnHotel
+
+    InsertDinner --> ReturnHotel["Evaluate return route leg to startingHotel<br/>Complete day's circular loop"]
+    ReturnHotel --> AssembleDay["Record DayRoute (stops, roadKm, boatKm, dayCost)"]
+
+    AssembleDay --> MoreDays{"d < tripDays?"}
+    MoreDays -->|YES| LoopDays
+    MoreDays -->|NO| Finalize["3. Final Result Aggregation & Diagnostics<br/>- Total road & boat distance<br/>- Itemized financial breakdown<br/>- Execution stats (Dijkstra calls, nodes visited)"]
+
+    Finalize --> End(["Return GeneratedItineraryResult"])
