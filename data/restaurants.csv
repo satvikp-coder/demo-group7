@@ -1,0 +1,7 @@
+# STATUS: NOT STARTED for any city -- top priority for meal break engine (see Data Collection Plan)
+restaurant_id,destination_id,name,latitude,longitude,rating,avg_cost_per_person,source
+r101,somnath,Toran Dining Hall Somnath,20.887000,70.401000,4.5,180,Google Maps 2026
+r201,dwarka,Toran Dining Hall Dwarka,22.240500,68.968200,4.4,200,Google Maps 2026
+r301,ahmedabad,Agashiye Terrace Restaurant,23.025100,72.582600,4.9,1200,Eazydiner 2026
+r302,ahmedabad,Vishalla Village Restaurant,22.990000,72.530000,4.2,1000,Google Maps 2026
+r303,ahmedabad,Chandravilas Dining Hall,23.024000,72.586000,4.1,350,Google Maps 2026

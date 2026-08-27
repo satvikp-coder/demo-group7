@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#1E2A46" rx="96"/>
+  <!-- Stepped Chevron Motif in Stepwell Gold -->
+  <g fill="#C99A3B">
+    <!-- Frame border -->
+    <rect x="40" y="40" width="432" height="432" fill="none" stroke="#C99A3B" stroke-width="14" rx="48"/>
+    
+    <!-- Top Stepped Chevron Mark -->
+    <path d="M 128 170 L 256 250 L 384 170 L 384 210 L 256 290 L 128 210 Z" />
+    
+    <!-- Bottom Stepped Chevron Mark -->
+    <path d="M 128 260 L 256 340 L 384 260 L 384 300 L 256 380 L 128 300 Z" />
+    
+    <!-- Stepwell Base Accent -->
+    <rect x="208" y="404" width="96" height="12" rx="6" />
+  </g>
+</svg>

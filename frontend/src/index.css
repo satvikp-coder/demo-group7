@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: var(--color-ink);
+  --color-salt: var(--color-salt);
+  --color-madder: var(--color-madder);
+  --color-gold: var(--color-gold);
+  --color-stone: var(--color-stone);
+  --color-charcoal: var(--color-charcoal);
+
+  --color-dusk-indigo: #131B30;
+  --color-salt-glow: #EDE9DD;
+  --color-madder-ember: #C1544F;
+  --color-stone-mist: #9C9686;
+
+  --font-display: "Fraunces", "Noto Sans Gujarati", "Noto Sans Devanagari", serif;
+  --font-body: "Plus Jakarta Sans", "Noto Sans Gujarati", "Noto Sans Devanagari", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", "Noto Sans Gujarati", "Noto Sans Devanagari", monospace;
+}
+
+:root {
+  --color-ink: #1E2A46;
+  --color-salt: #F6F4EF;
+  --color-madder: #A63D40;
+  --color-gold: #C99A3B;
+  --color-stone: #6B665B;
+  --color-charcoal: #24211D;
+  --color-white: #FFFFFF;
+}
+
+[data-theme="dusk"], .dusk {
+  --color-ink: #1C2744;       /* Elevated dark indigo container surface */
+  --color-salt: #131B30;      /* Dusk Indigo as primary background replacing Salt */
+  --color-madder: #C1544F;    /* Madder Ember */
+  --color-gold: #C99A3B;      /* Stepwell Gold */
+  --color-stone: #9C9686;     /* Stone Mist */
+  --color-charcoal: #EDE9DD;  /* Salt Glow replacing Charcoal body text */
+  --color-white: #1C2744;     /* Elevated dark card surface replacing pure white */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-salt);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  /* Universal Stepwell Gold Keyboard Focus Indicator */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-gold) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(201, 154, 59, 0.25) !important;
+  }
+}
+
+/* Signature stepped-chevron motif SVG pattern background */
+.bg-stepwell-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l10 10L0 20h5l10-10L5 0H0zm20 0l10 10L20 20h5l10-10L25 0h-5z' fill='%236B665B' fill-opacity='0.12' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+[data-theme="dusk"] .bg-stepwell-pattern,
+.dusk .bg-stepwell-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l10 10L0 20h5l10-10L5 0H0zm20 0l10 10L20 20h5l10-10L25 0h-5z' fill='%239C9686' fill-opacity='0.20' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.chevron-divider {
+  height: 12px;
+  width: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='12' viewBox='0 0 30 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l7.5 6L0 12h3l7.5-6L3 0H0zm15 0l7.5 6L15 12h3l7.5-6L18 0h-3z' fill='%23C99A3B' fill-opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+}
+
+/* Terrace grid staggered offset utilities */
+.terrace-card-even {
+  transform: translateY(0px);
+}
+@media (min-width: 768px) {
+  .terrace-card-odd {
+    transform: translateY(24px);
+  }
+}
+
+/* Prefers Reduced Motion Accessibility Overrides */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .terrace-card-odd {
+    transform: none !important;
+  }
+
+  .animate-fadeIn,
+  .animate-spin,
+  .animate-pulse,
+  .animate-bounce {
+    animation: none !important;
+  }
+}
+
+

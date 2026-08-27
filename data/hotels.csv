@@ -1,0 +1,7 @@
+# STATUS: Somnath + Dwarka verified real data; 6 remaining cities pending collection (see Data Collection Plan)
+hotel_id,destination_id,hotel_name,price_per_night,rating,stay_type,latitude,longitude,source
+h101,somnath,Premier Somnath,2800,4.5,Registered Hotel,20.888000,70.401200,Holidify/Momondo 2026
+h201,dwarka,Toran Hotel Dwarka,1800,4.2,Toran Hotel,22.240000,68.968000,Gujarat Tourism Official 2026
+h301,ahmedabad,French Haveli Heritage Stay,3400,4.4,Homestay,23.021000,72.589000,Booking.com 2026
+h302,ahmedabad,Lemon Tree Premier,4000,4.2,Registered Hotel,23.037200,72.571900,MakeMyTrip 2026
+h303,ahmedabad,The House of MG,6200,4.5,Heritage Hotel,23.025000,72.582500,Booking.com 2026

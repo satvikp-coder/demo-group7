@@ -1,0 +1,6 @@
+{
+  "name": "Heritage Tourism Planner",
+  "description": "Trip planning web app for Gujarat heritage sites featuring custom Stepwell design system, terrace grid layout, and bespoke heritage itineraries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

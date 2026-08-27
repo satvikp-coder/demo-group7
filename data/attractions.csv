@@ -1,0 +1,16 @@
+# STATUS: Somnath + Dwarka verified real data; 6 remaining cities pending collection (see Data Collection Plan)
+attraction_id,destination_id,name,category,latitude,longitude,entry_fee,average_visit_duration_hours,opening_time,closing_time,rating,source
+a101,somnath,Somnath Temple,Temple,20.888000,70.401200,Free,1.5,06:00,21:00,4.9,Gujarat Tourism Official 2026
+a102,somnath,Bhalka Tirth,Temple,20.900000,70.380000,Free,1.0,06:00,20:00,4.7,Gujarat Tourism Official 2026
+a103,somnath,Triveni Sangam,Sacred Site,20.892000,70.408000,Free,1.0,06:00,19:00,4.6,Gujarat Tourism Official 2026
+a104,somnath,Somnath Beach,Nature,20.885000,70.400000,Free,1.5,06:00,22:00,4.4,Google Maps 2026
+a201,dwarka,Dwarkadhish Temple,Temple,22.237600,68.967500,Free,2.0,06:30,21:30,4.9,Gujarat Tourism Official 2026
+a202,dwarka,Nageshwar Jyotirlinga,Temple,22.332100,69.006200,Free,1.5,06:00,21:00,4.8,Gujarat Tourism Official 2026
+a203,dwarka,Rukmini Devi Temple,Heritage,22.253000,68.980000,Free,1.0,06:00,21:00,4.4,Gujarat Tourism Official 2026
+a204,dwarka,Bet Dwarka,Island/Pilgrimage,22.463300,69.111400,~₹30 boat fare,3.0,06:00,18:00,4.5,Gujarat Tourism Official 2026
+a301,ahmedabad,Sabarmati Ashram,Heritage/National Monument,23.060100,72.580800,Free,2.0,08:30,18:30,4.8,Gujarat Tourism Official 2026
+a302,ahmedabad,Adalaj Ni Vav Stepwell,Stepwell Architecture,23.166700,72.580100,₹25,1.5,08:00,18:00,4.8,Gujarat Tourism Official 2026
+a303,ahmedabad,Sidi Saiyyed Mosque & Old Pols,UNESCO Heritage City,23.026000,72.581000,Free,2.0,07:00,18:00,4.7,Google Maps 2026
+a304,ahmedabad,Calico Textile Museum,Museum,23.053000,72.592000,Free (Prior Booking),2.0,10:15,12:30,4.9,Gujarat Tourism Official 2026
+a305,ahmedabad,Sarkhej Roza,Heritage,22.981400,72.502500,Free,1.5,09:00,18:00,4.5,Gujarat Tourism Official 2026
+a306,ahmedabad,Kankaria Lake,Nature/Recreation,22.997600,72.599600,₹25,2.0,09:00,22:00,4.4,Google Maps 2026
