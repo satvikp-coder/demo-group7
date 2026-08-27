@@ -1,0 +1,11 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "description": "Ahmedabad University CSC210 Group 7 Heritage Tourism DSA Library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./*": "./*"
+  },
+  "private": true
+}

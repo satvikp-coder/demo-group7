@@ -1,0 +1,47 @@
+flowchart TD
+    Start(["Start evaluateRouteLeg(from, to, cityNodes)"]) --> ComputeStraight["Calculate Haversine Distance: directDist"]
+
+    ComputeStraight --> BoatCheck{"Is from or to<br/>transportMode == 'boat'?"}
+
+    BoatCheck -->|YES (e.g. Bet Dwarka)| BoatLeg["Mark isBoat = true<br/>travelTime = 0 mins<br/>distance = directDist (boatKm)<br/>isDirect = true"]
+    BoatLeg --> ReturnBoat(["Return Boat Leg Result<br/>(Exclude from Road Graph)"])
+
+    BoatCheck -->|NO (Road Leg)| CsvCheck{"Does direct route exist<br/>in routes.csv (routesMap)?"}
+
+    CsvCheck -->|YES| DirectCsv["Load distanceKm & travelTimeMinutes from CSV<br/>isDirect = true, nodesVisited = 0, edgesRelaxed = 0"]
+    DirectCsv --> ReturnCsv(["Return Direct Road Result"])
+
+    CsvCheck -->|NO| ProximityCheck{"Is directDist <= 2.2 km?"}
+
+    ProximityCheck -->|YES| MicroProximity["Set distanceKm = directDist<br/>travelTime = max(10, round(directDist * 2.2))<br/>isDirect = true"]
+    MicroProximity --> ReturnProximity(["Return Micro-Proximity Result"])
+
+    ProximityCheck -->|NO| InitDijkstra["Initialize Dijkstra Fallback:<br/>1. Filter non-boat city nodes<br/>2. Set dists[node] = Infinity, dists[start] = 0<br/>3. Insert {start, dist: 0} into MinHeap"]
+
+    InitDijkstra --> HeapCheck{"Is MinHeap Empty?"}
+
+    HeapCheck -->|YES| ReconstructPath["Reconstruct Path from prev Map"]
+    HeapCheck -->|NO| ExtractMin["curr = MinHeap.extractMin()"]
+
+    ExtractMin --> VisitedCheck{"Is curr.nodeId<br/>already in visitedSet?"}
+
+    VisitedCheck -->|YES| HeapCheck
+    VisitedCheck -->|NO| MarkVisited["visitedSet.add(curr.nodeId)<br/>nodesVisited++"]
+
+    MarkVisited --> TargetCheck{"Is curr.nodeId == target?"}
+
+    TargetCheck -->|YES| ReconstructPath
+    TargetCheck -->|NO| IterateNeighbors["For each edge in graph.getNeighbors(curr):<br/>edgesRelaxed++<br/>alt = curr.dist + edge.distanceKm"]
+
+    IterateNeighbors --> RelaxationCheck{"Is alt < dists[edge.to]?"}
+
+    RelaxationCheck -->|YES| UpdateDist["dists[edge.to] = alt<br/>prev[edge.to] = curr.nodeId<br/>MinHeap.insert({edge.to, alt})"]
+    RelaxationCheck -->|NO| NextNeighbor{"More Neighbors?"}
+
+    UpdateDist --> NextNeighbor
+    NextNeighbor -->|YES| IterateNeighbors
+    NextNeighbor -->|NO| HeapCheck
+
+    ReconstructPath --> BuildResult["Set isDirect = false<br/>dijkstraFallbackCalls++<br/>record nodesVisited & edgesRelaxed"]
+
+    BuildResult --> ReturnDijkstra(["Return Shortest Path Road Result"])

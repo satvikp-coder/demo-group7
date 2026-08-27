@@ -1,0 +1,101 @@
+erDiagram
+    users ||--o{ trips : "creates"
+    destinations ||--o{ attractions : "contains"
+    destinations ||--o{ hotels : "contains"
+    destinations ||--o{ restaurants : "contains"
+    destinations ||--o{ routes : "contains"
+    destinations ||--o{ trips : "target city"
+    trips ||--o{ itinerary_stops : "has"
+    trips ||--|| budgets : "has"
+    attractions ||--o{ routes : "source"
+    attractions ||--o{ routes : "destination"
+
+    users {
+        UUID id PK
+        VARCHAR name
+        VARCHAR email UK
+        VARCHAR password_hash
+        VARCHAR role "tourist | tour_operator"
+        TIMESTAMPTZ created_at
+    }
+
+    destinations {
+        UUID id PK
+        VARCHAR name UK "e.g. Somnath"
+        VARCHAR district
+        VARCHAR category
+        TIMESTAMPTZ created_at
+    }
+
+    attractions {
+        UUID id PK
+        UUID destination_id FK
+        VARCHAR name
+        NUMERIC lat
+        NUMERIC lng
+        NUMERIC duration_hours
+        NUMERIC rating
+        VARCHAR category
+        VARCHAR entry_fee
+    }
+
+    hotels {
+        UUID id PK
+        UUID destination_id FK
+        VARCHAR name
+        NUMERIC lat
+        NUMERIC lng
+        INT price_per_night
+        NUMERIC rating
+        VARCHAR stay_type "Toran | Heritage | Registered | Homestay"
+    }
+
+    restaurants {
+        UUID id PK
+        UUID destination_id FK
+        VARCHAR name
+        NUMERIC lat
+        NUMERIC lng
+        NUMERIC rating
+        INT avg_cost_per_person
+    }
+
+    routes {
+        UUID source_attraction_id PK,FK
+        UUID destination_attraction_id PK,FK
+        UUID destination_id FK
+        NUMERIC distance_km
+        INT travel_time_minutes
+    }
+
+    trips {
+        UUID id PK
+        UUID user_id FK
+        UUID destination_id FK
+        UUID starting_hotel_id FK
+        INT trip_days "1 to 3 days"
+        INT total_budget
+        VARCHAR strategy "budget-first | rating-first | distance-first"
+        TIMESTAMPTZ created_at
+    }
+
+    itinerary_stops {
+        UUID id PK
+        UUID trip_id FK
+        INT day_number
+        INT stop_order
+        VARCHAR stop_type "attraction | meal | hotel | transit"
+        UUID reference_id
+        VARCHAR name
+        TIME arrival_time
+        TIME departure_time
+    }
+
+    budgets {
+        UUID id PK
+        UUID trip_id FK,UK
+        INT spent_hotel
+        INT spent_attractions
+        INT spent_meals
+        INT remaining
+    }
