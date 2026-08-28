@@ -11,7 +11,7 @@ interface ExploreViewProps {
   onStartTripWithDestination: (dest: Destination) => void;
 }
 
-type SortOption = 'rating' | 'fee' | 'alphabetical' | 'distance';
+type SortOption = 'rating' | 'fee' | 'alphabetical' | 'distance' | 'demand';
 
 export const ExploreView: React.FC<ExploreViewProps> = ({
   onSelectDestination,
@@ -166,13 +166,10 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         const gujaratiName = dest.gujaratiName ? dest.gujaratiName.toLowerCase() : '';
         const hindiName = dest.hindiName ? dest.hindiName.toLowerCase() : '';
 
+        // Search is limited to place names only — no district, location, category, or highlights
         const nameMatch = activeName.includes(query) || englishName.includes(query) || gujaratiName.includes(query) || hindiName.includes(query);
-        const districtMatch = dest.district.toLowerCase().includes(query);
-        const locationMatch = dest.location.toLowerCase().includes(query);
-        const categoryMatch = dest.category.toLowerCase().includes(query);
-        const highlightMatch = dest.highlights.some((h) => h.toLowerCase().includes(query));
 
-        return nameMatch || districtMatch || locationMatch || categoryMatch || highlightMatch;
+        return nameMatch;
       }
 
       return true;
@@ -185,6 +182,16 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         return getName(a).localeCompare(getName(b));
       } else if (sortBy === 'distance') {
         return a.distanceNumeric - b.distanceNumeric;
+      } else if (sortBy === 'demand') {
+        // Demand ordering: MODERATE > HIGH > LOW, alphabetical tie-break
+        const demandOrder: Record<string, number> = { 'moderate': 0, 'high': 1, 'low': 2 };
+        const getDemandRank = (dest: typeof a) => {
+          const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
+          return demandOrder[primaryDemand] ?? 1;
+        };
+        const rankDiff = getDemandRank(a) - getDemandRank(b);
+        if (rankDiff !== 0) return rankDiff;
+        return getName(a).localeCompare(getName(b));
       }
       return 0;
     });
@@ -327,6 +334,9 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 </option>
                 <option value="distance">
                   {language === 'gu' ? 'અમદાવાદથી અંતર' : language === 'hi' ? 'अहमदाबाद से दूरी' : 'Distance from Ahmedabad'}
+                </option>
+                <option value="demand">
+                  {language === 'gu' ? 'ભૌતિક માંગ (મધ્યમ > ઉચ્ચ > નિમ્ન)' : language === 'hi' ? 'शारीरिक माँग (मध्यम > उच्च > निम्न)' : 'Physical Demand (Moderate → High → Low)'}
                 </option>
               </select>
             </div>

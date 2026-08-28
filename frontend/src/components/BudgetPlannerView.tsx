@@ -26,6 +26,7 @@ interface BudgetPlannerViewProps {
   onBackToItinerary: () => void;
   onBackToPlanner: () => void;
   onSelectDestination?: (dest: Destination) => void;
+  onBudgetChange?: (budget: number) => void;
 }
 
 export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
@@ -33,6 +34,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   onBackToItinerary,
   onBackToPlanner,
   onSelectDestination,
+  onBudgetChange,
 }) => {
   const { language, t, getName } = useLanguage();
 
@@ -241,9 +243,11 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                   min="5000"
                   max="30000"
                   value={allocatedBudget}
-                  onChange={(e) =>
-                    setAllocatedBudget(Number(e.target.value) || 0)
-                  }
+                  onChange={(e) => {
+                    const newBudget = Number(e.target.value) || 0;
+                    setAllocatedBudget(newBudget);
+                    if (onBudgetChange) onBudgetChange(newBudget);
+                  }}
                   className="bg-salt text-ink font-mono font-bold text-base px-2 py-1 border border-gold outline-none w-28"
                 />
                 <span className="text-stone text-[10px]">INR</span>

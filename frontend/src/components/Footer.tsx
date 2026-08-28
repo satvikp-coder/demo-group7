@@ -53,36 +53,36 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2 text-xs text-salt/80 font-body">
               <li>
-                <a
-                  href="#explore"
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => onNavigateSection?.('explore')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Solanki Stepwells
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#explore"
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => onNavigateSection?.('explore')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   White Rann & Kutch
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#explore"
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => onNavigateSection?.('explore')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Sacred Saurashtra
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#explore"
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => onNavigateSection?.('explore')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   UNESCO Citadel Circuit
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -102,25 +102,28 @@ export const Footer: React.FC<FooterProps> = ({
                 </button>
               </li>
               <li>
-                <a href="#hotels" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigateSection?.('hotels')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
+                >
                   Heritage Haveli Lodging
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#explore"
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => onNavigateSection?.('explore')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Ticket Fee Ledgers
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#explore"
-                  className="hover:text-gold transition-colors"
+                <button
+                  onClick={() => onNavigateSection?.('explore')}
+                  className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Craft Village Guild Directory
-                </a>
+                </button>
               </li>
             </ul>
           </div>

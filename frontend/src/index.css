@@ -29,13 +29,92 @@
 }
 
 [data-theme="dusk"], .dusk {
-  --color-ink: #1C2744;       /* Elevated dark indigo container surface */
-  --color-salt: #131B30;      /* Dusk Indigo as primary background replacing Salt */
-  --color-madder: #C1544F;    /* Madder Ember */
-  --color-gold: #C99A3B;      /* Stepwell Gold */
-  --color-stone: #9C9686;     /* Stone Mist */
-  --color-charcoal: #EDE9DD;  /* Salt Glow replacing Charcoal body text */
-  --color-white: #1C2744;     /* Elevated dark card surface replacing pure white */
+  --color-ink: #1C2744;       /* Card surface: elevated dark indigo */
+  --color-salt: #EDE9DD;      /* Text in dark containers: light cream for readability */
+  --color-madder: #C1544F;    /* Madder Ember accent */
+  --color-gold: #D4A94C;      /* Brighter gold for dark backgrounds */
+  --color-stone: #B0A99E;     /* Lighter stone for readable secondary text */
+  --color-charcoal: #EDE9DD;  /* Primary body text: light cream on dark bg */
+  --color-white: #1C2744;     /* White surfaces become dark elevated panels */
+
+  /* Dusk-specific page background (not tied to salt/ink swap) */
+  --color-dusk-bg: #0D1321;
+  --color-dusk-surface: #131B30;
+}
+
+/* Dusk mode: override body background to deep indigo instead of using salt */
+[data-theme="dusk"] body,
+.dusk body {
+  background-color: #0D1321;
+}
+
+/* Dusk mode: elements using bg-salt as page background need the deep dark */
+[data-theme="dusk"] .bg-salt,
+.dusk .bg-salt {
+  background-color: #0D1321;
+}
+
+/* Dusk mode: elements using bg-ink for card backgrounds stay elevated dark */
+[data-theme="dusk"] .bg-ink,
+.dusk .bg-ink {
+  background-color: #1C2744;
+}
+
+/* Dusk mode: text-salt inside ink cards must be readable cream */
+[data-theme="dusk"] .text-salt,
+.dusk .text-salt {
+  color: #EDE9DD;
+}
+
+/* Dusk mode: text-charcoal on page background must be readable */
+[data-theme="dusk"] .text-charcoal,
+.dusk .text-charcoal {
+  color: #EDE9DD;
+}
+
+/* Dusk mode: text-ink used inside salt/light containers — keep dark for contrast */
+[data-theme="dusk"] .text-ink,
+.dusk .text-ink {
+  color: #1C2744;
+}
+
+/* Dusk mode: borders need enough opacity to be visible */
+[data-theme="dusk"] .border-stone\/30,
+.dusk .border-stone\/30 {
+  border-color: rgba(176, 169, 158, 0.35);
+}
+
+[data-theme="dusk"] .border-stone\/40,
+.dusk .border-stone\/40 {
+  border-color: rgba(176, 169, 158, 0.4);
+}
+
+/* Dusk mode: inputs and select elements */
+[data-theme="dusk"] input,
+[data-theme="dusk"] select,
+[data-theme="dusk"] textarea,
+.dusk input,
+.dusk select,
+.dusk textarea {
+  color: #EDE9DD;
+}
+
+/* Dusk mode: placeholder text visibility */
+[data-theme="dusk"] input::placeholder,
+.dusk input::placeholder {
+  color: rgba(176, 169, 158, 0.6);
+}
+
+/* Dusk mode: bg-white panels become elevated dark surfaces */
+[data-theme="dusk"] .bg-white,
+.dusk .bg-white {
+  background-color: #1C2744;
+}
+
+/* Dusk mode: bg-charcoal (used in light theme for dark text areas) */
+[data-theme="dusk"] .bg-charcoal,
+.dusk .bg-charcoal {
+  background-color: #0D1321;
 }
 
 @layer base {
