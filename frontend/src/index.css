@@ -113,4 +113,87 @@
   }
 }
 
+/* Comprehensive Desktop & Mobile Print Stylesheet */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm 12mm 10mm;
+  }
+
+  html, body, #root {
+    background-color: #ffffff !important;
+    color: #1E2A46 !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide interactive controls, navbar, footers, and modal backdrops */
+  nav,
+  footer,
+  .no-print,
+  button,
+  input,
+  select,
+  textarea,
+  #offline-banner,
+  .pwa-prompt,
+  .what-if-panel,
+  .modal-backdrop,
+  [role="dialog"]:not(.printable-modal),
+  .leaflet-control-container {
+    display: none !important;
+  }
+
+  /* Unconstrain nested overflow scroll containers so complete itinerary prints */
+  .printable-container,
+  #hero,
+  main,
+  section,
+  div {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* Avoid awkward page break splits inside cards */
+  .itinerary-day-card,
+  .itinerary-stop-card,
+  .budget-summary-card,
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12pt !important;
+  }
+
+  .itinerary-day-card {
+    border: 1.5pt solid #6B665B !important;
+    padding: 10pt !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Ensure text wraps cleanly and colors are legible */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+
 

@@ -146,7 +146,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Navigation Action Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
+        <div className="no-print flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
           <div className="flex items-center gap-3">
             <button
               onClick={onBackToItinerary}
@@ -209,7 +209,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         </div>
 
         {savedShareNotice && (
-          <div className="p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn">
+          <div className="no-print p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn">
             <Check className="w-4 h-4 text-emerald-300" />
             <span>Budget ledger breakdown link copied to clipboard!</span>
           </div>

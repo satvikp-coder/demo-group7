@@ -559,6 +559,19 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 <div className="flex items-center justify-between py-2 border-b border-stone/30">
                   <span className="text-stone uppercase">
                     {language === "gu"
+                      ? "શ્રેષ્ઠ સમય"
+                      : language === "hi"
+                        ? "सर्वोत्तम समय"
+                        : "Best Time to Visit"}
+                  </span>
+                  <span className="text-gold font-bold">
+                    {destination.bestTime}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between py-2 border-b border-stone/30">
+                  <span className="text-stone uppercase">
+                    {language === "gu"
                       ? "પ્રવેશ ફી"
                       : language === "hi"
                         ? "प्रवेश शुल्क"

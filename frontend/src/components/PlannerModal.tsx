@@ -372,7 +372,12 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <p className="font-mono text-xs text-stone line-clamp-2">
                     {activeCity.description}
                   </p>
-                  <div className="flex items-center gap-4 text-xs font-mono text-gold pt-1 border-t border-stone/30">
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-gold pt-1 border-t border-stone/30">
+                    <span className="flex items-center gap-1 font-semibold">
+                      <Calendar className="w-3.5 h-3.5 text-gold shrink-0" />
+                      <span>{activeCity.bestTime}</span>
+                    </span>
+                    <span className="text-stone/60">•</span>
                     <span>
                       {activeCity.attractions.length}{" "}
                       {language === "gu"
@@ -381,6 +386,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                           ? "आकर्षण"
                           : "Attractions"}
                     </span>
+                    <span className="text-stone/60">•</span>
                     <span>
                       {activeCity.hotels.length}{" "}
                       {language === "gu"
@@ -389,6 +395,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                           ? "होटल"
                           : "Hotel Options"}
                     </span>
+                    <span className="text-stone/60">•</span>
                     <span>
                       {activeCity.restaurants.length}{" "}
                       {language === "gu"

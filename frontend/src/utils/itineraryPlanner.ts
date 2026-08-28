@@ -375,6 +375,46 @@ function evaluateRouteLeg(
 }
 
 /**
+ * Selects an optimal restaurant based on the chosen strategy
+ */
+function selectRestaurant(
+  restaurants: Restaurant[],
+  currentPos: { lat?: number; lng?: number },
+  strategy: OptimizationStrategy,
+  mealType: "lunch" | "dinner",
+  dayIndex: number
+): Restaurant {
+  if (restaurants.length === 0) {
+    return {
+      id: "default-dining",
+      name: "Heritage Dining Hall",
+      lat: currentPos.lat || 23.0225,
+      lng: currentPos.lng || 72.5714,
+      rating: 4.6,
+      avgCostPerPerson: 350,
+      location: "City Center",
+      cuisine: "Gujarati Thali",
+    };
+  }
+
+  if (strategy === "budget-first") {
+    const sorted = [...restaurants].sort((a, b) => a.avgCostPerPerson - b.avgCostPerPerson);
+    return sorted[dayIndex % sorted.length];
+  } else if (strategy === "rating-first") {
+    const sorted = [...restaurants].sort((a, b) => b.rating - a.rating);
+    return sorted[dayIndex % sorted.length];
+  } else {
+    // Distance-first: select closest restaurant to current location
+    const sorted = [...restaurants].sort((a, b) => {
+      const distA = getDistanceKm(currentPos.lat, currentPos.lng, a.lat, a.lng);
+      const distB = getDistanceKm(currentPos.lat, currentPos.lng, b.lat, b.lng);
+      return distA - distB;
+    });
+    return sorted[0];
+  }
+}
+
+/**
  * Single Parameterized Itinerary Builder Engine
  */
 export function generateStrategyItinerary(
@@ -411,7 +451,7 @@ export function generateStrategyItinerary(
     strategyTagline = "Highest-rated cultural landmarks";
   }
 
-  // 1. Hotel Selection according to strategy respecting budget
+  // 1. Hotel Selection (respecting user's preferred hotel if provided)
   const startingHotel = selectStartingHotel(
     activeCity.hotels,
     totalBudgetCap,
@@ -435,7 +475,7 @@ export function generateStrategyItinerary(
   const dayPlans: DayRoute[] = [];
   let grandTotalRoadDistanceKm = 0;
   let grandTotalBoatDistanceKm = 0;
-  let grandTotalCost = hotelTotalCost;
+  let grandTotalCost = 0;
   let totalAttractionsVisited = 0;
   let totalRuntimeMinutesAcc = 0;
 
@@ -454,10 +494,9 @@ export function generateStrategyItinerary(
     let currentClock = startMinsBase;
     let dayRoadKm = 0;
     let dayBoatKm = 0;
-    let dayCost = 0;
     let currentPos = { lat: startingHotel.lat, lng: startingHotel.lng, transportMode: undefined as string | undefined };
 
-    // Depart Hotel
+    // 1. Overnight Stay & Depart Hotel (Stop cost accounts for the night's stay)
     const hotelDepartMins = currentClock;
     stops.push({
       id: `${startingHotel.id}-start-day-${d + 1}`,
@@ -468,14 +507,14 @@ export function generateStrategyItinerary(
           : language === "hi"
             ? `रवाना: ${startingHotel.name}`
             : `Depart ${startingHotel.name}`,
-      category: "Starting Accommodation",
+      category: "Overnight Accommodation Base",
       arrivalTime: formatTime(hotelDepartMins),
       departureTime: formatTime(hotelDepartMins + 15),
       durationMinutes: 15,
       cost: startingHotel.priceNumeric,
       location: startingHotel.location,
       imageUrl: startingHotel.imageUrl,
-      description: `Morning departure from hotel base.`,
+      description: `Morning departure from accommodation base. (Night stay: ₹${startingHotel.priceNumeric.toLocaleString("en-IN")})`,
       lat: startingHotel.lat,
       lng: startingHotel.lng,
     });
@@ -483,20 +522,139 @@ export function generateStrategyItinerary(
     currentClock += 15;
     totalRuntimeMinutesAcc += 15;
 
+    // 2. Intra-city Local Transit Stop
+    stops.push({
+      id: `local-transit-day-${d + 1}`,
+      type: "transit",
+      name:
+        language === "gu"
+          ? "સ્થાનિક આંતરિક-શહેર પરિવહન"
+          : language === "hi"
+            ? "स्थानीय इंट्रा-सिटी परिवहन"
+            : "Intra-City Local Transit & Fuel",
+      category: "Daily Local Transport",
+      arrivalTime: formatTime(currentClock),
+      departureTime: formatTime(currentClock + 15),
+      durationMinutes: 15,
+      cost: 350,
+      location: activeCity.name,
+      description: `Daily intra-city cab, auto-rickshaw & local route transfers across ${activeCity.name}.`,
+      lat: startingHotel.lat,
+      lng: startingHotel.lng,
+    });
+
+    currentClock += 15;
+    totalRuntimeMinutesAcc += 15;
+    remainingBudget -= 350;
+
     let lunchInserted = false;
     let dayAttractionCount = 0;
 
-    // Max attractions per day depends on strategy & duration
-    const maxAttractionsPerDay = getMaxAttractionsPerDay(attractionsPool.length, numDays, strategy);
+    // Check available remaining unvisited attractions
+    const currentUnvisited = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
+    const remainingDays = numDays - d;
+    const maxAttractionsPerDay = getMaxAttractionsPerDay(currentUnvisited.length, remainingDays, strategy);
 
-    while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) {
-      // until 7:00 PM
-      // Lunch insertion window
-      if (!lunchInserted && currentClock >= 720 && restaurantsPool.length > 0) {
-        const restoIndex = d % restaurantsPool.length;
-        const resto = restaurantsPool[restoIndex];
+    if (currentUnvisited.length > 0) {
+      // Standard Attraction Circuit
+      while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) {
+        // Lunch insertion window (~12:00 PM)
+        if (!lunchInserted && currentClock >= 720 && restaurantsPool.length > 0) {
+          const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d);
 
-        const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
+          const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
+          if (routeEval.isDirect) directRoadConnectionsUsed++;
+          else {
+            dijkstraFallbackCalls++;
+            totalNodesVisited += routeEval.nodesVisited;
+            totalEdgesRelaxed += routeEval.edgesRelaxed;
+          }
+
+          const distToResto = routeEval.distanceKm;
+          const isLunchBoatTransition = currentPos.transportMode === "boat";
+
+          if (isLunchBoatTransition) {
+            const transitStart = currentClock;
+            const transitEnd = transitStart + 25;
+            stops.push({
+              id: `boat-transit-lunch-day-${d + 1}`,
+              type: "transit",
+              name: "Bet Dwarka to Okha Jetty Ferry",
+              category: "Ferry Transit",
+              arrivalTime: formatTime(transitStart),
+              departureTime: formatTime(transitEnd),
+              durationMinutes: 25,
+              cost: 30,
+              location: "Okha Jetty",
+              description: "Ferry return transfer from Bet Dwarka island back to mainland Okha Jetty.",
+              lat: 22.4633,
+              lng: 69.1114,
+            });
+            currentClock = transitEnd + 5;
+            remainingBudget -= 30;
+            dayBoatKm += distToResto;
+          } else {
+            dayRoadKm += distToResto;
+            const travelMins = routeEval.travelTimeMinutes;
+            currentClock += travelMins;
+          }
+
+          currentPos = { lat: resto.lat, lng: resto.lng, transportMode: undefined };
+
+          const lunchStart = currentClock;
+          const lunchEnd = lunchStart + 60;
+          stops.push({
+            id: `lunch-stop-day-${d + 1}`,
+            type: "meal",
+            name:
+              language === "gu"
+                ? `બપોરનું ભોજન: ${resto.name}`
+                : language === "hi"
+                  ? `दोपहर का भोजन: ${resto.name}`
+                  : `Lunch Break at ${resto.name}`,
+            category: "Culinary Stop",
+            arrivalTime: formatTime(lunchStart),
+            departureTime: formatTime(lunchEnd),
+            durationMinutes: 60,
+            cost: resto.avgCostPerPerson,
+            location: resto.location,
+            description: `Authentic ${resto.cuisine || "Gujarati meal"} stop.`,
+            lat: resto.lat,
+            lng: resto.lng,
+          });
+
+          currentClock = lunchEnd + 15;
+          remainingBudget -= resto.avgCostPerPerson;
+          totalRuntimeMinutesAcc += 75;
+          lunchInserted = true;
+        }
+
+        // Find best remaining candidate
+        const unvisited = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
+        if (unvisited.length === 0) break;
+
+        const sortedCandidates = mergeSort(unvisited, (a, b) => {
+          const scoreA = scoreAttraction(
+            a,
+            currentPos,
+            remainingBudget,
+            strategy,
+            getDistanceKm
+          );
+          const scoreB = scoreAttraction(
+            b,
+            currentPos,
+            remainingBudget,
+            strategy,
+            getDistanceKm
+          );
+          return scoreB - scoreA;
+        });
+
+        const chosen = sortedCandidates[0];
+        visitedAttractionIds.set(chosen.id, true);
+
+        const routeEval = evaluateRouteLeg(currentPos, chosen, cityNodes);
         if (routeEval.isDirect) directRoadConnectionsUsed++;
         else {
           dijkstraFallbackCalls++;
@@ -504,175 +662,188 @@ export function generateStrategyItinerary(
           totalEdgesRelaxed += routeEval.edgesRelaxed;
         }
 
-        const distToResto = routeEval.distanceKm;
-        const isLunchBoatTransition = currentPos.transportMode === "boat";
+        const distToChosen = routeEval.distanceKm;
+        const isBoatTransition = (currentPos.transportMode === "boat" && chosen.transportMode !== "boat") ||
+                                 (currentPos.transportMode !== "boat" && chosen.transportMode === "boat");
 
-        if (isLunchBoatTransition) {
+        if (isBoatTransition) {
           const transitStart = currentClock;
           const transitEnd = transitStart + 25;
           stops.push({
-            id: `boat-transit-lunch-day-${d + 1}`,
+            id: `boat-transit-${chosen.id}-day-${d + 1}`,
             type: "transit",
-            name: "Bet Dwarka to Okha Jetty Ferry",
+            name: currentPos.transportMode === "boat" ? "Bet Dwarka to Okha Jetty Ferry" : "Okha Jetty to Bet Dwarka Ferry",
             category: "Ferry Transit",
             arrivalTime: formatTime(transitStart),
             departureTime: formatTime(transitEnd),
             durationMinutes: 25,
             cost: 30,
             location: "Okha Jetty",
-            description: "Ferry return transfer from Bet Dwarka island back to mainland Okha Jetty.",
+            description: currentPos.transportMode === "boat"
+              ? "Ferry return transfer from Bet Dwarka island to mainland Okha Jetty."
+              : "Mainland Okha Jetty ferry crossing to Bet Dwarka island (~25 mins).",
             lat: 22.4633,
             lng: 69.1114,
           });
           currentClock = transitEnd + 5;
-          dayCost += 30;
           remainingBudget -= 30;
-          dayBoatKm += distToResto;
+          dayBoatKm += distToChosen;
+          totalRuntimeMinutesAcc += 30;
         } else {
-          dayRoadKm += distToResto;
+          dayRoadKm += distToChosen;
           const travelMins = routeEval.travelTimeMinutes;
           currentClock += travelMins;
+          totalRuntimeMinutesAcc += travelMins;
         }
 
-        currentPos = { lat: resto.lat, lng: resto.lng, transportMode: undefined };
+        currentPos = { lat: chosen.lat, lng: chosen.lng, transportMode: chosen.transportMode };
 
-        const lunchStart = currentClock;
-        const lunchEnd = lunchStart + 60;
+        const attrStart = currentClock;
+        const durationMins = Math.round((chosen.durationHours || 1.5) * 60);
+        const attrEnd = attrStart + durationMins;
+
+        const fee = chosen.entryFeeNumeric || 0;
+        remainingBudget -= fee;
+
         stops.push({
-          id: `lunch-stop-day-${d + 1}`,
-          type: "meal",
-          name:
-            language === "gu"
-              ? `બપોરનું ભોજન: ${resto.name}`
-              : language === "hi"
-                ? `दोपहर का भोजन: ${resto.name}`
-                : `Lunch Break at ${resto.name}`,
-          category: "Culinary Stop",
-          arrivalTime: formatTime(lunchStart),
-          departureTime: formatTime(lunchEnd),
-          durationMinutes: 60,
-          cost: resto.avgCostPerPerson,
-          location: resto.location,
-          description: `Authentic ${resto.cuisine || "Gujarati meal"} stop.`,
-          lat: resto.lat,
-          lng: resto.lng,
+          id: `${chosen.id}-day-${d + 1}`,
+          type: "attraction",
+          name: chosen.name,
+          category: chosen.category,
+          arrivalTime: formatTime(attrStart),
+          departureTime: formatTime(attrEnd),
+          durationMinutes: durationMins,
+          cost: fee,
+          location: activeCity.name,
+          imageUrl: chosen.imageUrl,
+          description: chosen.description,
+          lat: chosen.lat,
+          lng: chosen.lng,
+          wheelchairAccessible: chosen.wheelchairAccessible,
+          physicalDemand: chosen.physicalDemand,
+          bestTimeNote: chosen.bestTimeNote,
         });
 
-        currentClock = lunchEnd + 15;
-        dayCost += resto.avgCostPerPerson;
-        remainingBudget -= resto.avgCostPerPerson;
-        totalRuntimeMinutesAcc += 75;
-        lunchInserted = true;
+        currentClock = attrEnd + 15;
+        totalRuntimeMinutesAcc += durationMins + 15;
+        dayAttractionCount++;
+        totalAttractionsVisited++;
       }
-
-      // Find best remaining candidate that fits within the budget
-      const unvisited = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
-      if (unvisited.length === 0) break;
-
-      // Merge Sort using our manual implementation
-      const sortedCandidates = mergeSort(unvisited, (a, b) => {
-        const scoreA = scoreAttraction(
-          a,
-          currentPos,
-          remainingBudget,
-          strategy,
-          getDistanceKm
-        );
-        const scoreB = scoreAttraction(
-          b,
-          currentPos,
-          remainingBudget,
-          strategy,
-          getDistanceKm
-        );
-        return scoreB - scoreA;
-      });
-
-      const chosen = sortedCandidates[0];
-      visitedAttractionIds.set(chosen.id, true);
-
-      const routeEval = evaluateRouteLeg(currentPos, chosen, cityNodes);
-      if (routeEval.isDirect) directRoadConnectionsUsed++;
-      else {
-        dijkstraFallbackCalls++;
-        totalNodesVisited += routeEval.nodesVisited;
-        totalEdgesRelaxed += routeEval.edgesRelaxed;
-      }
-
-      const distToChosen = routeEval.distanceKm;
-      const isBoatTransition = (currentPos.transportMode === "boat" && chosen.transportMode !== "boat") ||
-                               (currentPos.transportMode !== "boat" && chosen.transportMode === "boat");
-
-      if (isBoatTransition) {
-        // Insert boat transfer stop
-        const transitStart = currentClock;
-        const transitEnd = transitStart + 25;
-        stops.push({
-          id: `boat-transit-${chosen.id}-day-${d + 1}`,
-          type: "transit",
-          name: currentPos.transportMode === "boat" ? "Bet Dwarka to Okha Jetty Ferry" : "Okha Jetty to Bet Dwarka Ferry",
-          category: "Ferry Transit",
-          arrivalTime: formatTime(transitStart),
-          departureTime: formatTime(transitEnd),
-          durationMinutes: 25,
-          cost: 30,
-          location: "Okha Jetty",
-          description: currentPos.transportMode === "boat"
-            ? "Ferry return transfer from Bet Dwarka island to mainland Okha Jetty."
-            : "Mainland Okha Jetty ferry crossing to Bet Dwarka island (~25 mins).",
-          lat: 22.4633,
-          lng: 69.1114,
-        });
-        currentClock = transitEnd + 5; // 5 min transition buffer
-        dayCost += 30;
-        remainingBudget -= 30;
-        dayBoatKm += distToChosen;
-        totalRuntimeMinutesAcc += 30;
-      } else {
-        dayRoadKm += distToChosen;
-        const travelMins = routeEval.travelTimeMinutes;
-        currentClock += travelMins;
-        totalRuntimeMinutesAcc += travelMins;
-      }
-
-      currentPos = { lat: chosen.lat, lng: chosen.lng, transportMode: chosen.transportMode };
-
-      const attrStart = currentClock;
-      const durationMins = Math.round((chosen.durationHours || 1.5) * 60);
-      const attrEnd = attrStart + durationMins;
-
-      const fee = chosen.entryFeeNumeric || 0;
-      dayCost += fee;
-      remainingBudget -= fee;
-
+    } else {
+      // Meaningful Cultural Craft, Bazaars & Local Heritage Leisure Circuit for later days
+      const morningCraftStart = currentClock;
+      const morningCraftEnd = morningCraftStart + 105;
       stops.push({
-        id: `${chosen.id}-day-${d + 1}`,
+        id: `craft-guild-day-${d + 1}`,
         type: "attraction",
-        name: chosen.name,
-        category: chosen.category,
-        arrivalTime: formatTime(attrStart),
-        departureTime: formatTime(attrEnd),
-        durationMinutes: durationMins,
-        cost: fee,
+        name:
+          language === "gu"
+            ? `${activeCity.name} હસ્તકળા અને શિલ્પ કારીગરી પદયાત્રા`
+            : language === "hi"
+              ? `${activeCity.name} हस्तशिल्प एवं वास्तुकला विरासत वॉक`
+              : `${activeCity.name} Heritage Craft & Artisan Guilds Walk`,
+        category: "Artisan Craft & Living Heritage",
+        arrivalTime: formatTime(morningCraftStart),
+        departureTime: formatTime(morningCraftEnd),
+        durationMinutes: 105,
+        cost: 0,
         location: activeCity.name,
-        imageUrl: chosen.imageUrl,
-        description: chosen.description,
-        lat: chosen.lat,
-        lng: chosen.lng,
-        wheelchairAccessible: chosen.wheelchairAccessible,
-        physicalDemand: chosen.physicalDemand,
-        bestTimeNote: chosen.bestTimeNote,
+        description: `Explore local master artisans, textile weaving, traditional stone craft ateliers, and living heritage quarters across ${activeCity.name}.`,
+        lat: startingHotel.lat + 0.005,
+        lng: startingHotel.lng + 0.005,
+        wheelchairAccessible: true,
+        physicalDemand: "low",
       });
+      currentClock = morningCraftEnd + 20;
+      dayRoadKm += 3.2;
+      totalRuntimeMinutesAcc += 125;
 
-      currentClock = attrEnd + 15;
-      totalRuntimeMinutesAcc += durationMins + 15;
-      dayAttractionCount++;
-      totalAttractionsVisited++;
+      // Authentic Lunch Stop
+      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d);
+      const lunchStart = currentClock;
+      const lunchEnd = lunchStart + 60;
+      stops.push({
+        id: `lunch-stop-day-${d + 1}`,
+        type: "meal",
+        name:
+          language === "gu"
+            ? `બપોરનું ભોજન: ${resto.name}`
+            : language === "hi"
+              ? `दोपहर का भोजन: ${resto.name}`
+              : `Lunch Break at ${resto.name}`,
+        category: "Culinary Stop",
+        arrivalTime: formatTime(lunchStart),
+        departureTime: formatTime(lunchEnd),
+        durationMinutes: 60,
+        cost: resto.avgCostPerPerson,
+        location: resto.location,
+        description: `Authentic regional thali and traditional cuisine stop at ${resto.name}.`,
+        lat: resto.lat,
+        lng: resto.lng,
+      });
+      currentClock = lunchEnd + 20;
+      remainingBudget -= resto.avgCostPerPerson;
+      totalRuntimeMinutesAcc += 80;
+      lunchInserted = true;
+      dayRoadKm += 2.5;
+
+      // Afternoon Traditional Bazaar & Photography Exploration
+      const afternoonWalkStart = currentClock;
+      const afternoonWalkEnd = afternoonWalkStart + 120;
+      stops.push({
+        id: `bazaar-exploration-day-${d + 1}`,
+        type: "attraction",
+        name:
+          language === "gu"
+            ? `${activeCity.name} પરંપરાગત બજાર અને સ્મૃતિચિહ્ન શોધ`
+            : language === "hi"
+              ? `${activeCity.name} पारंपरिक बाजार एवं स्मृति चिन्ह अन्वेषण`
+              : `${activeCity.name} Traditional Bazaars & Cultural Exploration`,
+        category: "Cultural Bazaars & Photography",
+        arrivalTime: formatTime(afternoonWalkStart),
+        departureTime: formatTime(afternoonWalkEnd),
+        durationMinutes: 120,
+        cost: 0,
+        location: activeCity.name,
+        description: `Leisurely photography walk through historic alleys, spice bazaars, handcrafted brassware, and traditional Gujarati souvenirs.`,
+        lat: startingHotel.lat - 0.004,
+        lng: startingHotel.lng + 0.003,
+        wheelchairAccessible: true,
+        physicalDemand: "low",
+      });
+      currentClock = afternoonWalkEnd + 15;
+      dayRoadKm += 2.8;
+      totalRuntimeMinutesAcc += 135;
     }
 
-    // Dinner insertion if late afternoon
-    if (currentClock >= 1110 && restaurantsPool.length > 0) {
-      const resto = restaurantsPool[restaurantsPool.length - 1];
+    // Mid-day Lunch if not yet inserted
+    if (!lunchInserted && restaurantsPool.length > 0) {
+      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d);
+      const lunchStart = currentClock;
+      const lunchEnd = lunchStart + 60;
+      stops.push({
+        id: `lunch-stop-fallback-day-${d + 1}`,
+        type: "meal",
+        name: `Lunch Break at ${resto.name}`,
+        category: "Culinary Stop",
+        arrivalTime: formatTime(lunchStart),
+        departureTime: formatTime(lunchEnd),
+        durationMinutes: 60,
+        cost: resto.avgCostPerPerson,
+        location: resto.location,
+        description: `Authentic regional thali stop.`,
+        lat: resto.lat,
+        lng: resto.lng,
+      });
+      currentClock = lunchEnd + 15;
+      remainingBudget -= resto.avgCostPerPerson;
+      totalRuntimeMinutesAcc += 75;
+      lunchInserted = true;
+    }
+
+    // Dinner insertion if late afternoon / evening
+    if (currentClock >= 1050 && restaurantsPool.length > 0) {
+      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "dinner", d + 1);
       const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
       if (routeEval.isDirect) directRoadConnectionsUsed++;
       else {
@@ -685,7 +856,6 @@ export function generateStrategyItinerary(
       const isDinnerBoatTransition = currentPos.transportMode === "boat";
 
       if (isDinnerBoatTransition) {
-        // Insert boat transfer stop
         const transitStart = currentClock;
         const transitEnd = transitStart + 25;
         stops.push({
@@ -703,7 +873,6 @@ export function generateStrategyItinerary(
           lng: 69.1114,
         });
         currentClock = transitEnd + 5;
-        dayCost += 30;
         remainingBudget -= 30;
         dayBoatKm += distToDinner;
       } else {
@@ -731,18 +900,17 @@ export function generateStrategyItinerary(
         durationMinutes: 60,
         cost: resto.avgCostPerPerson,
         location: resto.location,
-        description: `Evening thali & local dinner stop.`,
+        description: `Evening thali & local culinary dinner stop.`,
         lat: resto.lat,
         lng: resto.lng,
       });
 
       currentClock = dinnerEnd + 15;
-      dayCost += resto.avgCostPerPerson;
       remainingBudget -= resto.avgCostPerPerson;
       totalRuntimeMinutesAcc += 75;
     }
 
-    // Return to Hotel
+    // Return to Hotel completing circular route
     const returnEval = evaluateRouteLeg(currentPos, startingHotel, cityNodes);
     if (returnEval.isDirect) directRoadConnectionsUsed++;
     else {
@@ -755,7 +923,6 @@ export function generateStrategyItinerary(
     const isReturnBoatTransition = currentPos.transportMode === "boat";
 
     if (isReturnBoatTransition) {
-      // Insert boat transfer stop
       const transitStart = currentClock;
       const transitEnd = transitStart + 25;
       stops.push({
@@ -773,7 +940,6 @@ export function generateStrategyItinerary(
         lng: 69.1114,
       });
       currentClock = transitEnd + 5;
-      dayCost += 30;
       remainingBudget -= 30;
       dayBoatKm += returnDist;
     } else {
@@ -791,7 +957,7 @@ export function generateStrategyItinerary(
         language === "gu"
           ? `પાછા ફરો: ${startingHotel.name}`
           : language === "hi"
-            ? `વાપસી: ${startingHotel.name}`
+            ? `वापसी: ${startingHotel.name}`
             : `Return to ${startingHotel.name}`,
       category: "Night Stay Loop Complete",
       arrivalTime: formatTime(returnStart),
@@ -807,20 +973,28 @@ export function generateStrategyItinerary(
 
     totalRuntimeMinutesAcc += 15;
 
+    // Day total cost is the exact sum of all stops in the day
+    const exactDayCost = stops.reduce((sum, s) => sum + s.cost, 0);
+
+    const isLeisureDay = d >= attractionsPool.length;
+    const dayTitle = isLeisureDay
+      ? `Day ${d + 1}: ${activeCity.name} Cultural Living Heritage & Craft Circuit`
+      : `Day ${d + 1}: ${strategyName} ${activeCity.name} Circuit`;
+
     dayPlans.push({
       dayNumber: d + 1,
       dateLabel: datesList[d % datesList.length],
-      title: `Day ${d + 1}: ${strategyName} ${activeCity.name} Circuit`,
+      title: dayTitle,
       stops,
       totalKm: Math.round((dayRoadKm + dayBoatKm) * 10) / 10,
       roadKm: Math.round(dayRoadKm * 10) / 10,
       boatKm: Math.round(dayBoatKm * 10) / 10,
-      totalCost: dayCost,
+      totalCost: exactDayCost,
     });
 
     grandTotalRoadDistanceKm += dayRoadKm;
     grandTotalBoatDistanceKm += dayBoatKm;
-    grandTotalCost += dayCost;
+    grandTotalCost += exactDayCost;
   }
 
   const hoursFloat = Math.round((totalRuntimeMinutesAcc / 60) * 10) / 10;

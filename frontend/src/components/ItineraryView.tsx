@@ -300,7 +300,12 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       d.stops.filter((s) => s.type === "meal").reduce((a, s) => a + s.cost, 0),
     0,
   );
-  const totalTransportCost = numDays * 350;
+  const totalTransportCost = dayPlans.reduce(
+    (acc, d) =>
+      acc +
+      d.stops.filter((s) => s.type === "transit").reduce((a, s) => a + s.cost, 0),
+    0,
+  );
 
   const handleDownloadPdf = async () => {
     if (!pdfContainerRef.current) return;
@@ -317,11 +322,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
+        allowTaint: true,
         logging: false,
-        backgroundColor: DESIGN_TOKENS.salt,
+        backgroundColor: "#F6F4EF",
+        windowWidth: 1024,
       });
 
-      const imgData = canvas.toDataURL("image/png");
+      const imgData = canvas.toDataURL("image/jpeg", 0.95);
       const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
@@ -331,13 +338,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       let heightLeft = imgHeight;
       let position = 0;
 
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
       heightLeft -= pdfHeight;
 
       while (heightLeft > 0) {
         position = heightLeft - imgHeight;
         pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
         heightLeft -= pdfHeight;
       }
 
@@ -345,7 +352,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         .toLowerCase()
         .replace(/[^a-z0-9]/g, "-")
         .replace(/-+/g, "-");
-      pdf.save(`${sanitizeName}-itinerary.pdf`);
+      pdf.save(`${sanitizeName || "gujarat-heritage"}-itinerary.pdf`);
     } catch (err) {
       console.error("Error generating itinerary PDF:", err);
     } finally {
@@ -365,7 +372,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Read-Only Shared Itinerary Banner */}
         {isReadOnly && (
-          <div className="bg-ink border-2 border-gold p-4 text-salt flex flex-wrap items-center justify-between gap-4 shadow-md font-mono">
+          <div className="no-print bg-ink border-2 border-gold p-4 text-salt flex flex-wrap items-center justify-between gap-4 shadow-md font-mono">
             <div className="flex items-center gap-3">
               <span className="inline-block w-2.5 h-2.5 bg-gold rounded-full animate-pulse shrink-0" />
               <div>
@@ -390,13 +397,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         )}
 
         {/* Top Control Bar: Back / Actions */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
-          <div className="flex items-center gap-3">
+        <div className="no-print flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             {!isReadOnly && (
               <>
                 <button
                   onClick={onBackToPlanner}
-                  className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-3 sm:px-4 py-2 transition-colors cursor-pointer min-h-[38px]"
                 >
                   <SlidersHorizontal className="w-3.5 h-3.5 text-ink" />
                   <span>
@@ -411,7 +418,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsWhatIfOpen(!isWhatIfOpen)}
-                  className={`inline-flex items-center gap-2 border text-xs font-mono font-bold px-4 py-2 transition-colors cursor-pointer ${
+                  className={`inline-flex items-center gap-2 border text-xs font-mono font-bold px-3 sm:px-4 py-2 transition-colors cursor-pointer min-h-[38px] ${
                     isWhatIfOpen
                       ? "bg-gold text-ink border-gold shadow-xs"
                       : "bg-salt hover:bg-gold/10 text-charcoal border-gold/70"
@@ -436,7 +443,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   onOpenBudgetPlanner();
                 }
               }}
-              className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt border border-madder text-xs font-mono font-bold px-4 py-2 transition-colors shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt border border-madder text-xs font-mono font-bold px-3 sm:px-4 py-2 transition-colors shadow-xs cursor-pointer min-h-[38px]"
             >
               <DollarSign className="w-3.5 h-3.5 text-salt" />
               <span>
@@ -449,10 +456,10 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={handleShare}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer min-h-[38px]"
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
               <span>
@@ -466,7 +473,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer min-h-[38px]"
             >
               <Printer className="w-3.5 h-3.5 text-gold" />
               <span>
@@ -482,7 +489,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               onClick={handleDownloadPdf}
               disabled={isGeneratingPdf}
               aria-label="Download PDF Itinerary"
-              className="inline-flex items-center gap-1.5 bg-ink text-salt border border-gold hover:bg-ink/90 text-xs font-mono font-bold px-3.5 py-2 transition-colors cursor-pointer disabled:opacity-50 shadow-xs"
+              className="inline-flex items-center gap-1.5 bg-ink text-salt border border-gold hover:bg-ink/90 text-xs font-mono font-bold px-3.5 py-2 transition-colors cursor-pointer disabled:opacity-50 shadow-xs min-h-[38px]"
             >
               {isGeneratingPdf ? (
                 <>
@@ -501,27 +508,29 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
         {/* Collapsible "What if?" Live Scenario Panel */}
         {isWhatIfOpen && (
-          <WhatIfPanel
-            currentBudget={activeConfig.budget || 8500}
-            currentDays={activeConfig.tripDays || 2}
-            originalBudget={config.budget || 8500}
-            originalDays={config.tripDays || 2}
-            sliderBudget={sliderBudget}
-            sliderDays={sliderDays}
-            onBudgetChange={setSliderBudget}
-            onDaysChange={setSliderDays}
-            liveAttractionCount={liveResult.attractionCount}
-            baselineAttractionCount={baselineResult.attractionCount}
-            liveCost={liveResult.totalCost}
-            baselineCost={baselineResult.totalCost}
-            onReset={handleResetWhatIf}
-            onSaveVersion={handleSaveWhatIfVersion}
-            isSavedNotice={isSavedWhatIfNotice}
-          />
+          <div className="no-print">
+            <WhatIfPanel
+              currentBudget={activeConfig.budget || 8500}
+              currentDays={activeConfig.tripDays || 2}
+              originalBudget={config.budget || 8500}
+              originalDays={config.tripDays || 2}
+              sliderBudget={sliderBudget}
+              sliderDays={sliderDays}
+              onBudgetChange={setSliderBudget}
+              onDaysChange={setSliderDays}
+              liveAttractionCount={liveResult.attractionCount}
+              baselineAttractionCount={baselineResult.attractionCount}
+              liveCost={liveResult.totalCost}
+              baselineCost={baselineResult.totalCost}
+              onReset={handleResetWhatIf}
+              onSaveVersion={handleSaveWhatIfVersion}
+              isSavedNotice={isSavedWhatIfNotice}
+            />
+          </div>
         )}
 
         {savedShareNotice && (
-          <div className="p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn">
+          <div className="no-print p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn">
             <Check className="w-4 h-4 text-emerald-300" />
             <span>Itinerary route link copied to clipboard!</span>
           </div>
@@ -530,8 +539,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         {/* Printable Container */}
         <div
           ref={pdfContainerRef}
-          className="space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
+          className="printable-container space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
         >
+
           {/* Header Banner */}
           <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-stepwell-pattern opacity-10 pointer-events-none" />
@@ -674,7 +684,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.3, delay: dayIdx * 0.05 }}
-                  className="bg-white border-2 border-stone/40 p-5 sm:p-6 space-y-6 shadow-sm"
+                  className="itinerary-day-card print-avoid-break bg-white border-2 border-stone/40 p-4 sm:p-6 space-y-6 shadow-sm"
                 >
                   {/* Day Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-gold pb-3">
@@ -863,7 +873,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           </div>
 
           {/* Overall Budget Summary Card */}
-          <div className="bg-ink text-salt p-6 border-2 border-gold space-y-4">
+          <div className="budget-summary-card print-avoid-break bg-ink text-salt p-6 border-2 border-gold space-y-4">
             <h4 className="font-display text-xl text-gold font-bold border-b border-stone/30 pb-2">
               {cityName} Circuit Budget Breakdown
             </h4>

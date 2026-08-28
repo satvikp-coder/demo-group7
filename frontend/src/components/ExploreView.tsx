@@ -14,6 +14,7 @@ import {
   ArrowUpDown,
   Clock,
   Ticket,
+  Calendar,
   RefreshCw,
   ChevronRight,
   Accessibility,
@@ -565,6 +566,12 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                       {getCategoryLabel(dest.officialCategory)}
                     </div>
 
+                    {/* Best Time Overlay Badge */}
+                    <div className="absolute top-3 right-3 bg-ink/90 backdrop-blur-sm border border-gold/50 px-2.5 py-1 text-[11px] font-mono text-gold flex items-center gap-1.5 shadow-sm">
+                      <Calendar className="w-3 h-3 text-gold shrink-0" />
+                      <span className="font-semibold">{dest.bestTime}</span>
+                    </div>
+
                     {/* Distance Badge */}
                     <div className="absolute bottom-3 right-3 bg-salt text-ink font-mono text-[11px] font-bold px-2 py-0.5">
                       {dest.distanceFromAhmedabad}{" "}
@@ -619,7 +626,22 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                     </div>
 
                     {/* Metadata Footer */}
-                    <div className="space-y-3 pt-3 border-t border-stone/30">
+                    <div className="space-y-2.5 pt-3 border-t border-stone/30">
+                      {/* Best Time to Visit Row */}
+                      <div className="flex items-center justify-between text-[11px] font-mono bg-salt/5 border border-stone/30 px-2.5 py-1.5">
+                        <span className="flex items-center gap-1.5 text-stone/90">
+                          <Calendar className="w-3.5 h-3.5 text-gold shrink-0" />
+                          <span>
+                            {language === "gu"
+                              ? "મુલાકાત માટે શ્રેષ્ઠ સમય:"
+                              : language === "hi"
+                                ? "यात्रा का सर्वोत्तम समय:"
+                                : "Best Time to Visit:"}
+                          </span>
+                        </span>
+                        <span className="text-gold font-bold">{dest.bestTime}</span>
+                      </div>
+
                       <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-stone">
                         <div className="flex items-center gap-1">
                           <Ticket className="w-3 h-3 text-gold shrink-0" />

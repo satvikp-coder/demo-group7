@@ -23,13 +23,17 @@ export function scoreAttraction(
 
   switch (strategy) {
     case "budget-first":
-      return -fee * 10 + rating * 8 - dist * 0.2;
+      // Prioritizes lowest entry fee, with value-for-money rating bonus
+      return -fee * 20 + rating * 5 - dist * 0.1;
 
     case "rating-first":
-      return rating * 100 - fee * 0.15 - dist * 0.8;
+      // Strictly prioritizes highest ratings (e.g. 4.9 > 4.8 > 4.5)
+      return rating * 100 - fee * 0.1 - dist * 0.5;
 
     case "distance-first":
     default:
-      return -dist * 50 + rating * 6 - fee * 0.05;
+      // Strictly prioritizes nearest-neighbor distance minimization
+      return -dist * 100 + rating * 2 - fee * 0.05;
   }
 }
+

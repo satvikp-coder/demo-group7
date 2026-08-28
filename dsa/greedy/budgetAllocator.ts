@@ -32,29 +32,27 @@ export function selectStartingHotel<H extends SimpleHotel>(
     throw new Error("No hotels available in the destination.");
   }
 
+  // If user explicitly chose a preferred hotel, keep all strategies on the same baseline hotel
+  if (preferredHotelId) {
+    const preferred = hotels.find((h) => h.id === preferredHotelId);
+    if (preferred) return preferred;
+  }
+
   if (strategy === "budget-first") {
     const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
     return sortedByPrice[0];
   } else if (strategy === "rating-first") {
     const sortedByRating = [...hotels].sort((a, b) => b.ratingNumeric - a.ratingNumeric);
-    const chosen = sortedByRating.find(h => (h.priceNumeric * numDays) <= totalBudgetCap);
-    if (!chosen) {
-      const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
-      return sortedByPrice[0];
-    }
-    return chosen;
+    const chosen = sortedByRating.find((h) => h.priceNumeric * numDays <= totalBudgetCap);
+    return chosen || sortedByRating[0];
   } else {
-    // Distance-first / default preferred hotel selection
-    const preferred = hotels.find(h => h.id === preferredHotelId);
-    if (preferred && (preferred.priceNumeric * numDays) <= totalBudgetCap) {
-      return preferred;
-    } else {
-      const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
-      const chosen = sortedByPrice.find(h => (h.priceNumeric * numDays) <= totalBudgetCap);
-      return chosen || sortedByPrice[0];
-    }
+    // Distance-first: balanced default hotel
+    const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
+    const chosen = sortedByPrice.find((h) => h.priceNumeric * numDays <= totalBudgetCap);
+    return chosen || hotels[0];
   }
 }
+
 
 export function filterAttractionsByBudget<A extends SimpleAttraction>(
   attractions: A[],

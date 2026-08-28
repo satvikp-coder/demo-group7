@@ -22,6 +22,8 @@ import {
   TrendingDown,
   Navigation,
   Sparkles,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 interface StrategyComparisonModalProps {
@@ -86,7 +88,7 @@ export const StrategyComparisonModal: React.FC<
     },
     "distance-first": {
       title: "Distance-first",
-      subtitle: "Nearest-neighbor distance minimization",
+      subtitle: "Nearest-neighbor route minimization",
       icon: <Navigation className="w-4 h-4 text-sky-400" />,
       badgeColor: "border-sky-600/50 bg-sky-950/20 text-sky-300",
     },
@@ -95,29 +97,27 @@ export const StrategyComparisonModal: React.FC<
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-ink/90 backdrop-blur-sm overflow-y-auto">
       <div
-        className="bg-salt border-2 border-gold max-w-6xl w-full text-charcoal p-4 sm:p-6 md:p-8 relative shadow-2xl my-4 sm:my-8 animate-fadeIn max-h-[92vh] flex flex-col"
+        className="bg-salt border-2 border-gold max-w-6xl w-full text-charcoal p-3 sm:p-6 md:p-8 relative shadow-2xl my-2 sm:my-8 animate-fadeIn max-h-[94vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-start justify-between border-b border-stone/30 pb-4 mb-5 shrink-0">
+        <div className="flex items-start justify-between border-b border-stone/30 pb-3 sm:pb-4 mb-3 sm:mb-5 shrink-0">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-gold uppercase tracking-widest mb-1">
-              <SlidersHorizontal className="w-4 h-4 text-gold" />
-              <span>Stepwell Optimization Comparison Mode</span>
+            <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-xs text-gold uppercase tracking-widest mb-0.5 sm:mb-1">
+              <SlidersHorizontal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold" />
+              <span>Optimization Comparison</span>
             </div>
-            <h2 className="font-display text-2xl sm:text-3xl text-ink font-bold">
-              Compare Optimization Strategies —{" "}
-              {getName(budgetResult.activeCity)}
+            <h2 className="font-display text-xl sm:text-3xl text-ink font-bold leading-tight">
+              Compare Strategies — {getName(budgetResult.activeCity)}
             </h2>
-            <p className="font-body text-xs text-stone mt-1">
+            <p className="font-body text-[11px] sm:text-xs text-stone mt-0.5">
               Evaluating 3 greedy route algorithms for your {config.tripDays}
-              -day trip with a budget cap of ₹
-              {config.budget.toLocaleString("en-IN")}.
+              -day trip (Budget: ₹{config.budget.toLocaleString("en-IN")}).
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-stone hover:text-ink hover:bg-stone/20 border border-stone/30 transition-colors cursor-pointer shrink-0"
+            className="p-1.5 sm:p-2 text-stone hover:text-ink hover:bg-stone/20 border border-stone/30 transition-colors cursor-pointer shrink-0 min-h-[36px] min-w-[36px] flex items-center justify-center"
             aria-label="Close strategy comparison"
           >
             <X className="w-5 h-5" />
@@ -125,26 +125,26 @@ export const StrategyComparisonModal: React.FC<
         </div>
 
         {/* Scrollable Container for Modal Body */}
-        <div className="overflow-y-auto space-y-6 pr-1">
+        <div className="overflow-y-auto space-y-4 sm:space-y-6 pr-1">
           {/* ================= 1. DYNAMIC ONE-LINE TAKEAWAY BANNER ================= */}
-          <div className="bg-ink text-salt border-2 border-gold p-4 relative shadow-md bg-stepwell-pattern">
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-gold/20 border border-gold text-gold rounded-xs shrink-0 mt-0.5">
-                <Sparkles className="w-5 h-5 text-gold animate-pulse" />
+          <div className="bg-ink text-salt border-2 border-gold p-3 sm:p-4 relative shadow-md bg-stepwell-pattern">
+            <div className="flex items-start gap-2.5 sm:gap-3">
+              <div className="p-1.5 sm:p-2 bg-gold/20 border border-gold text-gold rounded-xs shrink-0 mt-0.5">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
               </div>
               <div>
-                <span className="font-mono text-[10px] text-gold uppercase tracking-widest font-bold block mb-0.5">
+                <span className="font-mono text-[9px] sm:text-[10px] text-gold uppercase tracking-widest font-bold block mb-0.5">
                   Algorithmic Trade-off Takeaway
                 </span>
-                <p className="font-display text-base sm:text-lg text-salt font-medium leading-snug">
+                <p className="font-display text-sm sm:text-lg text-salt font-medium leading-snug">
                   "{takeawayText}"
                 </p>
               </div>
             </div>
           </div>
 
-          {/* ================= 2. METRIC COMPARISON TABLE ================= */}
-          <div className="bg-white border border-stone/30 p-4 shadow-sm">
+          {/* ================= 2. DESKTOP METRIC COMPARISON TABLE ================= */}
+          <div className="hidden md:block bg-white border border-stone/30 p-4 shadow-sm">
             <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-charcoal mb-3 flex items-center justify-between">
               <span>Strategy Metrics Overview</span>
               <span className="text-[10px] font-normal text-stone font-mono">
@@ -273,24 +273,23 @@ export const StrategyComparisonModal: React.FC<
                   key={res.strategy}
                   type="button"
                   onClick={() => setActiveMobileTab(res.strategy)}
-                  className={`flex-1 py-2 px-2 text-xs font-mono font-bold flex items-center justify-center gap-1 cursor-pointer transition-all ${
+                  className={`flex-1 py-2 px-1.5 text-xs font-mono font-bold flex items-center justify-center gap-1 cursor-pointer transition-all min-h-[42px] ${
                     isActive
-                      ? "bg-ink text-gold border-b-2 border-gold"
+                      ? "bg-ink text-gold border-b-2 border-gold shadow-xs"
                       : "text-stone hover:text-charcoal bg-stone/10"
                   }`}
                 >
                   {meta.icon}
-                  <span>{meta.title}</span>
+                  <span className="truncate">{meta.title}</span>
                 </button>
               );
             })}
           </div>
 
           {/* ================= 4. THREE TERRACE-OFFSET STRATEGY COLUMNS ================= */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start pb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-start pb-4">
             {results.map((res, idx) => {
               const meta = strategyMeta[res.strategy];
-              // Offset middle and right columns slightly to form terrace grid pattern
               const terraceClass =
                 idx === 0 ? "mt-0" : idx === 1 ? "md:mt-3" : "md:mt-6";
               const isMobileHidden = activeMobileTab !== res.strategy;
@@ -303,7 +302,7 @@ export const StrategyComparisonModal: React.FC<
                   }`}
                 >
                   {/* Column Terrace Header */}
-                  <div className="bg-ink text-salt p-4 border-b-2 border-gold relative">
+                  <div className="bg-ink text-salt p-3 sm:p-4 border-b-2 border-gold relative">
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-mono text-[10px] uppercase text-gold font-bold flex items-center gap-1">
                         {meta.icon}
@@ -313,7 +312,7 @@ export const StrategyComparisonModal: React.FC<
                         Terrace Step {idx + 1}
                       </span>
                     </div>
-                    <h4 className="font-display text-xl font-bold text-salt">
+                    <h4 className="font-display text-lg sm:text-xl font-bold text-salt">
                       {meta.title}
                     </h4>
                     <p className="font-body text-xs text-stone/80 mt-0.5">
@@ -322,55 +321,55 @@ export const StrategyComparisonModal: React.FC<
                   </div>
 
                   {/* Column Key Metrics Cards (IBM Plex Mono) */}
-                  <div className="p-4 bg-salt border-b border-stone/20 grid grid-cols-2 gap-2 font-mono text-xs">
-                    <div className="bg-white p-2.5 border border-stone/30">
+                  <div className="p-3 sm:p-4 bg-salt border-b border-stone/20 grid grid-cols-2 gap-2 font-mono text-xs">
+                    <div className="bg-white p-2 sm:p-2.5 border border-stone/30">
                       <span className="text-[10px] text-stone uppercase block">
                         Total Cost
                       </span>
-                      <span className="font-bold text-ink text-sm">
+                      <span className="font-bold text-ink text-xs sm:text-sm">
                         ₹{res.totalCost.toLocaleString("en-IN")}
                       </span>
                     </div>
-                    <div className="bg-white p-2.5 border border-stone/30">
+                    <div className="bg-white p-2 sm:p-2.5 border border-stone/30">
                       <span className="text-[10px] text-stone uppercase block">
                         Distance
                       </span>
-                      <span className="font-bold text-ink text-sm">
+                      <span className="font-bold text-ink text-xs sm:text-sm">
                         {res.totalDistanceKm} km
                       </span>
                     </div>
-                    <div className="bg-white p-2.5 border border-stone/30">
+                    <div className="bg-white p-2 sm:p-2.5 border border-stone/30">
                       <span className="text-[10px] text-stone uppercase block">
                         Attractions
                       </span>
-                      <span className="font-bold text-ink text-sm">
+                      <span className="font-bold text-ink text-xs sm:text-sm">
                         {res.attractionCount} sites
                       </span>
                     </div>
-                    <div className="bg-white p-2.5 border border-stone/30">
+                    <div className="bg-white p-2 sm:p-2.5 border border-stone/30">
                       <span className="text-[10px] text-stone uppercase block">
                         Est. Runtime
                       </span>
-                      <span className="font-bold text-ink text-sm">
+                      <span className="font-bold text-ink text-xs sm:text-sm">
                         {res.totalRuntimeHours}
                       </span>
                     </div>
                   </div>
 
-                  {/* Column Execution Algorithm Stats (Always Visible) */}
+                  {/* Column Execution Algorithm Stats (Collapsible on Mobile, Clean on Desktop) */}
                   {res.stats && (
                     <div className="p-2 bg-ink border-b border-stone/30">
                       <AlgorithmStatsPanel
                         stats={res.stats}
-                        collapsible={false}
-                        defaultExpanded={true}
+                        collapsible={true}
+                        defaultExpanded={false}
                         title="Execution Stats"
                       />
                     </div>
                   )}
 
                   {/* Column Condensed Day-by-Day Stops */}
-                  <div className="p-4 flex-grow space-y-4 max-h-[360px] overflow-y-auto">
+                  <div className="p-3 sm:p-4 flex-grow space-y-4 max-h-[380px] overflow-y-auto">
                     {res.dayPlans.map((day) => (
                       <div key={day.dayNumber} className="space-y-2">
                         <div className="flex items-center justify-between border-b border-stone/30 pb-1">
@@ -378,7 +377,7 @@ export const StrategyComparisonModal: React.FC<
                             {day.dateLabel}
                           </span>
                           <span className="font-mono text-[10px] text-stone">
-                            {day.totalKm} km • ₹{day.totalCost}
+                            {day.totalKm} km • ₹{day.totalCost.toLocaleString("en-IN")}
                           </span>
                         </div>
 
@@ -392,7 +391,7 @@ export const StrategyComparisonModal: React.FC<
                                 <span className="bg-ink/10 text-ink px-1.5 py-0.5 font-bold">
                                   {stop.arrivalTime}
                                 </span>
-                                <span className="text-stone truncate max-w-[110px]">
+                                <span className="text-stone truncate max-w-[130px]">
                                   {stop.category}
                                 </span>
                               </div>
@@ -401,7 +400,7 @@ export const StrategyComparisonModal: React.FC<
                               </div>
                               {stop.cost > 0 && (
                                 <div className="font-mono text-[10px] text-stone text-right">
-                                  Fee/Cost: ₹{stop.cost}
+                                  Fee/Cost: ₹{stop.cost.toLocaleString("en-IN")}
                                 </div>
                               )}
                             </div>
@@ -412,11 +411,11 @@ export const StrategyComparisonModal: React.FC<
                   </div>
 
                   {/* Column Bottom Action: Madder Red "Use this plan" Button */}
-                  <div className="p-4 bg-salt border-t border-stone/20 shrink-0">
+                  <div className="p-3 sm:p-4 bg-salt border-t border-stone/20 shrink-0">
                     <button
                       type="button"
                       onClick={() => onSelectStrategy(res.strategy)}
-                      className="w-full bg-madder hover:bg-ink text-salt border border-madder font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all"
+                      className="w-full bg-madder hover:bg-ink text-salt border border-madder font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all min-h-[44px]"
                     >
                       <Check className="w-4 h-4 text-salt" />
                       <span>Use this plan</span>
@@ -431,3 +430,4 @@ export const StrategyComparisonModal: React.FC<
     </div>
   );
 };
+
