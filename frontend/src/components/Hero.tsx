@@ -6,11 +6,13 @@ import { useLanguage } from "../context/LanguageContext";
 interface HeroProps {
   onStartPlanning: () => void;
   onExploreClick: () => void;
+  onSelectSite?: (siteId: string) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onStartPlanning,
   onExploreClick,
+  onSelectSite,
 }) => {
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const { t, language } = useLanguage();
@@ -195,7 +197,11 @@ export const Hero: React.FC<HeroProps> = ({
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm"
+                onClick={() => onSelectSite ? onSelectSite("modhera") : onExploreClick()}
+                tabIndex={0}
+                role="button"
+                aria-label="View Modhera Sun Temple details"
+                className="terrace-card-even bg-ink p-1.5 border border-stone/40 hover:border-gold shadow-sm cursor-pointer transition-colors"
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group">
                   <img
@@ -225,7 +231,11 @@ export const Hero: React.FC<HeroProps> = ({
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8"
+                onClick={() => onSelectSite ? onSelectSite("rann-of-kutch") : onExploreClick()}
+                tabIndex={0}
+                role="button"
+                aria-label="View Rann of Kutch details"
+                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 hover:border-gold shadow-sm mt-6 sm:mt-8 cursor-pointer transition-colors"
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group">
                   <img
@@ -255,7 +265,11 @@ export const Hero: React.FC<HeroProps> = ({
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.45 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm"
+                onClick={() => onSelectSite ? onSelectSite("gir") : onExploreClick()}
+                tabIndex={0}
+                role="button"
+                aria-label="View Gir Forest details"
+                className="terrace-card-even bg-ink p-1.5 border border-stone/40 hover:border-gold shadow-sm cursor-pointer transition-colors"
               >
                 <div className="relative h-40 sm:h-48 overflow-hidden group">
                   <img
@@ -285,7 +299,11 @@ export const Hero: React.FC<HeroProps> = ({
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.55 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8"
+                onClick={() => onSelectSite ? onSelectSite("ahmedabad") : onExploreClick()}
+                tabIndex={0}
+                role="button"
+                aria-label="View Adalaj Ni Vav details"
+                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 hover:border-gold shadow-sm mt-6 sm:mt-8 cursor-pointer transition-colors"
               >
                 <div className="relative h-40 sm:h-48 overflow-hidden group">
                   <img

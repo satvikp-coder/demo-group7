@@ -29,14 +29,82 @@
 }
 
 [data-theme="dusk"], .dusk {
-  --color-ink: #1C2744;       /* Elevated dark indigo container surface */
-  --color-salt: #131B30;      /* Dusk Indigo as primary background replacing Salt */
-  --color-madder: #C1544F;    /* Madder Ember */
-  --color-gold: #C99A3B;      /* Stepwell Gold */
-  --color-stone: #9C9686;     /* Stone Mist */
+  --color-ink: #EDE9DD;       /* Crisp light cream when used as text color */
+  --color-salt: #121827;      /* Deep dusk indigo background replacing Salt */
+  --color-madder: #D45B56;    /* Vibrant madder ember */
+  --color-gold: #E5B34C;      /* High-contrast stepwell gold */
+  --color-stone: #A6A092;     /* Clear legible stone mist */
   --color-charcoal: #EDE9DD;  /* Salt Glow replacing Charcoal body text */
-  --color-white: #1C2744;     /* Elevated dark card surface replacing pure white */
+  --color-white: #1C2744;     /* Elevated dark card surface */
 }
+
+/* ================= DARK / DUSK THEME ACCESSIBILITY CONTRAST RULES ================= */
+[data-theme="dusk"] .text-ink, .dusk .text-ink {
+  color: #EDE9DD !important;
+}
+
+[data-theme="dusk"] .text-salt, .dusk .text-salt {
+  color: #F6F4EF !important;
+}
+
+[data-theme="dusk"] .text-charcoal, .dusk .text-charcoal {
+  color: #EDE9DD !important;
+}
+
+[data-theme="dusk"] .text-stone, .dusk .text-stone {
+  color: #A6A092 !important;
+}
+
+[data-theme="dusk"] .bg-salt, .dusk .bg-salt {
+  background-color: #121827 !important;
+}
+
+[data-theme="dusk"] .bg-white, .dusk .bg-white {
+  background-color: #1C2744 !important;
+  color: #EDE9DD !important;
+}
+
+[data-theme="dusk"] .bg-ink, .dusk .bg-ink {
+  background-color: #1A2338 !important;
+  color: #F6F4EF !important;
+}
+
+[data-theme="dusk"] .bg-charcoal, .dusk .bg-charcoal {
+  background-color: #0E1422 !important;
+}
+
+[data-theme="dusk"] .bg-stone\/10, .dusk .bg-stone\/10,
+[data-theme="dusk"] .bg-stone\/20, .dusk .bg-stone\/20,
+[data-theme="dusk"] .bg-stone\/30, .dusk .bg-stone\/30 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dusk"] .bg-salt\/5, .dusk .bg-salt\/5,
+[data-theme="dusk"] .bg-salt\/10, .dusk .bg-salt\/10,
+[data-theme="dusk"] .bg-salt\/80, .dusk .bg-salt\/80 {
+  background-color: rgba(28, 39, 68, 0.8) !important;
+}
+
+[data-theme="dusk"] .border-stone\/20, .dusk .border-stone\/20,
+[data-theme="dusk"] .border-stone\/30, .dusk .border-stone\/30,
+[data-theme="dusk"] .border-stone\/40, .dusk .border-stone\/40,
+[data-theme="dusk"] .border-stone\/50, .dusk .border-stone\/50 {
+  border-color: rgba(201, 154, 59, 0.25) !important;
+}
+
+[data-theme="dusk"] input, .dusk input,
+[data-theme="dusk"] select, .dusk select,
+[data-theme="dusk"] textarea, .dusk textarea {
+  background-color: #1C2744 !important;
+  color: #F6F4EF !important;
+  border-color: rgba(201, 154, 59, 0.4) !important;
+}
+
+[data-theme="dusk"] option, .dusk option {
+  background-color: #1A2338 !important;
+  color: #F6F4EF !important;
+}
+
 
 @layer base {
   body {

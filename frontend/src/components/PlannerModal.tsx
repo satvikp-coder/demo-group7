@@ -46,6 +46,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   onGenerateItinerary,
 }) => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [isChangingCity, setIsChangingCity] = useState<boolean>(false);
   const { language, t, getName } = useLanguage();
 
   // Step 1: Selected single city ID
@@ -70,16 +71,28 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   // Sync selectedCityId and default starting hotel when modal opens
   useEffect(() => {
     if (isOpen) {
-      setStep(1);
-      const initialCityId =
-        preselectedDestination?.id || selectedCityId || "somnath";
-      setSelectedCityId(initialCityId);
-      const cityObj = getCityById(initialCityId) || GUJARAT_DESTINATIONS[0];
-      const preferredForCity = preferredHotels?.[initialCityId];
-      if (preferredForCity) {
-        setStartingHotelId(preferredForCity);
-      } else if (cityObj.hotels && cityObj.hotels.length > 0) {
-        setStartingHotelId(cityObj.hotels[0].id);
+      if (preselectedDestination) {
+        setSelectedCityId(preselectedDestination.id);
+        setIsChangingCity(false);
+        setStep(2); // Jump directly to logistics for the chosen destination
+        const preferredForCity = preferredHotels?.[preselectedDestination.id];
+        if (preferredForCity) {
+          setStartingHotelId(preferredForCity);
+        } else if (preselectedDestination.hotels && preselectedDestination.hotels.length > 0) {
+          setStartingHotelId(preselectedDestination.hotels[0].id);
+        }
+      } else {
+        setStep(1);
+        setIsChangingCity(false);
+        const initialCityId = selectedCityId || "somnath";
+        setSelectedCityId(initialCityId);
+        const cityObj = getCityById(initialCityId) || GUJARAT_DESTINATIONS[0];
+        const preferredForCity = preferredHotels?.[initialCityId];
+        if (preferredForCity) {
+          setStartingHotelId(preferredForCity);
+        } else if (cityObj.hotels && cityObj.hotels.length > 0) {
+          setStartingHotelId(cityObj.hotels[0].id);
+        }
       }
     }
   }, [isOpen, preselectedDestination]);
@@ -87,6 +100,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   // When city changes, load preferred stay or fallback to first hotel
   const handleCityChange = (cityId: string) => {
     setSelectedCityId(cityId);
+    setIsChangingCity(false);
     const cityObj = getCityById(cityId);
     const preferredForCity = preferredHotels?.[cityId];
     if (preferredForCity) {
@@ -95,6 +109,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
       setStartingHotelId(cityObj.hotels[0].id);
     }
   };
+
 
   const handleStartingHotelChange = (hotelId: string) => {
     setStartingHotelId(hotelId);
@@ -307,48 +322,65 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 <div>
                   <h3 className="font-display text-xl text-ink font-bold">
                     {language === "gu"
-                      ? "લક્ષ્ય હેરિટેજ શહેર પસંદ કરો"
+                      ? "પસંદ કરેલ હેરિટેજ સ્થળ"
                       : language === "hi"
-                        ? "लक्ष्य हेरिटेज शहर चुनें"
-                        : "Select Target Heritage City"}
+                        ? "चयनित हेरिटेज गंतव्य"
+                        : "Selected Heritage Destination"}
                   </h3>
                   <p className="text-xs text-stone font-body">
                     {language === "gu"
-                      ? "એક શહેર પસંદ કરો જેથી દૈનિક પ્રવાસ યોજના તૈયાર કરી શકાય."
+                      ? "આ પ્રવાસ યોજના નીચે મુજબના સ્થળ માટે તૈયાર કરવામાં આવશે."
                       : language === "hi"
-                        ? "एक शहर चुनें ताकि दैनिक यात्रा योजना तैयार की जा सके।"
-                        : "Pick one city for a dedicated intra-city day-by-day circular itinerary."}
+                        ? "यह यात्रा योजना नीचे दिए गए गंतव्य के लिए तैयार की जाएगी।"
+                        : "This itinerary will be created specifically for the destination below."}
                   </p>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => setIsChangingCity(!isChangingCity)}
+                  className="self-start sm:self-auto text-xs font-mono font-bold text-gold hover:text-ink hover:bg-gold/20 px-3 py-1.5 border border-gold transition-colors cursor-pointer"
+                >
+                  {isChangingCity
+                    ? "✕ Close City Selector"
+                    : "⇄ Change Destination"}
+                </button>
               </div>
 
-              {/* City Selector Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
-                {GUJARAT_DESTINATIONS.map((c) => {
-                  const isSelected = c.id === selectedCityId;
-                  return (
-                    <button
-                      key={c.id}
-                      onClick={() => handleCityChange(c.id)}
-                      aria-pressed={isSelected}
-                      className={`p-2 border text-left cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-gold ${
-                        isSelected
-                          ? "bg-ink text-salt border-2 border-gold font-bold shadow-sm"
-                          : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
-                      }`}
-                    >
-                      <div className="font-display text-xs truncate">
-                        {getName(c)}
-                      </div>
-                      <div
-                        className={`text-[10px] font-mono ${isSelected ? "text-gold" : "text-stone"}`}
-                      >
-                        {c.district}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
+              {/* Collapsible City Selector Grid (Shown only when user explicitly clicks Change Destination) */}
+              {isChangingCity && (
+                <div className="space-y-2 bg-stone/10 p-3 border border-stone/30 animate-fadeIn">
+                  <span className="font-mono text-[10px] uppercase text-stone font-bold block">
+                    Choose an alternative destination:
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-2">
+                    {GUJARAT_DESTINATIONS.map((c) => {
+                      const isSelected = c.id === selectedCityId;
+                      return (
+                        <button
+                          key={c.id}
+                          type="button"
+                          onClick={() => handleCityChange(c.id)}
+                          aria-pressed={isSelected}
+                          className={`p-2 border text-left cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-gold ${
+                            isSelected
+                              ? "bg-ink text-salt border-2 border-gold font-bold shadow-sm"
+                              : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
+                          }`}
+                        >
+                          <div className="font-display text-xs truncate">
+                            {getName(c)}
+                          </div>
+                          <div
+                            className={`text-[10px] font-mono ${isSelected ? "text-gold" : "text-stone"}`}
+                          >
+                            {c.district}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
               {/* Selected City Highlight Monograph */}
               <div className="bg-ink text-salt border-2 border-gold p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
@@ -383,7 +415,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       {language === "gu"
                         ? "આકર્ષણો"
                         : language === "hi"
-                          ? "आकर्षण"
+                          ? "આકર્ષણ"
                           : "Attractions"}
                     </span>
                     <span className="text-stone/60">•</span>
@@ -401,7 +433,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       {language === "gu"
                         ? "રેસ્ટોરન્ટ્સ"
                         : language === "hi"
-                          ? "रेस्तरां"
+                          ? "રેસ્તરાં"
                           : "Restaurants"}
                     </span>
                   </div>
@@ -418,7 +450,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     {language === "gu"
                       ? "લોજિસ્ટિક્સ તરફ આગળ વધો"
                       : language === "hi"
-                        ? "लॉजिस्टिक्स की ओर बढ़ें"
+                        ? "લૉજિસ્ટિક્સ કી ઓર બઢ઼ેં"
                         : "Continue to Logistics"}
                   </span>
                   <ArrowRight className="w-4 h-4" />
@@ -430,6 +462,30 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
           {/* STEP 2: LOGISTICS */}
           {step === 2 && (
             <div className="space-y-6 animate-fadeIn">
+              {/* Selected Destination Banner */}
+              <div className="bg-ink text-salt p-3 border border-gold/70 flex items-center justify-between gap-3 text-xs font-mono">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                  <span>
+                    Currently Planning For:{" "}
+                    <strong className="text-gold font-bold text-sm">
+                      {getName(activeCity)}
+                    </strong>{" "}
+                    ({activeCity.district} District)
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsChangingCity(true);
+                    setStep(1);
+                  }}
+                  className="text-stone hover:text-gold underline text-[11px] uppercase cursor-pointer"
+                >
+                  Change City
+                </button>
+              </div>
+
               <div>
                 <h3 className="font-display text-xl text-ink font-bold border-b border-stone/20 pb-2">
                   {language === "gu"

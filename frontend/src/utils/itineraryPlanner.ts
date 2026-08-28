@@ -730,25 +730,43 @@ export function generateStrategyItinerary(
         totalAttractionsVisited++;
       }
     } else {
-      // Meaningful Cultural Craft, Bazaars & Local Heritage Leisure Circuit for later days
+      // Destination-customized Living Heritage, Nature & Cultural Craft Circuit for later days
+      const isGir = activeCity.id === "gir";
+      const isRann = activeCity.id === "rann-of-kutch";
+      const isDwarka = activeCity.id === "dwarka";
+      const isSomnath = activeCity.id === "somnath";
+
+      const morningTitle = isGir
+        ? d % 2 === 0
+          ? (language === "gu" ? "ગીર માલધારી નેસ અને વન્યજીવ સંરક્ષણ પદયાત્રા" : language === "hi" ? "गिर मालधारी नेस एवं वन्यजीव संरक्षण वॉक" : "Gir Maldhari Nes & Wildlife Conservation Heritage Walk")
+          : (language === "gu" ? "કમલેશ્વર ડેમ ઈકો-ટ્રેઇલ અને સિદ્દી સંસ્કૃતિ પરિચય" : language === "hi" ? "कमलेश्वर बांध इको-ट्रेल एवं सिद्दी संस्कृति परिचय" : "Kamleshwar Dam Eco-Trail & Siddi Cultural Heritage")
+        : isRann
+        ? (language === "gu" ? "નિરોણા અને હોડકા હસ્તકળા કારીગરી વૉક (રોગન આર્ટ અને તાંબાની ઘંટડી)" : language === "hi" ? "निरोणा एवं होडका हस्तशिल्प वॉक (रोगन कला एवं तांबे की घंटी)" : "Nirona & Hodka Living Artisan Guilds (Rogan Art & Copper Bells)")
+        : isDwarka
+        ? (language === "gu" ? "ગોમતી ઘાટ અને સુદામા સેતુ વારસો પદયાત્રા" : language === "hi" ? "गोमती घाट एवं सुदामा सेतु विरासत वॉक" : "Gomti Ghat & Sudama Setu Heritage Trail")
+        : isSomnath
+        ? (language === "gu" ? "પ્રભાસ પાટણ ઘાટ અને ત્રિવેણી સંગમ ઐતિહાસિક પદયાત્રા" : language === "hi" ? "प्रभास पाटन घाट एवं त्रिवेणी संगम ऐतिहासिक वॉक" : "Prabhas Patan Heritage Ghats & Triveni Sangam Walk")
+        : (language === "gu" ? `${activeCity.name} હસ્તકળા અને શિલ્પ કારીગરી પદયાત્રા` : language === "hi" ? `${activeCity.name} हस्तशिल्प एवं वास्तुकला विरासत वॉक` : `${activeCity.name} Heritage Craft & Artisan Guilds Walk`);
+
+      const morningDesc = isGir
+        ? `Explore traditional Maldhari pastoral settlements, bio-cultural forest conservation, and the indigenous ecosystem of Gir.`
+        : isRann
+        ? `Visit master craftspeople creating authentic Rogan painting, lacquered woodwork, and Kutchi mirror embroidery.`
+        : `Explore local master artisans, textile weaving, traditional stone craft ateliers, and living heritage quarters across ${activeCity.name}.`;
+
       const morningCraftStart = currentClock;
       const morningCraftEnd = morningCraftStart + 105;
       stops.push({
         id: `craft-guild-day-${d + 1}`,
         type: "attraction",
-        name:
-          language === "gu"
-            ? `${activeCity.name} હસ્તકળા અને શિલ્પ કારીગરી પદયાત્રા`
-            : language === "hi"
-              ? `${activeCity.name} हस्तशिल्प एवं वास्तुकला विरासत वॉक`
-              : `${activeCity.name} Heritage Craft & Artisan Guilds Walk`,
-        category: "Artisan Craft & Living Heritage",
+        name: morningTitle,
+        category: isGir ? "Eco-Sanctuary & Living Culture" : "Artisan Craft & Living Heritage",
         arrivalTime: formatTime(morningCraftStart),
         departureTime: formatTime(morningCraftEnd),
         durationMinutes: 105,
         cost: 0,
         location: activeCity.name,
-        description: `Explore local master artisans, textile weaving, traditional stone craft ateliers, and living heritage quarters across ${activeCity.name}.`,
+        description: morningDesc,
         lat: startingHotel.lat + 0.005,
         lng: startingHotel.lng + 0.005,
         wheelchairAccessible: true,
@@ -788,17 +806,18 @@ export function generateStrategyItinerary(
       dayRoadKm += 2.5;
 
       // Afternoon Traditional Bazaar & Photography Exploration
+      const afternoonTitle = isGir
+        ? (language === "gu" ? "ગીર વન સરહદ સંધ્યાકાળ ફોટોગ્રાફી અને સ્થાનિક સંસ્કૃતિ" : language === "hi" ? "गिर वन सीमा संध्या फोटोग्राफी एवं स्थानीय संस्कृति" : "Gir Forest Buffer Zone Sunset & Living Culture")
+        : isRann
+        ? (language === "gu" ? "શ્વેત રણ સૂર્યાસ્ત અને સ્થાનિક બન્ની બજાર" : language === "hi" ? "श्वेत रण सूर्यास्त एवं स्थानीय बन्नी बाजार" : "White Rann Sunset & Banni Cultural Bazaars")
+        : (language === "gu" ? `${activeCity.name} પરંપરાગત બજાર અને સ્મૃતિચિહ્ન શોધ` : language === "hi" ? `${activeCity.name} पारंपरिक बाजार एवं स्मृति चिन्ह अन्वेषण` : `${activeCity.name} Traditional Bazaars & Cultural Exploration`);
+
       const afternoonWalkStart = currentClock;
       const afternoonWalkEnd = afternoonWalkStart + 120;
       stops.push({
         id: `bazaar-exploration-day-${d + 1}`,
         type: "attraction",
-        name:
-          language === "gu"
-            ? `${activeCity.name} પરંપરાગત બજાર અને સ્મૃતિચિહ્ન શોધ`
-            : language === "hi"
-              ? `${activeCity.name} पारंपरिक बाजार एवं स्मृति चिन्ह अन्वेषण`
-              : `${activeCity.name} Traditional Bazaars & Cultural Exploration`,
+        name: afternoonTitle,
         category: "Cultural Bazaars & Photography",
         arrivalTime: formatTime(afternoonWalkStart),
         departureTime: formatTime(afternoonWalkEnd),

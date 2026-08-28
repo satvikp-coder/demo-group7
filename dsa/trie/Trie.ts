@@ -7,19 +7,24 @@ class TrieNode {
 export class Trie {
   private root: TrieNode = new TrieNode();
 
-  public insert(word: string, value: string): void {
-    const clean = word.trim().toLowerCase();
+  public insert(text: string, value: string): void {
+    const clean = text.trim().toLowerCase();
     if (!clean) return;
 
-    // To support substring search via Suffix Trie, insert all suffixes
-    for (let i = 0; i < clean.length; i++) {
-      this.insertSuffix(clean.substring(i), value);
+    // Tokenize into distinct words/phrases (supports Unicode/Gujarati/Hindi)
+    const words = clean
+      .replace(/[^\p{L}\p{N}\s]/gu, " ")
+      .split(/\s+/)
+      .filter((w) => w.length > 0);
+
+    for (const word of words) {
+      this.insertWord(word, value);
     }
   }
 
-  private insertSuffix(suffix: string, value: string): void {
+  public insertWord(word: string, value: string): void {
     let current = this.root;
-    for (const char of suffix) {
+    for (const char of word) {
       if (!current.children.has(char)) {
         current.children.set(char, new TrieNode());
       }
@@ -34,6 +39,7 @@ export class Trie {
   public searchPrefix(prefix: string): string[] {
     let current = this.root;
     const cleanPrefix = prefix.trim().toLowerCase();
+    if (!cleanPrefix) return [];
 
     for (const char of cleanPrefix) {
       if (!current.children.has(char)) {
@@ -42,7 +48,7 @@ export class Trie {
       current = current.children.get(char)!;
     }
 
-    // Since we propagate values to all prefix nodes, current.values contains all matches
     return current.values;
   }
 }
+

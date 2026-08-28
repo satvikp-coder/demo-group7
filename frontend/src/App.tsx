@@ -530,6 +530,7 @@ export default function App() {
                       setPlannerOpen(true);
                     }}
                     onExploreClick={() => handleNavigateSection("explore")}
+                    onSelectSite={(siteId) => handleSelectNearby(siteId)}
                   />
 
                   {/* 3. "Why this exists" Section */}

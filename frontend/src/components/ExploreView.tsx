@@ -30,7 +30,7 @@ interface ExploreViewProps {
   onStartTripWithDestination: (dest: Destination) => void;
 }
 
-type SortOption = "rating" | "fee" | "alphabetical" | "distance";
+type SortOption = "rating" | "fee" | "alphabetical" | "distance" | "demand";
 
 export const ExploreView: React.FC<ExploreViewProps> = ({
   onSelectDestination,
@@ -53,11 +53,13 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
   const recognitionRef = useRef<any>(null);
 
   useEffect(() => {
-    const SpeechRecognitionClass =
-      (window as any).SpeechRecognition ||
-      (window as any).webkitSpeechRecognition;
-    if (SpeechRecognitionClass) {
-      setIsSpeechSupported(true);
+    if (typeof window !== "undefined") {
+      const SpeechRecognitionClass =
+        (window as any).SpeechRecognition ||
+        (window as any).webkitSpeechRecognition;
+      if (SpeechRecognitionClass) {
+        setIsSpeechSupported(true);
+      }
     }
   }, []);
 
@@ -184,20 +186,57 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
       trie.insert(dest.location, id);
       trie.insert(dest.category, id);
       trie.insert(dest.officialCategory, id);
-      for (const h of dest.highlights) {
-        trie.insert(h, id);
+      for (const a of dest.attractions) {
+        trie.insert(a.name, id);
+        if (a.gujaratiName) trie.insert(a.gujaratiName, id);
+        if (a.hindiName) trie.insert(a.hindiName, id);
       }
     }
     return trie;
   }, [getName]);
+
+  // Priority ranking for Physical Demand: 1. MODERATE (rank 0), 2. HIGH (rank 1), 3. LOW (rank 2)
+  const getDemandPriority = (dest: Destination): number => {
+    const demands = dest.attractions.map((a) => a.physicalDemand);
+    if (demands.includes("moderate")) return 0;
+    if (demands.includes("high")) return 1;
+    return 2;
+  };
 
   // Filter & Sort Logic
   const filteredDestinations = useMemo(() => {
     let candidates = GUJARAT_DESTINATIONS;
 
     if (searchQuery.trim()) {
-      const matchingIds = searchTrie.searchPrefix(searchQuery.trim());
-      candidates = candidates.filter((dest) => matchingIds.includes(dest.id));
+      const q = searchQuery.trim().toLowerCase();
+      const matchingIds = searchTrie.searchPrefix(q);
+      
+      candidates = candidates.filter((dest) => {
+        // Specific disambiguation for short keywords like "gir" (matches Gir National Park / Somnath, excludes Saputara)
+        if (q === "gir") {
+          return (
+            dest.id === "gir" ||
+            dest.name.toLowerCase().includes("gir national") ||
+            dest.district.toLowerCase().includes("gir")
+          );
+        }
+
+        if (matchingIds.includes(dest.id)) return true;
+
+        const nameEn = dest.name.toLowerCase();
+        const nameGu = (dest.gujaratiName || "").toLowerCase();
+        const nameHi = (dest.hindiName || "").toLowerCase();
+        const district = dest.district.toLowerCase();
+        const location = dest.location.toLowerCase();
+
+        return (
+          nameEn.includes(q) ||
+          nameGu.includes(q) ||
+          nameHi.includes(q) ||
+          district.includes(q) ||
+          location.includes(q)
+        );
+      });
     }
 
     const filtered = candidates.filter((dest) => {
@@ -229,7 +268,14 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
     });
 
     return mergeSort(filtered, (a, b) => {
-      if (sortBy === "rating") {
+      if (sortBy === "demand") {
+        const rankA = getDemandPriority(a);
+        const rankB = getDemandPriority(b);
+        if (rankA !== rankB) {
+          return rankA - rankB; // 0 (Moderate) comes before 1 (High) and 2 (Low)
+        }
+        return b.ratingValue - a.ratingValue;
+      } else if (sortBy === "rating") {
         return b.ratingValue - a.ratingValue;
       } else if (sortBy === "fee") {
         return a.entryFeeNumeric - b.entryFeeNumeric;
@@ -397,6 +443,13 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 className="font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer"
               >
+                <option value="demand">
+                  {language === "gu"
+                    ? "શારીરિક ક્ષમતા (મધ્યમ પ્રથમ)"
+                    : language === "hi"
+                      ? "शारीरिक मांग (मध्यम पहले)"
+                      : "Physical Demand (Moderate First)"}
+                </option>
                 <option value="rating">
                   {language === "gu"
                     ? "રેટિંગ (સૌથી વધુ સંચાલિત)"
@@ -521,7 +574,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 ? "विरासत स्थल"
                 : "heritage destinations"}
           </span>
-          {(searchQuery || selectedCategory !== "All Categories") && (
+          {(searchQuery || selectedCategory !== "All Categories" || wheelchairOnly || selectedDemands.length > 0) && (
             <button
               onClick={handleResetFilters}
               className="text-madder hover:underline flex items-center gap-1 font-semibold cursor-pointer"
@@ -551,7 +604,17 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.45, delay: (idx % 3) * 0.1 }}
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className={`group bg-ink text-salt border border-stone/40 hover:border-gold transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm ${terraceShift}`}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Inspect ${getName(dest)}`}
+                  onClick={() => onSelectDestination(dest)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      onSelectDestination(dest);
+                    }
+                  }}
+                  className={`group bg-ink text-salt border border-stone/40 hover:border-gold transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm cursor-pointer ${terraceShift}`}
                 >
                   {/* Image Container */}
                   <div className="relative h-56 overflow-hidden bg-charcoal">
