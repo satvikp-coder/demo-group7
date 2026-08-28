@@ -199,7 +199,7 @@ export const Hero: React.FC<HeroProps> = ({
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group">
                   <img
-                    src="https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=800"
+                    src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=800"
                     alt="Modhera Sun Temple Stepped Tank Ramakunda"
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                   />

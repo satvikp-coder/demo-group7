@@ -1576,7 +1576,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "1–2 Days",
     avgVisitTime: "2–3 Hours",
     imageUrl:
-      "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=1000",
     imageAlt:
       "Carved stone architecture and stepped tank Ramakunda at Modhera Sun Temple",
     description:
@@ -1602,7 +1602,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹25",
         entryFeeNumeric: 25,
         imageUrl:
-          "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
         description:
           "Masterpiece of 11th-century Solanki stone carving with a 108-shrine stepped tank.",
         gujaratiName: "મોઢેરા સૂર્ય મંદિર અને રામકુંડ",
@@ -1805,7 +1805,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Architecture/Stepwell",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
         gujaratiName: "મોઢેરા સૂર્ય મંદિર અને રામકુંડ",
         hindiName: "मोढेरा सूर्य मंदिर एवं रामकुंड",
       },
@@ -2005,7 +2005,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free with Pass",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
         description:
           "Serene forested mosques featuring exquisite floral niche carvings.",
         gujaratiName: "કેવડા અને નગીના મસ્જિદ",
@@ -2180,7 +2180,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Heritage Monument",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
         gujaratiName: "કેવડા અને નગીના મસ્જિદ",
         hindiName: "केवड़ा और नगीना मस्जिद",
       },
@@ -2689,7 +2689,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹25",
         entryFeeNumeric: 25,
         imageUrl:
-          "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
         description:
           "5-story subterranean stepwell built in 1498 with intricate Solanki floral stone carvings.",
         gujaratiName: "અડાલજ ની વાવ",
@@ -2929,7 +2929,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Stepwell Architecture",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1600100397608-f010e423b971?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
         gujaratiName: "અડાલજ ની વાવ",
         hindiName: "अडालज की वाव",
       },
