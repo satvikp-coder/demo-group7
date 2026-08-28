@@ -285,8 +285,8 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const totalDistanceKm = generatedResult.totalDistanceKm;
   const estimatedTotalCost = generatedResult.totalCost;
 
-  const totalHotelCost = (startingHotel.priceNumeric || 0) * numDays;
-  const totalAttractionCost = dayPlans.reduce(
+  const totalHotelCost = generatedResult.hotelTotalCost ?? ((startingHotel.priceNumeric || 0) * numDays);
+  const totalAttractionCost = generatedResult.attractionTotalCost ?? dayPlans.reduce(
     (acc, d) =>
       acc +
       d.stops
@@ -294,13 +294,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         .reduce((a, s) => a + s.cost, 0),
     0,
   );
-  const totalMealCost = dayPlans.reduce(
+  const totalMealCost = generatedResult.mealTotalCost ?? dayPlans.reduce(
     (acc, d) =>
       acc +
       d.stops.filter((s) => s.type === "meal").reduce((a, s) => a + s.cost, 0),
     0,
   );
-  const totalTransportCost = numDays * 350;
+  const totalTransitCost = generatedResult.transitTotalCost ?? 0;
 
   const handleDownloadPdf = async () => {
     if (!pdfContainerRef.current) return;
@@ -310,18 +310,23 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         import("jspdf"),
         import("html2canvas"),
       ]);
-      const jsPDF = jspdfModule.default;
-      const html2canvas = html2canvasModule.default;
+      const jsPDF = jspdfModule.default || jspdfModule.jsPDF || (jspdfModule as any);
+      const html2canvas = html2canvasModule.default || (html2canvasModule as any);
 
       const element = pdfContainerRef.current;
       const canvas = await html2canvas(element, {
         scale: 2,
         useCORS: true,
+        allowTaint: true,
         logging: false,
-        backgroundColor: DESIGN_TOKENS.salt,
+        backgroundColor: "#FFFFFF",
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: element.scrollWidth || document.documentElement.offsetWidth,
+        windowHeight: element.scrollHeight,
       });
 
-      const imgData = canvas.toDataURL("image/png");
+      const imgData = canvas.toDataURL("image/jpeg", 0.95);
       const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
@@ -331,23 +336,24 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       let heightLeft = imgHeight;
       let position = 0;
 
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
       heightLeft -= pdfHeight;
 
       while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
+        position -= pdfHeight;
         pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
         heightLeft -= pdfHeight;
       }
 
-      const sanitizeName = tripTitle
+      const sanitizeName = (tripTitle || "gujarat-heritage")
         .toLowerCase()
         .replace(/[^a-z0-9]/g, "-")
         .replace(/-+/g, "-");
       pdf.save(`${sanitizeName}-itinerary.pdf`);
     } catch (err) {
       console.error("Error generating itinerary PDF:", err);
+      window.print();
     } finally {
       setIsGeneratingPdf(false);
     }
@@ -365,7 +371,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Read-Only Shared Itinerary Banner */}
         {isReadOnly && (
-          <div className="bg-ink border-2 border-gold p-4 text-salt flex flex-wrap items-center justify-between gap-4 shadow-md font-mono">
+          <div className="bg-ink border-2 border-gold p-4 text-salt flex flex-wrap items-center justify-between gap-4 shadow-md font-mono no-print">
             <div className="flex items-center gap-3">
               <span className="inline-block w-2.5 h-2.5 bg-gold rounded-full animate-pulse shrink-0" />
               <div>
@@ -390,7 +396,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         )}
 
         {/* Top Control Bar: Back / Actions */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4 no-print">
           <div className="flex items-center gap-3">
             {!isReadOnly && (
               <>
@@ -530,10 +536,11 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         {/* Printable Container */}
         <div
           ref={pdfContainerRef}
-          className="space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
+          id="printable-itinerary"
+          className="printable-content space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
         >
           {/* Header Banner */}
-          <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg">
+          <div className="itinerary-header-banner bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-stepwell-pattern opacity-10 pointer-events-none" />
 
             <div className="relative z-10 space-y-4">
@@ -609,27 +616,31 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
           {/* Slim Collapsible Algorithm Execution Stats Strip */}
           {generatedResult.stats && (
-            <AlgorithmStatsPanel
-              stats={generatedResult.stats}
-              collapsible={true}
-              defaultExpanded={false}
-              title="View algorithm stats"
-            />
+            <div className="no-print">
+              <AlgorithmStatsPanel
+                stats={generatedResult.stats}
+                collapsible={true}
+                defaultExpanded={false}
+                title="View algorithm stats"
+              />
+            </div>
           )}
 
           {/* Graceful Offline Circular Route Map Circuit */}
-          <OfflineRouteMap
-            dayPlans={dayPlans}
-            cityName={cityName}
-            startingHotelName={startingHotel.name}
-            totalDistanceKm={totalDistanceKm}
-            isOffline={
-              typeof navigator !== "undefined" ? !navigator.onLine : false
-            }
-          />
+          <div className="no-print">
+            <OfflineRouteMap
+              dayPlans={dayPlans}
+              cityName={cityName}
+              startingHotelName={startingHotel.name}
+              totalDistanceKm={totalDistanceKm}
+              isOffline={
+                typeof navigator !== "undefined" ? !navigator.onLine : false
+              }
+            />
+          </div>
 
           {/* Dijkstra Supporting Algorithm Visualizer Accordion */}
-          <div className="border-2 border-gold bg-white p-4 space-y-3">
+          <div className="border-2 border-gold bg-white p-4 space-y-3 no-print">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 font-mono text-xs text-ink font-bold">
                 <Cpu className="w-4 h-4 text-gold" />
@@ -674,7 +685,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.3, delay: dayIdx * 0.05 }}
-                  className="bg-white border-2 border-stone/40 p-5 sm:p-6 space-y-6 shadow-sm"
+                  className="itinerary-day-card bg-white border-2 border-stone/40 p-5 sm:p-6 space-y-6 shadow-sm"
                 >
                   {/* Day Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-gold pb-3">
@@ -721,7 +732,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             transition={{ duration: 0.25, delay: idx * 0.03 }}
                             tabIndex={0}
                             aria-label={accessibleLabel}
-                            className={`p-4 border text-xs font-mono transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-gold ${
+                            className={`itinerary-stop-card p-4 border text-xs font-mono transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-gold ${
                               stop.type === "meal"
                                 ? "bg-amber-50/70 border-gold/80"
                                 : stop.type === "hotel"
@@ -732,10 +743,14 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             }`}
                           >
                             {(() => {
-                              const conflict = checkBestTimeConflict(
-                                stop.arrivalTime,
-                                stop.bestTimeNote,
-                              );
+                              const conflict =
+                                stop.type === "attraction"
+                                  ? checkBestTimeConflict(
+                                      stop.arrivalTime,
+                                      stop.bestTimeNote,
+                                    )
+                                  : { hasConflict: false, warningMessage: "" };
+
                               return (
                                 <div className="flex items-start gap-3 w-full sm:w-auto">
                                   {/* Stop Number Badge */}
@@ -863,7 +878,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           </div>
 
           {/* Overall Budget Summary Card */}
-          <div className="bg-ink text-salt p-6 border-2 border-gold space-y-4">
+          <div className="budget-summary-card bg-ink text-salt p-6 border-2 border-gold space-y-4">
             <h4 className="font-display text-xl text-gold font-bold border-b border-stone/30 pb-2">
               {cityName} Circuit Budget Breakdown
             </h4>
@@ -886,7 +901,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               </div>
               <div className="p-3 bg-salt/10 border border-stone/30">
                 <span className="text-stone text-[10px] uppercase block">
-                  Meals (Restaurants)
+                  Meals & Dining
                 </span>
                 <span className="font-bold text-gold text-sm">
                   ₹{totalMealCost.toLocaleString("en-IN")}
@@ -894,10 +909,12 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               </div>
               <div className="p-3 bg-salt/10 border border-stone/30">
                 <span className="text-stone text-[10px] uppercase block">
-                  Local Transport
+                  Transit & Ferry
                 </span>
                 <span className="font-bold text-salt text-sm">
-                  ₹{totalTransportCost.toLocaleString("en-IN")}
+                  {totalTransitCost > 0
+                    ? `₹${totalTransitCost.toLocaleString("en-IN")}`
+                    : "Included (₹0)"}
                 </span>
               </div>
             </div>

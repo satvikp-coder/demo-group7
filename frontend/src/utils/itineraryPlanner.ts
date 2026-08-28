@@ -103,7 +103,7 @@ export interface PlannerConfigPayload {
 
 export interface ItineraryStop {
   id: string;
-  type: "hotel" | "attraction" | "meal" | "transit";
+  type: "hotel" | "attraction" | "meal" | "transit" | "cultural";
   name: string;
   category: string;
   arrivalTime: string;
@@ -129,6 +129,10 @@ export interface DayRoute {
   roadKm: number;
   boatKm: number;
   totalCost: number;
+  hotelCost: number;
+  attractionCost: number;
+  mealCost: number;
+  transitCost: number;
 }
 
 export interface AlgorithmStats {
@@ -149,6 +153,10 @@ export interface GeneratedItineraryResult {
   startingHotel: Hotel;
   dayPlans: DayRoute[];
   totalCost: number;
+  hotelTotalCost: number;
+  attractionTotalCost: number;
+  mealTotalCost: number;
+  transitTotalCost: number;
   totalDistanceKm: number;
   roadDistanceKm: number;
   boatDistanceKm: number;
@@ -169,12 +177,12 @@ export function formatTime(minutesFromMidnight: number): string {
 }
 
 export function parseTimeToMinutes(timeStr?: string): number {
-  if (!timeStr) return 8 * 60;
+  if (!timeStr) return 8 * 60 + 30;
   const parts = timeStr.trim().split(" ");
-  if (parts.length < 2) return 8 * 60;
+  if (parts.length < 2) return 8 * 60 + 30;
   const [hStr, mStr] = parts[0].split(":");
   let hours = parseInt(hStr, 10) || 8;
-  const mins = parseInt(mStr, 10) || 0;
+  const mins = parseInt(mStr, 10) || 30;
   const ampm = parts[1].toUpperCase();
   if (ampm === "PM" && hours < 12) hours += 12;
   if (ampm === "AM" && hours === 12) hours = 0;
@@ -213,9 +221,6 @@ export function getDistanceKm(
   return Math.round(roadDist * 10) / 10;
 }
 
-/**
- * Single Parameterized Scoring Function for Greedy Selection
- */
 /**
  * Evaluates route legs and counts direct road connections vs. Dijkstra fallback calls
  */
@@ -374,6 +379,94 @@ function evaluateRouteLeg(
   };
 }
 
+// Curated cultural walking & artisan experiences for multi-day leisure distribution
+const CITY_CULTURAL_EXPERIENCES: Record<string, Array<{ name: string; category: string; description: string; durationHours: number }>> = {
+  ahmedabad: [
+    { name: "Old City Pols & Heritage Haveli Walking Tour", category: "Heritage Walk", description: "Guided exploration of medieval pols, wooden carved facades, and secret subterranean rain-water harvesting tanks.", durationHours: 2 },
+    { name: "Traditional Block Printing & Calico Textile Guilds", category: "Artisan Guild", description: "Interactive visit to master woodblock carvers and traditional Ajrakh textile artisans.", durationHours: 1.5 },
+    { name: "Manek Chowk Traditional Sweets & Spice Bazaar", category: "Heritage Market", description: "Walking tour of Gujarat's oldest jewelry market transitioning into aromatic traditional street food corridors.", durationHours: 1.5 },
+    { name: "Sabarmati Riverfront Promenade & Cultural Gardens", category: "Leisure Promenade", description: "Relaxing late afternoon scenic walk along the landscaped heritage riverfront promenades.", durationHours: 1.5 },
+  ],
+  somnath: [
+    { name: "Prabhas Patan Ancient Pilgrim Stroll & Ocean Promenade", category: "Coastal Heritage", description: "Scenic coastal walk along the Arabian Sea breaking waves and ancient stone ghats.", durationHours: 2 },
+    { name: "Sanskrit University & Ancient Manuscripts Gallery", category: "Cultural Study", description: "Exploration of preserved Vedic heritage texts and ancient maritime inscriptions.", durationHours: 1.5 },
+    { name: "Veraval Dhow Ship-building Yard & Fisherman Wharf", category: "Maritime Craft", description: "Traditional wooden sea vessel craftsmanship and coastal trade heritage visit.", durationHours: 2 },
+  ],
+  dwarka: [
+    { name: "Gomti Ghat Holy Dip & Holy Sea Confluence Walk", category: "Spiritual Heritage", description: "Sacred ghat walk along the Gomti river estuary meeting the roaring Arabian Sea.", durationHours: 1.5 },
+    { name: "Gopi Talav & Holy Yellow Clay Artisan Guilds", category: "Craft & Lore", description: "Historic sacred pond famous for aromatic Gopi Chandan sacred clay crafting.", durationHours: 2 },
+    { name: "Dwarka Lighthouse & Sunset Cliff Promenade", category: "Scenic Coastal", description: "Panoramic cliffside views over ancient submerged Dwarka archaeological waters.", durationHours: 1.5 },
+  ],
+  "rann-of-kutch": [
+    { name: "Nirona Rogan Art & Copper Bell Artisan Workshop", category: "Master Craft", description: "Live demonstration by master Khatri craftsmen of 300-year-old castor seed oil Rogan fabric painting.", durationHours: 2 },
+    { name: "Bhujodi Master Weaver & Ajrakhpur Block Print Guilds", category: "Textile Heritage", description: "Vibrant village interaction with Vankar weavers on traditional pit looms.", durationHours: 2 },
+    { name: "White Rann Salt Desert Sunset & Stargazing Walk", category: "Salt Desert Immersion", description: "Expansive sunset walk across crystalline white salt flats under open desert skies.", durationHours: 2 },
+  ],
+  gir: [
+    { name: "Maldhari Tribal Settlement & Forest Lore Walk", category: "Indigenous Culture", description: "Respectful cultural exchange with indigenous Maldhari pastoralists living harmoniously with Asiatic lions.", durationHours: 2 },
+    { name: "Kamleshwar Dam Crocodile Sanctuary & Birding Deck", category: "Eco Sanctuary", description: "Panoramic birdwatching and marsh crocodile viewing atop Kamleshwar reservoir.", durationHours: 1.5 },
+    { name: "Kesar Mango Orchard & Agro-Heritage Tour", category: "Agricultural Heritage", description: "Seasonal walk through organic Gir Kesar mango groves and traditional jaggery processing units.", durationHours: 1.5 },
+  ],
+  modhera: [
+    { name: "Patan Rani Ki Vav Subterranean Sculptural Walk", category: "UNESCO Architecture", description: "In-depth inspection of 500+ Solanki sculptures across 7 stepped levels of the royal stepwell.", durationHours: 2 },
+    { name: "Patan Patola Double-Ikat Silk Weaving Guild", category: "Master Craft", description: "Interactive visit with the Salvi family preserving the mathematical 8-month natural-dye silk weave.", durationHours: 2 },
+    { name: "Surya Temple Ramakunda Geometrical Light Study", category: "Solar Geometry", description: "Observing afternoon light reflections across the 108 miniature stepped shrines of Ramakunda.", durationHours: 1.5 },
+  ],
+  champaner: [
+    { name: "Pavagadh Ropeway & Ancient Citadel Fortifications Walk", category: "Fortress Heritage", description: "Ascent past 15th-century military gates, stepwells, and royal granaries overlooking the Narmada plains.", durationHours: 2.5 },
+    { name: "Jami Masjid Stone Lattice Architecture Inspection", category: "Indo-Islamic Art", description: "Study of 172 fluted stone pillars and symmetry of Gujarat Sultanate architecture.", durationHours: 1.5 },
+    { name: "Hadaf River & Forest Heritage Trail", category: "Eco Heritage", description: "Quiet forest path connecting secluded medieval mosques and stone water pavilions.", durationHours: 1.5 },
+  ],
+  saputara: [
+    { name: "Dangi Tribal Craft & Bamboo Workshop", category: "Tribal Heritage", description: "Hands-on interaction with indigenous Warli painters and tribal bamboo artisans of the Dangs.", durationHours: 2 },
+    { name: "Saputara Lake Serene Boat Circuit & Botanical Walk", category: "Hill Lake Promenade", description: "Pleasant afternoon lake promenade surrounded by Sahyadri forest canopies.", durationHours: 1.5 },
+    { name: "Governor's Hill & Sunset Valley Lookout", category: "Scenic Viewpoint", description: "High vantage point overlooking deep Dang forest valleys and sunset vistas.", durationHours: 1.5 },
+  ],
+};
+
+function selectRestaurant(
+  restaurants: Restaurant[],
+  currentPos: { lat?: number; lng?: number },
+  strategy: OptimizationStrategy,
+  dayIndex: number,
+  isDinner: boolean = false
+): Restaurant {
+  if (!restaurants || restaurants.length === 0) {
+    return {
+      id: "local-dining",
+      name: "Heritage Traditional Dining",
+      lat: (currentPos.lat || 23.0) + 0.002,
+      lng: (currentPos.lng || 72.5) + 0.002,
+      rating: 4.5,
+      avgCostPerPerson: 350,
+      location: "City Center",
+      cuisine: "Authentic Gujarati Thali",
+    };
+  }
+
+  if (strategy === "budget-first") {
+    // Pick the most economical restaurants to minimize expenditure
+    const sortedByCost = [...restaurants].sort((a, b) => a.avgCostPerPerson - b.avgCostPerPerson);
+    const options = sortedByCost.slice(0, Math.min(2, sortedByCost.length));
+    const offset = isDinner ? 1 : 0;
+    return options[(dayIndex + offset) % options.length];
+  } else if (strategy === "rating-first") {
+    // Pick top-rated culinary dining experiences
+    const sortedByRating = [...restaurants].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    const options = sortedByRating.slice(0, Math.min(2, sortedByRating.length));
+    const offset = isDinner ? 1 : 0;
+    return options[(dayIndex + offset) % options.length];
+  } else {
+    // Distance-first: Pick the nearest restaurant to the current position
+    const sortedByDist = [...restaurants].sort((a, b) => {
+      const distA = getDistanceKm(currentPos.lat, currentPos.lng, a.lat, a.lng);
+      const distB = getDistanceKm(currentPos.lat, currentPos.lng, b.lat, b.lng);
+      return distA - distB;
+    });
+    return sortedByDist[0];
+  }
+}
+
 /**
  * Single Parameterized Itinerary Builder Engine
  */
@@ -387,7 +480,7 @@ export function generateStrategyItinerary(
   const activeCity = getCityById(config.cityId) || GUJARAT_DESTINATIONS[0];
   const numDays = Math.max(1, config.tripDays || 2);
   const startMinsBase = parseTimeToMinutes(config.startTime);
-  const totalBudgetCap = config.budget || 8500;
+  const totalBudgetCap = config.budget || 12000;
 
   const cityNodes = [
     ...activeCity.hotels,
@@ -408,7 +501,7 @@ export function generateStrategyItinerary(
     strategyTagline = "Greedy cost & fee minimization";
   } else if (strategy === "rating-first") {
     strategyName = "Rating-first";
-    strategyTagline = "Highest-rated cultural landmarks";
+    strategyTagline = "Top-rated cultural landmarks (>= 4.6★ quality)";
   }
 
   // 1. Hotel Selection according to strategy respecting budget
@@ -435,7 +528,9 @@ export function generateStrategyItinerary(
   const dayPlans: DayRoute[] = [];
   let grandTotalRoadDistanceKm = 0;
   let grandTotalBoatDistanceKm = 0;
-  let grandTotalCost = hotelTotalCost;
+  let grandTotalAttractionCost = 0;
+  let grandTotalMealCost = 0;
+  let grandTotalTransitCost = 0;
   let totalAttractionsVisited = 0;
   let totalRuntimeMinutesAcc = 0;
 
@@ -449,15 +544,25 @@ export function generateStrategyItinerary(
     "DAY 7",
   ];
 
+  const cityCulturalStops = CITY_CULTURAL_EXPERIENCES[activeCity.id] || CITY_CULTURAL_EXPERIENCES["ahmedabad"];
+  let culturalStopCursor = 0;
+
   for (let d = 0; d < numDays; d++) {
     const stops: ItineraryStop[] = [];
     let currentClock = startMinsBase;
     let dayRoadKm = 0;
     let dayBoatKm = 0;
-    let dayCost = 0;
-    let currentPos = { lat: startingHotel.lat, lng: startingHotel.lng, transportMode: undefined as string | undefined };
+    let dayAttractionCost = 0;
+    let dayMealCost = 0;
+    let dayTransitCost = 0;
+    let currentPos = {
+      lat: startingHotel.lat,
+      lng: startingHotel.lng,
+      id: startingHotel.id,
+      transportMode: undefined as string | undefined,
+    };
 
-    // Depart Hotel
+    // Stop #1: Depart Hotel Base
     const hotelDepartMins = currentClock;
     stops.push({
       id: `${startingHotel.id}-start-day-${d + 1}`,
@@ -466,7 +571,7 @@ export function generateStrategyItinerary(
         language === "gu"
           ? `રવાના: ${startingHotel.name}`
           : language === "hi"
-            ? `रवाना: ${startingHotel.name}`
+            ? `રવાના: ${startingHotel.name}`
             : `Depart ${startingHotel.name}`,
       category: "Starting Accommodation",
       arrivalTime: formatTime(hotelDepartMins),
@@ -475,7 +580,7 @@ export function generateStrategyItinerary(
       cost: startingHotel.priceNumeric,
       location: startingHotel.location,
       imageUrl: startingHotel.imageUrl,
-      description: `Morning departure from hotel base.`,
+      description: `Morning departure from hotel base (₹${startingHotel.priceNumeric.toLocaleString("en-IN")} / night stay).`,
       lat: startingHotel.lat,
       lng: startingHotel.lng,
     });
@@ -486,90 +591,16 @@ export function generateStrategyItinerary(
     let lunchInserted = false;
     let dayAttractionCount = 0;
 
-    // Max attractions per day depends on strategy & duration
-    const maxAttractionsPerDay = getMaxAttractionsPerDay(attractionsPool.length, numDays, strategy);
+    const remainingDays = numDays - d;
+    const unvisitedCandidates = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
+    const maxAttractionsToday = getMaxAttractionsPerDay(unvisitedCandidates.length, remainingDays, strategy);
 
-    while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) {
-      // until 7:00 PM
-      // Lunch insertion window
-      if (!lunchInserted && currentClock >= 720 && restaurantsPool.length > 0) {
-        const restoIndex = d % restaurantsPool.length;
-        const resto = restaurantsPool[restoIndex];
-
-        const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
-        if (routeEval.isDirect) directRoadConnectionsUsed++;
-        else {
-          dijkstraFallbackCalls++;
-          totalNodesVisited += routeEval.nodesVisited;
-          totalEdgesRelaxed += routeEval.edgesRelaxed;
-        }
-
-        const distToResto = routeEval.distanceKm;
-        const isLunchBoatTransition = currentPos.transportMode === "boat";
-
-        if (isLunchBoatTransition) {
-          const transitStart = currentClock;
-          const transitEnd = transitStart + 25;
-          stops.push({
-            id: `boat-transit-lunch-day-${d + 1}`,
-            type: "transit",
-            name: "Bet Dwarka to Okha Jetty Ferry",
-            category: "Ferry Transit",
-            arrivalTime: formatTime(transitStart),
-            departureTime: formatTime(transitEnd),
-            durationMinutes: 25,
-            cost: 30,
-            location: "Okha Jetty",
-            description: "Ferry return transfer from Bet Dwarka island back to mainland Okha Jetty.",
-            lat: 22.4633,
-            lng: 69.1114,
-          });
-          currentClock = transitEnd + 5;
-          dayCost += 30;
-          remainingBudget -= 30;
-          dayBoatKm += distToResto;
-        } else {
-          dayRoadKm += distToResto;
-          const travelMins = routeEval.travelTimeMinutes;
-          currentClock += travelMins;
-        }
-
-        currentPos = { lat: resto.lat, lng: resto.lng, transportMode: undefined };
-
-        const lunchStart = currentClock;
-        const lunchEnd = lunchStart + 60;
-        stops.push({
-          id: `lunch-stop-day-${d + 1}`,
-          type: "meal",
-          name:
-            language === "gu"
-              ? `બપોરનું ભોજન: ${resto.name}`
-              : language === "hi"
-                ? `दोपहर का भोजन: ${resto.name}`
-                : `Lunch Break at ${resto.name}`,
-          category: "Culinary Stop",
-          arrivalTime: formatTime(lunchStart),
-          departureTime: formatTime(lunchEnd),
-          durationMinutes: 60,
-          cost: resto.avgCostPerPerson,
-          location: resto.location,
-          description: `Authentic ${resto.cuisine || "Gujarati meal"} stop.`,
-          lat: resto.lat,
-          lng: resto.lng,
-        });
-
-        currentClock = lunchEnd + 15;
-        dayCost += resto.avgCostPerPerson;
-        remainingBudget -= resto.avgCostPerPerson;
-        totalRuntimeMinutesAcc += 75;
-        lunchInserted = true;
-      }
-
-      // Find best remaining candidate that fits within the budget
+    // Morning attraction exploration loop
+    while (dayAttractionCount < maxAttractionsToday) {
       const unvisited = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
       if (unvisited.length === 0) break;
 
-      // Merge Sort using our manual implementation
+      // Sort unvisited candidates with mergeSort by strategy score
       const sortedCandidates = mergeSort(unvisited, (a, b) => {
         const scoreA = scoreAttraction(
           a,
@@ -600,31 +631,35 @@ export function generateStrategyItinerary(
       }
 
       const distToChosen = routeEval.distanceKm;
-      const isBoatTransition = (currentPos.transportMode === "boat" && chosen.transportMode !== "boat") ||
-                               (currentPos.transportMode !== "boat" && chosen.transportMode === "boat");
+      const isBoatTransition =
+        (currentPos.transportMode === "boat" && chosen.transportMode !== "boat") ||
+        (currentPos.transportMode !== "boat" && chosen.transportMode === "boat");
 
       if (isBoatTransition) {
-        // Insert boat transfer stop
         const transitStart = currentClock;
         const transitEnd = transitStart + 25;
         stops.push({
           id: `boat-transit-${chosen.id}-day-${d + 1}`,
           type: "transit",
-          name: currentPos.transportMode === "boat" ? "Bet Dwarka to Okha Jetty Ferry" : "Okha Jetty to Bet Dwarka Ferry",
+          name:
+            currentPos.transportMode === "boat"
+              ? "Bet Dwarka to Okha Jetty Ferry"
+              : "Okha Jetty to Bet Dwarka Ferry",
           category: "Ferry Transit",
           arrivalTime: formatTime(transitStart),
           departureTime: formatTime(transitEnd),
           durationMinutes: 25,
           cost: 30,
           location: "Okha Jetty",
-          description: currentPos.transportMode === "boat"
-            ? "Ferry return transfer from Bet Dwarka island to mainland Okha Jetty."
-            : "Mainland Okha Jetty ferry crossing to Bet Dwarka island (~25 mins).",
+          description:
+            currentPos.transportMode === "boat"
+              ? "Ferry return transfer from Bet Dwarka island to mainland Okha Jetty."
+              : "Mainland Okha Jetty ferry crossing to Bet Dwarka island (~25 mins).",
           lat: 22.4633,
           lng: 69.1114,
         });
-        currentClock = transitEnd + 5; // 5 min transition buffer
-        dayCost += 30;
+        currentClock = transitEnd + 5;
+        dayTransitCost += 30;
         remainingBudget -= 30;
         dayBoatKm += distToChosen;
         totalRuntimeMinutesAcc += 30;
@@ -635,14 +670,19 @@ export function generateStrategyItinerary(
         totalRuntimeMinutesAcc += travelMins;
       }
 
-      currentPos = { lat: chosen.lat, lng: chosen.lng, transportMode: chosen.transportMode };
+      currentPos = {
+        lat: chosen.lat,
+        lng: chosen.lng,
+        id: chosen.id,
+        transportMode: chosen.transportMode,
+      };
 
       const attrStart = currentClock;
       const durationMins = Math.round((chosen.durationHours || 1.5) * 60);
       const attrEnd = attrStart + durationMins;
 
       const fee = chosen.entryFeeNumeric || 0;
-      dayCost += fee;
+      dayAttractionCost += fee;
       remainingBudget -= fee;
 
       stops.push({
@@ -668,11 +708,51 @@ export function generateStrategyItinerary(
       totalRuntimeMinutesAcc += durationMins + 15;
       dayAttractionCount++;
       totalAttractionsVisited++;
+
+      // Check if it's lunch time between attractions
+      if (!lunchInserted && currentClock >= 720 && restaurantsPool.length > 0) {
+        break;
+      }
     }
 
-    // Dinner insertion if late afternoon
-    if (currentClock >= 1110 && restaurantsPool.length > 0) {
-      const resto = restaurantsPool[restaurantsPool.length - 1];
+    // If all core monuments are covered across the multi-day trip, provide a structured cultural immersion experience
+    if (dayAttractionCount === 0 && cityCulturalStops.length > 0) {
+      const cultStop = cityCulturalStops[culturalStopCursor % cityCulturalStops.length];
+      culturalStopCursor++;
+
+      const cultStart = Math.max(currentClock, startMinsBase + 30);
+      const durationMins = Math.round(cultStop.durationHours * 60);
+      const cultEnd = cultStart + durationMins;
+
+      dayRoadKm += 2.5;
+      currentClock = cultStart;
+
+      stops.push({
+        id: `cultural-stop-day-${d + 1}`,
+        type: "cultural",
+        name: cultStop.name,
+        category: cultStop.category,
+        arrivalTime: formatTime(cultStart),
+        departureTime: formatTime(cultEnd),
+        durationMinutes: durationMins,
+        cost: 0,
+        location: activeCity.location,
+        description: `${cultStop.description} (Curated cultural immersion for Day ${d + 1}).`,
+        lat: startingHotel.lat + 0.008,
+        lng: startingHotel.lng + 0.008,
+        physicalDemand: "low",
+        wheelchairAccessible: true,
+      });
+
+      currentClock = cultEnd + 15;
+      totalRuntimeMinutesAcc += durationMins + 15;
+      dayAttractionCount++;
+    }
+
+    // Structured Lunch Break (12:30 PM - 1:30 PM window)
+    if (restaurantsPool.length > 0) {
+      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, d, false);
+
       const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
       if (routeEval.isDirect) directRoadConnectionsUsed++;
       else {
@@ -681,15 +761,14 @@ export function generateStrategyItinerary(
         totalEdgesRelaxed += routeEval.edgesRelaxed;
       }
 
-      const distToDinner = routeEval.distanceKm;
-      const isDinnerBoatTransition = currentPos.transportMode === "boat";
+      const distToResto = routeEval.distanceKm;
+      const isLunchBoatTransition = currentPos.transportMode === "boat";
 
-      if (isDinnerBoatTransition) {
-        // Insert boat transfer stop
+      if (isLunchBoatTransition) {
         const transitStart = currentClock;
         const transitEnd = transitStart + 25;
         stops.push({
-          id: `boat-transit-dinner-day-${d + 1}`,
+          id: `boat-transit-lunch-day-${d + 1}`,
           type: "transit",
           name: "Bet Dwarka to Okha Jetty Ferry",
           category: "Ferry Transit",
@@ -703,46 +782,199 @@ export function generateStrategyItinerary(
           lng: 69.1114,
         });
         currentClock = transitEnd + 5;
-        dayCost += 30;
+        dayTransitCost += 30;
         remainingBudget -= 30;
-        dayBoatKm += distToDinner;
+        dayBoatKm += distToResto;
       } else {
-        dayRoadKm += distToDinner;
+        dayRoadKm += distToResto;
         const travelMins = routeEval.travelTimeMinutes;
         currentClock += travelMins;
       }
 
-      currentPos = { lat: resto.lat, lng: resto.lng, transportMode: undefined };
+      currentPos = {
+        lat: resto.lat,
+        lng: resto.lng,
+        id: resto.id,
+        transportMode: undefined,
+      };
+
+      // Standardize lunch start to at least 12:30 PM (750 mins)
+      const lunchStart = Math.max(currentClock, 750);
+      const lunchEnd = lunchStart + 60;
+      const mealCost = resto.avgCostPerPerson || 375;
+
+      stops.push({
+        id: `lunch-stop-day-${d + 1}`,
+        type: "meal",
+        name:
+          language === "gu"
+            ? `બપોરનું ભોજન: ${resto.name}`
+            : language === "hi"
+              ? `दोपहर का भोजन: ${resto.name}`
+              : `Lunch Break at ${resto.name}`,
+        category: "Culinary Stop",
+        arrivalTime: formatTime(lunchStart),
+        departureTime: formatTime(lunchEnd),
+        durationMinutes: 60,
+        cost: mealCost,
+        location: resto.location,
+        description: `Authentic ${resto.cuisine || "Gujarati thali"} regional lunch.`,
+        lat: resto.lat,
+        lng: resto.lng,
+      });
+
+      currentClock = lunchEnd + 15;
+      dayMealCost += mealCost;
+      remainingBudget -= mealCost;
+      totalRuntimeMinutesAcc += 75;
+      lunchInserted = true;
+    }
+
+    // Afternoon attraction or secondary cultural exploration
+    if (dayAttractionCount < maxAttractionsToday) {
+      const unvisited = filterAttractionsByBudget(attractionsPool, remainingBudget, visitedAttractionIds);
+      if (unvisited.length > 0) {
+        const sortedCandidates = mergeSort(unvisited, (a, b) => {
+          const scoreA = scoreAttraction(a, currentPos, remainingBudget, strategy, getDistanceKm);
+          const scoreB = scoreAttraction(b, currentPos, remainingBudget, strategy, getDistanceKm);
+          return scoreB - scoreA;
+        });
+
+        const chosen = sortedCandidates[0];
+        visitedAttractionIds.set(chosen.id, true);
+
+        const routeEval = evaluateRouteLeg(currentPos, chosen, cityNodes);
+        if (routeEval.isDirect) directRoadConnectionsUsed++;
+        else {
+          dijkstraFallbackCalls++;
+          totalNodesVisited += routeEval.nodesVisited;
+          totalEdgesRelaxed += routeEval.edgesRelaxed;
+        }
+
+        const distToChosen = routeEval.distanceKm;
+        dayRoadKm += distToChosen;
+        currentClock += routeEval.travelTimeMinutes;
+
+        currentPos = {
+          lat: chosen.lat,
+          lng: chosen.lng,
+          id: chosen.id,
+          transportMode: chosen.transportMode,
+        };
+
+        const attrStart = currentClock;
+        const durationMins = Math.round((chosen.durationHours || 1.5) * 60);
+        const attrEnd = attrStart + durationMins;
+        const fee = chosen.entryFeeNumeric || 0;
+
+        dayAttractionCost += fee;
+        remainingBudget -= fee;
+
+        stops.push({
+          id: `${chosen.id}-day-${d + 1}`,
+          type: "attraction",
+          name: chosen.name,
+          category: chosen.category,
+          arrivalTime: formatTime(attrStart),
+          departureTime: formatTime(attrEnd),
+          durationMinutes: durationMins,
+          cost: fee,
+          location: activeCity.name,
+          imageUrl: chosen.imageUrl,
+          description: chosen.description,
+          lat: chosen.lat,
+          lng: chosen.lng,
+          wheelchairAccessible: chosen.wheelchairAccessible,
+          physicalDemand: chosen.physicalDemand,
+          bestTimeNote: chosen.bestTimeNote,
+        });
+
+        currentClock = attrEnd + 15;
+        totalRuntimeMinutesAcc += durationMins + 15;
+        dayAttractionCount++;
+        totalAttractionsVisited++;
+      }
+    } else if (currentClock < 960 && cityCulturalStops.length > 0 && d >= 3) {
+      // For longer trips (Days 4+), add a relaxing afternoon bazaar / crafts walk
+      const cultStop = cityCulturalStops[(culturalStopCursor + 1) % cityCulturalStops.length];
+      const cultStart = currentClock + 15;
+      const durationMins = 75;
+      const cultEnd = cultStart + durationMins;
+
+      dayRoadKm += 1.8;
+      stops.push({
+        id: `afternoon-cultural-day-${d + 1}`,
+        type: "cultural",
+        name: cultStop.name,
+        category: cultStop.category,
+        arrivalTime: formatTime(cultStart),
+        departureTime: formatTime(cultEnd),
+        durationMinutes: durationMins,
+        cost: 0,
+        location: activeCity.location,
+        description: `Afternoon stroll: ${cultStop.description}`,
+        lat: startingHotel.lat + 0.005,
+        lng: startingHotel.lng + 0.005,
+        physicalDemand: "low",
+        wheelchairAccessible: true,
+      });
+
+      currentClock = cultEnd + 15;
+      totalRuntimeMinutesAcc += durationMins + 15;
+    }
+
+    // Evening Dining / Tea Stop if day extends to evening (>= 5:30 PM / 1050 mins)
+    if (currentClock >= 1050 && restaurantsPool.length > 0) {
+      const dinnerResto = selectRestaurant(restaurantsPool, currentPos, strategy, d, true);
+      const routeEval = evaluateRouteLeg(currentPos, dinnerResto, cityNodes);
+      if (routeEval.isDirect) directRoadConnectionsUsed++;
+      else {
+        dijkstraFallbackCalls++;
+        totalNodesVisited += routeEval.nodesVisited;
+        totalEdgesRelaxed += routeEval.edgesRelaxed;
+      }
+
+      dayRoadKm += routeEval.distanceKm;
+      currentClock += routeEval.travelTimeMinutes;
+
+      currentPos = {
+        lat: dinnerResto.lat,
+        lng: dinnerResto.lng,
+        id: dinnerResto.id,
+        transportMode: undefined,
+      };
 
       const dinnerStart = currentClock;
       const dinnerEnd = dinnerStart + 60;
+      const mealCost = dinnerResto.avgCostPerPerson || 375;
+
       stops.push({
         id: `dinner-stop-day-${d + 1}`,
         type: "meal",
         name:
           language === "gu"
-            ? `સાંજનું ભોજન: ${resto.name}`
+            ? `સાંજનું ભોજન: ${dinnerResto.name}`
             : language === "hi"
-              ? `रात्रि का भोजन: ${resto.name}`
-              : `Dinner Stop at ${resto.name}`,
+              ? `रात्रि का भोजन: ${dinnerResto.name}`
+              : `Evening Dining at ${dinnerResto.name}`,
         category: "Evening Dining",
         arrivalTime: formatTime(dinnerStart),
         departureTime: formatTime(dinnerEnd),
         durationMinutes: 60,
-        cost: resto.avgCostPerPerson,
-        location: resto.location,
-        description: `Evening thali & local dinner stop.`,
-        lat: resto.lat,
-        lng: resto.lng,
+        cost: mealCost,
+        location: dinnerResto.location,
+        description: `Traditional dinner & evening refreshment stop.`,
+        lat: dinnerResto.lat,
+        lng: dinnerResto.lng,
       });
 
       currentClock = dinnerEnd + 15;
-      dayCost += resto.avgCostPerPerson;
-      remainingBudget -= resto.avgCostPerPerson;
+      dayMealCost += mealCost;
+      remainingBudget -= mealCost;
       totalRuntimeMinutesAcc += 75;
     }
 
-    // Return to Hotel
+    // Return to Hotel Base completing circular loop
     const returnEval = evaluateRouteLeg(currentPos, startingHotel, cityNodes);
     if (returnEval.isDirect) directRoadConnectionsUsed++;
     else {
@@ -755,7 +987,6 @@ export function generateStrategyItinerary(
     const isReturnBoatTransition = currentPos.transportMode === "boat";
 
     if (isReturnBoatTransition) {
-      // Insert boat transfer stop
       const transitStart = currentClock;
       const transitEnd = transitStart + 25;
       stops.push({
@@ -773,13 +1004,12 @@ export function generateStrategyItinerary(
         lng: 69.1114,
       });
       currentClock = transitEnd + 5;
-      dayCost += 30;
+      dayTransitCost += 30;
       remainingBudget -= 30;
       dayBoatKm += returnDist;
     } else {
       dayRoadKm += returnDist;
-      const returnTravelMins = returnEval.travelTimeMinutes;
-      currentClock += returnTravelMins;
+      currentClock += returnEval.travelTimeMinutes;
     }
 
     const returnStart = currentClock;
@@ -807,6 +1037,9 @@ export function generateStrategyItinerary(
 
     totalRuntimeMinutesAcc += 15;
 
+    // Day total cost accounts for accommodation night + attraction fees + meals + transit
+    const dayTotalCost = startingHotel.priceNumeric + dayAttractionCost + dayMealCost + dayTransitCost;
+
     dayPlans.push({
       dayNumber: d + 1,
       dateLabel: datesList[d % datesList.length],
@@ -815,13 +1048,21 @@ export function generateStrategyItinerary(
       totalKm: Math.round((dayRoadKm + dayBoatKm) * 10) / 10,
       roadKm: Math.round(dayRoadKm * 10) / 10,
       boatKm: Math.round(dayBoatKm * 10) / 10,
-      totalCost: dayCost,
+      totalCost: dayTotalCost,
+      hotelCost: startingHotel.priceNumeric,
+      attractionCost: dayAttractionCost,
+      mealCost: dayMealCost,
+      transitCost: dayTransitCost,
     });
 
     grandTotalRoadDistanceKm += dayRoadKm;
     grandTotalBoatDistanceKm += dayBoatKm;
-    grandTotalCost += dayCost;
+    grandTotalAttractionCost += dayAttractionCost;
+    grandTotalMealCost += dayMealCost;
+    grandTotalTransitCost += dayTransitCost;
   }
+
+  const grandTotalCost = hotelTotalCost + grandTotalAttractionCost + grandTotalMealCost + grandTotalTransitCost;
 
   const hoursFloat = Math.round((totalRuntimeMinutesAcc / 60) * 10) / 10;
   const totalRuntimeHours = `${hoursFloat} hrs`;
@@ -840,6 +1081,10 @@ export function generateStrategyItinerary(
     startingHotel,
     dayPlans,
     totalCost: Math.round(grandTotalCost),
+    hotelTotalCost,
+    attractionTotalCost: grandTotalAttractionCost,
+    mealTotalCost: grandTotalMealCost,
+    transitTotalCost: grandTotalTransitCost,
     totalDistanceKm: Math.round((grandTotalRoadDistanceKm + grandTotalBoatDistanceKm) * 10) / 10,
     roadDistanceKm: Math.round(grandTotalRoadDistanceKm * 10) / 10,
     boatDistanceKm: Math.round(grandTotalBoatDistanceKm * 10) / 10,
@@ -884,12 +1129,12 @@ export function generateComparisonTakeaway(
 
   let statement = "";
 
-  if (attrDiff < 0) {
-    statement = `Rating-first visits ${Math.abs(attrDiff)} fewer attraction${Math.abs(attrDiff) > 1 ? "s" : ""} but costs ₹${costDiff.toLocaleString("en-IN")} more than Budget-first`;
-  } else if (attrDiff > 0) {
-    statement = `Rating-first visits ${attrDiff} additional attraction${attrDiff > 1 ? "s" : ""} for ₹${costDiff.toLocaleString("en-IN")} more than Budget-first`;
+  if (costDiff > 0) {
+    statement = `Budget-first saves ₹${costDiff.toLocaleString("en-IN")} compared to Rating-first`;
+  } else if (costDiff < 0) {
+    statement = `Rating-first achieves ₹${Math.abs(costDiff).toLocaleString("en-IN")} lower expenditure`;
   } else {
-    statement = `Rating-first achieves equal attraction coverage while costing ₹${costDiff.toLocaleString("en-IN")} more than Budget-first`;
+    statement = `Budget-first and Rating-first both operate at ₹${bRes.totalCost.toLocaleString("en-IN")}`;
   }
 
   if (distSaved > 0) {

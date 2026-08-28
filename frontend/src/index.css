@@ -113,4 +113,101 @@
   }
 }
 
+/* ==========================================================================
+   PRINT STYLESHEET — MULTI-PAGE DESKTOP & MOBILE PRINT
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm;
+  }
+
+  /* Hide navigation, buttons, footers, and interactive overlays */
+  nav,
+  footer,
+  header,
+  #hero,
+  #explore,
+  #hotels,
+  #why-this-exists,
+  .no-print,
+  button,
+  .chevron-divider,
+  [role="dialog"],
+  .fixed,
+  .sticky {
+    display: none !important;
+  }
+
+  /* Reset body and html container */
+  html, body {
+    background: #FFFFFF !important;
+    color: #1E2A46 !important;
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Printable container styling */
+  #printable-itinerary,
+  .printable-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+    color: #1E2A46 !important;
+    overflow: visible !important;
+    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevent awkward page breaks inside cards */
+  .itinerary-day-card,
+  .itinerary-stop-card,
+  .budget-summary-card,
+  .itinerary-header-banner {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12pt !important;
+    box-shadow: none !important;
+  }
+
+  /* High-contrast borders and readable typography for print */
+  .itinerary-day-card {
+    border: 1.5pt solid #6B665B !important;
+    background: #FFFFFF !important;
+    padding: 10pt !important;
+  }
+
+  .itinerary-stop-card {
+    border: 1pt solid #D1CFC7 !important;
+    background: #FAFAFA !important;
+    padding: 6pt 8pt !important;
+  }
+
+  .budget-summary-card {
+    border: 1.5pt solid #C99A3B !important;
+    background: #1E2A46 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Allow text wrap and prevent horizontal overflow */
+  * {
+    overflow: visible !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
 

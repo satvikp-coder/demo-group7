@@ -32,27 +32,24 @@ export function selectStartingHotel<H extends SimpleHotel>(
     throw new Error("No hotels available in the destination.");
   }
 
+  const preferred = preferredHotelId ? hotels.find(h => h.id === preferredHotelId) : undefined;
+
   if (strategy === "budget-first") {
+    // Budget-first strictly chooses the lowest priced hotel base
     const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
     return sortedByPrice[0];
   } else if (strategy === "rating-first") {
+    // Rating-first chooses the highest-rated hotel that fits within budget
     const sortedByRating = [...hotels].sort((a, b) => b.ratingNumeric - a.ratingNumeric);
-    const chosen = sortedByRating.find(h => (h.priceNumeric * numDays) <= totalBudgetCap);
-    if (!chosen) {
-      const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
-      return sortedByPrice[0];
-    }
-    return chosen;
+    const affordable = sortedByRating.find(h => (h.priceNumeric * numDays) <= totalBudgetCap * 0.75);
+    return affordable || sortedByRating[0] || hotels[0];
   } else {
-    // Distance-first / default preferred hotel selection
-    const preferred = hotels.find(h => h.id === preferredHotelId);
+    // Distance-first / default: if preferred hotel is provided and affordable, use it; otherwise choose central affordable hotel
     if (preferred && (preferred.priceNumeric * numDays) <= totalBudgetCap) {
       return preferred;
-    } else {
-      const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
-      const chosen = sortedByPrice.find(h => (h.priceNumeric * numDays) <= totalBudgetCap);
-      return chosen || sortedByPrice[0];
     }
+    const affordable = hotels.filter(h => (h.priceNumeric * numDays) <= totalBudgetCap);
+    return affordable[0] || hotels[0];
   }
 }
 
