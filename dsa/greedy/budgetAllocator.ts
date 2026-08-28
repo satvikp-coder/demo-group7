@@ -26,30 +26,42 @@ export function selectStartingHotel<H extends SimpleHotel>(
   totalBudgetCap: number,
   numDays: number,
   strategy: string,
-  preferredHotelId?: string
+  preferredHotelId?: string,
+  isExplicitPinnedHotel: boolean = false
 ): H {
   if (hotels.length === 0) {
     throw new Error("No hotels available in the destination.");
   }
 
-  // If user explicitly chose a preferred hotel, keep all strategies on the same baseline hotel
-  if (preferredHotelId) {
+  // If user explicitly pinned a preferred hotel and it fits within total budget, respect choice
+  if (isExplicitPinnedHotel && preferredHotelId) {
     const preferred = hotels.find((h) => h.id === preferredHotelId);
-    if (preferred) return preferred;
+    if (preferred && preferred.priceNumeric * numDays <= totalBudgetCap * 0.9) {
+      return preferred;
+    }
   }
 
-  if (strategy === "budget-first") {
+  const dailyBudget = totalBudgetCap / Math.max(1, numDays);
+
+  if (strategy === "budget-first" || dailyBudget <= 3000) {
+    // Economy Tier: select most economical hotel to conserve budget for attractions/meals
     const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
     return sortedByPrice[0];
-  } else if (strategy === "rating-first") {
-    const sortedByRating = [...hotels].sort((a, b) => b.ratingNumeric - a.ratingNumeric);
-    const chosen = sortedByRating.find((h) => h.priceNumeric * numDays <= totalBudgetCap);
-    return chosen || sortedByRating[0];
+  } else if (dailyBudget > 7500) {
+    // Luxury Tier: select premier/highest-rated luxury resort or palace
+    const sortedByRating = [...hotels].sort((a, b) => b.ratingNumeric - a.ratingNumeric || b.priceNumeric - a.priceNumeric);
+    const chosenLuxury = sortedByRating.find((h) => h.priceNumeric * numDays <= totalBudgetCap * 0.75);
+    return chosenLuxury || sortedByRating[0];
   } else {
-    // Distance-first: balanced default hotel
+    // Moderate / Balanced Tier (₹3,000 - ₹7,500/day):
+    // Select the best-rated hotel whose price fits comfortably within 50-65% of daily budget
+    const affordableHotels = hotels.filter((h) => h.priceNumeric * numDays <= totalBudgetCap * 0.65);
+    if (affordableHotels.length > 0) {
+      affordableHotels.sort((a, b) => b.ratingNumeric - a.ratingNumeric);
+      return affordableHotels[0];
+    }
     const sortedByPrice = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
-    const chosen = sortedByPrice.find((h) => h.priceNumeric * numDays <= totalBudgetCap);
-    return chosen || hotels[0];
+    return sortedByPrice[0];
   }
 }
 

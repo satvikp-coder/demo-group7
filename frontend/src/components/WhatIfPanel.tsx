@@ -43,8 +43,8 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
   onSaveVersion,
   isSavedNotice,
 }) => {
-  const minBudget = Math.max(500, originalBudget - 2000);
-  const maxBudget = originalBudget + 5000;
+  const minBudget = 3000;
+  const maxBudget = 30000;
 
   // Running Deltas
   const attractionDiff = liveAttractionCount - baselineAttractionCount;

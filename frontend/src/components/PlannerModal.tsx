@@ -58,6 +58,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   const [tripDays, setTripDays] = useState<number>(2);
   const [budget, setBudget] = useState<number>(8500);
   const [startingHotelId, setStartingHotelId] = useState<string>("");
+  const [isHotelManuallySelected, setIsHotelManuallySelected] = useState<boolean>(false);
   const [startTime, setStartTime] = useState<string>("08:00 AM");
   const [wheelchairOnly, setWheelchairOnly] = useState<boolean>(false);
 
@@ -68,30 +69,52 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   // Active City
   const activeCity = getCityById(selectedCityId) || GUJARAT_DESTINATIONS[0];
 
+  const getBestHotelForBudget = (cityId: string, currentBudget: number, days: number): string => {
+    const city = getCityById(cityId);
+    if (!city || !city.hotels || city.hotels.length === 0) return "";
+    const dailyBudget = currentBudget / Math.max(1, days);
+    if (dailyBudget <= 3000) {
+      const sorted = [...city.hotels].sort((a, b) => a.priceNumeric - b.priceNumeric);
+      return sorted[0].id;
+    } else if (dailyBudget > 7500) {
+      const sorted = [...city.hotels].sort((a, b) => b.ratingNumeric - a.ratingNumeric || b.priceNumeric - a.priceNumeric);
+      return sorted[0].id;
+    } else {
+      const mid = city.hotels.find((h) => h.tier === "Mid-Range") || city.hotels[0];
+      return mid.id;
+    }
+  };
+
   // Sync selectedCityId and default starting hotel when modal opens
   useEffect(() => {
     if (isOpen) {
       if (preselectedDestination) {
         setSelectedCityId(preselectedDestination.id);
         setIsChangingCity(false);
+        setIsHotelManuallySelected(false);
         setStep(2); // Jump directly to logistics for the chosen destination
         const preferredForCity = preferredHotels?.[preselectedDestination.id];
         if (preferredForCity) {
           setStartingHotelId(preferredForCity);
+          setIsHotelManuallySelected(true);
         } else if (preselectedDestination.hotels && preselectedDestination.hotels.length > 0) {
-          setStartingHotelId(preselectedDestination.hotels[0].id);
+          const autoHotel = getBestHotelForBudget(preselectedDestination.id, budget, tripDays);
+          setStartingHotelId(autoHotel || preselectedDestination.hotels[0].id);
         }
       } else {
         setStep(1);
         setIsChangingCity(false);
+        setIsHotelManuallySelected(false);
         const initialCityId = selectedCityId || "somnath";
         setSelectedCityId(initialCityId);
         const cityObj = getCityById(initialCityId) || GUJARAT_DESTINATIONS[0];
         const preferredForCity = preferredHotels?.[initialCityId];
         if (preferredForCity) {
           setStartingHotelId(preferredForCity);
+          setIsHotelManuallySelected(true);
         } else if (cityObj.hotels && cityObj.hotels.length > 0) {
-          setStartingHotelId(cityObj.hotels[0].id);
+          const autoHotel = getBestHotelForBudget(initialCityId, budget, tripDays);
+          setStartingHotelId(autoHotel || cityObj.hotels[0].id);
         }
       }
     }
@@ -101,17 +124,36 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   const handleCityChange = (cityId: string) => {
     setSelectedCityId(cityId);
     setIsChangingCity(false);
+    setIsHotelManuallySelected(false);
     const cityObj = getCityById(cityId);
     const preferredForCity = preferredHotels?.[cityId];
     if (preferredForCity) {
       setStartingHotelId(preferredForCity);
+      setIsHotelManuallySelected(true);
     } else if (cityObj && cityObj.hotels.length > 0) {
-      setStartingHotelId(cityObj.hotels[0].id);
+      const autoHotel = getBestHotelForBudget(cityId, budget, tripDays);
+      setStartingHotelId(autoHotel || cityObj.hotels[0].id);
     }
   };
 
+  const handleBudgetChange = (newBudget: number) => {
+    setBudget(newBudget);
+    if (!isHotelManuallySelected) {
+      const autoHotel = getBestHotelForBudget(selectedCityId, newBudget, tripDays);
+      if (autoHotel) setStartingHotelId(autoHotel);
+    }
+  };
+
+  const handleTripDaysChange = (newDays: number) => {
+    setTripDays(newDays);
+    if (!isHotelManuallySelected) {
+      const autoHotel = getBestHotelForBudget(selectedCityId, budget, newDays);
+      if (autoHotel) setStartingHotelId(autoHotel);
+    }
+  };
 
   const handleStartingHotelChange = (hotelId: string) => {
+    setIsHotelManuallySelected(true);
     setStartingHotelId(hotelId);
     if (onSelectPreferredHotel) {
       onSelectPreferredHotel(selectedCityId, hotelId);
@@ -513,7 +555,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <div className="flex items-center justify-between border border-stone/30 bg-salt p-2">
                     <button
                       type="button"
-                      onClick={() => setTripDays(Math.max(1, tripDays - 1))}
+                      onClick={() => handleTripDaysChange(Math.max(1, tripDays - 1))}
                       aria-label="Decrease trip duration"
                       className="w-8 h-8 bg-ink text-gold flex items-center justify-center font-bold hover:bg-stone/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
                     >
@@ -536,7 +578,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     </div>
                     <button
                       type="button"
-                      onClick={() => setTripDays(Math.min(7, tripDays + 1))}
+                      onClick={() => handleTripDaysChange(Math.min(7, tripDays + 1))}
                       aria-label="Increase trip duration"
                       className="w-8 h-8 bg-ink text-gold flex items-center justify-center font-bold hover:bg-stone/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
                     >
@@ -563,7 +605,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     max="30000"
                     step="500"
                     value={budget}
-                    onChange={(e) => setBudget(Number(e.target.value))}
+                    onChange={(e) => handleBudgetChange(Number(e.target.value))}
                     className="w-full accent-gold cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
                   />
                   <div className="flex justify-between font-mono text-[10px] text-stone">

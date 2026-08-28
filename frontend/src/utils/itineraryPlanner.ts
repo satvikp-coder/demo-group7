@@ -377,41 +377,56 @@ function evaluateRouteLeg(
 /**
  * Selects an optimal restaurant based on the chosen strategy
  */
+/**
+ * Selects an optimal restaurant based on the chosen strategy and budget tier
+ */
 function selectRestaurant(
   restaurants: Restaurant[],
   currentPos: { lat?: number; lng?: number },
   strategy: OptimizationStrategy,
   mealType: "lunch" | "dinner",
-  dayIndex: number
+  dayIndex: number,
+  dailyBudget: number
 ): Restaurant {
   if (restaurants.length === 0) {
+    const fallbackCost = dailyBudget <= 3000 ? 150 : dailyBudget > 7500 ? 550 : 320;
     return {
       id: "default-dining",
       name: "Heritage Dining Hall",
       lat: currentPos.lat || 23.0225,
       lng: currentPos.lng || 72.5714,
       rating: 4.6,
-      avgCostPerPerson: 350,
+      avgCostPerPerson: fallbackCost,
       location: "City Center",
       cuisine: "Gujarati Thali",
     };
   }
 
-  if (strategy === "budget-first") {
+  // Economy Tier (<= ₹3,000/day) or Budget-first strategy: pick lowest cost authentic eateries
+  if (dailyBudget <= 3000 || strategy === "budget-first") {
     const sorted = [...restaurants].sort((a, b) => a.avgCostPerPerson - b.avgCostPerPerson);
     return sorted[dayIndex % sorted.length];
-  } else if (strategy === "rating-first") {
+  }
+
+  // Luxury Tier (> ₹7,500/day): pick highest-rated premier heritage/fine dining
+  if (dailyBudget > 7500) {
+    const sorted = [...restaurants].sort((a, b) => b.rating - a.rating || b.avgCostPerPerson - a.avgCostPerPerson);
+    return sorted[dayIndex % sorted.length];
+  }
+
+  // Moderate Tier (₹3,000 - ₹7,500/day)
+  if (strategy === "rating-first") {
     const sorted = [...restaurants].sort((a, b) => b.rating - a.rating);
     return sorted[dayIndex % sorted.length];
-  } else {
-    // Distance-first: select closest restaurant to current location
-    const sorted = [...restaurants].sort((a, b) => {
-      const distA = getDistanceKm(currentPos.lat, currentPos.lng, a.lat, a.lng);
-      const distB = getDistanceKm(currentPos.lat, currentPos.lng, b.lat, b.lng);
-      return distA - distB;
-    });
-    return sorted[0];
   }
+
+  // Distance-first / balanced default
+  const sorted = [...restaurants].sort((a, b) => {
+    const distA = getDistanceKm(currentPos.lat, currentPos.lng, a.lat, a.lng);
+    const distB = getDistanceKm(currentPos.lat, currentPos.lng, b.lat, b.lng);
+    return distA - distB;
+  });
+  return sorted[0];
 }
 
 /**
@@ -428,6 +443,7 @@ export function generateStrategyItinerary(
   const numDays = Math.max(1, config.tripDays || 2);
   const startMinsBase = parseTimeToMinutes(config.startTime);
   const totalBudgetCap = config.budget || 8500;
+  const dailyBudget = totalBudgetCap / numDays;
 
   const cityNodes = [
     ...activeCity.hotels,
@@ -451,7 +467,7 @@ export function generateStrategyItinerary(
     strategyTagline = "Highest-rated cultural landmarks";
   }
 
-  // 1. Hotel Selection (respecting user's preferred hotel if provided)
+  // 1. Hotel Selection (respecting budget tier dynamically)
   const startingHotel = selectStartingHotel(
     activeCity.hotels,
     totalBudgetCap,
@@ -522,7 +538,14 @@ export function generateStrategyItinerary(
     currentClock += 15;
     totalRuntimeMinutesAcc += 15;
 
-    // 2. Intra-city Local Transit Stop
+    // 2. Intra-city Local Transit Stop (Scales with budget tier)
+    const dailyTransitCost = dailyBudget <= 3000 ? 180 : dailyBudget > 7500 ? 650 : 350;
+    const transitDescription = dailyBudget <= 3000
+      ? `Eco-friendly shared auto & e-rickshaw transfers across ${activeCity.name}.`
+      : dailyBudget > 7500
+        ? `Dedicated private chauffeur AC heritage cab transfers across ${activeCity.name}.`
+        : `Daily intra-city cab, auto-rickshaw & local route transfers across ${activeCity.name}.`;
+
     stops.push({
       id: `local-transit-day-${d + 1}`,
       type: "transit",
@@ -531,21 +554,21 @@ export function generateStrategyItinerary(
           ? "સ્થાનિક આંતરિક-શહેર પરિવહન"
           : language === "hi"
             ? "स्थानीय इंट्रा-सिटी परिवहन"
-            : "Intra-City Local Transit & Fuel",
+            : "Intra-City Local Transit & Transfers",
       category: "Daily Local Transport",
       arrivalTime: formatTime(currentClock),
       departureTime: formatTime(currentClock + 15),
       durationMinutes: 15,
-      cost: 350,
+      cost: dailyTransitCost,
       location: activeCity.name,
-      description: `Daily intra-city cab, auto-rickshaw & local route transfers across ${activeCity.name}.`,
+      description: transitDescription,
       lat: startingHotel.lat,
       lng: startingHotel.lng,
     });
 
     currentClock += 15;
     totalRuntimeMinutesAcc += 15;
-    remainingBudget -= 350;
+    remainingBudget -= dailyTransitCost;
 
     let lunchInserted = false;
     let dayAttractionCount = 0;
@@ -560,7 +583,7 @@ export function generateStrategyItinerary(
       while (currentClock < 1140 && dayAttractionCount < maxAttractionsPerDay) {
         // Lunch insertion window (~12:00 PM)
         if (!lunchInserted && currentClock >= 720 && restaurantsPool.length > 0) {
-          const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d);
+          const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d, dailyBudget);
 
           const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
           if (routeEval.isDirect) directRoadConnectionsUsed++;
@@ -837,7 +860,7 @@ export function generateStrategyItinerary(
 
     // Mid-day Lunch if not yet inserted
     if (!lunchInserted && restaurantsPool.length > 0) {
-      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d);
+      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "lunch", d, dailyBudget);
       const lunchStart = currentClock;
       const lunchEnd = lunchStart + 60;
       stops.push({
@@ -862,7 +885,7 @@ export function generateStrategyItinerary(
 
     // Dinner insertion if late afternoon / evening
     if (currentClock >= 1050 && restaurantsPool.length > 0) {
-      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "dinner", d + 1);
+      const resto = selectRestaurant(restaurantsPool, currentPos, strategy, "dinner", d + 1, dailyBudget);
       const routeEval = evaluateRouteLeg(currentPos, resto, cityNodes);
       if (routeEval.isDirect) directRoadConnectionsUsed++;
       else {
