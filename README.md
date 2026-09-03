@@ -1,7 +1,18 @@
 # Heritage Tourism Planner for Gujarat
 > **Course:** CSC210 Introduction to Data Structures & Algorithms — Ahmedabad University  
 > **Group:** Group 07  
-> **Status:** Frontend Built & Verified | Architecture & Specification Complete
+> **Status:** Frontend Built & Verified | Architecture & Specification Complete  
+> **Demo Deployment (Vercel):** [https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)
+
+---
+
+## Live Demo Deployment
+
+A demo test deployment of the frontend and UI is live on Vercel:
+
+🌐 **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**
+
+You can test the interactive itinerary planner, Dijkstra graph visualizer, budget calculator, and responsive UI components live in your browser.
 
 ---
 
@@ -115,7 +126,7 @@ flowchart TD
 
 ```
 group-07-heritage-tourism-planner/
-├── Frontend/                        # Built & Verified React 19 Frontend
+├── frontend/                        # Built & Verified React 19 Frontend
 │   ├── src/
 │   │   ├── components/             # React UI components (Itinerary, Dijkstra, Admin, etc.)
 │   │   ├── data/                   # Heritage datasets & color tokens (Stepwell theme)
@@ -151,6 +162,9 @@ group-07-heritage-tourism-planner/
 
 ## Quick Start & Local Setup
 
+> [!TIP]
+> You can try the live frontend demo immediately without local installation at **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**.
+
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
 - **npm**: v9.0.0 or higher
@@ -163,9 +177,9 @@ group-07-heritage-tourism-planner/
    cd group-07-heritage-tourism-planner
    ```
 
-2. **Navigate to the Frontend directory:**
+2. **Navigate to the frontend directory:**
    ```bash
-   cd Frontend
+   cd frontend
    ```
 
 3. **Install dependencies:**
