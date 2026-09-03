@@ -1,7 +1,6 @@
 # Heritage Tourism Planner for Gujarat
 > **Course:** CSC210 Introduction to Data Structures & Algorithms — Ahmedabad University  
 > **Group:** Group 07  
-> **Repository:** [https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner)  
 > **Status:** Frontend Built & Verified | Architecture & Specification Complete  
 > **Demo Deployment (Vercel):** [https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)
 
