@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { navigate, scrollToElementWithRetry } from "../utils/router";
 
 interface FooterProps {
   onNavigateSection?: (sectionId: string) => void;
@@ -11,6 +12,27 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenPlanner,
 }) => {
   const { t } = useLanguage();
+
+  const handleLinkToExplore = (sectionId: string = "explore") => {
+    if (onNavigateSection) {
+      onNavigateSection(sectionId);
+    } else {
+      navigate("/explore");
+      scrollToElementWithRetry(sectionId);
+    }
+  };
+
+  const handleLinkToHotels = () => {
+    if (onNavigateSection) {
+      onNavigateSection("hotels");
+    } else {
+      navigate("/hotels");
+    }
+  };
+
+  const handleLinkToDestination = (destId: string) => {
+    navigate(`/destination/${destId}`);
+  };
 
   return (
     <footer className="bg-ink text-salt border-t border-stone/30 pt-16 pb-12 relative overflow-hidden">
@@ -54,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2 text-xs text-salt/80 font-body">
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('explore')}
+                  onClick={() => handleLinkToExplore("explore")}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Solanki Stepwells
@@ -62,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('explore')}
+                  onClick={() => handleLinkToDestination("rann-of-kutch")}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   White Rann & Kutch
@@ -70,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('explore')}
+                  onClick={() => handleLinkToDestination("somnath")}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Sacred Saurashtra
@@ -78,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('explore')}
+                  onClick={() => handleLinkToDestination("champaner")}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   UNESCO Citadel Circuit
@@ -103,7 +125,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('hotels')}
+                  onClick={handleLinkToHotels}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Heritage Haveli Lodging
@@ -111,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('explore')}
+                  onClick={() => handleLinkToExplore("explore")}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Ticket Fee Ledgers
@@ -119,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateSection?.('explore')}
+                  onClick={() => handleLinkToExplore("explore")}
                   className="hover:text-gold transition-colors text-left cursor-pointer"
                 >
                   Craft Village Guild Directory

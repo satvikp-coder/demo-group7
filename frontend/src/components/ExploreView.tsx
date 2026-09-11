@@ -165,8 +165,8 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
 
       // 4. Physical demand match
       if (selectedDemands.length > 0) {
-        const hasMatchingDemand = dest.attractions.some(a => selectedDemands.includes(a.physicalDemand));
-        if (!hasMatchingDemand) return false;
+        const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
+        if (!selectedDemands.includes(primaryDemand)) return false;
       }
 
       return true;

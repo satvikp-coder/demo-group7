@@ -290,3 +290,11 @@
 
 
 
+
+/* Card text‑wrap utilities – prevent horizontal overflow on small screens */
+.itinerary-day-card,
+.itinerary-stop-card,
+.budget-summary-card {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}

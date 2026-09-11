@@ -60,6 +60,7 @@ export interface ItineraryConfig {
   startTime?: string;
   selectedSites?: string[];
   strategy?: OptimizationStrategy;
+  wheelchairAccessibleOnly?: boolean;
 }
 
 interface ItineraryViewProps {
@@ -133,14 +134,24 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 }) => {
   const { language, t, getName } = useLanguage();
 
-  const activeCity = getCityById(config.cityId) || GUJARAT_DESTINATIONS[0];
+  const activeCity = useMemo(() => {
+    if (config.cityId) {
+      const direct = getCityById(config.cityId);
+      if (direct) return direct;
+    }
+    if (config.selectedSites && config.selectedSites.length > 0) {
+      for (const siteId of config.selectedSites) {
+        const match = getCityById(siteId);
+        if (match) return match;
+      }
+    }
+    return GUJARAT_DESTINATIONS[0];
+  }, [config.cityId, config.selectedSites]);
+
   const cityName = getName(activeCity);
 
-  const preferredHotelId = preferredHotels?.[config.cityId];
+  const preferredHotelId = preferredHotels?.[activeCity.id] || preferredHotels?.[config.cityId];
 
-  const [tripTitle, setTripTitle] = useState<string>(
-    `${cityName} Circular Heritage Circuit`,
-  );
   const [showAlgorithm, setShowAlgorithm] = useState<boolean>(false);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState<boolean>(false);
@@ -195,6 +206,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           config.startingHotelId || activeCity.hotels[0]?.id || "",
         startTime: config.startTime || "08:00 AM",
         strategy: activeStrategy,
+        wheelchairAccessibleOnly: config.wheelchairAccessibleOnly,
       },
       activeStrategy,
       language,
@@ -212,6 +224,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           activeConfig.startingHotelId || activeCity.hotels[0]?.id || "",
         startTime: activeConfig.startTime || "08:00 AM",
         strategy: activeStrategy,
+        wheelchairAccessibleOnly: activeConfig.wheelchairAccessibleOnly,
       },
       activeStrategy,
       language,
@@ -236,6 +249,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           activeConfig.startingHotelId || activeCity.hotels[0]?.id || "",
         startTime: activeConfig.startTime || "08:00 AM",
         strategy: activeStrategy,
+        wheelchairAccessibleOnly: activeConfig.wheelchairAccessibleOnly,
       },
       activeStrategy,
       language,
@@ -252,6 +266,11 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   ]);
 
   const generatedResult = isWhatIfOpen ? liveResult : activeResult;
+
+  // Title always derives directly from the active itinerary's destination state
+  const currentCity = generatedResult?.activeCity || activeCity;
+  const currentCityName = getName(currentCity);
+  const tripTitle = `${currentCityName} Circular Heritage Circuit`;
 
   // Cache generated itinerary to browser storage (localStorage & ServiceWorker Cache)
   useEffect(() => {
@@ -314,17 +333,37 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       const html2canvas = html2canvasModule.default || (html2canvasModule as any);
 
       const element = pdfContainerRef.current;
-      const canvas = await html2canvas(element, {
-        scale: 2,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-        backgroundColor: "#FFFFFF",
-        scrollX: 0,
-        scrollY: 0,
-        windowWidth: element.scrollWidth || document.documentElement.offsetWidth,
-        windowHeight: element.scrollHeight,
-      });
+      let canvas: HTMLCanvasElement;
+      try {
+        canvas = await html2canvas(element, {
+          scale: 2,
+          useCORS: true,
+          allowTaint: true,
+          logging: false,
+          backgroundColor: "#FFFFFF",
+          scrollX: 0,
+          scrollY: 0,
+          windowWidth: element.scrollWidth || document.documentElement.offsetWidth,
+          windowHeight: element.scrollHeight,
+        });
+      } catch (e: any) {
+        // Fallback to dom-to-image-more for okLab colour support
+        const domToImageModule = await import("dom-to-image-more");
+        const domToImage = domToImageModule.default || domToImageModule;
+        const dataUrl = await domToImage.toJpeg(element, { quality: 0.95 });
+        const img = new Image();
+        await new Promise<void>((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = reject;
+          img.src = dataUrl;
+        });
+        canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) throw new Error("Canvas context unavailable");
+        ctx.drawImage(img, 0, 0);
+      }
 
       const imgData = canvas.toDataURL("image/jpeg", 0.95);
       const pdf = new jsPDF("p", "mm", "a4");
@@ -546,7 +585,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             <div className="relative z-10 space-y-4">
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold">
                 <Compass className="w-4 h-4 text-gold" />
-                <span>Intra-City Circular Route Plan • {cityName}</span>
+                <span>Intra-City Circular Route Plan • {currentCityName}</span>
               </div>
 
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
@@ -556,7 +595,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-stone pt-2 border-t border-stone/30">
                 <span className="flex items-center gap-1.5 text-salt font-bold">
                   <MapPin className="w-4 h-4 text-gold" />
-                  City: {cityName}
+                  City: {currentCityName}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <HotelIcon className="w-4 h-4 text-gold" />
@@ -581,38 +620,91 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             </div>
           </div>
 
-          {/* Remote & Wildlife Destination Facility Callout */}
-          {["gir", "rann-of-kutch", "saputara"].includes(activeCity.id) &&
-            (activeCity.nearestHospital || activeCity.nearestPoliceStation) && (
-              <div className="bg-salt border border-stone/30 p-4 font-mono text-xs text-stone space-y-2 shadow-xs">
-                <div className="flex items-center gap-2 text-charcoal font-bold text-[11px] uppercase tracking-wider">
-                  <Shield className="w-4 h-4 text-gold shrink-0" />
-                  <span>
-                    Travel Preparation Note — {cityName} Remote Sector
-                  </span>
+          {/* Hotel Constraint Adjustment Notice (Non-Silent Replacement Explanation) */}
+          {generatedResult.hotelReplacementNotice && (
+            <div className="bg-amber-950/85 text-salt border-2 border-amber-500 p-4 font-mono text-xs flex items-start gap-3 shadow-lg animate-fadeIn no-print">
+              <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+              <div>
+                <div className="text-amber-300 font-bold uppercase tracking-wider mb-1">
+                  Selected Hotel Adjusted Due to Constraint
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-stone">
-                  {activeCity.nearestHospital && (
-                    <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
-                      <Hospital className="w-3.5 h-3.5 text-emerald-800 shrink-0" />
-                      <span>
-                        <strong>Nearest hospital:</strong>{" "}
-                        {activeCity.nearestHospital} (from your starting hotel)
-                      </span>
-                    </div>
-                  )}
-                  {activeCity.nearestPoliceStation && (
-                    <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
-                      <Shield className="w-3.5 h-3.5 text-stone shrink-0" />
-                      <span>
-                        <strong>Nearest police station:</strong>{" "}
-                        {activeCity.nearestPoliceStation}
-                      </span>
-                    </div>
-                  )}
-                </div>
+                <p className="text-amber-100/90 leading-relaxed">
+                  {generatedResult.hotelReplacementNotice}
+                </p>
               </div>
-            )}
+            </div>
+          )}
+
+          {/* Empty / Error State when no valid route combination exists */}
+          {generatedResult.hasNoCompatibleAttractions ? (
+            <div className="bg-ink text-salt p-8 sm:p-12 border-2 border-madder text-center space-y-5 my-6 shadow-2xl animate-fadeIn">
+              <div className="inline-flex p-4 bg-madder/20 border border-madder rounded-full">
+                <AlertTriangle className="w-10 h-10 text-madder" />
+              </div>
+              <div className="space-y-2 max-w-lg mx-auto">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-salt">
+                  {config.wheelchairAccessibleOnly
+                    ? "No Wheelchair-Accessible Itinerary Found"
+                    : "No Compatible Heritage Route"}
+                </h2>
+                <p className="font-sans text-sm text-stone leading-relaxed">
+                  {generatedResult.emptyStateReason ||
+                    "No attractions could be scheduled with the current constraint combination."}
+                </p>
+              </div>
+              <div className="pt-4 flex flex-wrap justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={onBackToPlanner}
+                  className="bg-gold hover:bg-gold/90 text-ink font-mono font-bold text-xs px-6 py-3 uppercase tracking-wider transition-colors cursor-pointer shadow-md"
+                >
+                  Adjust Constraints in Planner
+                </button>
+                {onPlanOwnTrip && (
+                  <button
+                    type="button"
+                    onClick={onPlanOwnTrip}
+                    className="bg-stone/20 hover:bg-stone/30 text-salt border border-stone/40 font-mono text-xs px-5 py-3 uppercase tracking-wider transition-colors cursor-pointer"
+                  >
+                    Explore All Destinations
+                  </button>
+                )}
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Remote & Wildlife Destination Facility Callout */}
+              {["gir", "rann-of-kutch", "saputara"].includes(activeCity.id) &&
+                (activeCity.nearestHospital || activeCity.nearestPoliceStation) && (
+                  <div className="bg-salt border border-stone/30 p-4 font-mono text-xs text-stone space-y-2 shadow-xs">
+                    <div className="flex items-center gap-2 text-charcoal font-bold text-[11px] uppercase tracking-wider">
+                      <Shield className="w-4 h-4 text-gold shrink-0" />
+                      <span>
+                        Travel Preparation Note — {currentCityName} Remote Sector
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-stone">
+                      {activeCity.nearestHospital && (
+                        <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
+                          <Hospital className="w-3.5 h-3.5 text-emerald-800 shrink-0" />
+                          <span>
+                            <strong>Nearest hospital:</strong>{" "}
+                            {activeCity.nearestHospital} (from your starting hotel)
+                          </span>
+                        </div>
+                      )}
+                      {activeCity.nearestPoliceStation && (
+                        <div className="flex items-center gap-2 bg-white p-2 border border-stone/20">
+                          <Shield className="w-3.5 h-3.5 text-stone shrink-0" />
+                          <span>
+                            <strong>Nearest police station:</strong>{" "}
+                            {activeCity.nearestPoliceStation}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
 
           {/* Slim Collapsible Algorithm Execution Stats Strip */}
           {generatedResult.stats && (
@@ -877,55 +969,57 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             </AnimatePresence>
           </div>
 
-          {/* Overall Budget Summary Card */}
-          <div className="budget-summary-card bg-ink text-salt p-6 border-2 border-gold space-y-4">
-            <h4 className="font-display text-xl text-gold font-bold border-b border-stone/30 pb-2">
-              {cityName} Circuit Budget Breakdown
-            </h4>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
-              <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">
-                  Hotels ({numDays} Nights)
-                </span>
-                <span className="font-bold text-salt text-sm">
-                  ₹{totalHotelCost.toLocaleString("en-IN")}
-                </span>
-              </div>
-              <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">
-                  Attraction Entry Fees
-                </span>
-                <span className="font-bold text-salt text-sm">
-                  ₹{totalAttractionCost.toLocaleString("en-IN")}
-                </span>
-              </div>
-              <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">
-                  Meals & Dining
-                </span>
-                <span className="font-bold text-gold text-sm">
-                  ₹{totalMealCost.toLocaleString("en-IN")}
-                </span>
-              </div>
-              <div className="p-3 bg-salt/10 border border-stone/30">
-                <span className="text-stone text-[10px] uppercase block">
-                  Transit & Ferry
-                </span>
-                <span className="font-bold text-salt text-sm">
-                  {totalTransitCost > 0
-                    ? `₹${totalTransitCost.toLocaleString("en-IN")}`
-                    : "Included (₹0)"}
-                </span>
-              </div>
-            </div>
+              {/* Overall Budget Summary Card */}
+              <div className="budget-summary-card bg-ink text-salt p-6 border-2 border-gold space-y-4">
+                <h4 className="font-display text-xl text-gold font-bold border-b border-stone/30 pb-2">
+                  {currentCityName} Circuit Budget Breakdown
+                </h4>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
+                  <div className="p-3 bg-salt/10 border border-stone/30">
+                    <span className="text-stone text-[10px] uppercase block">
+                      Hotels ({numDays} Nights)
+                    </span>
+                    <span className="font-bold text-salt text-sm">
+                      ₹{totalHotelCost.toLocaleString("en-IN")}
+                    </span>
+                  </div>
+                  <div className="p-3 bg-salt/10 border border-stone/30">
+                    <span className="text-stone text-[10px] uppercase block">
+                      Attraction Entry Fees
+                    </span>
+                    <span className="font-bold text-salt text-sm">
+                      ₹{totalAttractionCost.toLocaleString("en-IN")}
+                    </span>
+                  </div>
+                  <div className="p-3 bg-salt/10 border border-stone/30">
+                    <span className="text-stone text-[10px] uppercase block">
+                      Meals & Dining
+                    </span>
+                    <span className="font-bold text-gold text-sm">
+                      ₹{totalMealCost.toLocaleString("en-IN")}
+                    </span>
+                  </div>
+                  <div className="p-3 bg-salt/10 border border-stone/30">
+                    <span className="text-stone text-[10px] uppercase block">
+                      Transit & Ferry
+                    </span>
+                    <span className="font-bold text-salt text-sm">
+                      {totalTransitCost > 0
+                        ? `₹${totalTransitCost.toLocaleString("en-IN")}`
+                        : "Included (₹0)"}
+                    </span>
+                  </div>
+                </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-stone/30 font-mono text-sm">
-              <span className="text-stone">Estimated Total Outlay:</span>
-              <span className="font-bold text-gold text-lg">
-                ₹{estimatedTotalCost.toLocaleString("en-IN")}
-              </span>
-            </div>
-          </div>
+                <div className="flex items-center justify-between pt-2 border-t border-stone/30 font-mono text-sm">
+                  <span className="text-stone">Estimated Total Outlay:</span>
+                  <span className="font-bold text-gold text-lg">
+                    ₹{estimatedTotalCost.toLocaleString("en-IN")}
+                  </span>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
 

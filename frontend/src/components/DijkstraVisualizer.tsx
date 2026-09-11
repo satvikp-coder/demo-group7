@@ -538,7 +538,7 @@ export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
       )}
 
       {/* SVG GRAPH CANVAS */}
-      <div className="bg-salt/90 border-2 border-stone/30 relative h-[320px] sm:h-[350px] w-full overflow-hidden p-2 shadow-inner">
+      <div className="bg-salt/90 border-2 border-stone/30 relative h-[320px] sm:h-[350px] w-full overflow-auto p-2 shadow-inner">
         <div className="absolute inset-0 bg-stepwell-pattern opacity-10 pointer-events-none" />
 
         <svg

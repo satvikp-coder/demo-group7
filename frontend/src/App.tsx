@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
@@ -18,6 +18,12 @@ import { HomeTransitionOverlay } from "./components/HomeTransitionOverlay";
 import { OfflineBanner } from "./components/OfflineBanner";
 import { PwaInstallPrompt } from "./components/PwaInstallPrompt";
 import { getLatestOfflineTrip } from "./utils/offlineStorage";
+import {
+  navigate,
+  getCurrentRoute,
+  subscribeToRoute,
+  RouteState,
+} from "./utils/router";
 
 const LazyResearchView = React.lazy(() =>
   import.meta.env.DEV
@@ -25,9 +31,47 @@ const LazyResearchView = React.lazy(() =>
     : Promise.resolve({ default: () => null as any })
 );
 import { getSharedFromUrl, clearSharedUrl } from "./utils/shareUrl";
-import { Destination, GUJARAT_DESTINATIONS } from "./data/destinations";
+import { Destination, GUJARAT_DESTINATIONS, getCityById } from "./data/destinations";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+
+// ─── Session-storage helpers for itinerary persistence across refresh ───────
+const ITINERARY_SESSION_KEY = "heritage_active_itinerary_v1";
+const AUTH_LOCAL_KEY = "heritage_current_user_v1";
+
+function saveItineraryToSession(cfg: ItineraryConfig | null) {
+  if (cfg) {
+    sessionStorage.setItem(ITINERARY_SESSION_KEY, JSON.stringify(cfg));
+  } else {
+    sessionStorage.removeItem(ITINERARY_SESSION_KEY);
+  }
+}
+
+function restoreItineraryFromSession(): ItineraryConfig | null {
+  try {
+    const raw = sessionStorage.getItem(ITINERARY_SESSION_KEY);
+    return raw ? (JSON.parse(raw) as ItineraryConfig) : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveUserToLocal(user: { name: string; email: string; role: "tourist" | "operator" } | null) {
+  if (user) {
+    localStorage.setItem(AUTH_LOCAL_KEY, JSON.stringify(user));
+  } else {
+    localStorage.removeItem(AUTH_LOCAL_KEY);
+  }
+}
+
+function restoreUserFromLocal(): { name: string; email: string; role: "tourist" | "operator" } | null {
+  try {
+    const raw = localStorage.getItem(AUTH_LOCAL_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
 
 export default function App() {
   const [selectedDestination, setSelectedDestination] =
@@ -47,25 +91,139 @@ export default function App() {
   const [showAdminDashboard, setShowAdminDashboard] = useState<boolean>(false);
 
   // Dev-only Research Simulation Mode
-  const [showResearchMode, setShowResearchMode] = useState<boolean>(() => {
-    if (typeof window !== "undefined" && import.meta.env.DEV) {
-      return window.location.pathname === "/research";
-    }
-    return false;
-  });
+  const [showResearchMode, setShowResearchMode] = useState<boolean>(false);
 
-  // Parse URL for shared read-only itinerary on mount
+  // ─── Auth State (restored from localStorage) ───────────────────────────────
+  const [currentUser, setCurrentUser] = useState<{
+    name: string;
+    email: string;
+    role: "tourist" | "operator";
+  } | null>(() => restoreUserFromLocal());
+
+  // ─── Sync state from a parsed route ─────────────────────────────────────────
+  const syncStateFromRoute = useCallback(
+    (route: RouteState) => {
+      // Helper: reset all overlay views
+      const clearOverlays = () => {
+        setShowHotels(false);
+        setShowBudgetPlanner(false);
+        setShowProfile(false);
+        setShowAdminDashboard(false);
+        setShowResearchMode(false);
+        setAuthMode(null);
+      };
+
+      switch (route.type) {
+        case "home":
+        case "explore":
+          clearOverlays();
+          setSelectedDestination(null);
+          setActiveItinerary(null);
+          saveItineraryToSession(null);
+          break;
+
+        case "destination": {
+          const dest = GUJARAT_DESTINATIONS.find(
+            (d) => d.id.toLowerCase() === (route.destinationId ?? "").toLowerCase()
+          );
+          if (dest) {
+            clearOverlays();
+            setSelectedDestination(dest);
+            setActiveItinerary(null);
+            saveItineraryToSession(null);
+          } else {
+            // Unknown destination id → go home
+            navigate("/", { replace: true });
+          }
+          break;
+        }
+
+        case "hotels":
+          clearOverlays();
+          setSelectedDestination(null);
+          setShowHotels(true);
+          break;
+
+        case "budget":
+          clearOverlays();
+          setSelectedDestination(null);
+          setShowBudgetPlanner(true);
+          break;
+
+        case "itinerary": {
+          // Restore from sessionStorage if no in-memory itinerary yet
+          const stored = restoreItineraryFromSession();
+          if (stored) {
+            clearOverlays();
+            setSelectedDestination(null);
+            setActiveItinerary(stored);
+          } else {
+            // No itinerary to show → redirect home
+            navigate("/", { replace: true });
+          }
+          break;
+        }
+
+        case "profile":
+          clearOverlays();
+          setSelectedDestination(null);
+          setShowProfile(true);
+          break;
+
+        case "admin":
+          clearOverlays();
+          setSelectedDestination(null);
+          setShowAdminDashboard(true);
+          break;
+
+        case "auth":
+          clearOverlays();
+          setSelectedDestination(null);
+          setActiveItinerary(null);
+          saveItineraryToSession(null);
+          setAuthMode(route.authMode ?? "login");
+          break;
+
+        case "research":
+          if (import.meta.env.DEV) {
+            clearOverlays();
+            setSelectedDestination(null);
+            setShowResearchMode(true);
+          } else {
+            navigate("/", { replace: true });
+          }
+          break;
+
+        case "not-found":
+        default:
+          // Soft-redirect home; no 404 page needed for this SPA
+          navigate("/", { replace: true });
+          break;
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
+  // ─── Mount: parse URL + subscribe to future route changes (popstate) ─────────
   useEffect(() => {
+    // 1. Check for a shared-link itinerary first (takes precedence)
     const sharedData = getSharedFromUrl();
     if (sharedData) {
       setActiveItinerary(sharedData.config);
+      saveItineraryToSession(sharedData.config);
       setIsReadOnlyItinerary(true);
-      setSelectedDestination(null);
-      setShowHotels(false);
-      setShowProfile(false);
-      setShowAdminDashboard(false);
-      setShowBudgetPlanner(false);
+      navigate("/itinerary", { replace: true });
+      return;
     }
+
+    // 2. Sync state from current URL
+    syncStateFromRoute(getCurrentRoute());
+
+    // 3. Subscribe so browser Back/Forward updates state
+    const unsubscribe = subscribeToRoute(syncStateFromRoute);
+    return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Offline & PWA Install State
@@ -163,11 +321,6 @@ export default function App() {
 
   // Auth State
   const [authMode, setAuthMode] = useState<"login" | "register" | null>(null);
-  const [currentUser, setCurrentUser] = useState<{
-    name: string;
-    email: string;
-    role: "tourist" | "operator";
-  } | null>(null);
 
   const handleToggleTripItem = (dest: Destination) => {
     setTripList((prev) => {
@@ -185,89 +338,65 @@ export default function App() {
     setPlannerOpen(true);
   };
 
+  // ─── Persist activeItinerary to sessionStorage on every change ───────────────
+  useEffect(() => {
+    saveItineraryToSession(activeItinerary);
+  }, [activeItinerary]);
+
+  // ─── Persist currentUser to localStorage on every change ─────────────────────
+  useEffect(() => {
+    saveUserToLocal(currentUser);
+  }, [currentUser]);
+
   const handleNavigateSection = (sectionId: string) => {
-    setSelectedDestination(null);
-    if (sectionId === "admin") {
-      if (!currentUser) {
-        setCurrentUser({
-          name: "Vidyadhar Solanki",
-          email: "solanki@heritage.in",
-          role: "operator",
-        });
-      }
-      setShowAdminDashboard(true);
-      setShowProfile(false);
-      setShowBudgetPlanner(false);
-      setShowHotels(false);
-      setAuthMode(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
+    switch (sectionId) {
+      case "admin":
+        navigate("/admin");
+        return;
+
+      case "profile":
+      case "dashboard":
+        navigate("/profile");
+        return;
+
+      case "budget":
+        navigate("/budget");
+        return;
+
+      case "hotels":
+        navigate("/hotels");
+        return;
+
+      case "account":
+        if (currentUser) {
+          navigate("/profile");
+        } else {
+          navigate("/login");
+        }
+        return;
+
+      case "home":
+        navigate("/");
+        return;
+
+      default:
+        // For hash-scroll targets (explore, about, etc.) go home first then scroll
+        navigate("/", { preserveScroll: true });
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }, 80);
     }
-    if (sectionId === "profile" || sectionId === "dashboard") {
-      if (!currentUser) {
-        // Set default demo user when accessing profile directly
-        setCurrentUser({
-          name: "Vidyadhar Solanki",
-          email: "solanki@heritage.in",
-          role: "tourist",
-        });
-      }
-      setShowProfile(true);
-      setShowAdminDashboard(false);
-      setShowBudgetPlanner(false);
-      setShowHotels(false);
-      setAuthMode(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    if (sectionId === "budget") {
-      setShowBudgetPlanner(true);
-      setShowHotels(false);
-      setShowProfile(false);
-      setShowAdminDashboard(false);
-      setAuthMode(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    if (sectionId === "hotels") {
-      setShowHotels(true);
-      setShowBudgetPlanner(false);
-      setShowProfile(false);
-      setShowAdminDashboard(false);
-      setAuthMode(null);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    setActiveItinerary(null);
-    setShowBudgetPlanner(false);
-    setShowHotels(false);
-    setShowProfile(false);
-    setShowAdminDashboard(false);
-    if (sectionId === "account") {
-      if (currentUser) {
-        setShowProfile(true);
-      } else {
-        setAuthMode("login");
-      }
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    setAuthMode(null);
-    setTimeout(() => {
-      const el = document.getElementById(sectionId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }, 50);
   };
 
   const handleSelectNearby = (destId: string) => {
     const found = GUJARAT_DESTINATIONS.find((d) => d.id === destId);
     if (found) {
-      setSelectedDestination(found);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      navigate(`/destination/${found.id}`);
     }
   };
 
@@ -291,10 +420,7 @@ export default function App() {
             }}
             onNavigateSection={handleNavigateSection}
             onOpenAuth={(mode) => {
-              setSelectedDestination(null);
-              setActiveItinerary(null);
-              setAuthMode(mode);
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              navigate(mode === "register" ? "/register" : "/login");
             }}
             user={currentUser}
             onLogout={() => setCurrentUser(null)}
@@ -314,12 +440,7 @@ export default function App() {
                 >
                   <React.Suspense fallback={<div className="font-mono text-center p-8">Loading Research Matrix...</div>}>
                     <LazyResearchView
-                      onBack={() => {
-                        setShowResearchMode(false);
-                        if (typeof window !== "undefined") {
-                          window.history.pushState({}, "", "/");
-                        }
-                      }}
+                      onBack={() => navigate("/")}
                     />
                   </React.Suspense>
                 </motion.div>
@@ -335,10 +456,7 @@ export default function App() {
                     destination={selectedDestination}
                     preferredHotels={preferredHotels}
                     onSelectPreferredHotel={handleSetPreferredHotel}
-                    onBack={() => {
-                      setSelectedDestination(null);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onBack={() => navigate("/")}
                     onAddToTrip={handleToggleTripItem}
                     isAddedToTrip={tripList.some(
                       (d) => d.id === selectedDestination.id,
@@ -358,11 +476,10 @@ export default function App() {
                 >
                   <AuthView
                     initialMode={authMode}
-                    onCloseOrGuest={() => setAuthMode(null)}
+                    onCloseOrGuest={() => navigate("/")}
                     onAuthSuccess={(user) => {
                       setCurrentUser(user);
-                      setAuthMode(null);
-                      setShowProfile(true);
+                      navigate("/profile");
                     }}
                   />
                 </motion.div>
@@ -376,11 +493,7 @@ export default function App() {
                   transition={{ duration: 0.35 }}
                 >
                   <AdminDashboardView
-                    onBackToProfile={() => {
-                      setShowAdminDashboard(false);
-                      setShowProfile(true);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onBackToProfile={() => navigate("/profile")}
                   />
                 </motion.div>
               ) : showProfile ? (
@@ -396,25 +509,22 @@ export default function App() {
                     currentUser={currentUser}
                     onOpenItinerary={(config) => {
                       setActiveItinerary(config);
-                      setShowProfile(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate("/itinerary");
                     }}
                     onOpenExplore={() => {
-                      setShowProfile(false);
-                      handleNavigateSection("explore");
+                      navigate("/", { preserveScroll: true });
+                      setTimeout(() => {
+                        document.getElementById("explore")?.scrollIntoView({ behavior: "smooth" });
+                      }, 80);
                     }}
                     onOpenPlanner={() => {
                       setShowProfile(false);
                       setPlannerOpen(true);
                     }}
-                    onOpenAdminDashboard={() => {
-                      setShowProfile(false);
-                      setShowAdminDashboard(true);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onOpenAdminDashboard={() => navigate("/admin")}
                     onLogout={() => {
                       setCurrentUser(null);
-                      setShowProfile(false);
+                      navigate("/");
                     }}
                   />
                 </motion.div>
@@ -431,9 +541,7 @@ export default function App() {
                     preferredHotels={preferredHotels}
                     onSelectPreferredHotel={handleSetPreferredHotel}
                     onSelectDestination={(dest) => {
-                      setSelectedDestination(dest);
-                      setShowHotels(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate(`/destination/${dest.id}`);
                     }}
                     onOpenPlanner={() => {
                       setShowHotels(false);
@@ -454,27 +562,24 @@ export default function App() {
                     config={activeItinerary}
                     onBackToItinerary={() => {
                       if (!activeItinerary) {
-                        // If no active itinerary config yet, create default worked example config
-                        setActiveItinerary({
+                        const demo: ItineraryConfig = {
                           cityId: "somnath",
                           tripDays: 2,
                           budget: 8500,
                           startingHotelId:
                             preferredHotels["somnath"] || "premier-somnath",
                           startTime: "08:00 AM",
-                        });
+                        };
+                        setActiveItinerary(demo);
                       }
-                      setShowBudgetPlanner(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate("/itinerary");
                     }}
                     onBackToPlanner={() => {
                       setShowBudgetPlanner(false);
                       setPlannerOpen(true);
                     }}
                     onSelectDestination={(dest) => {
-                      setSelectedDestination(dest);
-                      setShowBudgetPlanner(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate(`/destination/${dest.id}`);
                     }}
                   />
                 </motion.div>
@@ -491,23 +596,25 @@ export default function App() {
                     config={activeItinerary}
                     preferredHotels={preferredHotels}
                     onSelectPreferredHotel={handleSetPreferredHotel}
-                    onBackToPlanner={() => setPlannerOpen(true)}
+                    onBackToPlanner={() => {
+                      if (activeItinerary?.cityId) {
+                        setPreselectedForPlanner(
+                          getCityById(activeItinerary.cityId) || null,
+                        );
+                      }
+                      setPlannerOpen(true);
+                    }}
                     onSelectDestination={(dest) => {
-                      setSelectedDestination(dest);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate(`/destination/${dest.id}`);
                     }}
-                    onOpenBudgetPlanner={() => {
-                      setShowBudgetPlanner(true);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onOpenBudgetPlanner={() => navigate("/budget")}
                     isReadOnly={isReadOnlyItinerary}
                     onPlanOwnTrip={() => {
                       clearSharedUrl();
                       setIsReadOnlyItinerary(false);
                       setActiveItinerary(null);
-                      setSelectedDestination(null);
-                      setPlannerOpen(true);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate("/");
+                      setTimeout(() => setPlannerOpen(true), 100);
                     }}
                   />
                 </motion.div>
@@ -538,8 +645,7 @@ export default function App() {
                   {/* 4. Full Explore & Search Page (Main Terrace Grid Search & Browse) */}
                   <ExploreView
                     onSelectDestination={(dest) => {
-                      setSelectedDestination(dest);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      navigate(`/destination/${dest.id}`);
                     }}
                     onStartTripWithDestination={handleOpenPlannerWithSite}
                   />
@@ -643,14 +749,14 @@ export default function App() {
             isOpen={plannerOpen}
             onClose={() => setPlannerOpen(false)}
             preselectedDestination={preselectedForPlanner}
+            initialConfig={activeItinerary}
             tripList={tripList}
             preferredHotels={preferredHotels}
             onSelectPreferredHotel={handleSetPreferredHotel}
             onGenerateItinerary={(config) => {
-              setSelectedDestination(null);
-              setAuthMode(null);
               setActiveItinerary(config);
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              setPlannerOpen(false);
+              navigate("/itinerary");
             }}
           />
 

@@ -1,4 +1,4 @@
-import {
+﻿import {
   Destination,
   Attraction,
   Hotel,
@@ -10,7 +10,7 @@ import { HashTable } from "@dsa/hashTable/HashTable";
 import { mergeSort } from "@dsa/sorting/mergeSort";
 import { Graph } from "@dsa/graph/Graph";
 import { dijkstra } from "@dsa/dijkstra/dijkstra";
-import { selectStartingHotel, filterAttractionsByBudget } from "@dsa/greedy/budgetAllocator";
+import { selectStartingHotelWithInfo, filterAttractionsByBudget } from "@dsa/greedy/budgetAllocator";
 import { scoreAttraction } from "@dsa/greedy/routeBuilder";
 import { getMaxAttractionsPerDay } from "@dsa/greedy/daySplitter";
 import { routesCsvText } from "../data/routesCsv";
@@ -151,6 +151,9 @@ export interface GeneratedItineraryResult {
   strategyTagline: string;
   activeCity: Destination;
   startingHotel: Hotel;
+  hotelReplacementNotice?: string;
+  hasNoCompatibleAttractions?: boolean;
+  emptyStateReason?: string;
   dayPlans: DayRoute[];
   totalCost: number;
   hotelTotalCost: number;
@@ -505,13 +508,17 @@ export function generateStrategyItinerary(
   }
 
   // 1. Hotel Selection according to strategy respecting budget
-  const startingHotel = selectStartingHotel(
+  const hotelSelection = selectStartingHotelWithInfo(
     activeCity.hotels,
     totalBudgetCap,
     numDays,
     strategy,
     config.startingHotelId
   );
+  const startingHotel = hotelSelection.hotel;
+  const hotelReplacementNotice = hotelSelection.isReplaced
+    ? hotelSelection.replacementReason
+    : undefined;
 
   const hotelTotalCost = startingHotel.priceNumeric * numDays;
   let remainingBudget = totalBudgetCap - hotelTotalCost;
@@ -521,6 +528,45 @@ export function generateStrategyItinerary(
     attractionsPool = attractionsPool.filter(
       (a) => a.wheelchairAccessible === true,
     );
+  }
+
+  // Early empty state: wheelchair-only selected but 0 accessible attractions in destination
+  if (config.wheelchairAccessibleOnly && attractionsPool.length === 0) {
+    const endTimeMs = performance.now();
+    return {
+      strategy,
+      strategyName,
+      strategyTagline,
+      activeCity,
+      startingHotel,
+      hotelReplacementNotice,
+      hasNoCompatibleAttractions: true,
+      emptyStateReason: `No wheelchair-accessible heritage attractions are currently cataloged for ${activeCity.name}. Please disable the wheelchair-only filter or choose another destination (such as Somnath, Ahmedabad, or Dwarka).`,
+      dayPlans: [],
+      totalCost: hotelTotalCost,
+      hotelTotalCost,
+      attractionTotalCost: 0,
+      mealTotalCost: 0,
+      transitTotalCost: 0,
+      totalDistanceKm: 0,
+      roadDistanceKm: 0,
+      boatDistanceKm: 0,
+      attractionCount: 0,
+      totalRuntimeMinutes: 0,
+      totalRuntimeHours: "0 hrs",
+      stats: {
+        attractionsConsidered: 0,
+        attractionsVisited: 0,
+        directRoadConnectionsUsed: 0,
+        dijkstraFallbackCalls: 0,
+        nodesVisited: 0,
+        edgesRelaxed: 0,
+        executionTimeMs: Math.max(
+          0.1,
+          Math.round((endTimeMs - startTimeMs) * 100) / 100,
+        ),
+      },
+    };
   }
   const restaurantsPool = activeCity.restaurants || [];
   const visitedAttractionIds = new HashTable<string, boolean>();
@@ -635,7 +681,7 @@ export function generateStrategyItinerary(
         (currentPos.transportMode === "boat" && chosen.transportMode !== "boat") ||
         (currentPos.transportMode !== "boat" && chosen.transportMode === "boat");
 
-      if (isBoatTransition) {
+      if (isBoatTransition && !config.wheelchairAccessibleOnly) {
         const transitStart = currentClock;
         const transitEnd = transitStart + 25;
         stops.push({
@@ -1073,12 +1119,22 @@ export function generateStrategyItinerary(
     Math.round((endTimeMs - startTimeMs) * 100) / 100,
   );
 
+  const hasNoCompatibleAttractions = totalAttractionsVisited === 0;
+  const emptyStateReason = hasNoCompatibleAttractions
+    ? config.wheelchairAccessibleOnly
+      ? `No wheelchair-accessible attractions could be visited within your budget of ₹${totalBudgetCap.toLocaleString("en-IN")}. Please increase your budget or adjust your trip duration.`
+      : `Your budget of ₹${totalBudgetCap.toLocaleString("en-IN")} is insufficient to cover accommodation and heritage attraction entries. Please increase your budget.`
+    : undefined;
+
   return {
     strategy,
     strategyName,
     strategyTagline,
     activeCity,
     startingHotel,
+    hotelReplacementNotice,
+    hasNoCompatibleAttractions,
+    emptyStateReason,
     dayPlans,
     totalCost: Math.round(grandTotalCost),
     hotelTotalCost,

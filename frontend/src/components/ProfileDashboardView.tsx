@@ -75,45 +75,122 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
     null,
   );
 
-  const [savedTrips, setSavedTrips] = useState<SavedTrip[]>([
-    {
-      id: "trip-solanki-3d",
-      title: "3-Day Solanki & Heritage Stepwell Circuit",
-      dates: "OCT 12 - 14, 2026",
-      daysCount: 3,
-      totalCost: 12800,
-      planningProgress: 80,
-      statusLabel: "3 of 4 Stays Booked",
-      sitesCount: 3,
-      sitesList: ["Modhera Sun Temple", "Champaner-Pavagadh", "Adalaj Ni Vav"],
-      config: {
-        selectedSites: ["modhera", "champaner", "adalaj"],
-        tripDays: 3,
-        budget: 12000,
+  const [savedTrips, setSavedTrips] = useState<SavedTrip[]>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const stored = localStorage.getItem("heritage_saved_trips");
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            // Ensure any previously saved trips also have explicit cityId
+            return parsed.map((t: SavedTrip) => {
+              if (!t.config?.cityId) {
+                const resolvedCity =
+                  (t.config?.selectedSites && t.config.selectedSites[0]) ||
+                  (t.id.includes("kutch") ? "rann-of-kutch" : t.id.includes("solanki") ? "modhera" : "somnath");
+                return {
+                  ...t,
+                  config: {
+                    ...t.config,
+                    cityId: resolvedCity,
+                    startingHotelId:
+                      t.config?.startingHotelId ||
+                      (resolvedCity === "rann-of-kutch"
+                        ? "toran-rann"
+                        : resolvedCity === "modhera"
+                        ? "toran-modhera"
+                        : undefined),
+                    startTime: t.config?.startTime || "08:00 AM",
+                  },
+                };
+              }
+              return t;
+            });
+          }
+        }
+      } catch (err) {
+        console.warn("Failed to read saved trips from localStorage", err);
+      }
+    }
+    return [
+      {
+        id: "trip-solanki-3d",
+        title: "3-Day Solanki & Heritage Stepwell Circuit",
+        dates: "OCT 12 - 14, 2026",
+        daysCount: 3,
+        totalCost: 12800,
+        planningProgress: 80,
+        statusLabel: "3 of 4 Stays Booked",
+        sitesCount: 3,
+        sitesList: ["Modhera Sun Temple", "Champaner-Pavagadh", "Adalaj Ni Vav"],
+        config: {
+          cityId: "modhera",
+          selectedSites: ["modhera", "champaner", "adalaj"],
+          tripDays: 3,
+          budget: 12000,
+          startingHotelId: "toran-modhera",
+          startTime: "08:00 AM",
+        },
       },
-    },
-    {
-      id: "trip-kutch-5d",
-      title: "5-Day Great Rann & Kutchi Craft Trail",
-      dates: "NOV 04 - 08, 2026",
-      daysCount: 5,
-      totalCost: 24500,
-      planningProgress: 45,
-      statusLabel: "In Draft • Permit Pending",
-      sitesCount: 4,
-      sitesList: [
-        "Rann of Kutch",
-        "Hodka Crafts",
-        "Bhuj Palace",
-        "Somnath Temple",
-      ],
-      config: {
-        selectedSites: ["rann-of-kutch", "somnath", "gir"],
-        tripDays: 5,
-        budget: 25000,
+      {
+        id: "trip-kutch-5d",
+        title: "5-Day Great Rann & Kutchi Craft Trail",
+        dates: "NOV 04 - 08, 2026",
+        daysCount: 5,
+        totalCost: 24500,
+        planningProgress: 45,
+        statusLabel: "In Draft • Permit Pending",
+        sitesCount: 4,
+        sitesList: [
+          "Rann of Kutch",
+          "Hodka Crafts",
+          "Bhuj Palace",
+          "Somnath Temple",
+        ],
+        config: {
+          cityId: "rann-of-kutch",
+          selectedSites: ["rann-of-kutch", "somnath", "gir"],
+          tripDays: 5,
+          budget: 25000,
+          startingHotelId: "toran-rann",
+          startTime: "08:00 AM",
+        },
       },
-    },
-  ]);
+    ];
+  });
+
+  // Keep localStorage in sync with saved trips state
+  React.useEffect(() => {
+    try {
+      localStorage.setItem("heritage_saved_trips", JSON.stringify(savedTrips));
+    } catch (err) {
+      console.warn("Failed to persist saved trips", err);
+    }
+  }, [savedTrips]);
+
+  const handleOpenTrip = (trip: SavedTrip) => {
+    const targetCityId =
+      trip.config?.cityId ||
+      (trip.config?.selectedSites && trip.config.selectedSites[0]) ||
+      (trip.id.includes("kutch") ? "rann-of-kutch" : trip.id.includes("solanki") ? "modhera" : "somnath");
+
+    const completeConfig: ItineraryConfig = {
+      ...trip.config,
+      cityId: targetCityId,
+      tripDays: trip.config?.tripDays || trip.daysCount || 2,
+      budget: trip.config?.budget || trip.totalCost || 8500,
+      startingHotelId:
+        trip.config?.startingHotelId ||
+        (targetCityId === "rann-of-kutch"
+          ? "toran-rann"
+          : targetCityId === "modhera"
+          ? "toran-modhera"
+          : undefined),
+      startTime: trip.config?.startTime || "08:00 AM",
+    };
+
+    onOpenItinerary(completeConfig);
+  };
 
   const [operatorListings, setOperatorListings] = useState([
     {
@@ -324,7 +401,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
                       <div className="flex items-center gap-2 w-full sm:w-auto justify-end pt-2 sm:pt-0">
                         <button
-                          onClick={() => onOpenItinerary(trip.config)}
+                          onClick={() => handleOpenTrip(trip)}
                           className="bg-ink hover:bg-ink/90 text-salt border border-gold px-4 py-2 text-xs font-bold cursor-pointer transition-colors flex items-center gap-1.5 shadow-xs"
                         >
                           <span>Open Itinerary</span>

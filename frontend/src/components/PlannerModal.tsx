@@ -31,6 +31,7 @@ interface PlannerModalProps {
   isOpen: boolean;
   onClose: () => void;
   preselectedDestination?: Destination | null;
+  initialConfig?: Partial<PlannerConfigPayload> | null;
   tripList?: Destination[];
   preferredHotels?: Record<string, string>;
   onSelectPreferredHotel?: (cityId: string, hotelId: string) => void;
@@ -41,6 +42,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   isOpen,
   onClose,
   preselectedDestination,
+  initialConfig,
   preferredHotels,
   onSelectPreferredHotel,
   onGenerateItinerary,
@@ -72,17 +74,24 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
     if (isOpen) {
       setStep(1);
       const initialCityId =
-        preselectedDestination?.id || selectedCityId || "somnath";
+        initialConfig?.cityId || preselectedDestination?.id || selectedCityId || "somnath";
       setSelectedCityId(initialCityId);
       const cityObj = getCityById(initialCityId) || GUJARAT_DESTINATIONS[0];
-      const preferredForCity = preferredHotels?.[initialCityId];
-      if (preferredForCity) {
+      const preferredForCity = initialConfig?.startingHotelId || preferredHotels?.[initialCityId];
+      if (preferredForCity && cityObj.hotels && cityObj.hotels.some(h => h.id === preferredForCity)) {
         setStartingHotelId(preferredForCity);
       } else if (cityObj.hotels && cityObj.hotels.length > 0) {
         setStartingHotelId(cityObj.hotels[0].id);
       }
+
+      if (initialConfig?.tripDays) setTripDays(initialConfig.tripDays);
+      if (initialConfig?.budget) setBudget(initialConfig.budget);
+      if (initialConfig?.startTime) setStartTime(initialConfig.startTime);
+      if (initialConfig?.wheelchairAccessibleOnly !== undefined) {
+        setWheelchairOnly(initialConfig.wheelchairAccessibleOnly);
+      }
     }
-  }, [isOpen, preselectedDestination]);
+  }, [isOpen, preselectedDestination, initialConfig]);
 
   // When city changes, load preferred stay or fallback to first hotel
   const handleCityChange = (cityId: string) => {
@@ -741,6 +750,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             budget,
             startingHotelId: startingHotelId || activeCity.hotels[0]?.id || "",
             startTime: startTime || "08:00 AM",
+            wheelchairAccessibleOnly: wheelchairOnly,
           }}
           onSelectStrategy={(strategy: OptimizationStrategy) => {
             setShowComparisonModal(false);
@@ -752,6 +762,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 startingHotelId || activeCity.hotels[0]?.id || "",
               startTime: startTime || "08:00 AM",
               strategy,
+              wheelchairAccessibleOnly: wheelchairOnly,
             });
             onClose();
           }}

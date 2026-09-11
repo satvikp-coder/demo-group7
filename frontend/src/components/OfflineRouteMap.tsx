@@ -13,6 +13,26 @@ import {
 } from "lucide-react";
 import { DayRoute, ItineraryStop } from "../utils/itineraryPlanner";
 
+/** Haversine distance between two coordinate pairs (km). */
+function haversineKm(
+  lat1?: number, lng1?: number,
+  lat2?: number, lng2?: number,
+): number {
+  if (lat1 == null || lng1 == null || lat2 == null || lng2 == null) return 0;
+  if (lat1 === lat2 && lng1 === lng2) return 0;
+  const R = 6371;
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLng = (lng2 - lng1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLng / 2) ** 2;
+  const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  // Apply a road-factor approximation (mirrors the planner's getDistanceKm)
+  return Math.round((dist < 0.5 ? 1.2 : dist * 1.35) * 10) / 10;
+}
+
 interface OfflineRouteMapProps {
   dayPlans: DayRoute[];
   cityName: string;

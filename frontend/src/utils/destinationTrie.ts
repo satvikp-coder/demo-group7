@@ -1,4 +1,4 @@
-import { Trie } from "@dsa/trie/Trie";
+import { Trie } from "../../../dsa/trie/Trie";
 import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
 
 /**
