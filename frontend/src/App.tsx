@@ -31,6 +31,8 @@ const LazyResearchView = React.lazy(() =>
     : Promise.resolve({ default: () => null as any })
 );
 import { getSharedFromUrl, clearSharedUrl } from "./utils/shareUrl";
+import { InvalidSharedLinkView } from "./components/InvalidSharedLinkView";
+import { ImageWithFallback } from "./components/ImageWithFallback";
 import { Destination, GUJARAT_DESTINATIONS, getCityById } from "./data/destinations";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -93,6 +95,12 @@ export default function App() {
   // Dev-only Research Simulation Mode
   const [showResearchMode, setShowResearchMode] = useState<boolean>(false);
 
+  // Shared Link Error State
+  const [sharedLinkError, setSharedLinkError] = useState<{
+    error: string;
+    rawPayload: string;
+  } | null>(null);
+
   // ─── Auth State (restored from localStorage) ───────────────────────────────
   const [currentUser, setCurrentUser] = useState<{
     name: string;
@@ -110,6 +118,7 @@ export default function App() {
         setShowProfile(false);
         setShowAdminDashboard(false);
         setShowResearchMode(false);
+        setSharedLinkError(null);
         setAuthMode(null);
       };
 
@@ -209,11 +218,17 @@ export default function App() {
   useEffect(() => {
     // 1. Check for a shared-link itinerary first (takes precedence)
     const sharedData = getSharedFromUrl();
-    if (sharedData) {
+    if (sharedData && sharedData.success === true) {
       setActiveItinerary(sharedData.config);
       saveItineraryToSession(sharedData.config);
       setIsReadOnlyItinerary(true);
       navigate("/itinerary", { replace: true });
+      return;
+    } else if (sharedData && sharedData.success === false) {
+      setSharedLinkError({
+        error: sharedData.error,
+        rawPayload: sharedData.rawPayload,
+      });
       return;
     }
 
@@ -430,7 +445,38 @@ export default function App() {
           {/* Main Content Area */}
           <main className="flex-grow">
             <AnimatePresence mode="wait">
-              {showResearchMode && import.meta.env.DEV ? (
+              {sharedLinkError ? (
+                <motion.div
+                  key="invalid-shared-link"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <InvalidSharedLinkView
+                    errorMessage={sharedLinkError.error}
+                    rawPayload={sharedLinkError.rawPayload}
+                    onExplore={() => {
+                      setSharedLinkError(null);
+                      navigate("/", { preserveScroll: true });
+                      setTimeout(() => {
+                        document
+                          .getElementById("explore")
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }, 80);
+                    }}
+                    onPlanTrip={() => {
+                      setSharedLinkError(null);
+                      navigate("/");
+                      setPlannerOpen(true);
+                    }}
+                    onGoHome={() => {
+                      setSharedLinkError(null);
+                      navigate("/");
+                    }}
+                  />
+                </motion.div>
+              ) : showResearchMode && import.meta.env.DEV ? (
                 <motion.div
                   key="research-view"
                   initial={{ opacity: 0, y: 20 }}
@@ -508,6 +554,7 @@ export default function App() {
                   <ProfileDashboardView
                     currentUser={currentUser}
                     onOpenItinerary={(config) => {
+                      saveItineraryToSession(config);
                       setActiveItinerary(config);
                       navigate("/itinerary");
                     }}
@@ -693,7 +740,7 @@ export default function App() {
                             type: "Traditional Bhunga Cottages",
                             rate: "₹5,500 / night",
                             dist: "Wild Ass Sanctuary & Salt Flats",
-                            img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800",
+                            img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600",
                           },
                         ].map((hotel, idx) => (
                           <div
@@ -701,10 +748,11 @@ export default function App() {
                             className="bg-ink text-salt p-4 border border-stone/40 space-y-3"
                           >
                             <div className="relative h-44 overflow-hidden border border-stone/30">
-                              <img
+                              <ImageWithFallback
                                 src={hotel.img}
                                 alt={hotel.name}
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                                category="hotel"
+                                className="w-full h-full object-cover hover:scale-105 transition-all duration-300"
                               />
                               <span className="absolute top-2 left-2 bg-salt text-ink font-mono text-[10px] px-2 py-0.5 uppercase">
                                 {hotel.type}
@@ -754,6 +802,7 @@ export default function App() {
             preferredHotels={preferredHotels}
             onSelectPreferredHotel={handleSetPreferredHotel}
             onGenerateItinerary={(config) => {
+              saveItineraryToSession(config);
               setActiveItinerary(config);
               setPlannerOpen(false);
               navigate("/itinerary");

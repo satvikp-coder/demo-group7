@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { AccessibilityBadge } from './AccessibilityBadge';
 import { getDestinationTrie, searchDestinationsWithTrie } from '../utils/destinationTrie';
+import { ImageWithFallback } from './ImageWithFallback';
 
 interface ExploreViewProps {
   onSelectDestination: (dest: Destination) => void;
@@ -430,10 +431,11 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 >
                   {/* Image Container */}
                   <div className="relative h-56 overflow-hidden bg-charcoal">
-                    <img
+                    <ImageWithFallback
                       src={dest.imageUrl}
-                      alt={dest.imageAlt}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                      alt={dest.imageAlt || dest.name}
+                      category={dest.officialCategory || dest.category}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     
                     {/* Category Tag Overlay */}

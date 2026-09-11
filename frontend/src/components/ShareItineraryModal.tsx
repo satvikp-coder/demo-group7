@@ -20,6 +20,18 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
 }) => {
   const [copied, setCopied] = useState<boolean>(false);
 
+  // Keyboard Escape listener
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const shareUrl = getShareableUrl(config);
@@ -49,8 +61,17 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-xs animate-fadeIn">
-      <div className="bg-salt border-2 border-gold max-w-lg w-full p-6 shadow-2xl relative font-sans">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="share-itinerary-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-xs animate-fadeIn"
+      onClick={onClose}
+    >
+      <div
+        className="bg-salt border-2 border-gold max-w-lg w-full p-6 shadow-2xl relative font-sans"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
           onClick={onClose}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="safariSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141D30" />
+      <stop offset="60%" stop-color="#2D3F60" />
+      <stop offset="100%" stop-color="#8C6338" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#safariSky)" />
+  
+  <!-- Desert Ground -->
+  <rect y="320" width="800" height="180" fill="#1A253A" />
+  
+  <!-- Kutch Eco-Cottages (Traditional Kooba / Bhunga Architecture) -->
+  <!-- Cottage 1 -->
+  <rect x="180" y="300" width="130" height="60" fill="#2E3C56" stroke="#C99A3B" stroke-width="2" rx="4" />
+  <polygon points="245,210 160,300 330,300" fill="#B3804D" stroke="#5A432F" stroke-width="2" />
+  <rect x="225" y="315" width="40" height="45" fill="#141E33" rx="2" />
+  <line x1="245" y1="210" x2="245" y2="190" stroke="#C99A3B" stroke-width="2" />
+  
+  <!-- Cottage 2 (Heritage Safari Suite) -->
+  <rect x="360" y="290" width="150" height="70" fill="#28354E" stroke="#C99A3B" stroke-width="2" rx="4" />
+  <polygon points="435,190 340,290 530,290" fill="#9C6F42" stroke="#5A432F" stroke-width="2" />
+  <rect x="415" y="310" width="40" height="50" fill="#141E33" rx="2" />
+  <line x1="435" y1="190" x2="435" y2="170" stroke="#C99A3B" stroke-width="2" />
+
+  <!-- Safari Jeep Silhouette -->
+  <g fill="#141E33" stroke="#C99A3B" stroke-width="1.5" transform="translate(560, 310)">
+    <rect x="0" y="20" width="120" height="40" rx="4" />
+    <path d="M 30 20 L 50 0 L 110 0 L 115 20 Z" fill="#1E2A46" />
+    <!-- Wheels -->
+    <circle cx="30" cy="60" r="16" fill="#141D30" stroke="#C99A3B" stroke-width="2" />
+    <circle cx="95" cy="60" r="16" fill="#141D30" stroke="#C99A3B" stroke-width="2" />
+    <!-- Spare tire -->
+    <circle cx="5" cy="30" r="12" fill="#141D30" stroke="#C99A3B" stroke-width="1.5" />
+  </g>
+
+  <!-- Desert Acacia Trees & Warm Lantern -->
+  <!-- Tree left -->
+  <path d="M 80 340 Q 85 270 90 230 Q 70 200 60 180 Q 95 195 100 220 Q 120 185 135 170 Q 115 210 100 240 Z" fill="#C99A3B" opacity="0.8" />
+  
+  <!-- Warm Campfire / Lantern Glow -->
+  <circle cx="335" cy="360" r="12" fill="#D97736" opacity="0.8" />
+  <circle cx="335" cy="360" r="28" fill="#C99A3B" opacity="0.25" />
+
+  <!-- Title Badge -->
+  <rect x="24" y="24" width="752" height="452" fill="none" stroke="#C99A3B" stroke-width="1" opacity="0.4" />
+  <rect x="35" y="35" width="230" height="42" fill="#1E2A46" fill-opacity="0.85" stroke="#C99A3B" stroke-width="1" />
+  <text x="50" y="55" fill="#C99A3B" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="2">HERITAGE SAFARI STAY</text>
+  <text x="50" y="70" fill="#F6F4EF" font-family="'Fraunces', serif" font-size="14" font-weight="600">Rann Riders Safari Resort</text>
+</svg>

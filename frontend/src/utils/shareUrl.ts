@@ -81,13 +81,15 @@ export function getShareableUrl(config: ItineraryConfig): string {
   return `${origin}${pathname}?shared=${encoded}`;
 }
 
+export type SharedUrlParseResult =
+  | { success: true; config: ItineraryConfig; isReadOnly: boolean }
+  | { success: false; error: string; rawPayload: string }
+  | null;
+
 /**
  * Parses current window.location for any shared itinerary payload.
  */
-export function getSharedFromUrl(): {
-  config: ItineraryConfig;
-  isReadOnly: boolean;
-} | null {
+export function getSharedFromUrl(): SharedUrlParseResult {
   if (typeof window === "undefined") return null;
 
   let encoded = "";
@@ -122,12 +124,17 @@ export function getSharedFromUrl(): {
   const decodedConfig = decodeSharedItinerary(encoded);
   if (decodedConfig) {
     return {
+      success: true,
       config: decodedConfig,
       isReadOnly: true,
     };
   }
 
-  return null;
+  return {
+    success: false,
+    error: "Malformed or corrupted itinerary parameters in share link.",
+    rawPayload: encoded,
+  };
 }
 
 /**

@@ -20,6 +20,7 @@ import {
 import { useLanguage } from "../context/LanguageContext";
 import { AccessibilityBadge } from "./AccessibilityBadge";
 import { BestTimeNote } from "./BestTimeNote";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 interface DestinationDetailViewProps {
   destination: Destination;
@@ -72,14 +73,15 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       {/* 1. FULL-WIDTH HERO IMAGE BAND */}
       <div className="relative h-80 sm:h-96 md:h-[480px] w-full bg-ink overflow-hidden">
         {/* Background Image */}
-        <img
+        <ImageWithFallback
           src={destination.imageUrl}
           alt={destination.imageAlt || getName(destination)}
-          className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          category={destination.officialCategory || destination.category}
+          className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
         />
 
         {/* Ink Indigo Gradient Overlay at bottom edge for crisp text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/65 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
 
         {/* Top Floating Back Breadcrumb */}
         <div className="absolute top-6 left-4 sm:left-8 z-10">
@@ -432,8 +434,18 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   {filteredAttractions.map((attr) => (
                     <div
                       key={attr.id}
-                      className="bg-salt border border-stone/30 p-4 space-y-3 hover:border-gold transition-colors flex flex-col justify-between"
+                      className="bg-salt border border-stone/30 p-4 space-y-3 hover:border-gold transition-colors flex flex-col justify-between overflow-hidden"
                     >
+                      {attr.imageUrl && (
+                        <div className="h-36 sm:h-40 overflow-hidden relative -mx-4 -mt-4 mb-2 border-b border-stone/20 bg-charcoal">
+                          <ImageWithFallback
+                            src={attr.imageUrl}
+                            alt={getName(attr)}
+                            category={attr.category}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
                           <span className="font-mono text-[10px] text-gold uppercase font-bold tracking-wider">
@@ -514,10 +526,11 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                         }
                         className="group bg-white p-3.5 border border-stone/30 hover:border-gold transition-all duration-200 cursor-pointer flex gap-3 items-center"
                       >
-                        <img
+                        <ImageWithFallback
                           src={attraction.imageUrl}
                           alt={getName(attraction)}
-                          className="w-20 h-20 object-cover grayscale group-hover:grayscale-0 transition-all shrink-0 border border-stone/20"
+                          category={attraction.category}
+                          className="w-20 h-20 object-cover group-hover:scale-105 transition-all shrink-0 border border-stone/20"
                         />
                         <div className="space-y-1 flex-1 min-w-0">
                           <span className="text-[10px] font-mono text-gold uppercase block truncate">
@@ -725,10 +738,11 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   className="bg-ink text-salt border border-stone/40 min-w-[280px] sm:min-w-[320px] max-w-[340px] flex-shrink-0 flex flex-col justify-between p-4 space-y-4"
                 >
                   <div className="relative h-40 overflow-hidden border border-stone/30 bg-charcoal">
-                    <img
+                    <ImageWithFallback
                       src={hotel.imageUrl}
                       alt={hotel.name}
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                      category="hotel"
+                      className="w-full h-full object-cover hover:scale-105 transition-all duration-300"
                     />
 
                     {/* Official Stay Type Badge */}

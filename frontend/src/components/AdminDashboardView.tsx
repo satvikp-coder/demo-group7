@@ -319,7 +319,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           distanceNumeric: 100,
           duration: "1–2 Days",
           avgVisitTime: "3–4 Hours",
-          imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=1000",
+          imageUrl: "/assets/attractions/sidi-saiyyed.jpg",
           imageAlt: newItem.name,
           description: `Historic heritage site located in ${newItem.district}.`,
           highlights: [`Exploration of ${newItem.name}`],

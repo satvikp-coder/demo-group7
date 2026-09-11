@@ -158,8 +158,8 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "1–2 Days",
     avgVisitTime: "2–3 Hours",
     imageUrl:
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=1000",
-    imageAlt: "Somnath Temple spire on the shores of the Arabian Sea at sunset",
+      "/assets/destinations/somnath.jpg",
+    imageAlt: "Photograph of Somnath Temple spire on the shores of the Arabian Sea",
     description:
       "Located at Prabhas Patan, Somnath is the first among the twelve holy Jyotirlinga shrines of Lord Shiva, overlooking the roaring waves of the Arabian Sea.",
     highlights: [
@@ -183,7 +183,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free Darshan",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/somnath.jpg",
         description:
           "Majestic Chalukya-style temple standing at the confluence of myth and ocean horizon.",
         gujaratiName: "સોમનાથ મંદિર",
@@ -388,7 +388,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Spiritual/Heritage",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/somnath.jpg",
         gujaratiName: "સોમનાથ મંદિર",
         hindiName: "सोमनाथ मंदिर",
       },
@@ -513,7 +513,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "2 Days",
     avgVisitTime: "Full Day",
     imageUrl:
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/dwarka.jpg",
     imageAlt:
       "Dwarkadhish Temple 5-story spire and flag rising above Gomti Ghat",
     description:
@@ -539,7 +539,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/dwarka.jpg",
         description:
           "5-story carved limestone temple dedicated to Krishna as King of Dwarka.",
         gujaratiName: "દ્વારકાધીશ મંદિર",
@@ -564,7 +564,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/nageshwar-temple.jpg",
         description:
           "Sacred shrine featuring a giant 80ft seated statue of Lord Shiva.",
         gujaratiName: "નાગેશ્વર જ્યોતિર્લિંગ",
@@ -588,7 +588,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/rukmini-temple.jpg",
         description:
           "12th-century architectural gem decorated with intricate panels and carvings.",
         gujaratiName: "રૂક્ષ્મણી દેવી મંદિર",
@@ -744,7 +744,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Spiritual/Heritage",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/dwarka.jpg",
         gujaratiName: "દ્વારકાધીશ મંદિર",
         hindiName: "द्वारकाधीश मंदिर",
       },
@@ -754,7 +754,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Pilgrimage",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/nageshwar-temple.jpg",
         gujaratiName: "નાગેશ્વર જ્યોતિર્લિંગ",
         hindiName: "नागेश्वर ज्योतिर्लिंग",
       },
@@ -764,7 +764,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Heritage",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/rukmini-temple.jpg",
         gujaratiName: "રૂક્ષ્મણી દેવી મંદિર",
         hindiName: "रुक्मिणी देवी मंदिर",
       },
@@ -869,7 +869,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "2–3 Days",
     avgVisitTime: "Full Day",
     imageUrl:
-      "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/rann-of-kutch.jpg",
     imageAlt:
       "Glistening white salt desert of Rann of Kutch under twilight sky",
     description:
@@ -895,7 +895,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹100",
         entryFeeNumeric: 100,
         imageUrl:
-          "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/rann-of-kutch.jpg",
         description:
           "Vast endless white salt desert expanse, spectacular during full moon nights.",
         gujaratiName: "ધોરડો સફેદ રણ ગેટ",
@@ -920,7 +920,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/kalo-dungar.jpg",
         description:
           "Highest point in Kutch offering sweeping views of the Great Rann and Pakistan border.",
         gujaratiName: "કાળો ડુંગર",
@@ -944,7 +944,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free Entry",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/nirona-crafts.jpg",
         description:
           "Home to the world's last surviving Rogan oil-painting master artisans.",
         gujaratiName: "નિરોના ક્રાફ્ટ વિલેજ",
@@ -969,7 +969,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/hodka-village.jpg",
         description:
           "Traditional Kutchi mud Bhunga village with mirrorwork textile workshops.",
         gujaratiName: "હોડકા કારીગર ગામ",
@@ -1099,7 +1099,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Nature/Wonder",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/rann-of-kutch.jpg",
         gujaratiName: "ધોરડો સફેદ રણ ગેટ",
         hindiName: "धोर्डो सफेद मरुस्थल द्वार",
       },
@@ -1109,7 +1109,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Viewpoint",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/kalo-dungar.jpg",
         gujaratiName: "કાળો ડુંગર",
         hindiName: "कालो डूंगर (ब्लैक हिल)",
       },
@@ -1119,7 +1119,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Heritage Crafts",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/nirona-crafts.jpg",
         gujaratiName: "નિરોના ક્રાફ્ટ વિલેજ",
         hindiName: "निरोना क्राफ्ट गांव",
       },
@@ -1129,7 +1129,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Culture",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/hodka-village.jpg",
         gujaratiName: "હોડકા કારીગર ગામ",
         hindiName: "होड़का कारीगर बस्ती",
       },
@@ -1223,7 +1223,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "2 Days",
     avgVisitTime: "Half Day",
     imageUrl:
-      "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/gir.jpg",
     imageAlt:
       "Asiatic Lion resting in dry deciduous forest of Gir National Park",
     description:
@@ -1249,7 +1249,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹800 Permit",
         entryFeeNumeric: 800,
         imageUrl:
-          "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/gir-lion.jpg",
         description:
           "Open jeep safari through core teak forest in search of Asiatic lions and leopards.",
         gujaratiName: "ગીર જંગલ જીપ સફારી",
@@ -1273,7 +1273,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹250",
         entryFeeNumeric: 250,
         imageUrl:
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/gir.jpg",
         description:
           "Fenced eco-tourism zone offering guaranteed lion and chinkara sightings via safari bus.",
         gujaratiName: "દેવાળિયા સફારી પાર્ક",
@@ -1323,7 +1323,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
         description:
           "Deep jungle shrine inside Gir forest, visited by pilgrims surrounded by wilderness.",
         gujaratiName: "કાંકઈ માતાજી મંદિર",
@@ -1463,7 +1463,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Interpretation Zone",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/gir.jpg",
         gujaratiName: "દેવાળિયા સફારી પાર્ક",
         hindiName: "देवालिया सफारी पार्क",
       },
@@ -1483,7 +1483,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Spiritual/Forest",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
         gujaratiName: "કાંકઈ માતાજી મંદિર",
         hindiName: "कंकाई माता मंदिर",
       },
@@ -1576,7 +1576,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "1–2 Days",
     avgVisitTime: "2–3 Hours",
     imageUrl:
-      "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/modhera.jpg",
     imageAlt:
       "Carved stone architecture and stepped tank Ramakunda at Modhera Sun Temple",
     description:
@@ -1602,7 +1602,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹25",
         entryFeeNumeric: 25,
         imageUrl:
-          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/modhera.jpg",
         description:
           "Masterpiece of 11th-century Solanki stone carving with a 108-shrine stepped tank.",
         gujaratiName: "મોઢેરા સૂર્ય મંદિર અને રામકુંડ",
@@ -1627,7 +1627,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹40",
         entryFeeNumeric: 40,
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/rani-ki-vav.jpg",
         description:
           "7-storey inverted subterranean temple stepwell decorated with over 500 major sculptures.",
         gujaratiName: "રાણી કી વાવ (પાટણ)",
@@ -1675,7 +1675,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
         description:
           "Historic Shakti Peeth temple complex known for colorful festival processions.",
         gujaratiName: "બહુચરાજી મંદિર",
@@ -1815,7 +1815,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "UNESCO World Heritage Stepwell",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/rani-ki-vav.jpg",
         gujaratiName: "રાણી કી વાવ (પાટણ)",
         hindiName: "रानी की वाव (पाटन)",
       },
@@ -1835,7 +1835,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Spiritual",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
         gujaratiName: "બહુચરાજી મંદિર",
         hindiName: "बहुचराजी मंदिर",
       },
@@ -1930,7 +1930,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "1–2 Days",
     avgVisitTime: "Half Day",
     imageUrl:
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/champaner.jpg",
     imageAlt:
       "Intricate arches and sandstone domes of Jama Masjid at Champaner-Pavagadh",
     description:
@@ -1956,7 +1956,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹40",
         entryFeeNumeric: 40,
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/champaner.jpg",
         description:
           "15th-century Indo-Islamic architectural marvel with 172 carved pillars and twin minarets.",
         gujaratiName: "જામા મસ્જિદ ચાંપાનેર",
@@ -1981,7 +1981,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹170 Ropeway",
         entryFeeNumeric: 170,
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/kalika-mata.jpg",
         description:
           "Sacred Shakti Peeth perched atop Pavagadh Hill accessible via ropeway cable car.",
         gujaratiName: "કાલિકા માતા મંદિર રોપવે",
@@ -2160,7 +2160,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "UNESCO Mosque Architecture",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/destinations/champaner.jpg",
         gujaratiName: "જામા મસ્જિદ ચાંપાનેર",
         hindiName: "जामा मस्जिद चांपानेर",
       },
@@ -2170,7 +2170,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Hilltop Shrine",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/kalika-mata.jpg",
         gujaratiName: "કાલિકા માતા મંદિર રોપવે",
         hindiName: "कालिका माता मंदिर रोप-वे",
       },
@@ -2284,7 +2284,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "2 Days",
     avgVisitTime: "Full Day",
     imageUrl:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/saputara.jpg",
     imageAlt: "Mist-covered green Sahyadri hills and Saputara Lake",
     description:
       "Gujarat's sole hill station nestled in the dense teak forests of the Dang district, featuring cool highland air, boating lakes, and Warli tribal artisan hamlets.",
@@ -2639,7 +2639,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
     duration: "2–3 Days",
     avgVisitTime: "Full Day",
     imageUrl:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1000",
+      "/assets/destinations/ahmedabad.jpg",
     imageAlt: "Traditional carved wooden Haveli facades in Old Ahmedabad Pols",
     description:
       "Founded in 1411 AD by Sultan Ahmed Shah, Ahmedabad is India's premier UNESCO World Heritage city featuring carved pols, stepwells, and Sabarmati Ashram.",
@@ -2664,7 +2664,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/sabarmati-ashram.jpg",
         description:
           "Historical riverside headquarters of Mahatma Gandhi during the Indian freedom movement.",
         gujaratiName: "સાબરમતી આશ્રમ",
@@ -2689,7 +2689,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹25",
         entryFeeNumeric: 25,
         imageUrl:
-          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/adalaj-stepwell.jpg",
         description:
           "5-story subterranean stepwell built in 1498 with intricate Solanki floral stone carvings.",
         gujaratiName: "અડાલજ ની વાવ",
@@ -2714,7 +2714,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/sidi-saiyyed.jpg",
         description:
           "World-renowned stone latticework 'Tree of Life' jali windows and heritage pols.",
         gujaratiName: "સીદી સૈયદ મસ્જિદ અને પોળ",
@@ -2764,7 +2764,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "Free",
         entryFeeNumeric: 0,
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/sarkhej-roza.jpg",
         description:
           "Historic mosque and tomb complex featuring an elegant blend of Islamic and Hindu architectural styles.",
         gujaratiName: "સરખેજ રોઝા",
@@ -2789,7 +2789,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         entryFee: "₹25",
         entryFeeNumeric: 25,
         imageUrl:
-          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/kankaria-lake.jpg",
         description:
           "Second largest lake in Ahmedabad, featuring a zoo, toy train, water rides, and food stalls.",
         gujaratiName: "કાંકરિયા તળાવ",
@@ -2929,7 +2929,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Stepwell Architecture",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/adalaj-stepwell.jpg",
         gujaratiName: "અડાલજ ની વાવ",
         hindiName: "अडालज की वाव",
       },
@@ -2939,7 +2939,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "UNESCO Heritage City",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/sidi-saiyyed.jpg",
         gujaratiName: "સીદી સૈયદ મસ્જિદ અને પોળ",
         hindiName: "सीदी सैय्यद मस्जिद और पोल",
       },
@@ -2959,7 +2959,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Heritage",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/sarkhej-roza.jpg",
         gujaratiName: "સરખેજ રોઝા",
         hindiName: "सरखेज रोजा",
       },
@@ -2969,7 +2969,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
         category: "Nature/Recreation",
         distance: "Intra-city",
         imageUrl:
-          "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=600",
+          "/assets/attractions/kankaria-lake.jpg",
         gujaratiName: "કાંકરિયા તળાવ",
         hindiName: "कांकरिया झील",
       },

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Destination, GUJARAT_DESTINATIONS, Hotel } from "../data/destinations";
 import { mergeSort } from "@dsa/sorting/mergeSort";
 import { useLanguage } from "../context/LanguageContext";
+import { ImageWithFallback } from "./ImageWithFallback";
 import {
   Building2,
   Star,
@@ -257,9 +258,10 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                     </div>
 
                     {hotel.imageUrl && (
-                      <img
+                      <ImageWithFallback
                         src={hotel.imageUrl}
                         alt={`${hotel.name} ${hotel.stayType} exterior`}
+                        category="hotel"
                         className="w-16 h-16 sm:w-20 sm:h-20 object-cover border border-stone/30 shrink-0"
                       />
                     )}

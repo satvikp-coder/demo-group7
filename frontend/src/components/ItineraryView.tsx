@@ -25,6 +25,7 @@ import { AccessibilityBadge } from "./AccessibilityBadge";
 import { BestTimeNote } from "./BestTimeNote";
 import { checkBestTimeConflict } from "../utils/bestTimeChecker";
 import { ShareItineraryModal } from "./ShareItineraryModal";
+import { ImageWithFallback } from "./ImageWithFallback";
 import {
   ArrowLeft,
   Calendar,
@@ -845,6 +846,18 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
                               return (
                                 <div className="flex items-start gap-3 w-full sm:w-auto">
+                                  {/* Stop Photo Thumbnail if available */}
+                                  {stop.imageUrl && (
+                                    <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 overflow-hidden border border-stone/30 bg-charcoal">
+                                      <ImageWithFallback
+                                        src={stop.imageUrl}
+                                        alt={stop.name}
+                                        category={stop.category}
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                      />
+                                    </div>
+                                  )}
+
                                   {/* Stop Number Badge */}
                                   <div className="bg-gold text-ink font-bold px-2 py-1 text-[11px] border border-ink shrink-0 text-center">
                                     <span>#{stopNumber}</span>
@@ -861,7 +874,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                   </div>
 
                                   {/* Stop Icon & Description */}
-                                  <div>
+                                  <div className="flex-1 min-w-0">
                                     <div className="flex flex-wrap items-center gap-2 font-bold text-sm text-ink">
                                       {stop.type === "meal" ? (
                                         <>

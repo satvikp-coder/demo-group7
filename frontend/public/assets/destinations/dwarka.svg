@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dwrSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18233C" />
+      <stop offset="65%" stop-color="#2D3B5C" />
+      <stop offset="100%" stop-color="#C99A3B" stop-opacity="0.45" />
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A2942" />
+      <stop offset="100%" stop-color="#0F1726" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#dwrSky)" />
+  <!-- Gomti River & Arabian Sea confluence -->
+  <rect y="350" width="800" height="150" fill="url(#waterGrad)" />
+  <path d="M0 365 Q 150 358 300 365 T 600 365 T 800 365" stroke="#C99A3B" stroke-width="1.5" fill="none" opacity="0.35" />
+  
+  <!-- Ghats Steps (Swargadwar / Mokshadwar) -->
+  <rect x="180" y="325" width="440" height="25" fill="#243354" stroke="#C99A3B" stroke-width="1.5" />
+  <rect x="220" y="305" width="360" height="20" fill="#1E2A46" stroke="#C99A3B" stroke-width="1.5" />
+  
+  <!-- Dwarkadhish 5-story Temple Structure (Jagat Mandir) -->
+  <!-- 72 carved pillars representation -->
+  <polygon points="240,305 270,240 530,240 560,305" fill="#2A3855" stroke="#C99A3B" stroke-width="1.5" />
+  <polygon points="280,240 310,180 490,180 520,240" fill="#1E2A46" stroke="#C99A3B" stroke-width="1.5" />
+  
+  <!-- Tall Shikhara (43m 7-tiered grand spire) -->
+  <path d="M 345 240 Q 360 110 395 55 Q 400 45 405 55 Q 440 110 455 240 Z" fill="#243354" stroke="#C99A3B" stroke-width="2.5" />
+  <line x1="355" y1="200" x2="445" y2="200" stroke="#C99A3B" stroke-width="1.5" />
+  <line x1="365" y1="160" x2="435" y2="160" stroke="#C99A3B" stroke-width="1.5" />
+  <line x1="375" y1="120" x2="425" y2="120" stroke="#C99A3B" stroke-width="1.5" />
+  <line x1="385" y1="85" x2="415" y2="85" stroke="#C99A3B" stroke-width="1.5" />
+  
+  <!-- 52-yard Sacred Flag (Dhwaja with Sun and Moon) -->
+  <circle cx="400" cy="40" r="6" fill="#C99A3B" />
+  <line x1="400" y1="40" x2="400" y2="15" stroke="#C99A3B" stroke-width="2" />
+  <path d="M 400 15 Q 430 18 460 28 Q 435 38 400 40 Z" fill="#D97736" stroke="#C99A3B" stroke-width="1" />
+  
+  <!-- Sudama Setu Bridge Silhouette in background -->
+  <line x1="60" y1="340" x2="220" y2="340" stroke="#C99A3B" stroke-width="2" opacity="0.6" />
+  <line x1="100" y1="315" x2="100" y2="350" stroke="#C99A3B" stroke-width="2" opacity="0.6" />
+  <line x1="180" y1="315" x2="180" y2="350" stroke="#C99A3B" stroke-width="2" opacity="0.6" />
+
+  <!-- Title Badge -->
+  <rect x="24" y="24" width="752" height="452" fill="none" stroke="#C99A3B" stroke-width="1" opacity="0.4" />
+  <rect x="35" y="35" width="220" height="42" fill="#1E2A46" fill-opacity="0.85" stroke="#C99A3B" stroke-width="1" />
+  <text x="50" y="55" fill="#C99A3B" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="2">ANCIENT CAPITAL</text>
+  <text x="50" y="70" fill="#F6F4EF" font-family="'Fraunces', serif" font-size="14" font-weight="600">Dwarkadhish Jagat Mandir</text>
+</svg>

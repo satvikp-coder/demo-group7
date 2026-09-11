@@ -4,6 +4,7 @@ import {
   GUJARAT_DESTINATIONS,
   getCityById,
 } from "../data/destinations";
+import { ImageWithFallback } from "./ImageWithFallback";
 import {
   X,
   Calendar,
@@ -112,6 +113,18 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
     }
   };
 
+  // Keyboard Escape listener
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleGenerate = () => {
@@ -131,7 +144,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
     activeCity.hotels[0];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-ink/85 backdrop-blur-xs overflow-y-auto">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="planner-modal-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-ink/85 backdrop-blur-xs overflow-y-auto"
+      onClick={onClose}
+    >
       <div
         className="bg-salt border-2 border-gold max-w-3xl w-full text-charcoal p-5 sm:p-8 relative shadow-2xl my-6 animate-fadeIn"
         onClick={(e) => e.stopPropagation()}
@@ -143,7 +162,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <Calendar className="w-4 h-4 text-gold" />
               <span>Stepwell Single-City Day Planner</span>
             </div>
-            <h2 className="font-display text-2xl sm:text-3xl text-ink font-semibold">
+            <h2 id="planner-modal-title" className="font-display text-2xl sm:text-3xl text-ink font-semibold">
               {language === "gu"
                 ? `${getName(activeCity)} પ્રવાસ આયોજન`
                 : language === "hi"
@@ -361,9 +380,10 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
               {/* Selected City Highlight Monograph */}
               <div className="bg-ink text-salt border-2 border-gold p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
-                <img
+                <ImageWithFallback
                   src={activeCity.imageUrl}
-                  alt={getName(activeCity)}
+                  alt={activeCity.imageAlt || getName(activeCity)}
+                  category={activeCity.officialCategory || activeCity.category}
                   className="w-full sm:w-40 h-28 object-cover border border-gold shrink-0"
                 />
                 <div className="space-y-2 text-left w-full">

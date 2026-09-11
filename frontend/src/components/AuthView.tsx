@@ -50,6 +50,8 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
   // Success state simulation
   const [successMsg, setSuccessMsg] = useState("");
+  // Demo password recovery notice state
+  const [showDemoRecoveryNotice, setShowDemoRecoveryNotice] = useState(false);
 
   const validateEmail = (val: string) => {
     if (!val.trim()) {
@@ -316,6 +318,35 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   )}
                 </div>
 
+                {showDemoRecoveryNotice && (
+                  <div className="bg-salt border-2 border-gold/60 p-3.5 mb-2 text-xs font-body animate-fadeIn">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <div className="flex items-center gap-2">
+                        <span className="bg-gold/20 text-gold border border-gold/40 px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider">
+                          Frontend Demo Mode
+                        </span>
+                        <span className="font-mono text-charcoal font-semibold text-[11px]">
+                          Password Recovery
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setShowDemoRecoveryNotice(false)}
+                        className="text-stone hover:text-charcoal text-xs font-mono cursor-pointer p-0.5"
+                        aria-label="Dismiss notice"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    <p className="text-charcoal/80 text-[11px] leading-relaxed mb-1.5">
+                      This application operates in <strong>client-only demo mode without a backend server</strong>. Password reset emails cannot be dispatched because there is no mail server or database connection.
+                    </p>
+                    <p className="text-stone text-[10px] font-mono">
+                      Tip: Account sessions run in browser storage (<code className="text-gold">localStorage</code>). During this demo, you can enter any valid email format and a 6+ character password to sign in or test features.
+                    </p>
+                  </div>
+                )}
+
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
                     <label
@@ -326,9 +357,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     </label>
                     <button
                       type="button"
-                      onClick={() =>
-                        alert("Password reset link sent to registered email.")
-                      }
+                      onClick={() => setShowDemoRecoveryNotice(true)}
                       className="text-xs font-mono text-stone hover:text-gold transition-colors cursor-pointer"
                     >
                       Forgot password?

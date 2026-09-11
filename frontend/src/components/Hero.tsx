@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Compass } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
+import { GUJARAT_DESTINATIONS } from '../data/destinations';
 
 interface HeroProps {
   onStartPlanning: () => void;
@@ -11,6 +12,13 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) => {
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const { t, language } = useLanguage();
+
+  const siteCount = GUJARAT_DESTINATIONS.length;
+  const countStr = language === 'gu' 
+    ? String(siteCount).replace(/[0-9]/g, (d) => '૦૧૨૩૪૫૬૭૮૯'[parseInt(d, 10)])
+    : language === 'hi'
+    ? String(siteCount).replace(/[0-9]/g, (d) => '०१२३४५६७८९'[parseInt(d, 10)])
+    : String(siteCount);
 
   const HEADLINE_OPTIONS = [
     language === 'gu' ? "ગુજરાતનું આયોજન, પગથિયે પગથિયે." : language === 'hi' ? "गुजरात की योजना, सीढ़ी दर सीढ़ी।" : "Plan Gujarat, terrace by terrace.",
@@ -82,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               transition={{ duration: 0.5, delay: 0.35 }}
               className="text-base sm:text-lg text-charcoal/80 max-w-2xl font-body leading-relaxed border-l-2 border-gold/60 pl-4 py-0.5"
             >
-              {t('hero.tagline', 'Explore 10 Gujarat heritage sites—from the 11th-century carved sun temple of Modhera to the salt expanses of Kutch and Gir lion reserves. Structured routes, authentic craft guilds, and ledger-precise travel expenses.')}
+              {t('hero.tagline', `Explore ${siteCount} Gujarat heritage sites—from the 11th-century carved sun temple of Modhera to the salt expanses of Kutch and Gir lion reserves. Structured routes, authentic craft guilds, and ledger-precise travel expenses.`).replace(/10|૧૦/g, countStr)}
             </motion.p>
 
             {/* Primary Action Button (Madder Red) & Secondary Link */}
@@ -105,7 +113,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 className="bg-transparent text-ink hover:text-gold border border-stone/40 hover:border-gold px-6 py-3.5 text-sm font-medium transition-colors duration-150 flex items-center gap-2 cursor-pointer"
               >
                 <Compass className="w-4 h-4 text-gold" />
-                <span>{t('hero.browseSites', 'Browse 10 Heritage Sites')}</span>
+                <span>{t('hero.browseSites', `Browse ${siteCount} Heritage Sites`).replace(/10|૧૦/g, countStr)}</span>
               </button>
             </motion.div>
 
@@ -121,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                   {language === 'gu' ? 'સમાવિષ્ટ સ્થળો' : language === 'hi' ? 'शामिल स्थल' : 'Sites Covered'}
                 </span>
                 <span className="text-ink font-semibold text-base sm:text-lg">
-                  {t('hero.statSites', '10 Monuments')}
+                  {t('hero.statSites', `${siteCount} Monuments`).replace(/10|૧૦/g, countStr)}
                 </span>
               </div>
               <div>
@@ -160,9 +168,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group">
                   <img
-                    src="https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&q=80&w=800"
+                    src="/assets/destinations/modhera.jpg"
                     alt="Modhera Sun Temple Stepped Tank Ramakunda"
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
@@ -184,9 +192,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group">
                   <img
-                    src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80&w=800"
-                    alt="Rann of Kutch White Salt Desert"
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    src="/assets/destinations/rann-of-kutch.jpg"
+                    alt="Great Rann of Kutch White Salt Desert at Sunset"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
@@ -208,9 +216,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               >
                 <div className="relative h-40 sm:h-48 overflow-hidden group">
                   <img
-                    src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&q=80&w=800"
+                    src="/assets/attractions/gir-lion.jpg"
                     alt="Gir National Park Asiatic Lion Reserve"
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
@@ -232,9 +240,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               >
                 <div className="relative h-40 sm:h-48 overflow-hidden group">
                   <img
-                    src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=800"
+                    src="/assets/attractions/adalaj-stepwell.jpg"
                     alt="Adalaj Ni Vav 5-story Subterranean Stepwell"
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">

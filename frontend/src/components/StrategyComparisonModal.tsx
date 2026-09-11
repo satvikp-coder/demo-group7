@@ -106,8 +106,25 @@ export const StrategyComparisonModal: React.FC<
     }));
   };
 
+  // Keyboard Escape listener
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-ink/90 backdrop-blur-sm overflow-y-auto">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="strategy-comparison-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-ink/90 backdrop-blur-sm overflow-y-auto"
+      onClick={onClose}
+    >
       <div
         className="bg-salt border-2 border-gold max-w-6xl w-full text-charcoal p-3 sm:p-6 md:p-8 relative shadow-2xl my-2 sm:my-8 animate-fadeIn max-h-[94vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
@@ -119,7 +136,7 @@ export const StrategyComparisonModal: React.FC<
               <SlidersHorizontal className="w-4 h-4 text-gold shrink-0" />
               <span>Stepwell Optimization Comparison</span>
             </div>
-            <h2 className="font-display text-xl sm:text-3xl text-ink font-bold leading-tight">
+            <h2 id="strategy-comparison-title" className="font-display text-xl sm:text-3xl text-ink font-bold leading-tight">
               Compare Optimization Strategies — {getName(budgetResult.activeCity)}
             </h2>
             <p className="font-body text-xs text-stone mt-0.5">

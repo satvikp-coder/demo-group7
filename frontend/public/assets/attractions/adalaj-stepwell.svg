@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vavSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141E34" />
+      <stop offset="100%" stop-color="#263554" />
+    </linearGradient>
+    <linearGradient id="shaftDepth" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D3A54" />
+      <stop offset="50%" stop-color="#1B263D" />
+      <stop offset="100%" stop-color="#0A101C" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#vavSky)" />
+  
+  <!-- Subterranean Excavation Profile -->
+  <rect x="120" y="80" width="560" height="400" fill="url(#shaftDepth)" stroke="#C99A3B" stroke-width="2" />
+  
+  <!-- Ground Level Pavilion (Level 1) -->
+  <rect x="80" y="80" width="640" height="30" fill="#2E3C58" stroke="#C99A3B" stroke-width="2" />
+  <!-- Chhatri domes on top -->
+  <path d="M 200 80 Q 240 40 280 80 Z" fill="#C99A3B" opacity="0.85" />
+  <path d="M 520 80 Q 560 40 600 80 Z" fill="#C99A3B" opacity="0.85" />
+  
+  <!-- Level 2 Subterranean Gallery -->
+  <rect x="160" y="160" width="480" height="25" fill="#24314A" stroke="#C99A3B" stroke-width="1.5" />
+  <!-- Carved Solanki Pillars Level 1-2 -->
+  <rect x="220" y="110" width="16" height="50" fill="#C99A3B" />
+  <rect x="300" y="110" width="16" height="50" fill="#C99A3B" />
+  <rect x="392" y="110" width="16" height="50" fill="#C99A3B" />
+  <rect x="484" y="110" width="16" height="50" fill="#C99A3B" />
+  <rect x="564" y="110" width="16" height="50" fill="#C99A3B" />
+  
+  <!-- Level 3 Subterranean Gallery -->
+  <rect x="200" y="240" width="400" height="25" fill="#1D283E" stroke="#C99A3B" stroke-width="1.5" />
+  <!-- Carved Pillars Level 2-3 with Brackets -->
+  <g fill="#C99A3B">
+    <rect x="250" y="185" width="16" height="55" />
+    <polygon points="242,195 250,185 266,185 274,195" />
+    <rect x="340" y="185" width="16" height="55" />
+    <polygon points="332,195 340,185 356,185 364,195" />
+    <rect x="444" y="185" width="16" height="55" />
+    <polygon points="436,195 444,185 460,185 468,195" />
+    <rect x="534" y="185" width="16" height="55" />
+    <polygon points="526,195 534,185 550,185 558,195" />
+  </g>
+
+  <!-- Level 4 Gallery -->
+  <rect x="240" y="320" width="320" height="25" fill="#172033" stroke="#C99A3B" stroke-width="1.5" />
+  <!-- Pillars Level 3-4 -->
+  <rect x="280" y="265" width="16" height="55" fill="#C99A3B" />
+  <rect x="392" y="265" width="16" height="55" fill="#C99A3B" />
+  <rect x="504" y="265" width="16" height="55" fill="#C99A3B" />
+
+  <!-- Level 5 - Deepest Well Shaft & Water Reservoir -->
+  <rect x="280" y="400" width="240" height="30" fill="#101826" stroke="#C99A3B" stroke-width="1.5" />
+  <rect x="320" y="430" width="160" height="50" fill="#091424" />
+  <path d="M 320 445 Q 400 435 480 445" stroke="#C99A3B" stroke-width="1.5" fill="none" opacity="0.6" />
+  
+  <!-- Stepped Chevron Corridors (Side descending steps) -->
+  <!-- Left steps -->
+  <polygon points="120,110 160,110 160,135 120,135" fill="#C99A3B" opacity="0.6" />
+  <polygon points="120,160 180,160 180,185 120,185" fill="#C99A3B" opacity="0.5" />
+  <polygon points="120,210 200,210 200,235 120,235" fill="#C99A3B" opacity="0.4" />
+  <!-- Right steps -->
+  <polygon points="680,110 640,110 640,135 680,135" fill="#C99A3B" opacity="0.6" />
+  <polygon points="680,160 620,160 620,185 680,185" fill="#C99A3B" opacity="0.5" />
+  <polygon points="680,210 600,210 600,235 680,235" fill="#C99A3B" opacity="0.4" />
+
+  <!-- Title Badge -->
+  <rect x="24" y="24" width="752" height="452" fill="none" stroke="#C99A3B" stroke-width="1" opacity="0.4" />
+  <rect x="35" y="35" width="220" height="42" fill="#1E2A46" fill-opacity="0.85" stroke="#C99A3B" stroke-width="1" />
+  <text x="50" y="55" fill="#C99A3B" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="2">STEPWELL ARCHITECTURE</text>
+  <text x="50" y="70" fill="#F6F4EF" font-family="'Fraunces', serif" font-size="14" font-weight="600">Adalaj Ni Vav (1498 AD)</text>
+</svg>

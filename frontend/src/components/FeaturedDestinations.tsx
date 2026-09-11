@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Destination, GUJARAT_DESTINATIONS } from '../data/destinations';
 import { ArrowUpRight, MapPin, Ticket, Star, Clock, Info } from 'lucide-react';
+import { ImageWithFallback } from './ImageWithFallback';
 
 interface FeaturedDestinationsProps {
   onSelectDestination: (destination: Destination) => void;
@@ -48,10 +49,11 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
                 <div>
                   {/* Image with Tag Overlay */}
                   <div className="relative h-60 overflow-hidden bg-ink mb-4 border border-stone/20">
-                    <img
+                    <ImageWithFallback
                       src={site.imageUrl}
-                      alt={site.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                      alt={site.imageAlt || site.name}
+                      category={site.category}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Category Tag Pill */}
                     <div className="absolute top-3 left-3 bg-ink/90 text-salt px-2.5 py-1 text-[11px] font-mono border border-stone/40">

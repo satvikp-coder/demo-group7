@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Compass, Sparkles, Building2, ChevronRight } from "lucide-react";
+import { GUJARAT_DESTINATIONS } from "../data/destinations";
 
 interface HomeTransitionOverlayProps {
   isVisible?: boolean;
@@ -49,7 +50,7 @@ export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({
                     ✦ Welcome to Gujarat Heritage Directory
                   </span>
                   <span className="text-stone text-[10px] hidden sm:block">
-                    Explore 10 monuments, preserved heritage stays, &
+                    Explore {GUJARAT_DESTINATIONS.length} monuments, preserved heritage stays, &
                     ledger-precise route planning.
                   </span>
                 </div>
