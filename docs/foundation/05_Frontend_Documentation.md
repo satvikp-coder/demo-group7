@@ -98,7 +98,7 @@ Restaurant {
 | `Navbar.tsx` | Top nav, mobile drawer | |
 | `Hero.tsx`, `ValueProps.tsx`, `FeaturedDestinations.tsx`, `Footer.tsx` | Landing page sections | |
 | `AuthView.tsx` | Login / Register | Role selector: Tourist vs. Tour Operator |
-| `ExploreView.tsx` | City search/browse | Client-side prefix filter simulates the future Trie-backed search; official category filter chips |
+| `ExploreView.tsx` | City search/browse | Real-time Trie-backed prefix/substring search powered by `dsa/trie/Trie.ts`; official category filter chips |
 | `DestinationDetailView.tsx` | City overview | Shows that city's attractions + hotels; "Add to trip plan" entry point |
 | `DestinationModal.tsx` | Attraction/hotel quick-view modal | |
 | `PlannerModal.tsx` | 3-step trip wizard | Step 1: confirm city (not multi-select). Step 2: days, budget, **starting hotel**, **start time**. Step 3: review & generate |

@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "translate": "tsx scripts/translate-content.ts",
+    "test": "tsx ../tests/dsa/trie.test.ts",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

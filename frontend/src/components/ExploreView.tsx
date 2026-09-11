@@ -5,6 +5,7 @@ import { SVG_COLORS } from '../data/colors';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { AccessibilityBadge } from './AccessibilityBadge';
+import { getDestinationTrie, searchDestinationsWithTrie } from '../utils/destinationTrie';
 
 interface ExploreViewProps {
   onSelectDestination: (dest: Destination) => void;
@@ -138,38 +139,34 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
     }
   };
 
+  // Real-time Trie search: query the active Trie index to get matching destination IDs
+  const matchingDestinationIds = useMemo(() => {
+    return searchDestinationsWithTrie(searchQuery);
+  }, [searchQuery]);
+
   // Filter & Sort Logic
   const filteredDestinations = useMemo(() => {
     return GUJARAT_DESTINATIONS.filter((dest) => {
-      // Category match
+      // 1. Text Search Filter powered by the Trie
+      if (matchingDestinationIds !== null && !matchingDestinationIds.has(dest.id)) {
+        return false;
+      }
+
+      // 2. Category match
       if (selectedCategory !== 'All Categories' && dest.officialCategory !== selectedCategory) {
         return false;
       }
 
-      // Wheelchair accessibility match
+      // 3. Wheelchair accessibility match
       if (wheelchairOnly) {
         const hasWheelchair = dest.attractions.some(a => a.wheelchairAccessible === true);
         if (!hasWheelchair) return false;
       }
 
-      // Physical demand match
+      // 4. Physical demand match
       if (selectedDemands.length > 0) {
         const hasMatchingDemand = dest.attractions.some(a => selectedDemands.includes(a.physicalDemand));
         if (!hasMatchingDemand) return false;
-      }
-
-      if (searchQuery.trim()) {
-        const query = searchQuery.trim().toLowerCase();
-        
-        const activeName = getName(dest).toLowerCase();
-        const englishName = dest.name.toLowerCase();
-        const gujaratiName = dest.gujaratiName ? dest.gujaratiName.toLowerCase() : '';
-        const hindiName = dest.hindiName ? dest.hindiName.toLowerCase() : '';
-
-        // Search is limited to place names only — no district, location, category, or highlights
-        const nameMatch = activeName.includes(query) || englishName.includes(query) || gujaratiName.includes(query) || hindiName.includes(query);
-
-        return nameMatch;
       }
 
       return true;
@@ -195,7 +192,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
       }
       return 0;
     });
-  }, [searchQuery, selectedCategory, sortBy, wheelchairOnly, selectedDemands, language, getName]);
+  }, [matchingDestinationIds, selectedCategory, sortBy, wheelchairOnly, selectedDemands, getName]);
 
   const handleResetFilters = () => {
     setSearchQuery('');

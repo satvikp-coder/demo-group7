@@ -7,6 +7,7 @@ import {
 } from "../data/destinations";
 import { HotelData } from "./HotelsView";
 import { useLanguage } from "../context/LanguageContext";
+import { resetDestinationTrie } from "../utils/destinationTrie";
 import {
   Building2,
   MapPin,
@@ -285,6 +286,13 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
               : d,
           ),
         );
+        const existing = GUJARAT_DESTINATIONS.find((d) => d.id === editingItem.id);
+        if (existing) {
+          existing.name = editingItem.data.name;
+          if (editingItem.data.district) existing.district = editingItem.data.district;
+          if (editingItem.data.category) existing.officialCategory = editingItem.data.category;
+        }
+        resetDestinationTrie();
         showToast(`Updated destination "${editingItem.data.name}"`);
       } else {
         const newItem = {
@@ -293,6 +301,36 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           lastUpdated: today,
         };
         setDestinations((prev) => [newItem, ...prev]);
+
+        const newDest: Destination = {
+          id: newItem.id,
+          name: newItem.name,
+          district: newItem.district || "Gujarat",
+          location: newItem.district || "Gujarat",
+          category: newItem.category,
+          officialCategory: newItem.category as any,
+          tag: "Heritage Destination",
+          rating: `${newItem.rating || 4.7} ★`,
+          ratingValue: newItem.rating || 4.7,
+          entryFee: `₹${newItem.estimatedCost || 0}`,
+          entryFeeNumeric: newItem.estimatedCost || 0,
+          bestTime: "Oct – Mar",
+          distanceFromAhmedabad: "100 km",
+          distanceNumeric: 100,
+          duration: "1–2 Days",
+          avgVisitTime: "3–4 Hours",
+          imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=1000",
+          imageAlt: newItem.name,
+          description: `Historic heritage site located in ${newItem.district}.`,
+          highlights: [`Exploration of ${newItem.name}`],
+          attractions: [],
+          hotels: [],
+          restaurants: [],
+          nearbyAttractions: [],
+          nearbyHotels: [],
+        };
+        GUJARAT_DESTINATIONS.unshift(newDest);
+        resetDestinationTrie();
         showToast(`Added new destination "${newItem.name}"`);
       }
     } else if (editingItem.type === "hotels") {
@@ -323,6 +361,14 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
               : a,
           ),
         );
+        for (const d of GUJARAT_DESTINATIONS) {
+          const attr = d.attractions.find((a) => a.id === editingItem.id);
+          if (attr) {
+            attr.name = editingItem.data.name;
+            break;
+          }
+        }
+        resetDestinationTrie();
         showToast(`Updated attraction "${editingItem.data.name}"`);
       } else {
         const newItem = {
@@ -331,6 +377,25 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
           lastUpdated: today,
         };
         setAttractions((prev) => [newItem, ...prev]);
+        const parentDest = GUJARAT_DESTINATIONS.find(
+          (d) => d.name.toLowerCase() === (editingItem.data.destinationName || "").toLowerCase()
+        ) || GUJARAT_DESTINATIONS[0];
+        if (parentDest) {
+          parentDest.attractions.push({
+            id: newItem.id,
+            name: newItem.name,
+            lat: newItem.lat || 20.888,
+            lng: newItem.lng || 70.4012,
+            durationHours: newItem.visitDurationHours || 2.0,
+            rating: newItem.rating || 4.6,
+            category: newItem.category || "Heritage",
+            entryFee: newItem.entryFee || "Free",
+            entryFeeNumeric: 0,
+            wheelchairAccessible: true,
+            physicalDemand: "moderate",
+          });
+        }
+        resetDestinationTrie();
         showToast(`Added new attraction "${newItem.name}"`);
       }
     } else if (editingItem.type === "restaurants") {
@@ -362,6 +427,11 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     if (activeTab === "destinations") {
       const target = destinations.find((d) => d.id === id);
       setDestinations((prev) => prev.filter((d) => d.id !== id));
+      const idx = GUJARAT_DESTINATIONS.findIndex((d) => d.id === id);
+      if (idx !== -1) {
+        GUJARAT_DESTINATIONS.splice(idx, 1);
+      }
+      resetDestinationTrie();
       showToast(`Deleted destination "${target?.name || id}"`);
     } else if (activeTab === "hotels") {
       const target = hotels.find((h) => h.id === id);
@@ -370,6 +440,13 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     } else if (activeTab === "attractions") {
       const target = attractions.find((a) => a.id === id);
       setAttractions((prev) => prev.filter((a) => a.id !== id));
+      for (const dest of GUJARAT_DESTINATIONS) {
+        const aIdx = dest.attractions.findIndex((a) => a.id === id);
+        if (aIdx !== -1) {
+          dest.attractions.splice(aIdx, 1);
+        }
+      }
+      resetDestinationTrie();
       showToast(`Deleted attraction "${target?.name || id}"`);
     } else {
       const target = restaurants.find((r) => r.id === id);
