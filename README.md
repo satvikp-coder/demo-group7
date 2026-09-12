@@ -7,7 +7,7 @@
 
 A demo test deployment of the frontend and UI is live on Vercel:
 
-🌐 **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**
+🌐 **[https://frontend-blue-phi-iaamrpzffb.vercel.app/](https://frontend-blue-phi-iaamrpzffb.vercel.app/)**
 
 You can test the interactive itinerary planner, Dijkstra graph visualizer, budget calculator, and responsive UI components live in your browser.
 
@@ -160,7 +160,7 @@ group-07-heritage-tourism-planner/
 ## Quick Start & Local Setup
 
 > [!TIP]
-> You can try the live frontend demo immediately without local installation at **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**.
+> You can try the live frontend demo immediately without local installation at **[https://frontend-blue-phi-iaamrpzffb.vercel.app/](https://frontend-blue-phi-iaamrpzffb.vercel.app/)**.
 
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
