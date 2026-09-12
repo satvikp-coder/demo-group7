@@ -66,6 +66,8 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
       src={effectiveSrc}
       alt={alt || "Gujarat Heritage Site"}
       className={className}
+      loading={rest.loading ?? "lazy"}
+      decoding={rest.decoding ?? "async"}
       onError={(e) => {
         if (!hasError) {
           setHasError(true);

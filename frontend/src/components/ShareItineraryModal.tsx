@@ -55,8 +55,10 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
         text: `Check out this circular ${config.tripDays || 2}-day heritage itinerary for ${cityName}!`,
         url: shareUrl,
       });
-    } catch (err) {
-      console.log("Native share closed or failed:", err);
+    } catch (err: any) {
+      if (err?.name !== "AbortError") {
+        console.warn("Native share could not be completed:", err);
+      }
     }
   };
 

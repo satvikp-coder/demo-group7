@@ -1200,7 +1200,7 @@ export const GUJARAT_DESTINATIONS: Destination[] = [
   {
     id: "gir",
     seasonalAdvisory: {
-      note: "Gir National Park is closed annually from June 16 to October 15 for monsoon breeding season. Safari permits for peak winter (Nov-Feb) sell out early. [TODO: confirm exact 2026-27 online permit window reopening date]",
+      note: "Gir National Park is closed annually from June 16 to October 15 for monsoon breeding season. Safari permits for peak winter (Nov-Feb) sell out early; advance online booking via the official forest department portal is highly recommended.",
       activeMonths: [10, 11, 12, 1, 2, 3, 4, 5, 6],
       peakWindowLabel: "Oct 16 – Jun 15 (Park Open)",
     },
