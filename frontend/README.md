@@ -1,3 +1,3 @@
 # Heritage Tourism Planner Frontend  
   
-🌐 **[https://frontend-e26nv1pbb-satvikp-coders-projects.vercel.app/](https://frontend-e26nv1pbb-satvikp-coders-projects.vercel.app/)** 
+🌐 **[https://frontend-ju1o4gh8a-satvikp-coders-projects.vercel.app/](https://frontend-ju1o4gh8a-satvikp-coders-projects.vercel.app/)** 
