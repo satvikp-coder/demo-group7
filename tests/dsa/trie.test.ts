@@ -5,6 +5,7 @@ import {
   normalizeSearchTerm,
   resetDestinationTrie,
   getDestinationTrie,
+  getDestinationMap,
 } from "../../frontend/src/utils/destinationTrie";
 import { GUJARAT_DESTINATIONS } from "../../frontend/src/data/destinations";
 
@@ -27,14 +28,37 @@ console.log("--- Test Group 1: Standalone Trie Functionality ---");
   trie.insert("Somnath Temple", "somnath");
   trie.insert("Dwarka", "dwarka");
 
-  // Prefix matching
+  // Prefix matching via search and searchPrefix
   const ahmResults = trie.searchPrefix("ahm");
   assert(ahmResults.includes("ahmedabad"), "Prefix 'ahm' should return 'ahmedabad'");
   assert(!ahmResults.includes("somnath"), "Prefix 'ahm' should not return 'somnath'");
 
+  const ahmSearch = trie.search("ahm");
+  assert(ahmSearch.includes("ahmedabad"), "search('ahm') alias should return 'ahmedabad'");
+
   // Suffix/substring matching
   const badResults = trie.searchPrefix("bad");
   assert(badResults.includes("ahmedabad"), "Suffix/substring 'bad' should return 'ahmedabad'");
+
+  const medabResults = trie.searchPrefix("medab");
+  assert(medabResults.includes("ahmedabad"), "Middle substring 'medab' should return 'ahmedabad'");
+
+  // startsWith method
+  assert(trie.startsWith("ahm") === true, "startsWith('ahm') should return true");
+  assert(trie.startsWith("medab") === true, "startsWith('medab') should return true (suffix trie)");
+  assert(trie.startsWith("xyz") === false, "startsWith('xyz') should return false");
+
+  // has method (exact word)
+  assert(trie.has("ahmedabad") === true, "has('ahmedabad') should return true");
+  assert(trie.has("nonexistent") === false, "has('nonexistent') should return false");
+
+  // getWordsWithPrefix
+  const wordsAhm = trie.getWordsWithPrefix("ahm");
+  assert(wordsAhm.includes("ahmedabad"), "getWordsWithPrefix('ahm') should contain 'ahmedabad'");
+
+  // autocomplete
+  const autoResults = trie.autocomplete("som", 5);
+  assert(autoResults.includes("somnath"), "autocomplete('som') should return 'somnath'");
 
   // Case-insensitivity
   const upperResults = trie.searchPrefix("AHMED");
@@ -71,15 +95,50 @@ console.log("\n--- Test Group 3: GUJARAT_DESTINATIONS Integration ---");
 {
   const trie = buildDestinationTrie(GUJARAT_DESTINATIONS);
 
-  // Search by City Name
-  const ahmMatch = searchDestinationsWithTrie("Ahmedabad", trie);
-  assert(ahmMatch !== null && ahmMatch.has("ahmedabad"), "Search 'Ahmedabad' returns ahmedabad ID");
+  // Search by Prefix: ahm, som, dw
+  const ahmPrefix = searchDestinationsWithTrie("ahm", trie);
+  assert(ahmPrefix !== null && ahmPrefix.has("ahmedabad"), "Search prefix 'ahm' returns ahmedabad ID");
 
   const somMatch = searchDestinationsWithTrie("som", trie);
   assert(somMatch !== null && somMatch.has("somnath"), "Search prefix 'som' returns somnath ID");
 
+  const dwMatch = searchDestinationsWithTrie("dw", trie);
+  assert(dwMatch !== null && dwMatch.has("dwarka"), "Search prefix 'dw' returns dwarka ID");
+
   const dwarMatch = searchDestinationsWithTrie("dwar", trie);
   assert(dwarMatch !== null && dwarMatch.has("dwarka"), "Search prefix 'dwar' returns dwarka ID");
+
+  // Exact search
+  const ahmExact = searchDestinationsWithTrie("Ahmedabad", trie);
+  assert(ahmExact !== null && ahmExact.has("ahmedabad"), "Exact search 'Ahmedabad' returns ahmedabad ID");
+
+  const somExact = searchDestinationsWithTrie("Somnath", trie);
+  assert(somExact !== null && somExact.has("somnath"), "Exact search 'Somnath' returns somnath ID");
+
+  // Substring search
+  const medabMatch = searchDestinationsWithTrie("medab", trie);
+  assert(medabMatch !== null && medabMatch.has("ahmedabad"), "Substring 'medab' returns ahmedabad ID");
+
+  const nathMatch = searchDestinationsWithTrie("nath", trie);
+  assert(nathMatch !== null && nathMatch.has("somnath"), "Substring 'nath' returns somnath ID");
+
+  // Case-insensitivity
+  const ahmLower = searchDestinationsWithTrie("ahm", trie);
+  const ahmUpper = searchDestinationsWithTrie("AHM", trie);
+  const ahmMixed = searchDestinationsWithTrie("AhM", trie);
+  assert(ahmLower !== null && ahmUpper !== null && ahmMixed !== null, "Case variations must return non-null");
+  assert(ahmUpper.has("ahmedabad") && ahmMixed.has("ahmedabad"), "AHM and AhM return ahmedabad ID");
+
+  // Whitespace handling
+  const spacedMatch = searchDestinationsWithTrie("   ahm   ", trie);
+  assert(spacedMatch !== null && spacedMatch.has("ahmedabad"), "Leading/trailing spaces '   ahm   ' returns ahmedabad");
+
+  // Single-character queries
+  const aMatch = searchDestinationsWithTrie("a", trie);
+  assert(aMatch !== null && aMatch.has("ahmedabad"), "1-char query 'a' contains ahmedabad");
+
+  const sMatch = searchDestinationsWithTrie("s", trie);
+  assert(sMatch !== null && sMatch.has("somnath") && sMatch.has("saputara"), "1-char query 's' matches multiple destinations");
 
   // Search by Attraction Name inside Destination
   // e.g. "Adalaj" is an attraction in Ahmedabad
@@ -102,13 +161,28 @@ console.log("\n--- Test Group 3: GUJARAT_DESTINATIONS Integration ---");
   const kutchMatch = searchDestinationsWithTrie("kutch", trie);
   assert(kutchMatch !== null && kutchMatch.has("rann-of-kutch"), "Search district 'kutch' resolves to 'rann-of-kutch'");
 
-  // Search in Gujarati Script (e.g. સોમનાથ)
-  const gujaratiMatch = searchDestinationsWithTrie("સોમનાથ", trie);
-  assert(gujaratiMatch !== null && gujaratiMatch.has("somnath"), "Search Gujarati 'સોમનાથ' returns somnath ID");
+  // Search in Gujarati Script (e.g. સોમ, સોમનાથ, દ્વારકા)
+  const gujaratiSomPrefix = searchDestinationsWithTrie("સોમ", trie);
+  assert(gujaratiSomPrefix !== null && gujaratiSomPrefix.has("somnath"), "Search Gujarati prefix 'સોમ' returns somnath ID");
 
-  // Search in Hindi Script (e.g. द्वारका or सोमनाथ)
+  const gujaratiMatch = searchDestinationsWithTrie("સોમનાથ", trie);
+  assert(gujaratiMatch !== null && gujaratiMatch.has("somnath"), "Search Gujarati full 'સોમનાથ' returns somnath ID");
+
+  const gujaratiDwarka = searchDestinationsWithTrie("દ્વારકા", trie);
+  assert(gujaratiDwarka !== null && gujaratiDwarka.has("dwarka"), "Search Gujarati 'દ્વારકા' returns dwarka ID");
+
+  // Search in Hindi Script (e.g. सोम, सोमनाथ, द्वार, द्वारका)
+  const hindiSomPrefix = searchDestinationsWithTrie("सोम", trie);
+  assert(hindiSomPrefix !== null && hindiSomPrefix.has("somnath"), "Search Hindi prefix 'सोम' returns somnath ID");
+
   const hindiMatch = searchDestinationsWithTrie("सोमनाथ", trie);
-  assert(hindiMatch !== null && hindiMatch.has("somnath"), "Search Hindi 'सोमनाथ' returns somnath ID");
+  assert(hindiMatch !== null && hindiMatch.has("somnath"), "Search Hindi full 'सोमनाथ' returns somnath ID");
+
+  const hindiDwarPrefix = searchDestinationsWithTrie("द्वार", trie);
+  assert(hindiDwarPrefix !== null && hindiDwarPrefix.has("dwarka"), "Search Hindi prefix 'द्वार' returns dwarka ID");
+
+  const hindiDwarka = searchDestinationsWithTrie("द्वारका", trie);
+  assert(hindiDwarka !== null && hindiDwarka.has("dwarka"), "Search Hindi full 'द्वारका' returns dwarka ID");
 
   // Empty Query returns null (meaning no text filter constraint)
   const emptyMatch = searchDestinationsWithTrie("", trie);
@@ -118,38 +192,60 @@ console.log("\n--- Test Group 3: GUJARAT_DESTINATIONS Integration ---");
   assert(spacesOnlyMatch === null, "Whitespace-only query returns null");
 
   // Unknown term returns empty Set (0 matches)
-  const unknownMatch = searchDestinationsWithTrie("xyznonexistentplace", trie);
-  assert(unknownMatch !== null && unknownMatch.size === 0, "Unknown query returns empty Set");
+  const unknownMatch = searchDestinationsWithTrie("xyzabc123", trie);
+  assert(unknownMatch !== null && unknownMatch.size === 0, "Unknown query 'xyzabc123' returns empty Set");
+
+  // Deduplication check: Set size should match array when converted
+  assert(Array.from(somMatch).length === new Set(somMatch).size, "Matched IDs must have no duplicates");
 }
 
-console.log("\n--- Test Group 4: Destination Filtering Simulation ---");
+console.log("\n--- Test Group 4: Destination Filtering & Sorting Simulation ---");
 {
   const trie = buildDestinationTrie(GUJARAT_DESTINATIONS);
+  const destMap = getDestinationMap();
 
-  // Simulate ExploreView filtering with "modhera"
+  // Test Trie -> ID -> Map record lookup flow
   const query = "modhera";
   const matchedIds = searchDestinationsWithTrie(query, trie);
   assert(matchedIds !== null, "matchedIds should not be null for 'modhera'");
 
-  const filtered = GUJARAT_DESTINATIONS.filter((d) => matchedIds.has(d.id));
-  assert(filtered.length >= 1, "At least one destination should match 'modhera'");
-  assert(filtered.some((d) => d.id === "modhera"), "Filtered list must contain 'modhera'");
-  assert(!filtered.some((d) => d.id === "somnath"), "Filtered list must NOT contain 'somnath'");
+  // Lookup records from IDs via Map structure (O(1) per record)
+  const lookedUpRecords = Array.from(matchedIds).map(id => destMap.get(id)).filter(Boolean);
+  assert(lookedUpRecords.length >= 1, "At least one destination looked up from Map for 'modhera'");
+  assert(lookedUpRecords.some((d: any) => d.id === "modhera"), "Looked up list must contain 'modhera'");
+  assert(!lookedUpRecords.some((d: any) => d.id === "somnath"), "Looked up list must NOT contain 'somnath'");
 
   // Simulate Category + Trie text search combination
-  const modheraDest = GUJARAT_DESTINATIONS.find((d) => d.id === "modhera");
+  const modheraDest = destMap.get("modhera");
   const modheraCategory = modheraDest?.officialCategory || "";
 
-  const categoryFiltered = GUJARAT_DESTINATIONS.filter(
-    (d) => matchedIds.has(d.id) && d.officialCategory === modheraCategory
+  const categoryFiltered = lookedUpRecords.filter(
+    (d: any) => d.officialCategory === modheraCategory
   );
-  assert(categoryFiltered.some((d) => d.id === "modhera"), "Trie search combined with Category filter works");
+  assert(categoryFiltered.some((d: any) => d.id === "modhera"), "Trie search combined with Category filter works");
 
-  // Category mismatch
-  const wrongCategoryFiltered = GUJARAT_DESTINATIONS.filter(
-    (d) => matchedIds.has(d.id) && d.officialCategory === "Beaches"
+  // Category mismatch yields 0 results
+  const wrongCategoryFiltered = lookedUpRecords.filter(
+    (d: any) => d.officialCategory === "Beaches"
   );
   assert(wrongCategoryFiltered.length === 0, "Trie search with conflicting category correctly yields 0 results");
+
+  // Test Search + Sorting combination
+  const sResults = searchDestinationsWithTrie("s", trie);
+  assert(sResults !== null && sResults.size > 1, "Search 's' matches multiple destinations");
+  const sRecords = Array.from(sResults).map(id => destMap.get(id)).filter(Boolean) as any[];
+
+  // Rating sort (descending)
+  const sortedByRating = [...sRecords].sort((a, b) => b.ratingValue - a.ratingValue);
+  for (let i = 1; i < sortedByRating.length; i++) {
+    assert(sortedByRating[i - 1].ratingValue >= sortedByRating[i].ratingValue, "Rating sort order preserved");
+  }
+
+  // Alphabetical sort (ascending)
+  const sortedAlphabetical = [...sRecords].sort((a, b) => a.name.localeCompare(b.name));
+  for (let i = 1; i < sortedAlphabetical.length; i++) {
+    assert(sortedAlphabetical[i - 1].name.localeCompare(sortedAlphabetical[i].name) <= 0, "Alphabetical sort order preserved");
+  }
 }
 
 // 5. Typo-Tolerant Fuzzy Levenshtein Search Tests

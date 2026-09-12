@@ -209,7 +209,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
           <div className="relative z-10 pt-4 border-t border-stone/30 flex items-center justify-between text-[11px] font-mono text-stone">
             <span>Stepwell System v2.4</span>
-            <span className="text-gold">Encrypted & Private</span>
+            <span className="text-gold">Frontend Demo Session</span>
           </div>
         </div>
 

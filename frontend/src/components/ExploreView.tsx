@@ -5,7 +5,7 @@ import { SVG_COLORS } from '../data/colors';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { AccessibilityBadge } from './AccessibilityBadge';
-import { getDestinationTrie, searchDestinationsWithTrie } from '../utils/destinationTrie';
+import { searchDestinationsWithTrie, getDestinationMap } from '../utils/destinationTrie';
 import { ImageWithFallback } from './ImageWithFallback';
 
 interface ExploreViewProps {
@@ -138,60 +138,78 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
     }
   };
 
-  // Real-time Trie search: query the active Trie index to get matching destination IDs
+  // ─── TRIE SEARCH & DISCOVERY PIPELINE ──────────────────────────────────────
+  // Architecture Flow:
+  // USER QUERY -> TRIE SEARCH -> MATCHING RESULT IDS -> LOOK UP ORIGINAL RECORDS -> FILTERS -> SORTING -> UI
+
+  // 1. Trie Search: query the memoized Suffix/Prefix Trie index to get matching destination IDs
   const matchingDestinationIds = useMemo(() => {
     return searchDestinationsWithTrie(searchQuery);
   }, [searchQuery]);
 
-  // Filter & Sort Logic
+  // 2. Lookup Original Records: map matched IDs directly to destination records using O(1) Map lookup
+  const candidateDestinations = useMemo(() => {
+    if (matchingDestinationIds === null) {
+      // Empty search query: all destinations are candidates
+      return GUJARAT_DESTINATIONS;
+    }
+    const destMap = getDestinationMap();
+    const records: Destination[] = [];
+    for (const id of matchingDestinationIds) {
+      const dest = destMap.get(id);
+      if (dest) {
+        records.push(dest);
+      }
+    }
+    return records;
+  }, [matchingDestinationIds]);
+
+  // 3 & 4. Filter & Sort: apply existing category/demand/accessibility filters and sorting to Trie candidates
   const filteredDestinations = useMemo(() => {
-    return GUJARAT_DESTINATIONS.filter((dest) => {
-      // 1. Text Search Filter powered by the Trie
-      if (matchingDestinationIds !== null && !matchingDestinationIds.has(dest.id)) {
-        return false;
-      }
+    return candidateDestinations
+      .filter((dest) => {
+        // Category match
+        if (selectedCategory !== 'All Categories' && dest.officialCategory !== selectedCategory) {
+          return false;
+        }
 
-      // 2. Category match
-      if (selectedCategory !== 'All Categories' && dest.officialCategory !== selectedCategory) {
-        return false;
-      }
+        // Wheelchair accessibility match
+        if (wheelchairOnly) {
+          const hasWheelchair = dest.attractions.some(a => a.wheelchairAccessible === true);
+          if (!hasWheelchair) return false;
+        }
 
-      // 3. Wheelchair accessibility match
-      if (wheelchairOnly) {
-        const hasWheelchair = dest.attractions.some(a => a.wheelchairAccessible === true);
-        if (!hasWheelchair) return false;
-      }
-
-      // 4. Physical demand match
-      if (selectedDemands.length > 0) {
-        const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
-        if (!selectedDemands.includes(primaryDemand)) return false;
-      }
-
-      return true;
-    }).sort((a, b) => {
-      if (sortBy === 'rating') {
-        return b.ratingValue - a.ratingValue;
-      } else if (sortBy === 'fee') {
-        return a.entryFeeNumeric - b.entryFeeNumeric;
-      } else if (sortBy === 'alphabetical') {
-        return getName(a).localeCompare(getName(b));
-      } else if (sortBy === 'distance') {
-        return a.distanceNumeric - b.distanceNumeric;
-      } else if (sortBy === 'demand') {
-        // Demand ordering: MODERATE > HIGH > LOW, alphabetical tie-break
-        const demandOrder: Record<string, number> = { 'moderate': 0, 'high': 1, 'low': 2 };
-        const getDemandRank = (dest: typeof a) => {
+        // Physical demand match
+        if (selectedDemands.length > 0) {
           const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
-          return demandOrder[primaryDemand] ?? 1;
-        };
-        const rankDiff = getDemandRank(a) - getDemandRank(b);
-        if (rankDiff !== 0) return rankDiff;
-        return getName(a).localeCompare(getName(b));
-      }
-      return 0;
-    });
-  }, [matchingDestinationIds, selectedCategory, sortBy, wheelchairOnly, selectedDemands, getName]);
+          if (!selectedDemands.includes(primaryDemand)) return false;
+        }
+
+        return true;
+      })
+      .sort((a, b) => {
+        if (sortBy === 'rating') {
+          return b.ratingValue - a.ratingValue;
+        } else if (sortBy === 'fee') {
+          return a.entryFeeNumeric - b.entryFeeNumeric;
+        } else if (sortBy === 'alphabetical') {
+          return getName(a).localeCompare(getName(b));
+        } else if (sortBy === 'distance') {
+          return a.distanceNumeric - b.distanceNumeric;
+        } else if (sortBy === 'demand') {
+          // Demand ordering: MODERATE > HIGH > LOW, alphabetical tie-break
+          const demandOrder: Record<string, number> = { 'moderate': 0, 'high': 1, 'low': 2 };
+          const getDemandRank = (dest: typeof a) => {
+            const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
+            return demandOrder[primaryDemand] ?? 1;
+          };
+          const rankDiff = getDemandRank(a) - getDemandRank(b);
+          if (rankDiff !== 0) return rankDiff;
+          return getName(a).localeCompare(getName(b));
+        }
+        return 0;
+      });
+  }, [candidateDestinations, selectedCategory, sortBy, wheelchairOnly, selectedDemands, getName]);
 
   const handleResetFilters = () => {
     setSearchQuery('');

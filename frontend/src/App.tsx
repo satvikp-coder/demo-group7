@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
@@ -107,6 +107,8 @@ export default function App() {
     email: string;
     role: "tourist" | "operator";
   } | null>(() => restoreUserFromLocal());
+  const currentUserRef = useRef(currentUser);
+  currentUserRef.current = currentUser;
 
   // ─── Sync state from a parsed route ─────────────────────────────────────────
   const syncStateFromRoute = useCallback(
@@ -173,17 +175,29 @@ export default function App() {
           break;
         }
 
-        case "profile":
+        case "profile": {
+          const user = currentUserRef.current || restoreUserFromLocal();
+          if (!user) {
+            navigate("/login", { replace: true });
+            break;
+          }
           clearOverlays();
           setSelectedDestination(null);
           setShowProfile(true);
           break;
+        }
 
-        case "admin":
+        case "admin": {
+          const user = currentUserRef.current || restoreUserFromLocal();
+          if (!user) {
+            navigate("/login", { replace: true });
+            break;
+          }
           clearOverlays();
           setSelectedDestination(null);
           setShowAdminDashboard(true);
           break;
+        }
 
         case "auth":
           clearOverlays();
@@ -363,15 +377,38 @@ export default function App() {
     saveUserToLocal(currentUser);
   }, [currentUser]);
 
+  const handleLogout = useCallback(() => {
+    // Clear persisted user
+    saveUserToLocal(null);
+    setCurrentUser(null);
+    // Reset all overlay/view states
+    setShowAdminDashboard(false);
+    setShowProfile(false);
+    setShowResearchMode(false);
+    setShowBudgetPlanner(false);
+    setShowHotels(false);
+    setAuthMode(null);
+    // Navigate to home page
+    navigate("/");
+  }, []);
+
   const handleNavigateSection = (sectionId: string) => {
     switch (sectionId) {
       case "admin":
-        navigate("/admin");
+        if (currentUserRef.current || restoreUserFromLocal()) {
+          navigate("/admin");
+        } else {
+          navigate("/login");
+        }
         return;
 
       case "profile":
       case "dashboard":
-        navigate("/profile");
+        if (currentUserRef.current || restoreUserFromLocal()) {
+          navigate("/profile");
+        } else {
+          navigate("/login");
+        }
         return;
 
       case "budget":
@@ -383,7 +420,7 @@ export default function App() {
         return;
 
       case "account":
-        if (currentUser) {
+        if (currentUserRef.current || restoreUserFromLocal()) {
           navigate("/profile");
         } else {
           navigate("/login");
@@ -438,7 +475,7 @@ export default function App() {
               navigate(mode === "register" ? "/register" : "/login");
             }}
             user={currentUser}
-            onLogout={() => setCurrentUser(null)}
+            onLogout={handleLogout}
             tripCount={tripList.length}
           />
 
@@ -524,12 +561,13 @@ export default function App() {
                     initialMode={authMode}
                     onCloseOrGuest={() => navigate("/")}
                     onAuthSuccess={(user) => {
+                      saveUserToLocal(user);
                       setCurrentUser(user);
                       navigate("/profile");
                     }}
                   />
                 </motion.div>
-              ) : showAdminDashboard ? (
+              ) : (showAdminDashboard && Boolean(currentUser)) ? (
                 /* Display Admin Dashboard View */
                 <motion.div
                   key="admin-dashboard"
@@ -542,7 +580,7 @@ export default function App() {
                     onBackToProfile={() => navigate("/profile")}
                   />
                 </motion.div>
-              ) : showProfile ? (
+              ) : (showProfile && Boolean(currentUser)) ? (
                 /* Display Profile & Dashboard View */
                 <motion.div
                   key="profile-view"
@@ -568,11 +606,8 @@ export default function App() {
                       setShowProfile(false);
                       setPlannerOpen(true);
                     }}
-                    onOpenAdminDashboard={() => navigate("/admin")}
-                    onLogout={() => {
-                      setCurrentUser(null);
-                      navigate("/");
-                    }}
+                    onOpenAdminDashboard={currentUser ? () => navigate("/admin") : undefined}
+                    onLogout={handleLogout}
                   />
                 </motion.div>
               ) : showHotels ? (

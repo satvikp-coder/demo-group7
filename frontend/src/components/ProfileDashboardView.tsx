@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
 import { ItineraryConfig } from "./ItineraryView";
 import { useLanguage } from "../context/LanguageContext";
@@ -64,11 +64,19 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
   );
 
   const [name, setName] = useState<string>(
-    currentUser?.name || "Vidyadhar Solanki",
+    currentUser?.name || "Heritage Traveler",
   );
   const [email, setEmail] = useState<string>(
-    currentUser?.email || "solanki@heritage.in",
+    currentUser?.email || "traveler@heritage.in",
   );
+
+  useEffect(() => {
+    if (currentUser) {
+      setName(currentUser.name);
+      setEmail(currentUser.email);
+      setRole(currentUser.role);
+    }
+  }, [currentUser]);
   const [currentPassword, setCurrentPassword] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
   const [saveSuccessNotice, setSaveSuccessNotice] = useState<string | null>(
@@ -253,7 +261,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                     : "Heritage Tourist"}
                 </span>
                 <span className="font-mono text-[10px] text-stone">
-                  • Verified Account
+                  • Demo Account
                 </span>
               </div>
 
@@ -276,7 +284,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                 </span>
               </button>
 
-              {onOpenAdminDashboard && (
+              {currentUser && onOpenAdminDashboard && (
                 <button
                   onClick={onOpenAdminDashboard}
                   className="bg-gold text-ink hover:bg-gold/90 border border-gold font-bold px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"

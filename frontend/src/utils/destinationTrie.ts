@@ -1,6 +1,8 @@
 import { Trie } from "../../../dsa/trie/Trie";
 import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
 
+export { Trie };
+
 /**
  * Normalizes text for clean insertion and query processing
  * (collapses excessive internal whitespace, trims outer spaces).
@@ -44,6 +46,9 @@ export function buildDestinationTrie(destinations: Destination[]): Trie {
     if (dest.location) {
       trie.insert(normalizeSearchTerm(dest.location), destId);
     }
+    if (dest.tag) {
+      trie.insert(normalizeSearchTerm(dest.tag), destId);
+    }
 
     // 3. Attractions within this destination
     if (Array.isArray(dest.attractions)) {
@@ -81,6 +86,7 @@ export function buildDestinationTrie(destinations: Destination[]): Trie {
 
 // Module-level cache so the Trie is built once from GUJARAT_DESTINATIONS
 let cachedDestinationTrie: Trie | null = null;
+let cachedDestinationMap: Map<string, Destination> | null = null;
 
 /**
  * Returns the memoized destination Trie instance, building it on first access.
@@ -93,10 +99,21 @@ export function getDestinationTrie(destinations: Destination[] = GUJARAT_DESTINA
 }
 
 /**
- * Explicitly clears the cached Trie (useful for tests or dynamic dataset reloads).
+ * Returns the memoized Map structure for fast O(1) ID -> Destination record lookup.
+ */
+export function getDestinationMap(destinations: Destination[] = GUJARAT_DESTINATIONS): Map<string, Destination> {
+  if (!cachedDestinationMap) {
+    cachedDestinationMap = new Map(destinations.map((d) => [d.id, d]));
+  }
+  return cachedDestinationMap;
+}
+
+/**
+ * Explicitly clears the cached Trie and Map (useful for tests or dynamic dataset reloads).
  */
 export function resetDestinationTrie(): void {
   cachedDestinationTrie = null;
+  cachedDestinationMap = null;
 }
 
 /**

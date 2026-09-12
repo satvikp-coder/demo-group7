@@ -468,7 +468,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
               <ArrowLeft className="w-3.5 h-3.5 text-gold" />
               <span>Back to Profile Console</span>
             </button>
-            <span className="text-stone">Authorized Tourism Guild Admin</span>
+            <span className="text-stone">Tourism Guild Admin (Demo Mode)</span>
           </div>
         )}
 

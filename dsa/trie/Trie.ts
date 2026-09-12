@@ -1,23 +1,32 @@
 class TrieNode {
   public children: Map<string, TrieNode> = new Map();
   public isEndOfWord: boolean = false;
-  public values: string[] = []; // List of values (ids) associated with this prefix
+  public values: string[] = []; // List of entity IDs (destination IDs) associated with this prefix/substring
+  public words: string[] = []; // List of original indexed terms that match this prefix
 }
 
 export class Trie {
   private root: TrieNode = new TrieNode();
 
+  /**
+   * Inserts a word and its associated entity ID into the Trie.
+   * To support both prefix and middle-substring matching in O(M) time,
+   * all non-empty suffixes of the phrase are indexed into the tree.
+   *
+   * Time Complexity: O(L^2) where L is the phrase length.
+   * Space Complexity: O(L^2) worst case per phrase, heavily amortized across common prefixes.
+   */
   public insert(word: string, value: string): void {
     const clean = word.trim().toLowerCase();
     if (!clean) return;
 
     // To support substring search via Suffix Trie, insert all suffixes
     for (let i = 0; i < clean.length; i++) {
-      this.insertSuffix(clean.substring(i), value);
+      this.insertSuffix(clean.substring(i), value, clean);
     }
   }
 
-  private insertSuffix(suffix: string, value: string): void {
+  private insertSuffix(suffix: string, value: string, originalWord?: string): void {
     let current = this.root;
     for (const char of suffix) {
       if (!current.children.has(char)) {
@@ -27,13 +36,33 @@ export class Trie {
       if (!current.values.includes(value)) {
         current.values.push(value);
       }
+      if (originalWord && !current.words.includes(originalWord)) {
+        current.words.push(originalWord);
+      }
     }
     current.isEndOfWord = true;
   }
 
+  /**
+   * Primary search method: searches the Trie for records matching the query.
+   * @param query Search query string
+   * @returns Array of unique entity IDs matching the query
+   */
+  public search(query: string): string[] {
+    return this.searchPrefix(query);
+  }
+
+  /**
+   * Searches for a prefix/substring match in O(M) time where M = prefix.length.
+   * Traverses M characters down the Trie without scanning unrelated nodes.
+   *
+   * @param prefix Prefix or substring to search
+   * @returns Array of matching entity IDs
+   */
   public searchPrefix(prefix: string): string[] {
     let current = this.root;
     const cleanPrefix = prefix.trim().toLowerCase();
+    if (!cleanPrefix) return [];
 
     for (const char of cleanPrefix) {
       if (!current.children.has(char)) {
@@ -42,8 +71,67 @@ export class Trie {
       current = current.children.get(char)!;
     }
 
-    // Since we propagate values to all prefix nodes, current.values contains all matches
+    // Node values contain all entity IDs whose indexed words contain this prefix/substring
     return current.values;
+  }
+
+  /**
+   * Checks whether the Trie contains any word or suffix starting with the given prefix.
+   * Time Complexity: O(M) where M is prefix length.
+   */
+  public startsWith(prefix: string): boolean {
+    let current = this.root;
+    const cleanPrefix = prefix.trim().toLowerCase();
+    if (!cleanPrefix) return false;
+
+    for (const char of cleanPrefix) {
+      if (!current.children.has(char)) {
+        return false;
+      }
+      current = current.children.get(char)!;
+    }
+    return true;
+  }
+
+  /**
+   * Checks whether an exact word exists in the Trie.
+   */
+  public has(word: string): boolean {
+    let current = this.root;
+    const cleanWord = word.trim().toLowerCase();
+    if (!cleanWord) return false;
+
+    for (const char of cleanWord) {
+      if (!current.children.has(char)) {
+        return false;
+      }
+      current = current.children.get(char)!;
+    }
+    return current.isEndOfWord;
+  }
+
+  /**
+   * Returns all original indexed terms that match the prefix/substring.
+   */
+  public getWordsWithPrefix(prefix: string): string[] {
+    let current = this.root;
+    const cleanPrefix = prefix.trim().toLowerCase();
+    if (!cleanPrefix) return [];
+
+    for (const char of cleanPrefix) {
+      if (!current.children.has(char)) {
+        return [];
+      }
+      current = current.children.get(char)!;
+    }
+    return current.words;
+  }
+
+  /**
+   * Autocomplete suggestions: returns up to `limit` matching entity IDs.
+   */
+  public autocomplete(prefix: string, limit: number = 10): string[] {
+    return this.searchPrefix(prefix).slice(0, limit);
   }
 
   /**
