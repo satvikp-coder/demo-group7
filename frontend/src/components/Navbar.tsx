@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { navigate, } from "../utils/router";
 import {
   Compass,
   Calendar,
@@ -167,6 +168,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   {t("profile.signOut", "Sign Out")}
                 </button>
+                {user.role === "operator" && (
+                  <button
+                    onClick={() => navigate("/admin")}
+                    className="text-xs font-mono text-gold hover:text-ink underline cursor-pointer ml-2"
+                  >
+                    {t("nav.admin", "Admin")}
+                  </button>
+                )}
               </div>
             ) : (
               <button
