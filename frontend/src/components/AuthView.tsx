@@ -115,53 +115,68 @@ export const AuthView: React.FC<AuthViewProps> = ({
     }
   };
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormGeneralError("");
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setFormGeneralError("");
 
-    let valid = true;
+  let valid = true;
 
-    if (!name.trim()) {
-      setNameError("Please enter your full name or preferred traveler title.");
-      valid = false;
-    } else {
-      setNameError("");
+  // Validate name
+  if (!name.trim()) {
+    setNameError("Please enter your full name or preferred traveler title.");
+    valid = false;
+  } else {
+    setNameError("");
+  }
+
+  // Validate email
+  const eErr = validateEmail(email);
+  setEmailError(eErr);
+  if (eErr) valid = false;
+
+  // Validate password
+  const pErr = validatePassword(password);
+  setPasswordError(pErr);
+  if (pErr) valid = false;
+
+  // Confirm password match
+  if (password !== confirmPassword) {
+    setConfirmPasswordError("Passwords do not match. Re-enter the confirmation password identically.");
+    valid = false;
+  } else {
+    setConfirmPasswordError("");
+  }
+
+  if (!valid) return;
+
+  try {
+    const response = await fetch("/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password, role }),
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      setFormGeneralError(errorData.message || "Registration failed");
+      return;
     }
-
-    const eErr = validateEmail(email);
-    setEmailError(eErr);
-    if (eErr) valid = false;
-
-    const pErr = validatePassword(password);
-    setPasswordError(pErr);
-    if (pErr) valid = false;
-
-    if (password !== confirmPassword) {
-      setConfirmPasswordError(
-        "Passwords do not match. Re-enter the confirmation password identically.",
-      );
-      valid = false;
-    } else {
-      setConfirmPasswordError("");
+    const data = await response.json(); // Expect { token, user: { name, email, role } }
+    if (data.token) {
+      localStorage.setItem("authToken", data.token);
     }
-
-    if (!valid) return;
-
-    setSuccessMsg(
-      `Welcome to Heritage Tourism Planner, ${name}! Your ${role} account is now active.`,
-    );
+    setSuccessMsg(`Welcome to Heritage Tourism Planner, ${name}! Your ${role} account is now active.`);
     setTimeout(() => {
       if (onAuthSuccess) {
-        onAuthSuccess({
-          name,
-          email,
-          role,
-        });
+        const user = data.user || { name, email, role };
+        onAuthSuccess({ name: user.name, email: user.email, role: user.role });
       } else {
         onCloseOrGuest();
       }
     }, 1200);
-  };
+  } catch (err) {
+    setFormGeneralError("Network error. Please try again later.");
+  }
+};
 
   return (
     <div
