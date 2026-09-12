@@ -203,22 +203,24 @@ group-07-heritage-tourism-planner/
 
 ## Project Documentation Index
 
-Detailed academic and technical documentation is available in the [`docs/foundation/`](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation) directory:
+Detailed academic and technical documentation is available in the [`docs/foundation/`](docs/foundation/) and [`database/`](database/) directories:
 
-- [00_Foundation_Audit.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/00_Foundation_Audit.md) — *Master audit checklist tracking completion of all academic and technical foundation artifacts.*
-- [01_Project_Proposal.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/01_Project_Proposal.md) — *20-section project proposal, research questions (RQ1–RQ5), and evaluation criteria.*
-- [02_Requirements_Specification.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/02_Requirements_Specification.md) — *Complete Software Requirements Specification (SRS), FR-01–FR-22, NFRs, user stories, use cases, and edge cases.*
-- [03_System_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/03_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
-- [04_DSA_Architecture.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/04_DSA_Architecture.md) — *Master DSA specification for Graph, Dijkstra, Min-Heap, Greedy heuristics, Trie, Hash Table, and Merge Sort.*
-- [05_Frontend_Documentation.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/05_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
-- [06_Database_Design.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/06_Database_Design.md) — *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*
-- [07_Data_Collection_Plan.md](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/docs/foundation/07_Data_Collection_Plan.md) — *Data collection standards, 4 CSV schemas (attractions, routes, hotels, restaurants), quality rules, prioritization phases, and team assignments.*
+- [`docs/foundation/00_Foundation_Audit.md`](docs/foundation/00_Foundation_Audit.md) — *Master audit checklist tracking completion of all academic and technical foundation artifacts.*
+- [`docs/foundation/01_Project_Proposal.md`](docs/foundation/01_Project_Proposal.md) — *20-section project proposal, research questions (RQ1–RQ5), and evaluation criteria.*
+- [`docs/foundation/02_Requirements_Specification.md`](docs/foundation/02_Requirements_Specification.md) — *Complete Software Requirements Specification (SRS), FR-01–FR-22, NFRs, user stories, use cases, and edge cases.*
+- [`docs/foundation/03_System_Architecture.md`](docs/foundation/03_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
+- [`docs/foundation/04_DSA_Architecture.md`](docs/foundation/04_DSA_Architecture.md) — *Master DSA specification for Graph, Dijkstra, Min-Heap, Greedy heuristics, Trie, Hash Table, and Merge Sort.*
+- [`docs/foundation/05_Frontend_Documentation.md`](docs/foundation/05_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
+- [`docs/foundation/06_Database_Design.md`](docs/foundation/06_Database_Design.md) — *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*
+- [`docs/foundation/07_Data_Collection_Plan.md`](docs/foundation/07_Data_Collection_Plan.md) — *Data collection standards, 4 CSV schemas (attractions, routes, hotels, restaurants), quality rules, prioritization phases, and team assignments.*
+- [`database/schema/heritage_planner_schema.sql`](database/schema/heritage_planner_schema.sql) — *Consolidated 3NF PostgreSQL DDL schema with extensions, check constraints, GIN trigram & B-tree indexes.*
+- [`database/seeds/ahmedabad_gujarat_full_seed.sql`](database/seeds/ahmedabad_gujarat_full_seed.sql) — *Master seed SQL script covering 7 Gujarat destinations and 175 verified attractions (25 each).*
 
 ---
 
 ## License
 
-Distributed under the **MIT License**. See [`LICENSE`](file:///c:/Users/satvi/Desktop/CSC210/group-07-heritage-tourism-planner/LICENSE) for more information.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
 
 ---
 
