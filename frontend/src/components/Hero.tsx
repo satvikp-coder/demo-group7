@@ -15,7 +15,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
 
   const siteCount = GUJARAT_DESTINATIONS.length;
   const countStr = language === 'hi'
-    ? String(siteCount).replace(/[0-9]/g, (d) => '०१२३४५६७૮૯'[parseInt(d, 10)])
+    ? String(siteCount).replace(/[0-9]/g, (d) => '०१२३४५६७८९'[parseInt(d, 10)])
     : String(siteCount);
 
   const HEADLINE_OPTIONS = [

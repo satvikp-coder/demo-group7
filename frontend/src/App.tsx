@@ -32,6 +32,7 @@ const LazyResearchView = React.lazy(() =>
 );
 import { getSharedFromUrl, clearSharedUrl } from "./utils/shareUrl";
 import { InvalidSharedLinkView } from "./components/InvalidSharedLinkView";
+import { NotFoundView } from "./components/NotFoundView";
 import { ImageWithFallback } from "./components/ImageWithFallback";
 import { Destination, GUJARAT_DESTINATIONS, getCityById } from "./data/destinations";
 import { MapPin } from "lucide-react";
@@ -94,6 +95,7 @@ export default function App() {
 
   // Dev-only Research Simulation Mode
   const [showResearchMode, setShowResearchMode] = useState<boolean>(false);
+  const [showNotFound, setShowNotFound] = useState<string | null>(null);
 
   // Shared Link Error State
   const [sharedLinkError, setSharedLinkError] = useState<{
@@ -121,6 +123,7 @@ export default function App() {
         setShowAdminDashboard(false);
         setShowResearchMode(false);
         setSharedLinkError(null);
+        setShowNotFound(null);
         setAuthMode(null);
       };
 
@@ -218,6 +221,13 @@ export default function App() {
           break;
 
         case "not-found":
+          clearOverlays();
+          setSelectedDestination(null);
+          setActiveItinerary(null);
+          saveItineraryToSession(null);
+          setShowNotFound(route.path);
+          break;
+
         default:
           // Soft-redirect home; no 404 page needed for this SPA
           navigate("/", { replace: true });
@@ -512,6 +522,17 @@ export default function App() {
                       navigate("/");
                     }}
                   />
+                </motion.div>
+              ) : showNotFound ? (
+                /* Display 404 Route Not Found View */
+                <motion.div
+                  key="not-found-view"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <NotFoundView invalidPath={showNotFound} />
                 </motion.div>
               ) : showResearchMode && import.meta.env.DEV ? (
                 <motion.div
