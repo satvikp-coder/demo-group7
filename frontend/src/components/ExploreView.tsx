@@ -224,20 +224,13 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
       <div className="max-w-7xl mx-auto space-y-10">
         
         {/* Header Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-stone/30 pb-6 gap-4">
-          <div>
-            <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
-              {language === 'hi' ? 'इंटरएक्टिव हेरिटेज खोज और खोज' : 'Interactive Heritage Search & Discovery'}
-            </span>
-            <h1 className="font-display text-3xl sm:text-4xl text-charcoal tracking-tight font-bold">
-              {t('explore.title', 'Explore Heritage Monuments')}
-            </h1>
-          </div>
-          <p className="text-xs text-stone font-mono max-w-sm">
-            {language === 'hi'
-              ? 'सोमनाथ, द्वारका, मोढेरा, कच्छ और गिर सहित गुजरात के 10 प्रमुख विरासत स्थलों की खोज करें।'
-              : 'Search 10 premier Solanki stepwells, Harappan salt deserts, Jyotirlinga shrines & UNESCO sanctuaries across Gujarat.'}
-          </p>
+        <div className="border-b border-stone/30 pb-6">
+          <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
+            {language === 'hi' ? 'इंटरएक्टिव हेरिटेज खोज और खोज' : 'Interactive Heritage Search & Discovery'}
+          </span>
+          <h1 className="font-display text-3xl sm:text-4xl text-charcoal tracking-tight font-bold">
+            {t('explore.title', 'Explore Heritage Monuments')}
+          </h1>
         </div>
 
         {/* TOP SECTION: Search Field, Category Chips, Sort Dropdown */}
@@ -296,18 +289,16 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
             </span>
           </div>
 
-          {/* 2. Horizontal Filter Chips & Sort Control Row */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-2">
-            
-            {/* Category Chips Scrollable Container */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none max-w-full">
+          {/* 2. Full-width Category Chips Scrollable Container */}
+          <div className="w-full overflow-x-auto pb-2 scrollbar-none pt-2">
+            <div className="inline-flex items-center gap-2 pr-6">
               {OFFICIAL_CATEGORIES.map((cat) => {
                 const isSelected = selectedCategory === cat;
                 return (
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`whitespace-nowrap px-3.5 py-1.5 text-xs font-mono transition-all duration-150 border cursor-pointer rounded-lg ${
+                    className={`whitespace-nowrap px-3.5 py-1.5 text-xs font-mono transition-all duration-150 border cursor-pointer rounded-lg shrink-0 ${
                       isSelected
                         ? 'bg-madder text-salt border-madder font-semibold shadow-sm'
                         : 'bg-transparent text-ink border-stone/50 hover:border-gold hover:text-gold'
@@ -318,41 +309,12 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 );
               })}
             </div>
-
-            {/* Right-aligned Sort Dropdown */}
-            <div className="flex items-center justify-end gap-2 shrink-0 border-t lg:border-t-0 border-stone/20 pt-3 lg:pt-0">
-              <ArrowUpDown className="w-3.5 h-3.5 text-stone" />
-              <label htmlFor="sort-dropdown" className="font-mono text-xs text-stone uppercase tracking-wider">
-                {language === 'hi' ? 'क्रम:' : 'Sort by:'}
-              </label>
-              <select
-                id="sort-dropdown"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer rounded-md"
-              >
-                <option value="rating">
-                  {language === 'hi' ? 'रेटिंग (उच्चतम पहले)' : 'Rating (Highest First)'}
-                </option>
-                <option value="fee">
-                  {language === 'hi' ? 'प्रवेश शुल्क (कम से अधिक)' : 'Entry Fee (Lowest First)'}
-                </option>
-                <option value="alphabetical">
-                  {language === 'hi' ? 'वर्णमाला के अनुसार (A – Z)' : 'Alphabetical (A – Z)'}
-                </option>
-                <option value="distance">
-                  {language === 'hi' ? 'अहमदाबाद से दूरी' : 'Distance from Ahmedabad'}
-                </option>
-                <option value="demand">
-                  {language === 'hi' ? 'शारीरिक माँग (मध्यम > उच्च > निम्न)' : 'Physical Demand (Moderate → High → Low)'}
-                </option>
-              </select>
-            </div>
-
           </div>
 
-          {/* 3. Accessibility Filter Chips Toolbar */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-3 border-t border-stone/20 text-xs font-mono">
+          {/* 3. Filter Options & Sort Control Row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-stone/20 text-xs font-mono">
+            {/* Left: Accessibility & Physical Demand Filter Chips */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <button
               type="button"
               onClick={() => setWheelchairOnly(!wheelchairOnly)}
@@ -393,15 +355,46 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               })}
             </div>
 
-            {(wheelchairOnly || selectedDemands.length > 0) && (
-              <button
-                type="button"
-                onClick={() => { setWheelchairOnly(false); setSelectedDemands([]); }}
-                className="text-stone hover:text-madder text-[10px] underline ml-auto uppercase font-semibold cursor-pointer rounded-md"
+              {(wheelchairOnly || selectedDemands.length > 0) && (
+                <button
+                  type="button"
+                  onClick={() => { setWheelchairOnly(false); setSelectedDemands([]); }}
+                  className="text-stone hover:text-madder text-[10px] underline uppercase font-semibold cursor-pointer rounded-md ml-2"
+                >
+                  Clear Accessibility
+                </button>
+              )}
+            </div>
+
+            {/* Right: Sort Dropdown */}
+            <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto pt-2 sm:pt-0">
+              <ArrowUpDown className="w-3.5 h-3.5 text-stone" />
+              <label htmlFor="sort-dropdown" className="font-mono text-xs text-stone uppercase tracking-wider">
+                {language === 'hi' ? 'क्रम:' : 'Sort by:'}
+              </label>
+              <select
+                id="sort-dropdown"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
+                className="font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer rounded-md"
               >
-                Clear Accessibility
-              </button>
-            )}
+                <option value="rating">
+                  {language === 'hi' ? 'रेटिंग (उच्चतम पहले)' : 'Rating (Highest First)'}
+                </option>
+                <option value="fee">
+                  {language === 'hi' ? 'प्रवेश शुल्क (कम से अधिक)' : 'Entry Fee (Lowest First)'}
+                </option>
+                <option value="alphabetical">
+                  {language === 'hi' ? 'वर्णमाला के अनुसार (A – Z)' : 'Alphabetical (A – Z)'}
+                </option>
+                <option value="distance">
+                  {language === 'hi' ? 'अहमदाबाद से दूरी' : 'Distance from Ahmedabad'}
+                </option>
+                <option value="demand">
+                  {language === 'hi' ? 'शारीरिक माँग (मध्यम > उच्च > निम्न)' : 'Physical Demand (Moderate → High → Low)'}
+                </option>
+              </select>
+            </div>
           </div>
 
         </div>
