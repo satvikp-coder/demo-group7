@@ -74,39 +74,45 @@ export const AuthView: React.FC<AuthViewProps> = ({
     return "";
   };
 
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormGeneralError("");
 
+    // Validate inputs
     const eErr = validateEmail(email);
     const pErr = validatePassword(password);
-
     setEmailError(eErr);
     setPasswordError(pErr);
+    if (eErr || pErr) return;
 
-    if (eErr || pErr) {
-      return;
-    }
-
-    if (email === "demo@heritage.in" && password !== "gujarat123") {
-      setPasswordError("That password doesn't match our records. Try again.");
-      return;
-    }
-
-    setSuccessMsg(
-      "Signed in successfully. Redirecting to your heritage ledger...",
-    );
-    setTimeout(() => {
-      if (onAuthSuccess) {
-        onAuthSuccess({
-          name: email.split("@")[0] || "Heritage Traveler",
-          email,
-          role,
-        });
-      } else {
-        onCloseOrGuest();
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        setFormGeneralError(errorData.message || "Login failed");
+        return;
       }
-    }, 1200);
+      const data = await response.json();
+      // Expecting { token, user: { name, email, role } }
+      if (data.token) {
+        localStorage.setItem("authToken", data.token);
+      }
+      setSuccessMsg("Signed in successfully. Redirecting to your heritage ledger...");
+      setTimeout(() => {
+        if (onAuthSuccess) {
+          const user = data.user || { name: email, email, role: data.role };
+          onAuthSuccess({ name: user.name, email: user.email, role: user.role });
+        } else {
+          onCloseOrGuest();
+        }
+      }, 1200);
+    } catch (err) {
+      setFormGeneralError("Network error. Please try again later.");
+    }
   };
 
   const handleRegisterSubmit = (e: React.FormEvent) => {
