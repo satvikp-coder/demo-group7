@@ -7,7 +7,7 @@
 
 A demo test deployment of the frontend and UI is live on Vercel:
 
-🌐 **[https://frontend-pj3y154ez-satvikp-coders-projects.vercel.app/)**
+🌐 **[https://frontend-pj3y154ez-satvikp-coders-projects.vercel.app/](https://frontend-pj3y154ez-satvikp-coders-projects.vercel.app/)**
 
 You can test the interactive itinerary planner, Dijkstra graph visualizer, budget calculator, and responsive UI components live in your browser.
 
