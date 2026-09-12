@@ -442,22 +442,20 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               <>
                 <button
                   onClick={onBackToPlanner}
-                  className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer rounded-lg"
                 >
                   <SlidersHorizontal className="w-3.5 h-3.5 text-ink" />
                   <span>
-                    {language === "gu"
-                      ? "યોજનામાં ફેરફાર કરો"
-                      : language === "hi"
-                        ? "योजना में बदलाव करें"
-                        : "Adjust plan"}
+                    {language === "hi"
+                      ? "योजना में बदलाव करें"
+                      : "Adjust plan"}
                   </span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setIsWhatIfOpen(!isWhatIfOpen)}
-                  className={`inline-flex items-center gap-2 border text-xs font-mono font-bold px-4 py-2 transition-colors cursor-pointer ${
+                  className={`inline-flex items-center gap-2 border text-xs font-mono font-bold px-4 py-2 transition-colors cursor-pointer rounded-lg ${
                     isWhatIfOpen
                       ? "bg-gold text-ink border-gold shadow-xs"
                       : "bg-salt hover:bg-gold/10 text-charcoal border-gold/70"
@@ -482,15 +480,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   onOpenBudgetPlanner();
                 }
               }}
-              className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt border border-madder text-xs font-mono font-bold px-4 py-2 transition-colors shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt border border-madder text-xs font-mono font-bold px-4 py-2 transition-colors shadow-xs cursor-pointer rounded-lg"
             >
               <DollarSign className="w-3.5 h-3.5 text-salt" />
               <span>
-                {language === "gu"
-                  ? "બજેટ જુઓ"
-                  : language === "hi"
-                    ? "बजट देखें"
-                    : "View budget breakdown"}
+                {language === "hi"
+                  ? "बजट देखें"
+                  : "View budget breakdown"}
               </span>
             </button>
           </div>
@@ -498,29 +494,25 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={handleShare}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer rounded-lg"
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "gu"
-                  ? "શેર કરો"
-                  : language === "hi"
-                    ? "शेयर करें"
-                    : "Share Route"}
+                {language === "hi"
+                  ? "शेयर करें"
+                  : "Share Route"}
               </span>
             </button>
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer rounded-lg"
             >
               <Printer className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "gu"
-                  ? "પ્રિન્ટ કરો"
-                  : language === "hi"
-                    ? "प्रिंट करें"
-                    : "Print Ledger"}
+                {language === "hi"
+                  ? "प्रिंट करें"
+                  : "Print Ledger"}
               </span>
             </button>
 
@@ -528,7 +520,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               onClick={handleDownloadPdf}
               disabled={isGeneratingPdf}
               aria-label="Download PDF Itinerary"
-              className="inline-flex items-center gap-1.5 bg-ink text-salt border border-gold hover:bg-ink/90 text-xs font-mono font-bold px-3.5 py-2 transition-colors cursor-pointer disabled:opacity-50 shadow-xs"
+              className="inline-flex items-center gap-1.5 bg-ink text-salt border border-gold hover:bg-ink/90 text-xs font-mono font-bold px-3.5 py-2 transition-colors cursor-pointer disabled:opacity-50 shadow-xs rounded-lg"
             >
               {isGeneratingPdf ? (
                 <>
@@ -580,7 +572,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           className="printable-content space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
         >
           {/* Header Banner */}
-          <div className="itinerary-header-banner bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg">
+          <div className="itinerary-header-banner bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg rounded-2xl">
             <div className="absolute inset-0 bg-stepwell-pattern opacity-10 pointer-events-none" />
 
             <div className="relative z-10 space-y-4">
@@ -604,7 +596,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     Base Hotel: <strong>{startingHotel.name}</strong>
                   </span>
                   {isPreferredBase && (
-                    <span className="bg-gold text-ink font-bold text-[10px] px-1.5 py-0.5 border border-gold uppercase">
+                    <span className="bg-gold text-ink font-bold text-[10px] px-1.5 py-0.5 border border-gold uppercase rounded">
                       ✓ Preferred Stay
                     </span>
                   )}
@@ -623,7 +615,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
           {/* Hotel Constraint Adjustment Notice (Non-Silent Replacement Explanation) */}
           {generatedResult.hotelReplacementNotice && (
-            <div className="bg-amber-950/85 text-salt border-2 border-amber-500 p-4 font-mono text-xs flex items-start gap-3 shadow-lg animate-fadeIn no-print">
+            <div className="bg-amber-950/85 text-salt border-2 border-amber-500 p-4 font-mono text-xs flex items-start gap-3 shadow-lg animate-fadeIn no-print rounded-xl">
               <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
               <div>
                 <div className="text-amber-300 font-bold uppercase tracking-wider mb-1">
@@ -638,7 +630,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
           {/* Empty / Error State when no valid route combination exists */}
           {generatedResult.hasNoCompatibleAttractions ? (
-            <div className="bg-ink text-salt p-8 sm:p-12 border-2 border-madder text-center space-y-5 my-6 shadow-2xl animate-fadeIn">
+            <div className="bg-ink text-salt p-8 sm:p-12 border-2 border-madder text-center space-y-5 my-6 shadow-2xl animate-fadeIn rounded-2xl">
               <div className="inline-flex p-4 bg-madder/20 border border-madder rounded-full">
                 <AlertTriangle className="w-10 h-10 text-madder" />
               </div>
@@ -733,7 +725,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           </div>
 
           {/* Dijkstra Supporting Algorithm Visualizer Accordion */}
-          <div className="border-2 border-gold bg-white p-4 space-y-3 no-print">
+          <div className="border-2 border-gold bg-white p-4 space-y-3 no-print rounded-xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 font-mono text-xs text-ink font-bold">
                 <Cpu className="w-4 h-4 text-gold" />
@@ -741,7 +733,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               </div>
               <button
                 onClick={() => setShowAlgorithm(!showAlgorithm)}
-                className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 font-mono text-xs font-bold px-3 py-1 flex items-center gap-1 cursor-pointer"
+                className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 font-mono text-xs font-bold px-3 py-1 flex items-center gap-1 cursor-pointer rounded-md"
               >
                 <span>
                   {showAlgorithm ? "Hide Visualizer" : "Expand Visualizer"}
@@ -778,12 +770,12 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.3, delay: dayIdx * 0.05 }}
-                  className="itinerary-day-card bg-white border-2 border-stone/40 p-5 sm:p-6 space-y-6 shadow-sm"
+                  className="itinerary-day-card bg-white border-2 border-stone/40 p-5 sm:p-6 space-y-6 shadow-sm rounded-xl"
                 >
                   {/* Day Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-gold pb-3">
                     <div>
-                      <span className="bg-ink text-gold font-mono text-xs font-bold px-2.5 py-1 uppercase tracking-wider">
+                      <span className="bg-ink text-gold font-mono text-xs font-bold px-2.5 py-1 uppercase tracking-wider rounded-md">
                         {day.dateLabel}
                       </span>
                       <h3 className="font-display text-xl sm:text-2xl text-ink font-bold mt-1">
@@ -825,7 +817,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             transition={{ duration: 0.25, delay: idx * 0.03 }}
                             tabIndex={0}
                             aria-label={accessibleLabel}
-                            className={`itinerary-stop-card p-4 border text-xs font-mono transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-gold ${
+                            className={`itinerary-stop-card p-4 border text-xs font-mono transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-gold rounded-xl ${
                               stop.type === "meal"
                                 ? "bg-amber-50/70 border-gold/80"
                                 : stop.type === "hotel"
@@ -848,23 +840,23 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                 <div className="flex items-start gap-3 w-full sm:w-auto">
                                   {/* Stop Photo Thumbnail if available */}
                                   {stop.imageUrl && (
-                                    <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 overflow-hidden border border-stone/30 bg-charcoal">
+                                    <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 overflow-hidden border border-stone/30 bg-charcoal rounded-lg">
                                       <ImageWithFallback
                                         src={stop.imageUrl}
                                         alt={stop.name}
                                         category={stop.category}
-                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
                                       />
                                     </div>
                                   )}
 
                                   {/* Stop Number Badge */}
-                                  <div className="bg-gold text-ink font-bold px-2 py-1 text-[11px] border border-ink shrink-0 text-center">
+                                  <div className="bg-gold text-ink font-bold px-2 py-1 text-[11px] border border-ink shrink-0 text-center rounded-md">
                                     <span>#{stopNumber}</span>
                                   </div>
 
                                   {/* Timed Badge */}
-                                  <div className="bg-ink text-salt px-2.5 py-1 text-[11px] font-bold border border-gold shrink-0 text-center">
+                                  <div className="bg-ink text-salt px-2.5 py-1 text-[11px] font-bold border border-gold shrink-0 text-center rounded-md">
                                     <span className="block text-gold text-[10px] uppercase">
                                       Arrival - Depart
                                     </span>
@@ -965,7 +957,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   </div>
 
                   {/* Day Summary Loop Banner */}
-                  <div className="p-3 bg-salt border border-stone/30 font-mono text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-stone">
+                  <div className="p-3 bg-salt border border-stone/30 font-mono text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-stone rounded-lg">
                     <span className="flex items-center gap-1.5 text-ink font-bold">
                       <span>Circular Route Loop:</span>
                       <span className="font-normal text-stone">
@@ -983,12 +975,12 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           </div>
 
               {/* Overall Budget Summary Card */}
-              <div className="budget-summary-card bg-ink text-salt p-6 border-2 border-gold space-y-4">
+              <div className="budget-summary-card bg-ink text-salt p-6 border-2 border-gold space-y-4 rounded-2xl">
                 <h4 className="font-display text-xl text-gold font-bold border-b border-stone/30 pb-2">
                   {currentCityName} Circuit Budget Breakdown
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
-                  <div className="p-3 bg-salt/10 border border-stone/30">
+                  <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
                     <span className="text-stone text-[10px] uppercase block">
                       Hotels ({numDays} Nights)
                     </span>
@@ -996,7 +988,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       ₹{totalHotelCost.toLocaleString("en-IN")}
                     </span>
                   </div>
-                  <div className="p-3 bg-salt/10 border border-stone/30">
+                  <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
                     <span className="text-stone text-[10px] uppercase block">
                       Attraction Entry Fees
                     </span>
@@ -1004,7 +996,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       ₹{totalAttractionCost.toLocaleString("en-IN")}
                     </span>
                   </div>
-                  <div className="p-3 bg-salt/10 border border-stone/30">
+                  <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
                     <span className="text-stone text-[10px] uppercase block">
                       Meals & Dining
                     </span>
@@ -1012,7 +1004,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       ₹{totalMealCost.toLocaleString("en-IN")}
                     </span>
                   </div>
-                  <div className="p-3 bg-salt/10 border border-stone/30">
+                  <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
                     <span className="text-stone text-[10px] uppercase block">
                       Transit & Ferry
                     </span>

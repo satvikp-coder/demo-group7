@@ -339,7 +339,7 @@ async function run() {
     const enText = UI_TRANSLATIONS[key].en;
     updatedTranslations[key] = {
       en: enText,
-      gu: guMap.get(enText) || UI_TRANSLATIONS[key].gu || enText,
+      gu: guMap.get(enText) || (UI_TRANSLATIONS[key] as any)?.gu || enText,
       hi: hiMap.get(enText) || UI_TRANSLATIONS[key].hi || enText,
     };
   }

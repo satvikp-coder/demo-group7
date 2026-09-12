@@ -13,9 +13,9 @@
   --color-madder-ember: #C1544F;
   --color-stone-mist: #9C9686;
 
-  --font-display: "Fraunces", "Noto Sans Gujarati", "Noto Sans Devanagari", serif;
-  --font-body: "Plus Jakarta Sans", "Noto Sans Gujarati", "Noto Sans Devanagari", "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", "Noto Sans Gujarati", "Noto Sans Devanagari", monospace;
+  --font-display: "Fraunces", "Noto Sans Devanagari", serif;
+  --font-body: "Plus Jakarta Sans", "Noto Sans Devanagari", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", "Noto Sans Devanagari", monospace;
 }
 
 :root {
@@ -28,102 +28,12 @@
   --color-white: #FFFFFF;
 }
 
-[data-theme="dusk"], .dusk {
-  --color-ink: #1C2744;       /* Card surface: elevated dark indigo */
-  --color-salt: #EDE9DD;      /* Text in dark containers: light cream for readability */
-  --color-madder: #C1544F;    /* Madder Ember accent */
-  --color-gold: #D4A94C;      /* Brighter gold for dark backgrounds */
-  --color-stone: #B0A99E;     /* Lighter stone for readable secondary text */
-  --color-charcoal: #EDE9DD;  /* Primary body text: light cream on dark bg */
-  --color-white: #1C2744;     /* White surfaces become dark elevated panels */
-
-  /* Dusk-specific page background (not tied to salt/ink swap) */
-  --color-dusk-bg: #0D1321;
-  --color-dusk-surface: #131B30;
-}
-
-/* Dusk mode: override body background to deep indigo instead of using salt */
-[data-theme="dusk"] body,
-.dusk body {
-  background-color: #0D1321;
-}
-
-/* Dusk mode: elements using bg-salt as page background need the deep dark */
-[data-theme="dusk"] .bg-salt,
-.dusk .bg-salt {
-  background-color: #0D1321;
-}
-
-/* Dusk mode: elements using bg-ink for card backgrounds stay elevated dark */
-[data-theme="dusk"] .bg-ink,
-.dusk .bg-ink {
-  background-color: #1C2744;
-}
-
-/* Dusk mode: text-salt inside ink cards must be readable cream */
-[data-theme="dusk"] .text-salt,
-.dusk .text-salt {
-  color: #EDE9DD;
-}
-
-/* Dusk mode: text-charcoal on page background must be readable */
-[data-theme="dusk"] .text-charcoal,
-.dusk .text-charcoal {
-  color: #EDE9DD;
-}
-
-/* Dusk mode: text-ink used inside salt/light containers — keep dark for contrast */
-[data-theme="dusk"] .text-ink,
-.dusk .text-ink {
-  color: #1C2744;
-}
-
-/* Dusk mode: borders need enough opacity to be visible */
-[data-theme="dusk"] .border-stone\/30,
-.dusk .border-stone\/30 {
-  border-color: rgba(176, 169, 158, 0.35);
-}
-
-[data-theme="dusk"] .border-stone\/40,
-.dusk .border-stone\/40 {
-  border-color: rgba(176, 169, 158, 0.4);
-}
-
-/* Dusk mode: inputs and select elements */
-[data-theme="dusk"] input,
-[data-theme="dusk"] select,
-[data-theme="dusk"] textarea,
-.dusk input,
-.dusk select,
-.dusk textarea {
-  color: #EDE9DD;
-}
-
-/* Dusk mode: placeholder text visibility */
-[data-theme="dusk"] input::placeholder,
-.dusk input::placeholder {
-  color: rgba(176, 169, 158, 0.6);
-}
-
-/* Dusk mode: bg-white panels become elevated dark surfaces */
-[data-theme="dusk"] .bg-white,
-.dusk .bg-white {
-  background-color: #1C2744;
-}
-
-/* Dusk mode: bg-charcoal (used in light theme for dark text areas) */
-[data-theme="dusk"] .bg-charcoal,
-.dusk .bg-charcoal {
-  background-color: #0D1321;
-}
-
 @layer base {
   body {
     background-color: var(--color-salt);
     color: var(--color-charcoal);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -142,16 +52,57 @@
     outline-offset: 2px !important;
     box-shadow: 0 0 0 3px rgba(201, 154, 59, 0.25) !important;
   }
+
+  /* Universal Rounded Corners for Buttons, Form Controls, and Image Boxes */
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    border-radius: 0.625rem; /* 10px rounded corners */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  select,
+  textarea {
+    border-radius: 0.5rem; /* 8px rounded corners */
+  }
+
+  /* Image boxes and media */
+  img,
+  picture,
+  video {
+    border-radius: 0.625rem;
+  }
+}
+
+/* Rounded corners for Cards, Boxes, Dialogs, and Image Containers */
+.terrace-card-even,
+.terrace-card-odd,
+.itinerary-day-card,
+.itinerary-stop-card,
+.budget-summary-card {
+  border-radius: 0.875rem; /* 14px rounded corners */
+}
+
+/* Modal Dialog rounded corners */
+[role="dialog"] > div {
+  border-radius: 1rem; /* 16px rounded corners */
+}
+
+/* Image wrappers and aspect containers */
+.overflow-hidden:has(> img),
+.overflow-hidden:has(> picture) {
+  border-radius: 0.75rem;
 }
 
 /* Signature stepped-chevron motif SVG pattern background */
 .bg-stepwell-pattern {
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l10 10L0 20h5l10-10L5 0H0zm20 0l10 10L20 20h5l10-10L25 0h-5z' fill='%236B665B' fill-opacity='0.12' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
-[data-theme="dusk"] .bg-stepwell-pattern,
-.dusk .bg-stepwell-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l10 10L0 20h5l10-10L5 0H0zm20 0l10 10L20 20h5l10-10L25 0h-5z' fill='%239C9686' fill-opacity='0.20' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .chevron-divider {

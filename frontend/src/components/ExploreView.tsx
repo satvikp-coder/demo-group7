@@ -79,9 +79,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
       recognition.interimResults = false;
 
       // Map language code to Web Speech API lang
-      if (language === 'gu') {
-        recognition.lang = 'gu-IN';
-      } else if (language === 'hi') {
+      if (language === 'hi') {
         recognition.lang = 'hi-IN';
       } else {
         recognition.lang = 'en-IN';
@@ -211,16 +209,14 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-stone/30 pb-6 gap-4">
           <div>
             <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
-              {language === 'gu' ? 'ઇન્ટરેક્ટિવ હેરિટેજ શોધ અને ડિસ્કવરી' : language === 'hi' ? 'इंटरएक्टिव हेरिटेज खोज और खोज' : 'Interactive Heritage Search & Discovery'}
+              {language === 'hi' ? 'इंटरएक्टिव हेरिटेज खोज और खोज' : 'Interactive Heritage Search & Discovery'}
             </span>
             <h1 className="font-display text-3xl sm:text-4xl text-charcoal tracking-tight font-bold">
               {t('explore.title', 'Explore Heritage Monuments')}
             </h1>
           </div>
           <p className="text-xs text-stone font-mono max-w-sm">
-            {language === 'gu'
-              ? 'સોમનાથ, દ્વારકા, મોઢેરા, કચ્છ અને ગીર સહિત ગુજરાતના ૧૦ પ્રમુખ વારસા સ્થળો શોધો.'
-              : language === 'hi'
+            {language === 'hi'
               ? 'सोमनाथ, द्वारका, मोढेरा, कच्छ और गिर सहित गुजरात के 10 प्रमुख विरासत स्थलों की खोज करें।'
               : 'Search 10 premier Solanki stepwells, Harappan salt deserts, Jyotirlinga shrines & UNESCO sanctuaries across Gujarat.'}
           </p>
@@ -243,9 +239,9 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="text-xs font-mono text-stone hover:text-madder uppercase px-2 py-1 cursor-pointer shrink-0"
+                  className="text-xs font-mono text-stone hover:text-madder uppercase px-2 py-1 cursor-pointer shrink-0 rounded-md"
                 >
-                  {language === 'gu' ? 'સાફ કરો' : language === 'hi' ? 'साफ़ करें' : 'Clear'}
+                  {language === 'hi' ? 'साफ़ करें' : 'Clear'}
                 </button>
               )}
               {isSpeechSupported && (
@@ -256,10 +252,8 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                   title={
                     isListening
                       ? 'Listening... click to stop'
-                      : language === 'gu'
-                      ? 'અવાજ દ્વારા શોધો'
                       : language === 'hi'
-                      ? 'આવાઝ સે ખોજેં'
+                      ? 'आवाज़ से खोजें'
                       : 'Search by voice'
                   }
                   className={`p-1.5 rounded-full transition-all cursor-pointer shrink-0 ${
@@ -278,9 +272,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               {ariaAnnouncement}
             </div>
             <span className="text-[11px] font-mono text-stone/80 mt-1 block">
-              {language === 'gu'
-                ? 'સક્રિય ભાષા અનુસાર સ્થળ, જિલ્લો અને શ્રેણી દ્વારા ત્વરિત શોધ.'
-                : language === 'hi'
+              {language === 'hi'
                 ? 'सक्रिय भाषा के अनुसार स्थान, जिला और श्रेणी द्वारा त्वरित खोज।'
                 : 'Instant prefix match across site names, districts (Narmada, Gandhinagar, Mehsana...), and architecture tags.'}
             </span>
@@ -297,7 +289,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`whitespace-nowrap px-3.5 py-1.5 text-xs font-mono transition-all duration-150 border cursor-pointer ${
+                    className={`whitespace-nowrap px-3.5 py-1.5 text-xs font-mono transition-all duration-150 border cursor-pointer rounded-lg ${
                       isSelected
                         ? 'bg-madder text-salt border-madder font-semibold shadow-sm'
                         : 'bg-transparent text-ink border-stone/50 hover:border-gold hover:text-gold'
@@ -313,28 +305,28 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
             <div className="flex items-center justify-end gap-2 shrink-0 border-t lg:border-t-0 border-stone/20 pt-3 lg:pt-0">
               <ArrowUpDown className="w-3.5 h-3.5 text-stone" />
               <label htmlFor="sort-dropdown" className="font-mono text-xs text-stone uppercase tracking-wider">
-                {language === 'gu' ? 'ક્રમ:' : language === 'hi' ? 'क्रम:' : 'Sort by:'}
+                {language === 'hi' ? 'क्रम:' : 'Sort by:'}
               </label>
               <select
                 id="sort-dropdown"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer"
+                className="font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer rounded-md"
               >
                 <option value="rating">
-                  {language === 'gu' ? 'રેટિંગ (સૌથી વધુ સંચાલિત)' : language === 'hi' ? 'रेटिंग (उच्चतम पहले)' : 'Rating (Highest First)'}
+                  {language === 'hi' ? 'रेटिंग (उच्चतम पहले)' : 'Rating (Highest First)'}
                 </option>
                 <option value="fee">
-                  {language === 'gu' ? 'પ્રવેશ ફી (ઓછી ફી)' : language === 'hi' ? 'प्रवेश शुल्क (कम से अधिक)' : 'Entry Fee (Lowest First)'}
+                  {language === 'hi' ? 'प्रवेश शुल्क (कम से अधिक)' : 'Entry Fee (Lowest First)'}
                 </option>
                 <option value="alphabetical">
-                  {language === 'gu' ? 'કક્કાવારી મુજબ (A – Z)' : language === 'hi' ? 'वर्णमाला के अनुसार (A – Z)' : 'Alphabetical (A – Z)'}
+                  {language === 'hi' ? 'वर्णमाला के अनुसार (A – Z)' : 'Alphabetical (A – Z)'}
                 </option>
                 <option value="distance">
-                  {language === 'gu' ? 'અમદાવાદથી અંતર' : language === 'hi' ? 'अहमदाबाद से दूरी' : 'Distance from Ahmedabad'}
+                  {language === 'hi' ? 'अहमदाबाद से दूरी' : 'Distance from Ahmedabad'}
                 </option>
                 <option value="demand">
-                  {language === 'gu' ? 'ભૌતિક માંગ (મધ્યમ > ઉચ્ચ > નિમ્ન)' : language === 'hi' ? 'शारीरिक माँग (मध्यम > उच्च > निम्न)' : 'Physical Demand (Moderate → High → Low)'}
+                  {language === 'hi' ? 'शारीरिक माँग (मध्यम > उच्च > निम्न)' : 'Physical Demand (Moderate → High → Low)'}
                 </option>
               </select>
             </div>
@@ -346,7 +338,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
             <button
               type="button"
               onClick={() => setWheelchairOnly(!wheelchairOnly)}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 border transition-all cursor-pointer font-semibold ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 border transition-all cursor-pointer font-semibold rounded-lg ${
                 wheelchairOnly
                   ? 'bg-emerald-800 text-salt border-emerald-900 shadow-xs'
                   : 'bg-salt text-emerald-950 border-emerald-400 hover:bg-emerald-100'
@@ -354,7 +346,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
             >
               <Accessibility className={`w-4 h-4 ${wheelchairOnly ? 'text-emerald-300' : 'text-emerald-700'}`} />
               <span>Wheelchair Accessible</span>
-              {wheelchairOnly && <span className="text-[10px] bg-emerald-950 text-salt px-1">ACTIVE</span>}
+              {wheelchairOnly && <span className="text-[10px] bg-emerald-950 text-salt px-1 rounded">ACTIVE</span>}
             </button>
 
             <span className="text-stone/40 hidden sm:inline">|</span>
@@ -375,7 +367,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                     key={level}
                     type="button"
                     onClick={() => toggleDemandFilter(level)}
-                    className={`inline-flex items-center gap-1 px-2.5 py-1 border text-[10px] uppercase transition-all cursor-pointer font-bold ${badgeStyle}`}
+                    className={`inline-flex items-center gap-1 px-2.5 py-1 border text-[10px] uppercase transition-all cursor-pointer font-bold rounded-md ${badgeStyle}`}
                   >
                     <span>{level}</span>
                   </button>
@@ -387,7 +379,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               <button
                 type="button"
                 onClick={() => { setWheelchairOnly(false); setSelectedDemands([]); }}
-                className="text-stone hover:text-madder text-[10px] underline ml-auto uppercase font-semibold cursor-pointer"
+                className="text-stone hover:text-madder text-[10px] underline ml-auto uppercase font-semibold cursor-pointer rounded-md"
               >
                 Clear Accessibility
               </button>
@@ -399,13 +391,13 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         {/* RESULTS METRICS & COUNT */}
         <div className="flex items-center justify-between text-xs font-mono text-stone border-b border-stone/20 pb-2">
           <span>
-            {language === 'gu' ? 'દર્શાવાયેલ' : language === 'hi' ? 'दर्शाया जा रहा है' : 'Showing'} <strong className="text-charcoal">{filteredDestinations.length}</strong> {language === 'gu' ? 'માંથી' : language === 'hi' ? 'में से' : 'of'}{' '}
-            <strong className="text-charcoal">{GUJARAT_DESTINATIONS.length}</strong> {language === 'gu' ? 'વારસાગત સ્થળો' : language === 'hi' ? 'विरासत स्थल' : 'heritage destinations'}
+            {language === 'hi' ? 'दर्शाया जा रहा है' : 'Showing'} <strong className="text-charcoal">{filteredDestinations.length}</strong> {language === 'hi' ? 'में से' : 'of'}{' '}
+            <strong className="text-charcoal">{GUJARAT_DESTINATIONS.length}</strong> {language === 'hi' ? 'विरासत स्थल' : 'heritage destinations'}
           </span>
           {(searchQuery || selectedCategory !== 'All Categories') && (
             <button
               onClick={handleResetFilters}
-              className="text-madder hover:underline flex items-center gap-1 font-semibold cursor-pointer"
+              className="text-madder hover:underline flex items-center gap-1 font-semibold cursor-pointer rounded-md"
             >
               <RefreshCw className="w-3 h-3" />
               {t('explore.resetFilters', 'Reset Filters')}
@@ -427,25 +419,25 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.45, delay: (idx % 3) * 0.1 }}
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className={`group bg-ink text-salt border border-stone/40 hover:border-gold transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm ${terraceShift}`}
+                  className={`group bg-ink text-salt border border-stone/40 hover:border-gold transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm rounded-xl ${terraceShift}`}
                 >
                   {/* Image Container */}
-                  <div className="relative h-56 overflow-hidden bg-charcoal">
+                  <div className="relative h-56 overflow-hidden bg-charcoal rounded-t-xl">
                     <ImageWithFallback
                       src={dest.imageUrl}
                       alt={dest.imageAlt || dest.name}
                       category={dest.officialCategory || dest.category}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-xl"
                     />
                     
                     {/* Category Tag Overlay */}
-                    <div className="absolute top-3 left-3 bg-ink/90 backdrop-blur-sm border border-stone/40 px-2.5 py-1 text-[11px] font-mono text-salt uppercase tracking-wider">
+                    <div className="absolute top-3 left-3 bg-ink/90 backdrop-blur-sm border border-stone/40 px-2.5 py-1 text-[11px] font-mono text-salt uppercase tracking-wider rounded-md">
                       {getCategoryLabel(dest.officialCategory)}
                     </div>
 
                     {/* Distance Badge */}
-                    <div className="absolute bottom-3 right-3 bg-salt text-ink font-mono text-[11px] font-bold px-2 py-0.5">
-                      {dest.distanceFromAhmedabad} {language === 'gu' ? 'અમદાવાદથી' : language === 'hi' ? 'अहमदाबाद से' : 'from AHD'}
+                    <div className="absolute bottom-3 right-3 bg-salt text-ink font-mono text-[11px] font-bold px-2 py-0.5 rounded-md">
+                      {dest.distanceFromAhmedabad} {language === 'hi' ? 'अहमदाबाद से' : 'from AHD'}
                     </div>
                   </div>
 
@@ -456,7 +448,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                       <div className="flex items-center justify-between text-xs font-mono text-stone">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-3.5 h-3.5 text-gold shrink-0" />
-                          <span>{dest.district} {language === 'gu' ? 'જિલ્લો' : language === 'hi' ? 'ज़िला' : 'District'}</span>
+                          <span>{dest.district} {language === 'hi' ? 'ज़िला' : 'District'}</span>
                         </span>
                         <span className="text-gold font-semibold flex items-center gap-1">
                           <Star className="w-3.5 h-3.5 fill-gold text-gold" />
@@ -490,14 +482,14 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                         <div className="flex items-center justify-between">
                           <span className="flex items-center gap-1 text-gold font-medium">
                             <Clock className="w-3 h-3 text-gold shrink-0" />
-                            {language === 'gu' ? 'શ્રેષ્ઠ સમય:' : language === 'hi' ? 'उत्तम समय:' : 'Best Time:'}
+                            {language === 'hi' ? 'उत्तम समय:' : 'Best Time:'}
                           </span>
                           <span className="text-salt font-semibold">{dest.bestTime}</span>
                         </div>
                         <div className="flex items-center justify-between text-stone">
                           <span className="flex items-center gap-1">
                             <Ticket className="w-3 h-3 text-gold shrink-0" />
-                            {language === 'gu' ? 'ટિકિટ:' : language === 'hi' ? 'टिकट:' : 'Ticket:'}
+                            {language === 'hi' ? 'टिकट:' : 'Ticket:'}
                           </span>
                           <span>{dest.entryFee}</span>
                         </div>
@@ -507,13 +499,13 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                       <div className="flex items-center gap-2 pt-1">
                         <button
                           onClick={() => onSelectDestination(dest)}
-                          className="flex-1 bg-stone/20 hover:bg-gold hover:text-ink text-salt text-xs font-mono py-2 px-3 border border-stone/40 hover:border-gold transition-colors duration-150 text-center font-semibold cursor-pointer"
+                          className="flex-1 bg-stone/20 hover:bg-gold hover:text-ink text-salt text-xs font-mono py-2 px-3 border border-stone/40 hover:border-gold transition-colors duration-150 text-center font-semibold cursor-pointer rounded-lg"
                         >
                           {t('explore.inspectSite', 'Inspect Site')}
                         </button>
                         <button
                           onClick={() => onStartTripWithDestination(dest)}
-                          className="bg-gold hover:bg-gold/90 text-ink text-xs font-mono py-2 px-3 flex items-center gap-1 font-bold transition-colors duration-150 cursor-pointer"
+                          className="bg-gold hover:bg-gold/90 text-ink text-xs font-mono py-2 px-3 flex items-center gap-1 font-bold transition-colors duration-150 cursor-pointer rounded-lg"
                           title="Add to Itinerary Planner"
                         >
                           <span>{t('explore.plan', 'Plan')}</span>
@@ -528,7 +520,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
           </div>
         ) : (
           /* EMPTY STATE WITH STEPPED CHEVRON WATERMARK PATTERN */
-          <div className="bg-ink text-salt p-12 lg:p-16 border border-stone/40 text-center space-y-6 my-8 relative overflow-hidden">
+          <div className="bg-ink text-salt p-12 lg:p-16 border border-stone/40 text-center space-y-6 my-8 relative overflow-hidden rounded-2xl">
             
             {/* Stepped Chevron Watermark Motif Background */}
             <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">

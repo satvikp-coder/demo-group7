@@ -1,4 +1,4 @@
-export type Language = "en" | "gu" | "hi";
+export type Language = "en" | "hi";
 
 export interface TranslationDictionary {
   [key: string]: string;
@@ -53,8 +53,6 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "valueProps.prop3Title": "Verified Expenses",
     "valueProps.prop3Desc":
       "Exact ASI monument entry fees, local thali dining rates, and transit fuel estimates logged in an exportable budget ledger.",
-
-    // Explore View
     "explore.title": "Explore Heritage Monuments",
     "explore.searchPlaceholder": "Search destinations or districts...",
     "explore.allCategories": "All Categories",
@@ -150,152 +148,6 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "footer.rights": "All rights reserved. Gujarat Heritage Tourism Board.",
 
     "common.plan_trip": "Plan Custom Route",
-  },
-  gu: {
-    // Navbar & Navigation
-    "nav.brand": "ગુજરાત હેરિટેજ ડિરેક્ટરી",
-    "nav.subtitle": "સ્ટેપવેલ ભૌમિતિક યાત્રા એન્જિન",
-    "nav.home": "મુખ્ય પૃષ્ઠ",
-    "nav.explore": "શોધો",
-    "nav.hotels": "શ્રેષ્ઠ રોકાણ",
-    "nav.visualizer": "રૂટ કેલ્ક્યુલેટર",
-    "nav.budget": "બજેટ પ્લાનર",
-    "nav.savedTrip": "સાચવેલી યાત્રા",
-    "nav.signIn": "સાઇન ઇન",
-    "nav.login": "લોગ ઇન",
-    "nav.profile": "પ્રોફાઇલ અને ઇતિહાસ",
-    "nav.admin": "એડમિન પેનલ",
-    "nav.planItinerary": "યાત્રાનું આયોજન કરો",
-
-    // Category Taxonomy
-    "cat.all": "બધી શ્રેણીઓ",
-    "cat.heritage": "વારસાગત સ્થળો",
-    "cat.unesco": "યુનેસ્કો વિશ્વ વારસો સ્થળ",
-    "cat.religious": "ધાર્મિક સ્થળો",
-    "cat.beaches": "દરિયાકિનારા",
-    "cat.birds": "પક્ષી દર્શન સ્થળો",
-    "cat.museums": "સંગ્રહાલયો",
-    "cat.weekend": "વીકએન્ડ ગેટ-અવે",
-
-    // Hero Section
-    "hero.badge": "સ્ટેપવેલ ભૌમિતિક યાત્રા એન્જિન",
-    "hero.tagline":
-      "ગુજરાતના ૧૦ વારસા સ્થળો શોધો—મોઢેરાના ૧૧મી સદીના સૂર્ય મંદિરથી લઈને કચ્છના રણ અને ગીર સિંહ અભયારણ્ય સુધી. સુઆયોજિત માર્ગો અને બજેટ કેલ્ક્યુલેટર.",
-    "hero.startPlanning": "આયોજન શરૂ કરો",
-    "hero.browseSites": "૧૦ વારસાગત સ્થળો જુઓ",
-    "hero.statSites": "૧૦ સ્મારકો",
-    "hero.statData": "શહેર-આંતરિક એન્જિન",
-    "hero.statPrecision": "કિમી અને ફી ખાતાવહી",
-
-    // ValueProps Section
-    "valueProps.headerBadge": "સિસ્ટમ આર્કિટેક્ચર અને હેતુ",
-    "valueProps.title": "આ શા માટે અસ્તિત્વમાં છે",
-    "valueProps.prop1Title": "ભૌમિતિક રૂટની ચોકસાઈ",
-    "valueProps.prop1Desc":
-      "શહેરની અંદરનું અંતર, મુલાકાતનો સમય અને દૈનિક ગોળાકાર માર્ગોની ગણતરી કરે છે.",
-    "valueProps.prop2Title": "પ્રમાણિક વારસાગત રોકાણ",
-    "valueProps.prop2Desc":
-      "ચકાસાયેલ તોરણ સરકારી હોટેલો, પુનઃસ્થાપિત હવેલીઓ અને હોમસ્ટે.",
-    "valueProps.prop3Title": "ચકાસાયેલ ખર્ચ",
-    "valueProps.prop3Desc":
-      "ચોક્કસ ASI સ્મારક પ્રવેશ ફી, સ્થાનિક થાળીના દર અને પરિવહન બજેટ ખાતાવહી.",
-
-    // Explore View
-    "explore.title": "વારસાગત સ્મારકો શોધો",
-    "explore.searchPlaceholder": "સ્થળો અથવા જિલ્લાઓ શોધો...",
-    "explore.allCategories": "બધી શ્રેણીઓ",
-    "explore.resetFilters": "ફિલ્ટર્સ રીસેટ કરો",
-    "explore.inspectSite": "સ્થળની તપાસ કરો",
-    "explore.plan": "આયોજન",
-    "explore.emptyTitle": "કોઈ વારસાગત સ્થળો મળ્યા નથી",
-    "explore.emptyText":
-      "તમારી શોધ અથવા શ્રેણી પસંદગી સાથે કોઈ સ્મારકો મળતા નથી.",
-
-    // Destination Detail View
-    "destination.back": "તમામ સ્થળો પર પાછા જાઓ",
-    "destination.overview": "અવલોકન",
-    "destination.highlights": "મુખ્ય આકર્ષણો",
-    "destination.attractions": "શહેરના આંતરિક આકર્ષણો",
-    "destination.hotels": "હેરિટેજ હોટેલો અને હવેલીઓ",
-    "destination.restaurants": "સ્થાનિક ભોજન",
-    "destination.addToTrip": "પ્રવાસમાં ઉમેરો",
-    "destination.removeFromTrip": "પ્રવાસમાંથી દૂર કરો",
-    "destination.planItinerary": "માર્ગનું આયોજન કરો",
-    "destination.setPreferred": "પસંદગીનું રોકાણ તરીકે સેટ કરો",
-    "destination.preferredSelected": "પસંદગીનું રોકાણ પસંદ કર્યું",
-
-    // Planner Modal
-    "planner.title": "સ્ટેપવેલ યાત્રા પ્લાનર",
-    "planner.selectCity": "સ્થળ પસંદ કરો",
-    "planner.days": "પ્રવાસના દિવસો",
-    "planner.budget": "કુલ બજેટ (₹)",
-    "planner.startingHotel": "પ્રારંભિક હોટેલ / રોકાણ",
-    "planner.startingBase": "દૈનિક પ્રારંભિક આધાર",
-    "planner.startingTime": "પ્રારંભનો સમય",
-    "planner.dailyStartTime": "દૈનિક પ્રારંભ સમય",
-    "planner.generate": "માર્ગ બનાવો",
-    "planner.generateItinerary": "ગોળાકાર યોજના બનાવો",
-    "planner.cancel": "રદ કરો",
-
-    // Itinerary View
-    "itinerary.title": "તૈયાર કરેલ યાત્રા માર્ગ",
-    "itinerary.backToPlanner": "પ્લાનર પર પાછા જાઓ",
-    "itinerary.totalDistance": "કુલ અંતર",
-    "itinerary.totalCost": "કુલ અંદાજિત ખર્ચ",
-    "itinerary.dailyRoute": "દૈનિક વર્તુળાકાર માર્ગ",
-    "itinerary.baseHotel": "બેઝ હોટેલ",
-    "itinerary.exportPdf": "PDF નિકાસ કરો",
-    "itinerary.openLedger": "બજેટ ખાતાવહી ખોલો",
-
-    // Shortest Path Route Calculator (Dijkstra)
-    "dijkstra.title": "ટૂંકામાં ટૂંકા માર્ગનું કેલ્ક્યુલેટર",
-    "dijkstra.subtitle":
-      "ગુજરાત સર્કિટ નોડ્સ પર ડાઇકસ્ટ્રા ગ્રાફ એલ્ગોરિધમ એન્જિન",
-    "dijkstra.source": "પ્રારંભિક શહેર પસંદ કરો",
-    "dijkstra.target": "લક્ષ્ય શહેર પસંદ કરો",
-    "dijkstra.calculate": "ઉત્તમ માર્ગની ગણતરી કરો",
-    "dijkstra.routeResult": "તબક્કાવાર માર્ગ",
-
-    // Budget Planner View
-    "budget.title": "પ્રવાસ બજેટ ખાતાવહી",
-    "budget.totalExpense": "કુલ અંદાજિત ખર્ચ",
-    "budget.fees": "સ્મારક પ્રવેશ ફી",
-    "budget.stayCosts": "રોકાણનો ખર્ચ",
-    "budget.foodTransit": "ખોરાક અને પરિવહન",
-    "budget.adjust": "બજેટમાં સુધારો કરો",
-    "budget.backToItinerary": "યાત્રા માર્ગ પર પાછા જાઓ",
-
-    // Hotels View
-    "hotels.title": "સંરક્ષિત વારસાગત રહેઠાણો",
-    "hotels.filterTier": "સ્તર દ્વારા ફિલ્ટર કરો",
-    "hotels.filterType": "પ્રકાર દ્વારા ફિલ્ટર કરો",
-
-    // Profile View
-    "profile.title": "વપરાશકર્તા પ્રોફાઇલ અને સાચવેલા માર્ગો",
-    "profile.savedItineraries": "સાચવેલા યાત્રા માર્ગો",
-    "profile.preferredStays": "પસંદગીના રોકાણ",
-    "profile.signOut": "સાઇન આઉટ",
-
-    // Admin View
-    "admin.title": "એડમિન કંટ્રોલ પેનલ",
-    "admin.metrics": "સિસ્ટમ મેટ્રિક્સ",
-    "admin.destinationManagement": "સ્થળ સંચાલન",
-
-    // Auth & Footer
-    "auth.title": "હેરિટેજ ડિરેક્ટરી એકાઉન્ટ",
-    "auth.email": "ઇમેઇલ સરનામું",
-    "auth.password": "પાસવર્ડ",
-    "auth.register": "નોંધણી કરો",
-    "auth.login": "લોગ ઇન",
-    "auth.signup": "સાઇન અપ",
-    "auth.guest": "મહેમાન તરીકે આગળ વધો",
-
-    "footer.brand": "હેરિટેજ ટૂરિઝમ પ્લાનર",
-    "footer.description":
-      "ગુજરાતના વાવ, સૂર્ય મંદિરો અને સમુદ્રકિનારાઓ માટે સાંસ્કૃતિક માર્ગ દર્શિકા.",
-    "footer.rights": "સર્વાધિકાર સુરક્ષિત. ગુજરાત હેરિટેજ ટુરિઝમ બોર્ડ.",
-
-    "common.plan_trip": "કસ્ટમ રૂટનું આયોજન કરો",
   },
   hi: {
     // Navbar & Navigation
@@ -449,7 +301,6 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
 export interface UIStrings {
   [key: string]: {
     en: string;
-    gu: string;
     hi: string;
   };
 }
@@ -460,7 +311,6 @@ export const UI_TRANSLATIONS: UIStrings = new Proxy(
     get: (_, key: string) => {
       return {
         en: TRANSLATIONS.en[key] || key,
-        gu: TRANSLATIONS.gu[key] || TRANSLATIONS.en[key] || key,
         hi: TRANSLATIONS.hi[key] || TRANSLATIONS.en[key] || key,
       };
     },

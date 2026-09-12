@@ -88,21 +88,21 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
     switch (stayType) {
       case "Toran Hotel":
         return (
-          <span className="inline-flex items-center gap-1 bg-ink text-gold border border-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1 bg-ink text-gold border border-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-md">
             <Building2 className="w-3 h-3 text-gold" />
             TCGL Official Toran Hotel
           </span>
         );
       case "Heritage Hotel":
         return (
-          <span className="inline-flex items-center gap-1 bg-madder text-salt border border-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1 bg-madder text-salt border border-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-md">
             <Award className="w-3 h-3 text-gold" />
             Heritage Royal Palace
           </span>
         );
       case "Homestay":
         return (
-          <span className="inline-flex items-center gap-1 bg-emerald-900 text-emerald-100 border border-emerald-500 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1 bg-emerald-900 text-emerald-100 border border-emerald-500 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-md">
             <CheckCircle2 className="w-3 h-3 text-emerald-300" />
             Artisan Village Homestay
           </span>
@@ -110,7 +110,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
       case "Registered Hotel":
       default:
         return (
-          <span className="inline-flex items-center gap-1 bg-salt text-charcoal border border-stone/50 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1 bg-salt text-charcoal border border-stone/50 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-md">
             <HotelIcon className="w-3 h-3 text-ink" />
             Tourism Guild Registered
           </span>
@@ -138,7 +138,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
               </h1>
             </div>
 
-            <div className="bg-salt/10 border border-stone/40 p-3 font-mono text-xs text-right">
+            <div className="bg-salt/10 border border-stone/40 p-3 font-mono text-xs text-right rounded-lg">
               <span className="text-stone text-[10px] uppercase block tracking-wider">
                 Preferred Stays:
               </span>
@@ -157,7 +157,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
         {/* NOTICE TOAST */}
         {assignedNotice && (
-          <div className="p-3.5 bg-emerald-900 text-salt border-2 border-emerald-400 text-xs font-mono flex items-center justify-between gap-2 shadow-md animate-fadeIn">
+          <div className="p-3.5 bg-emerald-900 text-salt border-2 border-emerald-400 text-xs font-mono flex items-center justify-between gap-2 shadow-md animate-fadeIn rounded-lg">
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-emerald-300" />
               <span className="font-bold">{assignedNotice}</span>
@@ -169,7 +169,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
         )}
 
         {/* ================= CITY CONTEXT BANNER ================= */}
-        <div className="bg-white border-2 border-stone/40 p-4 font-mono text-xs text-charcoal flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+        <div className="bg-white border-2 border-stone/40 p-4 font-mono text-xs text-charcoal flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs rounded-xl">
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-madder shrink-0" />
             <span>
@@ -190,7 +190,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
         </div>
 
         {/* ================= 2. SORT / RE-RANK CONTROL ================= */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border-2 border-stone/40 p-4 shadow-2xs font-mono text-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border-2 border-stone/40 p-4 shadow-2xs font-mono text-xs rounded-xl">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="w-4 h-4 text-gold" />
             <span className="font-bold text-charcoal uppercase tracking-wider">
@@ -203,7 +203,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
             <button
               onClick={() => setSortOrder("value")}
-              className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1.5 border font-bold transition-all cursor-pointer rounded-lg ${
                 sortOrder === "value"
                   ? "bg-gold text-ink border-ink shadow-xs"
                   : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
@@ -214,7 +214,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
             <button
               onClick={() => setSortOrder("rating")}
-              className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1.5 border font-bold transition-all cursor-pointer rounded-lg ${
                 sortOrder === "rating"
                   ? "bg-gold text-ink border-ink shadow-xs"
                   : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
@@ -225,7 +225,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
             <button
               onClick={() => setSortOrder("price")}
-              className={`px-3 py-1.5 border font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1.5 border font-bold transition-all cursor-pointer rounded-lg ${
                 sortOrder === "price"
                   ? "bg-gold text-ink border-ink shadow-xs"
                   : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
@@ -245,7 +245,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
             return (
               <div
                 key={hotel.id}
-                className={`bg-white border-2 transition-all duration-200 p-4 sm:p-6 shadow-2xs relative ${
+                className={`bg-white border-2 transition-all duration-200 p-4 sm:p-6 shadow-2xs relative rounded-xl ${
                   isChosen
                     ? "border-gold bg-gold/5"
                     : "border-stone/40 hover:border-gold"
@@ -253,7 +253,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex items-start gap-4">
-                    <div className="font-display font-bold text-xl sm:text-2xl text-gold bg-ink w-10 h-10 border border-gold flex items-center justify-center shrink-0 shadow-xs">
+                    <div className="font-display font-bold text-xl sm:text-2xl text-gold bg-ink w-10 h-10 border border-gold flex items-center justify-center shrink-0 shadow-xs rounded-lg">
                       {rankNumber}
                     </div>
 
@@ -262,7 +262,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                         src={hotel.imageUrl}
                         alt={`${hotel.name} ${hotel.stayType} exterior`}
                         category="hotel"
-                        className="w-16 h-16 sm:w-20 sm:h-20 object-cover border border-stone/30 shrink-0"
+                        className="w-16 h-16 sm:w-20 sm:h-20 object-cover border border-stone/30 shrink-0 rounded-lg"
                       />
                     )}
 
@@ -273,7 +273,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                         </h3>
                         {renderStayBadge(hotel.stayType)}
                         {isChosen && (
-                          <span className="inline-flex items-center gap-1 bg-gold text-ink font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider border border-ink">
+                          <span className="inline-flex items-center gap-1 bg-gold text-ink font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider border border-ink rounded-md">
                             <CheckCircle2 className="w-3 h-3 text-ink" />
                             Preferred Stay
                           </span>
@@ -304,10 +304,10 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                             {hotel.valueScore}/100
                           </span>
                         </div>
-                        <div className="w-full h-2 bg-stone/20 border border-stone/40 overflow-hidden">
+                        <div className="w-full h-2 bg-stone/20 border border-stone/40 overflow-hidden rounded-full">
                           <div
                             style={{ width: `${hotel.valueScore}%` }}
-                            className="h-full bg-gold transition-all duration-500"
+                            className="h-full bg-gold transition-all duration-500 rounded-full"
                           />
                         </div>
                       </div>
@@ -317,7 +317,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                   <div className="shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-stone/20 flex md:flex-col items-center justify-end gap-2">
                     <button
                       onClick={() => handleSelectHotel(hotel)}
-                      className={`w-full md:w-auto text-xs font-mono font-bold px-4 py-2.5 border transition-all cursor-pointer flex items-center justify-center gap-2 ${
+                      className={`w-full md:w-auto text-xs font-mono font-bold px-4 py-2.5 border transition-all cursor-pointer flex items-center justify-center gap-2 rounded-lg ${
                         isChosen
                           ? "bg-ink text-gold border-gold shadow-xs"
                           : "bg-salt text-charcoal border-stone/40 hover:bg-madder hover:text-salt hover:border-madder"
@@ -350,7 +350,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
         </div>
 
         {/* BOTTOM HELPER FOOTER */}
-        <div className="p-4 bg-white border border-stone/30 font-mono text-xs text-stone flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="p-4 bg-white border border-stone/30 font-mono text-xs text-stone flex flex-col sm:flex-row items-center justify-between gap-3 rounded-xl">
           <div className="flex items-center gap-2">
             <Info className="w-4 h-4 text-gold shrink-0" />
             <span>
@@ -361,7 +361,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
           <button
             onClick={() => onOpenPlanner && onOpenPlanner()}
-            className="text-ink hover:text-gold font-bold underline whitespace-nowrap cursor-pointer"
+            className="text-ink hover:text-gold font-bold underline whitespace-nowrap cursor-pointer rounded-md"
           >
             Open Circuit Planner →
           </button>

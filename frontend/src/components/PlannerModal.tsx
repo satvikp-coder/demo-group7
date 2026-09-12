@@ -152,7 +152,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="bg-salt border-2 border-gold max-w-3xl w-full text-charcoal p-5 sm:p-8 relative shadow-2xl my-6 animate-fadeIn"
+        className="bg-salt border-2 border-gold max-w-3xl w-full text-charcoal p-5 sm:p-8 relative shadow-2xl my-6 animate-fadeIn rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
@@ -163,16 +163,14 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <span>Stepwell Single-City Day Planner</span>
             </div>
             <h2 id="planner-modal-title" className="font-display text-2xl sm:text-3xl text-ink font-semibold">
-              {language === "gu"
-                ? `${getName(activeCity)} પ્રવાસ આયોજન`
-                : language === "hi"
-                  ? `${getName(activeCity)} यात्रा योजना`
-                  : `Plan Your ${getName(activeCity)} Experience`}
+              {language === "hi"
+                ? `${getName(activeCity)} यात्रा योजना`
+                : `Plan Your ${getName(activeCity)} Experience`}
             </h2>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-stone hover:text-ink hover:bg-stone/20 border border-stone/30 transition-colors cursor-pointer"
+            className="p-1.5 text-stone hover:text-ink hover:bg-stone/20 border border-stone/30 transition-colors cursor-pointer rounded-lg"
             aria-label="Close trip planner"
           >
             <X className="w-5 h-5" />
@@ -194,7 +192,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             aria-selected={step === 1}
             aria-current={step === 1 ? "step" : undefined}
             onClick={() => setStep(1)}
-            className={`p-3 border text-left w-full transition-all cursor-pointer relative focus:outline-none focus:ring-2 focus:ring-gold ${
+            className={`p-3 border text-left w-full transition-all cursor-pointer relative focus:outline-none focus:ring-2 focus:ring-gold rounded-lg ${
               step === 1
                 ? "bg-ink text-salt border-2 border-gold font-bold shadow-md"
                 : step > 1
@@ -205,11 +203,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider">
               <span>
                 01.{" "}
-                {language === "gu"
-                  ? "સ્થળ પસંદગી"
-                  : language === "hi"
-                    ? "शहर चयन"
-                    : "Confirm City"}
+                {language === "hi"
+                  ? "शहर चयन"
+                  : "Confirm City"}
               </span>
               {step > 1 ? (
                 <div className="w-4 h-4 rounded-full bg-ink text-gold flex items-center justify-center">
@@ -231,7 +227,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             aria-selected={step === 2}
             aria-current={step === 2 ? "step" : undefined}
             onClick={() => setStep(2)}
-            className={`p-3.5 border text-left w-full transition-all cursor-pointer relative translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-gold ${
+            className={`p-3.5 border text-left w-full transition-all cursor-pointer relative translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-gold rounded-lg ${
               step === 2
                 ? "bg-ink text-salt border-2 border-gold font-bold shadow-md"
                 : step > 2
@@ -242,11 +238,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider">
               <span>
                 02.{" "}
-                {language === "gu"
-                  ? "લોજિસ્ટિક્સ"
-                  : language === "hi"
-                    ? "लॉजिस्टिक्स"
-                    : "Logistics"}
+                {language === "hi"
+                  ? "लॉजिस्टिक्स"
+                  : "Logistics"}
               </span>
               {step > 2 ? (
                 <div className="w-4 h-4 rounded-full bg-ink text-gold flex items-center justify-center">
@@ -257,11 +251,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               )}
             </div>
             <div className="font-display text-sm mt-1 truncate">
-              {language === "gu"
-                ? "હોટેલ અને સમય"
-                : language === "hi"
-                  ? "होटल और समय"
-                  : "Hotel & Schedule"}
+              {language === "hi"
+                ? "होटल और समय"
+                : "Hotel & Schedule"}
             </div>
           </button>
 
@@ -272,7 +264,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             aria-selected={step === 3}
             aria-current={step === 3 ? "step" : undefined}
             onClick={() => setStep(3)}
-            className={`p-4 border text-left w-full transition-all cursor-pointer relative translate-y-[-4px] focus:outline-none focus:ring-2 focus:ring-gold ${
+            className={`p-4 border text-left w-full transition-all cursor-pointer relative translate-y-[-4px] focus:outline-none focus:ring-2 focus:ring-gold rounded-lg ${
               step === 3
                 ? "bg-ink text-salt border-2 border-gold font-bold shadow-md"
                 : "bg-stone/20 text-stone border border-stone/30 font-medium"
@@ -281,28 +273,24 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider">
               <span>
                 03.{" "}
-                {language === "gu"
-                  ? "સમીક્ષા"
-                  : language === "hi"
-                    ? "समीक्षा"
-                    : "Review"}
+                {language === "hi"
+                  ? "समीक्षा"
+                  : "Review"}
               </span>
               <span className="text-[10px] opacity-80">Terrace 3</span>
             </div>
             <div className="font-display text-sm mt-1 truncate">
-              {language === "gu"
-                ? "રૂટ જનરેટ કરો"
-                : language === "hi"
-                  ? "रूट जनरेट करें"
-                  : "Generate Itinerary"}
+              {language === "hi"
+                ? "रूट जनरेट करें"
+                : "Generate Itinerary"}
             </div>
           </button>
         </div>
 
         {/* Mobile Compact Step Indicator */}
-        <div className="sm:hidden mb-6 p-2.5 bg-ink text-salt border border-stone/40 font-mono text-xs flex items-center justify-between">
+        <div className="sm:hidden mb-6 p-2.5 bg-ink text-salt border border-stone/40 font-mono text-xs flex items-center justify-between rounded-lg">
           <div className="flex items-center gap-2">
-            <span className="bg-gold text-ink font-bold px-2 py-0.5 text-[10px]">
+            <span className="bg-gold text-ink font-bold px-2 py-0.5 text-[10px] rounded">
               STEP {step} OF 3
             </span>
             <span className="font-display text-sm font-semibold">
@@ -334,18 +322,14 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20 pb-3">
                 <div>
                   <h3 className="font-display text-xl text-ink font-bold">
-                    {language === "gu"
-                      ? "લક્ષ્ય હેરિટેજ શહેર પસંદ કરો"
-                      : language === "hi"
-                        ? "लक्ष्य हेरिटेज शहर चुनें"
-                        : "Select Target Heritage City"}
+                    {language === "hi"
+                      ? "लक्ष्य हेरिटेज शहर चुनें"
+                      : "Select Target Heritage City"}
                   </h3>
                   <p className="text-xs text-stone font-body">
-                    {language === "gu"
-                      ? "એક શહેર પસંદ કરો જેથી દૈનિક પ્રવાસ યોજના તૈયાર કરી શકાય."
-                      : language === "hi"
-                        ? "एक शहर चुनें ताकि दैनिक यात्रा योजना तैयार की जा सके।"
-                        : "Pick one city for a dedicated intra-city day-by-day circular itinerary."}
+                    {language === "hi"
+                      ? "एक शहर चुनें ताकि दैनिक यात्रा योजना तैयार की जा सके।"
+                      : "Pick one city for a dedicated intra-city day-by-day circular itinerary."}
                   </p>
                 </div>
               </div>
@@ -359,7 +343,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       key={c.id}
                       onClick={() => handleCityChange(c.id)}
                       aria-pressed={isSelected}
-                      className={`p-2 border text-left cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-gold ${
+                      className={`p-2 border text-left cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-gold rounded-lg ${
                         isSelected
                           ? "bg-ink text-salt border-2 border-gold font-bold shadow-sm"
                           : "bg-salt hover:bg-stone/20 text-charcoal border-stone/30"
@@ -379,19 +363,19 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               </div>
 
               {/* Selected City Highlight Monograph */}
-              <div className="bg-ink text-salt border-2 border-gold p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
+              <div className="bg-ink text-salt border-2 border-gold p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center rounded-xl">
                 <ImageWithFallback
                   src={activeCity.imageUrl}
                   alt={activeCity.imageAlt || getName(activeCity)}
                   category={activeCity.officialCategory || activeCity.category}
-                  className="w-full sm:w-40 h-28 object-cover border border-gold shrink-0"
+                  className="w-full sm:w-40 h-28 object-cover border border-gold shrink-0 rounded-lg"
                 />
                 <div className="space-y-2 text-left w-full">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-[10px] uppercase text-gold tracking-widest">
                       {activeCity.officialCategory}
                     </span>
-                    <span className="font-mono text-xs bg-gold text-ink font-bold px-2 py-0.5">
+                    <span className="font-mono text-xs bg-gold text-ink font-bold px-2 py-0.5 rounded">
                       {activeCity.rating}
                     </span>
                   </div>
@@ -404,27 +388,21 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <div className="flex items-center gap-4 text-xs font-mono text-gold pt-1 border-t border-stone/30">
                     <span>
                       {activeCity.attractions.length}{" "}
-                      {language === "gu"
-                        ? "આકર્ષણો"
-                        : language === "hi"
-                          ? "आकर्षण"
-                          : "Attractions"}
+                      {language === "hi"
+                        ? "आकर्षण"
+                        : "Attractions"}
                     </span>
                     <span>
                       {activeCity.hotels.length}{" "}
-                      {language === "gu"
-                        ? "હોટેલ્સ"
-                        : language === "hi"
-                          ? "होटल"
-                          : "Hotel Options"}
+                      {language === "hi"
+                        ? "होटल"
+                        : "Hotel Options"}
                     </span>
                     <span>
                       {activeCity.restaurants.length}{" "}
-                      {language === "gu"
-                        ? "રેસ્ટોરન્ટ્સ"
-                        : language === "hi"
-                          ? "रेस्तरां"
-                          : "Restaurants"}
+                      {language === "hi"
+                        ? "रेस्तरां"
+                        : "Restaurants"}
                     </span>
                   </div>
                 </div>
@@ -434,14 +412,12 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <div className="pt-4 border-t border-stone/30 flex justify-end">
                 <button
                   onClick={() => setStep(2)}
-                  className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-gold"
+                  className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center gap-2 transition-colors cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-gold rounded-lg"
                 >
                   <span>
-                    {language === "gu"
-                      ? "લોજિસ્ટિક્સ તરફ આગળ વધો"
-                      : language === "hi"
-                        ? "लॉजिस्टिक्स की ओर बढ़ें"
-                        : "Continue to Logistics"}
+                    {language === "hi"
+                      ? "लॉजिस्टिक्स की ओर बढ़ें"
+                      : "Continue to Logistics"}
                   </span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -454,11 +430,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="space-y-6 animate-fadeIn">
               <div>
                 <h3 className="font-display text-xl text-ink font-bold border-b border-stone/20 pb-2">
-                  {language === "gu"
-                    ? `${getName(activeCity)} માટે લોજિસ્ટિક્સ`
-                    : language === "hi"
-                      ? `${getName(activeCity)} के लिए लॉजिस्टिक्स`
-                      : `Trip Logistics for ${getName(activeCity)}`}
+                  {language === "hi"
+                    ? `${getName(activeCity)} के लिए लॉजिस्टिक्स`
+                    : `Trip Logistics for ${getName(activeCity)}`}
                 </h3>
                 <p className="text-xs text-stone font-body mt-1">
                   Configure duration, budget, starting accommodation, and daily
@@ -468,7 +442,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Trip Length Selector */}
-                <div className="bg-white border border-stone/40 p-4 space-y-3">
+                <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl">
                   <label
                     htmlFor="planner-trip-days"
                     className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center gap-2"
@@ -476,12 +450,12 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     <Calendar className="w-4 h-4 text-gold" />
                     1. {t("planner.days", "Trip Duration")}
                   </label>
-                  <div className="flex items-center justify-between border border-stone/30 bg-salt p-2">
+                  <div className="flex items-center justify-between border border-stone/30 bg-salt p-2 rounded-lg">
                     <button
                       type="button"
                       onClick={() => setTripDays(Math.max(1, tripDays - 1))}
                       aria-label="Decrease trip duration"
-                      className="w-8 h-8 bg-ink text-gold flex items-center justify-center font-bold hover:bg-stone/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
+                      className="w-8 h-8 bg-ink text-gold flex items-center justify-center font-bold hover:bg-stone/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded-md"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
@@ -493,18 +467,16 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                         {tripDays}
                       </span>
                       <span className="font-mono text-xs text-stone block">
-                        {language === "gu"
-                          ? "દિવસો"
-                          : language === "hi"
-                            ? "दिन"
-                            : "Days"}
+                        {language === "hi"
+                          ? "दिन"
+                          : "Days"}
                       </span>
                     </div>
                     <button
                       type="button"
                       onClick={() => setTripDays(Math.min(7, tripDays + 1))}
                       aria-label="Increase trip duration"
-                      className="w-8 h-8 bg-ink text-gold flex items-center justify-center font-bold hover:bg-stone/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
+                      className="w-8 h-8 bg-ink text-gold flex items-center justify-center font-bold hover:bg-stone/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded-md"
                     >
                       <Plus className="w-4 h-4" />
                     </button>
@@ -512,7 +484,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </div>
 
                 {/* Budget Limit Input */}
-                <div className="bg-white border border-stone/40 p-4 space-y-3">
+                <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl">
                   <label
                     htmlFor="planner-budget-input"
                     className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center justify-between"
@@ -530,7 +502,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     step="500"
                     value={budget}
                     onChange={(e) => setBudget(Number(e.target.value))}
-                    className="w-full accent-gold cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
+                    className="w-full accent-gold cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded-lg"
                   />
                   <div className="flex justify-between font-mono text-[10px] text-stone">
                     <span>₹3,000 (Economy)</span>
@@ -539,7 +511,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </div>
 
                 {/* Starting Hotel Selection */}
-                <div className="bg-white border border-stone/40 p-4 space-y-3">
+                <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl">
                   <label
                     htmlFor="planner-starting-hotel"
                     className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center gap-2"
@@ -551,7 +523,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     id="planner-starting-hotel"
                     value={startingHotelId}
                     onChange={(e) => handleStartingHotelChange(e.target.value)}
-                    className="w-full bg-salt text-charcoal font-mono text-xs p-2.5 border border-stone/40 outline-none focus:border-gold focus:ring-1 focus:ring-gold cursor-pointer font-bold"
+                    className="w-full bg-salt text-charcoal font-mono text-xs p-2.5 border border-stone/40 outline-none focus:border-gold focus:ring-1 focus:ring-gold cursor-pointer font-bold rounded-lg"
                   >
                     {activeCity.hotels.map((h) => {
                       const isPref = preferredHotels?.[selectedCityId] === h.id;
@@ -574,7 +546,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </div>
 
                 {/* Morning Start Time */}
-                <div className="bg-white border border-stone/40 p-4 space-y-3">
+                <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl">
                   <label
                     htmlFor="planner-start-time"
                     className="font-mono text-xs font-bold text-charcoal uppercase tracking-wider flex items-center gap-2"
@@ -586,7 +558,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     id="planner-start-time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="w-full bg-salt text-charcoal font-mono text-xs p-2.5 border border-stone/40 outline-none focus:border-gold focus:ring-1 focus:ring-gold cursor-pointer font-bold"
+                    className="w-full bg-salt text-charcoal font-mono text-xs p-2.5 border border-stone/40 outline-none focus:border-gold focus:ring-1 focus:ring-gold cursor-pointer font-bold rounded-lg"
                   >
                     <option value="07:00 AM">07:00 AM (Early Departure)</option>
                     <option value="08:00 AM">08:00 AM (Recommended)</option>
@@ -597,7 +569,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </div>
 
                 {/* 5. Accessibility Constraint Toggle */}
-                <div className="bg-emerald-50/50 border border-emerald-300 p-4 space-y-2 col-span-1 md:col-span-2">
+                <div className="bg-emerald-50/50 border border-emerald-300 p-4 space-y-2 col-span-1 md:col-span-2 rounded-xl">
                   <label className="flex items-start sm:items-center justify-between gap-3 cursor-pointer">
                     <div className="space-y-0.5">
                       <span className="font-mono text-xs font-bold text-emerald-950 uppercase tracking-wider flex items-center gap-2">
@@ -614,7 +586,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       type="checkbox"
                       checked={wheelchairOnly}
                       onChange={(e) => setWheelchairOnly(e.target.checked)}
-                      className="w-5 h-5 accent-emerald-800 shrink-0 cursor-pointer mt-1 sm:mt-0"
+                      className="w-5 h-5 accent-emerald-800 shrink-0 cursor-pointer mt-1 sm:mt-0 rounded"
                     />
                   </label>
                 </div>
@@ -624,28 +596,24 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
               <div className="pt-4 border-t border-stone/30 flex justify-between">
                 <button
                   onClick={() => setStep(1)}
-                  className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold"
+                  className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded-lg"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>
-                    {language === "gu"
-                      ? "પાછળ"
-                      : language === "hi"
-                        ? "पीछे"
-                        : "Back"}
+                    {language === "hi"
+                      ? "पीछे"
+                      : "Back"}
                   </span>
                 </button>
 
                 <button
                   onClick={() => setStep(3)}
-                  className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-gold"
+                  className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-2.5 uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-gold rounded-lg"
                 >
                   <span>
-                    {language === "gu"
-                      ? "યોજના સમીક્ષા કરો"
-                      : language === "hi"
-                        ? "योजना समीक्षा करें"
-                        : "Review Plan"}
+                    {language === "hi"
+                      ? "योजना समीक्षा करें"
+                      : "Review Plan"}
                   </span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -658,16 +626,14 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             <div className="space-y-6 animate-fadeIn">
               <div>
                 <h3 className="font-display text-xl text-ink font-bold border-b border-stone/20 pb-2">
-                  {language === "gu"
-                    ? "ગોળાકાર રૂટ સેટિંગ્સની સમીક્ષા કરો"
-                    : language === "hi"
-                      ? "वृत्ताकार मार्ग सेटिंग्स की समीक्षा करें"
-                      : "Review Circular Route Settings"}
+                  {language === "hi"
+                    ? "वृत्ताकार मार्ग सेटिंग्स की समीक्षा करें"
+                    : "Review Circular Route Settings"}
                 </h3>
               </div>
 
               {/* Summary Card */}
-              <div className="bg-ink text-salt border-2 border-gold p-6 space-y-4 shadow-lg">
+              <div className="bg-ink text-salt border-2 border-gold p-6 space-y-4 shadow-lg rounded-xl">
                 <div className="flex items-center justify-between border-b border-stone/30 pb-3">
                   <div>
                     <span className="font-mono text-[10px] text-gold uppercase tracking-widest block">
@@ -677,18 +643,16 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       {getName(activeCity)}
                     </h4>
                   </div>
-                  <span className="bg-gold text-ink font-mono text-xs font-bold px-3 py-1 uppercase">
+                  <span className="bg-gold text-ink font-mono text-xs font-bold px-3 py-1 uppercase rounded-md">
                     {tripDays}{" "}
-                    {language === "gu"
-                      ? "દિવસો"
-                      : language === "hi"
-                        ? "दिन"
-                        : "Days"}
+                    {language === "hi"
+                      ? "दिन"
+                      : "Days"}
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-                  <div className="bg-salt/10 p-3 border border-stone/30">
+                  <div className="bg-salt/10 p-3 border border-stone/30 rounded-lg">
                     <span className="text-stone text-[10px] uppercase block">
                       Starting Hotel
                     </span>
@@ -696,7 +660,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       {startingHotelObj?.name}
                     </span>
                   </div>
-                  <div className="bg-salt/10 p-3 border border-stone/30">
+                  <div className="bg-salt/10 p-3 border border-stone/30 rounded-lg">
                     <span className="text-stone text-[10px] uppercase block">
                       Daily Start Time
                     </span>
@@ -704,7 +668,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                       {startTime}
                     </span>
                   </div>
-                  <div className="bg-salt/10 p-3 border border-stone/30">
+                  <div className="bg-salt/10 p-3 border border-stone/30 rounded-lg">
                     <span className="text-stone text-[10px] uppercase block">
                       Budget Cap
                     </span>
@@ -720,15 +684,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
+                  className="bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 font-mono text-xs font-bold px-4 py-2.5 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer rounded-lg"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>
-                    {language === "gu"
-                      ? "લોજિસ્ટિક્સ બદલો"
-                      : language === "hi"
-                        ? "लॉजिस्टिक्स बदलें"
-                        : "Adjust Logistics"}
+                    {language === "hi"
+                      ? "लॉजिस्टिक्स बदलें"
+                      : "Adjust Logistics"}
                   </span>
                 </button>
 
@@ -736,7 +698,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setShowComparisonModal(true)}
-                    className="bg-salt hover:bg-ink hover:text-salt text-ink border-2 border-gold font-mono text-xs font-bold px-5 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md transition-all"
+                    className="bg-salt hover:bg-ink hover:text-salt text-ink border-2 border-gold font-mono text-xs font-bold px-5 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md transition-all rounded-lg"
                   >
                     <SlidersHorizontal className="w-4 h-4 text-gold" />
                     <span>Compare optimization strategies</span>
@@ -745,7 +707,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <button
                     type="button"
                     onClick={handleGenerate}
-                    className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl transition-all"
+                    className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl transition-all rounded-lg"
                   >
                     <Compass className="w-4 h-4 text-ink hover:text-gold" />
                     <span>

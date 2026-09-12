@@ -42,27 +42,27 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
             return (
               <div
                 key={site.id}
-                className={`group bg-salt border border-stone/40 hover:border-gold transition-colors duration-200 p-3 flex flex-col justify-between ${
+                className={`group bg-salt border border-stone/40 hover:border-gold transition-colors duration-200 p-3 flex flex-col justify-between rounded-xl ${
                   isOddCol ? 'terrace-card-odd' : 'terrace-card-even'
                 }`}
               >
                 <div>
                   {/* Image with Tag Overlay */}
-                  <div className="relative h-60 overflow-hidden bg-ink mb-4 border border-stone/20">
+                  <div className="relative h-60 overflow-hidden bg-ink mb-4 border border-stone/20 rounded-lg">
                     <ImageWithFallback
                       src={site.imageUrl}
                       alt={site.imageAlt || site.name}
                       category={site.category}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
                     />
                     {/* Category Tag Pill */}
-                    <div className="absolute top-3 left-3 bg-ink/90 text-salt px-2.5 py-1 text-[11px] font-mono border border-stone/40">
+                    <div className="absolute top-3 left-3 bg-ink/90 text-salt px-2.5 py-1 text-[11px] font-mono border border-stone/40 rounded-md">
                       {site.category}
                     </div>
 
                     {/* Stepped Corner Detail */}
-                    <div className="absolute bottom-0 right-0 w-6 h-6 bg-salt border-t border-l border-stone/40 flex items-center justify-center">
-                      <div className="w-2 h-2 bg-gold"></div>
+                    <div className="absolute bottom-0 right-0 w-6 h-6 bg-salt border-t border-l border-stone/40 flex items-center justify-center rounded-tl-md">
+                      <div className="w-2 h-2 bg-gold rounded-full"></div>
                     </div>
                   </div>
 
@@ -113,7 +113,7 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
                   <div className="pt-2 flex items-center gap-2">
                     <button
                       onClick={() => onSelectDestination(site)}
-                      className="flex-1 bg-ink/5 hover:bg-ink hover:text-salt text-ink border border-stone/40 py-2 px-3 text-xs font-medium transition-colors duration-150 flex items-center justify-center gap-1.5"
+                      className="flex-1 bg-ink/5 hover:bg-ink hover:text-salt text-ink border border-stone/40 py-2 px-3 text-xs font-medium transition-colors duration-150 flex items-center justify-center gap-1.5 rounded-lg cursor-pointer"
                     >
                       <Info className="w-3.5 h-3.5 text-gold" />
                       <span>Inspect Details</span>
@@ -121,7 +121,7 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
 
                     <button
                       onClick={() => onStartTripWithDestination(site)}
-                      className="bg-madder hover:bg-madder/90 text-salt p-2 text-xs transition-colors duration-150 border border-madder"
+                      className="bg-madder hover:bg-madder/90 text-salt p-2 text-xs transition-colors duration-150 border border-madder rounded-lg cursor-pointer"
                       title={`Plan trip including ${site.name}`}
                     >
                       <ArrowUpRight className="w-4 h-4" />

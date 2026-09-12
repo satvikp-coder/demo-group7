@@ -146,13 +146,11 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onBackToItinerary}
-              className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 text-salt border border-gold text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 bg-ink hover:bg-ink/90 text-salt border border-gold text-xs font-mono px-4 py-2 transition-colors cursor-pointer rounded-lg shadow-xs"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "gu"
-                  ? "પ્રવાસ પ્લાનર પર પાછા ફરો"
-                  : language === "hi"
+                {language === "hi"
                   ? "यात्रा प्लानर पर वापस जाएं"
                   : "Return to Itinerary View"}
               </span>
@@ -160,13 +158,11 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
             <button
               onClick={onBackToPlanner}
-              className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 bg-stone/20 hover:bg-stone/30 text-charcoal border border-stone/40 text-xs font-mono px-4 py-2 transition-colors cursor-pointer rounded-lg"
             >
               <SlidersHorizontal className="w-3.5 h-3.5 text-ink" />
               <span>
-                {language === "gu"
-                  ? "મુખ્ય પ્લાનરમાં ફેરફાર કરો"
-                  : language === "hi"
+                {language === "hi"
                   ? "मुख्य प्लानर में बदलाव करें"
                   : "Adjust Trip Parameters"}
               </span>
@@ -176,13 +172,11 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={handleShare}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer rounded-lg"
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "gu"
-                  ? "શેર કરો"
-                  : language === "hi"
+                {language === "hi"
                   ? "शेयर करें"
                   : "Share Ledger"}
               </span>
@@ -190,13 +184,11 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer rounded-lg"
             >
               <Printer className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "gu"
-                  ? "પ્રિન્ટ લેજર"
-                  : language === "hi"
+                {language === "hi"
                   ? "प्रिंट लेजर"
                   : "Print Ledger"}
               </span>
@@ -205,7 +197,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         </div>
 
         {savedShareNotice && (
-          <div className="p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn">
+          <div className="p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn rounded-xl">
             <Check className="w-4 h-4 text-emerald-300" />
             <span>Budget ledger breakdown link copied to clipboard!</span>
           </div>
@@ -213,7 +205,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
         {/* No active itinerary notice */}
         {!activeConfig && (
-          <div className="p-4 bg-amber-50 border border-amber-400 text-amber-900 font-mono text-xs flex items-start gap-2.5">
+          <div className="p-4 bg-amber-50 border border-amber-400 text-amber-900 font-mono text-xs flex items-start gap-2.5 rounded-xl">
             <Info className="w-4 h-4 shrink-0 mt-0.5 text-amber-600" />
             <span>
               No active itinerary found. Generate a trip from the planner first
@@ -223,7 +215,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         )}
 
         {/* ================= 1. HEADER: BUDGET VS ESTIMATED COST BAR ================= */}
-        <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative shadow-lg">
+        <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative shadow-lg rounded-2xl">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone/30 pb-4">
             <div>
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold mb-1">
@@ -241,7 +233,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             </div>
 
             {/* Interactive Budget Adjustment Control */}
-            <div className="bg-salt/10 border border-stone/40 p-3 space-y-1 font-mono text-xs">
+            <div className="bg-salt/10 border border-stone/40 p-3 space-y-1 font-mono text-xs rounded-xl">
               <span className="text-stone text-[10px] uppercase block tracking-wider">
                 Simulate Target Budget Cap:
               </span>
@@ -265,7 +257,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                       if (onBudgetChange) onBudgetChange(raw);
                     }
                   }}
-                  className="bg-salt text-ink font-mono font-bold text-base px-2 py-1 border border-gold outline-none w-28"
+                  className="bg-salt text-ink font-mono font-bold text-base px-2 py-1 border border-gold outline-none w-28 rounded-md"
                 />
                 <span className="text-stone text-[10px]">INR</span>
               </div>
@@ -304,10 +296,10 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
             {/* HORIZONTAL PROGRESS BAR */}
             <div className="space-y-1">
-              <div className="w-full h-3 bg-stone/40 border border-stone/60 overflow-hidden relative">
+              <div className="w-full h-3 bg-stone/40 border border-stone/60 overflow-hidden relative rounded-full">
                 <div
                   style={{ width: `${currentFillPercent}%` }}
-                  className={`h-full transition-all duration-500 ${
+                  className={`h-full transition-all duration-500 rounded-full ${
                     currentIsOver ? "bg-madder" : "bg-gold"
                   }`}
                 />
@@ -322,7 +314,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
             {/* WARNING LINE BELOW IN ERROR VOICE IF OVER BUDGET */}
             {currentIsOver && allocatedBudget > 0 && (
-              <div className="p-3 bg-madder/20 border-2 border-madder text-salt text-xs font-mono flex items-start gap-2.5 animate-fadeIn">
+              <div className="p-3 bg-madder/20 border-2 border-madder text-salt text-xs font-mono flex items-start gap-2.5 animate-fadeIn rounded-xl">
                 <AlertTriangle className="w-4 h-4 text-madder shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
                   <span className="font-bold text-salt block">
@@ -340,7 +332,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         </div>
 
         {/* ================= 2. BREAKDOWN BY CATEGORY ================= */}
-        <div className="bg-white border-2 border-stone/40 p-6 space-y-4 shadow-2xs">
+        <div className="bg-white border-2 border-stone/40 p-6 space-y-4 shadow-2xs rounded-2xl">
           <div className="border-b border-stone/30 pb-3 flex items-center justify-between">
             <div>
               <span className="font-mono text-xs text-gold uppercase tracking-widest block">
@@ -357,7 +349,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
           <div className="space-y-3 font-mono text-xs">
             {/* Travel */}
-            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20 rounded-xl">
               <div className="flex items-center gap-3">
                 <Car className="w-4 h-4 text-gold shrink-0" />
                 <div>
@@ -385,7 +377,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             </div>
 
             {/* Hotel */}
-            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20 rounded-xl">
               <div className="flex items-center gap-3">
                 <Hotel className="w-4 h-4 text-gold shrink-0" />
                 <div>
@@ -413,7 +405,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             </div>
 
             {/* Entry Tariffs */}
-            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20 rounded-xl">
               <div className="flex items-center gap-3">
                 <Ticket className="w-4 h-4 text-gold shrink-0" />
                 <div>
@@ -441,7 +433,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             </div>
 
             {/* Food */}
-            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20">
+            <div className="flex items-center justify-between p-3 bg-salt border border-stone/20 rounded-xl">
               <div className="flex items-center gap-3">
                 <Utensils className="w-4 h-4 text-gold shrink-0" />
                 <div>
@@ -459,7 +451,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             </div>
 
             {/* Total row */}
-            <div className="flex items-center justify-between p-3 bg-ink text-salt border border-gold">
+            <div className="flex items-center justify-between p-3 bg-ink text-salt border border-gold rounded-xl">
               <span className="font-bold text-xs uppercase tracking-wider">
                 Grand Total (after tips)
               </span>
@@ -471,7 +463,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         </div>
 
         {/* ================= 3. OPTIMIZATION TIPS ================= */}
-        <div className="bg-ink text-salt p-6 border-2 border-gold space-y-4">
+        <div className="bg-ink text-salt p-6 border-2 border-gold space-y-4 rounded-2xl shadow-md">
           <div className="border-b border-stone/30 pb-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-gold" />
@@ -493,7 +485,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             {/* Tip 1 — Hotel Switch */}
             <button
               onClick={() => toggleTip("hotel")}
-              className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
+              className={`p-4 border text-left transition-all cursor-pointer space-y-2 rounded-xl ${
                 appliedTips.includes("hotel")
                   ? "bg-gold text-ink border-gold font-bold shadow-md"
                   : "bg-salt/10 text-salt border-stone/40 hover:border-gold"
@@ -503,7 +495,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <span className="text-[10px] uppercase tracking-wider text-stone">
                   Stay Saver
                 </span>
-                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px] rounded-md">
                   Save ₹2,200
                 </span>
               </div>
@@ -524,7 +516,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             {/* Tip 2 — ASI Pass (10% of actual entry cost) */}
             <button
               onClick={() => toggleTip("pass")}
-              className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
+              className={`p-4 border text-left transition-all cursor-pointer space-y-2 rounded-xl ${
                 appliedTips.includes("pass")
                   ? "bg-gold text-ink border-gold font-bold shadow-md"
                   : "bg-salt/10 text-salt border-stone/40 hover:border-gold"
@@ -534,7 +526,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <span className="text-[10px] uppercase tracking-wider text-stone">
                   ASI Tariff Pass
                 </span>
-                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px] rounded-md">
                   Save ₹{Math.round(entryCost * 0.1).toLocaleString("en-IN")}
                 </span>
               </div>
@@ -555,7 +547,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             {/* Tip 3 — GSRTC Transit */}
             <button
               onClick={() => toggleTip("transit")}
-              className={`p-4 border text-left transition-all cursor-pointer space-y-2 ${
+              className={`p-4 border text-left transition-all cursor-pointer space-y-2 rounded-xl ${
                 appliedTips.includes("transit")
                   ? "bg-gold text-ink border-gold font-bold shadow-md"
                   : "bg-salt/10 text-salt border-stone/40 hover:border-gold"
@@ -565,7 +557,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 <span className="text-[10px] uppercase tracking-wider text-stone">
                   GSRTC Express Transit
                 </span>
-                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px]">
+                <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px] rounded-md">
                   Save ₹1,100
                 </span>
               </div>

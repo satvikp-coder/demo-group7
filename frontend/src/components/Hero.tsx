@@ -14,16 +14,14 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
   const { t, language } = useLanguage();
 
   const siteCount = GUJARAT_DESTINATIONS.length;
-  const countStr = language === 'gu' 
-    ? String(siteCount).replace(/[0-9]/g, (d) => '૦૧૨૩૪૫૬૭૮૯'[parseInt(d, 10)])
-    : language === 'hi'
-    ? String(siteCount).replace(/[0-9]/g, (d) => '०१२३४५६७८९'[parseInt(d, 10)])
+  const countStr = language === 'hi'
+    ? String(siteCount).replace(/[0-9]/g, (d) => '०१२३४५६७૮૯'[parseInt(d, 10)])
     : String(siteCount);
 
   const HEADLINE_OPTIONS = [
-    language === 'gu' ? "ગુજરાતનું આયોજન, પગથિયે પગથિયે." : language === 'hi' ? "गुजरात की योजना, सीढ़ी दर सीढ़ी।" : "Plan Gujarat, terrace by terrace.",
-    language === 'gu' ? "કોતરેલા પથ્થરો, સફેદ રણ, પવિત્ર દરિયાકિનારો." : language === 'hi' ? "नक्काशीदार पत्थर, सफेद रण, पवित्र तट।" : "Carved stone, salt desert, sacred coast.",
-    language === 'gu' ? "પ્રાચીન ભૌમિતિ દ્વારા સંરચિત પ્રવાસ." : language === 'hi' ? "प्राचीन ज्यामिति द्वारा निर्मित यात्रा।" : "Travel structured by ancient geometry."
+    language === 'hi' ? "गुजरात की योजना, सीढ़ी दर सीढ़ी।" : "Plan Gujarat, terrace by terrace.",
+    language === 'hi' ? "नक्काशीदार पत्थर, सफेद रण, पवित्र तट।" : "Carved stone, salt desert, sacred coast.",
+    language === 'hi' ? "प्राचीन ज्यामिति द्वारा निर्मित यात्रा।" : "Travel structured by ancient geometry."
   ];
 
   return (
@@ -49,9 +47,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1 bg-ink text-salt text-xs font-mono uppercase tracking-widest border border-stone/30"
+              className="inline-flex items-center gap-2 px-3 py-1 bg-ink text-salt text-xs font-mono uppercase tracking-widest border border-stone/30 rounded-md"
             >
-              <span className="w-2 h-2 bg-gold animate-pulse"></span>
+              <span className="w-2 h-2 bg-gold animate-pulse rounded-full"></span>
               <span>{t('hero.badge', 'Stepwell Geometric Itinerary Engine')}</span>
             </motion.div>
 
@@ -68,13 +66,13 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               {/* Minimal headline toggle pills */}
               <div className="mt-3 flex items-center gap-2">
                 <span className="text-[11px] font-mono text-stone uppercase tracking-wider">
-                  {language === 'gu' ? 'દ્રષ્ટિકોણ:' : language === 'hi' ? 'दृष्टिकोण:' : 'Perspective:'}
+                  {language === 'hi' ? 'दृष्टिकोण:' : 'Perspective:'}
                 </span>
                 {HEADLINE_OPTIONS.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setHeadlineIndex(idx)}
-                    className={`h-2 transition-all duration-200 cursor-pointer ${
+                    className={`h-2 transition-all duration-200 cursor-pointer rounded-full ${
                       headlineIndex === idx ? 'w-8 bg-gold' : 'w-2 bg-stone/40 hover:bg-stone'
                     }`}
                     title={`Headline view ${idx + 1}`}
@@ -102,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
             >
               <button
                 onClick={onStartPlanning}
-                className="bg-madder hover:bg-madder/90 text-salt px-7 py-3.5 text-sm font-medium tracking-wide uppercase shadow-sm transition-all duration-150 flex items-center gap-2 border border-madder group hover:shadow-md cursor-pointer"
+                className="bg-madder hover:bg-madder/90 text-salt px-7 py-3.5 text-sm font-medium tracking-wide uppercase shadow-sm transition-all duration-150 flex items-center gap-2 border border-madder group hover:shadow-md cursor-pointer rounded-lg"
               >
                 <span>{t('hero.startPlanning', 'Start planning')}</span>
                 <ArrowRight className="w-4 h-4 text-salt group-hover:translate-x-1 transition-transform" />
@@ -110,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
 
               <button
                 onClick={onExploreClick}
-                className="bg-transparent text-ink hover:text-gold border border-stone/40 hover:border-gold px-6 py-3.5 text-sm font-medium transition-colors duration-150 flex items-center gap-2 cursor-pointer"
+                className="bg-transparent text-ink hover:text-gold border border-stone/40 hover:border-gold px-6 py-3.5 text-sm font-medium transition-colors duration-150 flex items-center gap-2 cursor-pointer rounded-lg"
               >
                 <Compass className="w-4 h-4 text-gold" />
                 <span>{t('hero.browseSites', `Browse ${siteCount} Heritage Sites`).replace(/10|૧૦/g, countStr)}</span>
@@ -126,7 +124,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
             >
               <div>
                 <span className="text-stone block uppercase text-[10px] tracking-wider">
-                  {language === 'gu' ? 'સમાવિષ્ટ સ્થળો' : language === 'hi' ? 'शामिल स्थल' : 'Sites Covered'}
+                  {language === 'hi' ? 'शामिल स्थल' : 'Sites Covered'}
                 </span>
                 <span className="text-ink font-semibold text-base sm:text-lg">
                   {t('hero.statSites', `${siteCount} Monuments`).replace(/10|૧૦/g, countStr)}
@@ -134,15 +132,15 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               </div>
               <div>
                 <span className="text-stone block uppercase text-[10px] tracking-wider">
-                  {language === 'gu' ? 'ઐતિહાસિક ઊંડાઈ' : language === 'hi' ? 'ऐतिहासिक गहराई' : 'Historical Depth'}
+                  {language === 'hi' ? 'ऐतिहासिक गहराई' : 'Historical Depth'}
                 </span>
                 <span className="text-ink font-semibold text-base sm:text-lg">
-                  {language === 'gu' ? '૨,૫૦૦ વર્ષ' : language === 'hi' ? '2,500 वर्ष' : '2,500 Years'}
+                  {language === 'hi' ? '2,500 वर्ष' : '2,500 Years'}
                 </span>
               </div>
               <div>
                 <span className="text-stone block uppercase text-[10px] tracking-wider">
-                  {language === 'gu' ? 'ચોક્કસ માર્ગ' : language === 'hi' ? 'સટીક માર્ગ' : 'Route Precision'}
+                  {language === 'hi' ? 'सटीक मार्ग' : 'Route Precision'}
                 </span>
                 <span className="text-gold font-semibold text-base sm:text-lg">
                   {t('hero.statPrecision', 'Km & Fee Ledger')}
@@ -164,19 +162,19 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm"
+                className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm rounded-xl"
               >
-                <div className="relative h-44 sm:h-52 overflow-hidden group">
+                <div className="relative h-44 sm:h-52 overflow-hidden group rounded-lg">
                   <img
                     src="/assets/destinations/modhera.jpg"
                     alt="Modhera Sun Temple Stepped Tank Ramakunda"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Solanki Era (1026 AD)</span>
                     <h3 className="font-display text-sm font-semibold">
-                      {language === 'gu' ? 'મોઢેરા સૂર્ય મંદિર' : language === 'hi' ? 'मोढेरा सूर्य मंदिर' : 'Modhera Sun Temple'}
+                      {language === 'hi' ? 'मोढेरा सूर्य मंदिर' : 'Modhera Sun Temple'}
                     </h3>
                   </div>
                 </div>
@@ -188,19 +186,19 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8"
+                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8 rounded-xl"
               >
-                <div className="relative h-44 sm:h-52 overflow-hidden group">
+                <div className="relative h-44 sm:h-52 overflow-hidden group rounded-lg">
                   <img
                     src="/assets/destinations/rann-of-kutch.jpg"
                     alt="Great Rann of Kutch White Salt Desert at Sunset"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Salt Desert & Craft</span>
                     <h3 className="font-display text-sm font-semibold">
-                      {language === 'gu' ? 'કચ્છનું રણ' : language === 'hi' ? 'कच्छ का रण' : 'Rann of Kutch'}
+                      {language === 'hi' ? 'कच्छ का रण' : 'Rann of Kutch'}
                     </h3>
                   </div>
                 </div>
@@ -212,19 +210,19 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.45 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm"
+                className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 overflow-hidden group">
+                <div className="relative h-40 sm:h-48 overflow-hidden group rounded-lg">
                   <img
                     src="/assets/attractions/gir-lion.jpg"
                     alt="Gir National Park Asiatic Lion Reserve"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Ecological Sanctuary</span>
                     <h3 className="font-display text-sm font-semibold">
-                      {language === 'gu' ? 'ગીર અભયારણ્ય' : language === 'hi' ? 'गिर अभयारण्य' : 'Gir Forest'}
+                      {language === 'hi' ? 'गिर अभयारण्य' : 'Gir Forest'}
                     </h3>
                   </div>
                 </div>
@@ -236,19 +234,19 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.55 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8"
+                className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8 rounded-xl"
               >
-                <div className="relative h-40 sm:h-48 overflow-hidden group">
+                <div className="relative h-40 sm:h-48 overflow-hidden group rounded-lg">
                   <img
                     src="/assets/attractions/adalaj-stepwell.jpg"
                     alt="Adalaj Ni Vav 5-story Subterranean Stepwell"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Subterranean Stepwell</span>
                     <h3 className="font-display text-sm font-semibold">
-                      {language === 'gu' ? 'અડાલજ ની વાવ' : language === 'hi' ? 'अडालज की वाव' : 'Adalaj Ni Vav'}
+                      {language === 'hi' ? 'अडालज की वाव' : 'Adalaj Ni Vav'}
                     </h3>
                   </div>
                 </div>

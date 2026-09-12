@@ -71,13 +71,13 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="bg-salt border-2 border-gold max-w-lg w-full p-6 shadow-2xl relative font-sans"
+        className="bg-salt border-2 border-gold max-w-lg w-full p-6 shadow-2xl relative font-sans rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-stone hover:text-charcoal p-1 transition-colors cursor-pointer"
+          className="absolute top-4 right-4 text-stone hover:text-charcoal p-1 transition-colors cursor-pointer rounded-lg"
           aria-label="Close Share Modal"
         >
           <X className="w-5 h-5" />
@@ -85,7 +85,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 border-b border-stone/30 pb-4 mb-4">
-          <div className="p-2.5 bg-gold/20 border border-gold text-ink">
+          <div className="p-2.5 bg-gold/20 border border-gold text-ink rounded-xl">
             <Share2 className="w-5 h-5 text-gold" />
           </div>
           <div>
@@ -99,7 +99,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
         </div>
 
         {/* Info Banner */}
-        <p className="text-xs text-charcoal bg-white border border-stone/30 p-3 mb-4 font-mono leading-relaxed">
+        <p className="text-xs text-charcoal bg-white border border-stone/30 p-3 mb-4 font-mono leading-relaxed rounded-xl">
           Generates a read-only shareable link containing the complete itinerary
           routing, timed stops, and daily breakdown.
         </p>
@@ -116,14 +116,14 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
                 type="text"
                 readOnly
                 value={shareUrl}
-                className="w-full bg-white border border-stone/40 px-3 py-2 text-xs font-mono text-charcoal select-all focus:outline-none focus:border-gold"
+                className="w-full bg-white border border-stone/40 px-3 py-2 text-xs font-mono text-charcoal select-all focus:outline-none focus:border-gold rounded-lg"
               />
               <Link className="w-3.5 h-3.5 text-stone absolute right-3 top-2.5 pointer-events-none" />
             </div>
 
             <button
               onClick={handleCopy}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold border transition-colors cursor-pointer shrink-0 ${
+              className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold border transition-colors cursor-pointer shrink-0 rounded-lg ${
                 copied
                   ? "bg-emerald-800 text-white border-emerald-900 shadow-xs"
                   : "bg-gold hover:bg-gold/90 text-ink border-ink shadow-xs"
@@ -149,7 +149,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
           <div className="mb-4">
             <button
               onClick={handleNativeShare}
-              className="w-full bg-ink hover:bg-ink/90 text-salt border border-gold px-4 py-2.5 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
+              className="w-full bg-ink hover:bg-ink/90 text-salt border border-gold px-4 py-2.5 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs rounded-lg"
             >
               <Share2 className="w-4 h-4 text-gold" />
               <span>Open Native Share Sheet</span>

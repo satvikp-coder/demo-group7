@@ -7,11 +7,8 @@ import {
   UserCheck,
   Menu,
   X,
-  Sun,
-  Moon,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { useTheme } from "../context/ThemeContext";
 
 interface NavbarProps {
   onOpenPlanner: () => void;
@@ -30,13 +27,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   onLogout,
   tripCount = 0,
 }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const { language, setLanguage, t } = useLanguage();
 
   const handleNavClick = (sectionId: string) => {
     setMobileMenuOpen(false);
-    if (sectionId === "account" && onOpenAuth) {
-      onOpenAuth("login");
+    if (sectionId === "hero") {
+      if (onNavigateSection) {
+        onNavigateSection("home");
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       return;
     }
     if (onNavigateSection) {
@@ -47,35 +48,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
-  const { theme, toggleTheme } = useTheme();
-
-  const ThemeToggle = () => (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      aria-label={
-        theme === "dusk"
-          ? "Switch to Stepwell Light Theme"
-          : "Switch to Dusk Evening Theme"
-      }
-      title={
-        theme === "dusk"
-          ? "Switch to Light Theme"
-          : "Switch to Dusk (Rann of Kutch Evening) Theme"
-      }
-      className="p-1.5 bg-ink border border-stone/40 text-gold hover:text-salt hover:bg-stone/20 transition-all cursor-pointer inline-flex items-center justify-center shadow-sm"
-    >
-      {theme === "dusk" ? (
-        <Sun className="w-4 h-4 text-gold" />
-      ) : (
-        <Moon className="w-4 h-4 text-gold" />
-      )}
-    </button>
-  );
-
   const LanguageToggle = () => (
     <div
-      className="inline-flex items-center bg-ink border border-stone/40 p-0.5 rounded-none shadow-sm"
+      className="inline-flex items-center bg-ink border border-stone/40 p-0.5 rounded-lg shadow-sm"
       role="group"
       aria-label="Language selection"
     >
@@ -84,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         onClick={() => setLanguage("en")}
         aria-label="Switch to English"
         aria-pressed={language === "en"}
-        className={`px-2 py-1 text-xs font-mono transition-all duration-150 cursor-pointer ${
+        className={`px-2.5 py-1 text-xs font-mono rounded-md transition-all duration-150 cursor-pointer ${
           language === "en"
             ? "bg-gold text-ink font-bold border border-gold shadow-sm"
             : "text-salt/80 hover:text-salt hover:bg-stone/20"
@@ -94,23 +69,10 @@ export const Navbar: React.FC<NavbarProps> = ({
       </button>
       <button
         type="button"
-        onClick={() => setLanguage("gu")}
-        aria-label="Switch to Gujarati"
-        aria-pressed={language === "gu"}
-        className={`px-2 py-1 text-xs font-mono transition-all duration-150 cursor-pointer ${
-          language === "gu"
-            ? "bg-gold text-ink font-bold border border-gold shadow-sm"
-            : "text-salt/80 hover:text-salt hover:bg-stone/20"
-        }`}
-      >
-        ગુજ
-      </button>
-      <button
-        type="button"
         onClick={() => setLanguage("hi")}
         aria-label="Switch to Hindi"
         aria-pressed={language === "hi"}
-        className={`px-2 py-1 text-xs font-mono transition-all duration-150 cursor-pointer ${
+        className={`px-2.5 py-1 text-xs font-mono rounded-md transition-all duration-150 cursor-pointer ${
           language === "hi"
             ? "bg-gold text-ink font-bold border border-gold shadow-sm"
             : "text-salt/80 hover:text-salt hover:bg-stone/20"
@@ -191,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => handleNavClick("profile")}
-                  className="text-xs font-mono text-gold hover:text-salt flex items-center gap-1.5 bg-salt/10 hover:bg-salt/20 px-2.5 py-1.5 border border-gold/40 cursor-pointer transition-colors"
+                  className="text-xs font-mono text-gold hover:text-salt flex items-center gap-1.5 bg-salt/10 hover:bg-salt/20 px-2.5 py-1.5 border border-gold/40 rounded-lg cursor-pointer transition-colors"
                   title="View Profile & Saved Trips Dashboard"
                 >
                   <UserCheck className="w-3.5 h-3.5 text-gold" />
@@ -211,39 +173,37 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() =>
                   onOpenAuth ? onOpenAuth("login") : handleNavClick("account")
                 }
-                className="border border-stone/40 hover:border-gold px-3 py-1.5 text-xs text-salt/90 hover:text-salt transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
+                className="border border-stone/40 hover:border-gold px-3 py-1.5 text-xs text-salt/90 hover:text-salt rounded-lg transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
               >
                 <UserCheck className="w-3.5 h-3.5 text-stone" />
                 <span>{t("nav.signIn", "Sign In")}</span>
               </button>
             )}
 
-            {/* Language & Theme Toggle Controls */}
+            {/* Language Selection */}
             <div className="flex items-center gap-2">
               <LanguageToggle />
-              <ThemeToggle />
             </div>
 
             <button
               onClick={onOpenPlanner}
-              className="bg-madder hover:bg-madder/90 text-salt px-3.5 py-2 text-xs uppercase tracking-wider font-semibold transition-colors duration-150 border border-madder flex items-center gap-2 cursor-pointer"
+              className="bg-madder hover:bg-madder/90 text-salt px-3.5 py-2 text-xs uppercase tracking-wider font-semibold transition-colors duration-150 border border-madder rounded-lg flex items-center gap-2 cursor-pointer"
             >
               <span>{t("nav.planItinerary", "Plan Itinerary")}</span>
               {tripCount > 0 && (
-                <span className="bg-salt text-madder font-mono text-[10px] font-bold px-1.5 py-0.2">
+                <span className="bg-salt text-madder font-mono text-[10px] font-bold px-1.5 py-0.2 rounded-full">
                   {tripCount}
                 </span>
               )}
             </button>
           </div>
 
-          {/* Mobile menu button & Compact Language/Theme Toggles */}
+          {/* Mobile menu button & Compact Language Toggle */}
           <div className="md:hidden flex items-center gap-2">
             <LanguageToggle />
-            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-salt hover:text-gold p-2 border border-stone/30"
+              className="text-salt hover:text-gold p-2 border border-stone/30 rounded-lg"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >

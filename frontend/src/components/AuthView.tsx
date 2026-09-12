@@ -162,7 +162,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
       id="account"
       className="min-h-[85vh] flex items-center justify-center p-4 sm:p-6 bg-salt my-6"
     >
-      <div className="w-full max-w-5xl bg-salt border-2 border-stone/40 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 relative">
+      <div className="w-full max-w-5xl bg-salt border-2 border-stone/40 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 relative rounded-2xl">
         {/* LEFT COLUMN: Ink Indigo Banner */}
         <div className="md:col-span-5 bg-ink text-salt p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden min-h-[260px] md:min-h-[580px]">
           <div
@@ -173,7 +173,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
           <div className="relative z-10 space-y-4">
             <button
               onClick={onCloseOrGuest}
-              className="inline-flex items-center gap-2 text-xs font-mono text-stone hover:text-gold transition-colors py-1 px-2 border border-stone/30 bg-ink/80 cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs font-mono text-stone hover:text-gold transition-colors py-1 px-2 border border-stone/30 bg-ink/80 cursor-pointer rounded-lg shadow-xs"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-gold" />
               <span>Back to Destinations</span>
@@ -263,14 +263,14 @@ export const AuthView: React.FC<AuthViewProps> = ({
             </div>
 
             {successMsg && (
-              <div className="mb-6 p-4 bg-ink text-salt border-2 border-gold font-mono text-xs flex items-center gap-3">
+              <div className="mb-6 p-4 bg-ink text-salt border-2 border-gold font-mono text-xs flex items-center gap-3 rounded-xl">
                 <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
                 <span>{successMsg}</span>
               </div>
             )}
 
             {formGeneralError && (
-              <div className="mb-6 p-4 bg-madder/10 border-l-4 border-madder text-madder font-mono text-xs flex items-center gap-2">
+              <div className="mb-6 p-4 bg-madder/10 border-l-4 border-madder text-madder font-mono text-xs flex items-center gap-2 rounded-xl">
                 <AlertCircle className="w-4 h-4 shrink-0" />
                 <span>{formGeneralError}</span>
               </div>
@@ -302,7 +302,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         if (emailError) setEmailError("");
                       }}
                       placeholder="e.g. traveler@heritage.in"
-                      className={`w-full pl-10 pr-3 py-3 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold ${
+                      className={`w-full pl-10 pr-3 py-3 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         emailError
                           ? "border-madder bg-madder/5"
                           : "border-stone/50 hover:border-stone"
@@ -319,10 +319,10 @@ export const AuthView: React.FC<AuthViewProps> = ({
                 </div>
 
                 {showDemoRecoveryNotice && (
-                  <div className="bg-salt border-2 border-gold/60 p-3.5 mb-2 text-xs font-body animate-fadeIn">
+                  <div className="bg-salt border-2 border-gold/60 p-3.5 mb-2 text-xs font-body animate-fadeIn rounded-xl">
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
-                        <span className="bg-gold/20 text-gold border border-gold/40 px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider">
+                        <span className="bg-gold/20 text-gold border border-gold/40 px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider rounded-md">
                           Frontend Demo Mode
                         </span>
                         <span className="font-mono text-charcoal font-semibold text-[11px]">
@@ -332,7 +332,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       <button
                         type="button"
                         onClick={() => setShowDemoRecoveryNotice(false)}
-                        className="text-stone hover:text-charcoal text-xs font-mono cursor-pointer p-0.5"
+                        className="text-stone hover:text-charcoal text-xs font-mono cursor-pointer p-0.5 rounded-md"
                         aria-label="Dismiss notice"
                       >
                         ✕
@@ -376,7 +376,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         if (passwordError) setPasswordError("");
                       }}
                       placeholder="••••••••••••"
-                      className={`w-full pl-10 pr-10 py-3 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold ${
+                      className={`w-full pl-10 pr-10 py-3 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         passwordError
                           ? "border-madder bg-madder/5"
                           : "border-stone/50 hover:border-stone"
@@ -408,7 +408,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
                 <button
                   type="submit"
-                  className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer"
+                  className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer rounded-lg"
                 >
                   {t("nav.login", "Log In")}
                 </button>
@@ -442,7 +442,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setRole("tourist")}
-                      className={`p-3.5 text-left border transition-all cursor-pointer flex flex-col justify-between ${
+                      className={`p-3.5 text-left border transition-all cursor-pointer flex flex-col justify-between rounded-xl ${
                         role === "tourist"
                           ? "border-gold bg-ink text-salt shadow-sm"
                           : "border-stone/40 bg-salt text-charcoal hover:border-stone"
@@ -467,7 +467,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setRole("operator")}
-                      className={`p-3.5 text-left border transition-all cursor-pointer flex flex-col justify-between ${
+                      className={`p-3.5 text-left border transition-all cursor-pointer flex flex-col justify-between rounded-xl ${
                         role === "operator"
                           ? "border-gold bg-ink text-salt shadow-sm"
                           : "border-stone/40 bg-salt text-charcoal hover:border-stone"
@@ -511,7 +511,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         if (nameError) setNameError("");
                       }}
                       placeholder="e.g. Vikramaditya Solanki"
-                      className={`w-full pl-10 pr-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold ${
+                      className={`w-full pl-10 pr-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         nameError
                           ? "border-madder bg-madder/5"
                           : "border-stone/50 hover:border-stone"
@@ -547,7 +547,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         if (emailError) setEmailError("");
                       }}
                       placeholder="name@domain.com"
-                      className={`w-full pl-10 pr-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold ${
+                      className={`w-full pl-10 pr-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         emailError
                           ? "border-madder bg-madder/5"
                           : "border-stone/50 hover:border-stone"
@@ -580,7 +580,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         if (passwordError) setPasswordError("");
                       }}
                       placeholder="At least 6 chars"
-                      className={`w-full px-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold ${
+                      className={`w-full px-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         passwordError
                           ? "border-madder bg-madder/5"
                           : "border-stone/50 hover:border-stone"
@@ -610,7 +610,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         if (confirmPasswordError) setConfirmPasswordError("");
                       }}
                       placeholder="Repeat password"
-                      className={`w-full px-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold ${
+                      className={`w-full px-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         confirmPasswordError
                           ? "border-madder bg-madder/5"
                           : "border-stone/50 hover:border-stone"
@@ -627,7 +627,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
                 <button
                   type="submit"
-                  className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer"
+                  className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer rounded-lg"
                 >
                   {t("auth.register", "Register")}
                 </button>

@@ -126,7 +126,7 @@ export const StrategyComparisonModal: React.FC<
       onClick={onClose}
     >
       <div
-        className="bg-salt border-2 border-gold max-w-6xl w-full text-charcoal p-3 sm:p-6 md:p-8 relative shadow-2xl my-2 sm:my-8 animate-fadeIn max-h-[94vh] flex flex-col"
+        className="bg-salt border-2 border-gold max-w-6xl w-full text-charcoal p-3 sm:p-6 md:p-8 relative shadow-2xl my-2 sm:my-8 animate-fadeIn max-h-[94vh] flex flex-col rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -146,7 +146,7 @@ export const StrategyComparisonModal: React.FC<
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-stone hover:text-ink hover:bg-stone/20 border border-stone/30 transition-colors cursor-pointer shrink-0 ml-2"
+            className="p-2 text-stone hover:text-ink hover:bg-stone/20 border border-stone/30 transition-colors cursor-pointer shrink-0 ml-2 rounded-lg"
             aria-label="Close strategy comparison"
           >
             <X className="w-5 h-5" />
@@ -156,9 +156,9 @@ export const StrategyComparisonModal: React.FC<
         {/* Scrollable Container for Modal Body */}
         <div className="overflow-y-auto space-y-4 sm:space-y-6 pr-1">
           {/* ================= 1. DYNAMIC ONE-LINE TAKEAWAY BANNER ================= */}
-          <div className="bg-ink text-salt border-2 border-gold p-3 sm:p-4 relative shadow-md bg-stepwell-pattern">
+          <div className="bg-ink text-salt border-2 border-gold p-3 sm:p-4 relative shadow-md bg-stepwell-pattern rounded-xl">
             <div className="flex items-start gap-3">
-              <div className="p-1.5 sm:p-2 bg-gold/20 border border-gold text-gold rounded-xs shrink-0 mt-0.5">
+              <div className="p-1.5 sm:p-2 bg-gold/20 border border-gold text-gold rounded-lg shrink-0 mt-0.5">
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-gold animate-pulse" />
               </div>
               <div>
@@ -173,7 +173,7 @@ export const StrategyComparisonModal: React.FC<
           </div>
 
           {/* ================= 2. DESKTOP METRIC COMPARISON TABLE ================= */}
-          <div className="hidden md:block bg-white border border-stone/30 p-4 shadow-sm">
+          <div className="hidden md:block bg-white border border-stone/30 p-4 shadow-sm rounded-xl">
             <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-charcoal mb-3 flex items-center justify-between">
               <span>Strategy Metrics Overview</span>
               <span className="text-[10px] font-normal text-stone font-mono">
@@ -252,7 +252,7 @@ export const StrategyComparisonModal: React.FC<
                         {/* Attractions Cell */}
                         <td className="p-2.5">
                           <span
-                            className={`font-mono text-xs px-2 py-1 ${
+                            className={`font-mono text-xs px-2 py-1 rounded-md ${
                               isWinningAttr
                                 ? "bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs"
                                 : "text-charcoal"
@@ -268,7 +268,7 @@ export const StrategyComparisonModal: React.FC<
                         {/* Est. Runtime Cell */}
                         <td className="p-2.5">
                           <span
-                            className={`font-mono text-xs px-2 py-1 ${
+                            className={`font-mono text-xs px-2 py-1 rounded-md ${
                               isWinningRuntime
                                 ? "bg-amber-100 text-amber-900 font-bold border border-gold shadow-xs"
                                 : "text-charcoal"
@@ -289,7 +289,7 @@ export const StrategyComparisonModal: React.FC<
           </div>
 
           {/* ================= 3. MOBILE TAB SWITCHER ================= */}
-          <div className="md:hidden flex border-2 border-stone/30 bg-salt p-1 gap-1">
+          <div className="md:hidden flex border-2 border-stone/30 bg-salt p-1 gap-1 rounded-xl">
             {results.map((res) => {
               const isActive = activeMobileTab === res.strategy;
               const meta = strategyMeta[res.strategy];
@@ -298,7 +298,7 @@ export const StrategyComparisonModal: React.FC<
                   key={res.strategy}
                   type="button"
                   onClick={() => setActiveMobileTab(res.strategy)}
-                  className={`flex-1 py-2 px-1 text-xs font-mono font-bold flex items-center justify-center gap-1 cursor-pointer transition-all min-h-[44px] ${
+                  className={`flex-1 py-2 px-1 text-xs font-mono font-bold flex items-center justify-center gap-1 cursor-pointer transition-all min-h-[44px] rounded-lg ${
                     isActive
                       ? "bg-ink text-gold border border-gold shadow-sm"
                       : "text-stone hover:text-charcoal bg-white border border-stone/20"
@@ -323,7 +323,7 @@ export const StrategyComparisonModal: React.FC<
               return (
                 <div
                   key={res.strategy}
-                  className={`bg-white border-2 border-stone/30 shadow-md flex flex-col transition-all ${terraceClass} ${
+                  className={`bg-white border-2 border-stone/30 shadow-md flex flex-col transition-all rounded-2xl overflow-hidden ${terraceClass} ${
                     isMobileHidden ? "hidden md:flex" : "flex"
                   }`}
                 >
@@ -348,7 +348,7 @@ export const StrategyComparisonModal: React.FC<
 
                   {/* Column Key Metrics Cards */}
                   <div className="p-3 bg-salt border-b border-stone/20 grid grid-cols-2 gap-2 font-mono text-xs">
-                    <div className="bg-white p-2 border border-stone/30">
+                    <div className="bg-white p-2 border border-stone/30 rounded-lg">
                       <span className="text-[10px] text-stone uppercase block">
                         Total Cost
                       </span>
@@ -356,7 +356,7 @@ export const StrategyComparisonModal: React.FC<
                         ₹{res.totalCost.toLocaleString("en-IN")}
                       </span>
                     </div>
-                    <div className="bg-white p-2 border border-stone/30">
+                    <div className="bg-white p-2 border border-stone/30 rounded-lg">
                       <span className="text-[10px] text-stone uppercase block">
                         Distance
                       </span>
@@ -364,7 +364,7 @@ export const StrategyComparisonModal: React.FC<
                         {res.totalDistanceKm} km
                       </span>
                     </div>
-                    <div className="bg-white p-2 border border-stone/30">
+                    <div className="bg-white p-2 border border-stone/30 rounded-lg">
                       <span className="text-[10px] text-stone uppercase block">
                         Attractions
                       </span>
@@ -372,7 +372,7 @@ export const StrategyComparisonModal: React.FC<
                         {res.attractionCount} sites
                       </span>
                     </div>
-                    <div className="bg-white p-2 border border-stone/30">
+                    <div className="bg-white p-2 border border-stone/30 rounded-lg">
                       <span className="text-[10px] text-stone uppercase block">
                         Est. Runtime
                       </span>
@@ -427,10 +427,10 @@ export const StrategyComparisonModal: React.FC<
                               {day.stops.map((stop) => (
                                 <div
                                   key={stop.id}
-                                  className="bg-salt/80 p-1.5 border border-stone/20 text-xs space-y-0.5 hover:bg-salt transition-colors"
+                                  className="bg-salt/80 p-1.5 border border-stone/20 text-xs space-y-0.5 hover:bg-salt transition-colors rounded-lg"
                                 >
                                   <div className="flex items-center justify-between text-[10px] font-mono">
-                                    <span className="bg-ink/10 text-ink px-1 py-0.2 font-bold">
+                                    <span className="bg-ink/10 text-ink px-1 py-0.2 font-bold rounded-sm">
                                       {stop.arrivalTime}
                                     </span>
                                     <span className="text-stone truncate max-w-[120px]">
@@ -459,7 +459,7 @@ export const StrategyComparisonModal: React.FC<
                     <button
                       type="button"
                       onClick={() => onSelectStrategy(res.strategy)}
-                      className="w-full bg-madder hover:bg-ink text-salt border border-madder font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all min-h-[44px]"
+                      className="w-full bg-madder hover:bg-ink text-salt border border-madder font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all min-h-[44px] rounded-lg"
                     >
                       <Check className="w-4 h-4 text-salt" />
                       <span>Use this plan</span>

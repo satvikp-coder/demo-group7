@@ -37,7 +37,7 @@ export const ValueProps: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-ink text-salt border border-stone/40 p-6 sm:p-10 relative overflow-hidden"
+          className="bg-ink text-salt border border-stone/40 p-6 sm:p-10 relative overflow-hidden rounded-2xl shadow-md"
         >
           {/* Subtle Watermark Motif */}
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-stepwell-pattern opacity-10 pointer-events-none"></div>
@@ -46,15 +46,11 @@ export const ValueProps: React.FC = () => {
             {/* Value Prop 1 */}
             <div className="pt-6 md:pt-0 md:pr-6 space-y-3">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-gold text-lg font-bold px-2 py-0.5 bg-salt/10 border border-gold/40">
+                <span className="font-mono text-gold text-lg font-bold px-2 py-0.5 bg-salt/10 border border-gold/40 rounded-md">
                   01
                 </span>
                 <span className="font-mono text-xs uppercase tracking-wider text-stone">
-                  {language === "gu"
-                    ? "પદ્ધતિ"
-                    : language === "hi"
-                      ? "कार्यप्रणाली"
-                      : "Methodology"}
+                  {language === "hi" ? "कार्यप्रणाली" : "Methodology"}
                 </span>
               </div>
               <h3 className="font-display text-xl text-salt font-medium flex items-center gap-2">
@@ -72,15 +68,11 @@ export const ValueProps: React.FC = () => {
             {/* Value Prop 2 */}
             <div className="pt-6 md:pt-0 md:px-6 space-y-3">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-gold text-lg font-bold px-2 py-0.5 bg-salt/10 border border-gold/40">
+                <span className="font-mono text-gold text-lg font-bold px-2 py-0.5 bg-salt/10 border border-gold/40 rounded-md">
                   02
                 </span>
                 <span className="font-mono text-xs uppercase tracking-wider text-stone">
-                  {language === "gu"
-                    ? "નાણાકીય પારદર્શિતા"
-                    : language === "hi"
-                      ? "वित्तीय पारदर्शिता"
-                      : "Financial Transparency"}
+                  {language === "hi" ? "वित्तीय पारदर्शिता" : "Financial Transparency"}
                 </span>
               </div>
               <h3 className="font-display text-xl text-salt font-medium flex items-center gap-2">
@@ -98,15 +90,11 @@ export const ValueProps: React.FC = () => {
             {/* Value Prop 3 */}
             <div className="pt-6 md:pt-0 md:pl-6 space-y-3">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-gold text-lg font-bold px-2 py-0.5 bg-salt/10 border border-gold/40">
+                <span className="font-mono text-gold text-lg font-bold px-2 py-0.5 bg-salt/10 border border-gold/40 rounded-md">
                   03
                 </span>
                 <span className="font-mono text-xs uppercase tracking-wider text-stone">
-                  {language === "gu"
-                    ? "સાંસ્કૃતિક વારસો"
-                    : language === "hi"
-                      ? "सांस्कृतिक विरासत"
-                      : "Cultural Heritage"}
+                  {language === "hi" ? "सांस्कृतिक विरासत" : "Cultural Heritage"}
                 </span>
               </div>
               <h3 className="font-display text-xl text-salt font-medium flex items-center gap-2">
@@ -125,18 +113,14 @@ export const ValueProps: React.FC = () => {
           {/* Bottom Bar inside the asymmetric block */}
           <div className="mt-8 pt-6 border-t border-stone/30 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-stone">
             <span>
-              {language === "gu"
-                ? "ગુજરાત ટુરિઝમ બોર્ડ અને ASI ડેટાબેઝ સાથે ચકાસાયેલ"
-                : language === "hi"
-                  ? "गुजरात पर्यटन बोर्ड और एएसआई डेटाबेस के साथ सत्यापित"
-                  : "Verified against Gujarat Tourism Board & Archaeological Survey of India datasets"}
+              {language === "hi"
+                ? "गुजरात पर्यटन बोर्ड और एएसआई डेटाबेस के साथ सत्यापित"
+                : "Verified against Gujarat Tourism Board & Archaeological Survey of India datasets"}
             </span>
             <span className="text-gold font-medium">
-              {language === "gu"
-                ? "૨૦૨૬ પ્રવાસ સીઝન માટે અદ્યતન"
-                : language === "hi"
-                  ? "2026 यात्रा सत्र के लिए अद्यतन"
-                  : "Updated for 2026 Travel Seasons"}
+              {language === "hi"
+                ? "2026 यात्रा सत्र के लिए अद्यतन"
+                : "Updated for 2026 Travel Seasons"}
             </span>
           </div>
         </motion.div>

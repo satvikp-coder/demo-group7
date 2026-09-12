@@ -1,4 +1,4 @@
-﻿import {
+import {
   Destination,
   Attraction,
   Hotel,
@@ -614,11 +614,9 @@ export function generateStrategyItinerary(
       id: `${startingHotel.id}-start-day-${d + 1}`,
       type: "hotel",
       name:
-        language === "gu"
-          ? `રવાના: ${startingHotel.name}`
-          : language === "hi"
-            ? `રવાના: ${startingHotel.name}`
-            : `Depart ${startingHotel.name}`,
+        language === "hi"
+          ? `रवानगी: ${startingHotel.name}`
+          : `Depart ${startingHotel.name}`,
       category: "Starting Accommodation",
       arrivalTime: formatTime(hotelDepartMins),
       departureTime: formatTime(hotelDepartMins + 15),
@@ -853,11 +851,9 @@ export function generateStrategyItinerary(
         id: `lunch-stop-day-${d + 1}`,
         type: "meal",
         name:
-          language === "gu"
-            ? `બપોરનું ભોજન: ${resto.name}`
-            : language === "hi"
-              ? `दोपहर का भोजन: ${resto.name}`
-              : `Lunch Break at ${resto.name}`,
+          language === "hi"
+            ? `दोपहर का भोजन: ${resto.name}`
+            : `Lunch Break at ${resto.name}`,
         category: "Culinary Stop",
         arrivalTime: formatTime(lunchStart),
         departureTime: formatTime(lunchEnd),
@@ -998,11 +994,9 @@ export function generateStrategyItinerary(
         id: `dinner-stop-day-${d + 1}`,
         type: "meal",
         name:
-          language === "gu"
-            ? `સાંજનું ભોજન: ${dinnerResto.name}`
-            : language === "hi"
-              ? `रात्रि का भोजन: ${dinnerResto.name}`
-              : `Evening Dining at ${dinnerResto.name}`,
+          language === "hi"
+            ? `रात्रि का भोजन: ${dinnerResto.name}`
+            : `Evening Dining at ${dinnerResto.name}`,
         category: "Evening Dining",
         arrivalTime: formatTime(dinnerStart),
         departureTime: formatTime(dinnerEnd),
@@ -1064,11 +1058,9 @@ export function generateStrategyItinerary(
       id: `${startingHotel.id}-return-day-${d + 1}`,
       type: "hotel",
       name:
-        language === "gu"
-          ? `પાછા ફરો: ${startingHotel.name}`
-          : language === "hi"
-            ? `વાપસી: ${startingHotel.name}`
-            : `Return to ${startingHotel.name}`,
+        language === "hi"
+          ? `वापसी: ${startingHotel.name}`
+          : `Return to ${startingHotel.name}`,
       category: "Night Stay Loop Complete",
       arrivalTime: formatTime(returnStart),
       departureTime: formatTime(returnStart + 15),

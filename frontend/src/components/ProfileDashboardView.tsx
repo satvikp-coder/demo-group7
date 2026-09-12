@@ -241,13 +241,13 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-5xl mx-auto space-y-10">
         {/* HEADER */}
-        <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg relative overflow-hidden">
+        <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg relative overflow-hidden rounded-2xl">
           <div className="absolute top-0 right-0 w-64 h-64 bg-stepwell-pattern opacity-10 pointer-events-none" />
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-stone/30 pb-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="bg-gold text-ink font-mono text-[11px] uppercase font-bold px-2.5 py-0.5 tracking-wider border border-ink">
+                <span className="bg-gold text-ink font-mono text-[11px] uppercase font-bold px-2.5 py-0.5 tracking-wider border border-ink rounded-md">
                   {role === "operator"
                     ? "Registered Tour Operator"
                     : "Heritage Tourist"}
@@ -267,7 +267,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                 onClick={() =>
                   setRole(role === "tourist" ? "operator" : "tourist")
                 }
-                className="bg-salt/10 hover:bg-salt/20 text-gold border border-gold/40 px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5"
+                className="bg-salt/10 hover:bg-salt/20 text-gold border border-gold/40 px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"
                 title="Toggle between Tourist and Tour Operator mode to test both layouts"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-gold" />
@@ -279,7 +279,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
               {onOpenAdminDashboard && (
                 <button
                   onClick={onOpenAdminDashboard}
-                  className="bg-gold text-ink hover:bg-gold/90 border border-gold font-bold px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5"
+                  className="bg-gold text-ink hover:bg-gold/90 border border-gold font-bold px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"
                 >
                   <ShieldCheck className="w-3.5 h-3.5 text-ink" />
                   <span>Admin Panel</span>
@@ -288,7 +288,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
               <button
                 onClick={onLogout}
-                className="bg-madder hover:bg-madder/90 text-salt border border-madder px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5"
+                className="bg-madder hover:bg-madder/90 text-salt border border-madder px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"
               >
                 <LogOut className="w-3.5 h-3.5 text-salt" />
                 <span>Log Out</span>
@@ -309,7 +309,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
         </div>
 
         {saveSuccessNotice && (
-          <div className="p-3.5 bg-emerald-900 text-salt border-2 border-emerald-400 text-xs font-mono flex items-center gap-2 shadow-md animate-fadeIn">
+          <div className="p-3.5 bg-emerald-900 text-salt border-2 border-emerald-400 text-xs font-mono flex items-center gap-2 shadow-md animate-fadeIn rounded-xl">
             <Check className="w-4 h-4 text-emerald-300" />
             <span className="font-bold">{saveSuccessNotice}</span>
           </div>
@@ -330,7 +330,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
               <button
                 onClick={onOpenPlanner}
-                className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt text-xs font-mono font-bold px-4 py-2 border border-madder shadow-xs transition-colors cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt text-xs font-mono font-bold px-4 py-2 border border-madder shadow-xs transition-colors cursor-pointer shrink-0 rounded-lg"
               >
                 <Plus className="w-4 h-4 text-salt" />
                 <span>Create New Heritage Route</span>
@@ -338,13 +338,13 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
             </div>
 
             {savedTrips.length === 0 ? (
-              <div className="bg-white border-2 border-dashed border-stone/40 p-8 text-center space-y-4">
+              <div className="bg-white border-2 border-dashed border-stone/40 p-8 text-center space-y-4 rounded-2xl">
                 <p className="font-mono text-xs text-stone">
                   No saved trips in your heritage ledger.
                 </p>
                 <button
                   onClick={onOpenPlanner}
-                  className="bg-gold text-ink font-mono text-xs font-bold px-4 py-2 border border-ink cursor-pointer"
+                  className="bg-gold text-ink font-mono text-xs font-bold px-4 py-2 border border-ink cursor-pointer rounded-lg shadow-xs"
                 >
                   Build Your First Trip
                 </button>
@@ -354,12 +354,12 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                 {savedTrips.map((trip) => (
                   <div
                     key={trip.id}
-                    className="bg-white border-2 border-stone/40 hover:border-gold p-6 transition-all shadow-2xs space-y-4 group"
+                    className="bg-white border-2 border-stone/40 hover:border-gold p-6 transition-all shadow-2xs space-y-4 group rounded-2xl"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone/20 pb-3">
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="bg-ink text-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase">
+                          <span className="bg-ink text-gold font-mono text-[10px] font-bold px-2 py-0.5 uppercase rounded-md">
                             {trip.dates}
                           </span>
                           <span className="font-mono text-xs text-stone">
@@ -391,7 +391,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                           {trip.sitesList.map((site, i) => (
                             <span
                               key={i}
-                              className="bg-salt border border-stone/30 text-charcoal px-2 py-0.5 text-[11px]"
+                              className="bg-salt border border-stone/30 text-charcoal px-2 py-0.5 text-[11px] rounded-md"
                             >
                               {site}
                             </span>
@@ -402,7 +402,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                       <div className="flex items-center gap-2 w-full sm:w-auto justify-end pt-2 sm:pt-0">
                         <button
                           onClick={() => handleOpenTrip(trip)}
-                          className="bg-ink hover:bg-ink/90 text-salt border border-gold px-4 py-2 text-xs font-bold cursor-pointer transition-colors flex items-center gap-1.5 shadow-xs"
+                          className="bg-ink hover:bg-ink/90 text-salt border border-gold px-4 py-2 text-xs font-bold cursor-pointer transition-colors flex items-center gap-1.5 shadow-xs rounded-lg"
                         >
                           <span>Open Itinerary</span>
                           <ChevronRight className="w-3.5 h-3.5 text-gold" />
@@ -410,7 +410,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
                         <button
                           onClick={(e) => handleDeleteTrip(trip.id, e)}
-                          className="bg-salt hover:bg-madder/10 text-stone hover:text-madder border border-stone/30 px-3 py-2 text-xs transition-colors cursor-pointer"
+                          className="bg-salt hover:bg-madder/10 text-stone hover:text-madder border border-stone/30 px-3 py-2 text-xs transition-colors cursor-pointer rounded-lg"
                         >
                           Remove
                         </button>
@@ -440,7 +440,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                     "New listing application initialized. Tourism guild form submitted.",
                   )
                 }
-                className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt text-xs font-mono font-bold px-4 py-2 border border-madder shadow-xs transition-colors cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt text-xs font-mono font-bold px-4 py-2 border border-madder shadow-xs transition-colors cursor-pointer shrink-0 rounded-lg"
               >
                 <Plus className="w-4 h-4 text-salt" />
                 <span>Submit New Property for Audit</span>
@@ -451,7 +451,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
               {operatorListings.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white border-2 border-stone/40 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs"
+                  className="bg-white border-2 border-stone/40 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs rounded-2xl shadow-xs"
                 >
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
@@ -459,7 +459,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                       <span className="font-bold text-charcoal text-sm">
                         {item.name}
                       </span>
-                      <span className="bg-salt text-charcoal border border-stone/40 text-[10px] px-2 py-0.5 uppercase">
+                      <span className="bg-salt text-charcoal border border-stone/40 text-[10px] px-2 py-0.5 uppercase rounded-md">
                         {item.type}
                       </span>
                     </div>
@@ -477,7 +477,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                     </span>
                     <button
                       onClick={() => alert(`Editing listing "${item.name}"...`)}
-                      className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 px-3 py-1.5 cursor-pointer flex items-center gap-1"
+                      className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 px-3 py-1.5 cursor-pointer flex items-center gap-1 rounded-lg"
                     >
                       <Edit3 className="w-3.5 h-3.5 text-ink" />
                       <span>Edit</span>
@@ -490,7 +490,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
         )}
 
         {/* ACCOUNT SETTINGS FORM */}
-        <div className="bg-white border-2 border-stone/40 p-6 sm:p-8 space-y-6 shadow-2xs">
+        <div className="bg-white border-2 border-stone/40 p-6 sm:p-8 space-y-6 shadow-2xs rounded-2xl">
           <div className="border-b border-stone/30 pb-3">
             <span className="font-mono text-xs text-gold uppercase tracking-widest block">
               Security & Credentials
@@ -513,7 +513,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold"
+                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold rounded-lg"
                   required
                 />
               </div>
@@ -526,7 +526,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold"
+                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold rounded-lg"
                   required
                 />
               </div>
@@ -542,7 +542,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                   placeholder="••••••••••••"
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold"
+                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold rounded-lg"
                 />
               </div>
 
@@ -555,7 +555,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                   placeholder="Enter new password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold"
+                  className="w-full p-2.5 bg-salt border border-stone/40 text-charcoal text-sm outline-none focus:border-gold rounded-lg"
                 />
               </div>
             </div>
@@ -563,7 +563,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
             <div className="pt-2">
               <button
                 type="submit"
-                className="bg-ink hover:bg-ink/90 text-salt border border-gold text-xs font-mono font-bold px-6 py-2.5 transition-colors cursor-pointer shadow-xs"
+                className="bg-ink hover:bg-ink/90 text-salt border border-gold text-xs font-mono font-bold px-6 py-2.5 transition-colors cursor-pointer shadow-xs rounded-lg"
               >
                 Save Account Changes
               </button>
