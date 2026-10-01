@@ -1,0 +1,622 @@
+{
+  "checkedAt": "2026-10-01T08:11:56.768Z",
+  "gitHistoryAvailable": false,
+  "qualification": "Explicit source edits plus evidence files touched in this local-final pass; filesystem inventory, not a fabricated Git diff.",
+  "files": [
+    {
+      "file": "backend/scripts/bootstrap-local.js",
+      "why": "Fresh local migrations/import with transaction-scoped seed audit; later starts preserve managed data.",
+      "sha256": "b3ed33fc18195967e4ef09a409b218fc59b77e718a679e1a83787c41196f3737"
+    },
+    {
+      "file": "compose.local.yml",
+      "why": "Production Compose bootstrap dependency; private database and API networking.",
+      "sha256": "94104f9cc94cde06c87eb4b5ba005a33a41594acaf99ddfd860c7edfcb55eef0"
+    },
+    {
+      "file": "scripts/local-stack.js",
+      "why": "Single startup and safe local status/restart/seed/operator/archive operations with private generated credentials.",
+      "sha256": "5ee3816060eef9c07cf9f32dbeb65195a077606574302a2dbaa7eedeae88d53c"
+    },
+    {
+      "file": "scripts/test-local.js",
+      "why": "Persistent local browser/reseed/integrity/backup acceptance and exact fixture cleanup.",
+      "sha256": "e00e4c528f0e6eaed2fbf50155b5a568f1417844bc9e953c3f0b056ec78eb051"
+    },
+    {
+      "file": "scripts/test-local-all.js",
+      "why": "Unified tests with generated credentials and temporary loopback-only PostgreSQL access.",
+      "sha256": "7727db7eebe99913bc984b442d2e8db204ef8cb29aea9d2300dd7c7e01f9e5f1"
+    },
+    {
+      "file": "scripts/report-local-readiness.js",
+      "why": "Generate the final verdict and inventory only from green measured evidence.",
+      "sha256": "69dbc7f92ef1bb4b5e7f2b77a9db57665948ef5cc91e24bd1a6dec4f18f78f0a"
+    },
+    {
+      "file": "scripts/test-production.js",
+      "why": "Verify fresh local bootstrap and whole-stack restart/new-login persistence.",
+      "sha256": "c44dedeb20c6117ca7e4f04e88b2abab8c7754dddc39061b5ff5dc8f37d35fd3"
+    },
+    {
+      "file": "scripts/source-audit.js",
+      "why": "Continue secret/visual audit with narrowly checked nonvisual component changes.",
+      "sha256": "90e94e764ccfc0c7afe2e26a4d90c247bc13a3b5ef2df30ad9b8bbf24aae4780"
+    },
+    {
+      "file": "backend/scripts/backup.js",
+      "why": "Empty-target verification inside private PostgreSQL container without publishing its port.",
+      "sha256": "6020424b27400114ce26a69011150351349ab437a23c3ae88f6593887c915018"
+    },
+    {
+      "file": "backend/middleware/errorHandler.js",
+      "why": "Classify code-less PostgreSQL timeout/disconnection failures as sanitized retryable503.",
+      "sha256": "7837c7474f5780763322ca55111258c354d09fc27f59fa4bc89a660ed798d402"
+    },
+    {
+      "file": "backend/tests/production.test.js",
+      "why": "Regression for exact pg driver failures and unrelated-error separation.",
+      "sha256": "8f61238f2f31f5ad5e273c6545b6e4bf091f085804f71adbedb6432d3cb23010"
+    },
+    {
+      "file": "backend/scripts/audit-completion-integrity.js",
+      "why": "Truthful directional-route statistics and writable audit output for read-only containers.",
+      "sha256": "e048910790f6d6440793529459841cec606a3f410a11bbdf3c7e4a04847fa835"
+    },
+    {
+      "file": "backend/models/tripModel.js",
+      "why": "Parameterized owner-filtered, bounded persisted dashboard lookup.",
+      "sha256": "0a17422c26131fd133c2fd77fde56b141185d1e46757fcbc82e9357bfe0d405b"
+    },
+    {
+      "file": "backend/controllers/tripController.js",
+      "why": "Read-only transaction for the existing saved-trip dashboard.",
+      "sha256": "f82b231fc08c422a6aec38487eda031d14365322df415fdebffb82f0cc0f2108"
+    },
+    {
+      "file": "backend/routes/tripRoutes.js",
+      "why": "Authenticated paginated GET /api/trips; existing strict detail/mutation validation preserved.",
+      "sha256": "5df95112964b9e46fca9a6fe158d0aba016ea922ce1e3f1353d44dda122484b3"
+    },
+    {
+      "file": "backend/scripts/test-trips-http.js",
+      "why": "Owned-list, cross-user exclusion, pagination and unauthenticated regression checks.",
+      "sha256": "e7ad849da7bac55e1565220a2d17df0165dea70bdf4c5d6ba28abf2ffafba4a9"
+    },
+    {
+      "file": "frontend/src/api/index.ts",
+      "why": "Persisted trip discovery, owned-image policy, session hiding cleanup and testable environment access.",
+      "sha256": "fedfc877f896edd2870693a5b58600fa2828f41fe0638c92a9e70ec9f389a419"
+    },
+    {
+      "file": "frontend/src/App.tsx",
+      "why": "Derive restored auth state during rendering so protected view transitions do not briefly show the home view.",
+      "sha256": "a112f27b9a2cbd7a0db5d1e5148310c688bb146f0b3e26a89464b124b78c8509"
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "why": "Synchronous submit guard; no visual markup change.",
+      "sha256": "15e8526ea741901dbc6f7895949dfe0c8095473562fd249a57af056de22a3e66"
+    },
+    {
+      "file": "frontend/src/components/PlannerModal.tsx",
+      "why": "Synchronous generation guard; no visual markup change.",
+      "sha256": "8f4ab3c96855665ffbdfd075b5f5a651353f095e47cfd8649cfc32ba7dd2ac0f"
+    },
+    {
+      "file": "frontend/src/components/ItineraryView.tsx",
+      "why": "Proper external font stylesheet loading for the existing PDF fallback.",
+      "sha256": "af2cc6e720e8c85b0baaf23a2b2d393247241fee7416bb3963a470d176d0e2c2"
+    },
+    {
+      "file": "frontend/src/components/ProfileDashboardView.tsx",
+      "why": "Recover the existing dashboard from PostgreSQL; retain session-only Remove semantics.",
+      "sha256": "98778d02a44acc37503e9ec23625947ee32b7bcba7e31fadf4185b1a4305dbfd"
+    },
+    {
+      "file": "frontend/nginx.conf",
+      "why": "Permit PDF font resource fetches from the same existing Google font sources only.",
+      "sha256": "ba7d8ef0d1cf0194dfe604f6375b203a8749330655c2ab5e5b9b9f9165f849ce"
+    },
+    {
+      "file": "frontend/package.json",
+      "why": "Include the owned-image regression in normal frontend unit tests.",
+      "sha256": "e4ee16550efee7101d94dcd18afb427ef27b3d5cdb1052f05c434bfe50c7bda5"
+    },
+    {
+      "file": "package.json",
+      "why": "Documented local operations and test workflows.",
+      "sha256": "9da1d770030746c4a142227604af146644f47af42cd9acfe3e787e5b78495cd8"
+    },
+    {
+      "file": "tests/frontend/local_success.py",
+      "why": "Real built-browser successful flows, rapid submissions, in-flight refresh, fresh login, restart and clean console.",
+      "sha256": "43c60b0d04b73cf51ff4b5e1cc7696d90fb7ee7cc6f367b3a258dc97bbe51d72"
+    },
+    {
+      "file": "tests/frontend/catalog-images.test.ts",
+      "why": "Owned asset/unsafe external image adapter regression.",
+      "sha256": "8cffabc0a6dcf2a3fe2f0d57ed895dccd75fb1f658fcc499fa1d40180cc6a7a1"
+    },
+    {
+      "file": "README.md",
+      "why": "One-command local production setup entry point.",
+      "sha256": "b3e850614c4c0ec9c25af9dc1515ae9b8f2fdcd3b045a3fb414c6912a20b7f27"
+    },
+    {
+      "file": "docs/PRODUCTION.md",
+      "why": "Link current local setup and evidence.",
+      "sha256": "69535037b889ae8f33133e2c85b84be6b75a8843a6821be694de34f10e510dab"
+    },
+    {
+      "file": "docs/LOCAL_PRODUCTION.md",
+      "why": "Complete fresh local setup, tests, archives, restart and shutdown path.",
+      "sha256": "ad4c90fecb97bf7fa5b0cd85210673cbcead944adbd8d85c0f6b0d36ba34bb82"
+    },
+    {
+      "file": "CODEX_HANDOFF.md",
+      "why": "Canonical continuity, final state and external-only next steps.",
+      "sha256": "dad09eac916ed96b5c9ec0c9818d1bdd7c5ed3d38d4e30ef5922573b558a23dc"
+    },
+    {
+      "file": "backend/reports/admin-http-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "136b865a3044ce54219e0a34952cf9a4a1f161cf5de32bd9c8f63d4eb496f335"
+    },
+    {
+      "file": "backend/reports/auth-http-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b575a5cf3e76961afe0f6f78e6c18b3428deb859b304ec61d9aecad6f171880c"
+    },
+    {
+      "file": "backend/reports/completion-platform-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "d560a02a329f9468262bdf696f40c4dae7360b7576a7702488915c322dfe1c06"
+    },
+    {
+      "file": "backend/reports/completion-research-browser-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "57758b69598872ee18ce65fff2deb6f4242039b3e3af5e0a9b45a975d3aa4f39"
+    },
+    {
+      "file": "backend/reports/destinations-http-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "306347df5176c0035e50d5e6d4aa3f29ef4c393b93f0fee5d513b11c42987d35"
+    },
+    {
+      "file": "backend/reports/final-budget-browser.png",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "a51ff91be6e3d59c613957ccde27eec68a74d7171f59c2874653aca26744e2cd"
+    },
+    {
+      "file": "backend/reports/final-invalid-destination-browser.png",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "f7bf809ea1c349b0b943b0fd2e0a5cc61a3e4209972235a5e02e9697d22d5762"
+    },
+    {
+      "file": "backend/reports/frontend-api-client-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "84bda02aad53712d8eeccf97fda4b75f8d4a5e0693c030212528ddcecfaca212"
+    },
+    {
+      "file": "backend/reports/frontend-browser-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "1a4a090746a3ec232bde7c8a4a8884a4b71bcf0bde6a20ca9388b63f527154b9"
+    },
+    {
+      "file": "backend/reports/frontend-build-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "c1a1ff3326a0ff8552e6882658ae0fbc0a1b1f47504e367963a05cedfd7fada8"
+    },
+    {
+      "file": "backend/reports/local-auth-state-before.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "1b7d7880344a66153130256b8a5ba2e80bbad0fda7b7b7ad9ccd6b9f8b053fd5"
+    },
+    {
+      "file": "backend/reports/local-browser-success.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "21ce509b9b077380c0e255360fb5706163a8f3820d423f7d5b898330018c1aa7"
+    },
+    {
+      "file": "backend/reports/local-final-files.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b9adb0705f7497841559429e8cfa412fa51430cba1384e74420b59c18710f0fd"
+    },
+    {
+      "file": "backend/reports/local-final-suite.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "853ab5a3d2c1f0ac6ef3bf8c9fca0d603513c8bec776e6211bc35c20b802a159"
+    },
+    {
+      "file": "backend/reports/local-integrity.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "9b407d9d3d05a0af11bf77062cd38f79daa37e9e74bbcc6b92464450f14d33c4"
+    },
+    {
+      "file": "backend/reports/local-profile-before.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "f8f7aea96ba7961a9d9f24b3f6cea2e7047737feaf1adae2ba6eef9328fe36c1"
+    },
+    {
+      "file": "backend/reports/local-regressions-before.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "ce1b7e77d2eb2b7ca6cbe2dcc145d16ce587d3fd8c627cabfecb721b32d6ca5e"
+    },
+    {
+      "file": "backend/reports/local-submit-guards-before.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "0422287aa6052dfb6cb277e069328f62db66c3732ccc784568925323a828c83c"
+    },
+    {
+      "file": "backend/reports/LOCAL_FINAL_READINESS.md",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "857d21942eb23c0db6308782c1547c68cf36ccd2f3fd01c04fc3d3d657fad6b1"
+    },
+    {
+      "file": "backend/reports/production/api-client-browser.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "a1c8940aeb55d18c50966d09aa61a792ef7357efc606fb6bceabe503bc95c4e1"
+    },
+    {
+      "file": "backend/reports/production/application-start.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "9412c01e7a2635debeba53d7b92e8b9b3c0f063d736e3f9822a0f73ddb9b8436"
+    },
+    {
+      "file": "backend/reports/production/audit-backend.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "6d8c5c8f3d7684adb070417bd608d01ae90aa3dc26a65af03ffda4955f38d9a3"
+    },
+    {
+      "file": "backend/reports/production/audit-frontend.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "6d8c5c8f3d7684adb070417bd608d01ae90aa3dc26a65af03ffda4955f38d9a3"
+    },
+    {
+      "file": "backend/reports/production/backend-id.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "84227d66bf797b201fbb0a5bbf6b83cabc4c0ce8c2a1f49fe911ebb5a31849c2"
+    },
+    {
+      "file": "backend/reports/production/backend-logs.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "0d0cc9869786175bcad2d970014b64b9039741260d7fa6e35158447d3d1ac6d6"
+    },
+    {
+      "file": "backend/reports/production/backend-restart.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "31d2eed33e556c52734c8485bb804d1da7c20cf243618f7d08164e5627109ae5"
+    },
+    {
+      "file": "backend/reports/production/backend-syntax.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "5e57750a3d2902dcd05ea26284df3f98ba838dbbe400b99addda86197a768db1"
+    },
+    {
+      "file": "backend/reports/production/backend-unit.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "96aaa854562eec5443516467d38bcee5d8f789df516ff218e68cdfe3de2a1222"
+    },
+    {
+      "file": "backend/reports/production/browser-development.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "cfcbb191f66235712ef652d70c339baf9cc1f7bdfd78a1f27b5f1257c0cf962f"
+    },
+    {
+      "file": "backend/reports/production/browser-platform.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "c3ec3b72eb84cd78c1bef1710bdd4b909e8cb74691a8e2dfd7bbd3ab220af2a3"
+    },
+    {
+      "file": "backend/reports/production/browser-production.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "05d060fbcefb8d53f1f2f26eca5201d8f2b9fd5c32c4dd3b618de33f3ae92482"
+    },
+    {
+      "file": "backend/reports/production/container-build.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "e672023ff13b76ddde12b6e0036046a22a3351d13221765ded4342e8abfbba08"
+    },
+    {
+      "file": "backend/reports/production/container-data-verify.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "17bbb460251e86dd3ee52a8e8e2e5841c05859b34f5ab8a5c7b9ddf23e9ebdde"
+    },
+    {
+      "file": "backend/reports/production/container-migrate.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "f1017d051117943f1822fb85425ae4b94b8cb9f7d7ae5c976722d6263a06fd15"
+    },
+    {
+      "file": "backend/reports/production/container-reseed.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b19029655e91d8d1c7d50f77b6008441af42b759f5a79b3167cc719e0f141fe4"
+    },
+    {
+      "file": "backend/reports/production/container-seed.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "340ef9119945dd6f92ba28f4357b58f3a39307d6b95454be6abf461be8824edb"
+    },
+    {
+      "file": "backend/reports/production/container-suite.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "57cd7692a3e9acda9d8a41d94a65a502fa288ee69eca8993eb508aaf466a25f4"
+    },
+    {
+      "file": "backend/reports/production/database-outage.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "73717bce5ac5005898c5d94384ae2d700a41556973ba6a57c4e2a387794381ba"
+    },
+    {
+      "file": "backend/reports/production/database-restoration.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "9e7fac0bc4f5b7dca194124ad06afcb9a72c0d63dba7f525f46060e2d7515fc8"
+    },
+    {
+      "file": "backend/reports/production/frontend-build.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "c1aa5e66243f526e207e7d5516b1b8cbbc5600cb44940e043b36379e49ea9172"
+    },
+    {
+      "file": "backend/reports/production/frontend-id.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "e1b3f4a7da14ff79adce88c18765a6bc255322598fcfbe07bd8ced0ee5686414"
+    },
+    {
+      "file": "backend/reports/production/frontend-inspection.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "6f96a43b1416b5730e5216097e7fe6b04545e098b8857251ea37e173a36f415e"
+    },
+    {
+      "file": "backend/reports/production/frontend-logs.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "5805092734b5b6a3fc145c44b6be2ca41dd5bdd4ef91adf0f30ea18c21f4c9f3"
+    },
+    {
+      "file": "backend/reports/production/frontend-types.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "7364f1781d80099e3808ec959accc0e65f6de822b9c625a10619d165c164196b"
+    },
+    {
+      "file": "backend/reports/production/frontend-unit-planner.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "f015bb30de713d7a3b6bdde3b77abf12e80b7607ad1e728e64752700ed8bde51"
+    },
+    {
+      "file": "backend/reports/production/full-suite.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "f8b5f2d1408df52ff5d904c31dee7b630cc938ef31787229da1dec4d8efe98e4"
+    },
+    {
+      "file": "backend/reports/production/graceful-stop.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b9c16d968243c489c0e3fad1ab799cc9227e0c1edc32ae8a5d7d5fce6c5c2a8c"
+    },
+    {
+      "file": "backend/reports/production/http-admin.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "a63b5e25fa7b16af59af5ee7e9babb9093ce227b32af33f35f2c48f67b672496"
+    },
+    {
+      "file": "backend/reports/production/http-auth.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "bae6563da1747d140e2faf3501e5a897b73ae4aa156f9e4703ac5a003589876a"
+    },
+    {
+      "file": "backend/reports/production/http-db.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "a51fc537146eb3d624b503603981619f7050caacb5af55547adb6054d1556fb7"
+    },
+    {
+      "file": "backend/reports/production/http-destinations.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "ce56fff1a133cc027c22a81fbd27c3dbf44aa9bf05e2e8831c679f383175383c"
+    },
+    {
+      "file": "backend/reports/production/http-trips.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "df4c1febe313644f9e8a69ff51fb4e2af1c7012ea991b19f75711f6b1f6ec5c3"
+    },
+    {
+      "file": "backend/reports/production/local-browser-success.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "16cd574bd623a39c6704fa48fe821cc58b7807624a01081f9c51a2c3403c958e"
+    },
+    {
+      "file": "backend/reports/production/local-create-restore-target.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "691e4b64d448c6cffd680247056c2f445e4fbf2dcbc9be821934064e906d1ce7"
+    },
+    {
+      "file": "backend/reports/production/local-edge-refresh.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "c656fd5fd09c6fe67359b82c26917d1bf7c1ba0b8bf8d0bb66792ce3ec1e4646"
+    },
+    {
+      "file": "backend/reports/production/local-full-suite-db-access.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "3901654acc8146e8848ad380eddadf7ba0116eade38d2d9eba6af3f9bc6e8b62"
+    },
+    {
+      "file": "backend/reports/production/local-full-suite-db-private.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "3901654acc8146e8848ad380eddadf7ba0116eade38d2d9eba6af3f9bc6e8b62"
+    },
+    {
+      "file": "backend/reports/production/local-full-suite.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "e5e5d7c99487d1eaa538636f2044cc13c9ccec22ae89f259f57dd85a9a8641d4"
+    },
+    {
+      "file": "backend/reports/production/local-integrity.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "67f715c6fbd535390d69c332f7e40cfd53323292a044ca449e33548bac3bcb96"
+    },
+    {
+      "file": "backend/reports/production/local-postgres-id.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "6abbbcc4c3c2d1f4d1a254330416ab2b3e70036cb635627e963d20b5fe316a7f"
+    },
+    {
+      "file": "backend/reports/production/local-restart.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "2749b62ecf076e4e0cdb5d529d0b52a4fc9c3373635e2de93ca3456b597fcfd3"
+    },
+    {
+      "file": "backend/reports/production/local-restored-approved-catalog.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "3b9b7d2ca51d115ac3e1d4e46052fc5083be5d755bd8b0614be39b22418d3099"
+    },
+    {
+      "file": "backend/reports/production/local-restored-runtime-grants.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "2dab28b1bb14dfdede0d90709ef14e3a57bb2b309bc25753efe2916e4cdf2b7c"
+    },
+    {
+      "file": "backend/reports/production/local-seed.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "5c22191406603caeb7dc4c27e26044d5fc8828d316f09c5eeeef44b60d723524"
+    },
+    {
+      "file": "backend/reports/production/local-status.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "d9f82de17e8c19d9cd0698d75c69fd673d25f6e6b1465aba7be985aa26ed6e3c"
+    },
+    {
+      "file": "backend/reports/production/local-test-postgres.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "6abbbcc4c3c2d1f4d1a254330416ab2b3e70036cb635627e963d20b5fe316a7f"
+    },
+    {
+      "file": "backend/reports/production/local-test-query.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "backend/reports/production/local-up.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "9cc16ae74277006498a71364fb725844ed253286c4563cebabc5ee85dd3386a6"
+    },
+    {
+      "file": "backend/reports/production/memory-after.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "79b41d5ceb5d133da00b56ab69773dae407394143c2a4f6579f1832673751c36"
+    },
+    {
+      "file": "backend/reports/production/memory-before.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "47a25e95a99052e1a34034143184ad00a51f93d05ad2d1c5e85861d825a4201f"
+    },
+    {
+      "file": "backend/reports/production/postgres-id.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "155d22311d7bab88b7d9496d4eafa9cfd62233933be23f55db04b763d7cef483"
+    },
+    {
+      "file": "backend/reports/production/postgres-ready.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "6e168fc3b5a0662104b5e5da92e87b870e8b7c65fec827d267115b5123d18614"
+    },
+    {
+      "file": "backend/reports/production/postgres-start.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "936876145b48a0827e05563dcb1cf0ca78979c8bdaed1b02290aff00ab08d4f1"
+    },
+    {
+      "file": "backend/reports/production/production-api-smoke.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "934795f16ad5f13551bf379b74117db3e998020fffd5cb5d06e1945164cf0cbb"
+    },
+    {
+      "file": "backend/reports/production/research-browser.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "67d8502901675ae20421f94af5052301fe7a30268cf6c8fcf601ec01c3439f86"
+    },
+    {
+      "file": "backend/reports/production/reseed-preservation.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "66d33e28a7c6f04dc71591854f4dca3b8595f3bbf0a2746abb77cc3d7d355b07"
+    },
+    {
+      "file": "backend/reports/production/restart-after-deliberate-rate-limit.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "4424df06174454e6ee7191cdeaf87d7df19181105373be4105e0358906910cb8"
+    },
+    {
+      "file": "backend/reports/production/restored-backend-start.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "ad2450cac883c7c672e2162471242c049ccce551d8993b339eea8d2a72120682"
+    },
+    {
+      "file": "backend/reports/production/restored-runtime-grants.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "d26c497be14d3de153badc6c5e68b197140e9fdcaf083f7826de62387c3a3b78"
+    },
+    {
+      "file": "backend/reports/production/source-audit.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "2646de463ae907785ed536ee527a4ecb5ffd9ee6151b61f3511888f791179044"
+    },
+    {
+      "file": "backend/reports/production/staging-stop.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "4b3720d2b38d592121883685da8dd2f1a27bfa59568a634bc2caade02b12d94a"
+    },
+    {
+      "file": "backend/reports/production/stop-before-recovery.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b9c16d968243c489c0e3fad1ab799cc9227e0c1edc32ae8a5d7d5fce6c5c2a8c"
+    },
+    {
+      "file": "backend/reports/production/tls-configuration.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "d38ee39ee6886fdd654259aed37cd96cf945cd26d3386a8f7f18145d95c51c7f"
+    },
+    {
+      "file": "backend/reports/production/whole-stack-restart.txt",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "f78a942b66c0b47ce9fc4b440e320bfbe169eac7806902cd900632b3dea4b201"
+    },
+    {
+      "file": "backend/reports/production-api-smoke.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "60e4dee1ea80e8fb97e7ffae9ff47e717472843b463eb81fd11a020c45c23d46"
+    },
+    {
+      "file": "backend/reports/production-files.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "265f87dc31088de18d7523c693bd19fb502f872092b6d4c8f1a9810853512cd6"
+    },
+    {
+      "file": "backend/reports/production-files.md",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "4827bab0ccdf087f10982f1c1af8c2e5227c625716be13eeeab436f7b09666c1"
+    },
+    {
+      "file": "backend/reports/production-source-audit.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b80413e468e87fb9a93601cd6d913f0ba021416af92277e7452077b8da55f42e"
+    },
+    {
+      "file": "backend/reports/PRODUCTION_READINESS.md",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "2fb76dbb36ddfcb1e2f9862db3db4704dfe06815a328912234f7fff6c22cf7b2"
+    },
+    {
+      "file": "backend/reports/research-preservation.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "c8e7d1d18131706a2abe38dfc2f6f5294c89d79a835ffffa61c1a17225737309"
+    },
+    {
+      "file": "backend/reports/researched-itinerary-budget-browser.png",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "9098a9f7e94ea1eae575e42c1dd33c6ee7fd7e7247ac7e4661682940ae85b4c6"
+    },
+    {
+      "file": "backend/reports/trips-http-report.json",
+      "why": "Regenerated local/production verification evidence or frozen nonvisual source comparison.",
+      "sha256": "b82e0f00ebbf19922722f8badf9feb6a4b5dd272cbd9cc6e2c56ecc569455f4b"
+    }
+  ]
+}

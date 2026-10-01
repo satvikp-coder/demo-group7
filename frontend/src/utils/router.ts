@@ -1,4 +1,4 @@
-import { GUJARAT_DESTINATIONS } from "../data/destinations";
+
 
 export type RouteType =
   | "home"
@@ -57,7 +57,7 @@ export function parseRoute(
     const parts = cleanPath.split("/").filter(Boolean);
     const destId = parts[1];
     if (destId) {
-      const isValid = GUJARAT_DESTINATIONS.some((d) => d.id.toLowerCase() === destId.toLowerCase());
+      const isValid = parts.length === 2 && /^[a-zA-Z0-9-]+$/.test(destId);
       if (isValid) {
         return {
           type: "destination",

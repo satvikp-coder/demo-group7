@@ -11,11 +11,13 @@ import {
   getCityById,
 } from "../../frontend/src/data/destinations";
 
+let assertions = 0;
 function assert(condition: boolean, message: string) {
   if (!condition) {
     console.error(`❌ FAIL: ${message}`);
     process.exit(1);
   } else {
+    assertions++;
     console.log(`✅ PASS: ${message}`);
   }
 }
@@ -303,4 +305,4 @@ console.log("\n--- Test Case 9: Empty / No-Compatible-Result Case ---");
   );
 }
 
-console.log("\n🎉 All 9 Trip Planner and Itinerary-Generation Test Cases PASSED!\n");
+console.log(`\nAll ${assertions} assertions passed.\n`);

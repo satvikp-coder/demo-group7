@@ -1,0 +1,255 @@
+{
+  "city": "gir-national-park",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/70.598454,21.168967;70.504063,21.169664;70.576640,21.170611;70.589057,21.149547?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "19f2c9d4-125c-459a-a307-7da11cd6459f",
+      "external_id": "a601",
+      "slug": "gir-jungle-safari",
+      "destination_id": "82101120-c9b1-444e-b3f7-0f08ac3735b0",
+      "name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+      "lat": "21.168967",
+      "lng": "70.598454",
+      "duration_hours": "3.00",
+      "rating": null,
+      "category": "Wildlife",
+      "entry_fee": "Indian weekday six-seat Type B booking: permit800 + vehicle2000 + guide400 = INR3200; other dates/vehicles/nationalities differ",
+      "entry_fee_numeric": "3200.00",
+      "opening_time": "08:30:00",
+      "closing_time": "11:30:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Stored interval is the official 08:30-11:30 departure slot, not flexible admission. Report30 minutes early with permit and original ID. Other seasonal slots exist. Numeric cost covers one private Type B vehicle booking, not a per-person ticket. Current planner cannot enforce fixed departures or seasonal availability; confirm booking before relying on an itinerary.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "A permit-controlled guided vehicle safari through the Gir forest, reporting at Sinh Sadan in Sasan Gir.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Forest Department official booking terms; Google Maps",
+      "source_url": "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "34258077-2271-43c3-8937-b178f7fddf17",
+      "external_id": "a602",
+      "slug": "devalia-bus-safari",
+      "destination_id": "82101120-c9b1-444e-b3f7-0f08ac3735b0",
+      "name": "Devalia Interpretation Zone Bus Safari",
+      "lat": "21.169664",
+      "lng": "70.504063",
+      "duration_hours": "0.50",
+      "rating": "4.3",
+      "category": "Wildlife",
+      "entry_fee": "Indian weekday bus ticket INR150; weekends/festivals INR190; foreign tariffs differ",
+      "entry_fee_numeric": "150.00",
+      "opening_time": "07:30:00",
+      "closing_time": "11:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Official bus slots last30 minutes. Stored window is winter morning service; winter afternoon15:00-17:00 also operates. Summer schedules differ. Closed every Wednesday. Permit availability and exact departure must be checked separately; wheelchair boarding arrangements unverified.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Devalia's Gir Interpretation Zone offers a short forest-department bus safari in a managed wildlife area.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Forest Department official bus booking page; Google Maps",
+      "source_url": "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "a86afae3-d57d-41e3-bea5-323b36b733b0",
+      "external_id": "h601",
+      "slug": "anil-farms-gir-jungle-resort",
+      "destination_id": "82101120-c9b1-444e-b3f7-0f08ac3735b0",
+      "name": "Anil Farms Gir Jungle Resort",
+      "lat": "21.170611",
+      "lng": "70.576640",
+      "price_per_night": 4489,
+      "rating": "4.6",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Bhalchhel, Mendarda, Sasan Gir, Gujarat 362135",
+      "description": "Anil Farms Gir Jungle Resort offers air-conditioned rooms on garden and mango-orchard grounds near Sasan Gir.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Official resort website and official-site quote displayed on Google Maps",
+      "source_url": "https://www.girjungleresort.com/rooms/",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "hotel"
+    },
+    {
+      "id": "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+      "external_id": "r601",
+      "slug": "gir-kathiyawadi-restaurant",
+      "destination_id": "82101120-c9b1-444e-b3f7-0f08ac3735b0",
+      "name": "Hotel Gir Kathiyawadi Sasan Gir",
+      "lat": "21.149547",
+      "lng": "70.589057",
+      "rating": "4.4",
+      "avg_cost_per_person": 150,
+      "location": "Sasan-Talala Highway, Sasan Gir, Gujarat 362135",
+      "cuisine": "Gujarati and Kathiyawadi vegetarian thali",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps; Wanderlog dining guide; Restaurant Guru",
+      "source_url": "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        10910.2,
+        2606.4,
+        2524.7
+      ],
+      [
+        10910.2,
+        0,
+        8861.9,
+        13434.9
+      ],
+      [
+        2606.4,
+        8861.9,
+        0,
+        5131.1
+      ],
+      [
+        2524.7,
+        13434.9,
+        5131.1,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "ssXZgfuYK4gEAAAAEgAAAAwAAAA4AAAA1aj8QHFW-UEGWLBB-hvHQgQAAAASAAAADAAAADgAAAB7JwEALz81BG8CQwE2PzUERwNDAQIA_xAAAAAA",
+        "location": [
+          70.598447,
+          21.168751
+        ],
+        "name": "SH26",
+        "distance": 23.92641645
+      },
+      {
+        "hint": "7NrKhRzx9Yl2AAAARwAAAFcMAADeBQAART9WQ6yj_kJSCbJFxHspRXYAAABHAAAAVwwAAN4FAAB7JwEAZc4zBGoGQwF_zjMEAAZDAVAAHxAAAAAA",
+        "location": [
+          70.504037,
+          21.16977
+        ],
+        "name": "",
+        "distance": 12.04283398
+      },
+      {
+        "hint": "8cTZgfPE2YEVAAAAAAAAANIAAAA4AAAAD3NrQQAAAABczxFDsE0cQhUAAAAAAAAA0gAAADgAAAB7JwEApOs0BGYEQwEA6jQEswlDAQYAHwQAAAAA",
+        "location": [
+          70.57706,
+          21.169254
+        ],
+        "name": "",
+        "distance": 156.4489934
+      },
+      {
+        "hint": "FsjEhXN-aJBMAAAACwAAADwBAAAAAAAA-oQLQ7A1k0EJkg5EAAAAAEwAAAALAAAAPAEAAAAAAAB7JwEAJxs1BCS3QgGBGjUEa7dCAQoAzwwAAAAA",
+        "location": [
+          70.589223,
+          21.149476
+        ],
+        "name": "",
+        "distance": 18.95190139
+      }
+    ],
+    "durations": [
+      [
+        0,
+        612,
+        343.9,
+        139.7
+      ],
+      [
+        610.3,
+        0,
+        627.9,
+        750
+      ],
+      [
+        340.8,
+        629.9,
+        0,
+        480.5
+      ],
+      [
+        139.8,
+        751.8,
+        483.7,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "ssXZgfuYK4gEAAAAEgAAAAwAAAA4AAAA1aj8QHFW-UEGWLBB-hvHQgQAAAASAAAADAAAADgAAAB7JwEALz81BG8CQwE2PzUERwNDAQIA_xAAAAAA",
+        "location": [
+          70.598447,
+          21.168751
+        ],
+        "name": "SH26",
+        "distance": 23.92641645
+      },
+      {
+        "hint": "7NrKhRzx9Yl2AAAARwAAAFcMAADeBQAART9WQ6yj_kJSCbJFxHspRXYAAABHAAAAVwwAAN4FAAB7JwEAZc4zBGoGQwF_zjMEAAZDAVAAHxAAAAAA",
+        "location": [
+          70.504037,
+          21.16977
+        ],
+        "name": "",
+        "distance": 12.04283398
+      },
+      {
+        "hint": "8cTZgfPE2YEVAAAAAAAAANIAAAA4AAAAD3NrQQAAAABczxFDsE0cQhUAAAAAAAAA0gAAADgAAAB7JwEApOs0BGYEQwEA6jQEswlDAQYAHwQAAAAA",
+        "location": [
+          70.57706,
+          21.169254
+        ],
+        "name": "",
+        "distance": 156.4489934
+      },
+      {
+        "hint": "FsjEhXN-aJBMAAAACwAAADwBAAAAAAAA-oQLQ7A1k0EJkg5EAAAAAEwAAAALAAAAPAEAAAAAAAB7JwEAJxs1BCS3QgGBGjUEa7dCAQoAzwwAAAAA",
+        "location": [
+          70.589223,
+          21.149476
+        ],
+        "name": "",
+        "distance": 18.95190139
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

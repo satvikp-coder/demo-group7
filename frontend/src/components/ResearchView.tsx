@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { generateStrategyItinerary, OptimizationStrategy } from "../utils/itineraryPlanner";
-import { GUJARAT_DESTINATIONS } from "../data/destinations";
+import type { OptimizationStrategy } from "../utils/itineraryPlanner";
+import { api, createItinerary, errorMessage, displayNumber } from "../api";
+
 import { Cpu, ArrowLeft, Play, Database, Download, Copy, Check } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
@@ -25,19 +26,18 @@ export const ResearchView: React.FC<ResearchViewProps> = ({ onBack }) => {
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
 
-  const runSimulationMatrix = () => {
+  const [requestError, setRequestError] = useState("");
+  const runSimulationMatrix = async () => {
     setIsRunning(true);
-    setTimeout(() => {
+    setResults([]); setRequestError("");
+    try {
       const runs: RunRow[] = [];
-      const testCities = [
-        { id: "somnath", hotelId: "premier-somnath" },
-        { id: "dwarka", hotelId: "darshan-palace" }
-      ];
+      const testCities = (await api.catalog()).filter(d => d.hotels.length).slice(0,2).map(d => ({id:d.id,hotelId:d.hotels[0].id}));
 
       // 1. Duration Experiment
       for (const city of testCities) {
         for (const days of [1, 2, 3]) {
-          const res = generateStrategyItinerary({
+          const {result:res} = await createItinerary({
             cityId: city.id,
             tripDays: days,
             budget: 10000,
@@ -62,7 +62,7 @@ export const ResearchView: React.FC<ResearchViewProps> = ({ onBack }) => {
       // 2. Budget Experiment
       for (const city of testCities) {
         for (const budget of [500, 900, 1200, 1500, 3000]) {
-          const res = generateStrategyItinerary({
+          const {result:res} = await createItinerary({
             cityId: city.id,
             tripDays: 1,
             budget,
@@ -88,7 +88,7 @@ export const ResearchView: React.FC<ResearchViewProps> = ({ onBack }) => {
       const strategies: OptimizationStrategy[] = ["budget-first", "rating-first", "distance-first"];
       for (const city of testCities) {
         for (const strategy of strategies) {
-          const res = generateStrategyItinerary({
+          const {result:res} = await createItinerary({
             cityId: city.id,
             tripDays: 2,
             budget: 10000,
@@ -111,16 +111,22 @@ export const ResearchView: React.FC<ResearchViewProps> = ({ onBack }) => {
       }
 
       setResults(runs);
-      setIsRunning(false);
-    }, 300);
+    } catch(error) { setResults([]); setRequestError(errorMessage(error)); }
+    finally { setIsRunning(false); }
   };
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(JSON.stringify(results, null, 2));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(results, null, 2));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error("Failed to copy research results:", error);
+      window.alert("Unable to copy the results. Check clipboard permission and try again.");
+    }
   };
 
+  if(requestError) return <p role="alert">{requestError} <button onClick={runSimulationMatrix}>Retry</button></p>;
   return (
     <div className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8 space-y-8 animate-fadeIn text-charcoal">
       {/* Header */}
@@ -156,7 +162,7 @@ export const ResearchView: React.FC<ResearchViewProps> = ({ onBack }) => {
       <div className="bg-salt border border-stone/30 p-4 font-mono text-xs leading-relaxed max-w-4xl">
         <p className="font-bold mb-2 text-ink">🔬 STUDY DESCRIPTION & METHODOLOGY</p>
         <p className="text-stone">
-          This Console evaluates the client-side <strong>Stepwell Routing Engine</strong>. 
+          This Console evaluates the server-side <strong>Stepwell Routing Engine</strong>. 
           By executing multiple itineraries programmatically across various limits (Duration, Budget, and Optimization Strategy), we validate that heuristic constraint handling, Dijkstra graph nodes relaxation, and edge weight calculations behave predictably on limited data spaces ($V \le 10$).
         </p>
       </div>
@@ -209,7 +215,7 @@ export const ResearchView: React.FC<ResearchViewProps> = ({ onBack }) => {
                     <td className="p-3 text-right text-emerald-700 font-bold">₹{row.cost.toLocaleString("en-IN")}</td>
                     <td className="p-3 text-right">{row.distance} km</td>
                     <td className="p-3 text-center">{row.dijkstraCalls}</td>
-                    <td className="p-3 text-right text-stone">{row.runtimeMs} ms</td>
+                    <td className="p-3 text-right text-stone">{displayNumber(row.runtimeMs)} ms</td>
                   </tr>
                 ))}
               </tbody>

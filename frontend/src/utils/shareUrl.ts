@@ -12,6 +12,7 @@ export interface SharedItineraryPayload extends ItineraryConfig {
 export function encodeSharedItinerary(config: ItineraryConfig): string {
   try {
     const payload: SharedItineraryPayload = {
+      tripId: config.tripId,
       cityId: config.cityId,
       tripDays: config.tripDays,
       budget: config.budget,
@@ -54,6 +55,7 @@ export function decodeSharedItinerary(
     const payload = JSON.parse(jsonStr) as SharedItineraryPayload;
     if (payload && payload.cityId) {
       return {
+        tripId: payload.tripId,
         cityId: payload.cityId,
         tripDays: payload.tripDays || 2,
         budget: payload.budget || 8500,

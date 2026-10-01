@@ -1,0 +1,28 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Sunset+Point+Saputara&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 247732217,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 4832550858,
+      "lat": "20.5745495",
+      "lon": "73.7323392",
+      "category": "tourism",
+      "type": "viewpoint",
+      "place_rank": 30,
+      "importance": 3.502632181272629e-05,
+      "addresstype": "tourism",
+      "name": "Sunset Point",
+      "display_name": "Sunset Point, Sunset Point Road, Saputara, Ahava Taluka, Dang, Gujarat, 394720, India",
+      "extratags": null,
+      "boundingbox": [
+        "20.5744995",
+        "20.5745995",
+        "73.7322892",
+        "73.7323892"
+      ]
+    }
+  ]
+}

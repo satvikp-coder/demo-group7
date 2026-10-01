@@ -1,5 +1,3 @@
-# Backend Config
+# Configuration
 
-**Status:** NOT STARTED (Planned Next Phase)
-
-Manages PostgreSQL connection pool initialization (`pg` Pool) and environment variable configurations (`dotenv`).
+Environment validation and a lazy pg connection pool. All required variables are documented in ../.env.example. Invalid configuration prevents startup; liveness does not check database readiness.

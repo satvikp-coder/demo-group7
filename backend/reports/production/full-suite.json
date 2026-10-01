@@ -1,0 +1,80 @@
+{
+  "startedAt": "2026-10-01T09:04:41.560Z",
+  "verified": true,
+  "gates": [
+    {
+      "name": "backend-unit-security",
+      "passed": true
+    },
+    {
+      "name": "frontend-unit-and-reference-planner",
+      "passed": true
+    },
+    {
+      "name": "frontend-types",
+      "passed": true
+    },
+    {
+      "name": "backend-syntax",
+      "passed": true
+    },
+    {
+      "name": "frontend-production-build-source-audit",
+      "passed": true
+    },
+    {
+      "name": "fresh-migration-and-repeat-migration",
+      "passed": true
+    },
+    {
+      "name": "reseed-preservation",
+      "passed": true
+    },
+    {
+      "name": "http-auth",
+      "passed": true
+    },
+    {
+      "name": "http-destinations",
+      "passed": true
+    },
+    {
+      "name": "http-trips",
+      "passed": true
+    },
+    {
+      "name": "http-admin",
+      "passed": true
+    },
+    {
+      "name": "http-db",
+      "passed": true
+    },
+    {
+      "name": "browser-development-full-controls",
+      "passed": true
+    },
+    {
+      "name": "api-client-malformed-responses",
+      "passed": true
+    },
+    {
+      "name": "research-browser",
+      "passed": true
+    },
+    {
+      "name": "dependency-backend",
+      "passed": true
+    },
+    {
+      "name": "dependency-frontend",
+      "passed": true
+    },
+    {
+      "name": "source-and-ui-preservation",
+      "passed": true
+    }
+  ],
+  "isolatedDatabaseRemoved": true,
+  "finishedAt": "2026-10-01T09:11:11.604Z"
+}

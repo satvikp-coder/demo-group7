@@ -1,11 +1,12 @@
+import { displayNumber } from "../api";
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Destination, GUJARAT_DESTINATIONS, OFFICIAL_CATEGORIES } from '../data/destinations';
+import { Destination, OFFICIAL_CATEGORIES } from '../api/types';
 import { Search, Star, MapPin, Compass, ArrowUpDown, Clock, Ticket, RefreshCw, ChevronRight, Accessibility, Mic } from 'lucide-react';
 import { SVG_COLORS } from '../data/colors';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { AccessibilityBadge } from './AccessibilityBadge';
-import { searchDestinationsWithTrie, getDestinationMap } from '../utils/destinationTrie';
+import { api, useApi } from '../api';
 import { ImageWithFallback } from './ImageWithFallback';
 
 interface ExploreViewProps {
@@ -143,26 +144,8 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
   // USER QUERY -> TRIE SEARCH -> MATCHING RESULT IDS -> LOOK UP ORIGINAL RECORDS -> FILTERS -> SORTING -> UI
 
   // 1. Trie Search: query the memoized Suffix/Prefix Trie index to get matching destination IDs
-  const matchingDestinationIds = useMemo(() => {
-    return searchDestinationsWithTrie(searchQuery);
-  }, [searchQuery]);
-
-  // 2. Lookup Original Records: map matched IDs directly to destination records using O(1) Map lookup
-  const candidateDestinations = useMemo(() => {
-    if (matchingDestinationIds === null) {
-      // Empty search query: all destinations are candidates
-      return GUJARAT_DESTINATIONS;
-    }
-    const destMap = getDestinationMap();
-    const records: Destination[] = [];
-    for (const id of matchingDestinationIds) {
-      const dest = destMap.get(id);
-      if (dest) {
-        records.push(dest);
-      }
-    }
-    return records;
-  }, [matchingDestinationIds]);
+  const search = useApi(signal => api.search(searchQuery, signal), [searchQuery], true, 300);
+  const candidateDestinations = search.data ?? [];
 
   // 3 & 4. Filter & Sort: apply existing category/demand/accessibility filters and sorting to Trie candidates
   const filteredDestinations = useMemo(() => {
@@ -181,7 +164,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
 
         // Physical demand match
         if (selectedDemands.length > 0) {
-          const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
+          const primaryDemand = dest.attractions?.[0]?.physicalDemand;
           if (!selectedDemands.includes(primaryDemand)) return false;
         }
 
@@ -200,7 +183,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
           // Demand ordering: MODERATE > HIGH > LOW, alphabetical tie-break
           const demandOrder: Record<string, number> = { 'moderate': 0, 'high': 1, 'low': 2 };
           const getDemandRank = (dest: typeof a) => {
-            const primaryDemand = dest.attractions?.[0]?.physicalDemand || 'moderate';
+            const primaryDemand = dest.attractions?.[0]?.physicalDemand;
             return demandOrder[primaryDemand] ?? 1;
           };
           const rankDiff = getDemandRank(a) - getDemandRank(b);
@@ -223,6 +206,8 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
     <div id="explore" className="bg-salt py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-b border-stone/30">
       <div className="max-w-7xl mx-auto space-y-10">
         
+        {search.loading && <p role="status">Loading destinations...</p>}
+        {search.error && <p role="alert">{search.error} <button onClick={search.reload}>Retry</button></p>}
         {/* Header Title */}
         <div className="border-b border-stone/30 pb-6">
           <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
@@ -403,7 +388,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         <div className="flex items-center justify-between text-xs font-mono text-stone border-b border-stone/20 pb-2">
           <span>
             {language === 'hi' ? 'दर्शाया जा रहा है' : 'Showing'} <strong className="text-charcoal">{filteredDestinations.length}</strong> {language === 'hi' ? 'में से' : 'of'}{' '}
-            <strong className="text-charcoal">{GUJARAT_DESTINATIONS.length}</strong> {language === 'hi' ? 'विरासत स्थल' : 'heritage destinations'}
+            <strong className="text-charcoal">{candidateDestinations.length}</strong> {language === 'hi' ? 'विरासत स्थल' : 'heritage destinations'}
           </span>
           {(searchQuery || selectedCategory !== 'All Categories') && (
             <button
@@ -479,7 +464,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                       {dest.attractions && dest.attractions.length > 0 && (
                         <div className="pt-2">
                           <AccessibilityBadge
-                            wheelchairAccessible={dest.attractions.some(a => a.wheelchairAccessible)}
+                            wheelchairAccessible={dest.attractions.some(a => a.wheelchairAccessible === true) ? true : dest.attractions.length > 0 && dest.attractions.every(a => a.wheelchairAccessible === false) ? false : undefined}
                             physicalDemand={dest.attractions[0]?.physicalDemand}
                           />
                         </div>

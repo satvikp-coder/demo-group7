@@ -1,0 +1,74 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Vishala+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 247520130,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 4488573958,
+      "lat": "22.9954909",
+      "lon": "72.5335463",
+      "category": "place",
+      "type": "locality",
+      "place_rank": 25,
+      "importance": 0.06673300450141145,
+      "addresstype": "locality",
+      "name": "Vishala",
+      "display_name": "Vishala, Vatva Taluka, Ahmedabad, Gujarat, 380055, India",
+      "extratags": null,
+      "boundingbox": [
+        "22.9854909",
+        "23.0054909",
+        "72.5235463",
+        "72.5435463"
+      ]
+    },
+    {
+      "place_id": 248469887,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 440339381,
+      "lat": "22.9936417",
+      "lon": "72.5357058",
+      "category": "amenity",
+      "type": "restaurant",
+      "place_rank": 30,
+      "importance": 6.633783474474735e-05,
+      "addresstype": "amenity",
+      "name": "Vishala",
+      "display_name": "Vishala, Narol-Sarkhej Road, Vatva Taluka, Ahmedabad, Gujarat, 380055, India",
+      "extratags": {
+        "cuisine": "indian"
+      },
+      "boundingbox": [
+        "22.9935917",
+        "22.9936917",
+        "72.5356558",
+        "72.5357558"
+      ]
+    },
+    {
+      "place_id": 248679716,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 142616352,
+      "lat": "22.9904339",
+      "lon": "72.5556914",
+      "category": "waterway",
+      "type": "dam",
+      "place_rank": 20,
+      "importance": 0.1333996711680781,
+      "addresstype": "dam",
+      "name": "Vishala Dam",
+      "display_name": "Vishala Dam, Vatva Taluka, Ahmedabad, Gujarat, 380007, India",
+      "extratags": null,
+      "boundingbox": [
+        "22.9883154",
+        "22.9925494",
+        "72.5537781",
+        "72.5576020"
+      ]
+    }
+  ]
+}

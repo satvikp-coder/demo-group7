@@ -1,0 +1,31 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Triveni+Sangam+Somnath&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 249036739,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 120383211,
+      "lat": "20.8858865",
+      "lon": "70.4094794",
+      "category": "highway",
+      "type": "tertiary",
+      "place_rank": 26,
+      "importance": 0.053383020523384415,
+      "addresstype": "road",
+      "name": "Triveni Sangam Gita Mandir Road",
+      "display_name": "Triveni Sangam Gita Mandir Road, Somnath, Veraval, Patan Veraval Taluka, Gir Somnath, Gujarat, 362200, India",
+      "extratags": {
+        "lanes": "2",
+        "oneway": "yes"
+      },
+      "boundingbox": [
+        "20.8849012",
+        "20.8865584",
+        "70.4069166",
+        "70.4119223"
+      ]
+    }
+  ]
+}

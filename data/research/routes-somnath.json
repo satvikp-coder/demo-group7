@@ -1,0 +1,405 @@
+{
+  "city": "somnath",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/70.384880,20.911796;70.401391,20.887761;70.412766,20.884563;70.402828,20.885133;70.393221,20.926537;70.408111,20.899600?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+      "external_id": "a102",
+      "slug": null,
+      "destination_id": "58ce0ce1-ecf6-4bb3-93c0-23c9a778d919",
+      "name": "Bhalka Tirth",
+      "lat": "20.911796",
+      "lng": "70.384880",
+      "duration_hours": "1.00",
+      "rating": "4.7",
+      "category": "Temple",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "20:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": null,
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Bhalka Tirth commemorates the traditional account of Krishna being struck by a hunter's arrow near Prabhas Patan.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/relation/12361397",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "52045991500483773971f981bbccb09ab28f8af0746f6333d779b70efc2ed8a8",
+      "kind": "attraction"
+    },
+    {
+      "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+      "external_id": "a101",
+      "slug": null,
+      "destination_id": "58ce0ce1-ecf6-4bb3-93c0-23c9a778d919",
+      "name": "Somnath Temple",
+      "lat": "20.887761",
+      "lng": "70.401391",
+      "duration_hours": "1.50",
+      "rating": "4.9",
+      "category": "Temple",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "22:00:00",
+      "wheelchair_accessible": true,
+      "physical_demand": null,
+      "best_time_note": "Trust provides wheelchairs and golf carts at the main gate and a lift inside the premises. Darshan 06:00\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u015322:00; aarti 07:00, 12:00 and 19:00. Electronic devices must be left in lockers.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "The Somnath temple at Prabhas Patan is a Shiva pilgrimage shrine traditionally regarded as the first of the twelve Jyotirlingas.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/way/120383261",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "8410c6477a319b1aee6ac01e615cdf265b5bdcf8accf05b882916a005f612712",
+      "kind": "attraction"
+    },
+    {
+      "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+      "external_id": "a103",
+      "slug": null,
+      "destination_id": "58ce0ce1-ecf6-4bb3-93c0-23c9a778d919",
+      "name": "Triveni Sangam",
+      "lat": "20.884563",
+      "lng": "70.412766",
+      "duration_hours": "1.00",
+      "rating": "4.4",
+      "category": "Sacred Site",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "19:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "The visitor area includes stepped ghats. Wheelchair access to the water is unverified.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Triveni Sangam is the pilgrimage ghat where the Hiran, Kapila and Saraswati rivers are traditionally identified as meeting the Arabian Sea.",
+      "gujarati_name": "???? ???????? ???? ???",
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.google.com/maps/place/Shree+Triveni+Sangam+Ghat/@20.8845625,70.4082595,17z/data=!4m10!1m2!2m1!1sTriveni+Sangam+Ghat+Somnath!3m6!1s0x3bfd2d583c042d95:0x1201080dbcfc85b1!8m2!3d20.8845625!4d70.4127656!15sChtUcml2ZW5pIFNhbmdhbSBHaGF0IFNvbW5hdGhaHSIbdHJpdmVuaSBzYW5nYW0gZ2hhdCBzb21uYXRokgEMaGluZHVfdGVtcGxlmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDIxYVYwMVdhRk5hVlZwMllURk9lbUl4Y0ROa2VtZ3dZVlJuZDFWRlJSQULgAQD6AQQIABBK!16s%2Fg%2F11rml56fy5?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "2fb3166c4d703f664bab9c7b250cc9a6706f5cf6be00872bd05fb7cf2e4856f5",
+      "kind": "attraction"
+    },
+    {
+      "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+      "external_id": "a104",
+      "slug": null,
+      "destination_id": "58ce0ce1-ecf6-4bb3-93c0-23c9a778d919",
+      "name": "Somnath Beach",
+      "lat": "20.885133",
+      "lng": "70.402828",
+      "duration_hours": "1.50",
+      "rating": "4.4",
+      "category": "Nature",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "22:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": null,
+      "transport_mode": null,
+      "image_url": null,
+      "image_alt": null,
+      "description": "Somnath Beach is the sandy shore beside the Somnath temple area on Gujarat's Arabian Sea coast.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps 2026",
+      "source_url": "https://www.openstreetmap.org/way/559250415",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "a2d373180fb66ffd6f5b7e8cae4e795dffa206a4314efed62fa4bdd032bd29df",
+      "kind": "attraction"
+    },
+    {
+      "id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "external_id": "h101",
+      "slug": null,
+      "destination_id": "58ce0ce1-ecf6-4bb3-93c0-23c9a778d919",
+      "name": "Premier Somnath",
+      "lat": "20.926537",
+      "lng": "70.393221",
+      "price_per_night": 3972,
+      "rating": "4.7",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Unique Plaza complex, Junagadh Highway Road, near Regenta Hotel, Bhalpara Part, Gujarat 362268",
+      "description": "Hotel The Premier Somnath is a hotel in Bhalpara Part, offering air-conditioned rooms, private bathrooms, Wi-Fi and parking.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Holidify/Momondo 2026",
+      "source_url": "https://www.google.com/maps?cid=11609292367188158366",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "3b1a58e75c9f361f96894dfc4e6a11a9d53ac2ab650148413fd6497f2760f9af",
+      "kind": "hotel"
+    },
+    {
+      "id": "df7dfe02-bf46-4434-8596-d90dad17298f",
+      "external_id": "r102",
+      "slug": null,
+      "destination_id": "58ce0ce1-ecf6-4bb3-93c0-23c9a778d919",
+      "name": "Honest Restaurant Somnath",
+      "lat": "20.899600",
+      "lng": "70.408111",
+      "rating": "3.6",
+      "avg_cost_per_person": 300,
+      "location": "Bypass Corner, Somnath, Gujarat 362268",
+      "cuisine": "Indian vegetarian",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": null,
+      "source_url": "https://www.google.com/maps/place/HONEST+RESTAURANT+SOMNATH/@20.9027959,70.3962008,15z/data=!4m10!1m2!2m1!1sHonest+Restaurant+Somnath+Bypass!3m6!1s0x3bfd32bd8de0cb4d:0x2b2510e49bd78f0f!8m2!3d20.8995997!4d70.4081108!15sCiBIb25lc3QgUmVzdGF1cmFudCBTb21uYXRoIEJ5cGFzcyIDiAEBWiIiIGhvbmVzdCByZXN0YXVyYW50IHNvbW5hdGggYnlwYXNzkgEKcmVzdGF1cmFudOABAA!16s%2Fg%2F11g9qcmttp?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        4070.1,
+        5329.4,
+        4974.7,
+        3625.2,
+        4281.3
+      ],
+      [
+        4070.1,
+        0,
+        1317.5,
+        962.8,
+        6151.2,
+        3642.8
+      ],
+      [
+        5541.9,
+        1304.4,
+        0,
+        1203.4,
+        6877,
+        4368.6
+      ],
+      [
+        4854.9,
+        928.2,
+        1259.5,
+        0,
+        7579.1,
+        5070.8
+      ],
+      [
+        3888.9,
+        6500.2,
+        5739.1,
+        6470,
+        0,
+        3711
+      ],
+      [
+        5239.1,
+        2905.1,
+        2144,
+        2874.9,
+        6432.8,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "9fiMj_j4jI8-AAAAUQAAAAAAAADpAAAATqPPQWZpBkIAAAAAJHLBQj4AAABRAAAAAAAAAOkAAAB7JwEASv0xBCsVPwHw_DEEtBY_AQAAHxAAAAAA",
+        "location": [
+          70.38497,
+          20.911403
+        ],
+        "name": "",
+        "distance": 44.50718853
+      },
+      {
+        "hint": "TctJgxCffYisAAAAcgAAAAAAAABmAAAA4WOPQqnMPUIAAAAADEsrQqwAAAByAAAAAAAAAGYAAAB7JwEAbz0yBMG7PgFvPTIE0bg-AQAA7xAAAAAA",
+        "location": [
+          70.401391,
+          20.888513
+        ],
+        "name": "",
+        "distance": 83.25798607
+      },
+      {
+        "hint": "8CWKjxvui48QAAAAAgAAAGQAAAA8AAAAhbCSQVJq6T_SC-BCuMOFQhAAAAACAAAAZAAAADwAAAB7JwEApWkyBECtPgHeaTIEU6w-AQ4AHxAAAAAA",
+        "location": [
+          70.412709,
+          20.8848
+        ],
+        "name": "Gita Mandir Road",
+        "distance": 26.90155357
+      },
+      {
+        "hint": "0519iJ-Eh4_fAAAAPgAAAGwBAAAAAAAA5bS5QgOezUFJ1BdDAAAAAN8AAAA-AAAAbAEAAAAAAAB7JwEAmUQyBBuyPgEMQzIEja4-AQYATxIAAAAA",
+        "location": [
+          70.403225,
+          20.886043
+        ],
+        "name": "Somnath Beach Road",
+        "distance": 108.8913537
+      },
+      {
+        "hint": "LMpti____38kAAAAPgAAAAAAAAAAAAAA-s2sQomCcEIAAAAAAAAAACQAAAA-AAAAAAAAAAAAAAB7JwEAQh0yBL1PPwGFHTIESVA_AQAAHwcAAAAA",
+        "location": [
+          70.393154,
+          20.926397
+        ],
+        "name": "",
+        "distance": 16.99504271
+      },
+      {
+        "hint": "6HaMjzJHj48JAAAADAAAAB8AAAB4AAAA7GSAQFP4mkBWQElBBo5HQgkAAAAMAAAAHwAAAHgAAAB7JwEAaVcyBP7mPgGvVzIEEOc-AQgATwoAAAAA",
+        "location": [
+          70.408041,
+          20.899582
+        ],
+        "name": "",
+        "distance": 7.551674122
+      }
+    ],
+    "durations": [
+      [
+        0,
+        297.1,
+        383.5,
+        418.5,
+        252.7,
+        349.2
+      ],
+      [
+        298.3,
+        0,
+        135.5,
+        170.5,
+        439.6,
+        300.1
+      ],
+      [
+        378.2,
+        139.4,
+        0,
+        183.1,
+        420.8,
+        281.3
+      ],
+      [
+        426.8,
+        172.6,
+        188.7,
+        0,
+        533.2,
+        393.7
+      ],
+      [
+        320.8,
+        360.2,
+        320.9,
+        425.7,
+        0,
+        169.4
+      ],
+      [
+        331.3,
+        229,
+        189.7,
+        294.5,
+        356.6,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "9fiMj_j4jI8-AAAAUQAAAAAAAADpAAAATqPPQWZpBkIAAAAAJHLBQj4AAABRAAAAAAAAAOkAAAB7JwEASv0xBCsVPwHw_DEEtBY_AQAAHxAAAAAA",
+        "location": [
+          70.38497,
+          20.911403
+        ],
+        "name": "",
+        "distance": 44.50718853
+      },
+      {
+        "hint": "TctJgxCffYisAAAAcgAAAAAAAABmAAAA4WOPQqnMPUIAAAAADEsrQqwAAAByAAAAAAAAAGYAAAB7JwEAbz0yBMG7PgFvPTIE0bg-AQAA7xAAAAAA",
+        "location": [
+          70.401391,
+          20.888513
+        ],
+        "name": "",
+        "distance": 83.25798607
+      },
+      {
+        "hint": "8CWKjxvui48QAAAAAgAAAGQAAAA8AAAAhbCSQVJq6T_SC-BCuMOFQhAAAAACAAAAZAAAADwAAAB7JwEApWkyBECtPgHeaTIEU6w-AQ4AHxAAAAAA",
+        "location": [
+          70.412709,
+          20.8848
+        ],
+        "name": "Gita Mandir Road",
+        "distance": 26.90155357
+      },
+      {
+        "hint": "0519iJ-Eh4_fAAAAPgAAAGwBAAAAAAAA5bS5QgOezUFJ1BdDAAAAAN8AAAA-AAAAbAEAAAAAAAB7JwEAmUQyBBuyPgEMQzIEja4-AQYATxIAAAAA",
+        "location": [
+          70.403225,
+          20.886043
+        ],
+        "name": "Somnath Beach Road",
+        "distance": 108.8913537
+      },
+      {
+        "hint": "LMpti____38kAAAAPgAAAAAAAAAAAAAA-s2sQomCcEIAAAAAAAAAACQAAAA-AAAAAAAAAAAAAAB7JwEAQh0yBL1PPwGFHTIESVA_AQAAHwcAAAAA",
+        "location": [
+          70.393154,
+          20.926397
+        ],
+        "name": "",
+        "distance": 16.99504271
+      },
+      {
+        "hint": "6HaMjzJHj48JAAAADAAAAB8AAAB4AAAA7GSAQFP4mkBWQElBBo5HQgkAAAAMAAAAHwAAAHgAAAB7JwEAaVcyBP7mPgGvVzIEEOc-AQgATwoAAAAA",
+        "location": [
+          70.408041,
+          20.899582
+        ],
+        "name": "",
+        "distance": 7.551674122
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

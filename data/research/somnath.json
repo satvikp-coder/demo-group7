@@ -1,0 +1,302 @@
+{
+  "city": "somnath",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "somnath",
+      "values": {
+        "district": "Gir Somnath",
+        "location": "Prabhas Patan, near Veraval, Gujarat",
+        "category": "Religious",
+        "description": "Somnath, also known as Prabhas Patan, is a coastal pilgrimage destination near Veraval. Visitors come to the Somnath Jyotirlinga temple and nearby sites associated with Krishna.",
+        "best_time": "October to February",
+        "highlights": [
+          "Somnath Jyotirlinga Temple",
+          "Triveni Sangam",
+          "Bhalka Tirth"
+        ]
+      },
+      "sources": [
+        "https://girsomnath.nic.in/tourist-place/the-somnath-temple/",
+        "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html"
+      ],
+      "notes": "Destination metadata; no destination-wide admission fee inferred."
+    },
+    {
+      "table": "attractions",
+      "key": "a101",
+      "values": {
+        "closing_time": "22:00:00",
+        "wheelchair_accessible": true,
+        "description": "The Somnath temple at Prabhas Patan is a Shiva pilgrimage shrine traditionally regarded as the first of the twelve Jyotirlingas.",
+        "best_time_note": "Trust provides wheelchairs and golf carts at the main gate and a lift inside the premises. Darshan 06:00-22:00; aarti 07:00, 12:00 and 19:00. Electronic devices must be left in lockers.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://somnath.org/faq/",
+        "https://girsomnath.nic.in/tourist-place/the-somnath-temple/"
+      ],
+      "notes": "Official trust confirms mobility facilities; this boolean covers temple visitor access, not surrounding routes or beach. Closing time corrected from 21:00. Free entrance independently confirmed."
+    },
+    {
+      "table": "attractions",
+      "key": "a102",
+      "values": {
+        "description": "Bhalka Tirth commemorates the traditional account of Krishna being struck by a hunter's arrow near Prabhas Patan.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://indiacinehub.gov.in/location/somnath"
+      ],
+      "notes": "Religious tradition is attributed, not asserted as verified historical event. Accessibility still unknown."
+    },
+    {
+      "table": "attractions",
+      "key": "a103",
+      "values": {
+        "description": "Triveni Sangam is the pilgrimage ghat where the Hiran, Kapila and Saraswati rivers are traditionally identified as meeting the Arabian Sea.",
+        "best_time_note": "The visitor area includes stepped ghats. Wheelchair access to the water is unverified.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://girsomnath.nic.in/tourist-place/triveni-sangam/",
+        "https://gujarattourism.com/saurashtra/gir-somnath/triveni-sangam.html"
+      ],
+      "notes": "Do not import the tourism page's apparent Prayagraj Kumbh/Magh Mela copy into Somnath metadata."
+    },
+    {
+      "table": "attractions",
+      "key": "a104",
+      "values": {
+        "description": "Somnath Beach is the sandy shore beside the Somnath temple area on Gujarat's Arabian Sea coast."
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/559250415",
+        "https://gujarattourism.com/tripplanner/gallery"
+      ],
+      "notes": "Mapped beach confirmed. No wheelchair suitability or swimming safety inferred."
+    },
+    {
+      "table": "hotels",
+      "key": "h101",
+      "values": {
+        "location": "Unique Plaza complex, Junagadh Highway Road, near Regenta Hotel, Bhalpara Part, Gujarat 362268",
+        "description": "Hotel The Premier Somnath is a hotel in Bhalpara Part, offering air-conditioned rooms, private bathrooms, Wi-Fi and parking."
+      },
+      "sources": [
+        "https://www.google.co.in/travel/hotels/entity/CgsIns-dv-O8n46hARAB",
+        "https://www.booking.com/hotel/in/the-premier-somnath.html"
+      ],
+      "notes": "Existing common name Premier Somnath retained to preserve experiment identity; exact business name recorded in description. Original coordinates duplicate the temple and require correction before routing. EaseMyTrip coordinate 21.207811,70.262293 rejected: inconsistent with Bhalpara address and independent 6.4km temple distance. Existing price retained pending quote verification."
+    },
+    {
+      "table": "attractions",
+      "key": "a101",
+      "values": {
+        "lat": 20.887761,
+        "lng": 70.401391
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/120383261"
+      ],
+      "notes": "Named geometry in Gir Somnath verified. Representative coordinate, not certified accessible entrance. Raw map response archived."
+    },
+    {
+      "table": "attractions",
+      "key": "a102",
+      "values": {
+        "lat": 20.911796,
+        "lng": 70.38488
+      },
+      "sources": [
+        "https://www.openstreetmap.org/relation/12361397"
+      ],
+      "notes": "Named geometry in Gir Somnath verified. Representative coordinate, not certified accessible entrance. Raw map response archived."
+    },
+    {
+      "table": "attractions",
+      "key": "a104",
+      "values": {
+        "lat": 20.885133,
+        "lng": 70.402828
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/559250415"
+      ],
+      "notes": "Named geometry in Gir Somnath verified. Representative coordinate, not certified accessible entrance. Raw map response archived."
+    },
+    {
+      "table": "hotels",
+      "key": "h101",
+      "values": {
+        "lat": 20.926537,
+        "lng": 70.393221,
+        "price_per_night": 3972,
+        "rating": 4.7
+      },
+      "sources": [
+        "https://www.google.com/maps?cid=11609292367188158366",
+        "https://thepremierhotels.in/"
+      ],
+      "notes": "Exact business map opened in Chrome; raw evidence pages/premier-somnath-map.json. Corrects temple-copy coordinates. Representative Agoda quote INR3972 displayed for 2 adults, one night 2?3 October 2026; room category/tax inclusion unspecified. Not a fixed tariff. Google business rating 4.7/5. Preserve common name for experiment identity."
+    },
+    {
+      "table": "attractions",
+      "key": "a103",
+      "values": {
+        "lat": 20.884563,
+        "lng": 70.412766,
+        "rating": 4.4,
+        "gujarati_name": "શ્રી ત્રિવેણી સંગમ ઘાટ"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/Shree+Triveni+Sangam+Ghat/@20.8845625,70.4082595,17z/data=!4m10!1m2!2m1!1sTriveni+Sangam+Ghat+Somnath!3m6!1s0x3bfd2d583c042d95:0x1201080dbcfc85b1!8m2!3d20.8845625!4d70.4127656!15sChtUcml2ZW5pIFNhbmdhbSBHaGF0IFNvbW5hdGhaHSIbdHJpdmVuaSBzYW5nYW0gZ2hhdCBzb21uYXRokgEMaGluZHVfdGVtcGxlmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDIxYVYwMVdhRk5hVlZwMllURk9lbUl4Y0ROa2VtZ3dZVlJuZDFWRlJSQULgAQD6AQQIABBK!16s%2Fg%2F11rml56fy5?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Exact ghat business location; not search-centre or nearby road geometry. Google business rating on check date. Corrected encoding corruption using exact archived business label."
+    },
+    {
+      "table": "restaurants",
+      "key": "r102",
+      "values": {
+        "name": "Honest Restaurant Somnath",
+        "lat": 20.8996,
+        "lng": 70.408111,
+        "rating": 3.6,
+        "avg_cost_per_person": 300,
+        "location": "Bypass Corner, Somnath, Gujarat 362268",
+        "cuisine": "Indian vegetarian",
+        "source": "Google Maps business listing; Restaurant Guru price range"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/HONEST+RESTAURANT+SOMNATH/@20.9027959,70.3962008,15z/data=!4m10!1m2!2m1!1sHonest+Restaurant+Somnath+Bypass!3m6!1s0x3bfd32bd8de0cb4d:0x2b2510e49bd78f0f!8m2!3d20.8995997!4d70.4081108!15sCiBIb25lc3QgUmVzdGF1cmFudCBTb21uYXRoIEJ5cGFzcyIDiAEBWiIiIGhvbmVzdCByZXN0YXVyYW50IHNvbW5hdGggYnlwYXNzkgEKcmVzdGF1cmFudOABAA!16s%2Fg%2F11g9qcmttp?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D",
+        "https://restaurant-guru.in/HonesT-Restaurant-Somnath-2"
+      ],
+      "notes": "Coordinates/name/rating from exact Google business listing; INR300 is midpoint of Restaurant Guru published INR200?400 per-person range, not a fixed menu tariff. Legacy Toran Dining Hall Somnath is preserved but unverified and excluded from new route collection."
+    },
+    {
+      "table": "attractions",
+      "key": "a102",
+      "values": {
+        "slug": "bhalka-tirth-somnath"
+      },
+      "sources": [
+        "https://indiacinehub.gov.in/location/somnath",
+        "https://www.openstreetmap.org/relation/12361397"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a101",
+      "values": {
+        "slug": "somnath-temple-somnath"
+      },
+      "sources": [
+        "https://somnath.org/faq/",
+        "https://girsomnath.nic.in/tourist-place/the-somnath-temple/",
+        "https://www.openstreetmap.org/way/120383261"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a103",
+      "values": {
+        "slug": "triveni-sangam-somnath"
+      },
+      "sources": [
+        "https://girsomnath.nic.in/tourist-place/triveni-sangam/",
+        "https://gujarattourism.com/saurashtra/gir-somnath/triveni-sangam.html",
+        "https://www.google.com/maps/place/Shree+Triveni+Sangam+Ghat/@20.8845625,70.4082595,17z/data=!4m10!1m2!2m1!1sTriveni+Sangam+Ghat+Somnath!3m6!1s0x3bfd2d583c042d95:0x1201080dbcfc85b1!8m2!3d20.8845625!4d70.4127656!15sChtUcml2ZW5pIFNhbmdhbSBHaGF0IFNvbW5hdGhaHSIbdHJpdmVuaSBzYW5nYW0gZ2hhdCBzb21uYXRokgEMaGluZHVfdGVtcGxlmgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDIxYVYwMVdhRk5hVlZwMllURk9lbUl4Y0ROa2VtZ3dZVlJuZDFWRlJSQULgAQD6AQQIABBK!16s%2Fg%2F11rml56fy5?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a104",
+      "values": {
+        "slug": "somnath-beach-somnath"
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/559250415",
+        "https://gujarattourism.com/tripplanner/gallery"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "hotels",
+      "key": "h101",
+      "values": {
+        "slug": "premier-somnath-somnath"
+      },
+      "sources": [
+        "https://www.google.co.in/travel/hotels/entity/CgsIns-dv-O8n46hARAB",
+        "https://www.booking.com/hotel/in/the-premier-somnath.html",
+        "https://www.google.com/maps?cid=11609292367188158366",
+        "https://thepremierhotels.in/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "restaurants",
+      "key": "r102",
+      "values": {
+        "slug": "honest-restaurant-somnath-somnath"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/HONEST+RESTAURANT+SOMNATH/@20.9027959,70.3962008,15z/data=!4m10!1m2!2m1!1sHonest+Restaurant+Somnath+Bypass!3m6!1s0x3bfd32bd8de0cb4d:0x2b2510e49bd78f0f!8m2!3d20.8995997!4d70.4081108!15sCiBIb25lc3QgUmVzdGF1cmFudCBTb21uYXRoIEJ5cGFzcyIDiAEBWiIiIGhvbmVzdCByZXN0YXVyYW50IHNvbW5hdGggYnlwYXNzkgEKcmVzdGF1cmFudOABAA!16s%2Fg%2F11g9qcmttp?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D",
+        "https://restaurant-guru.in/HonesT-Restaurant-Somnath-2"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "destinations",
+      "key": "somnath",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg",
+        "image_alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "attractions",
+      "key": "a101",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg",
+        "image_alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "attractions",
+      "key": "a104",
+      "values": {
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://router.project-osrm.org/table/v1/driving/70.384880,20.911796;70.401391,20.887761;70.412766,20.884563;70.402828,20.885133;70.393221,20.926537;70.408111,20.899600?annotations=distance,duration"
+      ],
+      "notes": "Road approach represented by the archived OSRM driving routes to this attraction anchor. Does not claim vehicle access within the attraction or wheelchair suitability."
+    },
+    {
+      "table": "destinations",
+      "key": "somnath",
+      "values": {
+        "official_category": "Religious Sites"
+      },
+      "sources": [
+        "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html"
+      ],
+      "notes": "Project primary category for the Somnath pilgrimage circuit, supported by Gujarat Tourism temple description."
+    }
+  ]
+}

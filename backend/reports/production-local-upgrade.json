@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-01T04:57:30.813Z",
+  "verified": true,
+  "beforeCounts": {
+    "destinations": 8,
+    "attractions": 25,
+    "hotels": 11,
+    "restaurants": 12,
+    "routes": 131,
+    "users": 0,
+    "trips": 0,
+    "itinerary_stops": 0,
+    "budgets": 0
+  },
+  "backupCreated": true,
+  "originalRowsPreserved": true,
+  "reseedPasses": 2,
+  "fieldReviewedRows": "21"
+}

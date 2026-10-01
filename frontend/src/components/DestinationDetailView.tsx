@@ -1,5 +1,7 @@
+import { displayNumber } from "../api";
 import React, { useState } from "react";
-import { Destination } from "../data/destinations";
+import { api, useApi, EMPTY_DESTINATION } from "../api";
+import type { Destination } from "../api/types";
 import {
   ArrowLeft,
   Star,
@@ -37,7 +39,7 @@ interface DestinationDetailViewProps {
 // is reserved for a follow-up content pass. Core UI labels, headings, buttons, and site/attraction names use active localization.
 
 export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
-  destination,
+  destination: requestedDestination,
   preferredHotels,
   onSelectPreferredHotel,
   onBack,
@@ -47,6 +49,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   onOpenPlannerWithSite,
 }) => {
   const { language, t, getName } = useLanguage();
+  const request = useApi(signal => api.destination(requestedDestination.id, signal), [requestedDestination.id]);
+  const destination = request.data ?? EMPTY_DESTINATION;
   const [wheelchairOnly, setWheelchairOnly] = useState<boolean>(false);
   const [selectedDemands, setSelectedDemands] = useState<
     ("low" | "moderate" | "high")[]
@@ -68,6 +72,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
     return true;
   });
 
+  if (request.loading) return <p role="status">Loading destination...</p>;
+  if (request.error) return <p role="alert">{request.error} <button onClick={request.reload}>Retry</button></p>;
   return (
     <div className="bg-salt min-h-screen border-b border-stone/30 animate-fadeIn">
       {/* 1. FULL-WIDTH HERO IMAGE BAND */}
@@ -419,7 +425,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                           </span>
                           <span className="font-mono text-xs text-gold font-bold flex items-center gap-1 rounded-md">
                             <Star className="w-3.5 h-3.5 fill-gold text-gold" />
-                            {attr.rating}
+                            {displayNumber(attr.rating)}
                           </span>
                         </div>
 

@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import {
-  GUJARAT_DESTINATIONS,
-  Destination,
-  Attraction,
-  Restaurant,
-} from "../data/destinations";
+import React, { useState, useEffect, useRef } from "react";
+import { api, useApi, errorMessage } from "../api";
 import { HotelData } from "./HotelsView";
 import { useLanguage } from "../context/LanguageContext";
-import { resetDestinationTrie } from "../utils/destinationTrie";
+
 import {
   Building2,
   MapPin,
@@ -80,72 +75,6 @@ export interface AdminRestaurantItem {
   lastUpdated: string;
 }
 
-// Initial Data
-const INITIAL_DESTINATIONS: AdminDestinationItem[] = GUJARAT_DESTINATIONS.map(
-  (d) => ({
-    id: d.id,
-    name: d.name,
-    district: d.district,
-    category: (d.officialCategory ||
-      d.category) as AdminDestinationItem["category"],
-    estimatedCost: d.entryFeeNumeric || 3500,
-    rating: parseFloat(d.rating) || 4.7,
-    lastUpdated: "2026-10-04",
-  }),
-);
-
-const flattenHotels = (): AdminHotelItem[] => {
-  const items: AdminHotelItem[] = [];
-  GUJARAT_DESTINATIONS.forEach((dest) => {
-    (dest.hotels || []).forEach((h) => {
-      items.push({
-        id: h.id,
-        name: h.name,
-        destinationId: dest.id,
-        district: dest.district,
-        stayType: h.stayType,
-        pricePerNight: h.priceNumeric,
-        rating: h.ratingNumeric,
-        lastUpdated: "2026-10-02",
-      });
-    });
-  });
-  return items;
-};
-
-const INITIAL_HOTELS: AdminHotelItem[] = flattenHotels();
-
-const INITIAL_ATTRACTIONS: AdminAttractionItem[] = GUJARAT_DESTINATIONS.flatMap(
-  (c) =>
-    (c.attractions || []).map((a) => ({
-      id: a.id,
-      name: a.name,
-      destinationName: c.name,
-      district: c.district,
-      category: a.category,
-      rating: a.rating,
-      visitDurationHours: a.durationHours,
-      lat: a.lat,
-      lng: a.lng,
-      entryFee: a.entryFee,
-      lastUpdated: "2026-10-05",
-    })),
-);
-
-const INITIAL_RESTAURANTS: AdminRestaurantItem[] = GUJARAT_DESTINATIONS.flatMap(
-  (c) =>
-    (c.restaurants || []).map((r) => ({
-      id: r.id,
-      name: r.name,
-      city: c.name,
-      location: r.location,
-      rating: r.rating,
-      avgCostPerPerson: r.avgCostPerPerson,
-      cuisine: r.cuisine || "Gujarati Thali",
-      lastUpdated: "2026-10-05",
-    })),
-);
-
 export const CATEGORY_TAXONOMY = [
   "UNESCO World Heritage Site",
   "Heritage Sites",
@@ -174,14 +103,23 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     "destinations" | "hotels" | "attractions" | "restaurants"
   >("destinations");
 
-  const [destinations, setDestinations] =
-    useState<AdminDestinationItem[]>(INITIAL_DESTINATIONS);
-  const [hotels, setHotels] = useState<AdminHotelItem[]>(INITIAL_HOTELS);
-  const [attractions, setAttractions] =
-    useState<AdminAttractionItem[]>(INITIAL_ATTRACTIONS);
-  const [restaurants, setRestaurants] =
-    useState<AdminRestaurantItem[]>(INITIAL_RESTAURANTS);
-
+  const request = useApi(async signal => {
+    const [destinations, hotels, attractions, restaurants] = await Promise.all(
+      ["destinations", "hotels", "attractions", "restaurants"].map(resource => api.adminList(resource, signal)));
+    const city = (id: string) => destinations.find(d => d.id === id);
+    return {
+      destinations: destinations.map(d => ({...d,category:d.official_category ?? d.category ?? "",estimatedCost:d.entry_fee_numeric == null ? null : Number(d.entry_fee_numeric),rating:d.rating == null ? null : Number(d.rating),lastUpdated:"Not available"})),
+      hotels: hotels.map(h => ({...h,destinationId:h.destination_id,district:city(h.destination_id)?.district ?? "",stayType:h.stay_type,pricePerNight:h.price_per_night,rating:h.rating == null ? null : Number(h.rating),lastUpdated:"Not available"})),
+      attractions: attractions.map(a => ({...a,destinationId:a.destination_id,destinationName:city(a.destination_id)?.name ?? "",district:city(a.destination_id)?.district ?? "",visitDurationHours:Number(a.duration_hours),rating:a.rating == null ? null : Number(a.rating),entryFee:a.entry_fee ?? "",entryFeeNumeric:a.entry_fee_numeric == null ? null : Number(a.entry_fee_numeric),lat:Number(a.lat),lng:Number(a.lng),lastUpdated:"Not available"})),
+      restaurants: restaurants.map(r => ({...r,destinationId:r.destination_id,city:city(r.destination_id)?.name ?? "",rating:r.rating == null ? null : Number(r.rating),avgCostPerPerson:r.avg_cost_per_person,lastUpdated:"Not available"})),
+    };
+  }, ["admin"]);
+  const destinations = request.data?.destinations ?? [];
+  const hotels = request.data?.hotels ?? [];
+  const attractions = request.data?.attractions ?? [];
+  const restaurants = request.data?.restaurants ?? [];
+  const [pending, setPending] = useState(false);
+  const [requestError, setRequestError] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [editingItem, setEditingItem] = useState<{
     type: "destinations" | "hotels" | "attractions" | "restaurants";
@@ -192,6 +130,24 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
+  const openedFromProfile = useRef(false);
+  useEffect(() => {
+    if (!request.data || openedFromProfile.current) return;
+    openedFromProfile.current = true;
+    const params = new URLSearchParams(window.location.search);
+    const hotelId = params.get("hotel");
+    if (params.get("new") === "hotel") {
+      setActiveTab("hotels");
+      setEditingItem({type:"hotels",data:{name:"",destinationId:request.data.destinations[0]?.id ?? "",
+        stayType:"Registered Hotel",pricePerNight:0,lat:"",lng:""}});
+      setIsDrawerOpen(true);
+    } else if (hotelId) {
+      const hotel = request.data.hotels.find(h => h.id === hotelId);
+      setActiveTab("hotels");
+      if (hotel) { setEditingItem({type:"hotels",id:hotel.id,data:{...hotel}}); setIsDrawerOpen(true); }
+      else setRequestError("The requested hotel no longer exists.");
+    }
+  }, [request.data]);
 
   const showToast = (msg: string) => {
     setNotice(msg);
@@ -202,57 +158,9 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
   const handleOpenAddDrawer = () => {
     setFormError(null);
-    if (activeTab === "destinations") {
-      setEditingItem({
-        type: "destinations",
-        data: {
-          name: "",
-          district: "Mehsana District",
-          category: "Heritage Sites",
-          estimatedCost: 3500,
-          rating: 4.7,
-        },
-      });
-    } else if (activeTab === "hotels") {
-      setEditingItem({
-        type: "hotels",
-        data: {
-          name: "",
-          destinationId: "somnath",
-          district: "Gir Somnath",
-          stayType: "Toran Hotel",
-          pricePerNight: 2400,
-          rating: 4.6,
-        },
-      });
-    } else if (activeTab === "attractions") {
-      setEditingItem({
-        type: "attractions",
-        data: {
-          name: "",
-          destinationName: "Somnath",
-          district: "Gir Somnath",
-          category: "Spiritual/Heritage",
-          rating: 4.6,
-          visitDurationHours: 2.0,
-          lat: 20.888,
-          lng: 70.4012,
-          entryFee: "Free",
-        },
-      });
-    } else {
-      setEditingItem({
-        type: "restaurants",
-        data: {
-          name: "",
-          city: "Somnath",
-          location: "Temple Road",
-          rating: 4.5,
-          avgCostPerPerson: 250,
-          cuisine: "Gujarati Thali",
-        },
-      });
-    }
+    setEditingItem({type:activeTab,data:{name:"",district:"",category:"Heritage Sites",
+      destinationId:destinations[0]?.id ?? "",stayType:"Registered Hotel",pricePerNight:0,
+      lat:"",lng:"",visitDurationHours:1,entryFee:"",entryFeeNumeric:null,avgCostPerPerson:0}});
     setIsDrawerOpen(true);
   };
 
@@ -266,195 +174,43 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     setIsDrawerOpen(true);
   };
 
-  const handleSaveDrawerItem = () => {
-    if (!editingItem) return;
-
-    if (!editingItem.data.name || editingItem.data.name.trim() === "") {
-      setFormError("Record Name is required and cannot be empty.");
-      return;
+  const handleSaveDrawerItem = async () => {
+    if(!editingItem || pending) return;
+    const d=editingItem.data;
+    if(!d.name?.trim()) { setFormError("Record Name is required."); return; }
+    const requiredPrice = editingItem.type === "hotels" ? d.pricePerNight : editingItem.type === "restaurants" ? d.avgCostPerPerson : undefined;
+    if ((editingItem.type === "hotels" || editingItem.type === "restaurants") && (requiredPrice == null || String(requiredPrice).trim() === "")) {
+      setFormError("Enter a known price. A blank price cannot be saved as zero."); return;
     }
-
-    setFormError(null);
-    const today = new Date().toISOString().split("T")[0];
-
-    if (editingItem.type === "destinations") {
-      if (editingItem.id) {
-        setDestinations((prev) =>
-          prev.map((d) =>
-            d.id === editingItem.id
-              ? { ...editingItem.data, lastUpdated: today }
-              : d,
-          ),
-        );
-        const existing = GUJARAT_DESTINATIONS.find((d) => d.id === editingItem.id);
-        if (existing) {
-          existing.name = editingItem.data.name;
-          if (editingItem.data.district) existing.district = editingItem.data.district;
-          if (editingItem.data.category) existing.officialCategory = editingItem.data.category;
-        }
-        resetDestinationTrie();
-        showToast(`Updated destination "${editingItem.data.name}"`);
-      } else {
-        const newItem = {
-          ...editingItem.data,
-          id: `dest-${Date.now()}`,
-          lastUpdated: today,
-        };
-        setDestinations((prev) => [newItem, ...prev]);
-
-        const newDest: Destination = {
-          id: newItem.id,
-          name: newItem.name,
-          district: newItem.district || "Gujarat",
-          location: newItem.district || "Gujarat",
-          category: newItem.category,
-          officialCategory: newItem.category as any,
-          tag: "Heritage Destination",
-          rating: `${newItem.rating || 4.7} ★`,
-          ratingValue: newItem.rating || 4.7,
-          entryFee: `₹${newItem.estimatedCost || 0}`,
-          entryFeeNumeric: newItem.estimatedCost || 0,
-          bestTime: "Oct – Mar",
-          distanceFromAhmedabad: "100 km",
-          distanceNumeric: 100,
-          duration: "1–2 Days",
-          avgVisitTime: "3–4 Hours",
-          imageUrl: "/assets/attractions/sidi-saiyyed.jpg",
-          imageAlt: newItem.name,
-          description: `Historic heritage site located in ${newItem.district}.`,
-          highlights: [`Exploration of ${newItem.name}`],
-          attractions: [],
-          hotels: [],
-          restaurants: [],
-          nearbyAttractions: [],
-          nearbyHotels: [],
-        };
-        GUJARAT_DESTINATIONS.unshift(newDest);
-        resetDestinationTrie();
-        showToast(`Added new destination "${newItem.name}"`);
-      }
-    } else if (editingItem.type === "hotels") {
-      if (editingItem.id) {
-        setHotels((prev) =>
-          prev.map((h) =>
-            h.id === editingItem.id
-              ? { ...editingItem.data, lastUpdated: today }
-              : h,
-          ),
-        );
-        showToast(`Updated hotel "${editingItem.data.name}"`);
-      } else {
-        const newItem = {
-          ...editingItem.data,
-          id: `hotel-${Date.now()}`,
-          lastUpdated: today,
-        };
-        setHotels((prev) => [newItem, ...prev]);
-        showToast(`Added new hotel "${newItem.name}"`);
-      }
-    } else if (editingItem.type === "attractions") {
-      if (editingItem.id) {
-        setAttractions((prev) =>
-          prev.map((a) =>
-            a.id === editingItem.id
-              ? { ...editingItem.data, lastUpdated: today }
-              : a,
-          ),
-        );
-        for (const d of GUJARAT_DESTINATIONS) {
-          const attr = d.attractions.find((a) => a.id === editingItem.id);
-          if (attr) {
-            attr.name = editingItem.data.name;
-            break;
-          }
-        }
-        resetDestinationTrie();
-        showToast(`Updated attraction "${editingItem.data.name}"`);
-      } else {
-        const newItem = {
-          ...editingItem.data,
-          id: `attr-${Date.now()}`,
-          lastUpdated: today,
-        };
-        setAttractions((prev) => [newItem, ...prev]);
-        const parentDest = GUJARAT_DESTINATIONS.find(
-          (d) => d.name.toLowerCase() === (editingItem.data.destinationName || "").toLowerCase()
-        ) || GUJARAT_DESTINATIONS[0];
-        if (parentDest) {
-          parentDest.attractions.push({
-            id: newItem.id,
-            name: newItem.name,
-            lat: newItem.lat || 20.888,
-            lng: newItem.lng || 70.4012,
-            durationHours: newItem.visitDurationHours || 2.0,
-            rating: newItem.rating || 4.6,
-            category: newItem.category || "Heritage",
-            entryFee: newItem.entryFee || "Free",
-            entryFeeNumeric: 0,
-            wheelchairAccessible: true,
-            physicalDemand: "moderate",
-          });
-        }
-        resetDestinationTrie();
-        showToast(`Added new attraction "${newItem.name}"`);
-      }
-    } else if (editingItem.type === "restaurants") {
-      if (editingItem.id) {
-        setRestaurants((prev) =>
-          prev.map((r) =>
-            r.id === editingItem.id
-              ? { ...editingItem.data, lastUpdated: today }
-              : r,
-          ),
-        );
-        showToast(`Updated restaurant "${editingItem.data.name}"`);
-      } else {
-        const newItem = {
-          ...editingItem.data,
-          id: `resto-${Date.now()}`,
-          lastUpdated: today,
-        };
-        setRestaurants((prev) => [newItem, ...prev]);
-        showToast(`Added new restaurant "${newItem.name}"`);
-      }
+    if(editingItem.type !== "destinations" && (!d.destinationId || d.lat === "" || d.lng === "")) {
+      setFormError("Choose a destination and enter verified coordinates."); return;
     }
-
-    setIsDrawerOpen(false);
-    setEditingItem(null);
-  };
-
-  const handleConfirmDelete = (id: string) => {
-    if (activeTab === "destinations") {
-      const target = destinations.find((d) => d.id === id);
-      setDestinations((prev) => prev.filter((d) => d.id !== id));
-      const idx = GUJARAT_DESTINATIONS.findIndex((d) => d.id === id);
-      if (idx !== -1) {
-        GUJARAT_DESTINATIONS.splice(idx, 1);
-      }
-      resetDestinationTrie();
-      showToast(`Deleted destination "${target?.name || id}"`);
-    } else if (activeTab === "hotels") {
-      const target = hotels.find((h) => h.id === id);
-      setHotels((prev) => prev.filter((h) => h.id !== id));
-      showToast(`Deleted hotel "${target?.name || id}"`);
-    } else if (activeTab === "attractions") {
-      const target = attractions.find((a) => a.id === id);
-      setAttractions((prev) => prev.filter((a) => a.id !== id));
-      for (const dest of GUJARAT_DESTINATIONS) {
-        const aIdx = dest.attractions.findIndex((a) => a.id === id);
-        if (aIdx !== -1) {
-          dest.attractions.splice(aIdx, 1);
-        }
-      }
-      resetDestinationTrie();
-      showToast(`Deleted attraction "${target?.name || id}"`);
+    const body: Record<string,unknown> = {name:d.name};
+    if(editingItem.type === "destinations") {
+      Object.assign(body,{district:d.district || null,official_category:d.category});
+      if(!editingItem.id) body.slug=d.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || `destination-${crypto.randomUUID()}`;
     } else {
-      const target = restaurants.find((r) => r.id === id);
-      setRestaurants((prev) => prev.filter((r) => r.id !== id));
-      showToast(`Deleted restaurant "${target?.name || id}"`);
+      Object.assign(body,{destination_id:d.destinationId,lat:Number(d.lat),lng:Number(d.lng)});
+      if(editingItem.type === "hotels") Object.assign(body,{stay_type:d.stayType,price_per_night:Number(d.pricePerNight)});
+      if(editingItem.type === "attractions") Object.assign(body,{category:d.category,duration_hours:Number(d.visitDurationHours),entry_fee:d.entryFee || null,entry_fee_numeric:d.entryFeeNumeric === "" || d.entryFeeNumeric == null ? null : Number(d.entryFeeNumeric)});
+      if(editingItem.type === "restaurants") Object.assign(body,{avg_cost_per_person:Number(d.avgCostPerPerson),location:d.location || null,cuisine:d.cuisine || null});
     }
-    setDeletingId(null);
+    setPending(true); setRequestError(""); setFormError(null);
+    try {
+      await api.adminSave(editingItem.type,editingItem.id,body);
+      setIsDrawerOpen(false); request.reload(); showToast("Record saved to the server.");
+    } catch(error) { setRequestError(errorMessage(error)); }
+    finally { setPending(false); }
   };
+  const handleConfirmDelete = async (id: string) => {
+    if(pending) return;
+    setPending(true); setRequestError("");
+    try { await api.adminDelete(activeTab,id); setDeletingId(null); request.reload(); showToast("Record deleted from the server."); }
+    catch(error) { setRequestError(errorMessage(error)); }
+    finally { setPending(false); }
+  };
+  if(request.loading || pending) return <p role="status">{pending ? "Saving catalog changes..." : "Loading operator catalog..."}</p>;
+  if(request.error || requestError) return <p role="alert">{request.error || requestError} <button onClick={() => {setRequestError(""); request.reload();}}>Retry</button> <button onClick={onBackToProfile}>Back to profile</button></p>;
 
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink font-mono text-xs">
@@ -783,6 +539,39 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     />
                   </div>
 
+                  {editingItem.type !== "destinations" && (
+                    <>
+                      <div>
+                        <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Destination *</label>
+                        <select value={editingItem.data.destinationId || ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,destinationId:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold">
+                          <option value="">Select destination</option>
+                          {destinations.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+                        </select>
+                      </div>
+                      {(["lat", "lng"] as const).map(field => (
+                        <div key={field}>
+                          <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">{field === "lat" ? "Latitude" : "Longitude"} *</label>
+                          <input type="number" step="any" value={editingItem.data[field] ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" required />
+                        </div>
+                      ))}
+                    </>
+                  )}
+                  {editingItem.type === "attractions" && (
+                    <>
+                      {(["category", "visitDurationHours", "entryFeeNumeric"] as const).map(field => (
+                        <div key={field}>
+                          <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">{field === "category" ? "Category *" : field === "visitDurationHours" ? "Visit duration (hours) *" : "Entry price (leave blank if unknown)"}</label>
+                          <input type={field === "category" ? "text" : "number"} step="any" value={editingItem.data[field] ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" />
+                        </div>
+                      ))}
+                    </>
+                  )}
+                  {editingItem.type === "restaurants" && (
+                    <div>
+                      <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Cost per person *</label>
+                      <input type="number" value={editingItem.data.avgCostPerPerson ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,avgCostPerPerson:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" required />
+                    </div>
+                  )}
                   {editingItem.type === "destinations" && (
                     <>
                       <div>
@@ -869,13 +658,13 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                         </label>
                         <input
                           type="number"
-                          value={editingItem.data.pricePerNight || 0}
+                          value={editingItem.data.pricePerNight ?? ""}
                           onChange={(e) =>
                             setEditingItem({
                               ...editingItem,
                               data: {
                                 ...editingItem.data,
-                                pricePerNight: Number(e.target.value),
+                                pricePerNight: e.target.value,
                               },
                             })
                           }

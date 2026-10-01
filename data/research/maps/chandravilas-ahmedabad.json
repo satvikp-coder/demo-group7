@@ -1,0 +1,34 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Chandravilas+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 424897603,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 14067660558,
+      "lat": "23.0244250",
+      "lon": "72.5893682",
+      "category": "amenity",
+      "type": "restaurant",
+      "place_rank": 30,
+      "importance": 6.633783474474735e-05,
+      "addresstype": "amenity",
+      "name": "Chandravilas Restaurant",
+      "display_name": "Chandravilas Restaurant, Gandhi Road, Manek Chowk, Khadia, Ahmedabad, Gujarat, 380001, India",
+      "extratags": {
+        "toilets": "no",
+        "panoramax": "429ccf7b-34c5-4f07-9fc9-b0b9fb482cca",
+        "check_date": "2026-08-02",
+        "start_date": "1900",
+        "diet:vegetarian": "only"
+      },
+      "boundingbox": [
+        "23.0243750",
+        "23.0244750",
+        "72.5893182",
+        "72.5894182"
+      ]
+    }
+  ]
+}

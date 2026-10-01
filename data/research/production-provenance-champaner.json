@@ -1,0 +1,554 @@
+{
+  "city": "champaner",
+  "checked": "2026-10-01",
+  "records": [
+    {
+      "table": "attractions",
+      "key": "a501",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://vadodara.nic.in/culture-heritage/"
+              ],
+              "note": "District government identifies Jami Masjid at Champaner."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "image_url": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            },
+            "image_alt": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+                "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+                "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+                "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+                "https://melangeoftales.com/champaner-pavagadh/",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+              ]
+            }
+          },
+          "notes": "Coordinates/rating archived pages/champaner-jami.json. Online35/counter40 corroborated in two authored travel accounts and a publicly indexed June2026 ASI e-ticket. Sunrise/sunset hours are not converted into invented fixed clock times. Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination.",
+          "qualification": "District government identifies Jami Masjid at Champaner."
+        }
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+        "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+        "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+        "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+        "https://melangeoftales.com/champaner-pavagadh/",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "attractions",
+      "key": "a502",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://vadodara.nic.in/culture-heritage/"
+              ],
+              "note": "District government identifies Kevada Masjid; no current standalone fee confirmed."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+                "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+                "https://travelsetu.com/guide/kevada-masjid-tourism",
+                "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+              ]
+            }
+          },
+          "notes": "Exact mosque result archived pages/champaner-kevada-selected.json. No duplicate monument-pass charge or invented free ticket.",
+          "qualification": "District government identifies Kevada Masjid; no current standalone fee confirmed."
+        }
+      },
+      "sources": [
+        "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+        "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+        "https://travelsetu.com/guide/kevada-masjid-tourism",
+        "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "hotels",
+      "key": "h501",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://champanerheritageresort.com/contact-us/"
+              ],
+              "note": "Business-owned contact page confirms resort identity and village; no live room quote confirmed."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "price_per_night": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "stay_type": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://champanerheritageresort.com/accommodation/",
+                "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+                "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+              ]
+            }
+          },
+          "notes": "Google Maps Yatra INR9092 for October2-3 2026, two adults, breakfast included, room/taxes unspecified. Dynamic nightly quote archived pages/champaner-hotel.json. Hotel is outside the monument village; real road routes reflect distance.",
+          "qualification": "Business-owned contact page confirms resort identity and village; no live room quote confirmed."
+        }
+      },
+      "sources": [
+        "https://champanerheritageresort.com/accommodation/",
+        "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+        "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "restaurants",
+      "key": "r501",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "avg_cost_per_person": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "cuisine": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+                "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+                "https://restaurant-guru.in/Hotel-sarvottam-India"
+              ]
+            }
+          },
+          "notes": "Restaurant explicitly included in MakeMyTrip Champaner guide, located in Halol rather than monument village. Restaurant Guru published per-person INR150, representative estimate not fixed menu tariff. Google rating is shared hotel/business rating. Exact address/coordinates archived pages/champaner-restaurant.json.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+        "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+        "https://restaurant-guru.in/Hotel-sarvottam-India"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    }
+  ]
+}

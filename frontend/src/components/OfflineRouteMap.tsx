@@ -1,3 +1,4 @@
+import { displayNumber } from "../api";
 import React, { useState } from "react";
 import {
   MapPin,
@@ -11,27 +12,8 @@ import {
   ShieldCheck,
   ChevronRight,
 } from "lucide-react";
-import { DayRoute, ItineraryStop } from "../utils/itineraryPlanner";
+import type { DayRoute, ItineraryStop } from "../utils/itineraryPlanner";
 
-/** Haversine distance between two coordinate pairs (km). */
-function haversineKm(
-  lat1?: number, lng1?: number,
-  lat2?: number, lng2?: number,
-): number {
-  if (lat1 == null || lng1 == null || lat2 == null || lng2 == null) return 0;
-  if (lat1 === lat2 && lng1 === lng2) return 0;
-  const R = 6371;
-  const dLat = (lat2 - lat1) * (Math.PI / 180);
-  const dLng = (lng2 - lng1) * (Math.PI / 180);
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(lat1 * (Math.PI / 180)) *
-      Math.cos(lat2 * (Math.PI / 180)) *
-      Math.sin(dLng / 2) ** 2;
-  const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  // Apply a road-factor approximation (mirrors the planner's getDistanceKm)
-  return Math.round((dist < 0.5 ? 1.2 : dist * 1.35) * 10) / 10;
-}
 
 interface OfflineRouteMapProps {
   dayPlans: DayRoute[];
@@ -77,7 +59,7 @@ export const OfflineRouteMap: React.FC<OfflineRouteMapProps> = ({
           ) : (
             <div className="bg-salt text-ink font-bold px-3 py-1.5 border border-stone/40 text-xs flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-gold" />
-              <span>Cached Circuit Ready</span>
+              <span>Saved Circuit Loaded</span>
             </div>
           )}
         </div>
@@ -175,7 +157,7 @@ export const OfflineRouteMap: React.FC<OfflineRouteMapProps> = ({
                   {!isLast && (
                     <div className="flex-1 flex flex-col items-center justify-center space-y-1 px-1 min-w-[30px]">
                       <span className="text-[9px] text-stone font-bold">
-                        {idx === 0 ? "1.2 km" : idx === 1 ? "0.9 km" : "1.5 km"}
+                        {stop.legDistanceKm == null ? "Not available" : `${displayNumber(stop.legDistanceKm)} km`}
                       </span>
                       <div className="w-full h-0.5 bg-gold flex items-center justify-center relative">
                         <ChevronRight className="w-4 h-4 text-gold absolute -right-2 top-1/2 -translate-y-1/2" />

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { api, errorMessage } from "../api";
+import React, { useState, useRef } from "react";
 import {
   Compass,
   Route,
@@ -48,10 +49,12 @@ export const AuthView: React.FC<AuthViewProps> = ({
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [formGeneralError, setFormGeneralError] = useState("");
 
-  // Success state simulation
+  const [pending, setPending] = useState(false);
+  const pendingRef = useRef(false);
+  // Server-confirmed authentication
   const [successMsg, setSuccessMsg] = useState("");
-  // Demo password recovery notice state
-  const [showDemoRecoveryNotice, setShowDemoRecoveryNotice] = useState(false);
+  // Password recovery availability
+  const [showRecoveryNotice, setShowRecoveryNotice] = useState(false);
 
   const validateEmail = (val: string) => {
     if (!val.trim()) {
@@ -74,87 +77,33 @@ export const AuthView: React.FC<AuthViewProps> = ({
     return "";
   };
 
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormGeneralError("");
-
+    if (pendingRef.current) return;
+    setFormGeneralError(""); setSuccessMsg("");
     const eErr = validateEmail(email);
-    const pErr = validatePassword(password);
-
     setEmailError(eErr);
-    setPasswordError(pErr);
-
-    if (eErr || pErr) {
-      return;
-    }
-
-    if (email === "demo@heritage.in" && password !== "gujarat123") {
-      setPasswordError("That password doesn't match our records. Try again.");
-      return;
-    }
-
-    setSuccessMsg(
-      "Signed in successfully. Redirecting to your heritage ledger...",
-    );
-    setTimeout(() => {
-      if (onAuthSuccess) {
-        onAuthSuccess({
-          name: email.split("@")[0] || "Heritage Traveler",
-          email,
-          role,
-        });
-      } else {
-        onCloseOrGuest();
-      }
-    }, 1200);
+    if(eErr) return;
+    pendingRef.current = true; setPending(true);
+    try {
+      const user = await api.login(email, password);
+      setSuccessMsg("Signed in successfully.");
+      onAuthSuccess?.(user);
+    } catch(error) { setFormGeneralError(errorMessage(error)); }
+    finally { pendingRef.current = false; setPending(false); }
   };
-
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormGeneralError("");
-
-    let valid = true;
-
-    if (!name.trim()) {
-      setNameError("Please enter your full name or preferred traveler title.");
-      valid = false;
-    } else {
-      setNameError("");
-    }
-
-    const eErr = validateEmail(email);
-    setEmailError(eErr);
-    if (eErr) valid = false;
-
-    const pErr = validatePassword(password);
-    setPasswordError(pErr);
-    if (pErr) valid = false;
-
-    if (password !== confirmPassword) {
-      setConfirmPasswordError(
-        "Passwords do not match. Re-enter the confirmation password identically.",
-      );
-      valid = false;
-    } else {
-      setConfirmPasswordError("");
-    }
-
-    if (!valid) return;
-
-    setSuccessMsg(
-      `Welcome to Heritage Tourism Planner, ${name}! Your ${role} account is now active.`,
-    );
-    setTimeout(() => {
-      if (onAuthSuccess) {
-        onAuthSuccess({
-          name,
-          email,
-          role,
-        });
-      } else {
-        onCloseOrGuest();
-      }
-    }, 1200);
+    if(pendingRef.current) return;
+    setFormGeneralError(""); setSuccessMsg("");
+    if(password !== confirmPassword) { setConfirmPasswordError("Passwords do not match."); return; }
+    setConfirmPasswordError(""); pendingRef.current = true; setPending(true);
+    try {
+      await api.register(name, email, password, role);
+      setSuccessMsg("Account created. Sign in with your new credentials.");
+      setMode("login"); setPassword(""); setConfirmPassword("");
+    } catch(error) { setFormGeneralError(errorMessage(error)); }
+    finally { pendingRef.current = false; setPending(false); }
   };
 
   return (
@@ -163,6 +112,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
       className="min-h-[85vh] flex items-center justify-center p-4 sm:p-6 bg-salt my-6"
     >
       <div className="w-full max-w-5xl bg-salt border-2 border-stone/40 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 relative rounded-2xl">
+        {pending && <p role="status">Contacting authentication server...</p>}
         {/* LEFT COLUMN: Ink Indigo Banner */}
         <div className="md:col-span-5 bg-ink text-salt p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden min-h-[260px] md:min-h-[580px]">
           <div
@@ -209,7 +159,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
           <div className="relative z-10 pt-4 border-t border-stone/30 flex items-center justify-between text-[11px] font-mono text-stone">
             <span>Stepwell System v2.4</span>
-            <span className="text-gold">Frontend Demo Session</span>
+            <span className="text-gold">Server Account Session</span>
           </div>
         </div>
 
@@ -318,12 +268,12 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   )}
                 </div>
 
-                {showDemoRecoveryNotice && (
+                {showRecoveryNotice && (
                   <div className="bg-salt border-2 border-gold/60 p-3.5 mb-2 text-xs font-body animate-fadeIn rounded-xl">
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="bg-gold/20 text-gold border border-gold/40 px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider rounded-md">
-                          Frontend Demo Mode
+                          Password Reset Unavailable
                         </span>
                         <span className="font-mono text-charcoal font-semibold text-[11px]">
                           Password Recovery
@@ -331,7 +281,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       </div>
                       <button
                         type="button"
-                        onClick={() => setShowDemoRecoveryNotice(false)}
+                        onClick={() => setShowRecoveryNotice(false)}
                         className="text-stone hover:text-charcoal text-xs font-mono cursor-pointer p-0.5 rounded-md"
                         aria-label="Dismiss notice"
                       >
@@ -339,10 +289,10 @@ export const AuthView: React.FC<AuthViewProps> = ({
                       </button>
                     </div>
                     <p className="text-charcoal/80 text-[11px] leading-relaxed mb-1.5">
-                      This application operates in <strong>client-only demo mode without a backend server</strong>. Password reset emails cannot be dispatched because there is no mail server or database connection.
+                      Accounts use <strong>server authentication</strong>. A password-reset endpoint and email delivery service are not available.
                     </p>
                     <p className="text-stone text-[10px] font-mono">
-                      Tip: Account sessions run in browser storage (<code className="text-gold">localStorage</code>). During this demo, you can enter any valid email format and a 6+ character password to sign in or test features.
+                      Your sign-in token is held in <code className="text-gold">sessionStorage</code>. Sign in with a registered email and password.
                     </p>
                   </div>
                 )}
@@ -357,7 +307,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                     </label>
                     <button
                       type="button"
-                      onClick={() => setShowDemoRecoveryNotice(true)}
+                      onClick={() => setShowRecoveryNotice(true)}
                       className="text-xs font-mono text-stone hover:text-gold transition-colors cursor-pointer"
                     >
                       Forgot password?
@@ -407,7 +357,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                 </div>
 
                 <button
-                  type="submit"
+                  type="submit" disabled={pending}
                   className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer rounded-lg"
                 >
                   {t("nav.login", "Log In")}
@@ -579,7 +529,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                         setPassword(e.target.value);
                         if (passwordError) setPasswordError("");
                       }}
-                      placeholder="At least 6 chars"
+                      placeholder="12+ chars, uppercase, lowercase, number, symbol"
                       className={`w-full px-3 py-2.5 text-sm bg-salt border font-body transition-colors focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold rounded-lg ${
                         passwordError
                           ? "border-madder bg-madder/5"
@@ -626,7 +576,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                 </div>
 
                 <button
-                  type="submit"
+                  type="submit" disabled={pending}
                   className="w-full bg-madder hover:bg-madder/90 text-salt py-3.5 px-6 font-mono text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm border border-madder cursor-pointer rounded-lg"
                 >
                   {t("auth.register", "Register")}

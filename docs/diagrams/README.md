@@ -1,10 +1,13 @@
+> Historical academic record. Preserve original credits and design intent; current
+> implementation/status is documented in the [root README](../../README.md).
+
 # Architectural & Algorithmic Diagrams (`docs/diagrams/`)
 
 **Course:** CSC210 Data Structures & Algorithms — Ahmedabad University  
 **Group:** Group 07  
 **Project:** Heritage Tourism Planner for Gujarat  
 
-This directory contains standalone [Mermaid](https://mermaid.js.org/) (`.mmd`) diagrams reflecting the **actual, working implementation** of the Heritage Tourism Planner. Every diagram is strictly scoped to the project's **intra-city architecture**, post-DSA extraction, and incorporates the hard budget cap and boat transport mode fixes.
+This directory contains standalone [Mermaid](https://mermaid.js.org/) (`.mmd`) diagrams retained from the **historical academic design** of the Heritage Tourism Planner. Every diagram is strictly scoped to the project's **intra-city architecture**, post-DSA extraction, and incorporates the hard budget cap and boat transport mode fixes.
 
 ---
 
@@ -16,7 +19,6 @@ This directory contains standalone [Mermaid](https://mermaid.js.org/) (`.mmd`) d
 | [`02_use_case_diagram.mmd`](02_use_case_diagram.mmd) | **Intra-City Use Case Diagram** | `flowchart LR` | [`02_Requirements_Specification.md`](../foundation/02_Requirements_Specification.md) | Detailed use cases for Tourist and Tour Operator actors within a single-city boundary. |
 | [`04_dsa_architecture.mmd`](04_dsa_architecture.mmd) | **DSA Engine Dataflow** | `flowchart TD` | [`04_DSA_Architecture.md`](../foundation/04_DSA_Architecture.md) | End-to-end dataflow across Trie, Entity Hash Table, Graph, Greedy Engine, Dijkstra, and Merge Sort. |
 | [`05_database_er_diagram.mmd`](05_database_er_diagram.mmd) | **PostgreSQL Relational ER Diagram** | `erDiagram` | [`06_Database_Design.md`](../foundation/06_Database_Design.md) | 3NF database schema mapping destinations, attractions, hotels, restaurants, intra-city routes, trips, stops, and budgets. |
-| [`07_dijkstra_flow.mmd`](07_dijkstra_flow.mmd) | **Dijkstra Solver & Boat Bypass Flow** | `flowchart TD` | [`04_DSA_Architecture.md`](../foundation/04_DSA_Architecture.md) | Flowchart of `dijkstra.ts` and `evaluateRouteLeg()`, detailing real `routes.csv` lookups, island boat bypass, and MinHeap shortest path exploration. |
 | [`08_greedy_flow.mmd`](08_greedy_flow.mmd) | **Greedy Optimization & Budget Flow** | `flowchart TD` | [`04_DSA_Architecture.md`](../foundation/04_DSA_Architecture.md) | Flowchart covering all 3 Greedy uses: budget allocator (with hard cap), daily time-budget splitter, and multi-strategy attraction scoring (`routeBuilder.ts`). |
 | [`09_trie_search_flow.mmd`](09_trie_search_flow.mmd) | **Prefix Trie Insertion & Search Flow** | `flowchart TD` | [`04_DSA_Architecture.md`](../foundation/04_DSA_Architecture.md) | Flowchart of `Trie.ts` showing Suffix Trie construction for substring search and $O(L)$ prefix query resolution. |
 

@@ -1,0 +1,36 @@
+{
+  "checked": "2026-09-30",
+  "basis": "Official pages read in the completion audit; facts paraphrased, no copyrighted page reproduced",
+  "entries": [
+    {
+      "city": "ahmedabad",
+      "category": "UNESCO World Heritage Site",
+      "url": "https://whc.unesco.org/en/list/1551/",
+      "notes": "UNESCO lists the Historic City of Ahmadabad. Category refers to the historic-city visitor circuit, not every attraction or hotel in modern Ahmedabad."
+    },
+    {
+      "city": "champaner",
+      "category": "UNESCO World Heritage Site",
+      "url": "https://whc.unesco.org/en/list/1101/",
+      "notes": "UNESCO lists Champaner-Pavagadh Archaeological Park, including the historic village. Category refers to that heritage visitor circuit, not the surrounding hotel properties."
+    },
+    {
+      "city": "modhera",
+      "category": "Heritage Sites",
+      "url": "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+      "notes": "Project primary category for the Modhera Sun Temple heritage circuit, supported by Gujarat Tourism monument history. Not an assertion of UNESCO inscription."
+    },
+    {
+      "city": "somnath",
+      "category": "Religious Sites",
+      "url": "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html",
+      "notes": "Project primary category for the Somnath pilgrimage circuit, supported by Gujarat Tourism temple description."
+    },
+    {
+      "city": "dwarka",
+      "category": "Religious Sites",
+      "url": "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/dwarkadhish-temple.html",
+      "notes": "Project primary category for the Dwarka pilgrimage circuit, supported by Gujarat Tourism temple description."
+    }
+  ]
+}

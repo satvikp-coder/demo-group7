@@ -1,0 +1,358 @@
+[
+    {
+        "Path":  "frontend/src/App.tsx",
+        "Hash":  "420743FD857EE2D87B69293E8C9BECCA4BCE1B263C754282D1772ACC53C436CE"
+    },
+    {
+        "Path":  "frontend/src/index.css",
+        "Hash":  "68BA701CA8AECD962AD7957C4EB5E420C08FE32E736F0613AA0F7AEF03B47647"
+    },
+    {
+        "Path":  "frontend/src/main.tsx",
+        "Hash":  "73D5208B29546AEC722253614EF8634CC54EE008037DAEDC42D66FA59F76476E"
+    },
+    {
+        "Path":  "frontend/src/vite-env.d.ts",
+        "Hash":  "65996936FBB042915F7B74A200FCDDE7E410F32A669B1AB9597CFAA4B0FADDB5"
+    },
+    {
+        "Path":  "frontend/src/api/index.ts",
+        "Hash":  "D3C610855721515E8653F3C74FAB4659B946D97BC6E8E53E367CA9980B59BA65"
+    },
+    {
+        "Path":  "frontend/src/api/types.ts",
+        "Hash":  "42DC618DBE2750F8B11CFC37FF947BEF94CAEB9FF1F056D73FCEB664B367BC1F"
+    },
+    {
+        "Path":  "frontend/src/components/AccessibilityBadge.tsx",
+        "Hash":  "928E4B3577785E55A0890B13192F338790D5FEC0E5900B58DB5DAC5FAAA37895"
+    },
+    {
+        "Path":  "frontend/src/components/AdminDashboardView.tsx",
+        "Hash":  "22B7E6473A9CFAB7CF6940F58C780F100F328426B4E02A73D00318E2EC6B8E1A"
+    },
+    {
+        "Path":  "frontend/src/components/AlgorithmStatsPanel.tsx",
+        "Hash":  "9827F681154828515B27A379F59B252237B65DD9079826DA4E4A4808529FF896"
+    },
+    {
+        "Path":  "frontend/src/components/AuthView.tsx",
+        "Hash":  "2011762A2F04B5B6C819ECD58AFCFF353CD8163EBDECBB6BFECC66FEDB2CA0F2"
+    },
+    {
+        "Path":  "frontend/src/components/BestTimeNote.tsx",
+        "Hash":  "C6F4A6F1B6C2FB6BC0587D17E98CB2D236431E75105FE484B1D7AA9C76013B33"
+    },
+    {
+        "Path":  "frontend/src/components/BudgetPlannerView.tsx",
+        "Hash":  "B1D8E8812EFE156586F59C7A0BE8F06E2CAD288B43C5E7193DB538B5BBF28F00"
+    },
+    {
+        "Path":  "frontend/src/components/ChevronDivider.tsx",
+        "Hash":  "2AC303DE0ABF196389A41E524B5296F7CBCD2D4E93DA14F2BE7560A79B5A18BB"
+    },
+    {
+        "Path":  "frontend/src/components/DestinationDetailView.tsx",
+        "Hash":  "C95A0E69E66D4283A69B754309C7C84EDC729EB287C37D56C5556633EB39E304"
+    },
+    {
+        "Path":  "frontend/src/components/DijkstraVisualizer.tsx",
+        "Hash":  "462295B3FA8609E1729D43053001E09ECB7AB38386EB46B748C8C13E0A8EE8E2"
+    },
+    {
+        "Path":  "frontend/src/components/ExploreView.tsx",
+        "Hash":  "9DDB84147164FA892F252611079DE75DC02F44EAEAE5216D3C64281C628477D6"
+    },
+    {
+        "Path":  "frontend/src/components/FeaturedDestinations.tsx",
+        "Hash":  "0461B16F0ACBB346DB2DAF35F15B083A70114C433C3222C43922889D9A46D13E"
+    },
+    {
+        "Path":  "frontend/src/components/Footer.tsx",
+        "Hash":  "28301E9661FE0058F16EC338B90B0D0973363E6C00835BB831127E25569E8F84"
+    },
+    {
+        "Path":  "frontend/src/components/Hero.tsx",
+        "Hash":  "D1A46AC237EB5F7FC407F901279CA2D2E8FBAC91AFEAD98C34252351D4635999"
+    },
+    {
+        "Path":  "frontend/src/components/HomeTransitionOverlay.tsx",
+        "Hash":  "A6EA91E1049171D049E1D18BD8ED227D5D09C74D1540B86EDAB04141DC99A527"
+    },
+    {
+        "Path":  "frontend/src/components/HotelsView.tsx",
+        "Hash":  "1C2D01F1A8A244125C92AACA4B8DF00C9D09A534BEE3033C6B23DF644C3CED94"
+    },
+    {
+        "Path":  "frontend/src/components/ImageWithFallback.tsx",
+        "Hash":  "90E3A57BA8B42CEA82706B640D6DB7C84C833FBE54C3DB596EE4193250D6F0F6"
+    },
+    {
+        "Path":  "frontend/src/components/InvalidSharedLinkView.tsx",
+        "Hash":  "6B82CD4B5A1C7E4E80C97447879D26966C0952B229611CBC2C7716617B48F472"
+    },
+    {
+        "Path":  "frontend/src/components/ItineraryView.tsx",
+        "Hash":  "79380AE1811A4ABB86DD040FB7B3F7E26635090EABD9FBB39F0C6018D9FFCF95"
+    },
+    {
+        "Path":  "frontend/src/components/Navbar.tsx",
+        "Hash":  "0CF185C3751BFD89F8A572E81A9696082BBA42234127AF2A88B20723657A1633"
+    },
+    {
+        "Path":  "frontend/src/components/NotFoundView.tsx",
+        "Hash":  "DAB854AFCE23EAAA17D15192AA1B054993DFC858E268105820EB075F7E17447A"
+    },
+    {
+        "Path":  "frontend/src/components/OfflineBanner.tsx",
+        "Hash":  "C9EDAEBA00DE5B9FD94BA45DA007540F840B518E991483C07C40F776E39568CD"
+    },
+    {
+        "Path":  "frontend/src/components/OfflineRouteMap.tsx",
+        "Hash":  "4A8D64D0026082EAFC77C9461F150B98646BECF82DEB3B0A6E05A2EF4DA3E2FF"
+    },
+    {
+        "Path":  "frontend/src/components/PlannerModal.tsx",
+        "Hash":  "D41B65D5E55D16E0C394AEF128A06E32A2BFC8E6D9DD0FDA866687935B0DD7C4"
+    },
+    {
+        "Path":  "frontend/src/components/ProfileDashboardView.tsx",
+        "Hash":  "533D88449C5FA1650F5AFCBFA51285ACAAC7ABA05EF0C362021963AAA823C1E8"
+    },
+    {
+        "Path":  "frontend/src/components/PwaInstallPrompt.tsx",
+        "Hash":  "3CC1695977740B66D7B966BA0A8C8157C253506B53817609D78ED19C4624981A"
+    },
+    {
+        "Path":  "frontend/src/components/ResearchView.tsx",
+        "Hash":  "162F286D82361C95F6803B3E3608BA9825FCFD432643D3C279912D96EAF00809"
+    },
+    {
+        "Path":  "frontend/src/components/ShareItineraryModal.tsx",
+        "Hash":  "041CEE80C967769390BCF303DA1B36C87FAE68324E712F313E7814D34F7D4AFD"
+    },
+    {
+        "Path":  "frontend/src/components/StrategyComparisonModal.tsx",
+        "Hash":  "5F1799696EF981B70191B03023AFC0036693BDD0180D9D8382039A22F6C6822D"
+    },
+    {
+        "Path":  "frontend/src/components/ValueProps.tsx",
+        "Hash":  "7F18E024745B5CD16686D6A2F15800F32BD7407E9214062D6C3FAACEAA1A748D"
+    },
+    {
+        "Path":  "frontend/src/components/WhatIfPanel.tsx",
+        "Hash":  "D0FAE8A6201DA9B2674085143DB61EB1D090A6A890789DBEA7A0A9F544CFE3EF"
+    },
+    {
+        "Path":  "frontend/src/context/LanguageContext.tsx",
+        "Hash":  "91F9936FE64C8EBDE7B052C62D242E171DEEAA2EBA9CB946E854926882B46304"
+    },
+    {
+        "Path":  "frontend/src/context/ThemeContext.tsx",
+        "Hash":  "1DBAB6A3678ED3A8F792B2CDF02D8F548B44B34EFA2779105F0588BA879256EF"
+    },
+    {
+        "Path":  "frontend/src/data/colors.ts",
+        "Hash":  "B83255A3A80DCBE81FED5BA9602FE3F902D4A5322695CD72E92A70FF7735EA02"
+    },
+    {
+        "Path":  "frontend/src/data/destinations.ts",
+        "Hash":  "4E31C53AB59939B8EB1911DF8924E2FF05E4913DB55662FD7C33642039322B0E"
+    },
+    {
+        "Path":  "frontend/src/data/routesCsv.ts",
+        "Hash":  "9A4BFD58F8AE5EFF18C442B6F7552E57E40D6DE6A29F49CBCA6C8E079837C454"
+    },
+    {
+        "Path":  "frontend/src/data/translations.ts",
+        "Hash":  "BE4B39F6F8FD4CB2357FB57B403D64F53F08B259E8DAD0347DB59BD4085F5EFF"
+    },
+    {
+        "Path":  "frontend/src/utils/bestTimeChecker.ts",
+        "Hash":  "CD20317F3186E2CDCE7E7ACE2BF07D364F26380801BB30A59BE62FB741D64B5A"
+    },
+    {
+        "Path":  "frontend/src/utils/destinationTrie.ts",
+        "Hash":  "3139611BF1B2A145459DBF61DA832CEA16516C236E451A18DCC3E5E6C5DF5C9D"
+    },
+    {
+        "Path":  "frontend/src/utils/itineraryPlanner.ts",
+        "Hash":  "23EA6C24F45D9489A3CA07080D2EFD8D1A0C88EB3E1F1724842B2FE3DDA3363D"
+    },
+    {
+        "Path":  "frontend/src/utils/offlineStorage.ts",
+        "Hash":  "6A1C4BBCB22D6D6D51B9D5E30272A36E14B8329BE51A3D1AF8E5D3E9A75BB66C"
+    },
+    {
+        "Path":  "frontend/src/utils/router.ts",
+        "Hash":  "DFD5154F12D673C93C2FD574F0E190768F2031B6F9957D1CE46E1B2E5044FB86"
+    },
+    {
+        "Path":  "frontend/src/utils/shareUrl.ts",
+        "Hash":  "D308D381E7D488CF23C8A71D8B23FB19C6EB9061C0EC6355673D2E7941386358"
+    },
+    {
+        "Path":  "frontend/public/apple-touch-icon.png",
+        "Hash":  "DB5320BB32B09E6683E4BCFF9859219A97EF077EA8AB87C23299B00252D305BF"
+    },
+    {
+        "Path":  "frontend/public/favicon-32x32.png",
+        "Hash":  "5A17D95F9421D0BE778DB850DEDE17D61A16500A81400B96D469CC7A2F0CEB4D"
+    },
+    {
+        "Path":  "frontend/public/favicon.ico",
+        "Hash":  "CC1970B63F7589B4FA35B76D61B045C324BD09F7406FE8E8C5EACEAD55D90E89"
+    },
+    {
+        "Path":  "frontend/public/icon-192.png",
+        "Hash":  "7C6652E0CBCB28F1A15ACA24F6F0C39D5116A9304A411425A2D77A33C2D560F5"
+    },
+    {
+        "Path":  "frontend/public/icon-512.png",
+        "Hash":  "674A3C778A08BDAAA0D3E0B7C82BCCB13655DF798CE948FDCBDF366D11A68723"
+    },
+    {
+        "Path":  "frontend/public/icon.svg",
+        "Hash":  "0980392D611DD88C54C53F78089BCBCB605D075A3142A39CB5D536AE08183CBD"
+    },
+    {
+        "Path":  "frontend/public/manifest.json",
+        "Hash":  "0290110AC81EFD8A3D400BB5AC63826B7169BAFC714CE019B2559965974A3B3E"
+    },
+    {
+        "Path":  "frontend/public/sw.js",
+        "Hash":  "796D31D9487B5298C6BA69CC742CA988EC8C1BD9644F95796E34E0089660D3E9"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/adalaj-stepwell.jpg",
+        "Hash":  "273805E322D5EFE22D34CF81C979C010DF528501DB4455C4B20AE402AF22C84D"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/adalaj-stepwell.svg",
+        "Hash":  "A8CAED9AFEE55569729EAF41C396D7FBF6F1267D7237722E8F8EDB88C37182D3"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/gir-lion.jpg",
+        "Hash":  "8EB55F4AF8022BDC18603AE11F10FE93E735306FED79CB61D5CC50CC3072BAEE"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/hodka-village.jpg",
+        "Hash":  "79F890E0D8658E06A72870256016C80725BF8A515F45A573C28FDD355ABF977C"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/kalika-mata.jpg",
+        "Hash":  "2494029A4EBBBB685F4AC7C8F08522E907CA8A8E7101359EBECD4D1F3274D7CC"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/kalo-dungar.jpg",
+        "Hash":  "E9141F9C6C823BDFA87529930B934720BBCB7407E8368E3A77F0ADB4C89C0061"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/kankaria-lake.jpg",
+        "Hash":  "79586BCD72CDD51F9C4C7EDF6D7E4148F4CE20145675803641C280004DDDE719"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/nageshwar-temple.jpg",
+        "Hash":  "F5829E745FDEAF61EFE83308B2EAF250DD62389435FCD6A84376F652D0D049B3"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/nirona-crafts.jpg",
+        "Hash":  "53295C2682180F3017809518A5918F67DF9059439F87E0EFB97ECC964E6D8569"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/rani-ki-vav.jpg",
+        "Hash":  "716B93FBFBF34DC5DB093942EC1B0134D6FB0C2D82EAB3E38A7CB6877F32A64A"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/rukmini-temple.jpg",
+        "Hash":  "F2257C22B11BFE8964EAC27B7F49B2033BDFAE0CDC7B4B684FA4397DF45DEB43"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/sabarmati-ashram.jpg",
+        "Hash":  "60FA6952FB8BBE14390BC29369822BCBD7B7343EC923EC9A564D4CE3E45ED598"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/sarkhej-roza.jpg",
+        "Hash":  "3DD783A86F996FF0BFF6B5FCC3BDE6E836242424E82A535339A2873248A24064"
+    },
+    {
+        "Path":  "frontend/public/assets/attractions/sidi-saiyyed.jpg",
+        "Hash":  "F7482C1D2A2CB36C4E38392575590438798010A1F4B829DB94AEAD35666D958C"
+    },
+    {
+        "Path":  "frontend/public/assets/categories/dining.svg",
+        "Hash":  "25096EFA098A085602A32DBB88BBE2E688BE0481D1E93BEE4C3E3A7C45E9EB29"
+    },
+    {
+        "Path":  "frontend/public/assets/categories/hotel.svg",
+        "Hash":  "F49802ACBA8156FA378568C58DA9EF95B50BBD527A2064376E4205B11CE80B6D"
+    },
+    {
+        "Path":  "frontend/public/assets/categories/monument.svg",
+        "Hash":  "83C160724F2B2010849A50938D40376551371437DC66AA76D4508B55D932F08B"
+    },
+    {
+        "Path":  "frontend/public/assets/categories/stepwell.svg",
+        "Hash":  "9B96F374BD9465B80939E17C6530B1A41CF59F1CB5F7FDA972C307B495150943"
+    },
+    {
+        "Path":  "frontend/public/assets/categories/temple.svg",
+        "Hash":  "BD2B7E716CE3F19884DF0240E001AA71D9EE46F1E6B46ABC9E3A659AC8CEB3C6"
+    },
+    {
+        "Path":  "frontend/public/assets/categories/wildlife.svg",
+        "Hash":  "7FDAE3222DA512BEBC39019D23AAF99C5EB84AE9E2BE9ECFF12DFDDB158E2F50"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/ahmedabad.jpg",
+        "Hash":  "9D7DD280646AA51F3A0F28388C8E1110C090D44DAB271F5BEFAAE87658ABF02C"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/champaner.jpg",
+        "Hash":  "1F06AE01760BCF8D90120B79928A21BCEA89E266DEC17CDDA83A1219361326F7"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/champaner.svg",
+        "Hash":  "A7E9625C043327EDE62FE0158144117A7E461D05FAAB2E03F237F81E766A420B"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/dwarka.jpg",
+        "Hash":  "50730A9C7C02FB7D3105187255E42C7679F69862D7968D7AC9AE313808F92AED"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/dwarka.svg",
+        "Hash":  "51FCD1432AB562F79B5B1CFDDF199CD187D47672ACEDF14937238B668D60E232"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/gir.jpg",
+        "Hash":  "49EF6654876485D2018D9FA56350718F97AD40FC359587082DA4186D1BA37D5B"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/modhera.jpg",
+        "Hash":  "F339C357244CDB090701AEACE86C273D78D1D203B34A056B68D16A62FC32B37D"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/rann-of-kutch.jpg",
+        "Hash":  "BDC526E520D345E09E2D93F8DDC586780115F0D9E1B6ECE9B46723133D92ECE2"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/rann-of-kutch.svg",
+        "Hash":  "1C7433271854F7AD5C99E7B5DB14895DD3B581F1F3BD2974EC3F4CC99A9F0F03"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/saputara.jpg",
+        "Hash":  "45535EF6549FCAFCAB8E2F712EAF4C18F43E9325BD4A9C7BD0DD2598676F65F6"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/somnath.jpg",
+        "Hash":  "92B9A3B0F5FD82D0DB4D0B72542708B186B40A60E8F8F3441825DA7AF1FCF0F3"
+    },
+    {
+        "Path":  "frontend/public/assets/destinations/somnath.svg",
+        "Hash":  "AE91A7756B6078B174EB882D9AF4CBF47BEFE60100BF5FFD694B55E40E0C92C6"
+    },
+    {
+        "Path":  "frontend/public/assets/hotels/rann-riders.svg",
+        "Hash":  "169DCD8D0934C0E3EBB0ECC5F4F91DDC77BD038902CFC4E30641FCED63F8F816"
+    }
+]

@@ -5,12 +5,150 @@
     "days": 1,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "63f5a5ad-d4e1-40d7-becf-21ad1368a2ea",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 4,
-    "totalCost": 1297,
-    "roadDistanceKm": 14.3,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 3.2
+    "totalCost": 4572,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 26.180000000000003,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 108.92489999999998,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "63f5a5ad-d4e1-40d7-becf-21ad1368a2ea",
+      "budget": 10000,
+      "hotel": 3972,
+      "attractions": 0,
+      "meals": 600,
+      "transit": 0,
+      "total": 4572,
+      "remaining": 5428,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 3.63
+        },
+        {
+          "to": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "from": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "path": [
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.07
+        },
+        {
+          "to": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "from": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "path": [
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+            "f0869456-0e5d-4e69-9815-35693a2f34e3"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 0.96
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "path": [
+            "f0869456-0e5d-4e69-9815-35693a2f34e3",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 7,
+          "day_number": 1,
+          "distance_km": 5.07
+        },
+        {
+          "to": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.37
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "path": [
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.37
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 3.71
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 17,
+        "unreachable_pairs": 3
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 15,
+      "hotel_total": 3972,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-1-DURATION",
@@ -18,12 +156,162 @@
     "days": 2,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "54a31233-8ed3-4034-b666-d5a7210b6645",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 4,
-    "totalCost": 2344,
-    "roadDistanceKm": 14.4,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.65
+    "totalCost": 9144,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 31.91,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 88.75080000000003,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "54a31233-8ed3-4034-b666-d5a7210b6645",
+      "budget": 10000,
+      "hotel": 7944,
+      "attractions": 0,
+      "meals": 1200,
+      "transit": 0,
+      "total": 9144,
+      "remaining": 856,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 3.63
+        },
+        {
+          "to": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "from": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "path": [
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.07
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "path": [
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 6,
+          "day_number": 1,
+          "distance_km": 3.64
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 3.71
+        },
+        {
+          "to": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe"
+          ],
+          "method": "direct",
+          "minutes": 8,
+          "day_number": 2,
+          "distance_km": 6.88
+        },
+        {
+          "to": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "from": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "path": [
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+            "f0869456-0e5d-4e69-9815-35693a2f34e3"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 2,
+          "distance_km": 1.2
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "path": [
+            "f0869456-0e5d-4e69-9815-35693a2f34e3",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 7,
+          "day_number": 2,
+          "distance_km": 5.07
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 3.71
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 4
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 15,
+      "hotel_total": 7944,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-1-DURATION",
@@ -31,12 +319,119 @@
     "days": 3,
     "budget": 10000,
     "strategy": "distance-first",
-    "attractionsVisited": 4,
-    "totalCost": 3391,
-    "roadDistanceKm": 14.4,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.99
+    "status": "generated",
+    "tripId": "086ab8fc-05c0-4dfc-b7de-0c84645877f2",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+    "attractionsVisited": 0,
+    "totalCost": 11916,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 31.454999999999927,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "086ab8fc-05c0-4dfc-b7de-0c84645877f2",
+      "budget": 10000,
+      "hotel": 11916,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 11916,
+      "remaining": -1916,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 15,
+      "hotel_total": 11916,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 2
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 2
+        },
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 3
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 3
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 3,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 1916,
+      "unscheduled_attractions": [
+        {
+          "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "name": "Bhalka Tirth",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "name": "Somnath Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "name": "Triveni Sangam",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "name": "Somnath Beach",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-1-DURATION",
@@ -44,12 +439,150 @@
     "days": 1,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "b27be567-a26d-4f6d-822f-ca92b8f2ed89",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 1540,
-    "roadDistanceKm": 28.1,
-    "boatDistanceKm": 59,
-    "dijkstraFallbacks": 3,
-    "executionTimeMs": 3.47
+    "totalCost": 2800,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 109.14000000000001,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 41.871399999999994,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "b27be567-a26d-4f6d-822f-ca92b8f2ed89",
+      "budget": 10000,
+      "hotel": 2460,
+      "attractions": 0,
+      "meals": 340,
+      "transit": 0,
+      "total": 2800,
+      "remaining": 7200,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.36
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 18,
+          "day_number": 1,
+          "distance_km": 18.41
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 1,
+          "distance_km": 17.26
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 1,
+          "distance_km": 33.15
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 1,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 17,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 2460,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-1-DURATION",
@@ -57,12 +590,170 @@
     "days": 2,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "d3ed0ed1-c5ec-417c-b37f-02829ec9daf5",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 2760,
-    "roadDistanceKm": 48.3,
-    "boatDistanceKm": 77.8,
-    "dijkstraFallbacks": 4,
-    "executionTimeMs": 1.31
+    "totalCost": 5430,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 82.82,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 52.910899999999856,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "meals_not_scheduled",
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "d3ed0ed1-c5ec-417c-b37f-02829ec9daf5",
+      "budget": 10000,
+      "hotel": 4920,
+      "attractions": 0,
+      "meals": 510,
+      "transit": 0,
+      "total": 5430,
+      "remaining": 4570,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.36
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.09
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 2,
+          "distance_km": 16.18
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 25,
+          "day_number": 2,
+          "distance_km": 21.73
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 2,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 2
+      },
+      "warnings": [
+        "meals_not_scheduled",
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 4920,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 2
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-1-DURATION",
@@ -70,12 +761,186 @@
     "days": 3,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "8f37f381-21d5-4f8b-930f-d3ca7b391cec",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 3810,
-    "roadDistanceKm": 48.3,
-    "boatDistanceKm": 77.8,
-    "dijkstraFallbacks": 4,
-    "executionTimeMs": 1.02
+    "totalCost": 8400,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 115.1,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 47.728599999999915,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "8f37f381-21d5-4f8b-930f-d3ca7b391cec",
+      "budget": 10000,
+      "hotel": 7380,
+      "attractions": 0,
+      "meals": 1020,
+      "transit": 0,
+      "total": 8400,
+      "remaining": 1600,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.36
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.09
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 2,
+          "distance_km": 16.18
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 2,
+          "distance_km": 17.26
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 2.5
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 27,
+          "day_number": 3,
+          "distance_km": 34.25
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 3,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 3,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 7380,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 3,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -83,12 +948,99 @@
     "days": 1,
     "budget": 500,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "b48b364f-3e5a-47e7-94c9-d0bd89ed8bff",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 0,
-    "totalCost": 1047,
-    "roadDistanceKm": 0,
-    "boatDistanceKm": 0,
+    "totalCost": 3972,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
     "dijkstraFallbacks": 0,
-    "executionTimeMs": 0.26
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 83.87649999999985,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "b48b364f-3e5a-47e7-94c9-d0bd89ed8bff",
+      "budget": 500,
+      "hotel": 3972,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 3972,
+      "remaining": -3472,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 15,
+      "hotel_total": 3972,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 3472,
+      "unscheduled_attractions": [
+        {
+          "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "name": "Bhalka Tirth",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "name": "Somnath Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "name": "Triveni Sangam",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "name": "Somnath Beach",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -96,12 +1048,99 @@
     "days": 1,
     "budget": 900,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "35372ec0-2a56-4bcc-8a67-ed765d902b9d",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 0,
-    "totalCost": 1047,
-    "roadDistanceKm": 0,
-    "boatDistanceKm": 0,
+    "totalCost": 3972,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
     "dijkstraFallbacks": 0,
-    "executionTimeMs": 0.11
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 58.85979999999995,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "35372ec0-2a56-4bcc-8a67-ed765d902b9d",
+      "budget": 900,
+      "hotel": 3972,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 3972,
+      "remaining": -3072,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 15,
+      "hotel_total": 3972,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 3072,
+      "unscheduled_attractions": [
+        {
+          "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "name": "Bhalka Tirth",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "name": "Somnath Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "name": "Triveni Sangam",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "name": "Somnath Beach",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -109,12 +1148,99 @@
     "days": 1,
     "budget": 1200,
     "strategy": "distance-first",
-    "attractionsVisited": 2,
-    "totalCost": 1297,
-    "roadDistanceKm": 4,
-    "boatDistanceKm": 0,
+    "status": "generated",
+    "tripId": "46f95965-14f8-4c5b-8149-0b76911392db",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+    "attractionsVisited": 0,
+    "totalCost": 3972,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
     "dijkstraFallbacks": 0,
-    "executionTimeMs": 0.14
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 43.89689999999996,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "46f95965-14f8-4c5b-8149-0b76911392db",
+      "budget": 1200,
+      "hotel": 3972,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 3972,
+      "remaining": -2772,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 15,
+      "hotel_total": 3972,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 2772,
+      "unscheduled_attractions": [
+        {
+          "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "name": "Bhalka Tirth",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "name": "Somnath Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "name": "Triveni Sangam",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "name": "Somnath Beach",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -122,12 +1248,99 @@
     "days": 1,
     "budget": 1500,
     "strategy": "distance-first",
-    "attractionsVisited": 4,
-    "totalCost": 1297,
-    "roadDistanceKm": 14.3,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.54
+    "status": "generated",
+    "tripId": "bdf95e46-fec0-4e33-a541-4caf66c6bcdd",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+    "attractionsVisited": 0,
+    "totalCost": 3972,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 41.22349999999983,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "bdf95e46-fec0-4e33-a541-4caf66c6bcdd",
+      "budget": 1500,
+      "hotel": 3972,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 3972,
+      "remaining": -2472,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 15,
+      "hotel_total": 3972,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 2472,
+      "unscheduled_attractions": [
+        {
+          "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "name": "Bhalka Tirth",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "name": "Somnath Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "name": "Triveni Sangam",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "name": "Somnath Beach",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -135,12 +1348,99 @@
     "days": 1,
     "budget": 3000,
     "strategy": "distance-first",
-    "attractionsVisited": 4,
-    "totalCost": 1297,
-    "roadDistanceKm": 14.3,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.66
+    "status": "generated",
+    "tripId": "1ddc449a-180b-4656-9f3a-8bec913a0d12",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+    "attractionsVisited": 0,
+    "totalCost": 3972,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 55.36120000000005,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "1ddc449a-180b-4656-9f3a-8bec913a0d12",
+      "budget": 3000,
+      "hotel": 3972,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 3972,
+      "remaining": -972,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 15,
+      "hotel_total": 3972,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 972,
+      "unscheduled_attractions": [
+        {
+          "id": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "name": "Bhalka Tirth",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "name": "Somnath Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "name": "Triveni Sangam",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "name": "Somnath Beach",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -148,12 +1448,99 @@
     "days": 1,
     "budget": 500,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "49a3ecc7-be21-4c6d-9ae6-96ef4d415997",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 0,
-    "totalCost": 1050,
-    "roadDistanceKm": 0,
-    "boatDistanceKm": 0,
+    "totalCost": 2460,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
     "dijkstraFallbacks": 0,
-    "executionTimeMs": 0.1
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 31.677799999999934,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "49a3ecc7-be21-4c6d-9ae6-96ef4d415997",
+      "budget": 500,
+      "hotel": 2460,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 2460,
+      "remaining": -1960,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 20,
+      "hotel_total": 2460,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 1960,
+      "unscheduled_attractions": [
+        {
+          "id": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "name": "Dwarkadhish Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "name": "Nageshwar Jyotirlinga",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "name": "Bet Dwarka",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "name": "Rukmini Devi Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -161,12 +1548,99 @@
     "days": 1,
     "budget": 900,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "6bc9c7de-7d3d-4bdb-b6d5-7833f88c8c92",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 0,
-    "totalCost": 1050,
-    "roadDistanceKm": 0,
-    "boatDistanceKm": 0,
+    "totalCost": 2460,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
     "dijkstraFallbacks": 0,
-    "executionTimeMs": 0.1
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 42.47069999999985,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "6bc9c7de-7d3d-4bdb-b6d5-7833f88c8c92",
+      "budget": 900,
+      "hotel": 2460,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 2460,
+      "remaining": -1560,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 20,
+      "hotel_total": 2460,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 1560,
+      "unscheduled_attractions": [
+        {
+          "id": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "name": "Dwarkadhish Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "name": "Nageshwar Jyotirlinga",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "name": "Bet Dwarka",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "name": "Rukmini Devi Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -174,12 +1648,99 @@
     "days": 1,
     "budget": 1200,
     "strategy": "distance-first",
-    "attractionsVisited": 2,
-    "totalCost": 1270,
-    "roadDistanceKm": 7.7,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.46
+    "status": "generated",
+    "tripId": "d7f40bae-1804-4ac5-852f-32ffb7e935c8",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+    "attractionsVisited": 0,
+    "totalCost": 2460,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 33.05380000000014,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "d7f40bae-1804-4ac5-852f-32ffb7e935c8",
+      "budget": 1200,
+      "hotel": 2460,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 2460,
+      "remaining": -1260,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 20,
+      "hotel_total": 2460,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 1260,
+      "unscheduled_attractions": [
+        {
+          "id": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "name": "Dwarkadhish Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "name": "Nageshwar Jyotirlinga",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "name": "Bet Dwarka",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "name": "Rukmini Devi Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -187,12 +1748,99 @@
     "days": 1,
     "budget": 1500,
     "strategy": "distance-first",
-    "attractionsVisited": 4,
-    "totalCost": 1540,
-    "roadDistanceKm": 28.1,
-    "boatDistanceKm": 59,
-    "dijkstraFallbacks": 3,
-    "executionTimeMs": 0.71
+    "status": "generated",
+    "tripId": "25419aa8-0ae8-41ad-8f2a-9689f126dfff",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+    "attractionsVisited": 0,
+    "totalCost": 2460,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 0,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 69.78820000000042,
+    "budgetCompliant": false,
+    "hotelBudgetCompliant": false,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "starting_hotel_over_budget",
+      "meals_not_scheduled"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "25419aa8-0ae8-41ad-8f2a-9689f126dfff",
+      "budget": 1500,
+      "hotel": 2460,
+      "attractions": 0,
+      "meals": 0,
+      "transit": 0,
+      "total": 2460,
+      "remaining": -960,
+      "over_budget": true,
+      "generated": true,
+      "hotel_over_budget": true,
+      "transport_cost_known": true,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 0,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "starting_hotel_over_budget",
+        "meals_not_scheduled"
+      ],
+      "route_rows": 20,
+      "hotel_total": 2460,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        },
+        {
+          "meal": "dinner",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 1
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": true,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": true,
+      "hotel_budget_shortfall": 960,
+      "unscheduled_attractions": [
+        {
+          "id": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "name": "Dwarkadhish Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "name": "Nageshwar Jyotirlinga",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "name": "Bet Dwarka",
+          "reason": "Not scheduled within available routes, time and budget"
+        },
+        {
+          "id": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "name": "Rukmini Devi Temple",
+          "reason": "Not scheduled within available routes, time and budget"
+        }
+      ]
+    }
   },
   {
     "experimentId": "EXP-2-BUDGET",
@@ -200,12 +1848,150 @@
     "days": 1,
     "budget": 3000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "bda66801-0a3f-4da9-82a4-924498468909",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 1540,
-    "roadDistanceKm": 28.1,
-    "boatDistanceKm": 59,
-    "dijkstraFallbacks": 3,
-    "executionTimeMs": 0.57
+    "totalCost": 2800,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 109.14000000000001,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 55.1253999999999,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "bda66801-0a3f-4da9-82a4-924498468909",
+      "budget": 3000,
+      "hotel": 2460,
+      "attractions": 0,
+      "meals": 340,
+      "transit": 0,
+      "total": 2800,
+      "remaining": 200,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.36
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 18,
+          "day_number": 1,
+          "distance_km": 18.41
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 1,
+          "distance_km": 17.26
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 1,
+          "distance_km": 33.15
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 1,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 17,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 2460,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 1,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-3-STRATEGY",
@@ -213,12 +1999,162 @@
     "days": 2,
     "budget": 10000,
     "strategy": "budget-first",
+    "status": "generated",
+    "tripId": "78450697-78bb-4fb0-931d-1ce40951669e",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 4,
-    "totalCost": 2344,
-    "roadDistanceKm": 15.6,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.59
+    "totalCost": 9144,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 31.91,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 51.44889999999987,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "78450697-78bb-4fb0-931d-1ce40951669e",
+      "budget": 10000,
+      "hotel": 7944,
+      "attractions": 0,
+      "meals": 1200,
+      "transit": 0,
+      "total": 9144,
+      "remaining": 856,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 3.63
+        },
+        {
+          "to": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "from": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "path": [
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.07
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "path": [
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 6,
+          "day_number": 1,
+          "distance_km": 3.64
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 3.71
+        },
+        {
+          "to": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe"
+          ],
+          "method": "direct",
+          "minutes": 8,
+          "day_number": 2,
+          "distance_km": 6.88
+        },
+        {
+          "to": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "from": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "path": [
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+            "f0869456-0e5d-4e69-9815-35693a2f34e3"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 2,
+          "distance_km": 1.2
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "path": [
+            "f0869456-0e5d-4e69-9815-35693a2f34e3",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 7,
+          "day_number": 2,
+          "distance_km": 5.07
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 3.71
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 4
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 15,
+      "hotel_total": 7944,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-3-STRATEGY",
@@ -226,12 +2162,162 @@
     "days": 2,
     "budget": 10000,
     "strategy": "rating-first",
+    "status": "generated",
+    "tripId": "8e2ca294-ba26-48d8-be77-9dddceb84c5a",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 4,
-    "totalCost": 7000,
-    "roadDistanceKm": 14.3,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.47
+    "totalCost": 9144,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 35.07,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 58.103200000000015,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "8e2ca294-ba26-48d8-be77-9dddceb84c5a",
+      "budget": 10000,
+      "hotel": 7944,
+      "attractions": 0,
+      "meals": 1200,
+      "transit": 0,
+      "total": 9144,
+      "remaining": 856,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489"
+          ],
+          "method": "direct",
+          "minutes": 8,
+          "day_number": 1,
+          "distance_km": 6.15
+        },
+        {
+          "to": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "from": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "path": [
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.07
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "path": [
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 6,
+          "day_number": 1,
+          "distance_km": 4.28
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 3.71
+        },
+        {
+          "to": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe"
+          ],
+          "method": "direct",
+          "minutes": 8,
+          "day_number": 2,
+          "distance_km": 6.88
+        },
+        {
+          "to": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "from": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "path": [
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+            "f0869456-0e5d-4e69-9815-35693a2f34e3"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 2,
+          "distance_km": 1.2
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "path": [
+            "f0869456-0e5d-4e69-9815-35693a2f34e3",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 7,
+          "day_number": 2,
+          "distance_km": 5.07
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 3.71
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 4
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 15,
+      "hotel_total": 7944,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-3-STRATEGY",
@@ -239,12 +2325,162 @@
     "days": 2,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "a913a145-47e2-40f2-802f-4c4739533568",
+    "hotelId": "836c1ff8-cc88-4245-92e1-d07417803a2b",
     "attractionsVisited": 4,
-    "totalCost": 2344,
-    "roadDistanceKm": 14.4,
-    "boatDistanceKm": 0,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.92
+    "totalCost": 9144,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 31.91,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 53.91319999999996,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 15,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "a913a145-47e2-40f2-802f-4c4739533568",
+      "budget": 10000,
+      "hotel": 7944,
+      "attractions": 0,
+      "meals": 1200,
+      "transit": 0,
+      "total": 9144,
+      "remaining": 856,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 3.63
+        },
+        {
+          "to": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "from": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "path": [
+            "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489"
+          ],
+          "method": "direct",
+          "minutes": 5,
+          "day_number": 1,
+          "distance_km": 4.07
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "path": [
+            "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 6,
+          "day_number": 1,
+          "distance_km": 3.64
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 3.71
+        },
+        {
+          "to": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "path": [
+            "836c1ff8-cc88-4245-92e1-d07417803a2b",
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe"
+          ],
+          "method": "direct",
+          "minutes": 8,
+          "day_number": 2,
+          "distance_km": 6.88
+        },
+        {
+          "to": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "from": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "path": [
+            "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+            "f0869456-0e5d-4e69-9815-35693a2f34e3"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 2,
+          "distance_km": 1.2
+        },
+        {
+          "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "from": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "path": [
+            "f0869456-0e5d-4e69-9815-35693a2f34e3",
+            "df7dfe02-bf46-4434-8596-d90dad17298f"
+          ],
+          "method": "direct",
+          "minutes": 7,
+          "day_number": 2,
+          "distance_km": 5.07
+        },
+        {
+          "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "path": [
+            "df7dfe02-bf46-4434-8596-d90dad17298f",
+            "836c1ff8-cc88-4245-92e1-d07417803a2b"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 3.71
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 4
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 15,
+      "hotel_total": 7944,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-3-STRATEGY",
@@ -252,12 +2488,170 @@
     "days": 2,
     "budget": 10000,
     "strategy": "budget-first",
+    "status": "generated",
+    "tripId": "c8d158a9-7aa1-4d3c-9921-1b5b5d540a5c",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 2760,
-    "roadDistanceKm": 48.3,
-    "boatDistanceKm": 77.8,
-    "dijkstraFallbacks": 4,
-    "executionTimeMs": 1.02
+    "totalCost": 5430,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 82.82,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 83.50720000000001,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "meals_not_scheduled",
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "c8d158a9-7aa1-4d3c-9921-1b5b5d540a5c",
+      "budget": 10000,
+      "hotel": 4920,
+      "attractions": 0,
+      "meals": 510,
+      "transit": 0,
+      "total": 5430,
+      "remaining": 4570,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.36
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.09
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 2,
+          "distance_km": 16.18
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 25,
+          "day_number": 2,
+          "distance_km": 21.73
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 2,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 2
+      },
+      "warnings": [
+        "meals_not_scheduled",
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 4920,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 2
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-3-STRATEGY",
@@ -265,12 +2659,162 @@
     "days": 2,
     "budget": 10000,
     "strategy": "rating-first",
+    "status": "generated",
+    "tripId": "60ca5e60-f428-4daf-9173-8d44dedb02cd",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 8800,
-    "roadDistanceKm": 25.2,
-    "boatDistanceKm": 57.8,
-    "dijkstraFallbacks": 2,
-    "executionTimeMs": 0.76
+    "totalCost": 5600,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 109.78,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 52.44219999999996,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "scheduled",
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "60ca5e60-f428-4daf-9173-8d44dedb02cd",
+      "budget": 10000,
+      "hotel": 4920,
+      "attractions": 0,
+      "meals": 680,
+      "transit": 0,
+      "total": 5600,
+      "remaining": 4400,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 18,
+          "day_number": 1,
+          "distance_km": 17.5
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 1,
+          "distance_km": 17.26
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 2,
+          "distance_km": 3.2
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 25,
+          "day_number": 2,
+          "distance_km": 31.36
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 2,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "scheduled",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 0
+      },
+      "warnings": [
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 4920,
+      "skipped_meals": [],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   },
   {
     "experimentId": "EXP-3-STRATEGY",
@@ -278,11 +2822,169 @@
     "days": 2,
     "budget": 10000,
     "strategy": "distance-first",
+    "status": "generated",
+    "tripId": "45c2a1ec-1b42-4a98-aecb-c662562716ba",
+    "hotelId": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
     "attractionsVisited": 4,
-    "totalCost": 2760,
-    "roadDistanceKm": 48.3,
-    "boatDistanceKm": 77.8,
-    "dijkstraFallbacks": 4,
-    "executionTimeMs": 1.06
+    "totalCost": 5430,
+    "roadDistanceKm": null,
+    "boatDistanceKm": null,
+    "totalDistanceKm": 82.82,
+    "dijkstraFallbacks": 0,
+    "executionTimeMs": null,
+    "generationRequestTimeMs": 109.95219999999972,
+    "budgetCompliant": true,
+    "hotelBudgetCompliant": true,
+    "generationStatus": "incomplete",
+    "warnings": [
+      "meals_not_scheduled",
+      "transport_fares_unknown"
+    ],
+    "routeRows": 20,
+    "persistedResultMatches": true,
+    "uniqueAttractions": true,
+    "circularDays": true,
+    "budgetResponse": {
+      "trip_id": "45c2a1ec-1b42-4a98-aecb-c662562716ba",
+      "budget": 10000,
+      "hotel": 4920,
+      "attractions": 0,
+      "meals": 510,
+      "transit": 0,
+      "total": 5430,
+      "remaining": 4570,
+      "over_budget": false,
+      "generated": true,
+      "hotel_over_budget": false,
+      "transport_cost_known": false,
+      "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+    },
+    "generationSummary": {
+      "legs": [
+        {
+          "to": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.31
+        },
+        {
+          "to": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "from": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+          "path": [
+            "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+            "fef98818-0b8a-42e2-9065-0116c18620e2"
+          ],
+          "method": "direct",
+          "minutes": 4,
+          "day_number": 1,
+          "distance_km": 2.36
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "fef98818-0b8a-42e2-9065-0116c18620e2",
+          "path": [
+            "fef98818-0b8a-42e2-9065-0116c18620e2",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.09
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 1,
+          "distance_km": 2.5
+        },
+        {
+          "to": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "from": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "path": [
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1"
+          ],
+          "method": "direct",
+          "minutes": 17,
+          "day_number": 2,
+          "distance_km": 16.18
+        },
+        {
+          "to": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "from": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+          "path": [
+            "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea"
+          ],
+          "method": "direct",
+          "minutes": 25,
+          "day_number": 2,
+          "distance_km": 21.73
+        },
+        {
+          "to": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "from": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+          "path": [
+            "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+            "55013b89-a2fb-49cd-86be-4038780307dd"
+          ],
+          "method": "direct",
+          "minutes": 26,
+          "day_number": 2,
+          "distance_km": 33.15
+        },
+        {
+          "to": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+          "from": "55013b89-a2fb-49cd-86be-4038780307dd",
+          "path": [
+            "55013b89-a2fb-49cd-86be-4038780307dd",
+            "4373d8d4-0137-4e3d-9294-a824a3ddd6dd"
+          ],
+          "method": "direct",
+          "minutes": 3,
+          "day_number": 2,
+          "distance_km": 2.5
+        }
+      ],
+      "status": "incomplete",
+      "routing": {
+        "dijkstra_calls": 0,
+        "direct_route_hits": 15,
+        "unreachable_pairs": 2
+      },
+      "warnings": [
+        "meals_not_scheduled",
+        "transport_fares_unknown"
+      ],
+      "route_rows": 20,
+      "hotel_total": 4920,
+      "skipped_meals": [
+        {
+          "meal": "lunch",
+          "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+          "day_number": 2
+        }
+      ],
+      "hotel_replaced": false,
+      "lodging_nights": 2,
+      "hotel_over_budget": false,
+      "starting_hotel_id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "excluded_attractions": [],
+      "transport_cost_known": false,
+      "hotel_budget_shortfall": 0,
+      "unscheduled_attractions": []
+    }
   }
 ]

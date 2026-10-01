@@ -1,0 +1,183 @@
+{
+  "city": "rann-of-kutch",
+  "checkedAt": "2026-09-30T17:59:58.615Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/destinations/rann-of-kutch",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/e50a0fd8-9206-49e4-be1c-92f5cc0345d0/attractions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/e50a0fd8-9206-49e4-be1c-92f5cc0345d0/restaurants",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/e50a0fd8-9206-49e4-be1c-92f5cc0345d0/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/e50a0fd8-9206-49e4-be1c-92f5cc0345d0/hotels?sort=rating",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/e50a0fd8-9206-49e4-be1c-92f5cc0345d0/hotels?sort=value",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/35a5c05c-2bd9-4ec2-b979-ea68581a2aaf/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/35a5c05c-2bd9-4ec2-b979-ea68581a2aaf",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/35a5c05c-2bd9-4ec2-b979-ea68581a2aaf/budget",
+      "status": 200
+    }
+  ],
+  "counts": {
+    "attractions": 2,
+    "hotels": 1,
+    "restaurants": 1
+  },
+  "attractionVisits": 2,
+  "summary": {
+    "legs": [
+      {
+        "to": "cd6125bc-217a-42d1-b916-4ceb118f2b08",
+        "from": "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+        "path": [
+          "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+          "cd6125bc-217a-42d1-b916-4ceb118f2b08"
+        ],
+        "method": "direct",
+        "minutes": 8,
+        "day_number": 1,
+        "distance_km": 5.4
+      },
+      {
+        "to": "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+        "from": "cd6125bc-217a-42d1-b916-4ceb118f2b08",
+        "path": [
+          "cd6125bc-217a-42d1-b916-4ceb118f2b08",
+          "29e70289-6a12-4656-a41e-1b5fbf5d89f4"
+        ],
+        "method": "direct",
+        "minutes": 8,
+        "day_number": 1,
+        "distance_km": 5.4
+      },
+      {
+        "to": "cd39085a-3b11-4041-83d4-58b6645f66ad",
+        "from": "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+        "path": [
+          "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+          "cd39085a-3b11-4041-83d4-58b6645f66ad"
+        ],
+        "method": "direct",
+        "minutes": 62,
+        "day_number": 2,
+        "distance_km": 46.44
+      },
+      {
+        "to": "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+        "from": "cd39085a-3b11-4041-83d4-58b6645f66ad",
+        "path": [
+          "cd39085a-3b11-4041-83d4-58b6645f66ad",
+          "29e70289-6a12-4656-a41e-1b5fbf5d89f4"
+        ],
+        "method": "direct",
+        "minutes": 62,
+        "day_number": 2,
+        "distance_km": 46.44
+      }
+    ],
+    "status": "incomplete",
+    "routing": {
+      "dijkstra_calls": 0,
+      "direct_route_hits": 6,
+      "unreachable_pairs": 1
+    },
+    "warnings": [
+      "meals_not_scheduled",
+      "transport_fares_unknown"
+    ],
+    "route_rows": 5,
+    "hotel_total": 11550,
+    "skipped_meals": [
+      {
+        "meal": "lunch",
+        "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+        "day_number": 1
+      },
+      {
+        "meal": "dinner",
+        "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+        "day_number": 1
+      },
+      {
+        "meal": "lunch",
+        "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+        "day_number": 2
+      },
+      {
+        "meal": "dinner",
+        "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+        "day_number": 2
+      }
+    ],
+    "hotel_replaced": false,
+    "lodging_nights": 2,
+    "hotel_over_budget": false,
+    "starting_hotel_id": "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+    "excluded_attractions": [],
+    "transport_cost_known": false,
+    "hotel_budget_shortfall": 0,
+    "unscheduled_attractions": []
+  },
+  "budget": {
+    "trip_id": "35a5c05c-2bd9-4ec2-b979-ea68581a2aaf",
+    "budget": 20000,
+    "hotel": 11550,
+    "attractions": 100,
+    "meals": 0,
+    "transit": 0,
+    "total": 11650,
+    "remaining": 8350,
+    "over_budget": false,
+    "generated": true,
+    "hotel_over_budget": false,
+    "transport_cost_known": false,
+    "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+  },
+  "apiPassed": true,
+  "cleanupCompleted": true
+}

@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-29T13:55:30.919Z",
+  "sourceBaseline": "Session-start source snapshot (no Git metadata)",
+  "filesChanged": [
+    "frontend\\src\\App.tsx",
+    "frontend\\src\\components\\AdminDashboardView.tsx",
+    "frontend\\src\\components\\AlgorithmStatsPanel.tsx",
+    "frontend\\src\\components\\AuthView.tsx",
+    "frontend\\src\\components\\BudgetPlannerView.tsx",
+    "frontend\\src\\components\\DestinationDetailView.tsx",
+    "frontend\\src\\components\\DijkstraVisualizer.tsx",
+    "frontend\\src\\components\\ExploreView.tsx",
+    "frontend\\src\\components\\FeaturedDestinations.tsx",
+    "frontend\\src\\components\\Hero.tsx",
+    "frontend\\src\\components\\HomeTransitionOverlay.tsx",
+    "frontend\\src\\components\\HotelsView.tsx",
+    "frontend\\src\\components\\ItineraryView.tsx",
+    "frontend\\src\\components\\OfflineRouteMap.tsx",
+    "frontend\\src\\components\\PlannerModal.tsx",
+    "frontend\\src\\components\\ProfileDashboardView.tsx",
+    "frontend\\src\\components\\ResearchView.tsx",
+    "frontend\\src\\components\\StrategyComparisonModal.tsx",
+    "frontend\\src\\utils\\itineraryPlanner.ts",
+    "frontend\\src\\utils\\offlineStorage.ts",
+    "frontend\\src\\utils\\router.ts",
+    "frontend\\src\\utils\\shareUrl.ts"
+  ],
+  "removedOrModifiedStyleAttributes": [],
+  "addedStyleAttributes": [
+    {
+      "path": "frontend\\src\\components\\AdminDashboardView.tsx",
+      "attr": "className=\"block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold\"",
+      "count": 4,
+      "reusesExistingClass": true
+    },
+    {
+      "path": "frontend\\src\\components\\AdminDashboardView.tsx",
+      "attr": "className=\"w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold\"",
+      "count": 4,
+      "reusesExistingClass": true
+    }
+  ],
+  "protectedFilesUnchanged": true,
+  "verified": true
+}

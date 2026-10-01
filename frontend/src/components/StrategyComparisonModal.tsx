@@ -1,10 +1,10 @@
+import { displayNumber } from "../api";
+import { createItinerary, useApi, generateComparisonTakeaway } from "../api";
 import React, { useState, useMemo } from "react";
-import {
+import type {
   PlannerConfigPayload,
   OptimizationStrategy,
   GeneratedItineraryResult,
-  generateStrategyItinerary,
-  generateComparisonTakeaway,
 } from "../utils/itineraryPlanner";
 import { useLanguage } from "../context/LanguageContext";
 import { AlgorithmStatsPanel } from "./AlgorithmStatsPanel";
@@ -30,7 +30,7 @@ interface StrategyComparisonModalProps {
   isOpen: boolean;
   onClose: () => void;
   config: PlannerConfigPayload;
-  onSelectStrategy: (strategy: OptimizationStrategy) => void;
+  onSelectStrategy: (strategy: OptimizationStrategy, config?: PlannerConfigPayload) => void;
 }
 
 export const StrategyComparisonModal: React.FC<
@@ -41,17 +41,24 @@ export const StrategyComparisonModal: React.FC<
     useState<OptimizationStrategy>("budget-first");
   const [expandedDayPlans, setExpandedDayPlans] = useState<Record<string, boolean>>({});
 
-  // Compute all 3 strategy itineraries simultaneously
-  const results: GeneratedItineraryResult[] = useMemo(() => {
-    if (!isOpen) return [];
-    return [
-      generateStrategyItinerary(config, "budget-first", language),
-      generateStrategyItinerary(config, "rating-first", language),
-      generateStrategyItinerary(config, "distance-first", language),
-    ];
-  }, [isOpen, config, language]);
-
-  if (!isOpen || results.length < 3) return null;
+  const request = useApi(async signal => {
+    const rows = [];
+    for(const strategy of ["budget-first", "rating-first", "distance-first"] as OptimizationStrategy[]) {
+      signal.throwIfAborted();
+      rows.push(await createItinerary(config, strategy));
+    }
+    return rows;
+  }, [config.cityId,config.tripDays,config.budget,config.startingHotelId,config.startTime,config.wheelchairAccessibleOnly,isOpen], isOpen);
+  const results = request.data?.map(row => row.result) ?? [];
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => { if(e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+  if(!isOpen) return null;
+  if(request.loading) return <p role="status">Loading server-generated comparisons... <button onClick={onClose}>Close</button></p>;
+  if(request.error) return <p role="alert">{request.error} <button onClick={request.reload}>Retry</button> <button onClick={onClose}>Close</button></p>;
+  if(results.length < 3) return <p role="status">Comparison unavailable.</p>;
 
   const budgetResult = results[0];
   const ratingResult = results[1];
@@ -102,20 +109,9 @@ export const StrategyComparisonModal: React.FC<
   const toggleDayPlan = (strategyKey: string) => {
     setExpandedDayPlans((prev) => ({
       ...prev,
-      [strategyKey]: !prev[strategyKey],
+      [strategyKey]: !(prev[strategyKey] ?? true),
     }));
   };
-
-  // Keyboard Escape listener
-  React.useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
 
   return (
     <div
@@ -141,7 +137,7 @@ export const StrategyComparisonModal: React.FC<
             </h2>
             <p className="font-body text-xs text-stone mt-0.5">
               Evaluating 3 greedy route algorithms for your {config.tripDays}
-              -day trip with a budget cap of ₹{config.budget.toLocaleString("en-IN")}.
+              -day trip with a budget cap of ₹{displayNumber(config.budget)}.
             </p>
           </div>
           <button
@@ -229,7 +225,7 @@ export const StrategyComparisonModal: React.FC<
                             {isWinningCost && (
                               <span className="text-gold mr-1">★</span>
                             )}
-                            ₹{res.totalCost.toLocaleString("en-IN")}
+                            ₹{displayNumber(res.totalCost)}
                           </span>
                         </td>
 
@@ -353,7 +349,7 @@ export const StrategyComparisonModal: React.FC<
                         Total Cost
                       </span>
                       <span className="font-bold text-ink text-sm">
-                        ₹{res.totalCost.toLocaleString("en-IN")}
+                        ₹{displayNumber(res.totalCost)}
                       </span>
                     </div>
                     <div className="bg-white p-2 border border-stone/30 rounded-lg">
@@ -458,7 +454,7 @@ export const StrategyComparisonModal: React.FC<
                   <div className="p-3 sm:p-4 bg-salt border-t border-stone/20 shrink-0">
                     <button
                       type="button"
-                      onClick={() => onSelectStrategy(res.strategy)}
+                      onClick={() => onSelectStrategy(res.strategy, request.data?.find(row => row.result.strategy === res.strategy)?.config)}
                       className="w-full bg-madder hover:bg-ink text-salt border border-madder font-mono text-xs font-bold py-3 px-4 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all min-h-[44px] rounded-lg"
                     >
                       <Check className="w-4 h-4 text-salt" />

@@ -1,0 +1,97 @@
+{
+  "startedAt": "2026-10-01T08:54:56.948Z",
+  "project": "heritage-prod-c9478f0b",
+  "verified": true,
+  "gates": [
+    {
+      "name": "container-build",
+      "passed": true
+    },
+    {
+      "name": "fresh-local-bootstrap-migrations-and-approved-seed",
+      "passed": true
+    },
+    {
+      "name": "container-seed",
+      "passed": true
+    },
+    {
+      "name": "container-reseed",
+      "passed": true
+    },
+    {
+      "name": "container-data-verify",
+      "passed": true
+    },
+    {
+      "name": "runtime-privileges-security-headers-and-log-redaction",
+      "passed": true
+    },
+    {
+      "name": "https-edge-configuration",
+      "passed": true
+    },
+    {
+      "name": "production-api-security-load-and-concurrency",
+      "passed": true
+    },
+    {
+      "name": "built-spa-browser-all-cities-admin",
+      "passed": true
+    },
+    {
+      "name": "built-spa-platform",
+      "passed": true
+    },
+    {
+      "name": "whole-stack-restart-persistence-and-new-login",
+      "passed": true
+    },
+    {
+      "name": "backup-restorable-archive",
+      "passed": true
+    },
+    {
+      "name": "restore-clean-database",
+      "passed": true
+    },
+    {
+      "name": "restored-persisted-trip-budget",
+      "passed": true
+    },
+    {
+      "name": "database-outage-and-recovery",
+      "passed": true
+    },
+    {
+      "name": "graceful-stop-and-restart",
+      "passed": true
+    }
+  ],
+  "runtimeRole": {
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false
+  },
+  "rotatedLogs": true,
+  "edgeLogsRedacted": true,
+  "memoryBefore": "61.16MiB / 3.825GiB",
+  "memoryAfter": "78.22MiB / 3.825GiB",
+  "restartPersistence": true,
+  "recoveryCounts": {
+    "destinations": 8,
+    "attractions": 25,
+    "hotels": 11,
+    "restaurants": 12,
+    "routes": 131,
+    "users": 1,
+    "trips": 1,
+    "itinerary_stops": 10,
+    "budgets": 1
+  },
+  "recoveredTripDays": 2,
+  "recoveredBudget": 6486,
+  "archiveBytes": 117864,
+  "stagingStopped": true,
+  "finishedAt": "2026-10-01T09:01:38.905Z"
+}

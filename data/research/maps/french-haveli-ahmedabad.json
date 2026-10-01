@@ -1,0 +1,33 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=French+Haveli+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 247845995,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 522354375,
+      "lat": "23.0188452",
+      "lon": "72.5917426",
+      "category": "tourism",
+      "type": "hotel",
+      "place_rank": 30,
+      "importance": 6.633783474474735e-05,
+      "addresstype": "tourism",
+      "name": "French Haveli",
+      "display_name": "French Haveli, Habib Ni Golwad, Raipur - Khadiya, Manek Chowk, Khadia, Ahmedabad, Gujarat, 380001, India",
+      "extratags": {
+        "website": "https://frenchhaveli.com/",
+        "building": "yes",
+        "description": "Boutique heritage home",
+        "internet_access": "yes"
+      },
+      "boundingbox": [
+        "23.0188048",
+        "23.0189220",
+        "72.5916575",
+        "72.5917909"
+      ]
+    }
+  ]
+}

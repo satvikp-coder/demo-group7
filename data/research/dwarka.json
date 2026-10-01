@@ -1,0 +1,328 @@
+{
+  "city": "dwarka",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "dwarka",
+      "values": {
+        "district": "Devbhumi Dwarka",
+        "location": "Dwarka, western Saurashtra, Gujarat",
+        "category": "Religious",
+        "description": "Dwarka is a coastal pilgrimage town associated with Krishna. Its principal sites include the Dwarkadhish temple, Rukmini temple and Nageshwar Jyotirlinga, with Bet Dwarka offshore near Okha.",
+        "highlights": [
+          "Dwarkadhish Temple",
+          "Rukmini Temple",
+          "Nageshwar Jyotirlinga",
+          "Bet Dwarka"
+        ]
+      },
+      "sources": [
+        "https://devbhumidwarka.nic.in/places-of-interest/"
+      ],
+      "notes": "Paraphrased district visitor information."
+    },
+    {
+      "table": "attractions",
+      "key": "a201",
+      "values": {
+        "lat": 22.237774,
+        "lng": 68.967512,
+        "description": "The Dwarkadhish temple is a Krishna pilgrimage shrine in Dwarka, also known as Jagat Mandir.",
+        "transport_mode": "road",
+        "best_time_note": "Darshan has a midday closure; published guide gives 06:30-13:00 and 17:00-21:30. Accessibility guide reports assisted entry via the exit side and a step near the sanctum; independent wheelchair access is not established."
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/91573157",
+        "https://devbhumidwarka.nic.in/places-of-interest/",
+        "https://adaptivelifeguide.com/dwarka-temple-wheelchair-accessibility/"
+      ],
+      "notes": "Mapped temple anchor; boolean remains unknown because access is partial and assisted. Existing continuous scheduling window cannot encode the midday closure."
+    },
+    {
+      "table": "attractions",
+      "key": "a202",
+      "values": {
+        "lat": 22.336061,
+        "lng": 69.087015,
+        "rating": 4.7,
+        "description": "Nageshwar is a Shiva temple in the Dwarka area, traditionally counted among the twelve Jyotirlingas.",
+        "transport_mode": "road",
+        "best_time_note": "Accessibility guide reports rear entrance access and steep ramps requiring assistance. Wheelchair darshan is from an elevated area with restricted sightlines; direct access to the Jyotirlinga is unavailable."
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Nageshwar+Jyotirlinga+Temple",
+        "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-jyotirlinga.html",
+        "https://adaptivelifeguide.com/wheelchair-accessibility-at-nageshwar-temple/"
+      ],
+      "notes": "Exact selected business coordinates archived in pages/nageshwar-map.json. Corrects inaccurate legacy longitude. Access guide is authored firsthand disability guidance, not an inference from photographs."
+    },
+    {
+      "table": "attractions",
+      "key": "a203",
+      "values": {
+        "lat": 22.257331,
+        "lng": 68.964398,
+        "description": "The Rukmini temple near Dwarka is dedicated to Krishna's consort and features carved exterior walls.",
+        "wheelchair_accessible": false,
+        "transport_mode": "road",
+        "best_time_note": "Disability travel guide reports steps and uneven paths preventing wheelchair access."
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/3903603202",
+        "https://devbhumidwarka.nic.in/places-of-interest/",
+        "https://adaptivelifeguide.com/dwarka-temple-wheelchair-accessibility/"
+      ],
+      "notes": "Corrects legacy coordinates; accessibility supported by a dedicated authored accessibility guide."
+    },
+    {
+      "table": "attractions",
+      "key": "a204",
+      "values": {
+        "lat": 22.451995,
+        "lng": 69.095999,
+        "rating": 4.6,
+        "entry_fee": "Free general temple admission; transport and optional services extra",
+        "entry_fee_numeric": 0,
+        "description": "Bet Dwarka is an island near Okha associated with Krishna. This itinerary point is anchored at Shri Beyt Dwarkadhish Temple.",
+        "transport_mode": "road",
+        "best_time_note": "Road access is available over Sudarshan Setu, inaugurated in February 2024. Ferry is optional; no verified current ferry tariff is stored. Temple hours vary and include a midday closure. Accessibility guide reports steps near the sanctum requiring lifting assistance."
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Bet+Dwarka+Temple",
+        "https://www.gujarattrips.com/bet-dwarka",
+        "https://shreedwarkadhish.in/temple-timings.html",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2008763&lang=2&reg=48",
+        "https://adaptivelifeguide.com/dwarka-temple-wheelchair-accessibility/"
+      ],
+      "notes": "Exact selected temple coordinates archived pages/bet-dwarka-selected.json. Free admission cross-checked in two secondary visitor sources, neither represented as an official temple tariff. Does not treat boat fare as admission. Conflicting published hours not used to overwrite legacy hours. Bridge source is official PIB."
+    },
+    {
+      "table": "hotels",
+      "key": "h201",
+      "values": {
+        "lat": 22.240855,
+        "lng": 68.960179,
+        "rating": 4.4,
+        "location": "Near Circuit House, Civil Hospital Road, Dwarka, Gujarat",
+        "description": "Toran Tourist Bungalow is Gujarat Tourism accommodation near the Circuit House in Dwarka."
+      },
+      "sources": [
+        "https://gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow--dwarka.html",
+        "https://www.google.com/maps/search/Hotel+Toran+Dwarka"
+      ],
+      "notes": "Exact map listing archived pages/toran-dwarka-map.json. Existing nightly price retained; no current public quote was returned."
+    },
+    {
+      "table": "hotels",
+      "key": "h202",
+      "values": {
+        "name": "Hotel Darshan Palace",
+        "lat": 22.245748,
+        "lng": 68.978602,
+        "price_per_night": 2460,
+        "rating": 2.6,
+        "stay_type": "Registered Hotel",
+        "location": "Jalaram Road, near Laxmi Marble, Rampara, Ghanshyam Nagar, Dwarka 361335",
+        "description": "Hotel Darshan Palace is a Dwarka hotel on Jalaram Road. Booking listings describe air-conditioned rooms, private bathrooms, Wi-Fi and parking.",
+        "source": "Google Maps business listing; Booking.com; MakeMyTrip"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Hotel+Darshan+Palace+Dwarka",
+        "https://www.booking.com/hotel/in/darshan-palace-near-dwarka-railway-station-amp-shree-dwarkadhish-temple.html",
+        "https://www.makemytrip.com/hotels/hotel_darshan_palace_near_dwarka_railway_station_shree_dwarkadhish_temple-details-dwarka.html"
+      ],
+      "notes": "Existence/address cross-checked across three platforms. Google displayed MakeMyTrip nightly quote INR2460 for two adults, November15-17 2026, checked September30 IST; room category and tax basis unspecified. Snapshot pages/darshan-palace-map.json. Dynamic representative quote, not a guaranteed tariff. Rating is Google 2.6/5, not Booking score. Preserves experiment's original hotel choice."
+    },
+    {
+      "table": "restaurants",
+      "key": "r202",
+      "values": {
+        "name": "Shrinath Dining Hall",
+        "lat": 22.239932,
+        "lng": 68.964614,
+        "rating": 4.4,
+        "avg_cost_per_person": 170,
+        "cuisine": "Gujarati vegetarian thali",
+        "location": "Home Guard Chowk, Dwarka, Gujarat 361335",
+        "source": "Google Maps; Amit Gujarati on-location dining video"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Shrinath+Dining+Hall+Dwarka",
+        "https://www.youtube.com/watch?v=9YMb1_PeLTk",
+        "https://www.district.in/dining/dwarka/shree-nath-dining-hall-dwarka-locality"
+      ],
+      "notes": "Map business listing archived pages/shrinath-dwarka.json. Representative unlimited-thali price INR170 explicitly reported in August15 2025 on-location video; historical quoted meal basis, not guaranteed current tariff. Business cross-checked District. Legacy r201 retained pending verification."
+    },
+    {
+      "table": "hotels",
+      "key": "h201",
+      "values": {
+        "price_per_night": 2900
+      },
+      "sources": [
+        "https://booking.gujarattourism.com/hotel/view/35?tentHotel=false"
+      ],
+      "notes": "Official Gujarat Tourism booking page: A/C Room INR2900/night, breakfast included, extra-person800. Checked Sep30 for Oct2-3 2026, 1room2guests. Page says no more room left; this is published category tariff, not availability guarantee. Taxes unspecified. Dormitory750 is not a private hotel room and not substituted. pages/toran-dwarka-room.json. Replaces historical1800."
+    },
+    {
+      "table": "attractions",
+      "key": "a201",
+      "values": {
+        "slug": "dwarkadhish-temple-dwarka"
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/91573157",
+        "https://devbhumidwarka.nic.in/places-of-interest/",
+        "https://adaptivelifeguide.com/dwarka-temple-wheelchair-accessibility/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a202",
+      "values": {
+        "slug": "nageshwar-jyotirlinga-dwarka"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Nageshwar+Jyotirlinga+Temple",
+        "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-jyotirlinga.html",
+        "https://adaptivelifeguide.com/wheelchair-accessibility-at-nageshwar-temple/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a204",
+      "values": {
+        "slug": "bet-dwarka-dwarka"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Bet+Dwarka+Temple",
+        "https://www.gujarattrips.com/bet-dwarka",
+        "https://shreedwarkadhish.in/temple-timings.html",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2008763&lang=2&reg=48",
+        "https://adaptivelifeguide.com/dwarka-temple-wheelchair-accessibility/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a203",
+      "values": {
+        "slug": "rukmini-devi-temple-dwarka"
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/3903603202",
+        "https://devbhumidwarka.nic.in/places-of-interest/",
+        "https://adaptivelifeguide.com/dwarka-temple-wheelchair-accessibility/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "hotels",
+      "key": "h202",
+      "values": {
+        "slug": "hotel-darshan-palace-dwarka"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Hotel+Darshan+Palace+Dwarka",
+        "https://www.booking.com/hotel/in/darshan-palace-near-dwarka-railway-station-amp-shree-dwarkadhish-temple.html",
+        "https://www.makemytrip.com/hotels/hotel_darshan_palace_near_dwarka_railway_station_shree_dwarkadhish_temple-details-dwarka.html"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "hotels",
+      "key": "h201",
+      "values": {
+        "slug": "toran-hotel-dwarka-dwarka"
+      },
+      "sources": [
+        "https://gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow--dwarka.html",
+        "https://www.google.com/maps/search/Hotel+Toran+Dwarka",
+        "https://booking.gujarattourism.com/hotel/view/35?tentHotel=false"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "restaurants",
+      "key": "r202",
+      "values": {
+        "slug": "shrinath-dining-hall-dwarka"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Shrinath+Dining+Hall+Dwarka",
+        "https://www.youtube.com/watch?v=9YMb1_PeLTk",
+        "https://www.district.in/dining/dwarka/shree-nath-dining-hall-dwarka-locality"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a202",
+      "values": {
+        "gujarati_name": "શ્રી નાગેશ્વર જ્યોતિર્લિંગ મંદિર, દારુકાવનમ"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/Nageshwar+Jyotirling+temple/@22.3360612,69.0870145,17z/data=!3m1!4b1!4m6!3m5!1s0x395698184969bf63:0xa6d636401fda39fc!8m2!3d22.3360612!4d69.0870145!16s%2Fm%2F0542pty?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Exact Gujarati business label from archived selected Google Maps place, not an inferred translation."
+    },
+    {
+      "table": "destinations",
+      "key": "dwarka",
+      "values": {
+        "best_time": "November to February"
+      },
+      "sources": [
+        "https://www.incredibleindia.gov.in/en/gujarat/dwarka"
+      ],
+      "notes": "National tourism destination page recommends winter; not a promise of daily temple availability."
+    },
+    {
+      "table": "destinations",
+      "key": "dwarka",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG",
+        "image_alt": "Nageshwar Jyortiling - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-jyotirlinga.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "attractions",
+      "key": "a202",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG",
+        "image_alt": "Nageshwar Jyortiling - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-jyotirlinga.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "destinations",
+      "key": "dwarka",
+      "values": {
+        "official_category": "Religious Sites"
+      },
+      "sources": [
+        "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/dwarkadhish-temple.html"
+      ],
+      "notes": "Project primary category for the Dwarka pilgrimage circuit, supported by Gujarat Tourism temple description."
+    }
+  ],
+  "research_exclusions": [
+    "Gopi Dining Hall search resolves to Ahmedabad, so not added to Dwarka.",
+    "beytdwarka.com is a commercial tour operator, not an official temple site.",
+    "Conflicting Bet Dwarka hours and obsolete ferry-only travel descriptions were not adopted.",
+    "Official Tourist Bungalow page confirms an attached restaurant but does not identify it as the legacy Toran Dining Hall record or publish meal tariffs. Legacy r201 identity remains unresolved; no arbitrary reassignment to hotel restaurant.",
+    "Wanderlog user review quotes restaurant105 per head without a verified current date; not imported as current official tariff. Commercial StayInGujarat page has internally inconsistent tax claims and older1950 room price, superseded by current official2900 category tariff."
+  ]
+}

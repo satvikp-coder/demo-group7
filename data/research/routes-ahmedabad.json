@@ -1,0 +1,919 @@
+{
+  "city": "ahmedabad",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/72.505393,22.993679;72.580136,23.167140;72.592476,23.054180;72.581010,23.027020;72.599521,23.006143;72.580638,23.060165;72.576958,23.029284;72.581536,23.027062;72.591743,23.018845;72.535706,22.993642;72.581617,23.027038;72.589368,23.024425?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "0d0ecbd6-def8-432c-95cf-f150887cf0da",
+      "external_id": "a305",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Sarkhej Roza",
+      "lat": "22.993679",
+      "lng": "72.505393",
+      "duration_hours": "1.50",
+      "rating": "4.5",
+      "category": "Heritage",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "09:00:00",
+      "closing_time": "18:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": null,
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Sarkhej Roza is a mosque, tomb and palace complex associated with the Sufi saint Ahmed Khattu Ganj Baksh. Historic buildings surround a large tank.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/way/499625055",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "cda9134be57ba9968021b03537b8f46ebfe5bc1a6f72801e75ce1707b8661c71",
+      "kind": "attraction"
+    },
+    {
+      "id": "27fac071-66b1-46ac-b810-93cd92aa3fc3",
+      "external_id": "a302",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Adalaj Ni Vav Stepwell",
+      "lat": "23.167140",
+      "lng": "72.580136",
+      "duration_hours": "1.50",
+      "rating": "4.8",
+      "category": "Stepwell Architecture",
+      "entry_fee": "\u00e2\u201a\u00b925",
+      "entry_fee_numeric": "25.00",
+      "opening_time": "08:00:00",
+      "closing_time": "18:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": null,
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Adalaj's five-storey stepwell was commissioned by Queen Rudabai in 1499. Carved pillars and walls surround the descent to the well.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/way/85207833",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "717ca475a9817070d27b13c9c76968775f0dd1a81c0ca67b2e9fad5e343986e4",
+      "kind": "attraction"
+    },
+    {
+      "id": "a9baa094-0549-4782-8b32-a9337405a447",
+      "external_id": "a304",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Calico Textile Museum",
+      "lat": "23.054180",
+      "lng": "72.592476",
+      "duration_hours": "2.00",
+      "rating": "4.9",
+      "category": "Museum",
+      "entry_fee": "Free (Prior Booking)",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "10:30:00",
+      "closing_time": "12:30:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Haveli guided tour 10:30\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u015312:30, entry 10:15\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u015310:30. Pre-registration required; closed Mondays and public holidays. Separate Chauk tour 14:30\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u015316:30.",
+      "transport_mode": null,
+      "image_url": null,
+      "image_alt": null,
+      "description": "The Sarabhai Foundation's Calico Museum displays textiles and collections of Indian art in Ahmedabad's Shahibaug area.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/node/3335472845",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "56d23ccf055880b183052ff6c2cbf1afd99f950fdd2eb719009df3cb52cf687c",
+      "kind": "attraction"
+    },
+    {
+      "id": "ae743724-b94a-480d-b5d6-f6d07b68d411",
+      "external_id": "a303",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Sidi Saiyyed Mosque & Old Pols",
+      "lat": "23.027020",
+      "lng": "72.581010",
+      "duration_hours": "2.00",
+      "rating": "4.7",
+      "category": "UNESCO Heritage City",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "07:00:00",
+      "closing_time": "18:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": null,
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Sidi Saiyyed Mosque near Khanpur Gate is known for carved stone screens. The existing record also groups the old-city pol neighbourhoods with this mosque.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps 2026",
+      "source_url": "https://mapcarta.com/W323895534",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "13a270abf24ab5ab632c1f878f34b5433e2855cac581bb8a58cdd198bc3891bf",
+      "kind": "attraction"
+    },
+    {
+      "id": "b1c3bad0-ca10-4ebb-bc89-99df954c0afc",
+      "external_id": "a306",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Kankaria Lake",
+      "lat": "23.006143",
+      "lng": "72.599521",
+      "duration_hours": "2.00",
+      "rating": "4.4",
+      "category": "Nature/Recreation",
+      "entry_fee": "\u00e2\u201a\u00b925",
+      "entry_fee_numeric": "25.00",
+      "opening_time": "09:00:00",
+      "closing_time": "22:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": null,
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Kankaria is a historic Ahmedabad lake surrounding the island garden of Nagina Wadi. The lakefront has recreation facilities, with a zoo and aquarium nearby.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps 2026",
+      "source_url": "https://www.openstreetmap.org/way/29340465",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "4a008ab1d949a048c4145c841775c84118e5d2fdbb10b7ca99e9ab923c8eba4a",
+      "kind": "attraction"
+    },
+    {
+      "id": "d3a90a3d-ff77-4143-b281-649c4e86a111",
+      "external_id": "a301",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Sabarmati Ashram",
+      "lat": "23.060165",
+      "lng": "72.580638",
+      "duration_hours": "2.00",
+      "rating": "4.8",
+      "category": "Heritage/National Monument",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "10:00:00",
+      "closing_time": "18:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Open daily, including public holidays. Hridaykunj interior is temporarily closed for conservation; view from outside.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Gandhi's former ashram on the Sabarmati river contains a memorial museum and preserved buildings associated with his life.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/way/776683602",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "14922bf22a0693b144791203165fcd0a3d60c5db6c8d420218179ac8808fc518",
+      "kind": "attraction"
+    },
+    {
+      "id": "433f6917-72b1-4435-a9d9-859da71d7e60",
+      "external_id": "h302",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Lemon Tree Premier",
+      "lat": "23.029284",
+      "lng": "72.576958",
+      "price_per_night": 4000,
+      "rating": "4.2",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Off Nehru Bridge, Sabarmati River Front, Ahmedabad 380001, Gujarat",
+      "description": "Lemon Tree Premier, The Atrium, is beside the Sabarmati riverfront near Nehru Bridge in Ahmedabad.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "MakeMyTrip 2026",
+      "source_url": "https://www.travelmyth.com/Ahmedabad/Hotels/Lemon-Tree-Premier-%E2%80%9CThe-Atrium%E2%80%9D-Ahmedabad_tmid299237",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "8918f3bafd5802dec27f787fa9db1b00beae11ef0b11f68ca0aabb5dd860eb07",
+      "kind": "hotel"
+    },
+    {
+      "id": "d2d36c36-abd7-4f88-9860-df54b1d1bfbe",
+      "external_id": "h303",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "The House of MG",
+      "lat": "23.027062",
+      "lng": "72.581536",
+      "price_per_night": 6200,
+      "rating": "4.5",
+      "stay_type": "Heritage Hotel",
+      "tier": null,
+      "location": "Opposite Sidi Saiyad Jali, Lal Darwaja, Ahmedabad 380001, Gujarat",
+      "description": "The House of MG occupies an early twentieth-century mansion with courtyards and verandahs. Facilities include Agashiye restaurant, an indoor pool, spa and fitness room.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Booking.com 2026",
+      "source_url": "https://www.openstreetmap.org/way/85210256",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "8760196b31bc72cc523d0c4807183b2350126afa16aed9c7d5b4cfd68e5a06f8",
+      "kind": "hotel"
+    },
+    {
+      "id": "e1b5a027-b2bc-4eb1-835c-f31d2c344ffa",
+      "external_id": "h301",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "French Haveli Heritage Stay",
+      "lat": "23.018845",
+      "lng": "72.591743",
+      "price_per_night": 3400,
+      "rating": "4.4",
+      "stay_type": "Homestay",
+      "tier": null,
+      "location": null,
+      "description": "French Haveli is a restored Gujarati heritage home in Ahmedabad's old-city pol neighbourhoods. Rooms occupy several floors; the property has no car parking and the final 100 metres are reached on foot or by rickshaw.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Booking.com 2026",
+      "source_url": "https://www.openstreetmap.org/way/522354375",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "6986763c1984b3df98af456d3466cb3381ed0c1eb3db3034eab048b667d5149f",
+      "kind": "hotel"
+    },
+    {
+      "id": "292a1ea2-a0d6-4ad8-a347-c3dcc9492a8f",
+      "external_id": "r302",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Vishalla Village Restaurant",
+      "lat": "22.993642",
+      "lng": "72.535706",
+      "rating": "4.2",
+      "avg_cost_per_person": 1000,
+      "location": null,
+      "cuisine": "Gujarati vegetarian",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps 2026",
+      "source_url": "https://www.openstreetmap.org/node/440339381",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "264293d13b8724cf0ae9e0e3df60b31c73607dabfd03c9ce72ac33c55247cd4d",
+      "kind": "restaurant"
+    },
+    {
+      "id": "29686852-d204-4043-a717-95bb05c27433",
+      "external_id": "r301",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Agashiye Terrace Restaurant",
+      "lat": "23.027038",
+      "lng": "72.581617",
+      "rating": "4.9",
+      "avg_cost_per_person": 1200,
+      "location": "The House of MG, opposite Sidi Saiyed Mosque, Lal Darwaja, Ahmedabad",
+      "cuisine": "Vegetarian Gujarati thali",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Eazydiner 2026",
+      "source_url": "https://www.openstreetmap.org/node/1973442552",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "f043d14c87a5f4f2e3365b560a285027d7167a3acfc1146e2a431f1d105fbaf5",
+      "kind": "restaurant"
+    },
+    {
+      "id": "f393c46b-ba4a-4331-8a38-11e904e006e9",
+      "external_id": "r303",
+      "slug": null,
+      "destination_id": "a35221d1-da1c-43b2-b619-e7e7b7faf744",
+      "name": "Chandravilas Dining Hall",
+      "lat": "23.024425",
+      "lng": "72.589368",
+      "rating": "4.1",
+      "avg_cost_per_person": 350,
+      "location": "3114, near Ratan Pole, Gandhi Road, Manek Chowk, Ahmedabad",
+      "cuisine": "Gujarati thali and snacks",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps 2026",
+      "source_url": "https://www.openstreetmap.org/node/14067660558",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "6c4af00955cf10bf684ee5be1de1f330e6a82b5b239016ee02c715d419c07076",
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        25273.4,
+        13730.7,
+        10035.3,
+        11224.4,
+        13953.6,
+        9969.1,
+        10030,
+        10803,
+        3657.9,
+        10086.6,
+        10657
+      ],
+      [
+        23790,
+        0,
+        18409.6,
+        19965.8,
+        23547.8,
+        14834.1,
+        19899.6,
+        19960.5,
+        21646.3,
+        26276,
+        20017.1,
+        20041.1
+      ],
+      [
+        14870.8,
+        18712.1,
+        0,
+        3777.5,
+        6418.1,
+        6183.6,
+        4094.7,
+        3772.1,
+        5866.8,
+        10769.4,
+        3828.8,
+        4164.6
+      ],
+      [
+        11499.8,
+        19889.4,
+        3988.6,
+        0,
+        3990.9,
+        6164.3,
+        710.9,
+        287.8,
+        2089.3,
+        6992,
+        51.3,
+        1076.6
+      ],
+      [
+        11677.6,
+        23650.2,
+        7702.6,
+        4476.4,
+        0,
+        9925.1,
+        4894.1,
+        4471.1,
+        2834.1,
+        8052.3,
+        4605.1,
+        3203.4
+      ],
+      [
+        13479.9,
+        15546.2,
+        3648.7,
+        5250,
+        8832.1,
+        0,
+        5183.8,
+        5244.7,
+        6930.5,
+        10069,
+        5301.4,
+        5413.3
+      ],
+      [
+        11601.8,
+        19165.4,
+        4276.5,
+        581.1,
+        4572,
+        5440.3,
+        0,
+        575.8,
+        2670.4,
+        7094,
+        632.4,
+        1657.7
+      ],
+      [
+        11505.1,
+        19894.7,
+        3993.9,
+        5.3,
+        3996.2,
+        6169.6,
+        716.2,
+        0,
+        2094.7,
+        6997.3,
+        56.7,
+        1081.9
+      ],
+      [
+        12206.3,
+        21953.7,
+        6204.7,
+        2779.9,
+        2485.3,
+        8228.6,
+        3197.6,
+        2774.6,
+        0,
+        7698.5,
+        1896,
+        1048.7
+      ],
+      [
+        5573.9,
+        25168.2,
+        11220.2,
+        7524.8,
+        9383.1,
+        11443.1,
+        7458.6,
+        7519.5,
+        8292.5,
+        0,
+        7576.1,
+        8146.5
+      ],
+      [
+        11505.3,
+        19894.9,
+        3994,
+        298.6,
+        3996.4,
+        6169.8,
+        716.4,
+        293.3,
+        2094.8,
+        6997.5,
+        0,
+        1032.5
+      ],
+      [
+        12993.2,
+        21525.6,
+        5094.3,
+        1929.3,
+        2943.9,
+        7800.4,
+        2347,
+        1924,
+        1223.2,
+        8485.4,
+        1708.6,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "PCMwlD0jMJQWAAAAYAAAAP8AAAAAAAAAnKZ4QSQrhUK0DDFDAAAAABYAAABgAAAA_wAAAAAAAAB7JwEAWlhSBMjcXgExWFIED9teASYALxEAAAAA",
+        "location": [
+          72.505434,
+          22.99412
+        ],
+        "name": "",
+        "distance": 49.01857838
+      },
+      {
+        "hint": "hzzHjrphx46qAAAAnwAAANIDAAAAAAAAp_CNQmdMhEIT8MtDAAAAAKoAAACfAAAA0gMAAAAAAAB7JwEAzn1TBG-BYQEofFMEpIBhAQ4AjwkAAAAA",
+        "location": [
+          72.580558,
+          23.167343
+        ],
+        "name": "",
+        "distance": 48.7072564
+      },
+      {
+        "hint": "e2tZhHsMNJEXAAAAGAAAAF4AAABSAAAAoQzOQd5u10F4MtJCrYu2QhcAAAAYAAAAXgAAAFIAAAB7JwEAzatTBJnJXwFcrFMEZMdfAQYA3wQAAAAA",
+        "location": [
+          72.592333,
+          23.054745
+        ],
+        "name": "",
+        "distance": 64.26370505
+      },
+      {
+        "hint": "4ZBShP___38EAAAABAAAAAAAAAAPAAAA-LrUQAAAAAAAAAAA_WS3QQQAAAAEAAAAAAAAAA8AAAB7JwEA34BTBEtdXwGSf1METF1fAQAAXwsAAAAA",
+        "location": [
+          72.581343,
+          23.027019
+        ],
+        "name": "",
+        "distance": 34.13389361
+      },
+      {
+        "hint": "UsH4kFTB-JAAAAAALgAAAAAAAABqAAAAAAAAAISRmkEAAAAANj0wQgAAAAAuAAAAAAAAAGoAAAB7JwEAqr9TBDUMXwHhx1MEvwtfAQAADw8AAAAA",
+        "location": [
+          72.597418,
+          23.006261
+        ],
+        "name": "",
+        "distance": 215.9608976
+      },
+      {
+        "hint": "aXZXhKmFXJUOAAAAAAAAAAAAAAAAAAAAc5wcQQAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAAB7JwEA3HlTBE3cXwEeflMExd5fAQAAfwgAAAAAqIVclf___38AAAAADQAAAAAAAABKAAAAAAAAANt1EEEAAAAALuZNQgAAAAANAAAAAAAAAEoAAAB7JwEA3HlTBE3cXwEeflMExd5fAQAAHw4AAAAA",
+        "location": [
+          72.579548,
+          23.059533
+        ],
+        "name": "Ashram Road",
+        "distance": 131.8061899
+      },
+      {
+        "hint": "vZ4XipD8C5MAAAAAFwAAAAsAAAB7AAAAsWstP2CgyUH3k0hBQAQHQwAAAAAXAAAACwAAAHsAAAB7JwEATnBTBK9mXwG-b1MEJGZfAQIAXwgAAAAA",
+        "location": [
+          72.577102,
+          23.029423
+        ],
+        "name": "",
+        "distance": 21.32678803
+      },
+      {
+        "hint": "4ZBShP___38AAAAABAAAAAAAAAAPAAAAdBqqP9M6qkAAAAAA_WS3QQAAAAAEAAAAAAAAAA8AAAB7JwEA4YBTBHtdXwGggVMEdl1fAQAAXwsAAAAA",
+        "location": [
+          72.581345,
+          23.027067
+        ],
+        "name": "",
+        "distance": 19.58602507
+      },
+      {
+        "hint": "TXn9iFF5_YgCAAAADwAAAAAAAAAAAAAAZi7IP_KiI0EAAAAAAAAAAAIAAAAPAAAAAAAAAAAAAAB7JwEAv6lTBGc9XwF_qVMEXT1fAQAA7xUAAAAA",
+        "location": [
+          72.591807,
+          23.018855
+        ],
+        "name": "",
+        "distance": 6.653051362
+      },
+      {
+        "hint": "O9P-jf___38VAAAAMQAAAAQAAAAAAAAAe3UXQllrR0LHf95AAAAAABUAAAAxAAAABAAAAAAAAAB7JwEAi8xSBKrZXgGazlIE6tpeAQIALwkAAAAA",
+        "location": [
+          72.535179,
+          22.993322
+        ],
+        "name": "Narol-Sarkhej Road",
+        "distance": 64.62273631
+      },
+      {
+        "hint": "1pBShNmQUoREAAAAAAAAAAAAAABqAAAAH1LjQQAAAAAAAAAANPgvQkQAAAAAAAAAAAAAAGoAAAB7JwEA84FTBIZcXwHxgVMEXl1fAQAAfwUAAAAA",
+        "location": [
+          72.581619,
+          23.026822
+        ],
+        "name": "",
+        "distance": 23.92165992
+      },
+      {
+        "hint": "c61igf___38CAAAAFgAAAD0AAAAAAAAA4-IrQNkerkFIVIdCAAAAAAIAAAAWAAAAPQAAAAAAAAB7JwEAK6BTBJNTXwE4oFMEKVNfAQIAPwUAAAAA",
+        "location": [
+          72.589355,
+          23.024531
+        ],
+        "name": "Gandhi Road",
+        "distance": 11.81429232
+      }
+    ],
+    "durations": [
+      [
+        0,
+        1371.8,
+        957.9,
+        714,
+        804.6,
+        933.9,
+        718,
+        713.6,
+        792.4,
+        317.2,
+        727.9,
+        807.9
+      ],
+      [
+        1208.7,
+        0,
+        1085.5,
+        1180.1,
+        1426.5,
+        892.2,
+        1184.1,
+        1179.7,
+        1316.4,
+        1351.4,
+        1194,
+        1273.6
+      ],
+      [
+        1008.3,
+        1143.9,
+        0,
+        255.4,
+        457.5,
+        417.6,
+        313.1,
+        255,
+        424.6,
+        710.6,
+        269.3,
+        325.8
+      ],
+      [
+        771.6,
+        1167.1,
+        262.9,
+        0,
+        279.3,
+        372.8,
+        59.4,
+        18.6,
+        169.2,
+        455.2,
+        13.9,
+        117.3
+      ],
+      [
+        817.9,
+        1467.4,
+        531.9,
+        352.8,
+        0,
+        673.1,
+        393.2,
+        352.4,
+        245.2,
+        528.1,
+        366.6,
+        279.7
+      ],
+      [
+        891.8,
+        920.7,
+        260,
+        310,
+        556.4,
+        0,
+        314,
+        309.6,
+        446.3,
+        616.6,
+        323.9,
+        405.1
+      ],
+      [
+        793.8,
+        1163.8,
+        296,
+        52.1,
+        331.4,
+        369.5,
+        0,
+        51.7,
+        221.3,
+        477.4,
+        66,
+        169.4
+      ],
+      [
+        772,
+        1167.5,
+        263.3,
+        0.4,
+        279.7,
+        373.2,
+        59.8,
+        0,
+        169.6,
+        455.6,
+        14.3,
+        117.7
+      ],
+      [
+        849.7,
+        1374.1,
+        476.2,
+        259.5,
+        213.6,
+        579.8,
+        299.9,
+        259.1,
+        0,
+        533.3,
+        265.5,
+        151.7
+      ],
+      [
+        389,
+        1493,
+        722.7,
+        478.8,
+        551.3,
+        698.7,
+        482.8,
+        478.4,
+        557.2,
+        0,
+        492.7,
+        572.7
+      ],
+      [
+        782,
+        1177.5,
+        273.3,
+        29.4,
+        289.7,
+        383.2,
+        69.8,
+        29,
+        179.6,
+        465.6,
+        0,
+        126.2
+      ],
+      [
+        933.2,
+        1335.9,
+        386.7,
+        187.8,
+        254.4,
+        541.6,
+        228.2,
+        187.4,
+        174.8,
+        616.8,
+        183.2,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "PCMwlD0jMJQWAAAAYAAAAP8AAAAAAAAAnKZ4QSQrhUK0DDFDAAAAABYAAABgAAAA_wAAAAAAAAB7JwEAWlhSBMjcXgExWFIED9teASYALxEAAAAA",
+        "location": [
+          72.505434,
+          22.99412
+        ],
+        "name": "",
+        "distance": 49.01857838
+      },
+      {
+        "hint": "hzzHjrphx46qAAAAnwAAANIDAAAAAAAAp_CNQmdMhEIT8MtDAAAAAKoAAACfAAAA0gMAAAAAAAB7JwEAzn1TBG-BYQEofFMEpIBhAQ4AjwkAAAAA",
+        "location": [
+          72.580558,
+          23.167343
+        ],
+        "name": "",
+        "distance": 48.7072564
+      },
+      {
+        "hint": "e2tZhHsMNJEXAAAAGAAAAF4AAABSAAAAoQzOQd5u10F4MtJCrYu2QhcAAAAYAAAAXgAAAFIAAAB7JwEAzatTBJnJXwFcrFMEZMdfAQYA3wQAAAAA",
+        "location": [
+          72.592333,
+          23.054745
+        ],
+        "name": "",
+        "distance": 64.26370505
+      },
+      {
+        "hint": "4ZBShP___38EAAAABAAAAAAAAAAPAAAA-LrUQAAAAAAAAAAA_WS3QQQAAAAEAAAAAAAAAA8AAAB7JwEA34BTBEtdXwGSf1METF1fAQAAXwsAAAAA",
+        "location": [
+          72.581343,
+          23.027019
+        ],
+        "name": "",
+        "distance": 34.13389361
+      },
+      {
+        "hint": "UsH4kFTB-JAAAAAALgAAAAAAAABqAAAAAAAAAISRmkEAAAAANj0wQgAAAAAuAAAAAAAAAGoAAAB7JwEAqr9TBDUMXwHhx1MEvwtfAQAADw8AAAAA",
+        "location": [
+          72.597418,
+          23.006261
+        ],
+        "name": "",
+        "distance": 215.9608976
+      },
+      {
+        "hint": "aXZXhKmFXJUOAAAAAAAAAAAAAAAAAAAAc5wcQQAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAAB7JwEA3HlTBE3cXwEeflMExd5fAQAAfwgAAAAAqIVclf___38AAAAADQAAAAAAAABKAAAAAAAAANt1EEEAAAAALuZNQgAAAAANAAAAAAAAAEoAAAB7JwEA3HlTBE3cXwEeflMExd5fAQAAHw4AAAAA",
+        "location": [
+          72.579548,
+          23.059533
+        ],
+        "name": "Ashram Road",
+        "distance": 131.8061899
+      },
+      {
+        "hint": "vZ4XipD8C5MAAAAAFwAAAAsAAAB7AAAAsWstP2CgyUH3k0hBQAQHQwAAAAAXAAAACwAAAHsAAAB7JwEATnBTBK9mXwG-b1MEJGZfAQIAXwgAAAAA",
+        "location": [
+          72.577102,
+          23.029423
+        ],
+        "name": "",
+        "distance": 21.32678803
+      },
+      {
+        "hint": "4ZBShP___38AAAAABAAAAAAAAAAPAAAAdBqqP9M6qkAAAAAA_WS3QQAAAAAEAAAAAAAAAA8AAAB7JwEA4YBTBHtdXwGggVMEdl1fAQAAXwsAAAAA",
+        "location": [
+          72.581345,
+          23.027067
+        ],
+        "name": "",
+        "distance": 19.58602507
+      },
+      {
+        "hint": "TXn9iFF5_YgCAAAADwAAAAAAAAAAAAAAZi7IP_KiI0EAAAAAAAAAAAIAAAAPAAAAAAAAAAAAAAB7JwEAv6lTBGc9XwF_qVMEXT1fAQAA7xUAAAAA",
+        "location": [
+          72.591807,
+          23.018855
+        ],
+        "name": "",
+        "distance": 6.653051362
+      },
+      {
+        "hint": "O9P-jf___38VAAAAMQAAAAQAAAAAAAAAe3UXQllrR0LHf95AAAAAABUAAAAxAAAABAAAAAAAAAB7JwEAi8xSBKrZXgGazlIE6tpeAQIALwkAAAAA",
+        "location": [
+          72.535179,
+          22.993322
+        ],
+        "name": "Narol-Sarkhej Road",
+        "distance": 64.62273631
+      },
+      {
+        "hint": "1pBShNmQUoREAAAAAAAAAAAAAABqAAAAH1LjQQAAAAAAAAAANPgvQkQAAAAAAAAAAAAAAGoAAAB7JwEA84FTBIZcXwHxgVMEXl1fAQAAfwUAAAAA",
+        "location": [
+          72.581619,
+          23.026822
+        ],
+        "name": "",
+        "distance": 23.92165992
+      },
+      {
+        "hint": "c61igf___38CAAAAFgAAAD0AAAAAAAAA4-IrQNkerkFIVIdCAAAAAAIAAAAWAAAAPQAAAAAAAAB7JwEAK6BTBJNTXwE4oFMEKVNfAQIAPwUAAAAA",
+        "location": [
+          72.589355,
+          23.024531
+        ],
+        "name": "Gandhi Road",
+        "distance": 11.81429232
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

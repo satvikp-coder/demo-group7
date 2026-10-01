@@ -1,6 +1,7 @@
+import { displayNumber } from "../api";
 import React, { useState } from "react";
-import { Destination, GUJARAT_DESTINATIONS, Hotel } from "../data/destinations";
-import { mergeSort } from "@dsa/sorting/mergeSort";
+import { Destination, Hotel } from "../api/types";
+import { api, useApi, useCatalog, EMPTY_DESTINATION } from "../api";
 import { useLanguage } from "../context/LanguageContext";
 import { ImageWithFallback } from "./ImageWithFallback";
 import {
@@ -37,13 +38,12 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 }) => {
   const { language, t, getName } = useLanguage();
 
-  const activeDestination =
-    GUJARAT_DESTINATIONS.find((d) => d.id === selectedCityId) ||
-    GUJARAT_DESTINATIONS[0];
+  const catalog = useCatalog();
+  const activeDestination = catalog.data?.find(d => d.id === selectedCityId) ?? catalog.data?.[0] ?? EMPTY_DESTINATION;
   const cityName = getName(activeDestination);
-  const currentHotels: Hotel[] = activeDestination.hotels || [];
-
   const [sortOrder, setSortOrder] = useState<SortCriterion>("value");
+  const hotelsRequest = useApi(signal => api.hotels(activeDestination.id, sortOrder, signal), [activeDestination.id, sortOrder], !!activeDestination.id);
+  const currentHotels: Hotel[] = hotelsRequest.data ?? [];
   const [localPreferredMap, setLocalPreferredMap] = useState<
     Record<string, string>
   >({});
@@ -53,18 +53,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
   const [assignedNotice, setAssignedNotice] = useState<string | null>(null);
 
-  const sortedHotels = mergeSort(currentHotels, (a, b) => {
-    if (sortOrder === "value") {
-      return b.valueScore - a.valueScore;
-    }
-    if (sortOrder === "rating") {
-      return b.ratingNumeric - a.ratingNumeric;
-    }
-    if (sortOrder === "price") {
-      return a.priceNumeric - b.priceNumeric;
-    }
-    return 0;
-  });
+  const sortedHotels = currentHotels;
 
   const handleSelectHotel = (hotel: HotelData) => {
     if (onSelectPreferredHotel) {
@@ -118,6 +107,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
     }
   };
 
+  if(catalog.loading || hotelsRequest.loading) return <p role="status">Loading hotels...</p>;
+  if(catalog.error || hotelsRequest.error) return <p role="alert">{catalog.error || hotelsRequest.error} <button onClick={() => {catalog.reload(); hotelsRequest.reload();}}>Retry</button></p>;
+  if(!activeDestination.id) return <p role="status">No destinations available.</p>;
   const totalSelectedCount = Object.keys(activePreferredMap).length;
 
   return (
@@ -301,7 +293,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                         <div className="flex justify-between text-stone">
                           <span>Rating-Per-Cost Value Index:</span>
                           <span className="font-bold text-ink">
-                            {hotel.valueScore}/100
+                            {displayNumber(hotel.valueScore)}/100
                           </span>
                         </div>
                         <div className="w-full h-2 bg-stone/20 border border-stone/40 overflow-hidden rounded-full">
@@ -354,8 +346,8 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           <div className="flex items-center gap-2">
             <Info className="w-4 h-4 text-gold shrink-0" />
             <span>
-              All official TCGL Toran stays offer guaranteed ASI monument access
-              permits.
+              Verify attraction permits separately; selecting a hotel does not
+              book admission.
             </span>
           </div>
 

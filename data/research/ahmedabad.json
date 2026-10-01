@@ -1,0 +1,721 @@
+{
+  "city": "ahmedabad",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "ahmedabad",
+      "values": {
+        "district": "Ahmedabad",
+        "location": "Ahmedabad, Gujarat, India",
+        "category": "Heritage",
+        "description": "Ahmedabad has historic Hindu, Islamic and Jain monuments and traditional neighbourhoods known as pols. Its visitor sites include Gandhi Ashram and museums.",
+        "highlights": [
+          "Gandhi Ashram",
+          "Heritage walks",
+          "Historic monuments"
+        ]
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/ahmedabad.html"
+      ],
+      "notes": "City has no single admission fee, duration or rating; these remain nullable rather than aggregating unrelated attractions."
+    },
+    {
+      "table": "attractions",
+      "key": "a301",
+      "values": {
+        "opening_time": "10:00:00",
+        "closing_time": "18:00:00",
+        "description": "Gandhi's former ashram on the Sabarmati river contains a memorial museum and preserved buildings associated with his life.",
+        "best_time_note": "Open daily, including public holidays. Hridaykunj interior is temporarily closed for conservation; view from outside.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://gandhiashramsabarmati.org/en/2-uncategorised/57-ashram.html",
+        "https://gandhiashramsabarmati.org/en/"
+      ],
+      "notes": "Official current hours supersede stored 08:30â€“18:30. Free admission retained from official visitor information."
+    },
+    {
+      "table": "attractions",
+      "key": "a302",
+      "values": {
+        "description": "Adalaj's five-storey stepwell was commissioned by Queen Rudabai in 1499. Carved pillars and walls surround the descent to the well.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/HeritageofAhmedabad.pdf"
+      ],
+      "notes": "The attraction is in Gandhinagar district and remains an Ahmedabad excursion. No wheelchair boolean inferred from steps or photographs."
+    },
+    {
+      "table": "attractions",
+      "key": "a303",
+      "values": {
+        "description": "Sidi Saiyyed Mosque near Khanpur Gate is known for carved stone screens. The existing record also groups the old-city pol neighbourhoods with this mosque.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around",
+        "https://gujarattourism.com/central-zone/ahmedabad.html"
+      ],
+      "notes": "Grouped original entity preserved; one coordinate is a mosque anchor, not the extent of all pols."
+    },
+    {
+      "table": "attractions",
+      "key": "a304",
+      "values": {
+        "opening_time": "10:30:00",
+        "closing_time": "12:30:00",
+        "duration_hours": 2,
+        "description": "The Sarabhai Foundation's Calico Museum displays textiles and collections of Indian art in Ahmedabad's Shahibaug area.",
+        "best_time_note": "Haveli guided tour 10:30â€“12:30, entry 10:15â€“10:30. Pre-registration required; closed Mondays and public holidays. Separate Chauk tour 14:30â€“16:30."
+      },
+      "sources": [
+        "https://calicomuseum.org/tours/haveli",
+        "https://www.calicomuseum.org/information-for-visitors/tour-booking/",
+        "https://calicomuseum.org/"
+      ],
+      "notes": "Stored interval models the morning tour only. Current schema cannot enforce weekday closures, reservations, or fixed-start admission. Do not claim arbitrary arrival within the interval guarantees entry."
+    },
+    {
+      "table": "attractions",
+      "key": "a305",
+      "values": {
+        "description": "Sarkhej Roza is a mosque, tomb and palace complex associated with the Sufi saint Ahmed Khattu Ganj Baksh. Historic buildings surround a large tank.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around"
+      ],
+      "notes": "Accessibility remains unverified."
+    },
+    {
+      "table": "attractions",
+      "key": "a306",
+      "values": {
+        "description": "Kankaria is a historic Ahmedabad lake surrounding the island garden of Nagina Wadi. The lakefront has recreation facilities, with a zoo and aquarium nearby.",
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://ahmedabad.nic.in/tourist-place/khandagir-udayagiri/"
+      ],
+      "notes": "Individual activities have separate tickets; retained lake admission is not an all-attractions pass."
+    },
+    {
+      "table": "hotels",
+      "key": "h301",
+      "values": {
+        "description": "French Haveli is a restored Gujarati heritage home in Ahmedabad's old-city pol neighbourhoods. Rooms occupy several floors; the property has no car parking and the final 100 metres are reached on foot or by rickshaw."
+      },
+      "sources": [
+        "https://frenchhaveli.com/"
+      ],
+      "notes": "Existing price/rating retained as historical project-approved values, not freshly verified by this website. Amenities described only where operator confirms them."
+    },
+    {
+      "table": "hotels",
+      "key": "h302",
+      "values": {
+        "location": "Off Nehru Bridge, Sabarmati River Front, Ahmedabad 380001, Gujarat",
+        "description": "Lemon Tree Premier, The Atrium, is beside the Sabarmati riverfront near Nehru Bridge in Ahmedabad."
+      },
+      "sources": [
+        "https://www.lemontreehotels.com/lemon-tree-premier/ahmedabad/hotels-in-ahmedabad/contact-us"
+      ],
+      "notes": "Exact property distinguished from Lemon Tree Hotel and Keys Select Gandhi Ashram. Existing price/rating not independently re-certified."
+    },
+    {
+      "table": "hotels",
+      "key": "h303",
+      "values": {
+        "location": "Opposite Sidi Saiyad Jali, Lal Darwaja, Ahmedabad 380001, Gujarat",
+        "description": "The House of MG occupies an early twentieth-century mansion with courtyards and verandahs. Facilities include Agashiye restaurant, an indoor pool, spa and fitness room."
+      },
+      "sources": [
+        "https://houseofmg.com/stay/house-of-mg/"
+      ],
+      "notes": "Existing price/rating retained. Operator reports an accessibility audit but schema has no hotel accessibility field; no attraction accessibility inference."
+    },
+    {
+      "table": "restaurants",
+      "key": "r301",
+      "values": {
+        "location": "The House of MG, opposite Sidi Saiyed Mosque, Lal Darwaja, Ahmedabad",
+        "cuisine": "Vegetarian Gujarati thali"
+      },
+      "sources": [
+        "https://houseofmg.com/blogs/ahmedabad-rooftop-restaurant-stunning-views/"
+      ],
+      "notes": "Rooftop restaurant at the same hotel. Existing meal price/rating not independently re-certified."
+    },
+    {
+      "table": "restaurants",
+      "key": "r302",
+      "values": {
+        "cuisine": "Gujarati vegetarian"
+      },
+      "sources": [
+        "https://www.vishalla.com/"
+      ],
+      "notes": "Official operator confirms Gujarati cuisine; existing cost/rating retained, not re-certified."
+    },
+    {
+      "table": "restaurants",
+      "key": "r303",
+      "values": {
+        "location": "3114, near Ratan Pole, Gandhi Road, Manek Chowk, Ahmedabad",
+        "cuisine": "Gujarati thali and snacks"
+      },
+      "sources": [
+        "https://www.district.in/dining/ahmedabad/chandravilas-restaurant-since-1900-manek-chowk",
+        "https://i-discoverasia.com/walks/khadia/locations/chandravillas/"
+      ],
+      "notes": "Distinguished from New Chandravilas in Navrangpura. Existing price/rating retained, not re-certified."
+    },
+    {
+      "table": "attractions",
+      "key": "a301",
+      "values": {
+        "lat": 23.060165,
+        "lng": 72.580638
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/776683602",
+        "https://nominatim.openstreetmap.org/search?q=Sabarmati+Ashram+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/sabarmati-ashram-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "attractions",
+      "key": "a302",
+      "values": {
+        "lat": 23.16714,
+        "lng": 72.580136
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/85207833",
+        "https://nominatim.openstreetmap.org/search?q=Adalaj+Stepwell&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/adalaj-stepwell.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "attractions",
+      "key": "a304",
+      "values": {
+        "lat": 23.05418,
+        "lng": 72.592476
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/3335472845",
+        "https://nominatim.openstreetmap.org/search?q=Calico+Museum+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/calico-museum-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "attractions",
+      "key": "a305",
+      "values": {
+        "lat": 22.993679,
+        "lng": 72.505393
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/499625055",
+        "https://nominatim.openstreetmap.org/search?q=Sarkhej+Roza&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/sarkhej-roza.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "attractions",
+      "key": "a306",
+      "values": {
+        "lat": 23.006143,
+        "lng": 72.599521
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/29340465",
+        "https://nominatim.openstreetmap.org/search?q=Kankaria+Lake&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/kankaria-lake.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "hotels",
+      "key": "h301",
+      "values": {
+        "lat": 23.018845,
+        "lng": 72.591743
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/522354375",
+        "https://nominatim.openstreetmap.org/search?q=French+Haveli+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/french-haveli-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "hotels",
+      "key": "h303",
+      "values": {
+        "lat": 23.027062,
+        "lng": 72.581536
+      },
+      "sources": [
+        "https://www.openstreetmap.org/way/85210256",
+        "https://nominatim.openstreetmap.org/search?q=House+of+MG+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/house-of-mg-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "restaurants",
+      "key": "r301",
+      "values": {
+        "lat": 23.027038,
+        "lng": 72.581617
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/1973442552",
+        "https://nominatim.openstreetmap.org/search?q=Agashiye+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/agashiye-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "restaurants",
+      "key": "r302",
+      "values": {
+        "lat": 22.993642,
+        "lng": 72.535706
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/440339381",
+        "https://nominatim.openstreetmap.org/search?q=Vishala+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/vishala-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "restaurants",
+      "key": "r303",
+      "values": {
+        "lat": 23.024425,
+        "lng": 72.589368
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/14067660558",
+        "https://nominatim.openstreetmap.org/search?q=Chandravilas+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Named mapped entity verified against address/type. OSM geometry representative point; not a certified step-free entrance. Source response archived in maps/chandravilas-ahmedabad.json. Kankaria point represents lake, routing snap must be checked."
+    },
+    {
+      "table": "attractions",
+      "key": "a303",
+      "values": {
+        "lat": 23.02702,
+        "lng": 72.58101
+      },
+      "sources": [
+        "https://mapcarta.com/W323895534"
+      ],
+      "notes": "Mosque mapped building; old pols remain grouped under original record."
+    },
+    {
+      "table": "hotels",
+      "key": "h302",
+      "values": {
+        "lat": 23.029284,
+        "lng": 72.576958
+      },
+      "sources": [
+        "https://www.travelmyth.com/Ahmedabad/Hotels/Lemon-Tree-Premier-%E2%80%9CThe-Atrium%E2%80%9D-Ahmedabad_tmid299237",
+        "https://in.near-place.com/lemon-tree-premier-the-atrium-ahmedabad-off-nehru-bridge-sabarmati-river-front-towards-khanpur-ahmedabad"
+      ],
+      "notes": "Two mapped listings agree on riverfront property within about 40 metres; old coordinates were about one kilometre away."
+    },
+    {
+      "table": "hotels",
+      "key": "h301",
+      "values": {
+        "price_per_night": 5300,
+        "location": "1824 Khija Sheri, Dhal Ni Pol, opposite Jain temple, Ahmedabad 380001"
+      },
+      "sources": [
+        "https://frenchhaveli.com/accommodations/",
+        "https://www.google.com/maps/search/French+Haveli+Ahmedabad"
+      ],
+      "notes": "Official published Chabutro compact double room starting nightly rate INR5300, occupancy2, private external bathroom. Tax/meal inclusion unspecified. Checked September30 2026. Google Agoda4397 and official-channel8750 for Sep30-Oct1 are different dynamic offers; published named room basis chosen, not a guaranteed date quote. No coordinate change; map agrees within10m."
+    },
+    {
+      "table": "hotels",
+      "key": "h302",
+      "values": {
+        "price_per_night": 5239,
+        "rating": 4.4
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Lemon+Tree+Premier+The+Atrium+Ahmedabad",
+        "https://www.lemontreehotels.com/"
+      ],
+      "notes": "Official-site nightly quote displayed by Maps for October2-3 2026, two adults; room/tax/meal basis unspecified. pages/ahmedabad-lemon-price.json. Google mapped point agrees with stored compound within40m; no unnecessary coordinate change."
+    },
+    {
+      "table": "hotels",
+      "key": "h303",
+      "values": {
+        "price_per_night": 8469
+      },
+      "sources": [
+        "https://www.google.com/maps/search/The+House+of+MG+Ahmedabad",
+        "https://houseofmg.com/"
+      ],
+      "notes": "Official-site nightly quote displayed by Maps for September30-October1 2026, two adults; room/tax/meal basis unspecified. pages/ahmedabad-housemg-price.json. Stored OSM building anchor retained; Maps point is within45m."
+    },
+    {
+      "table": "restaurants",
+      "key": "r302",
+      "values": {
+        "avg_cost_per_person": 1160,
+        "location": "Opposite APMC Market, Vishalla Circle, Ahmedabad 380055"
+      },
+      "sources": [
+        "https://www.vishalla.com/menu/menu-2026-2.png",
+        "https://www.vishalla.com/our-menu.html"
+      ],
+      "notes": "Official2026 menu image visually read and archived pages/vishalla-menu-2026-2.png: adult unlimited lunch INR1160 including GST,11:00-15:00; child3-11 INR575. Numeric field uses published adult lunch as representative meal, not dinner tariff."
+    },
+    {
+      "table": "restaurants",
+      "key": "r301",
+      "values": {
+        "avg_cost_per_person": 1250
+      },
+      "sources": [
+        "https://www.district.in/blog/iconic-places-ahmedabad",
+        "https://houseofmg.com/eat/agashiye/"
+      ],
+      "notes": "District lists INR2500 for two; representative per-person1250, not exact Heritage Classic/Grand thali tariff. Official restaurant page confirms formats but publishes no price. Tax basis unspecified; retained precise uncertainty."
+    },
+    {
+      "table": "restaurants",
+      "key": "r303",
+      "values": {
+        "avg_cost_per_person": 100
+      },
+      "sources": [
+        "https://www.district.in/blog/iconic-places-ahmedabad"
+      ],
+      "notes": "District lists Chandravilas Restaurant Since1900 at INR200 for two; per-person100 representative snack/meal spend, not unlimited thali. Editorial recommendations on blog contain unrelated neighbouring-place descriptions; only explicit labelled business price used."
+    },
+    {
+      "table": "attractions",
+      "key": "a306",
+      "values": {
+        "best_time_note": "AMC budget2022-23 documents wheelchairs at each entry point. This verifies a facility, not step-free access to every ride or zone. General daytime admission INR25 is corroborated by2026 travel guides; confirm current gate tariff. Monday closure and separate ride charges apply."
+      },
+      "sources": [
+        "https://ahmedabadcity.gov.in/ViewFile/ViewFile?TYPE=FileRepository%2C2204",
+        "https://www.myticketstoindia.com/tourism-in-india/tourist-attractions/places-to-visit-in-ahmedabad/kankaria-lake/",
+        "https://ashaval.com/top-lakes-in-ahmedabad/"
+      ],
+      "notes": "AMC page148 of207 is2022-23 budget, despite recent crawl date. Wheelchair boolean remains NULL because facility availability is narrower than whole-attraction access. Existing numeric25 retained with contemporary secondary corroboration; not represented as official current tariff."
+    },
+    {
+      "table": "attractions",
+      "key": "a305",
+      "values": {
+        "best_time_note": "A commercial walking-tour listing explicitly says its Sarkhej Roza tour is not wheelchair accessible. This does not establish accessibility of every part of the monument; confirm an appropriate entrance and route with the site."
+      },
+      "sources": [
+        "https://www.tripadvisor.com/AttractionProductReview-g297608-d17018659-Walk_through_Sarkhej_Roza-Ahmedabad_Ahmedabad_District_Gujarat.html"
+      ],
+      "notes": "Tour operator accessibility statement, not a user review. Boolean remains unknown because tour and monument scopes differ. Generic Instagram-guide claims not accepted."
+    },
+    {
+      "table": "hotels",
+      "key": "h301",
+      "values": {
+        "gujarati_name": "ફ્રેન્ચ હવેલી"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/French+Haveli/@23.0189208,72.5917112,17z/data=!4m9!3m8!1s0x395e844ade0f9039:0x3f80b8464dc0026!5m2!4m1!1i2!8m2!3d23.0189208!4d72.5917112!16s%2Fg%2F11b73rgs55?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Gujarati business name transcribed from selected Google Maps business panel; not an official transliteration claim."
+    },
+    {
+      "table": "hotels",
+      "key": "h302",
+      "values": {
+        "gujarati_name": "લેમન ટ્રી પ્રીમિયર; એટ્રીયમ, અમદાવાદ"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/Lemon+Tree+Premier,+Sabarmati+Riverfront,+Ahmedabad/@23.028933,72.5769314,17z/data=!3m1!4b1!4m9!3m8!1s0x395e845092c4a1cf:0x705acaaf47af1bb3!5m2!4m1!1i2!8m2!3d23.028933!4d72.5769314!16s%2Fg%2F12vsdzjqv?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Gujarati business name transcribed from selected Google Maps business panel; not an official transliteration claim."
+    },
+    {
+      "table": "hotels",
+      "key": "h303",
+      "values": {
+        "gujarati_name": "થે હાઉસ ઓફ એમજી"
+      },
+      "sources": [
+        "https://www.google.com/maps/place/The+House+of+MG/@23.0273596,72.5818316,17z/data=!4m9!3m8!1s0x395e8451a5555555:0x20d89807222e93e8!5m2!4m1!1i2!8m2!3d23.0273596!4d72.5818316!16s%2Fg%2F1ts2yp9w?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Gujarati business name transcribed from selected Google Maps business panel; not an official transliteration claim."
+    },
+    {
+      "table": "attractions",
+      "key": "a305",
+      "values": {
+        "slug": "sarkhej-roza-ahmedabad"
+      },
+      "sources": [
+        "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around",
+        "https://www.openstreetmap.org/way/499625055",
+        "https://nominatim.openstreetmap.org/search?q=Sarkhej+Roza&format=jsonv2&limit=3&extratags=1",
+        "https://www.tripadvisor.com/AttractionProductReview-g297608-d17018659-Walk_through_Sarkhej_Roza-Ahmedabad_Ahmedabad_District_Gujarat.html"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a302",
+      "values": {
+        "slug": "adalaj-ni-vav-stepwell-ahmedabad"
+      },
+      "sources": [
+        "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/HeritageofAhmedabad.pdf",
+        "https://www.openstreetmap.org/way/85207833",
+        "https://nominatim.openstreetmap.org/search?q=Adalaj+Stepwell&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a304",
+      "values": {
+        "slug": "calico-textile-museum-ahmedabad"
+      },
+      "sources": [
+        "https://calicomuseum.org/tours/haveli",
+        "https://www.calicomuseum.org/information-for-visitors/tour-booking/",
+        "https://calicomuseum.org/",
+        "https://www.openstreetmap.org/node/3335472845",
+        "https://nominatim.openstreetmap.org/search?q=Calico+Museum+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a303",
+      "values": {
+        "slug": "sidi-saiyyed-mosque-old-pols-ahmedabad"
+      },
+      "sources": [
+        "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around",
+        "https://gujarattourism.com/central-zone/ahmedabad.html",
+        "https://mapcarta.com/W323895534"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a306",
+      "values": {
+        "slug": "kankaria-lake-ahmedabad"
+      },
+      "sources": [
+        "https://ahmedabad.nic.in/tourist-place/khandagir-udayagiri/",
+        "https://www.openstreetmap.org/way/29340465",
+        "https://nominatim.openstreetmap.org/search?q=Kankaria+Lake&format=jsonv2&limit=3&extratags=1",
+        "https://ahmedabadcity.gov.in/ViewFile/ViewFile?TYPE=FileRepository%2C2204",
+        "https://www.myticketstoindia.com/tourism-in-india/tourist-attractions/places-to-visit-in-ahmedabad/kankaria-lake/",
+        "https://ashaval.com/top-lakes-in-ahmedabad/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a301",
+      "values": {
+        "slug": "sabarmati-ashram-ahmedabad"
+      },
+      "sources": [
+        "https://gandhiashramsabarmati.org/en/2-uncategorised/57-ashram.html",
+        "https://gandhiashramsabarmati.org/en/",
+        "https://www.openstreetmap.org/way/776683602",
+        "https://nominatim.openstreetmap.org/search?q=Sabarmati+Ashram+Ahmedabad&format=jsonv2&limit=3&extratags=1"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "hotels",
+      "key": "h302",
+      "values": {
+        "slug": "lemon-tree-premier-ahmedabad"
+      },
+      "sources": [
+        "https://www.lemontreehotels.com/lemon-tree-premier/ahmedabad/hotels-in-ahmedabad/contact-us",
+        "https://www.travelmyth.com/Ahmedabad/Hotels/Lemon-Tree-Premier-%E2%80%9CThe-Atrium%E2%80%9D-Ahmedabad_tmid299237",
+        "https://in.near-place.com/lemon-tree-premier-the-atrium-ahmedabad-off-nehru-bridge-sabarmati-river-front-towards-khanpur-ahmedabad",
+        "https://www.google.com/maps/search/Lemon+Tree+Premier+The+Atrium+Ahmedabad",
+        "https://www.lemontreehotels.com/",
+        "https://www.google.com/maps/place/Lemon+Tree+Premier,+Sabarmati+Riverfront,+Ahmedabad/@23.028933,72.5769314,17z/data=!3m1!4b1!4m9!3m8!1s0x395e845092c4a1cf:0x705acaaf47af1bb3!5m2!4m1!1i2!8m2!3d23.028933!4d72.5769314!16s%2Fg%2F12vsdzjqv?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "hotels",
+      "key": "h303",
+      "values": {
+        "slug": "the-house-of-mg-ahmedabad"
+      },
+      "sources": [
+        "https://houseofmg.com/stay/house-of-mg/",
+        "https://www.openstreetmap.org/way/85210256",
+        "https://nominatim.openstreetmap.org/search?q=House+of+MG+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+        "https://www.google.com/maps/search/The+House+of+MG+Ahmedabad",
+        "https://houseofmg.com/",
+        "https://www.google.com/maps/place/The+House+of+MG/@23.0273596,72.5818316,17z/data=!4m9!3m8!1s0x395e8451a5555555:0x20d89807222e93e8!5m2!4m1!1i2!8m2!3d23.0273596!4d72.5818316!16s%2Fg%2F1ts2yp9w?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "hotels",
+      "key": "h301",
+      "values": {
+        "slug": "french-haveli-heritage-stay-ahmedabad"
+      },
+      "sources": [
+        "https://frenchhaveli.com/",
+        "https://www.openstreetmap.org/way/522354375",
+        "https://nominatim.openstreetmap.org/search?q=French+Haveli+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+        "https://frenchhaveli.com/accommodations/",
+        "https://www.google.com/maps/search/French+Haveli+Ahmedabad",
+        "https://www.google.com/maps/place/French+Haveli/@23.0189208,72.5917112,17z/data=!4m9!3m8!1s0x395e844ade0f9039:0x3f80b8464dc0026!5m2!4m1!1i2!8m2!3d23.0189208!4d72.5917112!16s%2Fg%2F11b73rgs55?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "restaurants",
+      "key": "r302",
+      "values": {
+        "slug": "vishalla-village-restaurant-ahmedabad"
+      },
+      "sources": [
+        "https://www.vishalla.com/",
+        "https://www.openstreetmap.org/node/440339381",
+        "https://nominatim.openstreetmap.org/search?q=Vishala+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+        "https://www.vishalla.com/menu/menu-2026-2.png",
+        "https://www.vishalla.com/our-menu.html"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "restaurants",
+      "key": "r301",
+      "values": {
+        "slug": "agashiye-terrace-restaurant-ahmedabad"
+      },
+      "sources": [
+        "https://houseofmg.com/blogs/ahmedabad-rooftop-restaurant-stunning-views/",
+        "https://www.openstreetmap.org/node/1973442552",
+        "https://nominatim.openstreetmap.org/search?q=Agashiye+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+        "https://www.district.in/blog/iconic-places-ahmedabad",
+        "https://houseofmg.com/eat/agashiye/"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "restaurants",
+      "key": "r303",
+      "values": {
+        "slug": "chandravilas-dining-hall-ahmedabad"
+      },
+      "sources": [
+        "https://www.district.in/dining/ahmedabad/chandravilas-restaurant-since-1900-manek-chowk",
+        "https://i-discoverasia.com/walks/khadia/locations/chandravillas/",
+        "https://www.openstreetmap.org/node/14067660558",
+        "https://nominatim.openstreetmap.org/search?q=Chandravilas+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+        "https://www.district.in/blog/iconic-places-ahmedabad"
+      ],
+      "notes": "Application identifier derived deterministically from existing researched name and city. Not an externally asserted tourism fact. Original UUID and external_id preserved."
+    },
+    {
+      "table": "attractions",
+      "key": "a301",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg",
+        "image_alt": "Sabarmati Ashram - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/ahmedabad.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg"
+      ],
+      "notes": "Official tourism page labels this image with the exact attraction name; HTTP image content type verified. External image reference; copyright remains with source. Destination image depicts a named landmark, not a panoramic city claim."
+    },
+    {
+      "table": "attractions",
+      "key": "a302",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/june/Adalaj-ni-Vav.jpg",
+        "image_alt": "Adalaj Ni Vav - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/ahmedabad.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/june/Adalaj-ni-Vav.jpg"
+      ],
+      "notes": "Official tourism page labels this image with the exact attraction name; HTTP image content type verified. External image reference; copyright remains with source. Destination image depicts a named landmark, not a panoramic city claim."
+    },
+    {
+      "table": "attractions",
+      "key": "a306",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/kankaria-lake/Kankaria-Lake-Thumbnail.jpg",
+        "image_alt": "Kankaria Lake - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/ahmedabad.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/kankaria-lake/Kankaria-Lake-Thumbnail.jpg"
+      ],
+      "notes": "Official tourism page labels this image with the exact attraction name; HTTP image content type verified. External image reference; copyright remains with source. Destination image depicts a named landmark, not a panoramic city claim."
+    },
+    {
+      "table": "destinations",
+      "key": "ahmedabad",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg",
+        "image_alt": "Sabarmati Ashram - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/ahmedabad.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg"
+      ],
+      "notes": "Official tourism page labels this image with the exact attraction name; HTTP image content type verified. External image reference; copyright remains with source. Destination image depicts a named landmark, not a panoramic city claim."
+    },
+    {
+      "table": "attractions",
+      "key": "a306",
+      "values": {
+        "transport_mode": "road"
+      },
+      "sources": [
+        "https://router.project-osrm.org/table/v1/driving/72.505393,22.993679;72.580136,23.167140;72.592476,23.054180;72.581010,23.027020;72.599521,23.006143;72.580638,23.060165;72.576958,23.029284;72.581536,23.027062;72.591743,23.018845;72.535706,22.993642;72.581617,23.027038;72.589368,23.024425?annotations=distance,duration"
+      ],
+      "notes": "Road approach represented by the archived OSRM driving routes to this attraction anchor. Does not claim vehicle access within the attraction or wheelchair suitability."
+    },
+    {
+      "table": "destinations",
+      "key": "ahmedabad",
+      "values": {
+        "official_category": "UNESCO World Heritage Site"
+      },
+      "sources": [
+        "https://whc.unesco.org/en/list/1551/"
+      ],
+      "notes": "UNESCO lists the Historic City of Ahmadabad. Category refers to the historic-city visitor circuit, not every attraction or hotel in modern Ahmedabad."
+    }
+  ],
+  "research_exclusions": [
+    "Sabarmati official accessibility statement concerns WCAG website accessibility, not physical visitor access.",
+    "Calico AccessTravel page claims ticket discounts despite official free admission and gives conflicting generic accessibility checkbox content; rejected as insufficient physical-access evidence.",
+    "Adalaj and Sidi Saiyyed/Old Pols: official tourism descriptions do not establish end-to-end wheelchair access; photographs and review-only assertions not used."
+  ]
+}

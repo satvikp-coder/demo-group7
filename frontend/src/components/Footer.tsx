@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="font-mono text-[11px] text-gold/80 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-              <span>Dataset synchronized with ASI & Craft Guilds</span>
+              <span>Tourism sources and provenance recorded</span>
             </div>
           </div>
 

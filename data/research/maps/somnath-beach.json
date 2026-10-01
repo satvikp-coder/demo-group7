@@ -1,0 +1,30 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Somnath+Beach&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248496636,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 559250415,
+      "lat": "20.8851332",
+      "lon": "70.4028285",
+      "category": "natural",
+      "type": "beach",
+      "place_rank": 22,
+      "importance": 0.10671635385671777,
+      "addresstype": "beach",
+      "name": "Somnath Beach",
+      "display_name": "Somnath Beach, Somnath, Veraval, Patan Veraval Taluka, Gir Somnath, Gujarat, 362200, India",
+      "extratags": {
+        "surface": "sand"
+      },
+      "boundingbox": [
+        "20.8833476",
+        "20.8869963",
+        "70.4013777",
+        "70.4081690"
+      ]
+    }
+  ]
+}

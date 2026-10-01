@@ -1,0 +1,33 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=House+of+MG+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248988279,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 85210256,
+      "lat": "23.0270621",
+      "lon": "72.5815356",
+      "category": "tourism",
+      "type": "hotel",
+      "place_rank": 30,
+      "importance": 6.633783474474735e-05,
+      "addresstype": "tourism",
+      "name": "House of MG",
+      "display_name": "House of MG, Rustom Cama Marg, Manek Chowk, Khadia, Ahmedabad, Gujarat, 380001, India",
+      "extratags": {
+        "cuisine": "indian",
+        "smoking": "separated",
+        "building": "yes",
+        "operator": "House of MG"
+      },
+      "boundingbox": [
+        "23.0268383",
+        "23.0273386",
+        "72.5813636",
+        "72.5819626"
+      ]
+    }
+  ]
+}

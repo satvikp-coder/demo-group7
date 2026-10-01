@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-01T09:00:19Z",
+  "checks": [
+    {
+      "name": "Production service worker installs and controls the page",
+      "passed": true
+    },
+    {
+      "name": "Real speech permission/network failure exits listening and announces the error",
+      "passed": true,
+      "limitation": "Successful microphone transcription requires real audio/platform support and was not certified"
+    },
+    {
+      "name": "Cached production shell reloads offline; API failure shows error and no invented catalog",
+      "passed": true
+    },
+    {
+      "name": "Online recovery reloads the real eight-city catalog",
+      "passed": true
+    }
+  ],
+  "verified": true,
+  "pageErrors": []
+}

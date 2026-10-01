@@ -1,0 +1,85 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Sun+Temple+Modhera&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248077304,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3902218899,
+      "lat": "23.5834213",
+      "lon": "72.1330777",
+      "category": "amenity",
+      "type": "place_of_worship",
+      "place_rank": 30,
+      "importance": 0.3425880974885877,
+      "addresstype": "amenity",
+      "name": "Modhera Sun Temple",
+      "display_name": "Modhera Sun Temple, SH7, Modhera, Becharaji Taluka, Mahesana, Gujarat, India",
+      "extratags": {
+        "religion": "hindu",
+        "wikidata": "Q2570737",
+        "wikipedia": "en:Sun Temple, Modhera",
+        "description": "Sun temple of Modhera. Also monument of national importance (N-GJ-158).",
+        "wikimedia_commons": "Category:Sun Temple, Modhera"
+      },
+      "boundingbox": [
+        "23.5833713",
+        "23.5834713",
+        "72.1330277",
+        "72.1331277"
+      ]
+    },
+    {
+      "place_id": 248940333,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 911907267,
+      "lat": "23.5824115",
+      "lon": "72.1341428",
+      "category": "tourism",
+      "type": "museum",
+      "place_rank": 30,
+      "importance": 4.0000762951049326e-05,
+      "addresstype": "tourism",
+      "name": "Sun Temple Museum",
+      "display_name": "Sun Temple Museum, SH7, Modhera, Becharaji Taluka, Mahesana, Gujarat, India",
+      "extratags": {
+        "height": "3.3",
+        "building": "yes",
+        "building:levels": "ground floor"
+      },
+      "boundingbox": [
+        "23.5822689",
+        "23.5825130",
+        "72.1339231",
+        "72.1343338"
+      ]
+    },
+    {
+      "place_id": 248626141,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 911907327,
+      "lat": "23.5823611",
+      "lon": "72.1364420",
+      "category": "amenity",
+      "type": "place_of_worship",
+      "place_rank": 30,
+      "importance": 4.0000762951049326e-05,
+      "addresstype": "amenity",
+      "name": "Modhera Sun temple",
+      "display_name": "Modhera Sun temple, SH7, Modhera, Becharaji Taluka, Mahesana, Gujarat, India",
+      "extratags": {
+        "building": "temple",
+        "religion": "hindu"
+      },
+      "boundingbox": [
+        "23.5823254",
+        "23.5823897",
+        "72.1363759",
+        "72.1365113"
+      ]
+    }
+  ]
+}

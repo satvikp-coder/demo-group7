@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "checks": [
+    {
+      "name": "Login password visibility",
+      "passed": true
+    },
+    {
+      "name": "Recovery control honestly explains missing reset/email endpoints; dismiss works",
+      "passed": true
+    },
+    {
+      "name": "Both auth modes and role selections",
+      "passed": true
+    },
+    {
+      "name": "All guest/back actions",
+      "passed": true
+    }
+  ]
+}

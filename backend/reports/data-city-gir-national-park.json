@@ -1,0 +1,185 @@
+{
+  "city": "gir-national-park",
+  "checkedAt": "2026-09-30T17:59:55.584Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/destinations/gir-national-park",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/82101120-c9b1-444e-b3f7-0f08ac3735b0/attractions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/82101120-c9b1-444e-b3f7-0f08ac3735b0/restaurants",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/82101120-c9b1-444e-b3f7-0f08ac3735b0/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/82101120-c9b1-444e-b3f7-0f08ac3735b0/hotels?sort=rating",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/82101120-c9b1-444e-b3f7-0f08ac3735b0/hotels?sort=value",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/4d669d42-3bc4-438c-a51b-ad6f5d0644ba/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/4d669d42-3bc4-438c-a51b-ad6f5d0644ba",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/4d669d42-3bc4-438c-a51b-ad6f5d0644ba/budget",
+      "status": 200
+    }
+  ],
+  "counts": {
+    "attractions": 2,
+    "hotels": 1,
+    "restaurants": 1
+  },
+  "attractionVisits": 2,
+  "summary": {
+    "legs": [
+      {
+        "to": "19f2c9d4-125c-459a-a307-7da11cd6459f",
+        "from": "a86afae3-d57d-41e3-bea5-323b36b733b0",
+        "path": [
+          "a86afae3-d57d-41e3-bea5-323b36b733b0",
+          "19f2c9d4-125c-459a-a307-7da11cd6459f"
+        ],
+        "method": "direct",
+        "minutes": 6,
+        "day_number": 1,
+        "distance_km": 2.61
+      },
+      {
+        "to": "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+        "from": "19f2c9d4-125c-459a-a307-7da11cd6459f",
+        "path": [
+          "19f2c9d4-125c-459a-a307-7da11cd6459f",
+          "25bdaff6-dff6-454f-8c2a-d2e66541b454"
+        ],
+        "method": "direct",
+        "minutes": 3,
+        "day_number": 1,
+        "distance_km": 2.52
+      },
+      {
+        "to": "a86afae3-d57d-41e3-bea5-323b36b733b0",
+        "from": "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+        "path": [
+          "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+          "a86afae3-d57d-41e3-bea5-323b36b733b0"
+        ],
+        "method": "direct",
+        "minutes": 9,
+        "day_number": 1,
+        "distance_km": 5.13
+      },
+      {
+        "to": "34258077-2271-43c3-8937-b178f7fddf17",
+        "from": "a86afae3-d57d-41e3-bea5-323b36b733b0",
+        "path": [
+          "a86afae3-d57d-41e3-bea5-323b36b733b0",
+          "34258077-2271-43c3-8937-b178f7fddf17"
+        ],
+        "method": "direct",
+        "minutes": 11,
+        "day_number": 2,
+        "distance_km": 8.86
+      },
+      {
+        "to": "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+        "from": "34258077-2271-43c3-8937-b178f7fddf17",
+        "path": [
+          "34258077-2271-43c3-8937-b178f7fddf17",
+          "25bdaff6-dff6-454f-8c2a-d2e66541b454"
+        ],
+        "method": "direct",
+        "minutes": 13,
+        "day_number": 2,
+        "distance_km": 13.43
+      },
+      {
+        "to": "a86afae3-d57d-41e3-bea5-323b36b733b0",
+        "from": "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+        "path": [
+          "25bdaff6-dff6-454f-8c2a-d2e66541b454",
+          "a86afae3-d57d-41e3-bea5-323b36b733b0"
+        ],
+        "method": "direct",
+        "minutes": 9,
+        "day_number": 2,
+        "distance_km": 5.13
+      }
+    ],
+    "status": "scheduled",
+    "routing": {
+      "dijkstra_calls": 0,
+      "direct_route_hits": 7,
+      "unreachable_pairs": 0
+    },
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "route_rows": 6,
+    "hotel_total": 8978,
+    "skipped_meals": [],
+    "hotel_replaced": false,
+    "lodging_nights": 2,
+    "hotel_over_budget": false,
+    "starting_hotel_id": "a86afae3-d57d-41e3-bea5-323b36b733b0",
+    "excluded_attractions": [],
+    "transport_cost_known": false,
+    "hotel_budget_shortfall": 0,
+    "unscheduled_attractions": []
+  },
+  "budget": {
+    "trip_id": "4d669d42-3bc4-438c-a51b-ad6f5d0644ba",
+    "budget": 20000,
+    "hotel": 8978,
+    "attractions": 3350,
+    "meals": 600,
+    "transit": 0,
+    "total": 12928,
+    "remaining": 7072,
+    "over_budget": false,
+    "generated": true,
+    "hotel_over_budget": false,
+    "transport_cost_known": false,
+    "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+  },
+  "apiPassed": true,
+  "cleanupCompleted": true
+}

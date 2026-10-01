@@ -1,0 +1,158 @@
+{
+  "city": "rann-of-kutch",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "rann-of-kutch",
+      "values": {
+        "name": "Rann of Kutch",
+        "district": "Kutch",
+        "category": "Nature",
+        "location": "Dhordo and the Great Rann visitor area, Kutch, Gujarat",
+        "description": "The Great Rann is a seasonal salt landscape in northern Kutch. Dhordo provides access to the White Rann, while Kalo Dungar offers elevated views over the surrounding region.",
+        "best_time": "November to February",
+        "highlights": [
+          "White Rann near Dhordo",
+          "Kalo Dungar"
+        ],
+        "seasonal_note": "The white salt surface depends on weather and water conditions; monsoon conditions can change access and appearance. Permit requirements apply.",
+        "seasonal_active_months": [
+          11,
+          12,
+          1,
+          2
+        ]
+      },
+      "sources": [
+        "https://gujarattourism.com/kutch-zone/kutch.html",
+        "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+        "https://booking.kutchrannresort.com/",
+        "https://www.travelkutch.org/destinations/dhordo-white-rann/"
+      ],
+      "notes": "Months represent recommended dry-season travel, not an asserted legal closure calendar."
+    },
+    {
+      "table": "attractions",
+      "key": "a701",
+      "values": {
+        "name": "White Rann near Dhordo",
+        "slug": "white-rann-dhordo",
+        "lat": 23.84129,
+        "lng": 69.52256,
+        "rating": 4.6,
+        "category": "Nature",
+        "duration_hours": 2.5,
+        "entry_fee": "Published adult White Rann permit INR100; vehicle permit and optional activities extra; confirm current permit tariff",
+        "entry_fee_numeric": 100,
+        "transport_mode": "road",
+        "description": "The White Rann near Dhordo is a seasonal salt-flat viewing destination, commonly visited around sunset and full-moon periods.",
+        "best_time_note": "A local published day plan allocates16:30-19:00 before dinner; stored2.5 hours is that visit allowance, not opening hours. Accessibility guide reports assisted access at the viewing area but uneven salt crust beyond it. Do not infer independent wheelchair access across the flats. Permit/seasonal access must be checked.",
+        "source": "Gujarat Tourism; Google Maps; local operators"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+        "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+        "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+        "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+      ],
+      "notes": "Selected mapped attraction, archived pages/rann-white-selected.json. Permit source is a tour-operator published exclusion, not a successfully retrieved official current tariff; official portal unavailable during research. Price is provisional representative evidence, no guessed vehicle split."
+    },
+    {
+      "table": "attractions",
+      "key": "a702",
+      "values": {
+        "name": "Kalo Dungar",
+        "slug": "kalo-dungar",
+        "lat": 23.933547,
+        "lng": 69.813823,
+        "category": "Nature",
+        "duration_hours": 1.5,
+        "entry_fee": "No viewpoint admission charge; local transport/parking and applicable permits separate",
+        "entry_fee_numeric": 0,
+        "transport_mode": "road",
+        "description": "Kalo Dungar is Kutch's highest hill, with views across the Great Rann and a Dattatreya temple near the summit.",
+        "best_time_note": "Published visit guidance suggests1-2 hours. IRCTC notes over1km uphill from bus parking and limited local transfer options; wheelchair access to the final viewpoint is unverified. Road routes are approach routes, not proof of step-free summit access.",
+        "source": "Gujarat Tourism; OpenStreetMap; IRCTC; regional guide"
+      },
+      "sources": [
+        "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+        "https://www.openstreetmap.org/node/1534445723",
+        "https://gujaratexplorers.com/destination/kalo-dungar/",
+        "https://www.irctctourism.com/packagedetails/NDA29.pdf"
+      ],
+      "notes": "1.5 hours is midpoint of published1-2 hour guidance, which includes hill approach; may overlap road approach time. No clock opening/closing invented for daylight access."
+    },
+    {
+      "table": "hotels",
+      "key": "h701",
+      "values": {
+        "name": "Gateway to Rann Resort",
+        "slug": "gateway-to-rann-resort",
+        "lat": 23.796686,
+        "lng": 69.50528,
+        "rating": 4.2,
+        "price_per_night": 5775,
+        "stay_type": "Registered Hotel",
+        "location": "Dhordo village, Gorewali Post, Bhuj taluka, Kutch370510",
+        "description": "Gateway to Rann Resort offers air-conditioned bhunga accommodation at Dhordo, with meals and a cultural programme included in published room packages.",
+        "source": "Official resort booking tariff; Google Maps"
+      },
+      "sources": [
+        "https://booking.kutchrannresort.com/",
+        "https://kutchrannresort.com/accommodation/",
+        "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+      ],
+      "notes": "Official public Bhunga AC tariff INR5500 per room/night, maximum double occupancy, plus stated5 percent GST =5775. Includes high tea, dinner and next-day breakfast. Published2026-27 page checkedSeptember30; availability/date restrictions still apply. Current budget model does not offset included meals. Application category does not assert legal registration."
+    },
+    {
+      "table": "restaurants",
+      "key": "r701",
+      "values": {
+        "name": "Gateway to Rann Resort dining room",
+        "slug": "gateway-rann-dining",
+        "lat": 23.796686,
+        "lng": 69.50528,
+        "avg_cost_per_person": 250,
+        "location": "Inside Gateway to Rann Resort, Dhordo, Gorewali, Kutch370510",
+        "source": "Official resort booking page"
+      },
+      "sources": [
+        "https://booking.kutchrannresort.com/",
+        "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+      ],
+      "notes": "Official optional lunch rate INR250/person. Dining service uses verified property coordinate; no separately verified dining-room coordinate or rating claimed. Cuisine left unknown in absence of a published menu. Hotel/dining room co-location cannot yield a positive road route under existing schema; no artificial distance inserted. Meal offered for resort guests; outside-guest admission not established."
+    },
+    {
+      "table": "destinations",
+      "key": "rann-of-kutch",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg",
+        "image_alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "attractions",
+      "key": "a702",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg",
+        "image_alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    }
+  ],
+  "research_exclusions": [
+    "No guessed24-hour unrestricted salt-desert admission.",
+    "No fabricated short road link between co-located resort and dining room.",
+    "Unavailable permit portal prevents current official tariff confirmation; secondary price evidence marked explicitly."
+  ]
+}

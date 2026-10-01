@@ -1,0 +1,492 @@
+{
+  "generatedAt": "2026-09-30T08:30:37.336Z",
+  "verificationBasis": "User approved the 24 project-attributed records for seeding. Broad CSV source labels are preserved; independent field verification is not claimed.",
+  "approvedCountsMatchExactly": true,
+  "rawCsvCountsMatchExactly": false,
+  "csvCounts": {
+    "attractions.csv": {
+      "source": 14,
+      "approved": 14,
+      "excluded": 0,
+      "database": 25,
+      "sourceSha256": "9de7418ab1d9bacc847244e69e6e648d278739c0c48f649a25cb94c6350f673a"
+    },
+    "hotels.csv": {
+      "source": 5,
+      "approved": 5,
+      "excluded": 0,
+      "database": 11,
+      "sourceSha256": "52d83f3b9862fbadb653581d2a83585c073f482e47a5e3459279f6ebe6ad120a"
+    },
+    "restaurants.csv": {
+      "source": 5,
+      "approved": 5,
+      "excluded": 0,
+      "database": 12,
+      "sourceSha256": "e70d7028f1ebb4ee176e1bbb6d17d4a6e1b1086ac4ec1d040f9006ef76b8f2ac"
+    },
+    "routes.csv": {
+      "source": 56,
+      "approved": 0,
+      "excluded": 56,
+      "database": 131,
+      "sourceSha256": "b8c8ad044753ab0467eb3bafbdee7bb27022bd61488a841720418876ca299c5e"
+    }
+  },
+  "tableCounts": [
+    {
+      "table_name": "attractions",
+      "row_count": 25
+    },
+    {
+      "table_name": "budgets",
+      "row_count": 0
+    },
+    {
+      "table_name": "destination_nearby_attractions",
+      "row_count": 0
+    },
+    {
+      "table_name": "destination_nearby_hotels",
+      "row_count": 0
+    },
+    {
+      "table_name": "destinations",
+      "row_count": 8
+    },
+    {
+      "table_name": "hotels",
+      "row_count": 11
+    },
+    {
+      "table_name": "itinerary_stops",
+      "row_count": 0
+    },
+    {
+      "table_name": "restaurants",
+      "row_count": 12
+    },
+    {
+      "table_name": "routes",
+      "row_count": 131
+    },
+    {
+      "table_name": "trips",
+      "row_count": 0
+    },
+    {
+      "table_name": "users",
+      "row_count": 0
+    }
+  ],
+  "cityCounts": [
+    {
+      "city": "ahmedabad",
+      "attractions": 6,
+      "hotels": 3,
+      "restaurants": 3,
+      "routes": 63
+    },
+    {
+      "city": "champaner",
+      "attractions": 2,
+      "hotels": 1,
+      "restaurants": 1,
+      "routes": 6
+    },
+    {
+      "city": "dwarka",
+      "attractions": 4,
+      "hotels": 2,
+      "restaurants": 2,
+      "routes": 20
+    },
+    {
+      "city": "gir-national-park",
+      "attractions": 2,
+      "hotels": 1,
+      "restaurants": 1,
+      "routes": 6
+    },
+    {
+      "city": "modhera",
+      "attractions": 2,
+      "hotels": 1,
+      "restaurants": 1,
+      "routes": 6
+    },
+    {
+      "city": "rann-of-kutch",
+      "attractions": 2,
+      "hotels": 1,
+      "restaurants": 1,
+      "routes": 5
+    },
+    {
+      "city": "saputara",
+      "attractions": 3,
+      "hotels": 1,
+      "restaurants": 1,
+      "routes": 10
+    },
+    {
+      "city": "somnath",
+      "attractions": 4,
+      "hotels": 1,
+      "restaurants": 2,
+      "routes": 15
+    }
+  ],
+  "researchAudit": {
+    "expectedCounts": {
+      "destinations": 8,
+      "attractions": 25,
+      "hotels": 11,
+      "restaurants": 12,
+      "routes": 131
+    },
+    "checkedFields": 721,
+    "checkedRoutes": 131,
+    "basis": "Pinned approved CSV rows overlaid with field-level researched supplements; archived road routes; exact identity, relationship and value checks"
+  },
+  "routeJoinSql": "-- csv_route_audit is a temporary table loaded directly from routes.csv.\n-- external_id stores CSV IDs; destinations.slug stores CSV destination_id.\nSELECT d.slug AS city,\n       count(*)::int AS csv_rows,\n       count(*) FILTER (WHERE a.id IS NOT NULL AND b.id IS NOT NULL)::int\n           AS both_attraction_ids_join,\n       count(*) FILTER (WHERE a.id IS NULL)::int AS source_not_an_attraction,\n       count(*) FILTER (WHERE b.id IS NULL)::int AS missing_target_attraction,\n       count(*) FILTER (WHERE h.id IS NOT NULL)::int AS source_joins_hotel,\n       count(*) FILTER (WHERE a.id IS NULL AND h.id IS NULL)::int AS missing_source_entity\nFROM csv_route_audit c\nLEFT JOIN destinations d ON d.slug = c.destination_id\nLEFT JOIN attractions a ON a.external_id = c.source_attraction_id\n                       AND a.destination_id = d.id\nLEFT JOIN attractions b ON b.external_id = c.destination_attraction_id\n                       AND b.destination_id = d.id\nLEFT JOIN hotels h ON h.external_id = c.source_attraction_id\n                  AND h.destination_id = d.id\nGROUP BY d.slug\nORDER BY d.slug;\n",
+  "routeJoins": [
+    {
+      "city": "ahmedabad",
+      "csv_rows": 27,
+      "both_attraction_ids_join": 9,
+      "source_not_an_attraction": 18,
+      "missing_target_attraction": 0,
+      "source_joins_hotel": 18,
+      "missing_source_entity": 0
+    },
+    {
+      "city": "dwarka",
+      "csv_rows": 12,
+      "both_attraction_ids_join": 3,
+      "source_not_an_attraction": 9,
+      "missing_target_attraction": 0,
+      "source_joins_hotel": 3,
+      "missing_source_entity": 6
+    },
+    {
+      "city": "somnath",
+      "csv_rows": 17,
+      "both_attraction_ids_join": 5,
+      "source_not_an_attraction": 12,
+      "missing_target_attraction": 0,
+      "source_joins_hotel": 4,
+      "missing_source_entity": 8
+    }
+  ],
+  "missingSourcesSql": "SELECT c.destination_id AS city, c.source_attraction_id AS csv_source_id,\n       count(*)::int AS affected_rows\nFROM csv_route_audit c\nLEFT JOIN destinations d ON d.slug = c.destination_id\nLEFT JOIN attractions a ON a.external_id = c.source_attraction_id AND a.destination_id = d.id\nLEFT JOIN hotels h ON h.external_id = c.source_attraction_id AND h.destination_id = d.id\nLEFT JOIN restaurants r ON r.external_id = c.source_attraction_id AND r.destination_id = d.id\nWHERE a.id IS NULL AND h.id IS NULL AND r.id IS NULL\nGROUP BY c.destination_id, c.source_attraction_id\nORDER BY c.destination_id, c.source_attraction_id;\n",
+  "missingRouteSources": [
+    {
+      "city": "dwarka",
+      "csv_source_id": "h203",
+      "affected_rows": 3
+    },
+    {
+      "city": "dwarka",
+      "csv_source_id": "h204",
+      "affected_rows": 3
+    },
+    {
+      "city": "somnath",
+      "csv_source_id": "h102",
+      "affected_rows": 4
+    },
+    {
+      "city": "somnath",
+      "csv_source_id": "h103",
+      "affected_rows": 4
+    }
+  ],
+  "excludedRows": {
+    "attractions.csv": [],
+    "hotels.csv": [],
+    "restaurants.csv": [],
+    "routes.csv": [
+      {
+        "row": 1,
+        "id": "a101->a104",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 2,
+        "id": "a101->a103",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 3,
+        "id": "a102->a101",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 4,
+        "id": "a102->a104",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 5,
+        "id": "a103->a104",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 6,
+        "id": "h101->a101",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 7,
+        "id": "h102->a101",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 8,
+        "id": "h103->a101",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 9,
+        "id": "h101->a102",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 10,
+        "id": "h102->a102",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 11,
+        "id": "h103->a102",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 12,
+        "id": "h101->a103",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 13,
+        "id": "h102->a103",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 14,
+        "id": "h103->a103",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 15,
+        "id": "h101->a104",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 16,
+        "id": "h102->a104",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 17,
+        "id": "h103->a104",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 18,
+        "id": "a201->a203",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 19,
+        "id": "a201->a202",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 20,
+        "id": "a202->a203",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 21,
+        "id": "h201->a201",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 22,
+        "id": "h204->a201",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 23,
+        "id": "h203->a201",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 24,
+        "id": "h201->a202",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 25,
+        "id": "h204->a202",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 26,
+        "id": "h203->a202",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 27,
+        "id": "h201->a203",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 28,
+        "id": "h204->a203",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 29,
+        "id": "h203->a203",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 30,
+        "id": "a301->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 31,
+        "id": "a301->a303",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 32,
+        "id": "a302->a301",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 33,
+        "id": "a302->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 34,
+        "id": "a303->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 35,
+        "id": "a303->a306",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 36,
+        "id": "a305->a303",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 37,
+        "id": "a305->a306",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 38,
+        "id": "a306->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 39,
+        "id": "h301->a301",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 40,
+        "id": "h302->a301",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 41,
+        "id": "h303->a301",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 42,
+        "id": "h301->a302",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 43,
+        "id": "h302->a302",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 44,
+        "id": "h303->a302",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 45,
+        "id": "h301->a303",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 46,
+        "id": "h302->a303",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 47,
+        "id": "h303->a303",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 48,
+        "id": "h301->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 49,
+        "id": "h302->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 50,
+        "id": "h303->a304",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 51,
+        "id": "h301->a305",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 52,
+        "id": "h302->a305",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 53,
+        "id": "h303->a305",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 54,
+        "id": "h301->a306",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 55,
+        "id": "h302->a306",
+        "reason": "simulated_or_placeholder_source"
+      },
+      {
+        "row": 56,
+        "id": "h303->a306",
+        "reason": "simulated_or_placeholder_source"
+      }
+    ]
+  }
+}

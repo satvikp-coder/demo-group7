@@ -1,3 +1,6 @@
+> Historical academic record. Preserve original credits and design intent; current
+> implementation/status is documented in the [root README](../../README.md).
+
 # Research Experiment Plan & Data (`docs/research/`)
 
 **Status:** PLANNED (Pending backend implementation & real dataset collection)

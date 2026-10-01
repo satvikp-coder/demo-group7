@@ -1,5 +1,3 @@
-# Backend Controllers
+# Controllers
 
-**Status:** NOT STARTED (Planned Next Phase)
-
-Contains request handlers mapping incoming REST API calls to service layer methods and returning JSON HTTP responses.
+Authentication implements real bcrypt registration and password verification, PostgreSQL persistence, and JWT issuance. Admin exposes protected status and catalog CRUD endpoints for destinations, attractions, hotels and restaurants, all behind verifyJwt and requireRoles("tour_operator"). Destination, attraction, hotel, and restaurant controllers return only database-backed records or cached database search results. Hotel ranking uses the imported DSA Merge Sort. The trip controller creates owned trips, generates and persists itineraries, and reads trip-specific budgets from persisted stops. The separate legacy budgetController remains an unmounted placeholder; use GET /api/trips/:id/budget.

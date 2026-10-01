@@ -1,0 +1,34 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Sabarmati+Ashram+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248906233,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 776683602,
+      "lat": "23.0601652",
+      "lon": "72.5806382",
+      "category": "landuse",
+      "type": "residential",
+      "place_rank": 24,
+      "importance": 0.43115098645463457,
+      "addresstype": "residential",
+      "name": "Sabarmati Ashram",
+      "display_name": "Sabarmati Ashram, Ranip, SabarmatiTaluka, Ahmedabad, Gujarat, India",
+      "extratags": {
+        "tourism": "attraction",
+        "wikidata": "Q1410702",
+        "wikipedia": "en:Sabarmati Ashram",
+        "residential": "cottage",
+        "wikimedia_commons": "Category:Sabarmati Ashram"
+      },
+      "boundingbox": [
+        "23.0591077",
+        "23.0611754",
+        "72.5796921",
+        "72.5817399"
+      ]
+    }
+  ]
+}

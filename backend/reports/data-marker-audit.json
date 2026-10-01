@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-09-30T13:51:05.676138+00:00",
+  "scope": "Current frontend source and backend controllers/services/models/routes; seed research/test fixtures are separate tooling, not runtime catalog fallbacks.",
+  "matches": [
+    {
+      "file": "frontend/src/App.tsx",
+      "line": 90,
+      "match": "// Dev-only Research Simulation Mode",
+      "classification": "BACKEND EXPERIMENT TOOLING",
+      "reason": "Existing research UI calls api.catalog and createItinerary through HTTP. Simulation naming does not denote fake tourism data. No UI changes in this task."
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "line": 253,
+      "match": "placeholder=\"e.g. traveler@heritage.in\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "line": 327,
+      "match": "placeholder=\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "line": 462,
+      "match": "placeholder=\"e.g. Vikramaditya Solanki\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "line": 498,
+      "match": "placeholder=\"name@domain.com\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "line": 531,
+      "match": "placeholder=\"12+ chars, uppercase, lowercase, number, symbol\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "line": 561,
+      "match": "placeholder=\"Repeat password\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/BudgetPlannerView.tsx",
+      "line": 54,
+      "match": "const [simulatedBudget, setAllocatedBudget] = useState<number>(0);",
+      "classification": "FALSE POSITIVE",
+      "reason": "Existing local budget-cap input/display state; persisted costs are fetched through API. Does not manufacture tourism prices."
+    },
+    {
+      "file": "frontend/src/components/BudgetPlannerView.tsx",
+      "line": 201,
+      "match": "Simulate Target Budget Cap:",
+      "classification": "FALSE POSITIVE",
+      "reason": "Existing local budget-cap input/display state; persisted costs are fetched through API. Does not manufacture tourism prices."
+    },
+    {
+      "file": "frontend/src/components/ExploreView.tsx",
+      "line": 232,
+      "match": "placeholder={t('explore.searchPlaceholder', 'Search destinations or districts...')}",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/ExploreView.tsx",
+      "line": 233,
+      "match": "className=\"w-full bg-transparent font-display text-xl sm:text-2xl text-charcoal placeholder:text-stone/50 focus:outline-none\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/ProfileDashboardView.tsx",
+      "line": 421,
+      "match": "placeholder=\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/ProfileDashboardView.tsx",
+      "line": 434,
+      "match": "placeholder=\"Enter new password\"",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "line": 30,
+      "match": "const runSimulationMatrix = async () => {",
+      "classification": "BACKEND EXPERIMENT TOOLING",
+      "reason": "Existing research UI calls api.catalog and createItinerary through HTTP. Simulation naming does not denote fake tourism data. No UI changes in this task."
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "line": 124,
+      "match": "if(requestError) return <p role=\"alert\">{requestError} <button onClick={runSimulationMatrix}>Retry</button></p>;",
+      "classification": "BACKEND EXPERIMENT TOOLING",
+      "reason": "Existing research UI calls api.catalog and createItinerary through HTTP. Simulation naming does not denote fake tourism data. No UI changes in this task."
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "line": 142,
+      "match": "<h1 className=\"font-display text-3xl font-bold text-ink mt-1\">Research Simulation Console</h1>",
+      "classification": "BACKEND EXPERIMENT TOOLING",
+      "reason": "Existing research UI calls api.catalog and createItinerary through HTTP. Simulation naming does not denote fake tourism data. No UI changes in this task."
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "line": 147,
+      "match": "onClick={runSimulationMatrix}",
+      "classification": "BACKEND EXPERIMENT TOOLING",
+      "reason": "Existing research UI calls api.catalog and createItinerary through HTTP. Simulation naming does not denote fake tourism data. No UI changes in this task."
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "line": 152,
+      "match": "{isRunning ? \"Executing...\" : \"Run Simulation Matrix\"}",
+      "classification": "BACKEND EXPERIMENT TOOLING",
+      "reason": "Existing research UI calls api.catalog and createItinerary through HTTP. Simulation naming does not denote fake tourism data. No UI changes in this task."
+    },
+    {
+      "file": "frontend/src/data/routesCsv.ts",
+      "line": 2,
+      "match": "export const routesCsvText = \"# STATUS: Somnath and Dwarka routes verified; remaining 6 cities NOT COLLECTED (see Data Collection Plan)\\nsource_attraction_id,destination_attraction_id,destination_id,distance_km,travel_time_minutes,source\\na101,a104,somnath,0.7,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na101,a103,somnath,1.2,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na102,a101,somnath,4.4,9,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na102,a104,somnath,4.9,10,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na103,a104,somnath,1.1,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh101,a101,somnath,0.7,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh102,a101,somnath,1,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh103,a101,somnath,1.6,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh101,a102,somnath,4.7,9,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh102,a102,somnath,4.2,8,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh103,a102,somnath,4.9,10,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh101,a103,somnath,1,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh102,a103,somnath,1.5,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh103,a103,somnath,1.6,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh101,a104,somnath,1.3,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh102,a104,somnath,1.7,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh103,a104,somnath,2.2,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na201,a203,dwarka,2.7,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na201,a202,dwarka,20.5,41,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na202,a203,dwarka,17.8,36,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh201,a201,dwarka,0.3,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh204,a201,dwarka,0.9,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh203,a201,dwarka,2,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh201,a202,dwarka,20.2,40,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh204,a202,dwarka,19.6,39,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh203,a202,dwarka,18.5,37,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh201,a203,dwarka,2.4,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh204,a203,dwarka,1.8,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh203,a203,dwarka,0.7,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na301,a304,ahmedabad,1.7,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na301,a303,ahmedabad,4.7,9,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na302,a301,ahmedabad,14.8,30,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na302,a304,ahmedabad,15.9,32,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na303,a304,ahmedabad,4,8,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na303,a306,ahmedabad,4.6,9,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na305,a303,ahmedabad,11.8,24,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na305,a306,ahmedabad,12.6,25,Simulated OpenRouteService Route (No API Key), 2026-08-25\\na306,a304,ahmedabad,7.8,16,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh301,a301,ahmedabad,5.5,11,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh302,a301,ahmedabad,3.4,7,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh303,a301,ahmedabad,4.9,10,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh301,a302,ahmedabad,20.3,41,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh302,a302,ahmedabad,18,36,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh303,a302,ahmedabad,19.7,39,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh301,a303,ahmedabad,1.2,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh302,a303,ahmedabad,1.9,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh303,a303,ahmedabad,0.2,5,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh301,a304,ahmedabad,4.5,9,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh302,a304,ahmedabad,3.4,7,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh303,a304,ahmedabad,4.1,8,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh301,a305,ahmedabad,12.4,25,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh302,a305,ahmedabad,11.8,24,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh303,a305,ahmedabad,11.9,24,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh301,a306,ahmedabad,3.5,7,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh302,a306,ahmedabad,6.5,13,Simulated OpenRouteService Route (No API Key), 2026-08-25\\nh303,a306,ahmedabad,4.4,9,Simulated OpenRouteService Route (No API Key), 2026-08-25\\n\";",
+      "classification": "UNUSED LEGACY REFERENCE",
+      "reason": "Preserved historical simulated CSV module; production build audit confirms no legacy modules bundled and backend seed excludes simulated CSV routes. Not newly renamed or imported as real data."
+    },
+    {
+      "file": "frontend/src/data/translations.ts",
+      "line": 57,
+      "match": "\"explore.searchPlaceholder\": \"Search destinations or districts...\",",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "frontend/src/data/translations.ts",
+      "line": 203,
+      "match": "\"explore.searchPlaceholder\": \"\u0917\u0902\u0924\u0935\u094d\u092f \u092f\u093e \u091c\u093f\u0932\u0947 \u0916\u094b\u091c\u0947\u0902...\",",
+      "classification": "LEGITIMATE PLACEHOLDER",
+      "reason": "Input hint or CSS placeholder selector/translation; not backend data."
+    },
+    {
+      "file": "backend/controllers/authController.js",
+      "line": 11,
+      "match": "const dummyHash = bcrypt.hash(randomBytes(32).toString(\"hex\"), BCRYPT_ROUNDS);",
+      "classification": "FALSE POSITIVE",
+      "reason": "Random bcrypt comparison hash equalizes unknown-account work; cannot authenticate a fake account."
+    },
+    {
+      "file": "backend/controllers/authController.js",
+      "line": 28,
+      "match": "const matches = await bcrypt.compare(password, user?.password_hash ?? await dummyHash);",
+      "classification": "FALSE POSITIVE",
+      "reason": "Random bcrypt comparison hash equalizes unknown-account work; cannot authenticate a fake account."
+    },
+    {
+      "file": "backend/controllers/README.md",
+      "line": 3,
+      "match": "Authentication implements real bcrypt registration and password verification, PostgreSQL persistence, and JWT issuance. Admin exposes protected status and catalog CRUD endpoints for destinations, attractions, hotels and restaurants, all behind verifyJwt and requireRoles(\"tour_operator\"). Destination, attraction, hotel, and restaurant controllers return only database-backed records or cached database search results. Hotel ranking uses the imported DSA Merge Sort. The trip controller creates owned trips, generates and persists itineraries, and reads trip-specific budgets from persisted stops. The separate legacy budgetController remains an unmounted placeholder; use GET /api/trips/:id/budget.",
+      "classification": "DOCUMENTATION",
+      "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence."
+    }
+  ],
+  "classificationCounts": {
+    "BACKEND EXPERIMENT TOOLING": 6,
+    "LEGITIMATE PLACEHOLDER": 12,
+    "FALSE POSITIVE": 4,
+    "UNUSED LEGACY REFERENCE": 1,
+    "DOCUMENTATION": 1
+  },
+  "reviewComplete": true
+}

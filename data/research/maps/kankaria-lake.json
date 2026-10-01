@@ -1,0 +1,34 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Kankaria+Lake&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 246335805,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 29340465,
+      "lat": "23.0061434",
+      "lon": "72.5995212",
+      "category": "water",
+      "type": "lake",
+      "place_rank": 20,
+      "importance": 0.35892997054582615,
+      "addresstype": "lake",
+      "name": "Kankaria Lake",
+      "display_name": "Kankaria Lake, Sherkotda, Maninagar Taluka, Ahmedabad, Gujarat, India",
+      "extratags": {
+        "natural": "water",
+        "wikidata": "Q16384",
+        "wikipedia": "en:Kankaria Lake",
+        "intermittent": "no",
+        "wikimedia_commons": "Category:Kankaria Lake"
+      },
+      "boundingbox": [
+        "23.0035739",
+        "23.0089569",
+        "72.5983185",
+        "72.6040914"
+      ]
+    }
+  ]
+}

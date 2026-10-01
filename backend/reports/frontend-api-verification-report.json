@@ -1,0 +1,108 @@
+{
+  "changedFrontendFiles": [
+    "frontend\\src\\api\\index.ts"
+  ],
+  "uiFilesChecked": 37,
+  "uiFilesUnchanged": true,
+  "onlySharedClientChanged": true,
+  "environmentVariable": "VITE_API_BASE_URL",
+  "requestImplementations": [
+    "frontend\\public\\sw.js",
+    "frontend\\scripts\\generate-routes.ts",
+    "frontend\\scripts\\translate-content.ts",
+    "frontend\\src\\api\\index.ts"
+  ],
+  "staticDataImports": [
+    "frontend\\src\\utils\\destinationTrie.ts",
+    "frontend\\src\\utils\\itineraryPlanner.ts"
+  ],
+  "externalUrlFiles": [
+    "frontend\\index.html",
+    "frontend\\README.md",
+    "frontend\\scripts\\generate-routes.ts",
+    "frontend\\scripts\\translate-content.ts",
+    "frontend\\src\\index.css",
+    "frontend\\src\\components\\ChevronDivider.tsx",
+    "frontend\\src\\components\\ExploreView.tsx",
+    "frontend\\src\\data\\destinations.ts"
+  ],
+  "checkedAt": "2026-09-29T19:46:17+05:30",
+  "frontendEnvironmentUnchanged": true,
+  "apiBaseUrl": "http://localhost:5000/api",
+  "backendCorsFix": {
+    "files": [
+      "backend/.env",
+      "backend/.env.example"
+    ],
+    "previous": "http://localhost:5173",
+    "current": "http://localhost:3000",
+    "preflightStatus": 204
+  },
+  "tests": {
+    "typecheck": "npm run lint (tsc --noEmit): passed",
+    "frontendTests": "npm test: passed",
+    "backendTests": "19 passed",
+    "productionBuild": "passed; legacy modules absent",
+    "browserFlows": "20 passed",
+    "clientEdgeCases": "7 passed"
+  },
+  "permissions": {
+    "destinations": {
+      "tourist": {
+        "POST": 403,
+        "PUT": 403,
+        "DELETE": 403
+      },
+      "operator": {
+        "POST": 201,
+        "PUT": 200,
+        "DELETE": 204
+      }
+    },
+    "hotels": {
+      "tourist": {
+        "POST": 403,
+        "PUT": 403,
+        "DELETE": 403
+      },
+      "operator": {
+        "POST": 201,
+        "PUT": 200,
+        "DELETE": 204
+      }
+    },
+    "attractions": {
+      "tourist": {
+        "POST": 403,
+        "PUT": 403,
+        "DELETE": 403
+      },
+      "operator": {
+        "POST": 201,
+        "PUT": 200,
+        "DELETE": 204
+      }
+    },
+    "restaurants": {
+      "tourist": {
+        "POST": 403,
+        "PUT": 403,
+        "DELETE": 403
+      },
+      "operator": {
+        "POST": 201,
+        "PUT": 200,
+        "DELETE": 204
+      }
+    }
+  },
+  "remainingFetchMatches": {
+    "frontend/src/api/index.ts": "single application API client",
+    "frontend/public/sw.js": "static asset cache; bypasses no-store, Authorization and /api/ requests",
+    "frontend/scripts/translate-content.ts": "offline translation tool; not runtime backend API",
+    "frontend/scripts/generate-routes.ts": "offline route generation tool; not runtime backend API"
+  },
+  "runtimeMockDomainFallback": false,
+  "retainedVisualFallbacks": "Existing category SVG image placeholders; no API failure domain-data fallback",
+  "gitAvailable": false
+}

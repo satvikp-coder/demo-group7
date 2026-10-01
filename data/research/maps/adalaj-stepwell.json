@@ -1,0 +1,36 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Adalaj+Stepwell&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 424538028,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 85207833,
+      "lat": "23.1671397",
+      "lon": "72.5801358",
+      "category": "historic",
+      "type": "monument",
+      "place_rank": 30,
+      "importance": 0.21337448257116948,
+      "addresstype": "historic",
+      "name": "Adalaj Ni Vav",
+      "display_name": "Adalaj Ni Vav, SH41, Adalaj, Gandhinagar Taluka, Gandhinagar, Gujarat, 382422, India",
+      "extratags": {
+        "fee": "yes",
+        "tourism": "attraction",
+        "operator": "Archeological Survey of India",
+        "wikidata": "Q2722087",
+        "description": "The stepwell was built in 1555 by queen Rudadevi, wife of vaghela chief Virasimha",
+        "opening_hours": "08:00-18:00",
+        "wikimedia_commons": "Category:Adalaj Stepwell"
+      },
+      "boundingbox": [
+        "23.1665009",
+        "23.1676043",
+        "72.5795055",
+        "72.5808141"
+      ]
+    }
+  ]
+}

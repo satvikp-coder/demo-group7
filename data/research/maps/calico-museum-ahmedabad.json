@@ -1,0 +1,66 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Calico+Museum+Ahmedabad&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248888787,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 322218324,
+      "lat": "23.0542558",
+      "lon": "72.5924687",
+      "category": "tourism",
+      "type": "museum",
+      "place_rank": 30,
+      "importance": 0.36315663276805743,
+      "addresstype": "tourism",
+      "name": "Calico Textile Museum",
+      "display_name": "Calico Textile Museum, Airport Road, Shahibaug, Asarva Taluka, Ahmedabad, Gujarat, 380016, India",
+      "extratags": {
+        "museum": "history",
+        "building": "public",
+        "wikidata": "Q5019871",
+        "wikipedia": "en:Calico Museum of Textiles",
+        "roof:shape": "flat",
+        "roof:colour": "lightgrey",
+        "roof:material": "concrete",
+        "building:colour": "beige",
+        "building:levels": "5",
+        "building:material": "plaster",
+        "wikimedia_commons": "Category:Calico Museum of Textiles"
+      },
+      "boundingbox": [
+        "23.0540978",
+        "23.0543673",
+        "72.5923066",
+        "72.5926498"
+      ]
+    },
+    {
+      "place_id": 248569663,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3335472845,
+      "lat": "23.0541800",
+      "lon": "72.5924764",
+      "category": "tourism",
+      "type": "museum",
+      "place_rank": 30,
+      "importance": 0.36315663276805743,
+      "addresstype": "tourism",
+      "name": "Calico Textile Museum",
+      "display_name": "Calico Textile Museum, Airport Road, Shahibaug, Asarva Taluka, Ahmedabad, Gujarat, 380016, India",
+      "extratags": {
+        "wikidata": "Q5019871",
+        "wikipedia": "en:Calico Museum of Textiles",
+        "wikimedia_commons": "Category:Calico Museum of Textiles"
+      },
+      "boundingbox": [
+        "23.0541300",
+        "23.0542300",
+        "72.5924264",
+        "72.5925264"
+      ]
+    }
+  ]
+}

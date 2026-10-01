@@ -1,0 +1,175 @@
+{
+  "city": "modhera",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "modhera",
+      "values": {
+        "name": "Modhera",
+        "district": "Mehsana",
+        "category": "Heritage",
+        "location": "Modhera village, Becharaji taluka, Gujarat",
+        "description": "Modhera stands near the Pushpavati River in north Gujarat. Its principal monument is the Solanki-era Sun Temple, with a sculpted assembly hall and stepped reservoir; the village also contains the Modheshwari Mata shrine.",
+        "best_time": "October to March",
+        "highlights": [
+          "Sun Temple and Surya Kund",
+          "Modheshwari Mata Temple"
+        ]
+      },
+      "sources": [
+        "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/MODHERASUNTEMPLE.pdf",
+        "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+        "https://gujaratexplorers.com/destination/modhera-patan/"
+      ],
+      "notes": "Destination facts paraphrased; site admission belongs to attraction, not entire village."
+    },
+    {
+      "table": "attractions",
+      "key": "a401",
+      "values": {
+        "name": "Modhera Sun Temple",
+        "slug": "modhera-sun-temple",
+        "lat": 23.583421,
+        "lng": 72.133078,
+        "category": "Heritage",
+        "duration_hours": 2,
+        "entry_fee": "INR20 Indian online admission; foreign online ticket INR250; booking conditions apply",
+        "entry_fee_numeric": 20,
+        "opening_time": "08:30:00",
+        "closing_time": "17:30:00",
+        "description": "The Sun Temple complex contains a carved shrine hall, an assembly hall and Surya Kund, a stepped reservoir lined with small shrines. It dates to the Solanki period.",
+        "transport_mode": "road",
+        "best_time_note": "Stored hours follow Gujarat Tourism's visitor brochure. Other sources describe sunrise to sunset. Two hours is a published visitor-duration recommendation, not a fixed tour. General wheelchair access remains unverified; entrance amenities do not establish access to stepped areas.",
+        "source": "Gujarat Tourism; ASI ticketing listings; OpenStreetMap"
+      },
+      "sources": [
+        "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+        "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+        "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+        "https://www.openstreetmap.org/node/3902218899",
+        "https://gujaratexplorers.com/destination/modhera-patan/"
+      ],
+      "notes": "Current online fee preferred over conflicting historical brochures. Duration upper end of operator's 90-120 minute recommendation. Reservoir included, not duplicated as a separately charged visit."
+    },
+    {
+      "table": "attractions",
+      "key": "a402",
+      "values": {
+        "name": "Modheshwari Mata Temple",
+        "slug": "modheshwari-mata-temple",
+        "lat": 23.583383,
+        "lng": 72.145478,
+        "category": "Religious",
+        "duration_hours": 1,
+        "entry_fee": "Free general darshan",
+        "entry_fee_numeric": 0,
+        "description": "This Modhera shrine is dedicated to Modheshwari, a form of Parvati or Durga revered by the Modh community.",
+        "transport_mode": "road",
+        "best_time_note": "One hour is the lower end of a published 1-2 hour visit recommendation. Published daily opening hours conflict; confirm with temple before travel. Accessibility unknown.",
+        "source": "Gujarat Tourism; Google Maps; local tour operator visitor guide"
+      },
+      "sources": [
+        "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+        "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+        "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+      ],
+      "notes": "Map anchor is the named Modheshwari Devi Mata Complex, archived pages/modhera-mata.json. Free admission/duration from operator guide; official tourism supports identity and description. Conflicting hours remain NULL."
+    },
+    {
+      "table": "hotels",
+      "key": "h401",
+      "values": {
+        "name": "Modhera Sunrise Resort",
+        "slug": "modhera-sunrise-resort",
+        "lat": 23.586714,
+        "lng": 72.131204,
+        "price_per_night": 2833,
+        "rating": 4.3,
+        "stay_type": "Registered Hotel",
+        "location": "Behind the Sun Temple, Modhera, Gujarat 384412",
+        "description": "Modhera Sunrise Resort offers accommodation including traditional-style bhungas and tents near the Sun Temple, with a pool and dining facilities.",
+        "source": "Official resort website; Google Maps Cleartrip quote"
+      },
+      "sources": [
+        "https://modherasunriseresort.com/",
+        "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+      ],
+      "notes": "Google selected business snapshot pages/modhera-hotel-selected.json: Cleartrip INR2833, October2-3 2026, 2 adults, breakfast included; room category and tax basis unspecified. Dynamic nightly quote. Registered Hotel is existing application category, not verification of legal registration."
+    },
+    {
+      "table": "restaurants",
+      "key": "r401",
+      "values": {
+        "name": "Eulogia Restro Cafe, Sun Temple Modhera",
+        "slug": "eulogia-restro-cafe-modhera",
+        "lat": 23.582704,
+        "lng": 72.13523,
+        "rating": 2.9,
+        "avg_cost_per_person": 200,
+        "location": "Sun Temple, Modhera, Gujarat 384412",
+        "cuisine": "Cafe food; vegetarian options",
+        "source": "Google Maps business listing; Restaurant Guru"
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+        "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+      ],
+      "notes": "Restaurant Guru published INR1-200 per person; stored INR200 is its upper bound as a representative budget, not a menu tariff. Business and coordinates verified in pages/modhera-cafe.json. Official menu unavailable."
+    },
+    {
+      "table": "destinations",
+      "key": "modhera",
+      "values": {
+        "distance_from_ahmedabad": "99 km by road to Sun Temple (Gujarat Tourism)",
+        "distance_numeric": 99
+      },
+      "sources": [
+        "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html"
+      ],
+      "notes": "Official monument guide road distance; no precise Ahmedabad origin given, so this editorial distance does not replace measured itinerary edges."
+    },
+    {
+      "table": "destinations",
+      "key": "modhera",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg",
+        "image_alt": "Sun Temple Modhera - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "attractions",
+      "key": "a401",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg",
+        "image_alt": "Sun Temple Modhera - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "destinations",
+      "key": "modhera",
+      "values": {
+        "official_category": "Heritage Sites"
+      },
+      "sources": [
+        "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html"
+      ],
+      "notes": "Project primary category for the Modhera Sun Temple heritage circuit, supported by Gujarat Tourism monument history. Not an assertion of UNESCO inscription."
+    }
+  ],
+  "research_exclusions": [
+    "No wheelchair boolean inferred from photographs or aggregated reviews.",
+    "Sun Glorious is verified to exist but has no verified dining tariff in inspected official page, so the priced cafe is used.",
+    "Surya Kund is part of the temple visit, not a filler duplicate attraction."
+  ]
+}

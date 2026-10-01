@@ -1,3 +1,4 @@
-# Backend API Tests (`tests/backend/`)
+# Backend test locations
 
-Contains HTTP integration tests for Express API endpoints (`/api/auth`, `/api/destinations`, `/api/trips`) and PostgreSQL model queries.
+Unit/security tests are in `backend/tests/`; HTTP/PostgreSQL harnesses are in
+`backend/scripts/test-*.js`. See [the test guide](../README.md).

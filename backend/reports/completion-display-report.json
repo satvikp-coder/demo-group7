@@ -1,0 +1,25 @@
+{
+  "verified": true,
+  "checks": [
+    {
+      "city": "modhera",
+      "passed": true,
+      "unknownLabelVisible": false
+    },
+    {
+      "city": "gir-national-park",
+      "passed": true,
+      "unknownLabelVisible": true
+    },
+    {
+      "city": "saputara",
+      "passed": true,
+      "unknownLabelVisible": true
+    },
+    {
+      "city": "rann-of-kutch",
+      "passed": true,
+      "unknownLabelVisible": true
+    }
+  ]
+}

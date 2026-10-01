@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-01T09:03:55.708Z",
+  "checks": {
+    "childrenAndCoordinates": true,
+    "routes": {
+      "count": 131,
+      "validEndpoints": true,
+      "noDuplicateUndirectedPairs": true,
+      "positiveDistancesAndTimes": true,
+      "provenancePresent": true,
+      "reverseEvidence": 121,
+      "asymmetric": 93,
+      "directionalLimitation": "Independent reverse evidence is used when available; missing reverse evidence remains an explicit model limitation"
+    },
+    "nonnegativeKnownPrices": true,
+    "noOrphanTripsOrBudgets": true,
+    "persistedReferencesAndBudgetSums": {
+      "stopsChecked": 102,
+      "budgetsChecked": 10,
+      "verified": true
+    }
+  },
+  "verified": true,
+  "counts": {
+    "destinations": 8,
+    "attractions": 25,
+    "hotels": 11,
+    "restaurants": 12,
+    "routes": 131
+  }
+}

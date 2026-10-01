@@ -1,0 +1,33 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Kalo+Dungar+Gujarat&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 246530917,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 1534445723,
+      "lat": "23.9335467",
+      "lon": "69.8138232",
+      "category": "natural",
+      "type": "peak",
+      "place_rank": 18,
+      "importance": 0.09078915819201436,
+      "addresstype": "peak",
+      "name": "Kalo Dungar",
+      "display_name": "Kalo Dungar, Kala Dungar West, Bhuj Taluka, Kutch, Gujarat, India",
+      "extratags": {
+        "ele": "462",
+        "wikidata": "Q6354157",
+        "wikipedia": "en:Kalo Dungar",
+        "wikimedia_commons": "Category:Kalo Dungar"
+      },
+      "boundingbox": [
+        "23.9334967",
+        "23.9335967",
+        "69.8137732",
+        "69.8138732"
+      ]
+    }
+  ]
+}

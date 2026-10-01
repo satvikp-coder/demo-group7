@@ -1,6 +1,6 @@
 import { ItineraryConfig } from "../components/ItineraryView";
-import { getCityById } from "../data/destinations";
-import { GeneratedItineraryResult } from "./itineraryPlanner";
+
+import type { GeneratedItineraryResult } from "./itineraryPlanner";
 import { mergeSort } from "@dsa/sorting/mergeSort";
 
 export interface CachedTripData {
@@ -23,8 +23,7 @@ export function saveTripToOfflineCache(
   config: ItineraryConfig,
   result: GeneratedItineraryResult,
 ): CachedTripData {
-  const city = getCityById(config.cityId);
-  const cityName = city?.name || config.cityId;
+  const cityName = result.activeCity.name;
   const tripId = `trip_${config.cityId}_${config.tripDays}d_${config.budget}_${config.strategy || "distance-first"}`;
 
   const nowIso = new Date().toISOString();
@@ -79,7 +78,7 @@ function getAllOfflineTripsMap(): Record<string, CachedTripData> {
  */
 export function getAllOfflineTrips(): CachedTripData[] {
   const map = getAllOfflineTripsMap();
-  return mergeSort(Object.values(map),
+  return mergeSort(Object.values(map).filter(trip => Boolean(trip.config.tripId)),
     (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
   );
 }
@@ -91,7 +90,7 @@ export function getLatestOfflineTrip(): CachedTripData | null {
   try {
     const latestId = localStorage.getItem(STORAGE_KEY_LATEST_ID);
     const map = getAllOfflineTripsMap();
-    if (latestId && map[latestId]) {
+    if (latestId && map[latestId]?.config.tripId) {
       return map[latestId];
     }
     const all = getAllOfflineTrips();

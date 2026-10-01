@@ -1,4 +1,25 @@
-# Database Module (`database/`)
+# PostgreSQL database
+
+The supported production process is described in [the runbook](../docs/PRODUCTION.md).
+Use `npm --prefix backend run db:migrate`, then guarded `db:seed` and `db:verify`.
+Do not manually create/edit tables or run a reset against user data.
+
+The migration baseline is `schema/schema.sql`; ordered additive upgrades live in
+`backend/migrations/`, protected by a transactional advisory lock and checksum ledger.
+Runtime and maintenance roles are separate. Fresh/repeat migrations, constraints,
+two reseeds, preserved user/trip data and a clean backup restore were tested.
+
+The approved runtime dataset has eight destinations,25 attractions,11 hotels,
+12 restaurants and131 sourced modelled routes. Original CSVs and approved research
+supplements are imported by the backend seed pipeline. Record-wide unverified facts
+remain unverified; see `backend/reports/production-provenance-review.json`.
+
+Other SQL files under `schema/` and `seeds/` are historical/reference material.
+They are not the approved production import, and their larger dataset counts,
+verification claims or proposed tables do not describe the current application.
+Do not substitute those scripts for the supported guarded pipeline.
+
+## Historical coursework description (not production instructions)
 
 **Status:** SCHEMA DESIGNED & COMPREHENSIVELY SEEDED (See [`docs/foundation/06_Database_Design.md`](../docs/foundation/06_Database_Design.md))
 

@@ -19,7 +19,7 @@ export const OfflineBanner: React.FC<OfflineBannerProps> = ({
       <div className="flex items-center gap-2 font-bold">
         <WifiOff className="w-4 h-4 text-ink shrink-0 animate-pulse" />
         <span>
-          You're offline -- showing your saved itinerary
+          You're offline -- reconnect to load your saved itinerary
           {cityName ? ` for ${cityName}` : ""}.
           <span className="font-normal ml-1 hidden sm:inline">
             City browsing & search require connectivity.
@@ -30,7 +30,7 @@ export const OfflineBanner: React.FC<OfflineBannerProps> = ({
       {hasCachedItinerary && (
         <div className="flex items-center gap-1.5 text-[11px] bg-ink/10 text-ink px-2 py-0.5 border border-ink/20 font-bold shrink-0">
           <ShieldCheck className="w-3.5 h-3.5 text-ink" />
-          <span>Full Offline Mode Active</span>
+          <span>App Shell Available Offline</span>
         </div>
       )}
     </div>

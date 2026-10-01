@@ -1,0 +1,480 @@
+{
+  "city": "dwarka",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/68.967512,22.237774;69.087015,22.336061;69.095999,22.451995;68.964398,22.257331;68.978602,22.245748;68.960179,22.240855;68.964614,22.239932?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "57dae49d-1c99-4444-9da1-2fbf5edd66e4",
+      "external_id": "a201",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Dwarkadhish Temple",
+      "lat": "22.237774",
+      "lng": "68.967512",
+      "duration_hours": "2.00",
+      "rating": "4.9",
+      "category": "Temple",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:30:00",
+      "closing_time": "21:30:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Darshan has a midday closure; published guide gives 06:30-13:00 and 17:00-21:30. Accessibility guide reports assisted entry via the exit side and a step near the sanctum; independent wheelchair access is not established.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "The Dwarkadhish temple is a Krishna pilgrimage shrine in Dwarka, also known as Jagat Mandir.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/way/91573157",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "d575d0339d1d5bf63f6a28d641e4d3f5abf0774cdb2a2329c0bec30ed461eed9",
+      "kind": "attraction"
+    },
+    {
+      "id": "82f0abce-9dd8-4016-9ba1-5e139886f2f1",
+      "external_id": "a202",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Nageshwar Jyotirlinga",
+      "lat": "22.336061",
+      "lng": "69.087015",
+      "duration_hours": "1.50",
+      "rating": "4.7",
+      "category": "Temple",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "21:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Accessibility guide reports rear entrance access and steep ramps requiring assistance. Wheelchair darshan is from an elevated area with restricted sightlines; direct access to the Jyotirlinga is unavailable.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Nageshwar is a Shiva temple in the Dwarka area, traditionally counted among the twelve Jyotirlingas.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.google.com/maps/search/Nageshwar+Jyotirlinga+Temple",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "99b3f31974bbc9e3a2bdf5808e4f1d2400e78b1c39e91e73d88c3535785f3acd",
+      "kind": "attraction"
+    },
+    {
+      "id": "83796410-a5fe-4b57-8bac-ee55af30a7ea",
+      "external_id": "a204",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Bet Dwarka",
+      "lat": "22.451995",
+      "lng": "69.095999",
+      "duration_hours": "3.00",
+      "rating": "4.6",
+      "category": "Island/Pilgrimage",
+      "entry_fee": "Free general temple admission; transport and optional services extra",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "18:00:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Road access is available over Sudarshan Setu, inaugurated in February 2024. Ferry is optional; no verified current ferry tariff is stored. Temple hours vary and include a midday closure. Accessibility guide reports steps near the sanctum requiring lifting assistance.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Bet Dwarka is an island near Okha associated with Krishna. This itinerary point is anchored at Shri Beyt Dwarkadhish Temple.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.google.com/maps/search/Bet+Dwarka+Temple",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "ef045b86f7baba431a98b70483aa976d01f1dd152070b1f6c35685d5b6490f9a",
+      "kind": "attraction"
+    },
+    {
+      "id": "fef98818-0b8a-42e2-9065-0116c18620e2",
+      "external_id": "a203",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Rukmini Devi Temple",
+      "lat": "22.257331",
+      "lng": "68.964398",
+      "duration_hours": "1.00",
+      "rating": "4.4",
+      "category": "Heritage",
+      "entry_fee": "Free",
+      "entry_fee_numeric": "0.00",
+      "opening_time": "06:00:00",
+      "closing_time": "21:00:00",
+      "wheelchair_accessible": false,
+      "physical_demand": null,
+      "best_time_note": "Disability travel guide reports steps and uneven paths preventing wheelchair access.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "The Rukmini temple near Dwarka is dedicated to Krishna's consort and features carved exterior walls.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://www.openstreetmap.org/node/3903603202",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "75a189049f839287c69bed3066de8dfd91e186aa0261a411eef594ae288b8f0b",
+      "kind": "attraction"
+    },
+    {
+      "id": "4373d8d4-0137-4e3d-9294-a824a3ddd6dd",
+      "external_id": "h202",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Hotel Darshan Palace",
+      "lat": "22.245748",
+      "lng": "68.978602",
+      "price_per_night": 2460,
+      "rating": "2.6",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Jalaram Road, near Laxmi Marble, Rampara, Ghanshyam Nagar, Dwarka 361335",
+      "description": "Hotel Darshan Palace is a Dwarka hotel on Jalaram Road. Booking listings describe air-conditioned rooms, private bathrooms, Wi-Fi and parking.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps business listing; Booking.com; MakeMyTrip",
+      "source_url": "https://www.google.com/maps/search/Hotel+Darshan+Palace+Dwarka",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "hotel"
+    },
+    {
+      "id": "e3cb05ee-ae15-46d3-aa1b-cd6b103c8d90",
+      "external_id": "h201",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Toran Hotel Dwarka",
+      "lat": "22.240855",
+      "lng": "68.960179",
+      "price_per_night": 1800,
+      "rating": "4.4",
+      "stay_type": "Toran Hotel",
+      "tier": null,
+      "location": "Near Circuit House, Civil Hospital Road, Dwarka, Gujarat",
+      "description": "Toran Tourist Bungalow is Gujarat Tourism accommodation near the Circuit House in Dwarka.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism Official 2026",
+      "source_url": "https://gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow--dwarka.html",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "project_approved",
+      "source_row_hash": "88a44f1a4c288d7d12f541f1e4f482985a4370bc9c4d9fbfc5e69960f822e0c2",
+      "kind": "hotel"
+    },
+    {
+      "id": "55013b89-a2fb-49cd-86be-4038780307dd",
+      "external_id": "r202",
+      "slug": null,
+      "destination_id": "c9cb988b-eb32-47cf-ab54-e85a51610ac8",
+      "name": "Shrinath Dining Hall",
+      "lat": "22.239932",
+      "lng": "68.964614",
+      "rating": "4.4",
+      "avg_cost_per_person": 170,
+      "location": "Home Guard Chowk, Dwarka, Gujarat 361335",
+      "cuisine": "Gujarati vegetarian thali",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps; Amit Gujarati on-location dining video",
+      "source_url": "https://www.google.com/maps/search/Shrinath+Dining+Hall+Dwarka",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        17502.6,
+        33435.9,
+        2363.5,
+        2305.9,
+        1119.9,
+        514.2
+      ],
+      [
+        17502.6,
+        0,
+        21725.4,
+        18409.4,
+        16181,
+        17671.6,
+        17262.7
+      ],
+      [
+        33414,
+        21725.4,
+        0,
+        31358.4,
+        34252.2,
+        33006.4,
+        33147.7
+      ],
+      [
+        2361.1,
+        18395.9,
+        31416.2,
+        0,
+        3199.3,
+        2052.2,
+        2094.8
+      ],
+      [
+        2045.3,
+        16189.7,
+        34721.8,
+        3649.4,
+        0,
+        2911.6,
+        2502.7
+      ],
+      [
+        1119.9,
+        17674.4,
+        33019.8,
+        2047.5,
+        2477.7,
+        0,
+        686.4
+      ],
+      [
+        514.2,
+        17264.2,
+        33172.8,
+        2100.5,
+        2067.6,
+        686.4,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "IvPLk-TezpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAAB7JwEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "d-65hT7GepMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAAB7JwEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "67dKieuebZUUAAAAFQAAAMYAAAASAAAAmGS3QfUBs0ETRllD4pSdQRQAAAAVAAAAxgAAABIAAAB7JwEAcFMeBEOXVgE_Uh4EG5dWARQAvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "PO65heTRQ5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAAB7JwEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "IsX7jSXF-41zAAAADwAAAAAAAAAAAAAAdsefQinIIkEAAAAAAAAAAHMAAAAPAAAAAAAAAAAAAAB7JwEAWoccBEBxUwGqhxwEdHFTAQAADwkAAAAA",
+        "location": [
+          68.978522,
+          22.245696
+        ],
+        "name": "",
+        "distance": 10.05900434
+      },
+      {
+        "hint": "AVCOlAVQjpSvAAAAjwAAAGAAAAD6AAAAvaESQrRy7UEEJaFBQhNQQlcAAABIAAAAMAAAAHwAAAB7JwEA1j4cBFReUwGzPxwEV15TAQgAfxYAAAAA",
+        "location": [
+          68.959958,
+          22.240852
+        ],
+        "name": "",
+        "distance": 22.78718196
+      },
+      {
+        "hint": "RYKXgkOu2ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAAB7JwEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      }
+    ],
+    "durations": [
+      [
+        0,
+        1028.6,
+        1561,
+        184,
+        186.5,
+        127.4,
+        62.1
+      ],
+      [
+        1031.1,
+        0,
+        1485.1,
+        1062.3,
+        965.6,
+        1039.1,
+        985.9
+      ],
+      [
+        1558.5,
+        1484.9,
+        0,
+        1443.4,
+        1588.6,
+        1543.1,
+        1510.9
+      ],
+      [
+        186,
+        1061.4,
+        1446.2,
+        0,
+        216.1,
+        172.9,
+        138.4
+      ],
+      [
+        198.3,
+        968.9,
+        1612.2,
+        235.2,
+        0,
+        212,
+        160
+      ],
+      [
+        124.3,
+        1041.5,
+        1549.4,
+        177.2,
+        196.2,
+        0,
+        74.7
+      ],
+      [
+        63.7,
+        986.2,
+        1516.2,
+        139.2,
+        144.1,
+        71,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "IvPLk-TezpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAAB7JwEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "d-65hT7GepMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAAB7JwEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "67dKieuebZUUAAAAFQAAAMYAAAASAAAAmGS3QfUBs0ETRllD4pSdQRQAAAAVAAAAxgAAABIAAAB7JwEAcFMeBEOXVgE_Uh4EG5dWARQAvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "PO65heTRQ5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAAB7JwEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "IsX7jSXF-41zAAAADwAAAAAAAAAAAAAAdsefQinIIkEAAAAAAAAAAHMAAAAPAAAAAAAAAAAAAAB7JwEAWoccBEBxUwGqhxwEdHFTAQAADwkAAAAA",
+        "location": [
+          68.978522,
+          22.245696
+        ],
+        "name": "",
+        "distance": 10.05900434
+      },
+      {
+        "hint": "AVCOlAVQjpSvAAAAjwAAAGAAAAD6AAAAvaESQrRy7UEEJaFBQhNQQlcAAABIAAAAMAAAAHwAAAB7JwEA1j4cBFReUwGzPxwEV15TAQgAfxYAAAAA",
+        "location": [
+          68.959958,
+          22.240852
+        ],
+        "name": "",
+        "distance": 22.78718196
+      },
+      {
+        "hint": "RYKXgkOu2ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAAB7JwEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

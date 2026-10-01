@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { ArrowRight, Compass } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
-import { GUJARAT_DESTINATIONS } from '../data/destinations';
+import { useCatalog } from "../api";
+import type { Destination } from "../api/types";
 
 interface HeroProps {
   onStartPlanning: () => void;
@@ -13,7 +14,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const { t, language } = useLanguage();
 
-  const siteCount = GUJARAT_DESTINATIONS.length;
+  const catalog = useCatalog();
+  const destinations = catalog.data ?? [];
+  const siteCount = destinations.length;
   const countStr = language === 'hi'
     ? String(siteCount).replace(/[0-9]/g, (d) => '०१२३४५६७८९'[parseInt(d, 10)])
     : String(siteCount);
@@ -24,6 +27,8 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
     language === 'hi' ? "प्राचीन ज्यामिति द्वारा निर्मित यात्रा।" : "Travel structured by ancient geometry."
   ];
 
+  if(catalog.loading) return <p role="status">Loading destinations...</p>;
+  if(catalog.error) return <p role="alert">{catalog.error} <button onClick={catalog.reload}>Retry</button></p>;
   return (
     <section id="hero" className="relative bg-salt text-charcoal pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden border-b border-stone/30">
       

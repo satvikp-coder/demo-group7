@@ -9,7 +9,7 @@ import {
   Info,
 } from "lucide-react";
 import { SVG_COLORS } from "../data/colors";
-import { getCityById } from "../data/destinations";
+import { api, useApi } from "../api";
 
 export interface GraphNode {
   id: string;
@@ -25,140 +25,15 @@ export interface GraphEdge {
   distanceKm: number;
 }
 
-// Intra-City Graph generator (5-6 nodes, short 0.8 km - 3.5 km local distances)
-export function getIntraCityGraph(cityId?: string): {
-  nodes: GraphNode[];
-  edges: GraphEdge[];
-} {
-  // City-specific node names or fallback intra-city nodes
-  const city = cityId ? getCityById(cityId) : null;
-  const cityName = city?.name || "Somnath";
-
-  const hotelName = city?.hotels[0]?.name || `${cityName} Toran Resort`;
-  const attr1 = city?.attractions[0]?.name || `${cityName} Shore Temple`;
-  const attr2 = city?.attractions[1]?.name || `${cityName} Heritage Ghats`;
-  const attr3 = city?.attractions[2]?.name || `${cityName} Stepwell Museum`;
-  const attr4 =
-    city?.attractions[3]?.name || `${cityName} Local Handicraft Market`;
-  const restoName = city?.restaurants[0]?.name || `${cityName} Thali House`;
-
-  const nodes: GraphNode[] = [
-    { id: "hotel", name: hotelName, shortName: "Base Hotel", x: 100, y: 180 },
-    { id: "attr1", name: attr1, shortName: attr1.split(" ")[0], x: 220, y: 90 },
-    {
-      id: "attr2",
-      name: attr2,
-      shortName: attr2.split(" ")[0],
-      x: 220,
-      y: 270,
-    },
-    {
-      id: "attr3",
-      name: attr3,
-      shortName: attr3.split(" ")[0],
-      x: 350,
-      y: 110,
-    },
-    {
-      id: "attr4",
-      name: attr4,
-      shortName: attr4.split(" ")[0],
-      x: 350,
-      y: 250,
-    },
-    { id: "resto", name: restoName, shortName: "Dining", x: 430, y: 180 },
-  ];
-
-  const edges: GraphEdge[] = [
-    { from: "hotel", to: "attr1", distanceKm: 1.2 },
-    { from: "hotel", to: "attr2", distanceKm: 1.8 },
-    { from: "attr1", to: "attr3", distanceKm: 2.1 },
-    { from: "attr2", to: "attr4", distanceKm: 1.5 },
-    { from: "attr1", to: "attr2", distanceKm: 0.9 },
-    { from: "attr3", to: "resto", distanceKm: 1.4 },
-    { from: "attr4", to: "resto", distanceKm: 1.1 },
-    { from: "attr3", to: "attr4", distanceKm: 1.6 },
-    { from: "resto", to: "hotel", distanceKm: 2.8 },
-  ];
-
-  return { nodes, edges };
+// Graph presentation from persisted journey legs; no synthetic catalog nodes.
+export function getIntraCityGraph(dto: any): { nodes: GraphNode[]; edges: GraphEdge[] } {
+  const stops = dto?.days?.flatMap((day: any) => day.stops) ?? [];
+  const unique = [...new Map<string, any>(stops.map((stop: any) => [stop.reference_id, stop])).values()];
+  const nodes = unique.map((stop, index) => ({id:stop.reference_id,name:stop.name,shortName:stop.name.split(" ")[0],
+    x:100 + (index % 4) * 110,y:90 + Math.floor(index / 4) * 90}));
+  const edges = (dto?.trip?.generation_summary?.legs ?? []).map((leg: any) => ({from:leg.from,to:leg.to,distanceKm:Number(leg.distance_km)}));
+  return {nodes,edges};
 }
-
-// 10 Gujarat destinations fallback dataset
-export const DIJKSTRA_NODES: GraphNode[] = [
-  {
-    id: "modhera",
-    name: "Modhera Sun Temple",
-    shortName: "Modhera",
-    x: 220,
-    y: 70,
-  },
-  { id: "adalaj", name: "Adalaj Ni Vav", shortName: "Adalaj", x: 265, y: 125 },
-  {
-    id: "ahmedabad",
-    name: "Sabarmati Heritage",
-    shortName: "Ahmedabad",
-    x: 275,
-    y: 175,
-  },
-  {
-    id: "champaner",
-    name: "Champaner-Pavagadh",
-    shortName: "Champaner",
-    x: 375,
-    y: 205,
-  },
-  {
-    id: "statue-of-unity",
-    name: "Statue of Unity",
-    shortName: "Statue of Unity",
-    x: 415,
-    y: 255,
-  },
-  {
-    id: "rann-of-kutch",
-    name: "Rann of Kutch",
-    shortName: "Rann of Kutch",
-    x: 75,
-    y: 75,
-  },
-  {
-    id: "dwarka",
-    name: "Dwarkadhish Temple",
-    shortName: "Dwarka",
-    x: 65,
-    y: 195,
-  },
-  {
-    id: "somnath",
-    name: "Somnath Shore Temple",
-    shortName: "Somnath",
-    x: 135,
-    y: 285,
-  },
-  { id: "gir", name: "Gir National Park", shortName: "Gir", x: 200, y: 275 },
-  {
-    id: "saputara",
-    name: "Saputara Hill Station",
-    shortName: "Saputara",
-    x: 440,
-    y: 315,
-  },
-];
-
-export const DIJKSTRA_EDGES: GraphEdge[] = [
-  { from: "modhera", to: "adalaj", distanceKm: 85 },
-  { from: "adalaj", to: "ahmedabad", distanceKm: 18 },
-  { from: "modhera", to: "rann-of-kutch", distanceKm: 270 },
-  { from: "modhera", to: "champaner", distanceKm: 160 },
-  { from: "ahmedabad", to: "champaner", distanceKm: 145 },
-  { from: "champaner", to: "statue-of-unity", distanceKm: 85 },
-  { from: "statue-of-unity", to: "saputara", distanceKm: 210 },
-  { from: "rann-of-kutch", to: "dwarka", distanceKm: 320 },
-  { from: "dwarka", to: "somnath", distanceKm: 230 },
-  { from: "somnath", to: "gir", distanceKm: 50 },
-  { from: "ahmedabad", to: "somnath", distanceKm: 390 },
-];
 
 export interface AlgorithmStep {
   stepIndex: number;
@@ -179,8 +54,8 @@ export interface AlgorithmStep {
 export function generateDijkstraSteps(
   startId: string = "hotel",
   targetId: string = "resto",
-  nodesList: GraphNode[] = DIJKSTRA_NODES,
-  edgesList: GraphEdge[] = DIJKSTRA_EDGES,
+  nodesList: GraphNode[] = [],
+  edgesList: GraphEdge[] = [],
 ): AlgorithmStep[] {
   const steps: AlgorithmStep[] = [];
 
@@ -358,17 +233,20 @@ export function generateDijkstraSteps(
 }
 
 interface DijkstraVisualizerProps {
+  tripId?: string;
   cityId?: string;
   startNodeId?: string;
   targetNodeId?: string;
 }
 
 export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
-  cityId = "somnath",
+  cityId,
+  tripId,
   startNodeId,
   targetNodeId,
 }) => {
-  const intraGraph = getIntraCityGraph(cityId);
+  const request = useApi(signal => api.trip(tripId ?? "", signal), [tripId]);
+  const intraGraph = getIntraCityGraph(request.data);
   const activeNodes = intraGraph.nodes;
   const activeEdges = intraGraph.edges;
 
@@ -399,8 +277,13 @@ export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
     return () => mediaQuery.removeEventListener?.("change", handleChange);
   }, []);
 
+  useEffect(() => {
+    setStartId(startNodeId || activeNodes[0]?.id || "");
+    setTargetId(targetNodeId || activeNodes.at(-1)?.id || "");
+  }, [request.data]);
   // Regenerate steps when start, target or city changes
   useEffect(() => {
+    if(!activeNodes.length || !activeEdges.length) { setSteps([]); return; }
     const generated = generateDijkstraSteps(
       startId,
       targetId,
@@ -418,7 +301,7 @@ export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
       setCurrentStepIndex(0);
       setIsPlaying(false);
     }
-  }, [startId, targetId, cityId]);
+  }, [startId, targetId, cityId, request.data]);
 
   // Handle Playback Timer
   useEffect(() => {
@@ -467,7 +350,9 @@ export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
     }
   };
 
-  if (!currentStep) return null;
+  if(request.loading) return <p role="status">Loading saved route legs...</p>;
+  if(request.error) return <p role="alert">{request.error} <button onClick={request.reload}>Retry</button></p>;
+  if (!currentStep) return <p role="status">No persisted travel legs are available to visualize.</p>;
 
   // Format final path display names
   const pathNames = currentStep.finalPath.map((id) => {
@@ -548,7 +433,7 @@ export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
           aria-label="Interactive Dijkstra Graph Visualization"
         >
           {/* 1. DRAW ALL GRAPH EDGES */}
-          {activeEdges.map((edge) => {
+          {activeEdges.map((edge, edgeIndex) => {
             const fromNode = activeNodes.find((n) => n.id === edge.from);
             const toNode = activeNodes.find((n) => n.id === edge.to);
             if (!fromNode || !toNode) return null;
@@ -598,7 +483,7 @@ export const DijkstraVisualizer: React.FC<DijkstraVisualizerProps> = ({
             const midY = (fromNode.y + toNode.y) / 2;
 
             return (
-              <g key={`${edge.from}-${edge.to}`}>
+              <g key={`${edge.from}-${edge.to}-${edgeIndex}`}>
                 <line
                   x1={fromNode.x}
                   y1={fromNode.y}

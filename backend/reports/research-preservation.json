@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-01T09:06:03.165Z",
+  "verified": true,
+  "reseedPasses": 2,
+  "allCatalogValuesAndIdsPreserved": true,
+  "incorrectFieldRejected": true,
+  "probeRolledBack": true,
+  "counts": {
+    "destinations": 8,
+    "attractions": 25,
+    "hotels": 11,
+    "restaurants": 12,
+    "routes": 131
+  }
+}

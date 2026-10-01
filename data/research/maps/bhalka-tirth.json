@@ -1,0 +1,30 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Bhalka+Tirth&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 247225003,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 12361397,
+      "lat": "20.9117957",
+      "lon": "70.3848801",
+      "category": "landuse",
+      "type": "religious",
+      "place_rank": 24,
+      "importance": 0.31461790426364866,
+      "addresstype": "religious",
+      "name": "Bhalka Tirth",
+      "display_name": "Bhalka Tirth, Veraval, Patan Veraval Taluka, Gir Somnath, Gujarat, 362200, India",
+      "extratags": {
+        "wikidata": "Q19798643"
+      },
+      "boundingbox": [
+        "20.9107358",
+        "20.9130685",
+        "70.3819317",
+        "70.3867435"
+      ]
+    }
+  ]
+}

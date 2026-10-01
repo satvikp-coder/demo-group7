@@ -1,0 +1,4370 @@
+{
+  "verified": false,
+  "generatedAt": "2026-09-30T15:33:54.360Z",
+  "client": "curl",
+  "baseUrl": "http://127.0.0.1:45885",
+  "evidence": "Real PostgreSQL. existing_catalog uses preserved approved records; fixture_* cases use temporary synthetic rows, never represented as verified route data.",
+  "cleanupCompleted": true,
+  "cases": {
+    "existing_catalog": {
+      "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+      "create": {
+        "trip": {
+          "id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+          "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+          "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+          "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+          "trip_days": 1,
+          "budget": 100,
+          "start_time": "08:00:00",
+          "start_date": null,
+          "strategy": "distance-first",
+          "wheelchair_accessible_only": true,
+          "created_at": "2026-09-30T15:33:50.762Z",
+          "generation_summary": null,
+          "generated_at": null
+        },
+        "hotel_over_budget": true,
+        "hotel_total": 9092,
+        "hotel_replaced": false
+      },
+      "summary": {
+        "legs": [],
+        "status": "incomplete",
+        "routing": {
+          "dijkstra_calls": 0,
+          "direct_route_hits": 0,
+          "unreachable_pairs": 0
+        },
+        "warnings": [
+          "starting_hotel_over_budget",
+          "unknown_accessibility_excluded",
+          "meals_not_scheduled"
+        ],
+        "route_rows": 6,
+        "hotel_total": 9092,
+        "skipped_meals": [
+          {
+            "meal": "lunch",
+            "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+            "day_number": 1
+          },
+          {
+            "meal": "dinner",
+            "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+            "day_number": 1
+          }
+        ],
+        "hotel_replaced": false,
+        "lodging_nights": 1,
+        "hotel_over_budget": true,
+        "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+        "excluded_attractions": [
+          {
+            "id": "08fc7423-e550-45be-8b39-2d07d6d51169",
+            "name": "Jami Masjid, Champaner",
+            "reason": "accessibility_unknown"
+          },
+          {
+            "id": "11dd458f-61c8-47ba-b45c-61b4e046f34e",
+            "name": "Kevada Masjid",
+            "reason": "accessibility_unknown"
+          }
+        ],
+        "transport_cost_known": true,
+        "hotel_budget_shortfall": 8992,
+        "unscheduled_attractions": []
+      },
+      "budget": {
+        "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+        "budget": 100,
+        "hotel": 9092,
+        "attractions": 0,
+        "meals": 0,
+        "transit": 0,
+        "total": 9092,
+        "remaining": -8992,
+        "over_budget": true,
+        "generated": true,
+        "hotel_over_budget": true,
+        "transport_cost_known": true,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      },
+      "persisted_stop_count": 2
+    },
+    "fixture_unrestricted": {
+      "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+      "create": {
+        "trip": {
+          "id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+          "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "trip_days": 1,
+          "budget": 5000,
+          "start_time": "08:00:00",
+          "start_date": null,
+          "strategy": "distance-first",
+          "wheelchair_accessible_only": false,
+          "created_at": "2026-09-30T15:33:51.696Z",
+          "generation_summary": null,
+          "generated_at": null
+        },
+        "hotel_over_budget": false,
+        "hotel_total": 1000,
+        "hotel_replaced": false
+      },
+      "summary": {
+        "legs": [
+          {
+            "to": "608fd368-8030-447e-800a-8a5ed9ef333b",
+            "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "path": [
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "608fd368-8030-447e-800a-8a5ed9ef333b"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 0.5
+          },
+          {
+            "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "from": "608fd368-8030-447e-800a-8a5ed9ef333b",
+            "path": [
+              "608fd368-8030-447e-800a-8a5ed9ef333b",
+              "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 0.2
+          },
+          {
+            "to": "b963bdc4-7ced-4908-b023-0708370d5c91",
+            "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "path": [
+              "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+              "608fd368-8030-447e-800a-8a5ed9ef333b",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "b963bdc4-7ced-4908-b023-0708370d5c91"
+            ],
+            "method": "dijkstra",
+            "minutes": 15,
+            "day_number": 1,
+            "distance_km": 1.2999999999999998
+          },
+          {
+            "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "from": "b963bdc4-7ced-4908-b023-0708370d5c91",
+            "path": [
+              "b963bdc4-7ced-4908-b023-0708370d5c91",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "3ba60f5e-e119-4d42-a6fc-54001a453870"
+            ],
+            "method": "dijkstra",
+            "minutes": 10,
+            "day_number": 1,
+            "distance_km": 2.6
+          },
+          {
+            "to": "81771e95-3894-4273-b216-f686cf9246d5",
+            "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "path": [
+              "3ba60f5e-e119-4d42-a6fc-54001a453870",
+              "81771e95-3894-4273-b216-f686cf9246d5"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 20
+          },
+          {
+            "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "from": "81771e95-3894-4273-b216-f686cf9246d5",
+            "path": [
+              "81771e95-3894-4273-b216-f686cf9246d5",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 20
+          }
+        ],
+        "status": "incomplete",
+        "routing": {
+          "dijkstra_calls": 7,
+          "direct_route_hits": 14,
+          "unreachable_pairs": 0
+        },
+        "warnings": [
+          "transport_fares_unknown"
+        ],
+        "route_rows": 14,
+        "hotel_total": 1000,
+        "skipped_meals": [],
+        "hotel_replaced": false,
+        "lodging_nights": 1,
+        "hotel_over_budget": false,
+        "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+        "excluded_attractions": [],
+        "transport_cost_known": false,
+        "hotel_budget_shortfall": 0,
+        "unscheduled_attractions": [
+          {
+            "id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+            "name": "Fixture accessible C",
+            "reason": "Not scheduled within available routes, time and budget"
+          }
+        ]
+      },
+      "budget": {
+        "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+        "budget": 5000,
+        "hotel": 1000,
+        "attractions": 200,
+        "meals": 200,
+        "transit": 0,
+        "total": 1400,
+        "remaining": 3600,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      },
+      "persisted_stop_count": 8
+    },
+    "fixture_accessible": {
+      "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+      "create": {
+        "trip": {
+          "id": "8256a148-4ed8-4997-8375-136032b33573",
+          "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "trip_days": 1,
+          "budget": 5000,
+          "start_time": "08:00:00",
+          "start_date": null,
+          "strategy": "distance-first",
+          "wheelchair_accessible_only": true,
+          "created_at": "2026-09-30T15:33:52.272Z",
+          "generation_summary": null,
+          "generated_at": null
+        },
+        "hotel_over_budget": false,
+        "hotel_total": 1000,
+        "hotel_replaced": false
+      },
+      "summary": {
+        "legs": [
+          {
+            "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "path": [
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 1
+          },
+          {
+            "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "path": [
+              "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "3ba60f5e-e119-4d42-a6fc-54001a453870"
+            ],
+            "method": "dijkstra",
+            "minutes": 10,
+            "day_number": 1,
+            "distance_km": 3
+          },
+          {
+            "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+            "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "path": [
+              "3ba60f5e-e119-4d42-a6fc-54001a453870",
+              "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 1
+          },
+          {
+            "to": "81771e95-3894-4273-b216-f686cf9246d5",
+            "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+            "path": [
+              "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+              "81771e95-3894-4273-b216-f686cf9246d5"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 20
+          },
+          {
+            "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "from": "81771e95-3894-4273-b216-f686cf9246d5",
+            "path": [
+              "81771e95-3894-4273-b216-f686cf9246d5",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 20
+          }
+        ],
+        "status": "scheduled",
+        "routing": {
+          "dijkstra_calls": 1,
+          "direct_route_hits": 10,
+          "unreachable_pairs": 0
+        },
+        "warnings": [
+          "unknown_accessibility_excluded",
+          "transport_fares_unknown"
+        ],
+        "route_rows": 14,
+        "hotel_total": 1000,
+        "skipped_meals": [],
+        "hotel_replaced": false,
+        "lodging_nights": 1,
+        "hotel_over_budget": false,
+        "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+        "excluded_attractions": [
+          {
+            "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+            "name": "Fixture stairs-only",
+            "reason": "not_wheelchair_accessible"
+          },
+          {
+            "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+            "name": "Fixture unknown access",
+            "reason": "accessibility_unknown"
+          }
+        ],
+        "transport_cost_known": false,
+        "hotel_budget_shortfall": 0,
+        "unscheduled_attractions": []
+      },
+      "budget": {
+        "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+        "budget": 5000,
+        "hotel": 1000,
+        "attractions": 150,
+        "meals": 200,
+        "transit": 0,
+        "total": 1350,
+        "remaining": 3650,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      },
+      "persisted_stop_count": 7
+    },
+    "fixture_over_budget": {
+      "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+      "create": {
+        "trip": {
+          "id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+          "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "trip_days": 1,
+          "budget": 100,
+          "start_time": "08:00:00",
+          "start_date": null,
+          "strategy": "distance-first",
+          "wheelchair_accessible_only": false,
+          "created_at": "2026-09-30T15:33:52.807Z",
+          "generation_summary": null,
+          "generated_at": null
+        },
+        "hotel_over_budget": true,
+        "hotel_total": 1000,
+        "hotel_replaced": false
+      },
+      "summary": {
+        "legs": [],
+        "status": "incomplete",
+        "routing": {
+          "dijkstra_calls": 0,
+          "direct_route_hits": 0,
+          "unreachable_pairs": 0
+        },
+        "warnings": [
+          "starting_hotel_over_budget",
+          "meals_not_scheduled"
+        ],
+        "route_rows": 14,
+        "hotel_total": 1000,
+        "skipped_meals": [
+          {
+            "meal": "lunch",
+            "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+            "day_number": 1
+          },
+          {
+            "meal": "dinner",
+            "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+            "day_number": 1
+          }
+        ],
+        "hotel_replaced": false,
+        "lodging_nights": 1,
+        "hotel_over_budget": true,
+        "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+        "excluded_attractions": [],
+        "transport_cost_known": true,
+        "hotel_budget_shortfall": 900,
+        "unscheduled_attractions": [
+          {
+            "id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "name": "Fixture accessible A",
+            "reason": "Not scheduled within available routes, time and budget"
+          },
+          {
+            "id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "name": "Fixture accessible B",
+            "reason": "Not scheduled within available routes, time and budget"
+          },
+          {
+            "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+            "name": "Fixture stairs-only",
+            "reason": "Not scheduled within available routes, time and budget"
+          },
+          {
+            "id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+            "name": "Fixture accessible C",
+            "reason": "Not scheduled within available routes, time and budget"
+          },
+          {
+            "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+            "name": "Fixture unknown access",
+            "reason": "Not scheduled within available routes, time and budget"
+          }
+        ]
+      },
+      "budget": {
+        "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+        "budget": 100,
+        "hotel": 1000,
+        "attractions": 0,
+        "meals": 0,
+        "transit": 0,
+        "total": 1000,
+        "remaining": -900,
+        "over_budget": true,
+        "generated": true,
+        "hotel_over_budget": true,
+        "transport_cost_known": true,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      },
+      "persisted_stop_count": 2
+    },
+    "fixture_two_days": {
+      "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+      "create": {
+        "trip": {
+          "id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+          "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "trip_days": 2,
+          "budget": 5000,
+          "start_time": "08:00:00",
+          "start_date": null,
+          "strategy": "distance-first",
+          "wheelchair_accessible_only": true,
+          "created_at": "2026-09-30T15:33:53.359Z",
+          "generation_summary": null,
+          "generated_at": null
+        },
+        "hotel_over_budget": false,
+        "hotel_total": 2000,
+        "hotel_replaced": false
+      },
+      "summary": {
+        "legs": [
+          {
+            "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "path": [
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 1
+          },
+          {
+            "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+            "path": [
+              "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "3ba60f5e-e119-4d42-a6fc-54001a453870"
+            ],
+            "method": "dijkstra",
+            "minutes": 10,
+            "day_number": 1,
+            "distance_km": 3
+          },
+          {
+            "to": "81771e95-3894-4273-b216-f686cf9246d5",
+            "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+            "path": [
+              "3ba60f5e-e119-4d42-a6fc-54001a453870",
+              "81771e95-3894-4273-b216-f686cf9246d5"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 20
+          },
+          {
+            "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "from": "81771e95-3894-4273-b216-f686cf9246d5",
+            "path": [
+              "81771e95-3894-4273-b216-f686cf9246d5",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 1,
+            "distance_km": 20
+          },
+          {
+            "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+            "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "path": [
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 2,
+            "distance_km": 9
+          },
+          {
+            "to": "81771e95-3894-4273-b216-f686cf9246d5",
+            "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+            "path": [
+              "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+              "81771e95-3894-4273-b216-f686cf9246d5"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 2,
+            "distance_km": 20
+          },
+          {
+            "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "from": "81771e95-3894-4273-b216-f686cf9246d5",
+            "path": [
+              "81771e95-3894-4273-b216-f686cf9246d5",
+              "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+            ],
+            "method": "direct",
+            "minutes": 5,
+            "day_number": 2,
+            "distance_km": 20
+          }
+        ],
+        "status": "scheduled",
+        "routing": {
+          "dijkstra_calls": 1,
+          "direct_route_hits": 10,
+          "unreachable_pairs": 0
+        },
+        "warnings": [
+          "unknown_accessibility_excluded",
+          "transport_fares_unknown"
+        ],
+        "route_rows": 14,
+        "hotel_total": 2000,
+        "skipped_meals": [],
+        "hotel_replaced": false,
+        "lodging_nights": 2,
+        "hotel_over_budget": false,
+        "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+        "excluded_attractions": [
+          {
+            "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+            "name": "Fixture stairs-only",
+            "reason": "not_wheelchair_accessible"
+          },
+          {
+            "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+            "name": "Fixture unknown access",
+            "reason": "accessibility_unknown"
+          }
+        ],
+        "transport_cost_known": false,
+        "hotel_budget_shortfall": 0,
+        "unscheduled_attractions": []
+      },
+      "budget": {
+        "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+        "budget": 5000,
+        "hotel": 2000,
+        "attractions": 150,
+        "meals": 400,
+        "transit": 0,
+        "total": 2550,
+        "remaining": 2450,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      },
+      "persisted_stop_count": 11
+    }
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Trip HTTP verification",
+          "email": "trips-9f7ee2e3-b348-493f-8589-3776432b7274@example.test",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "user": {
+            "id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "name": "Trip HTTP verification",
+            "email": "trips-9f7ee2e3-b348-493f-8589-3776432b7274@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "body": {
+          "email": "trips-9f7ee2e3-b348-493f-8589-3776432b7274@example.test",
+          "password": "[redacted]"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "token": "[redacted]",
+          "tokenType": "Bearer",
+          "expiresIn": 3600,
+          "user": {
+            "id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "name": "Trip HTTP verification",
+            "email": "trips-9f7ee2e3-b348-493f-8589-3776432b7274@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Trip HTTP verification",
+          "email": "trips-51c2f2c2-e664-4b94-a42f-741835ed206b@example.test",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "user": {
+            "id": "5a244ac8-c99e-4549-af8f-37bc5f766fb8",
+            "name": "Trip HTTP verification",
+            "email": "trips-51c2f2c2-e664-4b94-a42f-741835ed206b@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "body": {
+          "email": "trips-51c2f2c2-e664-4b94-a42f-741835ed206b@example.test",
+          "password": "[redacted]"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "token": "[redacted]",
+          "tokenType": "Bearer",
+          "expiresIn": 3600,
+          "user": {
+            "id": "5a244ac8-c99e-4549-af8f-37bc5f766fb8",
+            "name": "Trip HTTP verification",
+            "email": "trips-51c2f2c2-e664-4b94-a42f-741835ed206b@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips",
+        "body": {
+          "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+          "days": 1,
+          "budget": 100,
+          "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+          "start_time": "08:00",
+          "wheelchair_accessible_only": true
+        },
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "trip": {
+            "id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+            "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+            "trip_days": 1,
+            "budget": 100,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:50.762Z",
+            "generation_summary": null,
+            "generated_at": null
+          },
+          "hotel_over_budget": true,
+          "hotel_total": 9092,
+          "hotel_replaced": false
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/c4d0608a-1294-4f00-9e30-59e280aaa804/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+            "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+            "trip_days": 1,
+            "budget": 100,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:50.762Z",
+            "generation_summary": {
+              "legs": [],
+              "status": "incomplete",
+              "routing": {
+                "dijkstra_calls": 0,
+                "direct_route_hits": 0,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "starting_hotel_over_budget",
+                "unknown_accessibility_excluded",
+                "meals_not_scheduled"
+              ],
+              "route_rows": 6,
+              "hotel_total": 9092,
+              "skipped_meals": [
+                {
+                  "meal": "lunch",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                },
+                {
+                  "meal": "dinner",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                }
+              ],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": true,
+              "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+              "excluded_attractions": [
+                {
+                  "id": "08fc7423-e550-45be-8b39-2d07d6d51169",
+                  "name": "Jami Masjid, Champaner",
+                  "reason": "accessibility_unknown"
+                },
+                {
+                  "id": "11dd458f-61c8-47ba-b45c-61b4e046f34e",
+                  "name": "Kevada Masjid",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": true,
+              "hotel_budget_shortfall": 8992,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:50.923Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "8428d366-356d-42bc-b05e-285ec403476f",
+                  "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "b358a1dd-3505-468b-8796-83687da12176",
+                  "name": "Champaner Heritage Resort",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "9092.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "22.405661",
+                  "lng": "73.552391",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "5fa2c174-4097-46b9-9fbd-876db2dbb24e",
+                  "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "hotel",
+                  "reference_id": "b358a1dd-3505-468b-8796-83687da12176",
+                  "name": "Champaner Heritage Resort",
+                  "category": "return",
+                  "arrival_time": "08:15:00",
+                  "departure_time": "08:30:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "22.405661",
+                  "lng": "73.552391",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+            "budget": 100,
+            "hotel": 9092,
+            "attractions": 0,
+            "meals": 0,
+            "transit": 0,
+            "total": 9092,
+            "remaining": -8992,
+            "over_budget": true,
+            "generated": true,
+            "hotel_over_budget": true,
+            "transport_cost_known": true,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/c4d0608a-1294-4f00-9e30-59e280aaa804",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+            "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+            "trip_days": 1,
+            "budget": 100,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:50.762Z",
+            "generation_summary": {
+              "legs": [],
+              "status": "incomplete",
+              "routing": {
+                "dijkstra_calls": 0,
+                "direct_route_hits": 0,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "starting_hotel_over_budget",
+                "unknown_accessibility_excluded",
+                "meals_not_scheduled"
+              ],
+              "route_rows": 6,
+              "hotel_total": 9092,
+              "skipped_meals": [
+                {
+                  "meal": "lunch",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                },
+                {
+                  "meal": "dinner",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                }
+              ],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": true,
+              "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+              "excluded_attractions": [
+                {
+                  "id": "08fc7423-e550-45be-8b39-2d07d6d51169",
+                  "name": "Jami Masjid, Champaner",
+                  "reason": "accessibility_unknown"
+                },
+                {
+                  "id": "11dd458f-61c8-47ba-b45c-61b4e046f34e",
+                  "name": "Kevada Masjid",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": true,
+              "hotel_budget_shortfall": 8992,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:50.923Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "8428d366-356d-42bc-b05e-285ec403476f",
+                  "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "b358a1dd-3505-468b-8796-83687da12176",
+                  "name": "Champaner Heritage Resort",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "9092.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "22.405661",
+                  "lng": "73.552391",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "5fa2c174-4097-46b9-9fbd-876db2dbb24e",
+                  "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "hotel",
+                  "reference_id": "b358a1dd-3505-468b-8796-83687da12176",
+                  "name": "Champaner Heritage Resort",
+                  "category": "return",
+                  "arrival_time": "08:15:00",
+                  "departure_time": "08:30:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "22.405661",
+                  "lng": "73.552391",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+            "budget": 100,
+            "hotel": 9092,
+            "attractions": 0,
+            "meals": 0,
+            "transit": 0,
+            "total": 9092,
+            "remaining": -8992,
+            "over_budget": true,
+            "generated": true,
+            "hotel_over_budget": true,
+            "transport_cost_known": true,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/c4d0608a-1294-4f00-9e30-59e280aaa804/budget",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip_id": "c4d0608a-1294-4f00-9e30-59e280aaa804",
+          "budget": 100,
+          "hotel": 9092,
+          "attractions": 0,
+          "meals": 0,
+          "transit": 0,
+          "total": 9092,
+          "remaining": -8992,
+          "over_budget": true,
+          "generated": true,
+          "hotel_over_budget": true,
+          "transport_cost_known": true,
+          "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips",
+        "body": {
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "days": 1,
+          "budget": 5000,
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "start_time": "08:00"
+        },
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "trip": {
+            "id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": false,
+            "created_at": "2026-09-30T15:33:51.696Z",
+            "generation_summary": null,
+            "generated_at": null
+          },
+          "hotel_over_budget": false,
+          "hotel_total": 1000,
+          "hotel_replaced": false
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/4bb1f3f7-573e-4084-88b3-90de5def4c13/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": false,
+            "created_at": "2026-09-30T15:33:51.696Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "608fd368-8030-447e-800a-8a5ed9ef333b"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 0.5
+                },
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "path": [
+                    "608fd368-8030-447e-800a-8a5ed9ef333b",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 0.2
+                },
+                {
+                  "to": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "608fd368-8030-447e-800a-8a5ed9ef333b",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "b963bdc4-7ced-4908-b023-0708370d5c91"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 15,
+                  "day_number": 1,
+                  "distance_km": 1.2999999999999998
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "path": [
+                    "b963bdc4-7ced-4908-b023-0708370d5c91",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 2.6
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                }
+              ],
+              "status": "incomplete",
+              "routing": {
+                "dijkstra_calls": 7,
+                "direct_route_hits": 14,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": [
+                {
+                  "id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "reason": "Not scheduled within available routes, time and budget"
+                }
+              ]
+            },
+            "generated_at": "2026-09-30T15:33:51.827Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "d278a37b-2719-410d-aa9b-7915086e50fb",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "c2a38021-c09a-493e-95d3-e88ea39a73a5",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": false,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "43df05fd-8865-431a-9ee6-bd663ae47270",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "09:25:00",
+                  "departure_time": "10:25:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "ed6163ad-e170-4a8b-a590-9cf75aa0a7ae",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "attraction",
+                  "reference_id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "category": "test",
+                  "arrival_time": "10:40:00",
+                  "departure_time": "11:40:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "0f90bc3e-45a5-417c-b73f-c176a6810c83",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "11:50:00",
+                  "departure_time": "12:50:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "b940fb83-5253-4a9e-9d3f-3618ac424cf4",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:55:00",
+                  "departure_time": "13:55:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "d4f29414-1726-43ca-8e75-c8013a2f0139",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 7,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "fc08c7e0-b751-4a82-99a2-446acaa80d6d",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 8,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+            "budget": 5000,
+            "hotel": 1000,
+            "attractions": 200,
+            "meals": 200,
+            "transit": 0,
+            "total": 1400,
+            "remaining": 3600,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/4bb1f3f7-573e-4084-88b3-90de5def4c13",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": false,
+            "created_at": "2026-09-30T15:33:51.696Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "608fd368-8030-447e-800a-8a5ed9ef333b"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 0.5
+                },
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "path": [
+                    "608fd368-8030-447e-800a-8a5ed9ef333b",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 0.2
+                },
+                {
+                  "to": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "608fd368-8030-447e-800a-8a5ed9ef333b",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "b963bdc4-7ced-4908-b023-0708370d5c91"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 15,
+                  "day_number": 1,
+                  "distance_km": 1.2999999999999998
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "path": [
+                    "b963bdc4-7ced-4908-b023-0708370d5c91",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 2.6
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                }
+              ],
+              "status": "incomplete",
+              "routing": {
+                "dijkstra_calls": 7,
+                "direct_route_hits": 14,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": [
+                {
+                  "id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "reason": "Not scheduled within available routes, time and budget"
+                }
+              ]
+            },
+            "generated_at": "2026-09-30T15:33:51.827Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "d278a37b-2719-410d-aa9b-7915086e50fb",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "c2a38021-c09a-493e-95d3-e88ea39a73a5",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": false,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "43df05fd-8865-431a-9ee6-bd663ae47270",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "09:25:00",
+                  "departure_time": "10:25:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "ed6163ad-e170-4a8b-a590-9cf75aa0a7ae",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "attraction",
+                  "reference_id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "category": "test",
+                  "arrival_time": "10:40:00",
+                  "departure_time": "11:40:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "0f90bc3e-45a5-417c-b73f-c176a6810c83",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "11:50:00",
+                  "departure_time": "12:50:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "b940fb83-5253-4a9e-9d3f-3618ac424cf4",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:55:00",
+                  "departure_time": "13:55:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "d4f29414-1726-43ca-8e75-c8013a2f0139",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 7,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "fc08c7e0-b751-4a82-99a2-446acaa80d6d",
+                  "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+                  "day_number": 1,
+                  "stop_order": 8,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+            "budget": 5000,
+            "hotel": 1000,
+            "attractions": 200,
+            "meals": 200,
+            "transit": 0,
+            "total": 1400,
+            "remaining": 3600,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/4bb1f3f7-573e-4084-88b3-90de5def4c13/budget",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip_id": "4bb1f3f7-573e-4084-88b3-90de5def4c13",
+          "budget": 5000,
+          "hotel": 1000,
+          "attractions": 200,
+          "meals": 200,
+          "transit": 0,
+          "total": 1400,
+          "remaining": 3600,
+          "over_budget": false,
+          "generated": true,
+          "hotel_over_budget": false,
+          "transport_cost_known": false,
+          "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips",
+        "body": {
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "days": 1,
+          "budget": 5000,
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "start_time": "08:00",
+          "wheelchair_accessible_only": true
+        },
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "trip": {
+            "id": "8256a148-4ed8-4997-8375-136032b33573",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:52.272Z",
+            "generation_summary": null,
+            "generated_at": null
+          },
+          "hotel_over_budget": false,
+          "hotel_total": 1000,
+          "hotel_replaced": false
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "8256a148-4ed8-4997-8375-136032b33573",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:52.272Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 3
+                },
+                {
+                  "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "path": [
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                }
+              ],
+              "status": "scheduled",
+              "routing": {
+                "dijkstra_calls": 1,
+                "direct_route_hits": 10,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "unknown_accessibility_excluded",
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "not_wheelchair_accessible"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:52.408Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "500c28a9-91ea-4025-afdd-d90c766b2956",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "4294d0f7-fcb0-439f-b8f9-9815e35f1520",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "6b026fd8-ed6a-432c-a887-fe7dd881375b",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "09:30:00",
+                  "departure_time": "10:30:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "d47bebda-428e-492b-b4f1-d66ad3fa430d",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "attraction",
+                  "reference_id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "category": "test",
+                  "arrival_time": "10:35:00",
+                  "departure_time": "11:35:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "2d0be488-8750-4cdf-bd2e-905bb777328f",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "e3aeb1f4-d99d-4a7c-89e4-a1c277cdb8a4",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "dfab12dd-4724-46fa-b793-5299d9afe315",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 7,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+            "budget": 5000,
+            "hotel": 1000,
+            "attractions": 150,
+            "meals": 200,
+            "transit": 0,
+            "total": 1350,
+            "remaining": 3650,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "8256a148-4ed8-4997-8375-136032b33573",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:52.272Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 3
+                },
+                {
+                  "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "path": [
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                }
+              ],
+              "status": "scheduled",
+              "routing": {
+                "dijkstra_calls": 1,
+                "direct_route_hits": 10,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "unknown_accessibility_excluded",
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "not_wheelchair_accessible"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:52.408Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "500c28a9-91ea-4025-afdd-d90c766b2956",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "4294d0f7-fcb0-439f-b8f9-9815e35f1520",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "6b026fd8-ed6a-432c-a887-fe7dd881375b",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "09:30:00",
+                  "departure_time": "10:30:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "d47bebda-428e-492b-b4f1-d66ad3fa430d",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "attraction",
+                  "reference_id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "category": "test",
+                  "arrival_time": "10:35:00",
+                  "departure_time": "11:35:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "2d0be488-8750-4cdf-bd2e-905bb777328f",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "e3aeb1f4-d99d-4a7c-89e4-a1c277cdb8a4",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "dfab12dd-4724-46fa-b793-5299d9afe315",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 7,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+            "budget": 5000,
+            "hotel": 1000,
+            "attractions": 150,
+            "meals": 200,
+            "transit": 0,
+            "total": 1350,
+            "remaining": 3650,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/budget",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+          "budget": 5000,
+          "hotel": 1000,
+          "attractions": 150,
+          "meals": 200,
+          "transit": 0,
+          "total": 1350,
+          "remaining": 3650,
+          "over_budget": false,
+          "generated": true,
+          "hotel_over_budget": false,
+          "transport_cost_known": false,
+          "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips",
+        "body": {
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "days": 1,
+          "budget": 100,
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "start_time": "08:00"
+        },
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "trip": {
+            "id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 100,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": false,
+            "created_at": "2026-09-30T15:33:52.807Z",
+            "generation_summary": null,
+            "generated_at": null
+          },
+          "hotel_over_budget": true,
+          "hotel_total": 1000,
+          "hotel_replaced": false
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/ad0a16c8-f799-434f-aedb-96a76f3d3f88/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 100,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": false,
+            "created_at": "2026-09-30T15:33:52.807Z",
+            "generation_summary": {
+              "legs": [],
+              "status": "incomplete",
+              "routing": {
+                "dijkstra_calls": 0,
+                "direct_route_hits": 0,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "starting_hotel_over_budget",
+                "meals_not_scheduled"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [
+                {
+                  "meal": "lunch",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                },
+                {
+                  "meal": "dinner",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                }
+              ],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": true,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [],
+              "transport_cost_known": true,
+              "hotel_budget_shortfall": 900,
+              "unscheduled_attractions": [
+                {
+                  "id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "Not scheduled within available routes, time and budget"
+                }
+              ]
+            },
+            "generated_at": "2026-09-30T15:33:52.937Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "101f384f-8d28-42c9-af37-aac98446c965",
+                  "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "cd97f08e-23b2-4f4e-96ec-e02f081a1b4c",
+                  "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "08:15:00",
+                  "departure_time": "08:30:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+            "budget": 100,
+            "hotel": 1000,
+            "attractions": 0,
+            "meals": 0,
+            "transit": 0,
+            "total": 1000,
+            "remaining": -900,
+            "over_budget": true,
+            "generated": true,
+            "hotel_over_budget": true,
+            "transport_cost_known": true,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 100,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": false,
+            "created_at": "2026-09-30T15:33:52.807Z",
+            "generation_summary": {
+              "legs": [],
+              "status": "incomplete",
+              "routing": {
+                "dijkstra_calls": 0,
+                "direct_route_hits": 0,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "starting_hotel_over_budget",
+                "meals_not_scheduled"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [
+                {
+                  "meal": "lunch",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                },
+                {
+                  "meal": "dinner",
+                  "reason": "No affordable restaurant with known routes fitting the meal window and hotel return",
+                  "day_number": 1
+                }
+              ],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": true,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [],
+              "transport_cost_known": true,
+              "hotel_budget_shortfall": 900,
+              "unscheduled_attractions": [
+                {
+                  "id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "reason": "Not scheduled within available routes, time and budget"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "Not scheduled within available routes, time and budget"
+                }
+              ]
+            },
+            "generated_at": "2026-09-30T15:33:52.937Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "101f384f-8d28-42c9-af37-aac98446c965",
+                  "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "cd97f08e-23b2-4f4e-96ec-e02f081a1b4c",
+                  "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "08:15:00",
+                  "departure_time": "08:30:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+            "budget": 100,
+            "hotel": 1000,
+            "attractions": 0,
+            "meals": 0,
+            "transit": 0,
+            "total": 1000,
+            "remaining": -900,
+            "over_budget": true,
+            "generated": true,
+            "hotel_over_budget": true,
+            "transport_cost_known": true,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/ad0a16c8-f799-434f-aedb-96a76f3d3f88/budget",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip_id": "ad0a16c8-f799-434f-aedb-96a76f3d3f88",
+          "budget": 100,
+          "hotel": 1000,
+          "attractions": 0,
+          "meals": 0,
+          "transit": 0,
+          "total": 1000,
+          "remaining": -900,
+          "over_budget": true,
+          "generated": true,
+          "hotel_over_budget": true,
+          "transport_cost_known": true,
+          "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips",
+        "body": {
+          "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+          "days": 2,
+          "budget": 5000,
+          "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+          "start_time": "08:00",
+          "wheelchair_accessible_only": true
+        },
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "trip": {
+            "id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 2,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:53.359Z",
+            "generation_summary": null,
+            "generated_at": null
+          },
+          "hotel_over_budget": false,
+          "hotel_total": 2000,
+          "hotel_replaced": false
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/dc9c0ed1-fdba-4750-abaa-df290e484475/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 2,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:53.359Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 3
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 2,
+                  "distance_km": 9
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "path": [
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 2,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 2,
+                  "distance_km": 20
+                }
+              ],
+              "status": "scheduled",
+              "routing": {
+                "dijkstra_calls": 1,
+                "direct_route_hits": 10,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "unknown_accessibility_excluded",
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 2000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 2,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "not_wheelchair_accessible"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:53.486Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "3e5b3541-5548-4c36-a737-ca0de344046c",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "f2567039-9944-4cd6-837a-38dddb5cbd7a",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "619e2ec7-ea3e-4f1a-834e-5fb40aa4f6a3",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "09:30:00",
+                  "departure_time": "10:30:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "af16985d-02cf-42f1-8e2e-9a5e72bd0d5b",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "3d9bccf2-5a99-4647-8769-6d1ee355642b",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "2d0f01b8-e7a4-4858-8412-aeae80fab8d6",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            },
+            {
+              "day_number": 2,
+              "stops": [
+                {
+                  "id": "3a0b31c3-e6f6-4684-bf24-a505c46efb3e",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "c4d59d31-f90c-468b-9a4e-11749d14a483",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "9843438b-ea4e-4cfe-a698-a8014f9ac214",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 3,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "1f329864-ba0c-45ef-8649-eeef4531c5f0",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 4,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "1bc8c45c-ce12-473b-932b-0116dd83a922",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 5,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+            "budget": 5000,
+            "hotel": 2000,
+            "attractions": 150,
+            "meals": 400,
+            "transit": 0,
+            "total": 2550,
+            "remaining": 2450,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/dc9c0ed1-fdba-4750-abaa-df290e484475",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 2,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:53.359Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 3
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 2,
+                  "distance_km": 9
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "path": [
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 2,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 2,
+                  "distance_km": 20
+                }
+              ],
+              "status": "scheduled",
+              "routing": {
+                "dijkstra_calls": 1,
+                "direct_route_hits": 10,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "unknown_accessibility_excluded",
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 2000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 2,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "not_wheelchair_accessible"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:53.486Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "3e5b3541-5548-4c36-a737-ca0de344046c",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "f2567039-9944-4cd6-837a-38dddb5cbd7a",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "619e2ec7-ea3e-4f1a-834e-5fb40aa4f6a3",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "09:30:00",
+                  "departure_time": "10:30:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "af16985d-02cf-42f1-8e2e-9a5e72bd0d5b",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "3d9bccf2-5a99-4647-8769-6d1ee355642b",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "2d0f01b8-e7a4-4858-8412-aeae80fab8d6",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            },
+            {
+              "day_number": 2,
+              "stops": [
+                {
+                  "id": "3a0b31c3-e6f6-4684-bf24-a505c46efb3e",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "c4d59d31-f90c-468b-9a4e-11749d14a483",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "9843438b-ea4e-4cfe-a698-a8014f9ac214",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 3,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "1f329864-ba0c-45ef-8649-eeef4531c5f0",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 4,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "1bc8c45c-ce12-473b-932b-0116dd83a922",
+                  "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+                  "day_number": 2,
+                  "stop_order": 5,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+            "budget": 5000,
+            "hotel": 2000,
+            "attractions": 150,
+            "meals": 400,
+            "transit": 0,
+            "total": 2550,
+            "remaining": 2450,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/trips/dc9c0ed1-fdba-4750-abaa-df290e484475/budget",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip_id": "dc9c0ed1-fdba-4750-abaa-df290e484475",
+          "budget": 5000,
+          "hotel": 2000,
+          "attractions": 150,
+          "meals": 400,
+          "transit": 0,
+          "total": 2550,
+          "remaining": 2450,
+          "over_budget": false,
+          "generated": true,
+          "hotel_over_budget": false,
+          "transport_cost_known": false,
+          "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "8256a148-4ed8-4997-8375-136032b33573",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:52.272Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 3
+                },
+                {
+                  "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "path": [
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                }
+              ],
+              "status": "scheduled",
+              "routing": {
+                "dijkstra_calls": 1,
+                "direct_route_hits": 10,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "unknown_accessibility_excluded",
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "not_wheelchair_accessible"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:53.903Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "d972d209-cd15-4298-a889-f1202f23739e",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "a732cffc-8dc8-4b75-9547-00126c4dfc25",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "fd5ba80a-ff55-490b-83f4-b6e9ba635406",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "09:30:00",
+                  "departure_time": "10:30:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "7cf8fd74-d297-474e-aa8c-11aa84776f05",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "attraction",
+                  "reference_id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "category": "test",
+                  "arrival_time": "10:35:00",
+                  "departure_time": "11:35:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "c0531505-3b4f-4cb4-934e-c1abacf825f3",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "92931946-aaaf-42bd-8925-f0ae385584c6",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "064f6d40-7af7-4b35-9f18-8ee21145d6fb",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 7,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+            "budget": 5000,
+            "hotel": 1000,
+            "attractions": 150,
+            "meals": 200,
+            "transit": 0,
+            "total": 1350,
+            "remaining": 3650,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "trip": {
+            "id": "8256a148-4ed8-4997-8375-136032b33573",
+            "user_id": "f659fbec-0885-4607-98c4-0a779aa64c72",
+            "destination_id": "146cf5ad-fbb5-4e9d-8c51-bcbded80cedc",
+            "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+            "trip_days": 1,
+            "budget": 5000,
+            "start_time": "08:00:00",
+            "start_date": null,
+            "strategy": "distance-first",
+            "wheelchair_accessible_only": true,
+            "created_at": "2026-09-30T15:33:52.272Z",
+            "generation_summary": {
+              "legs": [
+                {
+                  "to": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "from": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "path": [
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "from": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "path": [
+                    "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870"
+                  ],
+                  "method": "dijkstra",
+                  "minutes": 10,
+                  "day_number": 1,
+                  "distance_km": 3
+                },
+                {
+                  "to": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "from": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "path": [
+                    "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 1
+                },
+                {
+                  "to": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "from": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "path": [
+                    "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                    "81771e95-3894-4273-b216-f686cf9246d5"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                },
+                {
+                  "to": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "from": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "path": [
+                    "81771e95-3894-4273-b216-f686cf9246d5",
+                    "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598"
+                  ],
+                  "method": "direct",
+                  "minutes": 5,
+                  "day_number": 1,
+                  "distance_km": 20
+                }
+              ],
+              "status": "scheduled",
+              "routing": {
+                "dijkstra_calls": 1,
+                "direct_route_hits": 10,
+                "unreachable_pairs": 0
+              },
+              "warnings": [
+                "unknown_accessibility_excluded",
+                "transport_fares_unknown"
+              ],
+              "route_rows": 14,
+              "hotel_total": 1000,
+              "skipped_meals": [],
+              "hotel_replaced": false,
+              "lodging_nights": 1,
+              "hotel_over_budget": false,
+              "starting_hotel_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+              "excluded_attractions": [
+                {
+                  "id": "608fd368-8030-447e-800a-8a5ed9ef333b",
+                  "name": "Fixture stairs-only",
+                  "reason": "not_wheelchair_accessible"
+                },
+                {
+                  "id": "b963bdc4-7ced-4908-b023-0708370d5c91",
+                  "name": "Fixture unknown access",
+                  "reason": "accessibility_unknown"
+                }
+              ],
+              "transport_cost_known": false,
+              "hotel_budget_shortfall": 0,
+              "unscheduled_attractions": []
+            },
+            "generated_at": "2026-09-30T15:33:54.083Z"
+          },
+          "days": [
+            {
+              "day_number": 1,
+              "stops": [
+                {
+                  "id": "8e08fb9a-54af-49d8-b059-6d35a586850a",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 1,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "departure",
+                  "arrival_time": "08:00:00",
+                  "departure_time": "08:15:00",
+                  "duration_minutes": 15,
+                  "cost": "1000.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "136444b4-8206-4d6e-81a1-c425d82b2b4b",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 2,
+                  "stop_type": "attraction",
+                  "reference_id": "0fc835d9-0949-4e81-abe6-b95c60de8ffa",
+                  "name": "Fixture accessible A",
+                  "category": "test",
+                  "arrival_time": "08:20:00",
+                  "departure_time": "09:20:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "d27fd0d8-f866-4584-aeec-36dfd64aeb87",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 3,
+                  "stop_type": "attraction",
+                  "reference_id": "3ba60f5e-e119-4d42-a6fc-54001a453870",
+                  "name": "Fixture accessible B",
+                  "category": "test",
+                  "arrival_time": "09:30:00",
+                  "departure_time": "10:30:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "2ed11344-0ad1-415c-b6a7-60f4801aa6fc",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 4,
+                  "stop_type": "attraction",
+                  "reference_id": "97d07afa-5cb0-401f-89dd-e9bf400bb0fc",
+                  "name": "Fixture accessible C",
+                  "category": "test",
+                  "arrival_time": "10:35:00",
+                  "departure_time": "11:35:00",
+                  "duration_minutes": 60,
+                  "cost": "50.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": true,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "a47dc5aa-086a-4396-8e0c-afbe599131bf",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 5,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "lunch",
+                  "arrival_time": "12:30:00",
+                  "departure_time": "13:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "572055a7-9be5-4e55-8db8-1735e83704ed",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 6,
+                  "stop_type": "meal",
+                  "reference_id": "81771e95-3894-4273-b216-f686cf9246d5",
+                  "name": "Fixture restaurant",
+                  "category": "dinner",
+                  "arrival_time": "19:30:00",
+                  "departure_time": "20:30:00",
+                  "duration_minutes": 60,
+                  "cost": "100.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                },
+                {
+                  "id": "aceb45ec-f46d-4527-a9e4-72d1f17608ea",
+                  "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+                  "day_number": 1,
+                  "stop_order": 7,
+                  "stop_type": "hotel",
+                  "reference_id": "2d5d1f4c-1dd5-4a86-a723-f10ecb2dc598",
+                  "name": "Fixture selected hotel",
+                  "category": "return",
+                  "arrival_time": "20:35:00",
+                  "departure_time": "20:50:00",
+                  "duration_minutes": 15,
+                  "cost": "0.00",
+                  "location": null,
+                  "description": null,
+                  "image_url": null,
+                  "lat": "23.000000",
+                  "lng": "72.000000",
+                  "wheelchair_accessible": null,
+                  "physical_demand": null,
+                  "best_time_note": null
+                }
+              ]
+            }
+          ],
+          "budget": {
+            "trip_id": "8256a148-4ed8-4997-8375-136032b33573",
+            "budget": 5000,
+            "hotel": 1000,
+            "attractions": 150,
+            "meals": 200,
+            "transit": 0,
+            "total": 1350,
+            "remaining": 3650,
+            "over_budget": false,
+            "generated": true,
+            "hotel_over_budget": false,
+            "transport_cost_known": false,
+            "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 500,
+        "body": {
+          "error": {
+            "message": "Internal server error"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 500,
+        "body": {
+          "error": {
+            "message": "Internal server error"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/trips/8256a148-4ed8-4997-8375-136032b33573/generate-itinerary",
+        "body": {},
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 500,
+        "body": {
+          "error": {
+            "message": "Internal server error"
+          }
+        }
+      }
+    }
+  ]
+}

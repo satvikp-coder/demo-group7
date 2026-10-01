@@ -1,21 +1,14 @@
+import { displayNumber } from "../api";
 import React, { useState, useRef, useMemo, useEffect } from "react";
 import { DESIGN_TOKENS } from "../data/colors";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  Destination,
-  GUJARAT_DESTINATIONS,
-  getCityById,
-  Attraction,
-  Hotel,
-  Restaurant,
-} from "../data/destinations";
+import type { Destination } from "../api/types";
+import { loadItinerary, createItinerary, useApi, errorMessage } from "../api";
 import { DijkstraVisualizer } from "./DijkstraVisualizer";
 import { OfflineRouteMap } from "./OfflineRouteMap";
-import { saveTripToOfflineCache } from "../utils/offlineStorage";
 import { useLanguage } from "../context/LanguageContext";
-import {
+import type {
   OptimizationStrategy,
-  generateStrategyItinerary,
   PlannerConfigPayload,
 } from "../utils/itineraryPlanner";
 import { StrategyComparisonModal } from "./StrategyComparisonModal";
@@ -54,6 +47,7 @@ import {
 } from "lucide-react";
 
 export interface ItineraryConfig {
+  tripId?: string;
   cityId: string;
   tripDays: number;
   budget: number;
@@ -66,6 +60,7 @@ export interface ItineraryConfig {
 
 interface ItineraryViewProps {
   config: ItineraryConfig;
+  onPersistedConfig?: (config: ItineraryConfig) => void;
   preferredHotels?: Record<string, string>;
   onSelectPreferredHotel?: (cityId: string, hotelId: string) => void;
   onBackToPlanner: () => void;
@@ -125,6 +120,7 @@ function parseTimeToMinutes(timeStr?: string): number {
 
 export const ItineraryView: React.FC<ItineraryViewProps> = ({
   config,
+  onPersistedConfig,
   preferredHotels,
   onSelectPreferredHotel,
   onBackToPlanner,
@@ -134,24 +130,6 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   onPlanOwnTrip,
 }) => {
   const { language, t, getName } = useLanguage();
-
-  const activeCity = useMemo(() => {
-    if (config.cityId) {
-      const direct = getCityById(config.cityId);
-      if (direct) return direct;
-    }
-    if (config.selectedSites && config.selectedSites.length > 0) {
-      for (const siteId of config.selectedSites) {
-        const match = getCityById(siteId);
-        if (match) return match;
-      }
-    }
-    return GUJARAT_DESTINATIONS[0];
-  }, [config.cityId, config.selectedSites]);
-
-  const cityName = getName(activeCity);
-
-  const preferredHotelId = preferredHotels?.[activeCity.id] || preferredHotels?.[config.cityId];
 
   const [showAlgorithm, setShowAlgorithm] = useState<boolean>(false);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
@@ -196,99 +174,31 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const activeStrategy =
     activeConfig.strategy || config.strategy || "distance-first";
 
-  // Original Baseline Result (from initial config prop)
-  const baselineResult = useMemo(() => {
-    return generateStrategyItinerary(
-      {
-        cityId: config.cityId,
-        tripDays: config.tripDays || 2,
-        budget: config.budget || 8500,
-        startingHotelId:
-          config.startingHotelId || activeCity.hotels[0]?.id || "",
-        startTime: config.startTime || "08:00 AM",
-        strategy: activeStrategy,
-        wheelchairAccessibleOnly: config.wheelchairAccessibleOnly,
-      },
-      activeStrategy,
-      language,
-    );
-  }, [config, activeStrategy, language, activeCity.hotels]);
-
-  // Active Plan Result (from activeConfig)
-  const activeResult = useMemo(() => {
-    return generateStrategyItinerary(
-      {
-        cityId: activeConfig.cityId,
-        tripDays: activeConfig.tripDays || 2,
-        budget: activeConfig.budget || 8500,
-        startingHotelId:
-          activeConfig.startingHotelId || activeCity.hotels[0]?.id || "",
-        startTime: activeConfig.startTime || "08:00 AM",
-        strategy: activeStrategy,
-        wheelchairAccessibleOnly: activeConfig.wheelchairAccessibleOnly,
-      },
-      activeStrategy,
-      language,
-    );
-  }, [activeConfig, activeStrategy, language, activeCity.hotels]);
-
-  // Live Result (reflects debounced What-If sliders)
-  const liveResult = useMemo(() => {
-    if (!isWhatIfOpen) return activeResult;
-    if (
-      debouncedBudget === activeConfig.budget &&
-      debouncedDays === activeConfig.tripDays
-    ) {
-      return activeResult;
-    }
-    return generateStrategyItinerary(
-      {
-        cityId: activeConfig.cityId,
-        tripDays: debouncedDays,
-        budget: debouncedBudget,
-        startingHotelId:
-          activeConfig.startingHotelId || activeCity.hotels[0]?.id || "",
-        startTime: activeConfig.startTime || "08:00 AM",
-        strategy: activeStrategy,
-        wheelchairAccessibleOnly: activeConfig.wheelchairAccessibleOnly,
-      },
-      activeStrategy,
-      language,
-    );
-  }, [
-    isWhatIfOpen,
-    activeConfig,
-    debouncedBudget,
-    debouncedDays,
-    activeStrategy,
-    language,
-    activeCity.hotels,
-    activeResult,
-  ]);
-
-  const generatedResult = isWhatIfOpen ? liveResult : activeResult;
-
-  // Title always derives directly from the active itinerary's destination state
-  const currentCity = generatedResult?.activeCity || activeCity;
-  const currentCityName = getName(currentCity);
+  const request = useApi(signal => loadItinerary(activeConfig.tripId ?? "", signal), [activeConfig.tripId]);
+  const [pendingSave, setPendingSave] = useState(false);
+  const [saveError, setSaveError] = useState("");
+  // All hooks above the loading boundary; stale rows never render while reloading.
+  if(request.loading || pendingSave) return <p role="status">Loading persisted itinerary...</p>;
+  if(request.error || !request.data) return <p role="alert">{request.error || "No persisted itinerary available."} <button onClick={request.reload}>Retry</button> <button onClick={onBackToPlanner}>Open planner</button></p>;
+  const generatedResult = request.data.result;
+  const baselineResult = generatedResult;
+  const activeResult = generatedResult;
+  const liveResult = generatedResult;
+  const activeCity = generatedResult.activeCity;
+  const cityName = getName(activeCity);
+  const preferredHotelId = activeConfig.startingHotelId;
+  const currentCity = activeCity;
+  const currentCityName = cityName;
   const tripTitle = `${currentCityName} Circular Heritage Circuit`;
 
-  // Cache generated itinerary to browser storage (localStorage & ServiceWorker Cache)
-  useEffect(() => {
-    if (generatedResult) {
-      saveTripToOfflineCache(activeConfig, generatedResult);
-    }
-  }, [activeConfig, generatedResult]);
-
-  const handleSaveWhatIfVersion = () => {
-    const updated = {
-      ...activeConfig,
-      budget: debouncedBudget,
-      tripDays: debouncedDays,
-    };
-    setActiveConfig(updated);
-    setIsSavedWhatIfNotice(true);
-    setTimeout(() => setIsSavedWhatIfNotice(false), 2500);
+  const handleSaveWhatIfVersion = async () => {
+    setPendingSave(true); setSaveError("");
+    try {
+      const saved = await createItinerary({...request.data.config,budget:debouncedBudget,tripDays:debouncedDays});
+      setActiveConfig(saved.config); onPersistedConfig?.(saved.config);
+      setIsSavedWhatIfNotice(true); setIsWhatIfOpen(false);
+    } catch(error) { setSaveError(errorMessage(error)); }
+    finally { setPendingSave(false); }
   };
 
   const handleResetWhatIf = () => {
@@ -299,7 +209,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     setDebouncedDays(config.tripDays || 2);
   };
 
-  const numDays = Math.max(1, activeConfig.tripDays || 2);
+  const numDays = request.data.dto.trip.trip_days;
   const dayPlans = generatedResult.dayPlans;
   const startingHotel = generatedResult.startingHotel;
   const totalDistanceKm = generatedResult.totalDistanceKm;
@@ -351,7 +261,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
         // Fallback to dom-to-image-more for okLab colour support
         const domToImageModule = await import("dom-to-image-more");
         const domToImage = domToImageModule.default || domToImageModule;
-        const dataUrl = await domToImage.toJpeg(element, { quality: 0.95 });
+        const dataUrl = await domToImage.toJpeg(element, { quality: 0.95, loadExternalStyleSheet: true });
         const img = new Image();
         await new Promise<void>((resolve, reject) => {
           img.onload = () => resolve();
@@ -409,7 +319,10 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-7xl mx-auto space-y-8">
-        {/* Read-Only Shared Itinerary Banner */}
+        {saveError && <p role="alert">{saveError}</p>}
+      {generatedResult.warning && <p role="status">{generatedResult.warning}</p>}
+      {isWhatIfOpen && <p role="status">Showing the saved itinerary. Save the new parameters to generate a server-backed version.</p>}
+      {/* Read-Only Shared Itinerary Banner */}
         {isReadOnly && (
           <div className="bg-ink border-2 border-gold p-4 text-salt flex flex-wrap items-center justify-between gap-4 shadow-md font-mono no-print">
             <div className="flex items-center gap-3">
@@ -754,7 +667,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
             {showAlgorithm && (
               <div className="pt-3 border-t border-stone/30 animate-fadeIn">
-                <DijkstraVisualizer cityId={activeCity.id} />
+                <DijkstraVisualizer cityId={activeCity.id} tripId={activeConfig.tripId} />
               </div>
             )}
           </div>
@@ -786,7 +699,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     <div className="flex items-center gap-3 font-mono text-xs text-stone">
                       <span>{day.totalKm} km local circuit</span>
                       <span className="font-bold text-ink">
-                        Est. Day Cost: ₹{day.totalCost.toLocaleString("en-IN")}
+                        Est. Day Cost: ₹{displayNumber(day.totalCost)}
                       </span>
                     </div>
                   </div>
@@ -800,12 +713,12 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
                         const accessibleLabel =
                           stop.type === "meal"
-                            ? `Stop ${stopNumber} of ${day.stops.length}: Lunch break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${stop.cost.toLocaleString("en-IN")}`
+                            ? `Stop ${stopNumber} of ${day.stops.length}: Lunch break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${displayNumber(stop.cost)}`
                             : stop.type === "hotel"
                               ? isFinalStop
                                 ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, completing circular route`
                                 : `Stop ${stopNumber} of ${day.stops.length} (Start): Depart ${stop.name}, depart at ${stop.departureTime}`
-                              : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stop.cost > 0 ? "₹" + stop.cost.toLocaleString("en-IN") : "Free"}`;
+                              : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stop.cost > 0 ? "₹" + displayNumber(stop.cost) : "Free"}`;
 
                         return (
                           <motion.div
@@ -943,7 +856,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             <div className="text-right shrink-0 self-end sm:self-auto border-t sm:border-t-0 pt-2 sm:pt-0 border-stone/20 w-full sm:w-auto flex sm:flex-col justify-between items-center sm:items-end">
                               <span className="font-bold text-ink text-sm">
                                 {stop.cost > 0
-                                  ? `₹${stop.cost.toLocaleString("en-IN")}`
+                                  ? `₹${displayNumber(stop.cost)}`
                                   : "Free / Included"}
                               </span>
                               <span className="text-[10px] text-stone">
@@ -985,7 +898,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Hotels ({numDays} Nights)
                     </span>
                     <span className="font-bold text-salt text-sm">
-                      ₹{totalHotelCost.toLocaleString("en-IN")}
+                      ₹{displayNumber(totalHotelCost)}
                     </span>
                   </div>
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
@@ -993,7 +906,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Attraction Entry Fees
                     </span>
                     <span className="font-bold text-salt text-sm">
-                      ₹{totalAttractionCost.toLocaleString("en-IN")}
+                      ₹{displayNumber(totalAttractionCost)}
                     </span>
                   </div>
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
@@ -1001,7 +914,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Meals & Dining
                     </span>
                     <span className="font-bold text-gold text-sm">
-                      ₹{totalMealCost.toLocaleString("en-IN")}
+                      ₹{displayNumber(totalMealCost)}
                     </span>
                   </div>
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
@@ -1009,8 +922,10 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Transit & Ferry
                     </span>
                     <span className="font-bold text-salt text-sm">
-                      {totalTransitCost > 0
-                        ? `₹${totalTransitCost.toLocaleString("en-IN")}`
+                      {request.data.dto.budget.transport_cost_known === false
+                        ? "Unknown (excluded)"
+                        : totalTransitCost > 0
+                        ? `₹${displayNumber(totalTransitCost)}`
                         : "Included (₹0)"}
                     </span>
                   </div>
@@ -1019,7 +934,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 <div className="flex items-center justify-between pt-2 border-t border-stone/30 font-mono text-sm">
                   <span className="text-stone">Estimated Total Outlay:</span>
                   <span className="font-bold text-gold text-lg">
-                    ₹{estimatedTotalCost.toLocaleString("en-IN")}
+                    ₹{displayNumber(estimatedTotalCost)}
                   </span>
                 </div>
               </div>

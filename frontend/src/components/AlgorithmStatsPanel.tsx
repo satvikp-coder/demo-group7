@@ -1,5 +1,6 @@
+import { displayNumber } from "../api";
 import React, { useState } from "react";
-import { AlgorithmStats } from "../utils/itineraryPlanner";
+import type { AlgorithmStats } from "../utils/itineraryPlanner";
 import {
   Cpu,
   ChevronDown,
@@ -28,7 +29,7 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
 
-  const summaryText = `Generated in ${stats.executionTimeMs}ms -- ${stats.attractionsVisited} attractions, ${stats.directRoadConnectionsUsed} direct routes, ${stats.dijkstraFallbackCalls} Dijkstra fallbacks.`;
+  const summaryText = `Generated in ${displayNumber(stats.executionTimeMs)}ms -- ${stats.attractionsVisited} attractions, ${stats.directRoadConnectionsUsed} direct routes, ${stats.dijkstraFallbackCalls} Dijkstra fallbacks.`;
 
   return (
     <div
@@ -51,7 +52,7 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               <span className="font-mono text-xs text-stone truncate max-w-full sm:max-w-md">
                 Generated in{" "}
                 <strong className="font-mono text-salt font-bold">
-                  {stats.executionTimeMs}ms
+                  {displayNumber(stats.executionTimeMs)}ms
                 </strong>{" "}
                 --{" "}
                 <strong className="font-mono text-salt font-bold">
@@ -101,7 +102,7 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Exec Time
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {stats.executionTimeMs} ms
+              {displayNumber(stats.executionTimeMs)} ms
             </span>
           </div>
 
@@ -142,9 +143,9 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Graph Ops
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {stats.nodesVisited}{" "}
+              {displayNumber(stats.nodesVisited)}{" "}
               <span className="text-stone font-normal text-xs">nodes</span> /{" "}
-              {stats.edgesRelaxed}{" "}
+              {displayNumber(stats.edgesRelaxed)}{" "}
               <span className="text-stone font-normal text-xs">edges</span>
             </span>
             <span className="text-[9px] text-stone">Visited & Relaxed</span>

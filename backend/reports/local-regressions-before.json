@@ -1,0 +1,120 @@
+{
+  "capturedAt": "2026-10-01T07:52:55.306Z",
+  "databaseOutage": {
+    "project": "heritage-prod-d2ea8b02",
+    "startedAt": "2026-10-01T07:34:48.436Z",
+    "finishedAt": "2026-10-01T07:39:40.646Z",
+    "verified": false,
+    "failure": "Expected values to be strictly equal:\n\n500 !== 503\n",
+    "rootCause": "pg-pool wraps connection timeout in a code-less Error not previously classified as unavailable"
+  },
+  "authRefresh": {
+    "startedAt": "2026-10-01T07:43:58Z",
+    "verified": false,
+    "failure": "Locator expected to be visible\nActual value: None\nError: element(s) not found \nCall log:\n  - Expect \"to_be_visible\" with timeout 5000ms\n  - waiting for get_by_text(\"Welcome back, Browser Tourist\", exact=True).first\n",
+    "bodyExcerpt": "Gujarat Heritage Directory\nSTEPWELL GEOMETRIC ITINERARY ENGINE\nExplore\nPlan Itinerary\nRanked Stays\nBudget Planner\nBrowser Tourist (tourist)\nSign Out\nEN\nहिं\nPLAN ITINERARY\n✦ WELCOME TO GUJARAT HERITAGE DIRECTORY\nExplore 8 monuments, preserved heritage stays, & ledger-precise route planning.\nSOLANKI & KUTCH CIRCUIT\nDISMISS\nSTEPWELL GEOMETRIC ITINERARY ENGINE\nPlan Gujarat, terrace by terrace.\nPERSPECTIVE:\n\nExplore 8 Gujarat heritage sites—from the 11th-century carved sun temple of Modhera to the salt expanses of Kutch and Gir lion reserves. Structured routes, authentic craft guilds, and ledger-precise travel expenses.\n\nSTART PLANNING\nBrowse 8 Heritage Sites\nSITES COVERED\n8 Monuments\nHISTORICAL DEPTH\n2,500 Years\nROUTE PRECISION\nKm & Fee Ledger\nSOLANKI ERA (1026 AD)\nModhera Sun Temple\nSALT DESERT & CRAFT\nRann of Kutch\nECOLOGICAL SANCTUARY\nGir Forest\nSUBTERRANEAN STEPWELL\nAdalaj Ni Vav\nSYSTEM ",
+    "responses": [
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/auth/register",
+        "status": 201
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/auth/login",
+        "status": 401
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/auth/login",
+        "status": 200
+      },
+      {
+        "path": "/auth/me",
+        "status": 200
+      },
+      {
+        "path": "/trips?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/auth/me",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      },
+      {
+        "path": "/destinations/catalog?limit=100&offset=0",
+        "status": 200
+      }
+    ],
+    "rootCause": "Effect-based auth reconciliation introduced an intermediate unauthenticated home view while protected-view animation was transitioning"
+  }
+}

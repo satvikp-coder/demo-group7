@@ -1,0 +1,33 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Saputara+Lake&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248296115,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 209622677,
+      "lat": "20.5763782",
+      "lon": "73.7447507",
+      "category": "water",
+      "type": "lake",
+      "place_rank": 20,
+      "importance": 0.23992860907835414,
+      "addresstype": "lake",
+      "name": "Saputara Lake",
+      "display_name": "Saputara Lake, Saputara, Ahava Taluka, Dang, Gujarat, India",
+      "extratags": {
+        "natural": "water",
+        "wikidata": "Q107170833",
+        "wikipedia": "en:Saputara Lake",
+        "wikimedia_commons": "Category:Saputara Lake"
+      },
+      "boundingbox": [
+        "20.5738020",
+        "20.5789603",
+        "73.7413827",
+        "73.7480214"
+      ]
+    }
+  ]
+}

@@ -1,3 +1,6 @@
-# DSA Algorithm Correctness & Benchmark Tests (`tests/dsa/`)
+# DSA tests
 
-Contains correctness tests and execution time benchmarks for Dijkstra, Min-Heap, Greedy Route Builder, Trie, Hash Table, and Merge Sort modules.
+`trie.test.ts` exercises prefix/suffix lookup and Levenshtein fuzzy matching using
+measured assertions. Reference planner assertions live in `tests/frontend/`;
+backend tests exercise production Dijkstra, routing and hotel ordering.
+See [the test guide](../README.md).

@@ -1,0 +1,550 @@
+{
+  "city": "modhera",
+  "checked": "2026-10-01",
+  "records": [
+    {
+      "table": "attractions",
+      "key": "a401",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html"
+              ],
+              "note": "Named monument identity confirmed by Gujarat Tourism; tariff and duration are separately qualified."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "entry_fee": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "opening_time": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "closing_time": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "image_url": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            },
+            "image_alt": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+                "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+                "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+                "https://www.openstreetmap.org/node/3902218899",
+                "https://gujaratexplorers.com/destination/modhera-patan/",
+                "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+              ]
+            }
+          },
+          "notes": "Current online fee preferred over conflicting historical brochures. Duration upper end of operator's 90-120 minute recommendation. Reservoir included, not duplicated as a separately charged visit. Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination.",
+          "qualification": "Named monument identity confirmed by Gujarat Tourism; tariff and duration are separately qualified."
+        }
+      },
+      "sources": [
+        "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+        "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+        "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+        "https://www.openstreetmap.org/node/3902218899",
+        "https://gujaratexplorers.com/destination/modhera-patan/",
+        "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "attractions",
+      "key": "a402",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://www.gujarattourism.com/content/dam/gujrattourism/images/articles/archeological_3.pdf"
+              ],
+              "note": "Gujarat Tourism archaeological brochure identifies Mata Modheshwari; conflicting hours remain unknown."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "entry_fee": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+                "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+                "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+              ]
+            }
+          },
+          "notes": "Map anchor is the named Modheshwari Devi Mata Complex, archived pages/modhera-mata.json. Free admission/duration from operator guide; official tourism supports identity and description. Conflicting hours remain NULL.",
+          "qualification": "Modheshwari shrine identity confirmed; conflicting hours stay unknown."
+        }
+      },
+      "sources": [
+        "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+        "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+        "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "hotels",
+      "key": "h401",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://modherasunriseresort.com/"
+              ],
+              "note": "Business-owned website identifies this resort behind the Sun Temple."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "price_per_night": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "stay_type": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://modherasunriseresort.com/",
+                "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+              ]
+            }
+          },
+          "notes": "Google selected business snapshot pages/modhera-hotel-selected.json: Cleartrip INR2833, October2-3 2026, 2 adults, breakfast included; room category and tax basis unspecified. Dynamic nightly quote. Registered Hotel is existing application category, not verification of legal registration.",
+          "qualification": "Business-owned website identifies this resort behind the Sun Temple."
+        }
+      },
+      "sources": [
+        "https://modherasunriseresort.com/",
+        "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "restaurants",
+      "key": "r401",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "avg_cost_per_person": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "cuisine": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+                "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+              ]
+            }
+          },
+          "notes": "Restaurant Guru published INR1-200 per person; stored INR200 is its upper bound as a representative budget, not a menu tariff. Business and coordinates verified in pages/modhera-cafe.json. Official menu unavailable.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+        "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    }
+  ]
+}

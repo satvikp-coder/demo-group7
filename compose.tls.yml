@@ -1,0 +1,23 @@
+# Public HTTPS entrypoint; requires DNS pointed at this host and ports80/443 open.
+services:
+  tls:
+    logging:
+      driver: local
+      options:
+        max-size: '10m'
+        max-file: '5'
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports: ['80:80', '443:443']
+    environment:
+      PUBLIC_HOSTNAME: ${PUBLIC_HOSTNAME:?Set your real hostname}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - tls_data:/data
+      - tls_config:/config
+    depends_on:
+      frontend:
+        condition: service_healthy
+volumes:
+  tls_data:
+  tls_config:

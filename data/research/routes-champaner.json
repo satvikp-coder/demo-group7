@@ -1,0 +1,255 @@
+{
+  "city": "champaner",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/73.537715,22.485817;73.533540,22.489315;73.552391,22.405661;73.445099,22.465050?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "08fc7423-e550-45be-8b39-2d07d6d51169",
+      "external_id": "a501",
+      "slug": "jami-masjid-champaner",
+      "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+      "name": "Jami Masjid, Champaner",
+      "lat": "22.485817",
+      "lng": "73.537715",
+      "duration_hours": "1.50",
+      "rating": "4.4",
+      "category": "Heritage",
+      "entry_fee": "INR35 Indian online group-of-monuments ticket; INR40 counter ticket; shared pass conditions apply",
+      "entry_fee_numeric": "35.00",
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Visit duration is the midpoint of published 1-2 hours. An older government report documents accessibility funding, not completion; wheelchair status remains unknown. Admission is a shared monument pass, which the current per-attraction budget schema cannot fully model.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Jami Masjid is a monumental mosque at Champaner, with carved pillars, minarets, a courtyard and stone screens.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; Google Maps; published visitor guides",
+      "source_url": "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "11dd458f-61c8-47ba-b45c-61b4e046f34e",
+      "external_id": "a502",
+      "slug": "kevada-masjid",
+      "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+      "name": "Kevada Masjid",
+      "lat": "22.489315",
+      "lng": "73.533540",
+      "duration_hours": "1.00",
+      "rating": "4.4",
+      "category": "Heritage",
+      "entry_fee": "Shared Champaner monument pass; separate current charge unverified",
+      "entry_fee_numeric": null,
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "One hour is the lower end of a published 1-2 hour visit recommendation. Shared-pass pricing and conflicting separate-charge reports cannot be represented reliably as an independent fee; numeric admission remains unknown. Wheelchair access unverified.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Kevada Masjid is a mosque monument north of Champaner's citadel, accompanied by a separate cenotaph.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; Google Maps; TravelSetu",
+      "source_url": "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "b358a1dd-3505-468b-8796-83687da12176",
+      "external_id": "h501",
+      "slug": "champaner-heritage-resort",
+      "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+      "name": "Champaner Heritage Resort",
+      "lat": "22.405661",
+      "lng": "73.552391",
+      "price_per_night": 9092,
+      "rating": "4.5",
+      "stay_type": "Heritage Hotel",
+      "tier": null,
+      "location": "Village Bhamaria, off Champaner-Jambughoda Road, Gujarat 389360",
+      "description": "Champaner Heritage Resort provides heritage-style rooms and suites, a restaurant, pool and garden grounds in Bhamaria near Champaner.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Official resort; Gujarat Tourism; Google Maps Yatra quote",
+      "source_url": "https://champanerheritageresort.com/accommodation/",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "hotel"
+    },
+    {
+      "id": "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+      "external_id": "r501",
+      "slug": "sarvottam-restaurant-halol",
+      "destination_id": "d2d25199-8588-4f94-979a-8c6ad90f62da",
+      "name": "Hotel Sarvottam Restaurant, Halol",
+      "lat": "22.465050",
+      "lng": "73.445099",
+      "rating": "4.2",
+      "avg_cost_per_person": 150,
+      "location": "Baska, Halol-Vadodara Road, Halol, Gujarat 389350",
+      "cuisine": "Indian vegetarian",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "MakeMyTrip destination dining guide; Google Maps; Restaurant Guru",
+      "source_url": "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        788,
+        30909.9,
+        13161.3
+      ],
+      [
+        788,
+        0,
+        31530.2,
+        13781.6
+      ],
+      [
+        31099.9,
+        31720.2,
+        0,
+        18011.1
+      ],
+      [
+        13188.9,
+        13809.2,
+        18014.2,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "Du3ahOlSpIoMAAAAKwAAACoAAABHAQAAaLiTQQyqgkILuYJCakX5QwwAAAArAAAAKgAAAEcBAAB7JwEAdBliBEcZVwGzGGIEORtXAQYAbwQAAAAA",
+        "location": [
+          73.537908,
+          22.485319
+        ],
+        "name": "",
+        "distance": 58.61485026
+      },
+      {
+        "hint": "xfdTjM33U4xBAAAAGwAAAAAAAAA8AwAAwws4QrZ5kUEAAAAA0c4PREEAAAAbAAAAAAAAADwDAAB7JwEAKAdiBNUoVwFkCGIE4yhXAQAAXxYAAAAA",
+        "location": [
+          73.533224,
+          22.489301
+        ],
+        "name": "",
+        "distance": 32.55798644
+      },
+      {
+        "hint": "PztGi0o7RosgAAAAAAAAAO8MAAAzDQAAvMMPQgAAAACw-GVFg6dqRSAAAAAAAAAA7wwAADMNAAB7JwEAZxdiBEiKVQEHUmIEHeJVAUYAbxMAAAAA",
+        "location": [
+          73.537383,
+          22.383176
+        ],
+        "name": "",
+        "distance": 2930.624906
+      },
+      {
+        "hint": "hsHYhfL6UIsnAAAAPQAAABgAAAAoAgAAvHfaQSOKKUJagYdBmFi_QycAAAA9AAAAGAAAACgCAAB7JwEAE7BgBPzGVgHrrmAEGspWAQIAfwQAAAAA",
+        "location": [
+          73.445395,
+          22.464252
+        ],
+        "name": "",
+        "distance": 93.47121711
+      }
+    ],
+    "durations": [
+      [
+        0,
+        102.4,
+        1934.4,
+        720.1
+      ],
+      [
+        104.7,
+        0,
+        2028.8,
+        814.5
+      ],
+      [
+        1937.7,
+        2034.1,
+        0,
+        1244.3
+      ],
+      [
+        727.7,
+        824.1,
+        1256.4,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "Du3ahOlSpIoMAAAAKwAAACoAAABHAQAAaLiTQQyqgkILuYJCakX5QwwAAAArAAAAKgAAAEcBAAB7JwEAdBliBEcZVwGzGGIEORtXAQYAbwQAAAAA",
+        "location": [
+          73.537908,
+          22.485319
+        ],
+        "name": "",
+        "distance": 58.61485026
+      },
+      {
+        "hint": "xfdTjM33U4xBAAAAGwAAAAAAAAA8AwAAwws4QrZ5kUEAAAAA0c4PREEAAAAbAAAAAAAAADwDAAB7JwEAKAdiBNUoVwFkCGIE4yhXAQAAXxYAAAAA",
+        "location": [
+          73.533224,
+          22.489301
+        ],
+        "name": "",
+        "distance": 32.55798644
+      },
+      {
+        "hint": "PztGi0o7RosgAAAAAAAAAO8MAAAzDQAAvMMPQgAAAACw-GVFg6dqRSAAAAAAAAAA7wwAADMNAAB7JwEAZxdiBEiKVQEHUmIEHeJVAUYAbxMAAAAA",
+        "location": [
+          73.537383,
+          22.383176
+        ],
+        "name": "",
+        "distance": 2930.624906
+      },
+      {
+        "hint": "hsHYhfL6UIsnAAAAPQAAABgAAAAoAgAAvHfaQSOKKUJagYdBmFi_QycAAAA9AAAAGAAAACgCAAB7JwEAE7BgBPzGVgHrrmAEGspWAQIAfwQAAAAA",
+        "location": [
+          73.445395,
+          22.464252
+        ],
+        "name": "",
+        "distance": 93.47121711
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

@@ -1,0 +1,191 @@
+{
+  "city": "saputara",
+  "checkedAt": "2026-09-30T18:00:01.025Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/destinations/saputara",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/eba69a77-e78d-4972-9f93-e0a7c9932999/attractions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/eba69a77-e78d-4972-9f93-e0a7c9932999/restaurants",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/eba69a77-e78d-4972-9f93-e0a7c9932999/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/eba69a77-e78d-4972-9f93-e0a7c9932999/hotels?sort=rating",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/eba69a77-e78d-4972-9f93-e0a7c9932999/hotels?sort=value",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/5b360c3b-2ff9-49d1-82fc-dbd4e88bd724/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/5b360c3b-2ff9-49d1-82fc-dbd4e88bd724",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/5b360c3b-2ff9-49d1-82fc-dbd4e88bd724/budget",
+      "status": 200
+    }
+  ],
+  "counts": {
+    "attractions": 3,
+    "hotels": 1,
+    "restaurants": 1
+  },
+  "attractionVisits": 2,
+  "summary": {
+    "legs": [
+      {
+        "to": "7c963087-fc32-4482-ab8a-3ad3c17ed49a",
+        "from": "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+        "path": [
+          "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+          "7c963087-fc32-4482-ab8a-3ad3c17ed49a"
+        ],
+        "method": "direct",
+        "minutes": 1,
+        "day_number": 1,
+        "distance_km": 0.49
+      },
+      {
+        "to": "cca67c85-da96-441a-b5fd-855cb86ec94c",
+        "from": "7c963087-fc32-4482-ab8a-3ad3c17ed49a",
+        "path": [
+          "7c963087-fc32-4482-ab8a-3ad3c17ed49a",
+          "cca67c85-da96-441a-b5fd-855cb86ec94c"
+        ],
+        "method": "direct",
+        "minutes": 2,
+        "day_number": 1,
+        "distance_km": 0.7
+      },
+      {
+        "to": "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+        "from": "cca67c85-da96-441a-b5fd-855cb86ec94c",
+        "path": [
+          "cca67c85-da96-441a-b5fd-855cb86ec94c",
+          "00fe4b4c-f92b-466b-ad68-8f702feb9b40"
+        ],
+        "method": "direct",
+        "minutes": 1,
+        "day_number": 1,
+        "distance_km": 0.21
+      },
+      {
+        "to": "4286d1ee-f87b-4f6a-a410-882bf52c04ea",
+        "from": "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+        "path": [
+          "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+          "4286d1ee-f87b-4f6a-a410-882bf52c04ea"
+        ],
+        "method": "direct",
+        "minutes": 8,
+        "day_number": 2,
+        "distance_km": 2.4
+      },
+      {
+        "to": "cca67c85-da96-441a-b5fd-855cb86ec94c",
+        "from": "4286d1ee-f87b-4f6a-a410-882bf52c04ea",
+        "path": [
+          "4286d1ee-f87b-4f6a-a410-882bf52c04ea",
+          "cca67c85-da96-441a-b5fd-855cb86ec94c"
+        ],
+        "method": "direct",
+        "minutes": 7,
+        "day_number": 2,
+        "distance_km": 2.4
+      },
+      {
+        "to": "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+        "from": "cca67c85-da96-441a-b5fd-855cb86ec94c",
+        "path": [
+          "cca67c85-da96-441a-b5fd-855cb86ec94c",
+          "00fe4b4c-f92b-466b-ad68-8f702feb9b40"
+        ],
+        "method": "direct",
+        "minutes": 1,
+        "day_number": 2,
+        "distance_km": 0.21
+      }
+    ],
+    "status": "scheduled",
+    "routing": {
+      "dijkstra_calls": 0,
+      "direct_route_hits": 7,
+      "unreachable_pairs": 0
+    },
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "route_rows": 10,
+    "hotel_total": 9120,
+    "skipped_meals": [],
+    "hotel_replaced": false,
+    "lodging_nights": 2,
+    "hotel_over_budget": false,
+    "starting_hotel_id": "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+    "excluded_attractions": [
+      {
+        "id": "b63c1890-c4b9-4ba6-89f7-7e7dfae38168",
+        "name": "Saputara Museum",
+        "reason": "entry_price_unknown"
+      }
+    ],
+    "transport_cost_known": false,
+    "hotel_budget_shortfall": 0,
+    "unscheduled_attractions": []
+  },
+  "budget": {
+    "trip_id": "5b360c3b-2ff9-49d1-82fc-dbd4e88bd724",
+    "budget": 20000,
+    "hotel": 9120,
+    "attractions": 0,
+    "meals": 700,
+    "transit": 0,
+    "total": 9820,
+    "remaining": 10180,
+    "over_budget": false,
+    "generated": true,
+    "hotel_over_budget": false,
+    "transport_cost_known": false,
+    "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+  },
+  "apiPassed": true,
+  "cleanupCompleted": true
+}

@@ -1,0 +1,130 @@
+{
+  "checked": "2026-09-30",
+  "scope": "Supplementary follow-up to per-city source notes; no values imported from contradictory or insufficient evidence.",
+  "findings": [
+    {
+      "entities": [
+        "a402"
+      ],
+      "fields": [
+        "opening_time",
+        "closing_time"
+      ],
+      "sources": [
+        "https://temple.yatradham.org/temple/shree-modheshwari-mata-temple-modhera",
+        "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html"
+      ],
+      "outcome": "YatraDham page gives 07:00-19:30 and FAQ 06:00-20:00. Other secondary hours differ. Official tourism page does not settle it. Remains unknown."
+    },
+    {
+      "entities": [
+        "a501",
+        "a502"
+      ],
+      "fields": [
+        "opening_time",
+        "closing_time",
+        "a502.entry_fee_numeric",
+        "wheelchair_accessible"
+      ],
+      "sources": [
+        "https://www.incredibleindia.gov.in/en/gujarat/champaner/champaner-pavagarh-archaeological-park",
+        "https://whc.unesco.org/uploads/nominations/1101.pdf",
+        "https://tourism.gov.in/sites/default/files/2022-07/usq%201273%20for%2025072022.pdf"
+      ],
+      "outcome": "Official park opening uses daylight; fixed annual clock interval unsupported. ASI/UNESCO searches confirm protection but no current Kevada standalone price. Historical funded accessibility works or proposed works do not establish current access. Secondary free/shared/separate fees conflict."
+    },
+    {
+      "entities": [
+        "a803"
+      ],
+      "fields": [
+        "entry_fee_numeric",
+        "opening_time",
+        "closing_time",
+        "wheelchair_accessible"
+      ],
+      "sources": [
+        "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+        "https://dangs.nic.in/tourist-place/saputara/",
+        "https://myholidayhappiness.com/place/gujarat/saputara/saputara-tribal-museum",
+        "https://www.trypdeals.com/destination/saputara/saputara-museum/"
+      ],
+      "outcome": "Official 2023 directory gives foreign/student tariffs and historical hours only. Current business listing reports temporary closure. Secondary general Indian tariffs2/5/10 conflict. No current reopening date or physical access verified."
+    },
+    {
+      "entities": [
+        "a301",
+        "a302",
+        "a303",
+        "a304",
+        "a305",
+        "a306"
+      ],
+      "fields": [
+        "wheelchair_accessible"
+      ],
+      "sources": [
+        "https://ahmedabadcity.gov.in/ViewFile/ViewFile?TYPE=FileRepository%2C2204",
+        "https://tourism.gov.in/sites/default/files/2022-07/usq%201273%20for%2025072022.pdf"
+      ],
+      "outcome": "AMC budget documents wheelchair availability at Kankaria entrances, not all attractions/rides. Sarkhej tour access is tour-specific. Sabarmati website accessibility statement is digital WCAG, not physical. Calico commercial discounted-ticket claim conflicts with official free prebooking, so its generic accessibility checkbox was rejected. No whole-site booleans inferred."
+    },
+    {
+      "entities": [
+        "a102",
+        "a103",
+        "a104"
+      ],
+      "fields": [
+        "wheelchair_accessible"
+      ],
+      "sources": [
+        "https://tourism.gov.in/sites/default/files/2024-02/Final%20Report_Assessment%20of%20Tourist%20Destination_%20English.pdf",
+        "https://somnath.org/faq/"
+      ],
+      "outcome": "Trust confirms temple mobility facilities only; no transfer of temple boolean to Bhalka, Triveni ghats or beach. Stepped ghats and beach access remain unverified as a whole."
+    },
+    {
+      "entities": [
+        "a601",
+        "a602"
+      ],
+      "fields": [
+        "wheelchair_accessible"
+      ],
+      "sources": [
+        "https://girlion.gujarat.gov.in/",
+        "https://girlion.gujarat.gov.in/asset/gir-terms.pdf"
+      ],
+      "outcome": "Forest booking terms confirm vehicles/slots but no verified wheelchair loading, securement or vehicle dimensions. General hotel accessibility does not establish safari access."
+    },
+    {
+      "entities": [
+        "a701",
+        "a702"
+      ],
+      "fields": [
+        "wheelchair_accessible"
+      ],
+      "sources": [
+        "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide",
+        "https://www.irctctourism.com/packagedetails/NDA29.pdf"
+      ],
+      "outcome": "Partial hardstanding/assisted transfer guidance and Kalo uphill approach documented in city notes. Does not support a universal yes/no for salt surface or viewpoint."
+    },
+    {
+      "entities": [
+        "saputara",
+        "a801"
+      ],
+      "fields": [
+        "image_url"
+      ],
+      "sources": [
+        "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+      ],
+      "outcome": "Official page image labels conflict with assets: donhill.jpeg and GirmalWaterfalls.jpg labelled Saputara Lake. Rejected instead of importing a potentially wrong location image."
+    }
+  ]
+}

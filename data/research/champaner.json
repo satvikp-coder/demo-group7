@@ -1,0 +1,165 @@
+{
+  "city": "champaner",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "champaner",
+      "values": {
+        "name": "Champaner",
+        "district": "Panchmahal",
+        "category": "Heritage",
+        "location": "Champaner-Pavagadh area, Panchmahal, Gujarat",
+        "description": "Champaner and Pavagadh form a UNESCO World Heritage archaeological landscape containing fortifications, temples, mosques and historic water structures. Champaner preserves remains of the Gujarat Sultanate's former capital.",
+        "best_time": "October to March",
+        "highlights": [
+          "Jami Masjid",
+          "Kevada Masjid",
+          "Champaner-Pavagadh Archaeological Park"
+        ]
+      },
+      "sources": [
+        "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+        "https://gujaratexplorers.com/destination/jama-masjid-champaner/"
+      ],
+      "notes": "Destination covers the Champaner travel area; hotel and restaurant addresses explicitly identify surrounding villages/Halol."
+    },
+    {
+      "table": "attractions",
+      "key": "a501",
+      "values": {
+        "name": "Jami Masjid, Champaner",
+        "slug": "jami-masjid-champaner",
+        "lat": 22.485817,
+        "lng": 73.537715,
+        "rating": 4.4,
+        "category": "Heritage",
+        "duration_hours": 1.5,
+        "entry_fee": "INR35 Indian online group-of-monuments ticket; INR40 counter ticket; shared pass conditions apply",
+        "entry_fee_numeric": 35,
+        "description": "Jami Masjid is a monumental mosque at Champaner, with carved pillars, minarets, a courtyard and stone screens.",
+        "transport_mode": "road",
+        "best_time_note": "Visit duration is the midpoint of published 1-2 hours. An older government report documents accessibility funding, not completion; wheelchair status remains unknown. Admission is a shared monument pass, which the current per-attraction budget schema cannot fully model.",
+        "source": "Gujarat Tourism; Google Maps; published visitor guides"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+        "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+        "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+        "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+        "https://melangeoftales.com/champaner-pavagadh/"
+      ],
+      "notes": "Coordinates/rating archived pages/champaner-jami.json. Online35/counter40 corroborated in two authored travel accounts and a publicly indexed June2026 ASI e-ticket. Sunrise/sunset hours are not converted into invented fixed clock times."
+    },
+    {
+      "table": "attractions",
+      "key": "a502",
+      "values": {
+        "name": "Kevada Masjid",
+        "slug": "kevada-masjid",
+        "lat": 22.489315,
+        "lng": 73.53354,
+        "rating": 4.4,
+        "category": "Heritage",
+        "duration_hours": 1,
+        "description": "Kevada Masjid is a mosque monument north of Champaner's citadel, accompanied by a separate cenotaph.",
+        "transport_mode": "road",
+        "entry_fee": "Shared Champaner monument pass; separate current charge unverified",
+        "best_time_note": "One hour is the lower end of a published 1-2 hour visit recommendation. Shared-pass pricing and conflicting separate-charge reports cannot be represented reliably as an independent fee; numeric admission remains unknown. Wheelchair access unverified.",
+        "source": "Gujarat Tourism; Google Maps; TravelSetu"
+      },
+      "sources": [
+        "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+        "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+        "https://travelsetu.com/guide/kevada-masjid-tourism",
+        "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+      ],
+      "notes": "Exact mosque result archived pages/champaner-kevada-selected.json. No duplicate monument-pass charge or invented free ticket."
+    },
+    {
+      "table": "hotels",
+      "key": "h501",
+      "values": {
+        "name": "Champaner Heritage Resort",
+        "slug": "champaner-heritage-resort",
+        "lat": 22.405661,
+        "lng": 73.552391,
+        "rating": 4.5,
+        "price_per_night": 9092,
+        "stay_type": "Heritage Hotel",
+        "location": "Village Bhamaria, off Champaner-Jambughoda Road, Gujarat 389360",
+        "description": "Champaner Heritage Resort provides heritage-style rooms and suites, a restaurant, pool and garden grounds in Bhamaria near Champaner.",
+        "source": "Official resort; Gujarat Tourism; Google Maps Yatra quote"
+      },
+      "sources": [
+        "https://champanerheritageresort.com/accommodation/",
+        "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+        "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+      ],
+      "notes": "Google Maps Yatra INR9092 for October2-3 2026, two adults, breakfast included, room/taxes unspecified. Dynamic nightly quote archived pages/champaner-hotel.json. Hotel is outside the monument village; real road routes reflect distance."
+    },
+    {
+      "table": "restaurants",
+      "key": "r501",
+      "values": {
+        "name": "Hotel Sarvottam Restaurant, Halol",
+        "slug": "sarvottam-restaurant-halol",
+        "lat": 22.46505,
+        "lng": 73.445099,
+        "rating": 4.2,
+        "avg_cost_per_person": 150,
+        "location": "Baska, Halol-Vadodara Road, Halol, Gujarat 389350",
+        "cuisine": "Indian vegetarian",
+        "source": "MakeMyTrip destination dining guide; Google Maps; Restaurant Guru"
+      },
+      "sources": [
+        "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+        "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+        "https://restaurant-guru.in/Hotel-sarvottam-India"
+      ],
+      "notes": "Restaurant explicitly included in MakeMyTrip Champaner guide, located in Halol rather than monument village. Restaurant Guru published per-person INR150, representative estimate not fixed menu tariff. Google rating is shared hotel/business rating. Exact address/coordinates archived pages/champaner-restaurant.json."
+    },
+    {
+      "table": "destinations",
+      "key": "champaner",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg",
+        "image_alt": "The Jami Masjid - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "attractions",
+      "key": "a501",
+      "values": {
+        "image_url": "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg",
+        "image_alt": "The Jami Masjid - Gujarat Tourism"
+      },
+      "sources": [
+        "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+      ],
+      "notes": "Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination."
+    },
+    {
+      "table": "destinations",
+      "key": "champaner",
+      "values": {
+        "official_category": "UNESCO World Heritage Site"
+      },
+      "sources": [
+        "https://whc.unesco.org/en/list/1101/"
+      ],
+      "notes": "UNESCO lists Champaner-Pavagadh Archaeological Park, including the historic village. Category refers to that heritage visitor circuit, not the surrounding hotel properties."
+    }
+  ],
+  "research_exclusions": [
+    "Government 2011 accessibility grant is evidence of planned work only, not current wheelchair access.",
+    "Kevada separate admission conflicting; unknown numeric fee retained.",
+    "Do not represent road routing as reaching the hilltop Pavagadh temple via a drivable road; that attraction requires separate access research."
+  ]
+}

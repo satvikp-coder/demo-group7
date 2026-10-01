@@ -1,0 +1,23 @@
+{
+  "verified": true,
+  "checks": [
+    {
+      "route": "/explore",
+      "initialApiReads": 132,
+      "requestsWhileIdle": 0,
+      "passed": true
+    },
+    {
+      "route": "/destination/ahmedabad",
+      "initialApiReads": 104,
+      "requestsWhileIdle": 0,
+      "passed": true
+    },
+    {
+      "route": "/hotels",
+      "initialApiReads": 134,
+      "requestsWhileIdle": 0,
+      "passed": true
+    }
+  ]
+}

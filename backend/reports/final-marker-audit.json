@@ -1,0 +1,1759 @@
+[
+  {
+    "file": "backend/controllers/authController.js",
+    "line": 10,
+    "classification": "FALSE POSITIVE",
+    "reason": "Random bcrypt comparison hash equalizes unknown-account work; cannot authenticate a fake account.",
+    "match": "// Unknown emails still pay the password-comparison cost, without a hardcoded credential."
+  },
+  {
+    "file": "backend/controllers/authController.js",
+    "line": 11,
+    "classification": "FALSE POSITIVE",
+    "reason": "Random bcrypt comparison hash equalizes unknown-account work; cannot authenticate a fake account.",
+    "match": "const dummyHash = bcrypt.hash(randomBytes(32).toString(\"hex\"), BCRYPT_ROUNDS);"
+  },
+  {
+    "file": "backend/controllers/authController.js",
+    "line": 28,
+    "classification": "FALSE POSITIVE",
+    "reason": "Random bcrypt comparison hash equalizes unknown-account work; cannot authenticate a fake account.",
+    "match": "const matches = await bcrypt.compare(password, user?.password_hash ?? await dummyHash);"
+  },
+  {
+    "file": "backend/controllers/README.md",
+    "line": 3,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Authentication implements real bcrypt registration and password verification, PostgreSQL persistence, and JWT issuance. Admin exposes protected status and catalog CRUD endpoints for destinations, attractions, hotels and restaurants, all behind verifyJwt and requireRoles(\"tour_operator\"). Destination, attraction, hotel, and restaurant controllers return only database-backed records or cached database search results. Hotel ranking uses the imported DSA Merge Sort. The trip controller creates owned trips, generates and persists itineraries, and reads trip-specific budgets from persisted stops. The separate legacy budgetController remains an unmounted placeholder; use GET /api/trips/:id/budget."
+  },
+  {
+    "file": "backend/models/adminModel.js",
+    "line": 37,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "// An operator edit is not independent verification and no longer matches a seed hash."
+  },
+  {
+    "file": "backend/models/README.md",
+    "line": 3,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Nine model modules target the canonical PostgreSQL schema. SQL statements are fixed literals with bound values. User creation accepts only tourist or tour_operator; controllers hash passwords before calling it. Internal credential lookup returns hashes only for password comparison, never API serialization. Trip/budget/stop lookups require the owning user ID. CSV seeding preserves external IDs and separately handles approved reference data."
+  },
+  {
+    "file": "backend/models/tripModel.js",
+    "line": 39,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "// One client/snapshot, and no CSV reads or synthetic route fallback."
+  },
+  {
+    "file": "backend/package.json",
+    "line": 15,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "\"db:seed\":  \"node scripts/seed.js\","
+  },
+  {
+    "file": "backend/package.json",
+    "line": 16,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "\"db:verify\":  \"node scripts/verify-seed.js\","
+  },
+  {
+    "file": "backend/README.md",
+    "line": 43,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "with the same generic response. There are no demo credential exceptions."
+  },
+  {
+    "file": "backend/README.md",
+    "line": 57,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "## Database and CSV seed"
+  },
+  {
+    "file": "backend/README.md",
+    "line": 63,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- npm run db:seed reads the four source CSVs directly."
+  },
+  {
+    "file": "backend/README.md",
+    "line": 65,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- node scripts/seed.js --dry-run inspects acceptance without connecting."
+  },
+  {
+    "file": "backend/README.md",
+    "line": 68,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "scripts/seed-approvals.json pins these exact file hashes; changed data requires"
+  },
+  {
+    "file": "backend/README.md",
+    "line": 78,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "keys and exactly-one-endpoint checks. No route rows are currently seeded."
+  },
+  {
+    "file": "backend/README.md",
+    "line": 80,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Seeding is transactional and repeatable, with conflict ownership checks and an"
+  },
+  {
+    "file": "backend/README.md",
+    "line": 83,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "reports/seed-report.json. This seed is intended for the reference dataset;"
+  },
+  {
+    "file": "backend/README.md",
+    "line": 138,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "snapshot on failure. An uninitialized index returns 503, never mock results."
+  },
+  {
+    "file": "backend/README.md",
+    "line": 173,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "geographic fallback; unavailable hotel/restaurant transfer edges remain unavailable."
+  },
+  {
+    "file": "backend/README.md",
+    "line": 196,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Current catalog limitation: all 56 CSV routes remain excluded by seed policy as"
+  },
+  {
+    "file": "backend/README.md",
+    "line": 198,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "values are unknown. The existing_catalog test demonstrates the honest incomplete"
+  },
+  {
+    "file": "backend/README.md",
+    "line": 240,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "seed hash. Destination/attraction changes refresh the public search index after saving;"
+  },
+  {
+    "file": "backend/scripts/audit-seed.js",
+    "line": 3,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "export async function auditSeed(client, sources) {"
+  },
+  {
+    "file": "backend/scripts/csvSource.js",
+    "line": 86,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "return /simulat|synthetic|placeholder|dummy|mock|not collected|not started/i.test(source);"
+  },
+  {
+    "file": "backend/scripts/csvSource.js",
+    "line": 96,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "export async function loadSources(directory = dataDirectory, approvalsUrl = new URL(\"./seed-approvals.json\", import.meta.url)) {"
+  },
+  {
+    "file": "backend/scripts/csvSource.js",
+    "line": 104,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "throw new Error(filename + \" changed since approval; review provenance before seeding\");"
+  },
+  {
+    "file": "backend/scripts/csvSource.js",
+    "line": 114,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "const reason = syntheticSource(raw.source) ? \"simulated_or_placeholder_source\" :"
+  },
+  {
+    "file": "backend/scripts/seed-approvals.json",
+    "line": 2,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "\"verificationBasis\": \"User approved the 24 project-attributed records for seeding. Broad CSV source labels are preserved; independent field verification is not claimed.\","
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 5,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "import { auditSeed } from \"./audit-seed.js\";"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 7,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "export async function seedDatabase(pool, sources) {"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 128,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "const report = await auditSeed(client, sources);"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 152,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "const report = await seedDatabase(pool, sources);"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 154,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "await writeFile(new URL(\"../reports/seed-report.json\", import.meta.url), JSON.stringify(report, null, 2) + \"\\n\");"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 155,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "console.log(\"Approved CSV rows seeded; simulated/unapproved records excluded.\");"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 161,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "console.log(\"Full SQL, exclusions, and results: backend/reports/seed-report.json\");"
+  },
+  {
+    "file": "backend/scripts/seed.js",
+    "line": 170,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "console.error(error.code ? \"Seed failed; SQLSTATE: \" + error.code : error.message);"
+  },
+  {
+    "file": "backend/scripts/test-auth-http.js",
+    "line": 149,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "client: \"curl\", backend: \"real PostgreSQL; no mocked credential lookup\","
+  },
+  {
+    "file": "backend/scripts/test-db-constraints.js",
+    "line": 33,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "console.log(\"All constraint-test data rolled back; production route count unchanged.\");"
+  },
+  {
+    "file": "backend/scripts/test-destinations-http.js",
+    "line": 136,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "// Verify refresh against the unchanged real DB, not a mock dataset."
+  },
+  {
+    "file": "backend/scripts/test-destinations-http.js",
+    "line": 145,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "backend: \"real seeded PostgreSQL; read-only checks; SQL response and ordering comparisons\","
+  },
+  {
+    "file": "backend/scripts/test-trips-http.js",
+    "line": 92,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "assert.ok(catalogHotel, \"Seeded catalog hotel required\");"
+  },
+  {
+    "file": "backend/scripts/verify-seed.js",
+    "line": 3,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "import { auditSeed } from \"./audit-seed.js\";"
+  },
+  {
+    "file": "backend/scripts/verify-seed.js",
+    "line": 11,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "const report = await auditSeed(client, sources);"
+  },
+  {
+    "file": "backend/tests/admin.test.js",
+    "line": 8,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "for(const input of [{},{id:\"x\"},{role:\"tour_operator\"},{created_at:\"now\"},{provenance_status:\"independently_verified\"},{source_row_hash:\"fake\"}])"
+  },
+  {
+    "file": "backend/tests/seed.test.js",
+    "line": 30,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "assert.equal(syntheticSource(\"placeholder\"), true);"
+  },
+  {
+    "file": "data/CHANGELOG.md",
+    "line": 13,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- **Intra-City Somnath Routes (`data/routes.csv`):** Initial sample road distances and travel times measured via Google Maps Directions."
+  },
+  {
+    "file": "data/CHANGELOG.md",
+    "line": 14,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- **PostgreSQL DDL & Seed Files:** Schema DDL in `database/schema/schema.sql` and seed data in `database/seeds/somnath_dwarka_seed.sql`."
+  },
+  {
+    "file": "database/README.md",
+    "line": 3,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "**Status:** SCHEMA DESIGNED & COMPREHENSIVELY SEEDED (See [`docs/foundation/06_Database_Design.md`](../docs/foundation/06_Database_Design.md))"
+  },
+  {
+    "file": "database/README.md",
+    "line": 5,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Contains production-ready 3NF PostgreSQL schema DDL definitions, comprehensive seed datasets across Gujarat heritage destinations, and migration specifications."
+  },
+  {
+    "file": "database/README.md",
+    "line": 12,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- **`seeds/`**"
+  },
+  {
+    "file": "database/README.md",
+    "line": 13,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- [`ahmedabad_gujarat_full_seed.sql`](seeds/ahmedabad_gujarat_full_seed.sql): Master seed script covering 7 Gujarat heritage destinations (Ahmedabad, Dwarka, Somnath, Rann of Kutch, Champaner, Saputara, Modhera) and 175 verified attractions (25 per destination) with GPS coordinates, operating hours, durations, ratings, and entry fees."
+  },
+  {
+    "file": "database/README.md",
+    "line": 14,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- [`somnath_dwarka_seed.sql`](seeds/somnath_dwarka_seed.sql): Foundational seed dataset for Somnath and Dwarka covering destinations, attractions, hotels, restaurants, and intra-city route graph edges."
+  },
+  {
+    "file": "database/schema/heritage_planner_schema.sql",
+    "line": 64,
+    "classification": "REFERENCE DATA",
+    "reason": "Offline historical seed/schema/source; not loaded by request paths. Simulated route CSV rows remain excluded.",
+    "match": "operator_id UUID REFERENCES users(id) ON DELETE SET NULL,  -- NULL = seeded/reference hotel, not tied to a real operator"
+  },
+  {
+    "file": "database/schema/heritage_planner_schema.sql",
+    "line": 184,
+    "classification": "REFERENCE DATA",
+    "reason": "Offline historical seed/schema/source; not loaded by request paths. Simulated route CSV rows remain excluded.",
+    "match": "-- SAMPLE QUERIES for the new features (for backend reference)"
+  },
+  {
+    "file": "database/seeds/ahmedabad_gujarat_full_seed.sql",
+    "line": 2,
+    "classification": "REFERENCE DATA",
+    "reason": "Offline historical seed/schema/source; not loaded by request paths. Simulated route CSV rows remain excluded.",
+    "match": "-- Seed data: 7 Gujarat destinations + 175 attractions"
+  },
+  {
+    "file": "database/seeds/ahmedabad_gujarat_full_seed.sql",
+    "line": 6,
+    "classification": "REFERENCE DATA",
+    "reason": "Offline historical seed/schema/source; not loaded by request paths. Simulated route CSV rows remain excluded.",
+    "match": "-- 1. destination_id values in the source CSV were placeholders"
+  },
+  {
+    "file": "database/seeds/README.md",
+    "line": 1,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "# Database Seeds (`database/seeds/`)"
+  },
+  {
+    "file": "database/seeds/README.md",
+    "line": 3,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Contains reproducible SQL seed datasets for populating the database and hydrating intra-city graph structures."
+  },
+  {
+    "file": "database/seeds/README.md",
+    "line": 5,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "## Seed Files"
+  },
+  {
+    "file": "database/seeds/README.md",
+    "line": 7,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- **[`ahmedabad_gujarat_full_seed.sql`](ahmedabad_gujarat_full_seed.sql)**: Comprehensive Gujarat master seed dataset containing:"
+  },
+  {
+    "file": "database/seeds/README.md",
+    "line": 12,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- **[`somnath_dwarka_seed.sql`](somnath_dwarka_seed.sql)**: Specialized initial seed script covering:"
+  },
+  {
+    "file": "database/seeds/somnath_dwarka_seed.sql",
+    "line": 1,
+    "classification": "REFERENCE DATA",
+    "reason": "Offline historical seed/schema/source; not loaded by request paths. Simulated route CSV rows remain excluded.",
+    "match": "-- Seed Data for Somnath & Dwarka"
+  },
+  {
+    "file": "docs/diagrams/01_system_architecture.mmd",
+    "line": 33,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "D2[\"Dijkstra \u2014 fallback shortest<br/>path when not directly connected\"]"
+  },
+  {
+    "file": "docs/diagrams/04_dsa_architecture.mmd",
+    "line": 17,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "subgraph LegEvaluation[\"Route Leg Evaluation & Fallback\"]"
+  },
+  {
+    "file": "docs/diagrams/08_greedy_flow.mmd",
+    "line": 7,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "StrategyCheck -->|rating-first| SortRating[\"Sort hotels by rating DESC<br/>Find highest rated with (price * days) <= totalBudget<br/>Fallback to cheapest if none fit\"]"
+  },
+  {
+    "file": "docs/foundation/00_Foundation_Audit.md",
+    "line": 18,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- [x] **06. Database Design** (`06_Database_Design.md`) \u2014 Production-ready PostgreSQL 3NF DDL, column data types, foreign keys, CHECK constraints, B-tree/GIN trigram indexes, sample seed data for Somnath & Dwarka, query examples, and in-memory backend graph hydration strategy."
+  },
+  {
+    "file": "docs/foundation/01_Project_Proposal.md",
+    "line": 73,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "* **Algorithm Visualization Suite:** Interactive visual demonstration of Dijkstra's algorithm node relaxation and shortest path tree construction."
+  },
+  {
+    "file": "docs/foundation/01_Project_Proposal.md",
+    "line": 108,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "3. Interactive UI components demonstrating real-time schedule generation, budget breakdown, and Dijkstra graph visualization."
+  },
+  {
+    "file": "docs/foundation/01_Project_Proposal.md",
+    "line": 156,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "## 20. Expected Demonstration Flow (For Evaluation)"
+  },
+  {
+    "file": "docs/foundation/01_Project_Proposal.md",
+    "line": 157,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "During the evaluation presentation, the system demonstration will proceed through the following steps:"
+  },
+  {
+    "file": "docs/foundation/01_Project_Proposal.md",
+    "line": 158,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "1. **City Search & Selection:** Demonstrate Trie autocomplete by typing a prefix (e.g., `\"Ahme\"` or `\"Som\"`), selecting the city, and retrieving metadata via Hash Table lookup."
+  },
+  {
+    "file": "docs/foundation/01_Project_Proposal.md",
+    "line": 164,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "5. **Algorithm Visualization:** Switch to the **Dijkstra Visualizer** tab to demonstrate node relaxation, priority queue operations, and shortest path tree construction step-by-step."
+  },
+  {
+    "file": "docs/foundation/02_Requirements_Specification.md",
+    "line": 55,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Performance** | Response Time $< 100\\text{ ms}$ | Itinerary generation (Greedy + Dijkstra fallback) for a 4\u20136 node intra-city graph completes in under 1 second on the client frontend. |"
+  },
+  {
+    "file": "docs/foundation/02_Requirements_Specification.md",
+    "line": 61,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Availability** | Client-Side Resiliency | Static data fallback ensures 99.9% uptime for offline/mock exploration modes when backend connectivity is unavailable. |"
+  },
+  {
+    "file": "docs/foundation/03_System_Architecture.md",
+    "line": 49,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "D2[\"Dijkstra \u2014 fallback shortest<br/>path when not directly connected\"]"
+  },
+  {
+    "file": "docs/foundation/03_System_Architecture.md",
+    "line": 77,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Dijkstra** | Within one city only | Fallback: computes shortest path between two attractions ONLY when they aren't directly road-connected | Guarantees shortest path for non-negative weights; used sparingly since most attraction pairs in a small city graph ARE directly connected |"
+  },
+  {
+    "file": "docs/foundation/03_System_Architecture.md",
+    "line": 82,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Merge Sort** | Hotels, attractions, destinations | Ranking by price/rating/distance for display | O(n log n); implemented manually for the DSA demonstration, not just `Array.prototype.sort()` |"
+  },
+  {
+    "file": "docs/foundation/03_System_Architecture.md",
+    "line": 226,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "The frontend is fully built against mock data matching these shapes already \u2014 see `Frontend_Documentation.md`. Wiring is a drop-in replacement of mock calls with real `fetch`s, not a redesign."
+  },
+  {
+    "file": "docs/foundation/04_DSA_Architecture.md",
+    "line": 24,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Dijkstra** | Fallback shortest path solver | Source node ID, Target node ID (same city) | Shortest path node list + total transit time | Time: $O((V+E) \\log V)$<br>Space: $O(V)$ | `src/dsa/dijkstra/DijkstraSolver.ts` |"
+  },
+  {
+    "file": "docs/foundation/04_DSA_Architecture.md",
+    "line": 83,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "### 3.2. Dijkstra's Algorithm (Fallback Shortest-Path Solver)"
+  },
+  {
+    "file": "docs/foundation/04_DSA_Architecture.md",
+    "line": 89,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "> **Role Clarification:** Dijkstra does **NOT** generate the overall itinerary or decide visiting order. It is a fallback utility called by the Greedy route builder when $Edge(u, v) = \\varnothing$."
+  },
+  {
+    "file": "docs/foundation/04_DSA_Architecture.md",
+    "line": 317,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Calling native `Array.prototype.sort()` abstracts algorithm execution. A manual, pure TypeScript implementation of **Merge Sort** is included to demonstrate algorithmic rigor ($O(N \\log N)$ guaranteed worst-case time complexity)."
+  },
+  {
+    "file": "docs/foundation/05_Frontend_Documentation.md",
+    "line": 20,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Data is currently **fully mocked** \u2014 no backend calls exist yet. Every view reads from `src/data/destinations.ts` and derived local state."
+  },
+  {
+    "file": "docs/foundation/05_Frontend_Documentation.md",
+    "line": 66,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Each of the 8 cities contains real, sourced data (not placeholder text):"
+  },
+  {
+    "file": "docs/foundation/05_Frontend_Documentation.md",
+    "line": 90,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "`DESTINATION_HOTELS_MAP` in `HotelsView.tsx` is a derived lookup (`GUJARAT_DESTINATIONS.reduce(...)`), not a second hardcoded dataset \u2014 one source of truth for hotel data."
+  },
+  {
+    "file": "docs/foundation/05_Frontend_Documentation.md",
+    "line": 106,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| `DijkstraVisualizer.tsx` | Intra-city shortest-path animation | Nodes = one city's attractions + hotel; framed explicitly as a fallback for when two attractions aren't directly road-connected, not the primary route builder; playback controls (Play/Pause/Step/Reset); `aria-live=\"polite\"` step announcements |"
+  },
+  {
+    "file": "docs/foundation/05_Frontend_Documentation.md",
+    "line": 128,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "2. **All data is mocked** \u2014 nothing is wired to a backend yet. This is expected at this stage; it's the explicit target of the API-wiring pass once the backend exists."
+  },
+  {
+    "file": "docs/foundation/06_Database_Design.md",
+    "line": 328,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "## 6. Sample Seed Data (Somnath & Dwarka)"
+  },
+  {
+    "file": "docs/foundation/06_Database_Design.md",
+    "line": 331,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "-- SEED DESTINATIONS"
+  },
+  {
+    "file": "docs/foundation/06_Database_Design.md",
+    "line": 336,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "-- SEED HOTELS (SOMNATH & DWARKA)"
+  },
+  {
+    "file": "docs/foundation/06_Database_Design.md",
+    "line": 341,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "-- SEED ATTRACTIONS (SOMNATH)"
+  },
+  {
+    "file": "docs/foundation/06_Database_Design.md",
+    "line": 348,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "-- SEED INTRA-CITY ROUTES (SOMNATH)"
+  },
+  {
+    "file": "docs/foundation/06_Database_Design.md",
+    "line": 354,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "-- SEED RESTAURANTS (SOMNATH)"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 22,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Somnath** | Verified Real Data | Sourced & Cited (Holidify/Momondo) | Placeholder / Estimated | **Missing (Urgent)** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 23,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Dwarka** | Verified Real Data | Sourced & Cited (Holidify/Momondo) | Placeholder / Estimated | **Missing (Urgent)** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 24,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Ahmedabad** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 25,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Modhera** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 26,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Champaner** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 27,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Gir** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 28,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Rann of Kutch** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 29,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Saputara** | Mock / Estimated | Mock / Estimated | Placeholder / Estimated | **Missing** |"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 103,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "## 6. Sample Rows (Unverified Samples Marked)"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 105,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "### `attractions.csv` Sample"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 109,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "a301,ahmedabad,Sabarmati Ashram,Heritage,23.060500,72.580700,Free,1.5,08:30,18:30,4.7,SAMPLE -- Google Maps 2026"
+  },
+  {
+    "file": "docs/foundation/07_Data_Collection_Plan.md",
+    "line": 112,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "### `routes.csv` Sample (Intra-City Only)"
+  },
+  {
+    "file": "docs/REPOSITORY_STRUCTURE.md",
+    "line": 20,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\u2502   \u2502   \u2502   \u251c\u2500\u2500 destinations.ts        # 8 cities, mock/real data, single source of truth"
+  },
+  {
+    "file": "docs/REPOSITORY_STRUCTURE.md",
+    "line": 51,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\u2502   \u251c\u2500\u2500 dijkstra/                       # Fallback DijkstraSolver (intra-city only)"
+  },
+  {
+    "file": "docs/REPOSITORY_STRUCTURE.md",
+    "line": 61,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\u2502   \u251c\u2500\u2500 seeds/"
+  },
+  {
+    "file": "docs/REPOSITORY_STRUCTURE.md",
+    "line": 62,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\u2502   \u2502   \u2514\u2500\u2500 somnath_dwarka_seed.sql     # Real verified seed data for Somnath & Dwarka"
+  },
+  {
+    "file": "docs/REPOSITORY_STRUCTURE.md",
+    "line": 102,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- **`main`**: Production-ready, demo-capable baseline codebase."
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 16,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 116,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 226,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 373,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 475,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 577,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 679,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 781,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 926,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 1036,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.json",
+    "line": 1146,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 12,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 25,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 38,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 51,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 3,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 64,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 4,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 77,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 4,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 90,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 103,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 116,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 129,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 142,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 155,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 168,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 0,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 181,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 194,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 3,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 207,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 3,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 220,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 233,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 246,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 259,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 4,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 272,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 2,"
+  },
+  {
+    "file": "docs/research/experiment_results.previous-client.json",
+    "line": 285,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\"dijkstraFallbacks\": 4,"
+  },
+  {
+    "file": "docs/research/Research_Experiment_Plan.previous-client.md",
+    "line": 17,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "* **Intra-City Distance Engine:** Dynamic Haversine routing formula ($O(1)$) with a $1.35$ routing coefficient, fallback Dijkstra graph nodes relaxation ($O((V+E)\\log V)$) on virtual adjacency lists where edge weight thresholds are $\\le 2.5$ km."
+  },
+  {
+    "file": "docs/research/Research_Experiment_Plan.previous-client.md",
+    "line": 27,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| Destination | Duration | Budget | Strategy | Attractions Visited | Total Cost (\u20b9) | Road Dist (km) | Boat Dist (km) | Dijkstra Fallbacks | Execution Time (ms) |"
+  },
+  {
+    "file": "docs/research/Research_Experiment_Plan.previous-client.md",
+    "line": 40,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| Destination | Duration | Budget | Strategy | Attractions Visited | Total Cost (\u20b9) | Road Dist (km) | Boat Dist (km) | Dijkstra Fallbacks | Execution Time (ms) |"
+  },
+  {
+    "file": "docs/research/Research_Experiment_Plan.previous-client.md",
+    "line": 57,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| Destination | Duration | Budget | Strategy | Attractions Visited | Total Cost (\u20b9) | Road Dist (km) | Boat Dist (km) | Dijkstra Fallbacks | Execution Time (ms) |"
+  },
+  {
+    "file": "docs/research/Research_Experiment_Plan.previous-client.md",
+    "line": 90,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "Both parameters will become mathematically meaningful once the remaining 6 cities (Ahmedabad, Modhera, Champaner, Gir, Rann of Kutch, and Saputara) are fully seeded, expanding the graph to $V ge 100$."
+  },
+  {
+    "file": "docs/TEAM_RESPONSIBILITIES.md",
+    "line": 23,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "| **Client-Side Graph & Route Integration** | **Satvik** | Dynamic `routes.csv` parsing, short-code ID mapping (`a101`, `h101`, etc.), Dijkstra road fallback integration in `itineraryPlanner.ts` | OpenRouteService / `routes.csv` | **Done** |"
+  },
+  {
+    "file": "dsa/dijkstra/README.md",
+    "line": 4,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "**Description:** Fallback shortest-path solver ($O((V+E)\\log V)$). Operates **strictly within a single city** to compute the shortest road path between non-adjacent attractions."
+  },
+  {
+    "file": "dsa/greedy/budgetAllocator.ts",
+    "line": 56,
+    "classification": "FALSE POSITIVE",
+    "reason": "Algorithm terminology; legacy hotel replacement helper is not invoked by backend planner.",
+    "match": "let fallback: H;"
+  },
+  {
+    "file": "dsa/greedy/budgetAllocator.ts",
+    "line": 59,
+    "classification": "FALSE POSITIVE",
+    "reason": "Algorithm terminology; legacy hotel replacement helper is not invoked by backend planner.",
+    "match": "fallback = [...affordable].sort((a, b) => b.ratingNumeric - a.ratingNumeric)[0];"
+  },
+  {
+    "file": "dsa/greedy/budgetAllocator.ts",
+    "line": 61,
+    "classification": "FALSE POSITIVE",
+    "reason": "Algorithm terminology; legacy hotel replacement helper is not invoked by backend planner.",
+    "match": "fallback = [...affordable].sort((a, b) => a.priceNumeric - b.priceNumeric)[0];"
+  },
+  {
+    "file": "dsa/greedy/budgetAllocator.ts",
+    "line": 65,
+    "classification": "FALSE POSITIVE",
+    "reason": "Algorithm terminology; legacy hotel replacement helper is not invoked by backend planner.",
+    "match": "fallback = [...hotels].sort((a, b) => a.priceNumeric - b.priceNumeric)[0];"
+  },
+  {
+    "file": "dsa/greedy/budgetAllocator.ts",
+    "line": 69,
+    "classification": "FALSE POSITIVE",
+    "reason": "Algorithm terminology; legacy hotel replacement helper is not invoked by backend planner.",
+    "match": "hotel: fallback,"
+  },
+  {
+    "file": "dsa/greedy/budgetAllocator.ts",
+    "line": 71,
+    "classification": "FALSE POSITIVE",
+    "reason": "Algorithm terminology; legacy hotel replacement helper is not invoked by backend planner.",
+    "match": "replacementReason: `Selected hotel \"${preferred.name}\" (\u20b9${totalHotelCost.toLocaleString(\"en-IN\")} for ${numDays} night${numDays > 1 ? \"s\" : \"\"}) exceeds your total trip budget of \u20b9${totalBudgetCap.toLocaleString(\"en-IN\")}. Replaced with \"${fallback.name}\" (\u20b9${(fallback.priceNumeric * numDays).toLocaleString(\"en-IN\")}) to maintain budget feasibility.`,"
+  },
+  {
+    "file": "dsa/README.md",
+    "line": 9,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- `dijkstra/` \u2014 Fallback shortest path algorithm (intra-city only)"
+  },
+  {
+    "file": "frontend/public/sw.js",
+    "line": 45,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "// Handle standard page & asset requests with Network-first, fallback to Cache"
+  },
+  {
+    "file": "frontend/README.md",
+    "line": 4,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "It does not generate itineraries or authenticate accounts from bundled demo data."
+  },
+  {
+    "file": "frontend/README.md",
+    "line": 19,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "shows an error, not a bundled-data fallback. API calls bypass service-worker caches."
+  },
+  {
+    "file": "frontend/README.md",
+    "line": 76,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\ud83c\udf10 **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**"
+  },
+  {
+    "file": "frontend/scripts/generate-routes.ts",
+    "line": 85,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Offline simulation-capable generator not run; output excluded from approved DB and production bundle.",
+    "match": "console.warn(\"WARNING: No ORS_API_KEY detected. Using simulated fallback mode.\");"
+  },
+  {
+    "file": "frontend/scripts/run-experiments.ts",
+    "line": 73,
+    "classification": "DEVELOPMENT TOOLING",
+    "reason": "Seed provenance guard, verification script, or backend experiment; no runtime fake fallback.",
+    "match": "dijkstraFallbacks: plan.routing.dijkstra_calls, executionTimeMs: null, generationRequestTimeMs,"
+  },
+  {
+    "file": "frontend/src/api/index.ts",
+    "line": 240,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "directRoadConnectionsUsed:summary.routing?.direct_route_hits ?? 0,dijkstraFallbackCalls:summary.routing?.dijkstra_calls ?? 0,"
+  },
+  {
+    "file": "frontend/src/App.tsx",
+    "line": 36,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from \"./components/ImageWithFallback\";"
+  },
+  {
+    "file": "frontend/src/App.tsx",
+    "line": 520,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "<React.Suspense fallback={<div className=\"font-mono text-center p-8\">Loading Research Matrix...</div>}>"
+  },
+  {
+    "file": "frontend/src/App.tsx",
+    "line": 750,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/AdminDashboardView.tsx",
+    "line": 205,
+    "classification": "DOCUMENTATION",
+    "reason": "Pre-existing Demo Mode display label; CRUD is real authorized API. Label untouched per UI constraint.",
+    "match": "<span className=\"text-stone\">Tourism Guild Admin (Demo Mode)</span>"
+  },
+  {
+    "file": "frontend/src/components/AlgorithmStatsPanel.tsx",
+    "line": 32,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "const summaryText = `Generated in ${displayNumber(stats.executionTimeMs)}ms -- ${stats.attractionsVisited} attractions, ${stats.directRoadConnectionsUsed} direct routes, ${stats.dijkstraFallbackCalls} Dijkstra fallbacks.`;"
+  },
+  {
+    "file": "frontend/src/components/AlgorithmStatsPanel.tsx",
+    "line": 67,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "{stats.dijkstraFallbackCalls}"
+  },
+  {
+    "file": "frontend/src/components/AlgorithmStatsPanel.tsx",
+    "line": 69,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "Dijkstra fallbacks."
+  },
+  {
+    "file": "frontend/src/components/AlgorithmStatsPanel.tsx",
+    "line": 133,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "{stats.dijkstraFallbackCalls}{\" \"}"
+  },
+  {
+    "file": "frontend/src/components/AlgorithmStatsPanel.tsx",
+    "line": 136,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "<span className=\"text-[9px] text-stone\">Direct vs Fallbacks</span>"
+  },
+  {
+    "file": "frontend/src/components/AuthView.tsx",
+    "line": 253,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"e.g. traveler@heritage.in\""
+  },
+  {
+    "file": "frontend/src/components/AuthView.tsx",
+    "line": 327,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\""
+  },
+  {
+    "file": "frontend/src/components/AuthView.tsx",
+    "line": 462,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"e.g. Vikramaditya Solanki\""
+  },
+  {
+    "file": "frontend/src/components/AuthView.tsx",
+    "line": 498,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"name@domain.com\""
+  },
+  {
+    "file": "frontend/src/components/AuthView.tsx",
+    "line": 531,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"12+ chars, uppercase, lowercase, number, symbol\""
+  },
+  {
+    "file": "frontend/src/components/AuthView.tsx",
+    "line": 561,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"Repeat password\""
+  },
+  {
+    "file": "frontend/src/components/DestinationDetailView.tsx",
+    "line": 25,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from \"./ImageWithFallback\";"
+  },
+  {
+    "file": "frontend/src/components/DestinationDetailView.tsx",
+    "line": 82,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/DestinationDetailView.tsx",
+    "line": 413,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/DestinationDetailView.tsx",
+    "line": 497,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/DestinationDetailView.tsx",
+    "line": 685,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/ExploreView.tsx",
+    "line": 10,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from './ImageWithFallback';"
+  },
+  {
+    "file": "frontend/src/components/ExploreView.tsx",
+    "line": 232,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder={t('explore.searchPlaceholder', 'Search destinations or districts...')}"
+  },
+  {
+    "file": "frontend/src/components/ExploreView.tsx",
+    "line": 233,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "className=\"w-full bg-transparent font-display text-xl sm:text-2xl text-charcoal placeholder:text-stone/50 focus:outline-none\""
+  },
+  {
+    "file": "frontend/src/components/ExploreView.tsx",
+    "line": 422,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/FeaturedDestinations.tsx",
+    "line": 5,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from './ImageWithFallback';"
+  },
+  {
+    "file": "frontend/src/components/FeaturedDestinations.tsx",
+    "line": 57,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/HotelsView.tsx",
+    "line": 6,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from \"./ImageWithFallback\";"
+  },
+  {
+    "file": "frontend/src/components/HotelsView.tsx",
+    "line": 253,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 3,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "interface ImageWithFallbackProps"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 6,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "fallbackSrc?: string;"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 9,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "export const getCategoryFallback = (category?: string): string => {"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 50,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 55,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "fallbackSrc,"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 61,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "const defaultFallback = fallbackSrc || getCategoryFallback(category);"
+  },
+  {
+    "file": "frontend/src/components/ImageWithFallback.tsx",
+    "line": 62,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "const effectiveSrc = hasError || !src ? defaultFallback : src;"
+  },
+  {
+    "file": "frontend/src/components/ItineraryView.tsx",
+    "line": 21,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from \"./ImageWithFallback\";"
+  },
+  {
+    "file": "frontend/src/components/ItineraryView.tsx",
+    "line": 261,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "// Fallback to dom-to-image-more for okLab colour support"
+  },
+  {
+    "file": "frontend/src/components/ItineraryView.tsx",
+    "line": 757,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/PlannerModal.tsx",
+    "line": 4,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "import { ImageWithFallback } from \"./ImageWithFallback\";"
+  },
+  {
+    "file": "frontend/src/components/PlannerModal.tsx",
+    "line": 99,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "// When city changes, load preferred stay or fallback to first hotel"
+  },
+  {
+    "file": "frontend/src/components/PlannerModal.tsx",
+    "line": 378,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Existing category SVG image fallback, not a fabricated record; preserved under no-UI-change rule.",
+    "match": "<ImageWithFallback"
+  },
+  {
+    "file": "frontend/src/components/ProfileDashboardView.tsx",
+    "line": 421,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\""
+  },
+  {
+    "file": "frontend/src/components/ProfileDashboardView.tsx",
+    "line": 434,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "placeholder=\"Enter new password\""
+  },
+  {
+    "file": "frontend/src/components/PwaInstallPrompt.tsx",
+    "line": 20,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "// Fallback instructions if native prompt isn't supported or directly available"
+  },
+  {
+    "file": "frontend/src/components/ResearchView.tsx",
+    "line": 56,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "dijkstraCalls: res.stats.dijkstraFallbackCalls,"
+  },
+  {
+    "file": "frontend/src/components/ResearchView.tsx",
+    "line": 81,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "dijkstraCalls: res.stats.dijkstraFallbackCalls,"
+  },
+  {
+    "file": "frontend/src/components/ResearchView.tsx",
+    "line": 107,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "dijkstraCalls: res.stats.dijkstraFallbackCalls,"
+  },
+  {
+    "file": "frontend/src/components/ResearchView.tsx",
+    "line": 190,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "<th className=\"p-3 font-mono font-bold uppercase text-center\">Dijkstra Fallbacks</th>"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 16,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "t: (key: string, fallback?: string) => string;"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 62,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "const fallbackDictionary = TRANSLATIONS[\"en\"];"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 65,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "(key: string, fallback?: string): string => {"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 69,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "if (fallbackDictionary && key in fallbackDictionary) {"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 70,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "return fallbackDictionary[key];"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 72,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "return fallback || key;"
+  },
+  {
+    "file": "frontend/src/context/LanguageContext.tsx",
+    "line": 74,
+    "classification": "FALSE POSITIVE",
+    "reason": "Actual routing statistic, loading/language/asset/renderer fallback, or comment; no substitute domain records.",
+    "match": "[activeDictionary, fallbackDictionary],"
+  },
+  {
+    "file": "frontend/src/data/destinations.ts",
+    "line": 2389,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "\"Artisan cooperative demonstrating bamboo craft, pottery, and Warli paintings.\","
+  },
+  {
+    "file": "frontend/src/data/destinations.ts",
+    "line": 2393,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "\"Artisan cooperative demonstrating bamboo craft, pottery, and Warli paintings.\","
+  },
+  {
+    "file": "frontend/src/data/destinations.ts",
+    "line": 2395,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "\"Artisan cooperative demonstrating bamboo craft, pottery, and Warli paintings.\","
+  },
+  {
+    "file": "frontend/src/data/translations.ts",
+    "line": 57,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "\"explore.searchPlaceholder\": \"Search destinations or districts...\","
+  },
+  {
+    "file": "frontend/src/data/translations.ts",
+    "line": 203,
+    "classification": "LEGITIMATE PLACEHOLDER",
+    "reason": "Input hint or CSS placeholder selector/translation; not backend data.",
+    "match": "\"explore.searchPlaceholder\": \"\u0917\u0902\u0924\u0935\u094d\u092f \u092f\u093e \u091c\u093f\u0932\u0947 \u0916\u094b\u091c\u0947\u0902...\","
+  },
+  {
+    "file": "frontend/src/utils/destinationTrie.ts",
+    "line": 124,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "* @param allowFuzzy Whether to perform typo-tolerant fuzzy search fallback if exact matches are 0"
+  },
+  {
+    "file": "frontend/src/utils/destinationTrie.ts",
+    "line": 144,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "// 2. Fuzzy Levenshtein fallback for queries of length >= 4 if no exact match exists"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 144,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls: number;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 230,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "* Evaluates route legs and counts direct road connections vs. Dijkstra fallback calls"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 406,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "{ name: \"Nirona Rogan Art & Copper Bell Artisan Workshop\", category: \"Master Craft\", description: \"Live demonstration by master Khatri craftsmen of 300-year-old castor seed oil Rogan fabric painting.\", durationHours: 2 },"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 497,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "let dijkstraFallbackCalls = 0;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 563,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls: 0,"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 674,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls++;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 805,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls++;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 893,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls++;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 976,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls++;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 1023,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls++;"
+  },
+  {
+    "file": "frontend/src/utils/itineraryPlanner.ts",
+    "line": 1148,
+    "classification": "REFERENCE DATA",
+    "reason": "Legacy reference utility/catalog absent from production module graph; Trie retained for tests.",
+    "match": "dijkstraFallbackCalls,"
+  },
+  {
+    "file": "README.md",
+    "line": 6,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "## Live Demo Deployment"
+  },
+  {
+    "file": "README.md",
+    "line": 8,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "A demo test deployment of the frontend and UI is live on Vercel:"
+  },
+  {
+    "file": "README.md",
+    "line": 10,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "\ud83c\udf10 **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**"
+  },
+  {
+    "file": "README.md",
+    "line": 31,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "> **There is no inter-city routing anywhere in this system.** Travel between cities is left entirely to the user. This single-city focus enables realistic road-graph modeling, precise time-budgeting, and a mathematically rigorous DSA demonstration."
+  },
+  {
+    "file": "README.md",
+    "line": 83,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "D2[\"Dijkstra \u2014 Fallback Shortest Path\"]"
+  },
+  {
+    "file": "README.md",
+    "line": 163,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "> You can try the live frontend demo immediately without local installation at **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**."
+  },
+  {
+    "file": "README.md",
+    "line": 214,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- [`docs/foundation/06_Database_Design.md`](docs/foundation/06_Database_Design.md) \u2014 *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*"
+  },
+  {
+    "file": "README.md",
+    "line": 217,
+    "classification": "DOCUMENTATION",
+    "reason": "Historical design/report or current setup prose; not executable. Older mock/complete-seed claims are superseded by final DB/runtime evidence.",
+    "match": "- [`database/seeds/ahmedabad_gujarat_full_seed.sql`](database/seeds/ahmedabad_gujarat_full_seed.sql) \u2014 *Master seed SQL script covering 7 Gujarat destinations and 175 verified attractions (25 each).*"
+  },
+  {
+    "file": "tests/frontend/api_client_browser.py",
+    "line": 20,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "page.route(\"**/trips/check/budget\", lambda r: r.fulfill(status=200, content_type=\"text/html\", body=\"<html>proxy fallback</html>\"))"
+  },
+  {
+    "file": "tests/frontend/browser_api.py",
+    "line": 82,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "page.get_by_placeholder(\"Search destinations or districts...\").fill(term)"
+  },
+  {
+    "file": "tests/frontend/browser_api.py",
+    "line": 87,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "page.get_by_placeholder(\"Search destinations or districts...\").fill(\"Ahmed\")"
+  },
+  {
+    "file": "tests/frontend/browser_api.py",
+    "line": 148,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "search = page.get_by_placeholder(\"Search destinations or districts...\")"
+  },
+  {
+    "file": "tests/frontend/browser_api.py",
+    "line": 164,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "check(\"Failed search clears results without static fallback\")"
+  },
+  {
+    "file": "tests/frontend/browser_api.py",
+    "line": 227,
+    "classification": "TEST DATA",
+    "reason": "Assertions, temporary fixtures or intercepted negative responses; not production catalog.",
+    "match": "check(\"Real empty city has zero hotels/restaurants without fallback\", status=200)"
+  }
+]

@@ -1,0 +1,514 @@
+{
+  "city": "rann-of-kutch",
+  "checked": "2026-10-01",
+  "records": [
+    {
+      "table": "attractions",
+      "key": "a701",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "entry_fee": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+                "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+                "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+                "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+              ]
+            }
+          },
+          "notes": "Selected mapped attraction, archived pages/rann-white-selected.json. Permit source is a tour-operator published exclusion, not a successfully retrieved official current tariff; official portal unavailable during research. Price is provisional representative evidence, no guessed vehicle split.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+        "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+        "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+        "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "attractions",
+      "key": "a702",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html"
+              ],
+              "note": "Gujarat Tourism identifies Kalo Dungar."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "image_url": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            },
+            "image_alt": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+                "https://www.openstreetmap.org/node/1534445723",
+                "https://gujaratexplorers.com/destination/kalo-dungar/",
+                "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+                "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+              ]
+            }
+          },
+          "notes": "1.5 hours is midpoint of published1-2 hour guidance, which includes hill approach; may overlap road approach time. No clock opening/closing invented for daylight access. Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination.",
+          "qualification": "Gujarat Tourism identifies Kalo Dungar."
+        }
+      },
+      "sources": [
+        "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+        "https://www.openstreetmap.org/node/1534445723",
+        "https://gujaratexplorers.com/destination/kalo-dungar/",
+        "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+        "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "hotels",
+      "key": "h701",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://booking.kutchrannresort.com/auth/signin"
+              ],
+              "note": "Business booking website identifies Gateway to Rann Resort in Dhordo."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "price_per_night": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "stay_type": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://kutchrannresort.com/accommodation/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            }
+          },
+          "notes": "Official public Bhunga AC tariff INR5500 per room/night, maximum double occupancy, plus stated5 percent GST =5775. Includes high tea, dinner and next-day breakfast. Published2026-27 page checkedSeptember30; availability/date restrictions still apply. Current budget model does not offset included meals. Application category does not assert legal registration.",
+          "qualification": "Business booking website identifies Gateway to Rann Resort in Dhordo."
+        }
+      },
+      "sources": [
+        "https://booking.kutchrannresort.com/",
+        "https://kutchrannresort.com/accommodation/",
+        "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "restaurants",
+      "key": "r701",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "avg_cost_per_person": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://booking.kutchrannresort.com/",
+                "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+              ]
+            }
+          },
+          "notes": "Official optional lunch rate INR250/person. Dining service uses verified property coordinate; no separately verified dining-room coordinate or rating claimed. Cuisine left unknown in absence of a published menu. Hotel/dining room co-location cannot yield a positive road route under existing schema; no artificial distance inserted. Meal offered for resort guests; outside-guest admission not established.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://booking.kutchrannresort.com/",
+        "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    }
+  ]
+}

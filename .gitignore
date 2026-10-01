@@ -1,31 +1,65 @@
-# Dependency directories
+# Dependencies and package-manager caches
 node_modules/
-**/node_modules/
-
-# Production build outputs
+.npm-cache/
+.npm/
+.pnpm-store/
+.yarn/cache/
+# Build and TypeScript output
 dist/
-**/dist/
 build/
-**/build/
-
-# Environment and secret files
+*.tsbuildinfo
+.vite/
+# Private environments (examples are safe templates)
 .env
-.env.local
-.env.*.local
+.env.*
 *.env
-
-# Operating system files
+!.env.example
+!.env.production.example
+# Python tools
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+# Logs, coverage, browser artifacts and local caches
+*.log
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+playwright/.cache/
+.cache/
+**/.routing-cache.json
+**/.translation-cache.json
+# Private database archives and local Docker state
+backups/
+*.dump
+*.backup
+*.sql.gz
+.pgdata/
+# Machine/editor scratch
 .DS_Store
 Thumbs.db
-
-# Log files
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDE & Editor files
-.vscode/
+Desktop.ini
 .idea/
+.vscode/
 *.swp
 *.swo
+*.tmp
+*.bak
+# Generated test evidence: summaries and required fixtures are curated explicitly
+backend/reports/production/*.txt
+backend/reports/production/*.lock
+backend/reports/production/.*.env
+backend/reports/raw-evidence-*/
+backend/reports/*.png
+backend/reports/*.txt
+backend/reports/frontend-browser-report.json
+backend/reports/completion-*-browser-report.json
+backend/reports/completion-blank-price-before.json
+backend/reports/completion-pwa-dismiss-before.json
+backend/reports/completion-comparison-before.json
+backend/reports/completion-readonly-before.json
+backend/reports/completion-production-before.json
+# npm is the supported lockfile and install workflow
+frontend/bun.lock

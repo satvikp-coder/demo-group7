@@ -1,3 +1,6 @@
+> Historical academic record. Preserve original credits and design intent; current
+> implementation/status is documented in the [root README](../README.md).
+
 # Team Responsibilities & Task Assignments
 
 **Course:** CSC210 Data Structures & Algorithms — Ahmedabad University  

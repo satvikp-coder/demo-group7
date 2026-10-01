@@ -1,0 +1,507 @@
+{
+  "checkedAt": "2026-09-30T19:16:13.542Z",
+  "path": "HTTP -> Express -> PostgreSQL persisted generation",
+  "previous": {
+    "scenarios": 22,
+    "successfulGenerations": 22,
+    "failures": 0,
+    "budgetCompliant": 15,
+    "attractionsVisited": 68,
+    "totalCost": 53585
+  },
+  "previousBackend": {
+    "scenarios": 22,
+    "successfulGenerations": 11,
+    "failures": 11,
+    "budgetCompliant": 7,
+    "attractionsVisited": 0,
+    "totalCost": 47600
+  },
+  "current": {
+    "scenarios": 22,
+    "successfulGenerations": 22,
+    "failures": 0,
+    "budgetCompliant": 12,
+    "attractionsVisited": 48,
+    "totalCost": 118654
+  },
+  "cleanupCompleted": true,
+  "exchanges": [
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/somnath",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/58ce0ce1-ecf6-4bb3-93c0-23c9a778d919/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/63f5a5ad-d4e1-40d7-becf-21ad1368a2ea/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/63f5a5ad-d4e1-40d7-becf-21ad1368a2ea",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/63f5a5ad-d4e1-40d7-becf-21ad1368a2ea/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/54a31233-8ed3-4034-b666-d5a7210b6645/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/54a31233-8ed3-4034-b666-d5a7210b6645",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/54a31233-8ed3-4034-b666-d5a7210b6645/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/086ab8fc-05c0-4dfc-b7de-0c84645877f2/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/086ab8fc-05c0-4dfc-b7de-0c84645877f2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/086ab8fc-05c0-4dfc-b7de-0c84645877f2/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/b48b364f-3e5a-47e7-94c9-d0bd89ed8bff/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/b48b364f-3e5a-47e7-94c9-d0bd89ed8bff",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/b48b364f-3e5a-47e7-94c9-d0bd89ed8bff/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/35372ec0-2a56-4bcc-8a67-ed765d902b9d/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/35372ec0-2a56-4bcc-8a67-ed765d902b9d",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/35372ec0-2a56-4bcc-8a67-ed765d902b9d/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/46f95965-14f8-4c5b-8149-0b76911392db/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/46f95965-14f8-4c5b-8149-0b76911392db",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/46f95965-14f8-4c5b-8149-0b76911392db/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/bdf95e46-fec0-4e33-a541-4caf66c6bcdd/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/bdf95e46-fec0-4e33-a541-4caf66c6bcdd",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/bdf95e46-fec0-4e33-a541-4caf66c6bcdd/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/1ddc449a-180b-4656-9f3a-8bec913a0d12/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/1ddc449a-180b-4656-9f3a-8bec913a0d12",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/1ddc449a-180b-4656-9f3a-8bec913a0d12/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/78450697-78bb-4fb0-931d-1ce40951669e/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/78450697-78bb-4fb0-931d-1ce40951669e",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/78450697-78bb-4fb0-931d-1ce40951669e/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/8e2ca294-ba26-48d8-be77-9dddceb84c5a/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/8e2ca294-ba26-48d8-be77-9dddceb84c5a",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/8e2ca294-ba26-48d8-be77-9dddceb84c5a/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/a913a145-47e2-40f2-802f-4c4739533568/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/a913a145-47e2-40f2-802f-4c4739533568",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/a913a145-47e2-40f2-802f-4c4739533568/budget",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/dwarka",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/c9cb988b-eb32-47cf-ab54-e85a51610ac8/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/b27be567-a26d-4f6d-822f-ca92b8f2ed89/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/b27be567-a26d-4f6d-822f-ca92b8f2ed89",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/b27be567-a26d-4f6d-822f-ca92b8f2ed89/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/d3ed0ed1-c5ec-417c-b37f-02829ec9daf5/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/d3ed0ed1-c5ec-417c-b37f-02829ec9daf5",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/d3ed0ed1-c5ec-417c-b37f-02829ec9daf5/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/8f37f381-21d5-4f8b-930f-d3ca7b391cec/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/8f37f381-21d5-4f8b-930f-d3ca7b391cec",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/8f37f381-21d5-4f8b-930f-d3ca7b391cec/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/49a3ecc7-be21-4c6d-9ae6-96ef4d415997/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/49a3ecc7-be21-4c6d-9ae6-96ef4d415997",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/49a3ecc7-be21-4c6d-9ae6-96ef4d415997/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/6bc9c7de-7d3d-4bdb-b6d5-7833f88c8c92/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/6bc9c7de-7d3d-4bdb-b6d5-7833f88c8c92",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/6bc9c7de-7d3d-4bdb-b6d5-7833f88c8c92/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/d7f40bae-1804-4ac5-852f-32ffb7e935c8/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/d7f40bae-1804-4ac5-852f-32ffb7e935c8",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/d7f40bae-1804-4ac5-852f-32ffb7e935c8/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/25419aa8-0ae8-41ad-8f2a-9689f126dfff/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/25419aa8-0ae8-41ad-8f2a-9689f126dfff",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/25419aa8-0ae8-41ad-8f2a-9689f126dfff/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/bda66801-0a3f-4da9-82a4-924498468909/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/bda66801-0a3f-4da9-82a4-924498468909",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/bda66801-0a3f-4da9-82a4-924498468909/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/c8d158a9-7aa1-4d3c-9921-1b5b5d540a5c/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/c8d158a9-7aa1-4d3c-9921-1b5b5d540a5c",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/c8d158a9-7aa1-4d3c-9921-1b5b5d540a5c/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/60ca5e60-f428-4daf-9173-8d44dedb02cd/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/60ca5e60-f428-4daf-9173-8d44dedb02cd",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/60ca5e60-f428-4daf-9173-8d44dedb02cd/budget",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/45c2a1ec-1b42-4a98-aecb-c662562716ba/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/45c2a1ec-1b42-4a98-aecb-c662562716ba",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/45c2a1ec-1b42-4a98-aecb-c662562716ba/budget",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "Historical baseline is retained client output, not independently reverified tourism facts.",
+    "Road/boat split and algorithm-only execution time unavailable in backend contract; null, not zero.",
+    "HTTP generation latency includes network/database persistence and is not comparable to old CPU time.",
+    "Road routes are sourced snapshots; fares, calendar closures, split opening hours and fixed booking availability are not fully represented. HTTP generation alone does not certify a complete tourism itinerary."
+  ]
+}

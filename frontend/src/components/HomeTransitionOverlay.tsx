@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Compass, Sparkles, Building2, ChevronRight } from "lucide-react";
-import { GUJARAT_DESTINATIONS } from "../data/destinations";
+import { useCatalog } from "../api";
+import type { Destination } from "../api/types";
 
 interface HomeTransitionOverlayProps {
   isVisible?: boolean;
@@ -10,6 +11,8 @@ interface HomeTransitionOverlayProps {
 export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({
   isVisible = true,
 }) => {
+  const catalog = useCatalog();
+  const GUJARAT_DESTINATIONS = catalog.data ?? [];
   const [showBanner, setShowBanner] = useState(true);
 
   useEffect(() => {
@@ -20,6 +23,8 @@ export const HomeTransitionOverlay: React.FC<HomeTransitionOverlayProps> = ({
     return () => clearTimeout(timer);
   }, [isVisible]);
 
+  if(catalog.loading) return <p role="status">Loading destinations...</p>;
+  if(catalog.error) return <p role="alert">{catalog.error} <button onClick={catalog.reload}>Retry</button></p>;
   return (
     <div className="relative w-full overflow-hidden pointer-events-none">
       {/* Animated Stepped Gold Border Sweep */}

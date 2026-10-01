@@ -34,13 +34,13 @@ import { getSharedFromUrl, clearSharedUrl } from "./utils/shareUrl";
 import { InvalidSharedLinkView } from "./components/InvalidSharedLinkView";
 import { NotFoundView } from "./components/NotFoundView";
 import { ImageWithFallback } from "./components/ImageWithFallback";
-import { Destination, GUJARAT_DESTINATIONS, getCityById } from "./data/destinations";
+import type { Destination } from "./api/types";
+import { api, useApi, useCatalog, session, EMPTY_DESTINATION } from "./api";
 import { MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 // ─── Session-storage helpers for itinerary persistence across refresh ───────
 const ITINERARY_SESSION_KEY = "heritage_active_itinerary_v1";
-const AUTH_LOCAL_KEY = "heritage_current_user_v1";
 
 function saveItineraryToSession(cfg: ItineraryConfig | null) {
   if (cfg) {
@@ -59,24 +59,17 @@ function restoreItineraryFromSession(): ItineraryConfig | null {
   }
 }
 
-function saveUserToLocal(user: { name: string; email: string; role: "tourist" | "operator" } | null) {
-  if (user) {
-    localStorage.setItem(AUTH_LOCAL_KEY, JSON.stringify(user));
-  } else {
-    localStorage.removeItem(AUTH_LOCAL_KEY);
-  }
-}
-
-function restoreUserFromLocal(): { name: string; email: string; role: "tourist" | "operator" } | null {
-  try {
-    const raw = localStorage.getItem(AUTH_LOCAL_KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch {
-    return null;
-  }
-}
-
 export default function App() {
+  const catalog = useCatalog();
+  const destinations = catalog.data ?? [];
+  const getCityById = (id: string) => destinations.find(d => d.id === id);
+  const [authRevision, setAuthRevision] = useState(0);
+  const authRequest = useApi(signal => api.me(signal), [authRevision]);
+  useEffect(() => {
+    const changed = () => { setCurrentUser(null); setAuthRevision(n => n + 1); };
+    window.addEventListener("heritage-auth-change", changed);
+    return () => window.removeEventListener("heritage-auth-change", changed);
+  }, []);
   const [selectedDestination, setSelectedDestination] =
     useState<Destination | null>(null);
   const [plannerOpen, setPlannerOpen] = useState<boolean>(false);
@@ -104,11 +97,12 @@ export default function App() {
   } | null>(null);
 
   // ─── Auth State (restored from localStorage) ───────────────────────────────
-  const [currentUser, setCurrentUser] = useState<{
+  const [optimisticUser, setCurrentUser] = useState<{
     name: string;
     email: string;
     role: "tourist" | "operator";
-  } | null>(() => restoreUserFromLocal());
+  } | null>(null);
+  const currentUser = authRequest.loading ? optimisticUser : (authRequest.data ?? null);
   const currentUserRef = useRef(currentUser);
   currentUserRef.current = currentUser;
 
@@ -133,22 +127,13 @@ export default function App() {
           clearOverlays();
           setSelectedDestination(null);
           setActiveItinerary(null);
-          saveItineraryToSession(null);
           break;
 
         case "destination": {
-          const dest = GUJARAT_DESTINATIONS.find(
-            (d) => d.id.toLowerCase() === (route.destinationId ?? "").toLowerCase()
-          );
-          if (dest) {
-            clearOverlays();
-            setSelectedDestination(dest);
-            setActiveItinerary(null);
-            saveItineraryToSession(null);
-          } else {
-            // Unknown destination id → go home
-            navigate("/", { replace: true });
-          }
+          clearOverlays();
+          setSelectedDestination({...EMPTY_DESTINATION, id: route.destinationId ?? ""});
+          setActiveItinerary(null);
+
           break;
         }
 
@@ -162,6 +147,7 @@ export default function App() {
           clearOverlays();
           setSelectedDestination(null);
           setShowBudgetPlanner(true);
+          setActiveItinerary(restoreItineraryFromSession());
           break;
 
         case "itinerary": {
@@ -179,7 +165,7 @@ export default function App() {
         }
 
         case "profile": {
-          const user = currentUserRef.current || restoreUserFromLocal();
+          const user = currentUserRef.current || session.token();
           if (!user) {
             navigate("/login", { replace: true });
             break;
@@ -191,7 +177,7 @@ export default function App() {
         }
 
         case "admin": {
-          const user = currentUserRef.current || restoreUserFromLocal();
+          const user = currentUserRef.current || session.token();
           if (!user) {
             navigate("/login", { replace: true });
             break;
@@ -206,7 +192,6 @@ export default function App() {
           clearOverlays();
           setSelectedDestination(null);
           setActiveItinerary(null);
-          saveItineraryToSession(null);
           setAuthMode(route.authMode ?? "login");
           break;
 
@@ -224,7 +209,6 @@ export default function App() {
           clearOverlays();
           setSelectedDestination(null);
           setActiveItinerary(null);
-          saveItineraryToSession(null);
           setShowNotFound(route.path);
           break;
 
@@ -240,6 +224,8 @@ export default function App() {
 
   // ─── Mount: parse URL + subscribe to future route changes (popstate) ─────────
   useEffect(() => {
+    // Subscribe for shared links too; development Strict Mode masked the early return.
+    const unsubscribe = subscribeToRoute(syncStateFromRoute);
     // 1. Check for a shared-link itinerary first (takes precedence)
     const sharedData = getSharedFromUrl();
     if (sharedData && sharedData.success === true) {
@@ -247,20 +233,19 @@ export default function App() {
       saveItineraryToSession(sharedData.config);
       setIsReadOnlyItinerary(true);
       navigate("/itinerary", { replace: true });
-      return;
+      return unsubscribe;
     } else if (sharedData && sharedData.success === false) {
       setSharedLinkError({
         error: sharedData.error,
         rawPayload: sharedData.rawPayload,
       });
-      return;
+      return unsubscribe;
     }
 
     // 2. Sync state from current URL
     syncStateFromRoute(getCurrentRoute());
 
     // 3. Subscribe so browser Back/Forward updates state
-    const unsubscribe = subscribeToRoute(syncStateFromRoute);
     return unsubscribe;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -327,7 +312,7 @@ export default function App() {
       );
       if (!isDismissed) {
         const timer = setTimeout(() => {
-          setShowPwaPrompt(true);
+          if (!localStorage.getItem("heritage_pwa_prompt_dismissed_v1")) setShowPwaPrompt(true);
         }, 1200);
         return () => clearTimeout(timer);
       }
@@ -340,16 +325,7 @@ export default function App() {
   // Preferred stay selection mapping: cityId -> hotelId
   const [preferredHotels, setPreferredHotels] = useState<
     Record<string, string>
-  >({
-    somnath: "premier-somnath",
-    dwarka: "toran-dwarka",
-    "rann-of-kutch": "toran-rann",
-    gir: "gir-bird-homestay",
-    modhera: "toran-modhera",
-    champaner: "champaner-heritage-resort",
-    saputara: "toran-hill-resort",
-    ahmedabad: "house-of-mg",
-  });
+  >({});
 
   const handleSetPreferredHotel = (cityId: string, hotelId: string) => {
     setPreferredHotels((prev) => ({
@@ -379,17 +355,15 @@ export default function App() {
 
   // ─── Persist activeItinerary to sessionStorage on every change ───────────────
   useEffect(() => {
-    saveItineraryToSession(activeItinerary);
+    if(activeItinerary?.tripId) saveItineraryToSession(activeItinerary);
   }, [activeItinerary]);
 
   // ─── Persist currentUser to localStorage on every change ─────────────────────
-  useEffect(() => {
-    saveUserToLocal(currentUser);
-  }, [currentUser]);
-
   const handleLogout = useCallback(() => {
     // Clear persisted user
-    saveUserToLocal(null);
+    session.clear();
+    setActiveItinerary(null);
+    saveItineraryToSession(null);
     setCurrentUser(null);
     // Reset all overlay/view states
     setShowAdminDashboard(false);
@@ -405,7 +379,7 @@ export default function App() {
   const handleNavigateSection = (sectionId: string) => {
     switch (sectionId) {
       case "admin":
-        if (currentUserRef.current || restoreUserFromLocal()) {
+        if (currentUserRef.current || session.token()) {
           navigate("/admin");
         } else {
           navigate("/login");
@@ -414,7 +388,7 @@ export default function App() {
 
       case "profile":
       case "dashboard":
-        if (currentUserRef.current || restoreUserFromLocal()) {
+        if (currentUserRef.current || session.token()) {
           navigate("/profile");
         } else {
           navigate("/login");
@@ -430,7 +404,7 @@ export default function App() {
         return;
 
       case "account":
-        if (currentUserRef.current || restoreUserFromLocal()) {
+        if (currentUserRef.current || session.token()) {
           navigate("/profile");
         } else {
           navigate("/login");
@@ -456,7 +430,7 @@ export default function App() {
   };
 
   const handleSelectNearby = (destId: string) => {
-    const found = GUJARAT_DESTINATIONS.find((d) => d.id === destId);
+    const found = destinations.find((d) => d.id === destId);
     if (found) {
       navigate(`/destination/${found.id}`);
     }
@@ -492,7 +466,9 @@ export default function App() {
           {/* Main Content Area */}
           <main className="flex-grow">
             <AnimatePresence mode="wait">
-              {sharedLinkError ? (
+              {((showProfile || showAdminDashboard) && authRequest.loading) ? <p role="status">Checking your session...</p>
+                : ((showProfile || showAdminDashboard) && authRequest.error) ? <p role="alert">{authRequest.error} <button onClick={authRequest.reload}>Retry</button></p>
+                : sharedLinkError ? (
                 <motion.div
                   key="invalid-shared-link"
                   initial={{ opacity: 0, y: 20 }}
@@ -582,7 +558,6 @@ export default function App() {
                     initialMode={authMode}
                     onCloseOrGuest={() => navigate("/")}
                     onAuthSuccess={(user) => {
-                      saveUserToLocal(user);
                       setCurrentUser(user);
                       navigate("/profile");
                     }}
@@ -615,6 +590,7 @@ export default function App() {
                     onOpenItinerary={(config) => {
                       saveItineraryToSession(config);
                       setActiveItinerary(config);
+                      setIsReadOnlyItinerary(false);
                       navigate("/itinerary");
                     }}
                     onOpenExplore={() => {
@@ -627,7 +603,7 @@ export default function App() {
                       setShowProfile(false);
                       setPlannerOpen(true);
                     }}
-                    onOpenAdminDashboard={currentUser ? () => navigate("/admin") : undefined}
+                    onOpenAdminDashboard={currentUser ? (hotelId, create) => navigate(hotelId ? `/admin?hotel=${encodeURIComponent(hotelId)}` : create ? "/admin?new=hotel" : "/admin") : undefined}
                     onLogout={handleLogout}
                   />
                 </motion.div>
@@ -641,6 +617,7 @@ export default function App() {
                   transition={{ duration: 0.35 }}
                 >
                   <HotelsView
+                    selectedCityId={activeItinerary?.cityId}
                     preferredHotels={preferredHotels}
                     onSelectPreferredHotel={handleSetPreferredHotel}
                     onSelectDestination={(dest) => {
@@ -664,17 +641,7 @@ export default function App() {
                   <BudgetPlannerView
                     config={activeItinerary}
                     onBackToItinerary={() => {
-                      if (!activeItinerary) {
-                        const demo: ItineraryConfig = {
-                          cityId: "somnath",
-                          tripDays: 2,
-                          budget: 8500,
-                          startingHotelId:
-                            preferredHotels["somnath"] || "premier-somnath",
-                          startTime: "08:00 AM",
-                        };
-                        setActiveItinerary(demo);
-                      }
+                      if (!activeItinerary?.tripId) { setPlannerOpen(true); return; }
                       navigate("/itinerary");
                     }}
                     onBackToPlanner={() => {
@@ -697,6 +664,7 @@ export default function App() {
                 >
                   <ItineraryView
                     config={activeItinerary}
+                    onPersistedConfig={(config) => { setActiveItinerary(config); saveItineraryToSession(config); }}
                     preferredHotels={preferredHotels}
                     onSelectPreferredHotel={handleSetPreferredHotel}
                     onBackToPlanner={() => {
@@ -772,33 +740,10 @@ export default function App() {
                         </p>
                       </div>
 
+                      {catalog.loading && <p role="status">Loading stays...</p>}
+                      {catalog.error && <p role="alert">{catalog.error} <button onClick={catalog.reload}>Retry</button></p>}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
-                          {
-                            name: "House of MG",
-                            location: "Old City, Ahmedabad",
-                            type: "1924 Textile Merchant Mansion",
-                            rate: "₹6,200 / night",
-                            dist: "Opposite Sidi Saiyyed Mosque",
-                            img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-                          },
-                          {
-                            name: "Royal Oasis Palace",
-                            location: "Wankaner, Morbi",
-                            type: "Indo-Gothic Royal Estate",
-                            rate: "₹7,800 / night",
-                            dist: "Near Modhera & Sun Temple Circuit",
-                            img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
-                          },
-                          {
-                            name: "Rann Riders Safari Resort",
-                            location: "Dasada, Little Rann",
-                            type: "Traditional Bhunga Cottages",
-                            rate: "₹5,500 / night",
-                            dist: "Wild Ass Sanctuary & Salt Flats",
-                            img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600",
-                          },
-                        ].map((hotel, idx) => (
+                        {destinations.flatMap(d => d.hotels).slice(0, 3).map(h => ({name:h.name,location:h.location,type:h.stayType,rate:h.pricePerNight,dist:h.description,img:h.imageUrl})).map((hotel, idx) => (
                           <div
                             key={idx}
                             className="bg-ink text-salt p-4 border border-stone/40 space-y-3"

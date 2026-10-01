@@ -1,0 +1,383 @@
+{
+  "verified": true,
+  "generatedAt": "2026-10-01T09:06:09.334Z",
+  "baseUrl": "http://127.0.0.1:30979",
+  "client": "curl",
+  "backend": "real PostgreSQL; no mocked credential lookup",
+  "redactions": "Passwords and signed bearer tokens are redacted; statuses, UUIDs, and response fields are actual.",
+  "testUsersRemoved": true,
+  "hashEvidence": {
+    "algorithm": "bcrypt",
+    "rounds": 12,
+    "matchesSuppliedPassword": true,
+    "storedPlaintext": false
+  },
+  "decodedClaims": {
+    "role": "tourist",
+    "iat": 1790845567,
+    "exp": 1790849167,
+    "sub": "fd51e081-324b-4242-85f6-2460285e40c2"
+  },
+  "exchanges": [
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Invalid Email",
+          "email": "not-an-email",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "error": {
+            "message": "Invalid request",
+            "issues": [
+              {
+                "path": "email",
+                "message": "Invalid email address"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Weak Password",
+          "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "error": {
+            "message": "Invalid request",
+            "issues": [
+              {
+                "path": "password",
+                "message": "Too small: expected string to have >=12 characters"
+              },
+              {
+                "path": "password",
+                "message": "Password must contain an uppercase letter"
+              },
+              {
+                "path": "password",
+                "message": "Password must contain a number"
+              },
+              {
+                "path": "password",
+                "message": "Password must contain a symbol"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Invalid Role",
+          "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]",
+          "role": "admin"
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "error": {
+            "message": "Invalid request",
+            "issues": [
+              {
+                "path": "role",
+                "message": "Invalid option: expected one of \"tourist\"|\"tour_operator\""
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Long UTF8",
+          "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "error": {
+            "message": "Invalid request",
+            "issues": [
+              {
+                "path": "password",
+                "message": "Password must not exceed 72 UTF-8 bytes"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Authentication Test Tourist",
+          "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "user": {
+            "id": "fd51e081-324b-4242-85f6-2460285e40c2",
+            "name": "Authentication Test Tourist",
+            "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Authentication Test Operator",
+          "email": "operator-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]",
+          "role": "tour_operator"
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "user": {
+            "id": "d6054a65-68d2-4587-948e-184782af2c46",
+            "name": "Authentication Test Operator",
+            "email": "operator-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+            "role": "tour_operator"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/register",
+        "body": {
+          "name": "Duplicate",
+          "email": "TOURIST-919771BD-D4F4-4B23-9822-B9E4CD065396@EXAMPLE.TEST",
+          "password": "[redacted]",
+          "role": "tourist"
+        }
+      },
+      "response": {
+        "status": 409,
+        "body": {
+          "error": {
+            "message": "Record already exists"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "body": {
+          "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "token": "[redacted]",
+          "tokenType": "Bearer",
+          "expiresIn": 3600,
+          "user": {
+            "id": "fd51e081-324b-4242-85f6-2460285e40c2",
+            "name": "Authentication Test Tourist",
+            "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "body": {
+          "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]"
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": {
+          "error": {
+            "message": "Invalid email or password"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "body": {
+          "email": "nonexistent-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]"
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": {
+          "error": {
+            "message": "Invalid email or password"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "user": {
+            "id": "fd51e081-324b-4242-85f6-2460285e40c2",
+            "name": "Authentication Test Tourist",
+            "email": "tourist-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+            "role": "tourist"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/status"
+      },
+      "response": {
+        "status": 401,
+        "body": {
+          "error": {
+            "message": "Bearer token required"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/status",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 403,
+        "body": {
+          "error": {
+            "message": "Access denied"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/status",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 401,
+        "body": {
+          "error": {
+            "message": "Invalid or expired token"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/status",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 401,
+        "body": {
+          "error": {
+            "message": "Invalid or expired token"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "path": "/api/auth/login",
+        "body": {
+          "email": "operator-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+          "password": "[redacted]"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "token": "[redacted]",
+          "tokenType": "Bearer",
+          "expiresIn": 3600,
+          "user": {
+            "id": "d6054a65-68d2-4587-948e-184782af2c46",
+            "name": "Authentication Test Operator",
+            "email": "operator-919771bd-d4f4-4b23-9822-b9e4cd065396@example.test",
+            "role": "tour_operator"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "path": "/api/admin/status",
+        "authorization": "Bearer [redacted]"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "user": {
+            "id": "d6054a65-68d2-4587-948e-184782af2c46",
+            "role": "tour_operator"
+          }
+        }
+      }
+    }
+  ]
+}

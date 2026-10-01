@@ -1,3 +1,4 @@
-# Frontend Unit & Component Tests (`tests/frontend/`)
+# Frontend tests
 
-Contains test suites for React components (PlannerModal, ItineraryView, DijkstraVisualizer, AdminDashboardView) and utility functions.
+Playwright/Chrome browser and API-client harnesses, a catalog-image regression,
+and reference planner assertions. See [the test guide](../README.md).

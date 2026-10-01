@@ -1,229 +1,245 @@
-# Heritage Tourism Planner for Gujarat
-> **Course:** CSC210 Introduction to Data Structures & Algorithms — Ahmedabad University  
-> **Group:** Group 07  
----
+# Heritage Tourism Planner
 
-## Live Demo Deployment
+A Gujarat heritage and tourism planning platform built for CSC210 Data Structures & Algorithms, Group 07, Ahmedabad University.
 
-A demo test deployment of the frontend and UI is live on Vercel:
+## Overview
 
-🌐 **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**
-
-You can test the interactive itinerary planner, Dijkstra graph visualizer, budget calculator, and responsive UI components live in your browser.
-
----
-
-## Project Overview
-
-The **Heritage Tourism Planner for Gujarat** is an intra-city algorithmic itinerary generator and budget optimization engine designed specifically for historic, cultural, and eco-tourism destinations across Gujarat, India. 
-
-Commercial travel platforms focus primarily on inter-city transport booking or static multi-city packages, leaving tourists to manually figure out daily schedules inside a destination. Manual intra-city trip planning is inefficient—requiring users to balance physical road distances, attraction visit durations, realistic arrival/departure timestamps, compulsory meal breaks, accommodation costs, and strict budget caps.
-
-Our system models each destination city as a dedicated spatial road graph and applies core Data Structures and Algorithms (DSA)—including **Graphs**, **Dijkstra's Shortest Path**, **Min-Heap Priority Queues**, **Tries**, **Hash Tables**, **Greedy Optimization**, and **Merge Sort**—to instantly generate minute-by-minute, budget-aware circular itineraries.
-
----
-
-## Scope Statement (Intra-City Focus)
-
-> [!IMPORTANT]
-> **Single-City Scope Notice:** The user selects **one city at a time** from 8 fixed Gujarat heritage destinations (*Somnath, Dwarka, Rann of Kutch, Gir, Modhera, Champaner, Saputara, Ahmedabad*) and receives a **circular multi-day plan**:  
-> $$\text{Hotel} \longrightarrow \text{Attractions} \longrightarrow \text{Hotel}$$  
-> **There is no inter-city routing anywhere in this system.** Travel between cities is left entirely to the user. This single-city focus enables realistic road-graph modeling, precise time-budgeting, and a mathematically rigorous DSA demonstration.
-
----
+The React application uses a real Express/PostgreSQL backend to search destinations and generate persisted itineraries. A trip covers one destination, with each day starting and ending at the selected hotel. The backend schedules eligible attractions and meals using stored road routes, time windows and the available budget. Saved stops and price snapshots remain available after login and restart.
 
 ## Key Features
 
-- **Trie-Backed Autocomplete Search:** Instant $O(L)$ prefix search across cities and heritage attractions (`Dw` $\rightarrow$ `Dwarka`).
-- **Circular Intra-City Itinerary Generation:** Builds day-by-day schedules starting and ending at the user's selected hotel with exact arrival/departure times.
-- **Automated Meal Break Insertion:** Automatically injects 60-minute lunch (12:30 PM – 2:30 PM) and dinner (7:30 PM – 9:30 PM) windows without violating daily schedule bounds.
-- **Hotel Suggestions & Priority Queue Ranking:** Recommends and ranks accommodation options based on user budget tier and rating-per-cost efficiency.
-- **Interactive Budget Breakdown:** Provides dynamic itemized financial tracking across Hotels, Entry Fees, Meals, and Intra-City Transit.
-- **Interactive Dijkstra Visualizer:** Features an educational step-by-step visualizer illustrating node relaxation, priority queue updates, and shortest-path construction.
-- **Tour Operator Admin Dashboard:** CMS panel allowing tourism operators to manage destinations, attractions, hotels, and restaurants.
-- **PDF Itinerary Export:** Instant single-click PDF generation of day-by-day itineraries using `jspdf` and `html2canvas`.
+- Destination and attraction search with backend Trie prefix matching; the shared academic Trie also includes tested Levenshtein fuzzy search.
+- Destination details, attractions and hotels; restaurant data supports the API and meal scheduling.
+- Hotel sorting by price, rating and value using the shared Merge Sort implementation.
+- Registration, login, authenticated trip discovery and persisted itinerary/budget retrieval.
+- Route-aware, multi-day planning with selected-hotel retention and explicit incomplete-plan warnings.
+- Known-cost budget breakdowns, strategy comparison, PDF export and an educational Dijkstra visualizer.
+- Operator CRUD for destinations, attractions, hotels and restaurants, with server-side role and ownership checks.
+- Wheelchair filtering where supported by recorded attraction data; unknown suitability is not treated as accessible.
+- Production-like local Docker stack, health checks, guarded imports, backup/restore tools and GitHub Actions verification.
 
----
+## Supported Destinations
+
+Ahmedabad / Somnath / Dwarka / Modhera / Champaner / Gir National Park / Rann of Kutch / Saputara.
+
+## Technology Stack
+
+Versions below describe the manifests; exact resolved dependencies are pinned in the npm lockfiles.
+
+| Area | Technologies |
+|---|---|
+| Frontend | React 19, TypeScript 5.8, Vite 6, Tailwind CSS 4, Motion, Lucide React |
+| Export | jsPDF, html2canvas, dom-to-image-more |
+| Backend | Node.js 22.18+, Express 5, JavaScript ES modules, shared TypeScript through tsx |
+| Database | PostgreSQL 17, node-postgres, SQL migrations |
+| Security | bcrypt, jsonwebtoken, Zod, Helmet, express-rate-limit, exact-origin CORS |
+| Infrastructure | Docker Compose, nonroot nginx/API images, optional Caddy HTTPS, GitHub Actions |
+| Testing | Node test runner, TypeScript assertion suites, Python Playwright with Google Chrome, real HTTP/PostgreSQL integration |
 
 ## System Architecture
 
-```mermaid
-flowchart TD
-    U["User<br/>Tourist / Tour Operator"] --> FE
+```text
+Browser
+  -> React frontend (nginx in the local production stack)
+  -> Shared API client (frontend/src/api/index.ts)
+  -> Express REST API
+  -> Services + shared DSA modules
+  -> PostgreSQL (catalog, users, trips, stops, budgets)
 
-    subgraph FE["React Frontend (Built & Verified)"]
-        direction TB
-        FE1["City Search / Explore"]
-        FE2["City Overview"]
-        FE3["Trip Planner (3-Step Wizard)"]
-        FE4["Itinerary View (Circular Route)"]
-        FE5["Budget Breakdown"]
-        FE6["Hotels Explorer"]
-        FE7["Admin Dashboard (CMS)"]
-    end
-
-    FE -->|REST API| BE
-
-    subgraph BE["Express Backend (Specification Ready)"]
-        direction TB
-        BE1["Auth Service"]
-        BE2["City & Attraction Service"]
-        BE3["Hotel & Restaurant Service"]
-        BE4["Trip & Itinerary Service"]
-        BE5["Budget Service"]
-        BE6["Admin Service"]
-    end
-
-    BE --> DSA
-    BE --> DB
-
-    subgraph DSA["DSA Engine (Intra-City)"]
-        direction TB
-        D1["Graph — City's Attractions + Hotel"]
-        D2["Dijkstra — Fallback Shortest Path"]
-        D3["Priority Queue — Powers Dijkstra & Ranks Hotels"]
-        D4["Greedy — Circular Ordering & Time-Budget Split"]
-        D5["Trie — Prefix Search Autocomplete"]
-        D6["Hash Table — O(1) City Entity Lookup"]
-        D7["Merge Sort — Display Ranking"]
-    end
-
-    subgraph DB["PostgreSQL Database"]
-        direction TB
-        T1["destinations (cities)"]
-        T2["attractions"]
-        T3["hotels"]
-        T4["restaurants"]
-        T5["routes (intra-city attraction pairs)"]
-        T6["trips & itinerary_stops"]
-    end
+Public deployment: HTTPS reverse proxy -> nginx -> private API -> private database
 ```
 
----
+The runtime catalog and planner use PostgreSQL. Bundled reference data and the older client planner remain for academic comparisons; the production build audit verifies that they are excluded from the runtime module graph.
 
-## Data Structures & Algorithms (DSA Engine)
+## Project Structure
 
-| DSA / Algorithm | Scope | Role in System | Technical Justification |
-| :--- | :--- | :--- | :--- |
-| **Graph (Adjacency List)** | Single City | Represents intra-city road network | Weighted, undirected spatial graph where vertices are hotels/attractions and edge weights represent travel time (mins) and road distance (km). |
-| **Dijkstra's Algorithm** | Single City | Supporting Shortest-Path Finder | Computes the shortest path between two attractions in the same city when no direct road edge connects them directly. |
-| **Priority Queue (Min-Heap)** | System-Wide | Node Selection & Efficiency Ranking | Powers $O(\log V)$ node extraction in Dijkstra and ranks hotels/attractions by rating-to-cost ratios. |
-| **Trie (Prefix Tree)** | System-Wide | Autocomplete Search | Stores city and attraction names for fast $O(L)$ prefix lookups ($L = \text{query length}$) on search input. |
-| **Hash Table (Map / Index)** | System-Wide | $O(1)$ Direct Entity Lookup | Maps confirmed city IDs to their attraction lists, hotels, and restaurant records for instant retrieval. |
-| **Greedy Heuristic** | Single City | Itinerary Builder & Time Budgeting | Builds circular routes via nearest-neighbor, splits attractions across days by remaining time budget (not fixed count), and allocates money across categories. |
-| **Merge Sort** | System-Wide | Custom Display Ranking | Sorts destinations, hotels, and attractions by rating, price, or distance in $O(N \log N)$ time. |
-
-### What Dijkstra Does vs. What Greedy Does
-- **Greedy Heuristic** is the *itinerary builder*: it decides the visiting sequence of attractions for the day, enforces time limits, and handles hotel return.
-- **Dijkstra's Algorithm** is a *utility solver*: it calculates the true shortest road path between non-adjacent attractions when direct edges do not exist in the city graph.
-
----
-
-## Repository Structure
-
-```
-group-07-heritage-tourism-planner/
-├── frontend/                        # Built & Verified React 19 Frontend
-│   ├── src/
-│   │   ├── components/             # React UI components (Itinerary, Dijkstra, Admin, etc.)
-│   │   ├── data/                   # Heritage datasets & color tokens (Stepwell theme)
-│   │   ├── App.tsx                 # Main application state & routing
-│   │   ├── index.css               # Tailwind CSS v4 design system
-│   │   └── main.tsx                # Application entry point
-│   ├── package.json                # Frontend dependencies & scripts
-│   ├── tsconfig.json               # TypeScript configuration
-│   └── vite.config.ts              # Vite 6 build pipeline
-├── docs/
-│   └── foundation/                 # Comprehensive Academic Documentation
-│       ├── 01_Project_Proposal.md  # University-level project proposal (20 sections)
-│       ├── 02_System_Architecture.md # Complete system architecture specification
-│       └── 03_Frontend_Documentation.md # Frontend audit & component documentation
-├── LICENSE                         # MIT License
-└── README.md                       # Main Repository Documentation
+```text
+frontend/   React application, static assets and Vite/nginx configuration
+backend/    REST API, services, ordered migrations, tooling, unit tests and reports
+database/   Canonical schema and historical SQL examples
+data/       Approved CSVs, researched supplements and source evidence
+dsa/        Shared TypeScript algorithms and data structures
+tests/      DSA assertions and real browser/integration harnesses
+scripts/    Local operations and sequential verification runners
+deploy/     PostgreSQL initialization and optional HTTPS configuration
+docs/       Setup, deployment, academic design and research documentation
+.github/    CI workflow
 ```
 
----
+## Algorithms / Data Structures
 
-## Supported Heritage Destinations
+| Implementation | Actual purpose |
+|---|---|
+| [Trie](dsa/trie/Trie.ts) | Runtime prefix search over database-derived names; the cache refreshes periodically. Levenshtein fuzzy search is preserved/tested in this module but is not enabled by the public search endpoint. |
+| [Merge Sort](dsa/sorting/mergeSort.ts) | Stable hotel ordering through [hotelRanking.js](backend/services/hotelRanking.js). |
+| [Dijkstra](dsa/dijkstra/dijkstra.ts), [Graph](dsa/graph/Graph.ts), [MinHeap](dsa/priorityQueue/MinHeap.ts) | Shortest-path fallback for eligible missing-direct attraction pairs. Stored direct routes take precedence. |
+| [Trip planner](backend/services/tripPlanner.js), [greedy helpers](dsa/greedy/) | Scores candidates and schedules visits, meals and hotel returns within time/budget constraints. This is a heuristic, not a global optimum guarantee. |
+| [Trip model](backend/models/tripModel.js) | Transactional persistence, bounded serialization retries and stored cost snapshots. |
+| [Hash table](dsa/hashTable/HashTable.ts) | Preserved standalone academic implementation; see [DSA documentation](dsa/README.md). |
 
-1. **Ahmedabad** *(Sabarmati Ashram, Adalaj Stepwell, Kankaria Lake, Jama Masjid)*
-2. **Somnath** *(Somnath Temple, Triveni Sangam, Prabhas Patan Museum, Bhalka Tirth)*
-3. **Dwarka** *(Dwarkadhish Temple, Nageshwar Jyotirlinga, Beyt Dwarka, Rukmini Devi Temple)*
-4. **Rann of Kutch** *(White Desert, Kalo Dungar, Dhordo Cultural Village, Hodka Craft Village)*
-5. **Gir** *(Gir National Park Safari, Devalia Safari Park, Kamleshwar Dam, Uparkot Fort)*
-6. **Modhera** *(Modhera Sun Temple, Surya Kund, Stepwell Heritage Park, Panchasara Temple)*
-7. **Champaner** *(Champaner Archaeological Park, Kalika Mata Temple, Jama Masjid, Kevada Masjid)*
-8. **Saputara** *(Saputara Lake, Sunset Point, Gira Waterfalls, Artist Village)*
+## Current Data
 
----
+The approved catalog is verified during release acceptance; see [release verification](docs/RELEASE_VERIFICATION.md) for the dated measured result.
 
-## Quick Start & Local Setup
+| Records | Count |
+|---|---:|
+| Destinations | 8 |
+| Attractions | 25 |
+| Hotels | 11 |
+| Restaurants | 12 |
+| Routes | 131 |
 
-> [!TIP]
-> You can try the live frontend demo immediately without local installation at **[https://demo-group7.vercel.app/](https://demo-group7.vercel.app/)**.
+These are catalog counts, not a claim that every tourism field is independently verified. The original CSVs cover only part of the catalog; researched JSON supplements supply the remaining destinations and road evidence. Simulated CSV routes are excluded from the approved import.
 
-### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm**: v9.0.0 or higher
+## Quick Start
 
-### Installation & Running Locally
+Install Node.js 22.18+ and Docker with Compose v2 (Linux containers), then:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner.git
-   cd group-07-heritage-tourism-planner
-   ```
+```sh
+git clone https://github.com/satvikp-coder/demo-group7.git
+cd demo-group7
+npm run local:up
+```
 
-2. **Navigate to the frontend directory:**
-   ```bash
-   cd frontend
-   ```
+Open **http://localhost:8080**. Startup generates private credentials, builds the images, applies migrations and imports approved data only for a fresh database. Later starts preserve existing managed data.
 
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+```sh
+npm run local:status
+npm run local:stop
+```
 
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open your browser and navigate to `http://localhost:3000`.
+Stop preserves the database volume. Keep the generated private environment file with that volume. See [Local Production](docs/LOCAL_PRODUCTION.md) for restart, operator approval, backup and restore.
 
-5. **Type-check and Build for Production:**
-   ```bash
-   # Type check TypeScript codebase
-   npx tsc --noEmit
+## Development Setup
 
-   # Production build
-   npm run build
-   ```
+Use Node.js 22.18+, npm and a dedicated PostgreSQL database. Copy `backend/.env.example` to `backend/.env` and `frontend/.env.example` to `frontend/.env.local`. Set your own database connection and random signing key; examples contain no working credentials.
 
----
+```sh
+npm ci --prefix backend
+npm ci --prefix frontend
+npm --prefix backend run db:migrate
+npm --prefix backend run db:seed
+npm --prefix backend run db:verify
+```
 
-## Project Documentation Index
+Run these in separate terminals:
 
-Detailed academic and technical documentation is available in the [`docs/foundation/`](docs/foundation/) and [`database/`](database/) directories:
+```sh
+npm --prefix backend run dev
+npm --prefix frontend run dev
+```
 
-- [`docs/foundation/00_Foundation_Audit.md`](docs/foundation/00_Foundation_Audit.md) — *Master audit checklist tracking completion of all academic and technical foundation artifacts.*
-- [`docs/foundation/01_Project_Proposal.md`](docs/foundation/01_Project_Proposal.md) — *20-section project proposal, research questions (RQ1–RQ5), and evaluation criteria.*
-- [`docs/foundation/02_Requirements_Specification.md`](docs/foundation/02_Requirements_Specification.md) — *Complete Software Requirements Specification (SRS), FR-01–FR-22, NFRs, user stories, use cases, and edge cases.*
-- [`docs/foundation/03_System_Architecture.md`](docs/foundation/03_System_Architecture.md) — *High-level system architecture, DSA mapping, database schema (ERD), and API endpoints.*
-- [`docs/foundation/04_DSA_Architecture.md`](docs/foundation/04_DSA_Architecture.md) — *Master DSA specification for Graph, Dijkstra, Min-Heap, Greedy heuristics, Trie, Hash Table, and Merge Sort.*
-- [`docs/foundation/05_Frontend_Documentation.md`](docs/foundation/05_Frontend_Documentation.md) — *Frontend tech stack, "Stepwell" visual identity tokens, component guide, and WCAG AA accessibility state.*
-- [`docs/foundation/06_Database_Design.md`](docs/foundation/06_Database_Design.md) — *Production PostgreSQL 3NF DDL, intra-city route tables, GIN/B-tree indexes, seed data, and backend graph hydration.*
-- [`docs/foundation/07_Data_Collection_Plan.md`](docs/foundation/07_Data_Collection_Plan.md) — *Data collection standards, 4 CSV schemas (attractions, routes, hotels, restaurants), quality rules, prioritization phases, and team assignments.*
-- [`database/schema/heritage_planner_schema.sql`](database/schema/heritage_planner_schema.sql) — *Consolidated 3NF PostgreSQL DDL schema with extensions, check constraints, GIN trigram & B-tree indexes.*
-- [`database/seeds/ahmedabad_gujarat_full_seed.sql`](database/seeds/ahmedabad_gujarat_full_seed.sql) — *Master seed SQL script covering 7 Gujarat destinations and 175 verified attractions (25 each).*
+Frontend: `http://localhost:3000`; API: `http://localhost:5000/api`. Match `CORS_ORIGIN` and `VITE_API_BASE_URL` to those origins. Use a dedicated development database and an owner connection for migrations. Public deployments use separate restricted runtime credentials.
 
----
+## Environment Variables
+
+| Name | Purpose |
+|---|---|
+| `DATABASE_URL` | Backend PostgreSQL connection; runtime role in production. |
+| `DATABASE_ADMIN_URL` | Maintenance-only owner connection for Compose. |
+| `JWT_SECRET` | Private random signing key. |
+| `PORT`, `NODE_ENV` | Backend listening port and runtime mode. |
+| `CORS_ORIGIN` | Exact allowed frontend origin(s). |
+| `VITE_API_BASE_URL` | Public frontend API root; never put secrets in Vite variables. |
+| `POSTGRES_PASSWORD`, `POSTGRES_APP_PASSWORD` | Independent Compose owner/runtime credentials. |
+| `DATABASE_SSL`, `DATABASE_SSL_CA_FILE` | Hosted PostgreSQL certificate validation. |
+| `DB_POOL_MAX`, `DB_CONNECTION_TIMEOUT_MS`, `DB_IDLE_TIMEOUT_MS`, `DB_STATEMENT_TIMEOUT_MS`, `DB_TRANSACTION_IDLE_TIMEOUT_MS` | Connection and query limits. |
+| `TRUST_PROXY`, `AUTH_RATE_LIMIT`, `GENERATION_RATE_LIMIT` | Trusted proxy and abuse limits. |
+| `ALLOW_OPERATOR_REGISTRATION` | Development setting; production always forbids self-assignment. |
+| `HTTP_PORT`, `PUBLIC_HOSTNAME` | Local edge port and optional public TLS hostname. |
+
+See the [complete configuration reference](docs/PRODUCTION.md#environment-variables) and safe `.env.production.example`.
+
+## Database Setup
+
+`db:migrate` applies fresh schema and checksum-tracked ordered migrations. `db:seed` imports pinned approved CSVs, researched manifests and route evidence transactionally. Repeated imports preserve IDs, accounts and saved trips, and reject conflicting operator edits. `db:verify` checks approved records and relationships.
+
+Use `npm run local:verify` and, after reviewing approved data changes, `npm run local:seed` for the local Docker stack. Never apply legacy reset/seed SQL to saved data. The [production runbook](docs/PRODUCTION.md#database-migrations-and-approved-data) explains backup, reviewed adoption and safe reseeding.
+
+## Running Tests
+
+Install backend/frontend dependencies as above, Python and Google Chrome, then:
+
+```sh
+python -m pip install -r requirements-tests.txt
+npm run test:all:local
+npm run test:production
+npm run test:local
+```
+
+Run suites sequentially. `test:all:local` adapts the unified `npm run test:all` to the local Docker database; the unified suite creates and removes an isolated test database. Container tests use an independent stack. Local acceptance checks the persistent stack and cleans exact fixture IDs.
+
+| Command | Coverage |
+|---|---|
+| `npm run test:unit` | Backend unit/security and frontend Trie/image/planner tests. |
+| `npm run test:planner` | Academic reference planner assertions. |
+| `npm run test:integration` | Auth, destination, trip, admin and DB constraints; requires configured test DB. |
+| `npm run test:browser` | Real browser/API flows; requires running test API/frontend. |
+| `npm --prefix frontend run lint` | TypeScript checking. |
+| `npm --prefix backend run build` | Backend JavaScript syntax checking. |
+| `npm run audit:source` | Credential patterns and frontend preservation. |
+
+The unified suite also builds production assets and runs both npm security audits. See [testing details](tests/README.md) for prerequisites and individual suite environments.
+
+## Production-Like Local Verification
+
+The repository includes the validated nginx/Express/PostgreSQL local stack, successful tourist/operator browser flows, persistence and recovery checks. Current release results are in [Release Verification](docs/RELEASE_VERIFICATION.md); earlier detailed readiness evidence is in [Local Final Readiness](backend/reports/LOCAL_FINAL_READINESS.md). These results do not claim public deployment.
+
+## API Overview
+
+All categories are under `/api`:
+
+- `/auth`: registration, login and current account.
+- `/destinations`: catalog, search, details, attractions, hotels and restaurants.
+- `/trips`: authenticated owner trip discovery, creation, generation and persisted retrieval.
+- `/trips/:id/budget`: saved known-cost breakdown.
+- `/admin`: operator-only catalog CRUD.
+
+See [backend API documentation](backend/README.md) for contracts and permissions.
+
+## Data Sources and Provenance
+
+Data comes from researched public and official tourism/business sources, with source dates, archived evidence and field-level qualifications in [data/research](data/research/) and the [provenance report](backend/reports/data-provenance.md). [Research limitations](backend/reports/COMPLETION_RESEARCH.md) distinguish verified identity, historical quotes, derived values and unknowns.
+
+Prices, opening hours and accessibility can change. Confirm them with the destination/provider before travel. Retained external image URLs are provenance, not redistribution licenses; the runtime catalog uses existing local fallback graphics.
+
+## Security
+
+Implemented protections include bcrypt password hashing, expiring HS256 JWTs, current-account role checks, trip ownership, bound SQL, Zod request validation, rate limiting, security headers and restrictive CORS. Production operators require owner approval. Private environments and database archives are ignored; only safe environment templates are tracked. Public operation requires HTTPS, independent secrets and provider backups/monitoring.
+
+## Documentation
+
+- [Local setup and operations](docs/LOCAL_PRODUCTION.md)
+- [Production deployment, backup and recovery](docs/PRODUCTION.md)
+- [Release verification and repository cleanup](docs/RELEASE_VERIFICATION.md)
+- [Testing](tests/README.md)
+- [Backend API](backend/README.md) and [frontend integration](frontend/README.md)
+- [Data provenance](backend/reports/data-provenance.md) and [data collection report](backend/reports/DATA_COMPLETION_REPORT.md)
+- [Academic foundation](docs/foundation/) and [research experiments](docs/research/)
+- [Repository map](docs/REPOSITORY_STRUCTURE.md)
+
+Academic proposals and old experiment baselines are retained as historical design/research records. Current source, setup runbooks and release verification take precedence over their earlier scope/status claims.
+
+## Known Limitations
+
+- Dated tourism information can become stale; 23 attraction accessibility values and two admission prices remain unknown in the approved dataset.
+- Transport fares are unavailable and excluded from known-cost totals. OSRM times are estimates, not live traffic.
+- Planning is single-destination and date-free, with one opening interval; it cannot guarantee seasonal calendars, reservations or live availability. Some meal windows/routes remain incomplete.
+- A selected hotel that exceeds the budget stays selected and produces an explicit incomplete result.
+- Public recipient sharing, account editing and password recovery are unavailable; owner links remain authenticated. Offline shell support does not make trip APIs available offline.
+- Use one API instance until shared rate-limit storage is configured. Per-token revocation and large-scale capacity certification are outside this release.
+
+## Deployment Status
+
+**Locally production-ready.**
+**Public deployment/hosting configuration remains external.**
+
+The historical frontend demo is not a deployment of this backend/database release. Choose a host, configure protected secrets, database, domain/DNS, HTTPS, backups and monitoring using the production runbook.
 
 ## License
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
+See the existing [LICENSE](LICENSE), preserved from the upstream repository. Source attribution does not independently clear third-party image/data rights.
 
----
+## Contributors / Team
 
-<p center align="center">
-  Crafted for <b>CSC210 Data Structures & Algorithms</b> — Ahmedabad University
-</p>
+**Group 07, CSC210 / Ahmedabad University:** Satvik, Manya, Aryan and Sonam. Original responsibilities and academic credits are preserved in [Team Responsibilities](docs/TEAM_RESPONSIBILITIES.md).

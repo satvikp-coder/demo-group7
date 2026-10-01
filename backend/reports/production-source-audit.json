@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-01T09:11:49.608Z",
+  "scanned": 506,
+  "findings": [],
+  "privateEnvironmentFilesExcluded": [
+    ".env.local-production"
+  ],
+  "uiChanges": [],
+  "binaryAssets": [
+    "backend/reports/final-budget-browser.png",
+    "backend/reports/final-invalid-destination-browser.png",
+    "backend/reports/researched-itinerary-budget-browser.png",
+    "data/research/pages/vishalla-menu-2026-2.png",
+    "frontend/public/apple-touch-icon.png",
+    "frontend/public/assets/attractions/adalaj-stepwell.jpg",
+    "frontend/public/assets/attractions/gir-lion.jpg",
+    "frontend/public/assets/attractions/hodka-village.jpg",
+    "frontend/public/assets/attractions/kalika-mata.jpg",
+    "frontend/public/assets/attractions/kalo-dungar.jpg",
+    "frontend/public/assets/attractions/kankaria-lake.jpg",
+    "frontend/public/assets/attractions/nageshwar-temple.jpg",
+    "frontend/public/assets/attractions/nirona-crafts.jpg",
+    "frontend/public/assets/attractions/rani-ki-vav.jpg",
+    "frontend/public/assets/attractions/rukmini-temple.jpg",
+    "frontend/public/assets/attractions/sabarmati-ashram.jpg",
+    "frontend/public/assets/attractions/sarkhej-roza.jpg",
+    "frontend/public/assets/attractions/sidi-saiyyed.jpg",
+    "frontend/public/assets/destinations/ahmedabad.jpg",
+    "frontend/public/assets/destinations/champaner.jpg",
+    "frontend/public/assets/destinations/dwarka.jpg",
+    "frontend/public/assets/destinations/gir.jpg",
+    "frontend/public/assets/destinations/modhera.jpg",
+    "frontend/public/assets/destinations/rann-of-kutch.jpg",
+    "frontend/public/assets/destinations/saputara.jpg",
+    "frontend/public/assets/destinations/somnath.jpg",
+    "frontend/public/favicon-32x32.png",
+    "frontend/public/favicon.ico",
+    "frontend/public/icon-192.png",
+    "frontend/public/icon-512.png"
+  ],
+  "functionalFrontendChanges": [
+    "frontend/src/api/index.ts",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AuthView.tsx",
+    "frontend/src/components/ItineraryView.tsx",
+    "frontend/src/components/PlannerModal.tsx",
+    "frontend/src/components/ProfileDashboardView.tsx"
+  ],
+  "gitHistoryAvailable": true,
+  "verified": true
+}

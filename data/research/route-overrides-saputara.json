@@ -1,0 +1,45 @@
+{
+  "city": "saputara",
+  "routes": [
+    {
+      "to": "a802",
+      "distance_km": 2.4,
+      "travel_time_minutes": 8,
+      "checked": "2026-09-30",
+      "source_url": "https://www.google.com/maps/dir/?api=1&origin=20.574910,73.748285&destination=20.574550,73.732339&travelmode=driving",
+      "evidence": "pages/saputara-sunset-hotel-route.json",
+      "notes": "Google Maps driving approach via Sunset Road; explicitly warns restricted usage/private roads. Confirm local permission and final pedestrian access. Not a wheelchair-accessible route certification. Snapshot replaces OSRM403m snap; backend symmetrizes.",
+      "from": "h801"
+    },
+    {
+      "to": "a802",
+      "distance_km": 1.8,
+      "travel_time_minutes": 6,
+      "checked": "2026-09-30",
+      "source_url": "https://www.google.com/maps/dir/?api=1&origin=20.576641,73.745770&destination=20.574550,73.732339&travelmode=driving",
+      "evidence": "pages/saputara-sunset-lake-route.json",
+      "notes": "Google Maps driving approach via Sunset Road; explicitly warns restricted usage/private roads. Confirm local permission and final pedestrian access. Not a wheelchair-accessible route certification. Snapshot replaces OSRM403m snap; backend symmetrizes.",
+      "from": "a801"
+    },
+    {
+      "to": "a802",
+      "distance_km": 2.1,
+      "travel_time_minutes": 8,
+      "checked": "2026-09-30",
+      "source_url": "https://www.google.com/maps/dir/?api=1&origin=20.578855,73.749413&destination=20.574550,73.732339&travelmode=driving",
+      "evidence": "pages/saputara-sunset-museum-route.json",
+      "notes": "Google Maps driving approach via Sunset Road; explicitly warns restricted usage/private roads. Confirm local permission and final pedestrian access. Not a wheelchair-accessible route certification. Snapshot replaces OSRM403m snap; backend symmetrizes.",
+      "from": "a803"
+    },
+    {
+      "to": "a802",
+      "distance_km": 2.4,
+      "travel_time_minutes": 7,
+      "checked": "2026-09-30",
+      "source_url": "https://www.google.com/maps/dir/?api=1&origin=20.573700,73.747000&destination=20.574550,73.732339&travelmode=driving",
+      "evidence": "pages/saputara-sunset-restaurant-route.json",
+      "notes": "Google Maps driving approach via Sunset Road; explicitly warns restricted usage/private roads. Confirm local permission and final pedestrian access. Not a wheelchair-accessible route certification. Snapshot replaces OSRM403m snap; backend symmetrizes.",
+      "from": "r801"
+    }
+  ]
+}

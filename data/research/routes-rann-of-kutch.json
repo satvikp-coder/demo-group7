@@ -1,0 +1,255 @@
+{
+  "city": "rann-of-kutch",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/69.813823,23.933547;69.522560,23.841290;69.505280,23.796686;69.505280,23.796686?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "cd39085a-3b11-4041-83d4-58b6645f66ad",
+      "external_id": "a702",
+      "slug": "kalo-dungar",
+      "destination_id": "e50a0fd8-9206-49e4-be1c-92f5cc0345d0",
+      "name": "Kalo Dungar",
+      "lat": "23.933547",
+      "lng": "69.813823",
+      "duration_hours": "1.50",
+      "rating": null,
+      "category": "Nature",
+      "entry_fee": "No viewpoint admission charge; local transport/parking and applicable permits separate",
+      "entry_fee_numeric": "0.00",
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Published visit guidance suggests1-2 hours. IRCTC notes over1km uphill from bus parking and limited local transfer options; wheelchair access to the final viewpoint is unverified. Road routes are approach routes, not proof of step-free summit access.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Kalo Dungar is Kutch's highest hill, with views across the Great Rann and a Dattatreya temple near the summit.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; OpenStreetMap; IRCTC; regional guide",
+      "source_url": "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "cd6125bc-217a-42d1-b916-4ceb118f2b08",
+      "external_id": "a701",
+      "slug": "white-rann-dhordo",
+      "destination_id": "e50a0fd8-9206-49e4-be1c-92f5cc0345d0",
+      "name": "White Rann near Dhordo",
+      "lat": "23.841290",
+      "lng": "69.522560",
+      "duration_hours": "2.50",
+      "rating": "4.6",
+      "category": "Nature",
+      "entry_fee": "Published adult White Rann permit INR100; vehicle permit and optional activities extra; confirm current permit tariff",
+      "entry_fee_numeric": "100.00",
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "A local published day plan allocates16:30-19:00 before dinner; stored2.5 hours is that visit allowance, not opening hours. Accessibility guide reports assisted access at the viewing area but uneven salt crust beyond it. Do not infer independent wheelchair access across the flats. Permit/seasonal access must be checked.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "The White Rann near Dhordo is a seasonal salt-flat viewing destination, commonly visited around sunset and full-moon periods.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; Google Maps; local operators",
+      "source_url": "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "29e70289-6a12-4656-a41e-1b5fbf5d89f4",
+      "external_id": "h701",
+      "slug": "gateway-to-rann-resort",
+      "destination_id": "e50a0fd8-9206-49e4-be1c-92f5cc0345d0",
+      "name": "Gateway to Rann Resort",
+      "lat": "23.796686",
+      "lng": "69.505280",
+      "price_per_night": 5775,
+      "rating": "4.2",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Dhordo village, Gorewali Post, Bhuj taluka, Kutch370510",
+      "description": "Gateway to Rann Resort offers air-conditioned bhunga accommodation at Dhordo, with meals and a cultural programme included in published room packages.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Official resort booking tariff; Google Maps",
+      "source_url": "https://booking.kutchrannresort.com/",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "hotel"
+    },
+    {
+      "id": "73449388-38dc-4ee9-b111-82a8a45e3b74",
+      "external_id": "r701",
+      "slug": "gateway-rann-dining",
+      "destination_id": "e50a0fd8-9206-49e4-be1c-92f5cc0345d0",
+      "name": "Gateway to Rann Resort dining room",
+      "lat": "23.796686",
+      "lng": "69.505280",
+      "rating": null,
+      "avg_cost_per_person": 250,
+      "location": "Inside Gateway to Rann Resort, Dhordo, Gorewali, Kutch370510",
+      "cuisine": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Official resort booking page",
+      "source_url": "https://booking.kutchrannresort.com/",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        48103.3,
+        46437.9,
+        46437.9
+      ],
+      [
+        48103.3,
+        0,
+        3721.5,
+        3721.5
+      ],
+      [
+        46437.9,
+        3721.5,
+        0,
+        0
+      ],
+      [
+        46437.9,
+        3721.5,
+        0,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "HykriHVnvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAAB7JwEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "F2UrhEavj44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAAB7JwEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "nMhtjMTYm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAB7JwEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "nMhtjMTYm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAB7JwEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      }
+    ],
+    "durations": [
+      [
+        0,
+        4243.3,
+        3693.3,
+        3693.3
+      ],
+      [
+        4243,
+        0,
+        747.5,
+        747.5
+      ],
+      [
+        3690.7,
+        747.5,
+        0,
+        0
+      ],
+      [
+        3690.7,
+        747.5,
+        0,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "HykriHVnvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAAB7JwEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "F2UrhEavj44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAAB7JwEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "nMhtjMTYm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAB7JwEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "nMhtjMTYm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAB7JwEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

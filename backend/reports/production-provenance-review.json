@@ -1,0 +1,2586 @@
+{
+  "checked": "2026-10-01",
+  "records": [
+    {
+      "city": "modhera",
+      "table": "attractions",
+      "key": "a401",
+      "name": "Modhera Sun Temple",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html"
+            ],
+            "note": "Named monument identity confirmed by Gujarat Tourism; tariff and duration are separately qualified."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "entry_fee": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "opening_time": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "closing_time": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "image_url": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          },
+          "image_alt": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+              "https://www.district.in/events/sun-temple-modhera-buy-tickets",
+              "https://experiences.highwaydelite.com/experience/sun-temple-modhera/sun-temple-modhera",
+              "https://www.openstreetmap.org/node/3902218899",
+              "https://gujaratexplorers.com/destination/modhera-patan/",
+              "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg"
+            ]
+          }
+        },
+        "notes": "Current online fee preferred over conflicting historical brochures. Duration upper end of operator's 90-120 minute recommendation. Reservoir included, not duplicated as a separately charged visit. Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination.",
+        "qualification": "Named monument identity confirmed by Gujarat Tourism; tariff and duration are separately qualified."
+      }
+    },
+    {
+      "city": "modhera",
+      "table": "attractions",
+      "key": "a402",
+      "name": "Modheshwari Mata Temple",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://www.gujarattourism.com/content/dam/gujrattourism/images/articles/archeological_3.pdf"
+            ],
+            "note": "Gujarat Tourism archaeological brochure identifies Mata Modheshwari; conflicting hours remain unknown."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "entry_fee": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+              "https://www.google.com/maps/search/Modheshwari+Mata+Temple+Modhera",
+              "https://www.rudradityapremiumjourneys.com/shakti-peeth-gujarat/modheshwari-mata-temple-modhera"
+            ]
+          }
+        },
+        "notes": "Map anchor is the named Modheshwari Devi Mata Complex, archived pages/modhera-mata.json. Free admission/duration from operator guide; official tourism supports identity and description. Conflicting hours remain NULL.",
+        "qualification": "Modheshwari shrine identity confirmed; conflicting hours stay unknown."
+      }
+    },
+    {
+      "city": "modhera",
+      "table": "hotels",
+      "key": "h401",
+      "name": "Modhera Sunrise Resort",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://modherasunriseresort.com/"
+            ],
+            "note": "Business-owned website identifies this resort behind the Sun Temple."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "price_per_night": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "stay_type": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://modherasunriseresort.com/",
+              "https://www.google.com/maps/search/Modhera+Sunrise+Resort"
+            ]
+          }
+        },
+        "notes": "Google selected business snapshot pages/modhera-hotel-selected.json: Cleartrip INR2833, October2-3 2026, 2 adults, breakfast included; room category and tax basis unspecified. Dynamic nightly quote. Registered Hotel is existing application category, not verification of legal registration.",
+        "qualification": "Business-owned website identifies this resort behind the Sun Temple."
+      }
+    },
+    {
+      "city": "modhera",
+      "table": "restaurants",
+      "key": "r401",
+      "name": "Eulogia Restro Cafe, Sun Temple Modhera",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "avg_cost_per_person": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "cuisine": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+              "https://restaurant-guru.in/Eulogia-Restro-CafeSun-Temple-Modhera-Modhera"
+            ]
+          }
+        },
+        "notes": "Restaurant Guru published INR1-200 per person; stored INR200 is its upper bound as a representative budget, not a menu tariff. Business and coordinates verified in pages/modhera-cafe.json. Official menu unavailable.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    },
+    {
+      "city": "champaner",
+      "table": "attractions",
+      "key": "a501",
+      "name": "Jami Masjid, Champaner",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://vadodara.nic.in/culture-heritage/"
+            ],
+            "note": "District government identifies Jami Masjid at Champaner."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "image_url": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          },
+          "image_alt": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html",
+              "https://www.google.com/maps/search/Jami+Masjid+Champaner",
+              "https://gujaratexplorers.com/destination/jama-masjid-champaner/",
+              "https://www.storiesbysoumya.com/champaner-pavagadh-archaeological-park-heritage-site/",
+              "https://melangeoftales.com/champaner-pavagadh/",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg"
+            ]
+          }
+        },
+        "notes": "Coordinates/rating archived pages/champaner-jami.json. Online35/counter40 corroborated in two authored travel accounts and a publicly indexed June2026 ASI e-ticket. Sunrise/sunset hours are not converted into invented fixed clock times. Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination.",
+        "qualification": "District government identifies Jami Masjid at Champaner."
+      }
+    },
+    {
+      "city": "champaner",
+      "table": "attractions",
+      "key": "a502",
+      "name": "Kevada Masjid",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://vadodara.nic.in/culture-heritage/"
+            ],
+            "note": "District government identifies Kevada Masjid; no current standalone fee confirmed."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html",
+              "https://www.google.com/maps/search/Kevada+Masjid+Champaner",
+              "https://travelsetu.com/guide/kevada-masjid-tourism",
+              "https://www.renuka-voyagerforlife.com/2019/09/my-guide-to-champaner-the-ancient-city-of-gujarat.html"
+            ]
+          }
+        },
+        "notes": "Exact mosque result archived pages/champaner-kevada-selected.json. No duplicate monument-pass charge or invented free ticket.",
+        "qualification": "District government identifies Kevada Masjid; no current standalone fee confirmed."
+      }
+    },
+    {
+      "city": "champaner",
+      "table": "hotels",
+      "key": "h501",
+      "name": "Champaner Heritage Resort",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://champanerheritageresort.com/contact-us/"
+            ],
+            "note": "Business-owned contact page confirms resort identity and village; no live room quote confirmed."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "price_per_night": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "stay_type": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://champanerheritageresort.com/accommodation/",
+              "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+              "https://www.google.com/maps/search/Champaner+Heritage+Resort"
+            ]
+          }
+        },
+        "notes": "Google Maps Yatra INR9092 for October2-3 2026, two adults, breakfast included, room/taxes unspecified. Dynamic nightly quote archived pages/champaner-hotel.json. Hotel is outside the monument village; real road routes reflect distance.",
+        "qualification": "Business-owned contact page confirms resort identity and village; no live room quote confirmed."
+      }
+    },
+    {
+      "city": "champaner",
+      "table": "restaurants",
+      "key": "r501",
+      "name": "Hotel Sarvottam Restaurant, Halol",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "avg_cost_per_person": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "cuisine": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.makemytrip.com/tripideas/attractions/hotel-sarvottam",
+              "https://www.google.com/maps/search/Hotel+Sarvottam+Halol",
+              "https://restaurant-guru.in/Hotel-sarvottam-India"
+            ]
+          }
+        },
+        "notes": "Restaurant explicitly included in MakeMyTrip Champaner guide, located in Halol rather than monument village. Restaurant Guru published per-person INR150, representative estimate not fixed menu tariff. Google rating is shared hotel/business rating. Exact address/coordinates archived pages/champaner-restaurant.json.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    },
+    {
+      "city": "gir-national-park",
+      "table": "attractions",
+      "key": "a601",
+      "name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/GirBooklet.pdf"
+            ],
+            "note": "Forest department identifies Gir Jungle Trail; stored name includes project reporting-point annotation."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "opening_time": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "closing_time": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+              "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+              "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+            ]
+          }
+        },
+        "notes": "Cost is exact sum of official weekday Indian permit, Type B vehicle and base guide charges. Does not divide by assumed occupancy. Optional camera charge excluded. Map point is reporting campus, not an arbitrary forest centre. No assertion of wheelchair-compatible safari vehicle.",
+        "qualification": "Forest department identifies Gir Jungle Trail; stored name includes project reporting-point annotation."
+      }
+    },
+    {
+      "city": "gir-national-park",
+      "table": "attractions",
+      "key": "a602",
+      "name": "Devalia Interpretation Zone Bus Safari",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx"
+            ],
+            "note": "Forest department official bus-safari booking identifies Devalia; dated slots/tariff are not guaranteed."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "opening_time": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "closing_time": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+              "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+              "https://www.google.com/maps/search/Devalia+Safari+Park"
+            ]
+          }
+        },
+        "notes": "Uses current booking page's30-minute slots, not older tourism text stating45 minutes. Current bus page foreign rates also differ from older PDF; no foreign numeric price encoded. Map snapshot pages/gir-devalia-selected.json.",
+        "qualification": "Forest department official bus-safari booking identifies Devalia; dated slots/tariff are not guaranteed."
+      }
+    },
+    {
+      "city": "gir-national-park",
+      "table": "hotels",
+      "key": "h601",
+      "name": "Anil Farms Gir Jungle Resort",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://www.girjungleresort.com/about/"
+            ],
+            "note": "Business-owned website confirms Anil Farms Gir Jungle Resort identity."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "price_per_night": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "stay_type": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.girjungleresort.com/rooms/",
+              "https://www.girjungleresort.com/tariff/",
+              "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+            ]
+          }
+        },
+        "notes": "Google official-site nightly quote INR4489 for November24-26 2026, two adults, breakfast included, room/tax basis unspecified, snapshot pages/gir-hotel.json. Official static tariff expired March2026, so not presented as current. Registered Hotel is application category, not a legal registration claim.",
+        "qualification": "Business-owned website confirms Anil Farms Gir Jungle Resort identity."
+      }
+    },
+    {
+      "city": "gir-national-park",
+      "table": "restaurants",
+      "key": "r601",
+      "name": "Hotel Gir Kathiyawadi Sasan Gir",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "avg_cost_per_person": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "cuisine": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+              "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+              "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+            ]
+          }
+        },
+        "notes": "Wanderlog specifically quotes Gujarati thali INR150; secondary representative meal price, no official current menu. Cross-check Restaurant Guru reports1-200. Map snapshot pages/gir-restaurant.json verifies actual Sasan location despite Wanderlog's broad Somnath area label.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    },
+    {
+      "city": "rann-of-kutch",
+      "table": "attractions",
+      "key": "a701",
+      "name": "White Rann near Dhordo",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "entry_fee": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo",
+              "https://www.dharmitourism.com/images/KT-1-Night-2-Days-Pick-Dates.pdf",
+              "https://www.travelkutch.org/destinations/dhordo-white-rann/",
+              "https://www.rannutsavtickets.in/blog/rann-utsav-wheelchair-accessibility-guide"
+            ]
+          }
+        },
+        "notes": "Selected mapped attraction, archived pages/rann-white-selected.json. Permit source is a tour-operator published exclusion, not a successfully retrieved official current tariff; official portal unavailable during research. Price is provisional representative evidence, no guessed vehicle split.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    },
+    {
+      "city": "rann-of-kutch",
+      "table": "attractions",
+      "key": "a702",
+      "name": "Kalo Dungar",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html"
+            ],
+            "note": "Gujarat Tourism identifies Kalo Dungar."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "image_url": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          },
+          "image_alt": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html",
+              "https://www.openstreetmap.org/node/1534445723",
+              "https://gujaratexplorers.com/destination/kalo-dungar/",
+              "https://www.irctctourism.com/packagedetails/NDA29.pdf",
+              "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg"
+            ]
+          }
+        },
+        "notes": "1.5 hours is midpoint of published1-2 hour guidance, which includes hill approach; may overlap road approach time. No clock opening/closing invented for daylight access. Official page explicitly labels this photograph with the attraction name and corresponding asset path. Image HTTP content-type checked; externally hosted source retains copyright. Destination illustration is a named landmark within the destination.",
+        "qualification": "Gujarat Tourism identifies Kalo Dungar."
+      }
+    },
+    {
+      "city": "rann-of-kutch",
+      "table": "hotels",
+      "key": "h701",
+      "name": "Gateway to Rann Resort",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://booking.kutchrannresort.com/auth/signin"
+            ],
+            "note": "Business booking website identifies Gateway to Rann Resort in Dhordo."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "price_per_night": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "stay_type": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://kutchrannresort.com/accommodation/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          }
+        },
+        "notes": "Official public Bhunga AC tariff INR5500 per room/night, maximum double occupancy, plus stated5 percent GST =5775. Includes high tea, dinner and next-day breakfast. Published2026-27 page checkedSeptember30; availability/date restrictions still apply. Current budget model does not offset included meals. Application category does not assert legal registration.",
+        "qualification": "Business booking website identifies Gateway to Rann Resort in Dhordo."
+      }
+    },
+    {
+      "city": "rann-of-kutch",
+      "table": "restaurants",
+      "key": "r701",
+      "name": "Gateway to Rann Resort dining room",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "avg_cost_per_person": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://booking.kutchrannresort.com/",
+              "https://www.google.com/maps/search/Gateway+to+Rann+Resort+Dhordo"
+            ]
+          }
+        },
+        "notes": "Official optional lunch rate INR250/person. Dining service uses verified property coordinate; no separately verified dining-room coordinate or rating claimed. Cuisine left unknown in absence of a published menu. Hotel/dining room co-location cannot yield a positive road route under existing schema; no artificial distance inserted. Meal offered for resort guests; outside-guest admission not established.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    },
+    {
+      "city": "saputara",
+      "table": "attractions",
+      "key": "a801",
+      "name": "Saputara Lake",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+            ],
+            "note": "Official tourism identifies Saputara Lake."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+              "https://gujaratexplorers.com/destination/saputara-lake/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+              "https://www.google.com/maps/search/Saputara+Lake+Boating"
+            ]
+          }
+        },
+        "notes": "Duration midpoint of published 1-2 hours. General free access is not free boat admission. Map snapshot pages/saputara-lake.json; boat-house rating not applied to whole lake. Physical accessibility unverified.",
+        "qualification": "Official tourism identifies Saputara Lake."
+      }
+    },
+    {
+      "city": "saputara",
+      "table": "attractions",
+      "key": "a802",
+      "name": "Sunset Point Saputara",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+            ],
+            "note": "Official tourism mentions Sunset Point; identity only, not mapped coordinates or hours."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.openstreetmap.org/node/4832550858",
+              "https://gujaratexplorers.com/destination/sunset-point/",
+              "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+            ]
+          }
+        },
+        "notes": "Published one-hour visit recommendation and free viewpoint fee; no invented fixed opening hours.",
+        "qualification": "Official tourism mentions Sunset Point; identity only, not mapped coordinates or hours."
+      }
+    },
+    {
+      "city": "saputara",
+      "table": "attractions",
+      "key": "a803",
+      "name": "Saputara Museum",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "category": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "duration_hours": {
+            "classification": "derived_value",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "entry_fee": {
+            "classification": "dated_published_tariff",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "entry_fee_numeric": {
+            "classification": "unknown",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "best_time_note": {
+            "classification": "time_sensitive_or_qualified",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "transport_mode": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+              "https://www.google.com/maps/search/Saputara+Museum",
+              "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+            ]
+          }
+        },
+        "notes": "Secondary Indian adult prices conflict (2,5,10). Official directory lists student1 and foreign50 but no Indian adult amount. Numeric price remains unknown, so existing planner excludes this attraction. One-hour duration from MakeMyTrip. Closure snapshot pages/saputara-museum.json.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    },
+    {
+      "city": "saputara",
+      "table": "hotels",
+      "key": "h801",
+      "name": "Aakar Lords Inn Saputara",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "partially_verified",
+        "fields": {
+          "name": {
+            "classification": "verified_identity_only",
+            "checked": "2026-10-01",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/"
+            ],
+            "note": "Hotel-chain website confirms Aakar Lords Inn Saputara identity."
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "price_per_night": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "stay_type": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "description": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.lordshotels.com/inn-akar-saputara/",
+              "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+            ]
+          }
+        },
+        "notes": "Archived pages/saputara-hotel.json: Cleartrip nightly INR4560 for September30-October1 2026, two adults, breakfast included; room and tax basis unspecified. Dynamic snapshot, not guaranteed tariff. Registered Hotel is app classification, not verified legal registration.",
+        "qualification": "Hotel-chain website confirms Aakar Lords Inn Saputara identity."
+      }
+    },
+    {
+      "city": "saputara",
+      "table": "restaurants",
+      "key": "r801",
+      "name": "Anando Restaurant Saputara",
+      "review": {
+        "checked": "2026-10-01",
+        "status": "reviewed_unverified",
+        "fields": {
+          "name": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "slug": {
+            "classification": "project_classification",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "lat": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "lng": {
+            "classification": "mapped_point_not_independently_surveyed",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "rating": {
+            "classification": "dynamic_quote",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "avg_cost_per_person": {
+            "classification": "secondary_source_estimate",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "location": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "cuisine": {
+            "classification": "archive_review_only",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          },
+          "source": {
+            "classification": "source_metadata",
+            "source_date": "2026-09-30",
+            "sources": [
+              "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+              "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+              "https://tohotel.com/hotel/anandosaputara"
+            ]
+          }
+        },
+        "notes": "Justdial specifically lists INR350 for two: representative per-person175, not a menu tariff. Rating4.1 is restaurant Justdial rating, not hotel Google4.0. Hotel compound coordinate used for its attached restaurant; booking listing corroborates on-site Indian lunch/dinner. Map snapshot pages/saputara-anando-selected.json.",
+        "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+      }
+    }
+  ],
+  "reviewedRecords": 21,
+  "verifiedIdentityFields": 14,
+  "fullyVerifiedRecords": 0
+}

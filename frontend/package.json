@@ -7,10 +7,13 @@
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
+    "clean": "node -e \"require('fs').rmSync('dist', {recursive:true,force:true})\"",
     "translate": "tsx scripts/translate-content.ts",
-    "test": "tsx ../tests/dsa/trie.test.ts",
-    "lint": "tsc --noEmit"
+    "test": "npm run test:unit && npm run test:planner",
+    "lint": "tsc --noEmit",
+    "test:unit": "tsx ../tests/dsa/trie.test.ts && tsx --test ../tests/frontend/catalog-images.test.ts",
+    "test:planner": "tsx ../tests/frontend/planner.test.ts",
+    "test:all": "npm test && npm run lint && npm run build"
   },
   "dependencies": {
     "html2canvas": "^1.4.1",

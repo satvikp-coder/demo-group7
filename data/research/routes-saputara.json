@@ -1,0 +1,328 @@
+{
+  "city": "saputara",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/73.732339,20.574550;73.745770,20.576641;73.749413,20.578855;73.748285,20.574910;73.747000,20.573700?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "4286d1ee-f87b-4f6a-a410-882bf52c04ea",
+      "external_id": "a802",
+      "slug": "sunset-point-saputara",
+      "destination_id": "eba69a77-e78d-4972-9f93-e0a7c9932999",
+      "name": "Sunset Point Saputara",
+      "lat": "20.574550",
+      "lng": "73.732339",
+      "duration_hours": "1.00",
+      "rating": null,
+      "category": "Nature",
+      "entry_fee": "Free viewpoint; optional ropeway, parking and activities extra",
+      "entry_fee_numeric": "0.00",
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Visit around sunset. Road routing does not certify final pedestrian approach or wheelchair access; optional ropeway service is not included.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Sunset Point is a hill viewpoint overlooking the Sahyadri landscape near Saputara.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "OpenStreetMap; Gujarat Explorers; My Holiday Happiness",
+      "source_url": "https://www.openstreetmap.org/node/4832550858",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "7c963087-fc32-4482-ab8a-3ad3c17ed49a",
+      "external_id": "a801",
+      "slug": "saputara-lake",
+      "destination_id": "eba69a77-e78d-4972-9f93-e0a7c9932999",
+      "name": "Saputara Lake",
+      "lat": "20.576641",
+      "lng": "73.745770",
+      "duration_hours": "1.50",
+      "rating": null,
+      "category": "Nature",
+      "entry_fee": "Free lakeside visit; optional boat rides charged separately",
+      "entry_fee_numeric": "0.00",
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Coordinates identify the lakeside boating-house access point, not the centre of the water. Boat prices and operating hours are separate and not verified as a current tariff.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "Saputara Lake has lakeside gardens and a boating facility in the centre of the hill town.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; Gujarat Explorers; Google Maps",
+      "source_url": "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "b63c1890-c4b9-4ba6-89f7-7e7dfae38168",
+      "external_id": "a803",
+      "slug": "saputara-museum",
+      "destination_id": "eba69a77-e78d-4972-9f93-e0a7c9932999",
+      "name": "Saputara Museum",
+      "lat": "20.578855",
+      "lng": "73.749413",
+      "duration_hours": "1.00",
+      "rating": "3.8",
+      "category": "Museum",
+      "entry_fee": "Current Indian adult admission and reopening unknown",
+      "entry_fee_numeric": null,
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Google Maps marks temporarily closed as checked September 30, 2026. The 2023 government directory lists 10:30-17:00, closed Wednesdays, second/fourth Saturdays and government holidays. Historical schedule is not stored as current hours. Confirm reopening directly before travel.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "The state museum documents the culture of the Dangs through clothing, jewellery, masks and other ethnographic objects.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Ministry of Culture museum directory; Google Maps; MakeMyTrip",
+      "source_url": "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "00fe4b4c-f92b-466b-ad68-8f702feb9b40",
+      "external_id": "h801",
+      "slug": "aakar-lords-inn-saputara",
+      "destination_id": "eba69a77-e78d-4972-9f93-e0a7c9932999",
+      "name": "Aakar Lords Inn Saputara",
+      "lat": "20.574910",
+      "lng": "73.748285",
+      "price_per_night": 4560,
+      "rating": "4.2",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Saputara-Nashik Road, opposite Lake View Garden Circle, Saputara 394720",
+      "description": "Aakar Lords Inn provides hotel accommodation near Saputara Lake.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Official Lords Hotels website; Google Maps Cleartrip quote",
+      "source_url": "https://www.lordshotels.com/inn-akar-saputara/",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "hotel"
+    },
+    {
+      "id": "cca67c85-da96-441a-b5fd-855cb86ec94c",
+      "external_id": "r801",
+      "slug": "anando-restaurant-saputara",
+      "destination_id": "eba69a77-e78d-4972-9f93-e0a7c9932999",
+      "name": "Anando Restaurant Saputara",
+      "lat": "20.573700",
+      "lng": "73.747000",
+      "rating": "4.1",
+      "avg_cost_per_person": 175,
+      "location": "Hotel Anando, Plot5 Nageshwar Mahadev Road, Saputara 394720",
+      "cuisine": "Gujarati, Punjabi and North Indian vegetarian",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Justdial restaurant listing; Google Maps hotel location; hotel booking listings",
+      "source_url": "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        1595.5,
+        1841.7,
+        1680.6,
+        1471.4
+      ],
+      [
+        1595.5,
+        0,
+        537.4,
+        488.8,
+        698
+      ],
+      [
+        1799.9,
+        537.4,
+        0,
+        622,
+        831.2
+      ],
+      [
+        1680.6,
+        488.8,
+        622,
+        0,
+        209.2
+      ],
+      [
+        1471.4,
+        698,
+        831.2,
+        209.2,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "cCZehmJKe4oXAAAAAAAAAJ4AAACEAAAA2cbPQQAAAAAU_i5DzSASQxcAAAAAAAAAngAAAIQAAAB7JwEAdh5lBP3qOQHzEGUEVvE5AQYAHw0AAAAA",
+        "location": [
+          73.735798,
+          20.572925
+        ],
+        "name": "",
+        "distance": 403.024512
+      },
+      {
+        "hint": "myVehkJAfJJDAAAAAAAAAAAAAAByAAAAlnQ5QgAAAAAAAAAAexedQkMAAAAAAAAAAAAAAHIAAAB7JwEA1UZlBHP6OQFqRWUEgfk5AQAAvwoAAAAA",
+        "location": [
+          73.746133,
+          20.576883
+        ],
+        "name": "",
+        "distance": 46.37047916
+      },
+      {
+        "hint": "eoBfhoSAX4YxAAAAPwAAAAAAAAAAAAAA_3EKQjdhLEIAAAAAAAAAADEAAAA_AAAAAAAAAAAAAAB7JwEAdFNlBBMDOgGlU2UEJwI6AQAA_wQAAAAA",
+        "location": [
+          73.749364,
+          20.579091
+        ],
+        "name": "",
+        "distance": 26.62270964
+      },
+      {
+        "hint": "P4CthUGArYUbAAAAUAAAABYAAAApAAAALNqBQqN0O0M7O0pCHn_GQhsAAABQAAAAFgAAACkAAAB7JwEAR01lBBfzOQE9T2UEvvI5AQYArwAAAAAA",
+        "location": [
+          73.747783,
+          20.574999
+        ],
+        "name": "",
+        "distance": 53.2588635
+      },
+      {
+        "hint": "QICthaElXoYPAAAAGAAAAEUAAACPAQAAnm2JQYAx00GgF5lCsnDdQw8AAAAYAAAARQAAAI8BAAB7JwEAv0llBIPvOQE4SmUEBO45AQQA3w8AAAAA",
+        "location": [
+          73.746879,
+          20.574083
+        ],
+        "name": "",
+        "distance": 44.23945682
+      }
+    ],
+    "durations": [
+      [
+        0,
+        167.8,
+        177.1,
+        154.9,
+        134.3
+      ],
+      [
+        174.2,
+        0,
+        73.3,
+        42.2,
+        61.7
+      ],
+      [
+        175.3,
+        74.5,
+        0,
+        53.4,
+        72.9
+      ],
+      [
+        152.6,
+        45.5,
+        50.2,
+        0,
+        19.5
+      ],
+      [
+        133.1,
+        66.1,
+        70.8,
+        20.6,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "cCZehmJKe4oXAAAAAAAAAJ4AAACEAAAA2cbPQQAAAAAU_i5DzSASQxcAAAAAAAAAngAAAIQAAAB7JwEAdh5lBP3qOQHzEGUEVvE5AQYAHw0AAAAA",
+        "location": [
+          73.735798,
+          20.572925
+        ],
+        "name": "",
+        "distance": 403.024512
+      },
+      {
+        "hint": "myVehkJAfJJDAAAAAAAAAAAAAAByAAAAlnQ5QgAAAAAAAAAAexedQkMAAAAAAAAAAAAAAHIAAAB7JwEA1UZlBHP6OQFqRWUEgfk5AQAAvwoAAAAA",
+        "location": [
+          73.746133,
+          20.576883
+        ],
+        "name": "",
+        "distance": 46.37047916
+      },
+      {
+        "hint": "eoBfhoSAX4YxAAAAPwAAAAAAAAAAAAAA_3EKQjdhLEIAAAAAAAAAADEAAAA_AAAAAAAAAAAAAAB7JwEAdFNlBBMDOgGlU2UEJwI6AQAA_wQAAAAA",
+        "location": [
+          73.749364,
+          20.579091
+        ],
+        "name": "",
+        "distance": 26.62270964
+      },
+      {
+        "hint": "P4CthUGArYUbAAAAUAAAABYAAAApAAAALNqBQqN0O0M7O0pCHn_GQhsAAABQAAAAFgAAACkAAAB7JwEAR01lBBfzOQE9T2UEvvI5AQYArwAAAAAA",
+        "location": [
+          73.747783,
+          20.574999
+        ],
+        "name": "",
+        "distance": 53.2588635
+      },
+      {
+        "hint": "QICthaElXoYPAAAAGAAAAEUAAACPAQAAnm2JQYAx00GgF5lCsnDdQw8AAAAYAAAARQAAAI8BAAB7JwEAv0llBIPvOQE4SmUEBO45AQQA3w8AAAAA",
+        "location": [
+          73.746879,
+          20.574083
+        ],
+        "name": "",
+        "distance": 44.23945682
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

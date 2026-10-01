@@ -1,0 +1,1348 @@
+{
+  "checkedAt": "2026-10-01T08:43:13.601Z",
+  "baselineFiles": 89,
+  "changedFiles": [
+    "frontend/src/components/PwaInstallPrompt.tsx",
+    "frontend/src/components/StrategyComparisonModal.tsx",
+    "frontend/src/components/BudgetPlannerView.tsx",
+    "frontend/src/components/PlannerModal.tsx",
+    "frontend/src/components/ShareItineraryModal.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/DestinationDetailView.tsx",
+    "frontend/src/components/HotelsView.tsx",
+    "frontend/src/components/ItineraryView.tsx",
+    "frontend/src/api/index.ts",
+    "frontend/src/App.tsx",
+    "frontend/src/components/OfflineBanner.tsx",
+    "frontend/src/components/AdminDashboardView.tsx",
+    "frontend/src/components/ProfileDashboardView.tsx",
+    "frontend/src/components/DijkstraVisualizer.tsx",
+    "frontend/src/components/ResearchView.tsx",
+    "frontend/src/components/AuthView.tsx"
+  ],
+  "styleChecks": [
+    {
+      "file": "frontend/src/components/BudgetPlannerView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 116
+    },
+    {
+      "file": "frontend/src/components/AdminDashboardView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 114
+    },
+    {
+      "file": "frontend/src/components/ShareItineraryModal.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 24
+    },
+    {
+      "file": "frontend/src/App.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 20
+    },
+    {
+      "file": "frontend/src/components/ProfileDashboardView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 91
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 42
+    },
+    {
+      "file": "frontend/src/components/ItineraryView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 135
+    },
+    {
+      "file": "frontend/src/components/HotelsView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 73
+    },
+    {
+      "file": "frontend/src/components/Footer.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 34
+    },
+    {
+      "file": "frontend/src/components/PwaInstallPrompt.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 16
+    },
+    {
+      "file": "frontend/src/components/OfflineBanner.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 6
+    },
+    {
+      "file": "frontend/src/components/DestinationDetailView.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 154
+    },
+    {
+      "file": "frontend/src/components/StrategyComparisonModal.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 94
+    },
+    {
+      "file": "frontend/src/components/DijkstraVisualizer.tsx",
+      "stylesUnchanged": true,
+      "jsxElementSequenceUnchanged": true,
+      "attributesChecked": 48
+    }
+  ],
+  "sourceControls": [
+    {
+      "file": "frontend/src/components/AccessibilityBadge.tsx",
+      "controls": []
+    },
+    {
+      "file": "frontend/src/components/AdminDashboardView.tsx",
+      "controls": [
+        {
+          "line": 213,
+          "attribute": "onClick",
+          "handler": "{() => {setRequestError(\"\"); request.reload();}}"
+        },
+        {
+          "line": 213,
+          "attribute": "onClick",
+          "handler": "{onBackToProfile}"
+        },
+        {
+          "line": 221,
+          "attribute": "onClick",
+          "handler": "{onBackToProfile}"
+        },
+        {
+          "line": 245,
+          "attribute": "onClick",
+          "handler": "{handleOpenAddDrawer}"
+        },
+        {
+          "line": 282,
+          "attribute": "onClick",
+          "handler": "{() => setActiveTab(\"destinations\")}"
+        },
+        {
+          "line": 294,
+          "attribute": "onClick",
+          "handler": "{() => setActiveTab(\"hotels\")}"
+        },
+        {
+          "line": 306,
+          "attribute": "onClick",
+          "handler": "{() => setActiveTab(\"attractions\")}"
+        },
+        {
+          "line": 318,
+          "attribute": "onClick",
+          "handler": "{() => setActiveTab(\"restaurants\")}"
+        },
+        {
+          "line": 369,
+          "attribute": "onClick",
+          "handler": "{() => handleOpenEditDrawer(d)}"
+        },
+        {
+          "line": 375,
+          "attribute": "onClick",
+          "handler": "{() => setDeletingId(d.id)}"
+        },
+        {
+          "line": 406,
+          "attribute": "onClick",
+          "handler": "{() => handleOpenEditDrawer(h)}"
+        },
+        {
+          "line": 412,
+          "attribute": "onClick",
+          "handler": "{() => setDeletingId(h.id)}"
+        },
+        {
+          "line": 443,
+          "attribute": "onClick",
+          "handler": "{() => handleOpenEditDrawer(a)}"
+        },
+        {
+          "line": 449,
+          "attribute": "onClick",
+          "handler": "{() => setDeletingId(a.id)}"
+        },
+        {
+          "line": 480,
+          "attribute": "onClick",
+          "handler": "{() => handleOpenEditDrawer(r)}"
+        },
+        {
+          "line": 486,
+          "attribute": "onClick",
+          "handler": "{() => setDeletingId(r.id)}"
+        },
+        {
+          "line": 509,
+          "attribute": "onClick",
+          "handler": "{() => setIsDrawerOpen(false)}"
+        },
+        {
+          "line": 531,
+          "attribute": "onChange",
+          "handler": "{(e) =>\r\n                        setEditingItem({\r\n                          ...editingItem,\r\n                          data: { ...editingItem.data, name: e.target.value },\r\n                        })\r\n                      }"
+        },
+        {
+          "line": 546,
+          "attribute": "onChange",
+          "handler": "{e => setEditingItem({...editingItem,data:{...editingItem.data,destinationId:e.target.value}})}"
+        },
+        {
+          "line": 554,
+          "attribute": "onChange",
+          "handler": "{e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})}"
+        },
+        {
+          "line": 564,
+          "attribute": "onChange",
+          "handler": "{e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})}"
+        },
+        {
+          "line": 572,
+          "attribute": "onChange",
+          "handler": "{e => setEditingItem({...editingItem,data:{...editingItem.data,avgCostPerPerson:e.target.value}})}"
+        },
+        {
+          "line": 584,
+          "attribute": "onChange",
+          "handler": "{(e) =>\r\n                            setEditingItem({\r\n                              ...editingItem,\r\n                              data: {\r\n                                ...editingItem.data,\r\n                                district: e.target.value,\r\n                              },\r\n                            })\r\n                          }"
+        },
+        {
+          "line": 605,
+          "attribute": "onChange",
+          "handler": "{(e) =>\r\n                            setEditingItem({\r\n                              ...editingItem,\r\n                              data: {\r\n                                ...editingItem.data,\r\n                                category: e.target.value,\r\n                              },\r\n                            })\r\n                          }"
+        },
+        {
+          "line": 636,
+          "attribute": "onChange",
+          "handler": "{(e) =>\r\n                            setEditingItem({\r\n                              ...editingItem,\r\n                              data: {\r\n                                ...editingItem.data,\r\n                                stayType: e.target.value,\r\n                              },\r\n                            })\r\n                          }"
+        },
+        {
+          "line": 662,
+          "attribute": "onChange",
+          "handler": "{(e) =>\r\n                            setEditingItem({\r\n                              ...editingItem,\r\n                              data: {\r\n                                ...editingItem.data,\r\n                                pricePerNight: e.target.value,\n                              },\r\n                            })\r\n                          }"
+        },
+        {
+          "line": 681,
+          "attribute": "onClick",
+          "handler": "{() => setIsDrawerOpen(false)}"
+        },
+        {
+          "line": 687,
+          "attribute": "onClick",
+          "handler": "{handleSaveDrawerItem}"
+        },
+        {
+          "line": 711,
+          "attribute": "onClick",
+          "handler": "{() => setDeletingId(null)}"
+        },
+        {
+          "line": 717,
+          "attribute": "onClick",
+          "handler": "{() => handleConfirmDelete(deletingId)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/AlgorithmStatsPanel.tsx",
+      "controls": [
+        {
+          "line": 78,
+          "attribute": "onClick",
+          "handler": "{() => setIsExpanded(!isExpanded)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/AuthView.tsx",
+      "controls": [
+        {
+          "line": 125,
+          "attribute": "onClick",
+          "handler": "{onCloseOrGuest}"
+        },
+        {
+          "line": 173,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                    setMode(\"login\");\r\n                    setEmailError(\"\");\r\n                    setPasswordError(\"\");\r\n                    setFormGeneralError(\"\");\r\n                  }}"
+        },
+        {
+          "line": 190,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                    setMode(\"register\");\r\n                    setEmailError(\"\");\r\n                    setPasswordError(\"\");\r\n                    setFormGeneralError(\"\");\r\n                  }}"
+        },
+        {
+          "line": 208,
+          "attribute": "onClick",
+          "handler": "{onCloseOrGuest}"
+        },
+        {
+          "line": 231,
+          "attribute": "onSubmit",
+          "handler": "{handleLoginSubmit}"
+        },
+        {
+          "line": 250,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                        setEmail(e.target.value);\r\n                        if (emailError) setEmailError(\"\");\r\n                      }}"
+        },
+        {
+          "line": 284,
+          "attribute": "onClick",
+          "handler": "{() => setShowRecoveryNotice(false)}"
+        },
+        {
+          "line": 310,
+          "attribute": "onClick",
+          "handler": "{() => setShowRecoveryNotice(true)}"
+        },
+        {
+          "line": 324,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                        setPassword(e.target.value);\r\n                        if (passwordError) setPasswordError(\"\");\r\n                      }}"
+        },
+        {
+          "line": 338,
+          "attribute": "onClick",
+          "handler": "{() => setShowPassword(!showPassword)}"
+        },
+        {
+          "line": 370,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                      setMode(\"register\");\r\n                      setEmailError(\"\");\r\n                      setPasswordError(\"\");\r\n                    }}"
+        },
+        {
+          "line": 383,
+          "attribute": "onSubmit",
+          "handler": "{handleRegisterSubmit}"
+        },
+        {
+          "line": 394,
+          "attribute": "onClick",
+          "handler": "{() => setRole(\"tourist\")}"
+        },
+        {
+          "line": 419,
+          "attribute": "onClick",
+          "handler": "{() => setRole(\"operator\")}"
+        },
+        {
+          "line": 459,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                        setName(e.target.value);\r\n                        if (nameError) setNameError(\"\");\r\n                      }}"
+        },
+        {
+          "line": 495,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                        setEmail(e.target.value);\r\n                        if (emailError) setEmailError(\"\");\r\n                      }}"
+        },
+        {
+          "line": 528,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                        setPassword(e.target.value);\r\n                        if (passwordError) setPasswordError(\"\");\r\n                      }}"
+        },
+        {
+          "line": 558,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                        setConfirmPassword(e.target.value);\r\n                        if (confirmPasswordError) setConfirmPasswordError(\"\");\r\n                      }}"
+        },
+        {
+          "line": 589,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                      setMode(\"login\");\r\n                      setEmailError(\"\");\r\n                      setPasswordError(\"\");\r\n                    }}"
+        },
+        {
+          "line": 606,
+          "attribute": "onClick",
+          "handler": "{onCloseOrGuest}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/BestTimeNote.tsx",
+      "controls": [
+        {
+          "line": 19,
+          "attribute": "onClick",
+          "handler": "{(e) => {\r\n        e.stopPropagation();\r\n        setIsExpanded((prev) => !prev);\r\n      }}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/BudgetPlannerView.tsx",
+      "controls": [
+        {
+          "line": 105,
+          "attribute": "onClick",
+          "handler": "{request.reload}"
+        },
+        {
+          "line": 105,
+          "attribute": "onClick",
+          "handler": "{onBackToPlanner}"
+        },
+        {
+          "line": 115,
+          "attribute": "onClick",
+          "handler": "{onBackToItinerary}"
+        },
+        {
+          "line": 127,
+          "attribute": "onClick",
+          "handler": "{onBackToPlanner}"
+        },
+        {
+          "line": 141,
+          "attribute": "onClick",
+          "handler": "{handleShare}"
+        },
+        {
+          "line": 153,
+          "attribute": "onClick",
+          "handler": "{handlePrint}"
+        },
+        {
+          "line": 215,
+          "attribute": "onChange",
+          "handler": "{(e) => {\r\n                    const raw = Number(e.target.value);\r\n                    if (isNaN(raw) || raw < 0) {\r\n                      setBudgetInputError(\"Budget cannot be negative.\");\r\n                      setAllocatedBudget(0);\r\n                      setBudgetInputError(\"Use Adjust Trip Parameters to save a new budget.\");\r\n                    } else {\r\n                      setBudgetInputError(\"\");\r\n                      setAllocatedBudget(raw);\r\n                      setBudgetInputError(\"Use Adjust Trip Parameters to save a new budget.\");\r\n                    }\r\n                  }}"
+        },
+        {
+          "line": 453,
+          "attribute": "onClick",
+          "handler": "{() => toggleTip(\"hotel\")}"
+        },
+        {
+          "line": 484,
+          "attribute": "onClick",
+          "handler": "{() => toggleTip(\"pass\")}"
+        },
+        {
+          "line": 514,
+          "attribute": "onClick",
+          "handler": "{() => toggleTip(\"transit\")}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ChevronDivider.tsx",
+      "controls": []
+    },
+    {
+      "file": "frontend/src/components/DestinationDetailView.tsx",
+      "controls": [
+        {
+          "line": 76,
+          "attribute": "onClick",
+          "handler": "{request.reload}"
+        },
+        {
+          "line": 95,
+          "attribute": "onClick",
+          "handler": "{onBack}"
+        },
+        {
+          "line": 338,
+          "attribute": "onClick",
+          "handler": "{() => setWheelchairOnly(!wheelchairOnly)}"
+        },
+        {
+          "line": 381,
+          "attribute": "onClick",
+          "handler": "{() => toggleDemandFilter(level)}"
+        },
+        {
+          "line": 393,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                        setWheelchairOnly(false);\r\n                        setSelectedDemands([]);\r\n                      }}"
+        },
+        {
+          "line": 491,
+          "attribute": "onClick",
+          "handler": "{() =>\r\n                          onSelectNearbyDestination &&\r\n                          onSelectNearbyDestination(attraction.id)\r\n                        }"
+        },
+        {
+          "line": 608,
+          "attribute": "onClick",
+          "handler": "{() => onAddToTrip(destination)}"
+        },
+        {
+          "line": 634,
+          "attribute": "onClick",
+          "handler": "{() => onOpenPlannerWithSite(destination)}"
+        },
+        {
+          "line": 726,
+          "attribute": "onClick",
+          "handler": "{() =>\r\n                        onSelectPreferredHotel(destination.id, hotel.id)\r\n                      }"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/DijkstraVisualizer.tsx",
+      "controls": [
+        {
+          "line": 354,
+          "attribute": "onClick",
+          "handler": "{request.reload}"
+        },
+        {
+          "line": 382,
+          "attribute": "onChange",
+          "handler": "{(e) => setStartId(e.target.value)}"
+        },
+        {
+          "line": 395,
+          "attribute": "onChange",
+          "handler": "{(e) => setTargetId(e.target.value)}"
+        },
+        {
+          "line": 669,
+          "attribute": "onClick",
+          "handler": "{handlePlayPause}"
+        },
+        {
+          "line": 692,
+          "attribute": "onClick",
+          "handler": "{handleStepForward}"
+        },
+        {
+          "line": 703,
+          "attribute": "onClick",
+          "handler": "{handleReset}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ExploreView.tsx",
+      "controls": [
+        {
+          "line": 210,
+          "attribute": "onClick",
+          "handler": "{search.reload}"
+        },
+        {
+          "line": 231,
+          "attribute": "onChange",
+          "handler": "{(e) => setSearchQuery(e.target.value)}"
+        },
+        {
+          "line": 237,
+          "attribute": "onClick",
+          "handler": "{() => setSearchQuery('')}"
+        },
+        {
+          "line": 246,
+          "attribute": "onClick",
+          "handler": "{toggleListening}"
+        },
+        {
+          "line": 285,
+          "attribute": "onClick",
+          "handler": "{() => setSelectedCategory(cat)}"
+        },
+        {
+          "line": 305,
+          "attribute": "onClick",
+          "handler": "{() => setWheelchairOnly(!wheelchairOnly)}"
+        },
+        {
+          "line": 334,
+          "attribute": "onClick",
+          "handler": "{() => toggleDemandFilter(level)}"
+        },
+        {
+          "line": 346,
+          "attribute": "onClick",
+          "handler": "{() => { setWheelchairOnly(false); setSelectedDemands([]); }}"
+        },
+        {
+          "line": 363,
+          "attribute": "onChange",
+          "handler": "{(e) => setSortBy(e.target.value as SortOption)}"
+        },
+        {
+          "line": 395,
+          "attribute": "onClick",
+          "handler": "{handleResetFilters}"
+        },
+        {
+          "line": 497,
+          "attribute": "onClick",
+          "handler": "{() => onSelectDestination(dest)}"
+        },
+        {
+          "line": 503,
+          "attribute": "onClick",
+          "handler": "{() => onStartTripWithDestination(dest)}"
+        },
+        {
+          "line": 545,
+          "attribute": "onClick",
+          "handler": "{handleResetFilters}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/FeaturedDestinations.tsx",
+      "controls": [
+        {
+          "line": 23,
+          "attribute": "onClick",
+          "handler": "{catalog.reload}"
+        },
+        {
+          "line": 120,
+          "attribute": "onClick",
+          "handler": "{() => onSelectDestination(site)}"
+        },
+        {
+          "line": 128,
+          "attribute": "onClick",
+          "handler": "{() => onStartTripWithDestination(site)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/Footer.tsx",
+      "controls": [
+        {
+          "line": 79,
+          "attribute": "onClick",
+          "handler": "{() => handleLinkToExplore(\"explore\")}"
+        },
+        {
+          "line": 87,
+          "attribute": "onClick",
+          "handler": "{() => handleLinkToDestination(\"rann-of-kutch\")}"
+        },
+        {
+          "line": 95,
+          "attribute": "onClick",
+          "handler": "{() => handleLinkToDestination(\"somnath\")}"
+        },
+        {
+          "line": 103,
+          "attribute": "onClick",
+          "handler": "{() => handleLinkToDestination(\"champaner\")}"
+        },
+        {
+          "line": 120,
+          "attribute": "onClick",
+          "handler": "{onOpenPlanner}"
+        },
+        {
+          "line": 128,
+          "attribute": "onClick",
+          "handler": "{handleLinkToHotels}"
+        },
+        {
+          "line": 136,
+          "attribute": "onClick",
+          "handler": "{() => handleLinkToExplore(\"explore\")}"
+        },
+        {
+          "line": 144,
+          "attribute": "onClick",
+          "handler": "{() => handleLinkToExplore(\"explore\")}"
+        },
+        {
+          "line": 164,
+          "attribute": "onClick",
+          "handler": "{onOpenPlanner}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/Hero.tsx",
+      "controls": [
+        {
+          "line": 31,
+          "attribute": "onClick",
+          "handler": "{catalog.reload}"
+        },
+        {
+          "line": 79,
+          "attribute": "onClick",
+          "handler": "{() => setHeadlineIndex(idx)}"
+        },
+        {
+          "line": 107,
+          "attribute": "onClick",
+          "handler": "{onStartPlanning}"
+        },
+        {
+          "line": 115,
+          "attribute": "onClick",
+          "handler": "{onExploreClick}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/HomeTransitionOverlay.tsx",
+      "controls": [
+        {
+          "line": 27,
+          "attribute": "onClick",
+          "handler": "{catalog.reload}"
+        },
+        {
+          "line": 69,
+          "attribute": "onClick",
+          "handler": "{() => setShowBanner(false)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/HotelsView.tsx",
+      "controls": [
+        {
+          "line": 111,
+          "attribute": "onClick",
+          "handler": "{() => {catalog.reload(); hotelsRequest.reload();}}"
+        },
+        {
+          "line": 176,
+          "attribute": "onClick",
+          "handler": "{() => onSelectDestination(activeDestination)}"
+        },
+        {
+          "line": 197,
+          "attribute": "onClick",
+          "handler": "{() => setSortOrder(\"value\")}"
+        },
+        {
+          "line": 208,
+          "attribute": "onClick",
+          "handler": "{() => setSortOrder(\"rating\")}"
+        },
+        {
+          "line": 219,
+          "attribute": "onClick",
+          "handler": "{() => setSortOrder(\"price\")}"
+        },
+        {
+          "line": 311,
+          "attribute": "onClick",
+          "handler": "{() => handleSelectHotel(hotel)}"
+        },
+        {
+          "line": 355,
+          "attribute": "onClick",
+          "handler": "{() => onOpenPlanner && onOpenPlanner()}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ImageWithFallback.tsx",
+      "controls": []
+    },
+    {
+      "file": "frontend/src/components/InvalidSharedLinkView.tsx",
+      "controls": [
+        {
+          "line": 79,
+          "attribute": "onClick",
+          "handler": "{handleClearAndPlan}"
+        },
+        {
+          "line": 87,
+          "attribute": "onClick",
+          "handler": "{handleClearAndExplore}"
+        },
+        {
+          "line": 97,
+          "attribute": "onClick",
+          "handler": "{handleClearAndHome}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ItineraryView.tsx",
+      "controls": [
+        {
+          "line": 182,
+          "attribute": "onClick",
+          "handler": "{request.reload}"
+        },
+        {
+          "line": 182,
+          "attribute": "onClick",
+          "handler": "{onBackToPlanner}"
+        },
+        {
+          "line": 342,
+          "attribute": "onClick",
+          "handler": "{onPlanOwnTrip || onBackToPlanner}"
+        },
+        {
+          "line": 357,
+          "attribute": "onClick",
+          "handler": "{onBackToPlanner}"
+        },
+        {
+          "line": 370,
+          "attribute": "onClick",
+          "handler": "{() => setIsWhatIfOpen(!isWhatIfOpen)}"
+        },
+        {
+          "line": 391,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                if (onOpenBudgetPlanner) {\r\n                  onOpenBudgetPlanner();\r\n                }\r\n              }}"
+        },
+        {
+          "line": 409,
+          "attribute": "onClick",
+          "handler": "{handleShare}"
+        },
+        {
+          "line": 421,
+          "attribute": "onClick",
+          "handler": "{handlePrint}"
+        },
+        {
+          "line": 433,
+          "attribute": "onClick",
+          "handler": "{handleDownloadPdf}"
+        },
+        {
+          "line": 564,
+          "attribute": "onClick",
+          "handler": "{onBackToPlanner}"
+        },
+        {
+          "line": 572,
+          "attribute": "onClick",
+          "handler": "{onPlanOwnTrip}"
+        },
+        {
+          "line": 648,
+          "attribute": "onClick",
+          "handler": "{() => setShowAlgorithm(!showAlgorithm)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/Navbar.tsx",
+      "controls": [
+        {
+          "line": 60,
+          "attribute": "onClick",
+          "handler": "{() => setLanguage(\"en\")}"
+        },
+        {
+          "line": 73,
+          "attribute": "onClick",
+          "handler": "{() => setLanguage(\"hi\")}"
+        },
+        {
+          "line": 94,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"hero\")}"
+        },
+        {
+          "line": 117,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"explore\")}"
+        },
+        {
+          "line": 125,
+          "attribute": "onClick",
+          "handler": "{onOpenPlanner}"
+        },
+        {
+          "line": 138,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"hotels\")}"
+        },
+        {
+          "line": 146,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"budget\")}"
+        },
+        {
+          "line": 156,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"profile\")}"
+        },
+        {
+          "line": 166,
+          "attribute": "onClick",
+          "handler": "{onLogout}"
+        },
+        {
+          "line": 173,
+          "attribute": "onClick",
+          "handler": "{() => navigate(\"/admin\")}"
+        },
+        {
+          "line": 182,
+          "attribute": "onClick",
+          "handler": "{() =>\r\n                  onOpenAuth ? onOpenAuth(\"login\") : handleNavClick(\"account\")\r\n                }"
+        },
+        {
+          "line": 198,
+          "attribute": "onClick",
+          "handler": "{onOpenPlanner}"
+        },
+        {
+          "line": 214,
+          "attribute": "onClick",
+          "handler": "{() => setMobileMenuOpen(!mobileMenuOpen)}"
+        },
+        {
+          "line": 233,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"explore\")}"
+        },
+        {
+          "line": 240,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n              setMobileMenuOpen(false);\r\n              onOpenPlanner();\r\n            }}"
+        },
+        {
+          "line": 250,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"hotels\")}"
+        },
+        {
+          "line": 257,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"budget\")}"
+        },
+        {
+          "line": 265,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"profile\")}"
+        },
+        {
+          "line": 273,
+          "attribute": "onClick",
+          "handler": "{() => handleNavClick(\"account\")}"
+        },
+        {
+          "line": 282,
+          "attribute": "onClick",
+          "handler": "{() => {\r\n                setMobileMenuOpen(false);\r\n                onOpenPlanner();\r\n              }}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/NotFoundView.tsx",
+      "controls": [
+        {
+          "line": 56,
+          "attribute": "onClick",
+          "handler": "{() => navigate(\"/\")}"
+        },
+        {
+          "line": 64,
+          "attribute": "onClick",
+          "handler": "{() => navigate(\"/explore\")}"
+        },
+        {
+          "line": 72,
+          "attribute": "onClick",
+          "handler": "{() => navigate(\"/hotels\")}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/OfflineBanner.tsx",
+      "controls": []
+    },
+    {
+      "file": "frontend/src/components/OfflineRouteMap.tsx",
+      "controls": [
+        {
+          "line": 77,
+          "attribute": "onClick",
+          "handler": "{() => setSelectedDayIndex(idx)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/PlannerModal.tsx",
+      "controls": [
+        {
+          "line": 149,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 150,
+          "attribute": "onClick",
+          "handler": "{catalog.reload}"
+        },
+        {
+          "line": 150,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 151,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 162,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 166,
+          "attribute": "onClick",
+          "handler": "{(e) => e.stopPropagation()}"
+        },
+        {
+          "line": 184,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 206,
+          "attribute": "onClick",
+          "handler": "{() => setStep(1)}"
+        },
+        {
+          "line": 241,
+          "attribute": "onClick",
+          "handler": "{() => setStep(2)}"
+        },
+        {
+          "line": 278,
+          "attribute": "onClick",
+          "handler": "{() => setStep(3)}"
+        },
+        {
+          "line": 356,
+          "attribute": "onClick",
+          "handler": "{() => handleCityChange(c.id)}"
+        },
+        {
+          "line": 426,
+          "attribute": "onClick",
+          "handler": "{() => setStep(2)}"
+        },
+        {
+          "line": 468,
+          "attribute": "onClick",
+          "handler": "{() => setTripDays(Math.max(1, tripDays - 1))}"
+        },
+        {
+          "line": 489,
+          "attribute": "onClick",
+          "handler": "{() => setTripDays(Math.min(7, tripDays + 1))}"
+        },
+        {
+          "line": 516,
+          "attribute": "onChange",
+          "handler": "{(e) => setBudget(Number(e.target.value))}"
+        },
+        {
+          "line": 537,
+          "attribute": "onChange",
+          "handler": "{(e) => handleStartingHotelChange(e.target.value)}"
+        },
+        {
+          "line": 572,
+          "attribute": "onChange",
+          "handler": "{(e) => setStartTime(e.target.value)}"
+        },
+        {
+          "line": 600,
+          "attribute": "onChange",
+          "handler": "{(e) => setWheelchairOnly(e.target.checked)}"
+        },
+        {
+          "line": 610,
+          "attribute": "onClick",
+          "handler": "{() => setStep(1)}"
+        },
+        {
+          "line": 622,
+          "attribute": "onClick",
+          "handler": "{() => setStep(3)}"
+        },
+        {
+          "line": 698,
+          "attribute": "onClick",
+          "handler": "{() => setStep(2)}"
+        },
+        {
+          "line": 712,
+          "attribute": "onClick",
+          "handler": "{() => setShowComparisonModal(true)}"
+        },
+        {
+          "line": 721,
+          "attribute": "onClick",
+          "handler": "{handleGenerate}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ProfileDashboardView.tsx",
+      "controls": [
+        {
+          "line": 121,
+          "attribute": "onClick",
+          "handler": "{request.reload}"
+        },
+        {
+          "line": 149,
+          "attribute": "onClick",
+          "handler": "{() =>\r\n                  setSaveSuccessNotice(\"Your role is supplied by the authenticated server account.\")\r\n                }"
+        },
+        {
+          "line": 163,
+          "attribute": "onClick",
+          "handler": "{() => onOpenAdminDashboard?.()}"
+        },
+        {
+          "line": 172,
+          "attribute": "onClick",
+          "handler": "{onLogout}"
+        },
+        {
+          "line": 214,
+          "attribute": "onClick",
+          "handler": "{onOpenPlanner}"
+        },
+        {
+          "line": 228,
+          "attribute": "onClick",
+          "handler": "{onOpenPlanner}"
+        },
+        {
+          "line": 286,
+          "attribute": "onClick",
+          "handler": "{() => handleOpenTrip(trip)}"
+        },
+        {
+          "line": 294,
+          "attribute": "onClick",
+          "handler": "{(e) => handleDeleteTrip(trip.id, e)}"
+        },
+        {
+          "line": 320,
+          "attribute": "onClick",
+          "handler": "{() => onOpenAdminDashboard?.(undefined, true)}"
+        },
+        {
+          "line": 357,
+          "attribute": "onClick",
+          "handler": "{() => onOpenAdminDashboard?.(item.id)}"
+        },
+        {
+          "line": 382,
+          "attribute": "onSubmit",
+          "handler": "{handleSettingsSubmit}"
+        },
+        {
+          "line": 393,
+          "attribute": "onChange",
+          "handler": "{(e) => setName(e.target.value)}"
+        },
+        {
+          "line": 406,
+          "attribute": "onChange",
+          "handler": "{(e) => setEmail(e.target.value)}"
+        },
+        {
+          "line": 422,
+          "attribute": "onChange",
+          "handler": "{(e) => setCurrentPassword(e.target.value)}"
+        },
+        {
+          "line": 435,
+          "attribute": "onChange",
+          "handler": "{(e) => setNewPassword(e.target.value)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/PwaInstallPrompt.tsx",
+      "controls": [
+        {
+          "line": 70,
+          "attribute": "onClick",
+          "handler": "{onDismiss}"
+        },
+        {
+          "line": 91,
+          "attribute": "onClick",
+          "handler": "{onDismiss}"
+        },
+        {
+          "line": 98,
+          "attribute": "onClick",
+          "handler": "{handleInstallClick}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ResearchView.tsx",
+      "controls": [
+        {
+          "line": 129,
+          "attribute": "onClick",
+          "handler": "{runSimulationMatrix}"
+        },
+        {
+          "line": 136,
+          "attribute": "onClick",
+          "handler": "{onBack}"
+        },
+        {
+          "line": 152,
+          "attribute": "onClick",
+          "handler": "{runSimulationMatrix}"
+        },
+        {
+          "line": 175,
+          "attribute": "onClick",
+          "handler": "{copyToClipboard}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ShareItineraryModal.tsx",
+      "controls": [
+        {
+          "line": 73,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 77,
+          "attribute": "onClick",
+          "handler": "{(e) => e.stopPropagation()}"
+        },
+        {
+          "line": 81,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 127,
+          "attribute": "onClick",
+          "handler": "{handleCopy}"
+        },
+        {
+          "line": 153,
+          "attribute": "onClick",
+          "handler": "{handleNativeShare}"
+        },
+        {
+          "line": 166,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/StrategyComparisonModal.tsx",
+      "controls": [
+        {
+          "line": 59,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 60,
+          "attribute": "onClick",
+          "handler": "{request.reload}"
+        },
+        {
+          "line": 60,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 122,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 126,
+          "attribute": "onClick",
+          "handler": "{(e) => e.stopPropagation()}"
+        },
+        {
+          "line": 144,
+          "attribute": "onClick",
+          "handler": "{onClose}"
+        },
+        {
+          "line": 296,
+          "attribute": "onClick",
+          "handler": "{() => setActiveMobileTab(res.strategy)}"
+        },
+        {
+          "line": 401,
+          "attribute": "onClick",
+          "handler": "{() => toggleDayPlan(res.strategy)}"
+        },
+        {
+          "line": 457,
+          "attribute": "onClick",
+          "handler": "{() => onSelectStrategy(res.strategy, request.data?.find(row => row.result.strategy === res.strategy)?.config)}"
+        }
+      ]
+    },
+    {
+      "file": "frontend/src/components/ValueProps.tsx",
+      "controls": []
+    },
+    {
+      "file": "frontend/src/components/WhatIfPanel.tsx",
+      "controls": [
+        {
+          "line": 110,
+          "attribute": "onClick",
+          "handler": "{onReset}"
+        },
+        {
+          "line": 120,
+          "attribute": "onClick",
+          "handler": "{onSaveVersion}"
+        },
+        {
+          "line": 177,
+          "attribute": "onChange",
+          "handler": "{(e) => onBudgetChange(Number(e.target.value))}"
+        },
+        {
+          "line": 223,
+          "attribute": "onChange",
+          "handler": "{(e) => onDaysChange(Number(e.target.value))}"
+        }
+      ]
+    }
+  ],
+  "verified": true,
+  "limits": "Source preservation proof, not pixel-diff certification. Existing dynamic transit text now says Unknown (excluded) when the API says fares are unknown."
+}

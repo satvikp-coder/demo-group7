@@ -1,0 +1,160 @@
+{
+  "city": "saputara",
+  "checked": "2026-09-30",
+  "records": [
+    {
+      "table": "destinations",
+      "key": "saputara",
+      "values": {
+        "name": "Saputara",
+        "district": "Dang",
+        "category": "Nature",
+        "location": "Dang district, Sahyadri hills, Gujarat",
+        "description": "Saputara is a hill town in the Sahyadri range in southern Gujarat. Its lake, hill viewpoints and museum introduce visitors to the landscape and culture of the Dangs.",
+        "highlights": [
+          "Saputara Lake",
+          "Sunset Point"
+        ],
+        "seasonal_note": "Check weather and local access before visiting hill viewpoints. Museum reopening has not been confirmed."
+      },
+      "sources": [
+        "https://www.gujarattourism.com/south-zone/dang/saputara.html",
+        "https://www.indembastana.gov.in/content/1496404097_2760_Newsletter%20Issue%20No.8%20dated%20May%201%2C%202017.pdf"
+      ],
+      "notes": "Tourism page title incorrectly says Don Hill Station, but body explicitly describes Saputara; independent government newsletter corroborates named attractions."
+    },
+    {
+      "table": "attractions",
+      "key": "a801",
+      "values": {
+        "name": "Saputara Lake",
+        "slug": "saputara-lake",
+        "lat": 20.576641,
+        "lng": 73.74577,
+        "category": "Nature",
+        "duration_hours": 1.5,
+        "entry_fee": "Free lakeside visit; optional boat rides charged separately",
+        "entry_fee_numeric": 0,
+        "transport_mode": "road",
+        "description": "Saputara Lake has lakeside gardens and a boating facility in the centre of the hill town.",
+        "best_time_note": "Coordinates identify the lakeside boating-house access point, not the centre of the water. Boat prices and operating hours are separate and not verified as a current tariff.",
+        "source": "Gujarat Tourism; Gujarat Explorers; Google Maps"
+      },
+      "sources": [
+        "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+        "https://gujaratexplorers.com/destination/saputara-lake/",
+        "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+        "https://www.google.com/maps/search/Saputara+Lake+Boating"
+      ],
+      "notes": "Duration midpoint of published 1-2 hours. General free access is not free boat admission. Map snapshot pages/saputara-lake.json; boat-house rating not applied to whole lake. Physical accessibility unverified."
+    },
+    {
+      "table": "attractions",
+      "key": "a802",
+      "values": {
+        "name": "Sunset Point Saputara",
+        "slug": "sunset-point-saputara",
+        "lat": 20.57455,
+        "lng": 73.732339,
+        "category": "Nature",
+        "duration_hours": 1,
+        "entry_fee": "Free viewpoint; optional ropeway, parking and activities extra",
+        "entry_fee_numeric": 0,
+        "transport_mode": "road",
+        "description": "Sunset Point is a hill viewpoint overlooking the Sahyadri landscape near Saputara.",
+        "best_time_note": "Visit around sunset. Road routing does not certify final pedestrian approach or wheelchair access; optional ropeway service is not included.",
+        "source": "OpenStreetMap; Gujarat Explorers; My Holiday Happiness"
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/4832550858",
+        "https://gujaratexplorers.com/destination/sunset-point/",
+        "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+      ],
+      "notes": "Published one-hour visit recommendation and free viewpoint fee; no invented fixed opening hours."
+    },
+    {
+      "table": "attractions",
+      "key": "a803",
+      "values": {
+        "name": "Saputara Museum",
+        "slug": "saputara-museum",
+        "lat": 20.578855,
+        "lng": 73.749413,
+        "rating": 3.8,
+        "category": "Museum",
+        "duration_hours": 1,
+        "entry_fee": "Current Indian adult admission and reopening unknown",
+        "entry_fee_numeric": null,
+        "description": "The state museum documents the culture of the Dangs through clothing, jewellery, masks and other ethnographic objects.",
+        "best_time_note": "Google Maps marks temporarily closed as checked September 30, 2026. The 2023 government directory lists 10:30-17:00, closed Wednesdays, second/fourth Saturdays and government holidays. Historical schedule is not stored as current hours. Confirm reopening directly before travel.",
+        "transport_mode": "road",
+        "source": "Ministry of Culture museum directory; Google Maps; MakeMyTrip"
+      },
+      "sources": [
+        "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+        "https://www.google.com/maps/search/Saputara+Museum",
+        "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+      ],
+      "notes": "Secondary Indian adult prices conflict (2,5,10). Official directory lists student1 and foreign50 but no Indian adult amount. Numeric price remains unknown, so existing planner excludes this attraction. One-hour duration from MakeMyTrip. Closure snapshot pages/saputara-museum.json."
+    },
+    {
+      "table": "hotels",
+      "key": "h801",
+      "values": {
+        "name": "Aakar Lords Inn Saputara",
+        "slug": "aakar-lords-inn-saputara",
+        "lat": 20.57491,
+        "lng": 73.748285,
+        "rating": 4.2,
+        "price_per_night": 4560,
+        "stay_type": "Registered Hotel",
+        "location": "Saputara-Nashik Road, opposite Lake View Garden Circle, Saputara 394720",
+        "description": "Aakar Lords Inn provides hotel accommodation near Saputara Lake.",
+        "source": "Official Lords Hotels website; Google Maps Cleartrip quote"
+      },
+      "sources": [
+        "https://www.lordshotels.com/inn-akar-saputara/",
+        "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+      ],
+      "notes": "Archived pages/saputara-hotel.json: Cleartrip nightly INR4560 for September30-October1 2026, two adults, breakfast included; room and tax basis unspecified. Dynamic snapshot, not guaranteed tariff. Registered Hotel is app classification, not verified legal registration."
+    },
+    {
+      "table": "restaurants",
+      "key": "r801",
+      "values": {
+        "name": "Anando Restaurant Saputara",
+        "slug": "anando-restaurant-saputara",
+        "lat": 20.5737,
+        "lng": 73.747,
+        "rating": 4.1,
+        "avg_cost_per_person": 175,
+        "location": "Hotel Anando, Plot5 Nageshwar Mahadev Road, Saputara 394720",
+        "cuisine": "Gujarati, Punjabi and North Indian vegetarian",
+        "source": "Justdial restaurant listing; Google Maps hotel location; hotel booking listings"
+      },
+      "sources": [
+        "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+        "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+        "https://tohotel.com/hotel/anandosaputara"
+      ],
+      "notes": "Justdial specifically lists INR350 for two: representative per-person175, not a menu tariff. Rating4.1 is restaurant Justdial rating, not hotel Google4.0. Hotel compound coordinate used for its attached restaurant; booking listing corroborates on-site Indian lunch/dinner. Map snapshot pages/saputara-anando-selected.json."
+    },
+    {
+      "table": "destinations",
+      "key": "saputara",
+      "values": {
+        "distance_from_ahmedabad": "409 km by road (district tourism guide)",
+        "distance_numeric": 409
+      },
+      "sources": [
+        "https://dangs.nic.in/tourist-place/saputara/"
+      ],
+      "notes": "Official district guide approximate intercity road distance. No specific Ahmedabad origin or route time published; not used as a hotel-to-attraction edge."
+    }
+  ],
+  "research_exclusions": [
+    "Sugar N Spice old outlet excluded: chain-owner June3 2026 Maps notice disclaims affiliation and announces relocation; old price/coordinate could describe different business.",
+    "Museum reopening/current Indian admission not verified after official directory and multiple secondary-source searches.",
+    "No physical wheelchair accessibility inferred from photos, reviews or website accessibility widgets."
+  ]
+}

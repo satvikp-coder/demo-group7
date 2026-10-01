@@ -1,0 +1,515 @@
+{
+  "city": "gir-national-park",
+  "checked": "2026-10-01",
+  "records": [
+    {
+      "table": "attractions",
+      "key": "a601",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/GirBooklet.pdf"
+              ],
+              "note": "Forest department identifies Gir Jungle Trail; stored name includes project reporting-point annotation."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "opening_time": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "closing_time": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+                "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+                "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+              ]
+            }
+          },
+          "notes": "Cost is exact sum of official weekday Indian permit, Type B vehicle and base guide charges. Does not divide by assumed occupancy. Optional camera charge excluded. Map point is reporting campus, not an arbitrary forest centre. No assertion of wheelchair-compatible safari vehicle.",
+          "qualification": "Forest department identifies Gir Jungle Trail; stored name includes project reporting-point annotation."
+        }
+      },
+      "sources": [
+        "https://girlion.gujarat.gov.in/asset/gir-terms.pdf",
+        "https://girlion.gujarat.gov.in/PermitBookingForJungleTrail.aspx",
+        "https://www.google.com/maps/search/Sinh+Sadan+Sasan+Gir"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "attractions",
+      "key": "a602",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx"
+              ],
+              "note": "Forest department official bus-safari booking identifies Devalia; dated slots/tariff are not guaranteed."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "opening_time": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "closing_time": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+                "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+                "https://www.google.com/maps/search/Devalia+Safari+Park"
+              ]
+            }
+          },
+          "notes": "Uses current booking page's30-minute slots, not older tourism text stating45 minutes. Current bus page foreign rates also differ from older PDF; no foreign numeric price encoded. Map snapshot pages/gir-devalia-selected.json.",
+          "qualification": "Forest department official bus-safari booking identifies Devalia; dated slots/tariff are not guaranteed."
+        }
+      },
+      "sources": [
+        "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+        "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Devaliya_Eng.pdf",
+        "https://www.google.com/maps/search/Devalia+Safari+Park"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "hotels",
+      "key": "h601",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://www.girjungleresort.com/about/"
+              ],
+              "note": "Business-owned website confirms Anil Farms Gir Jungle Resort identity."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "price_per_night": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "stay_type": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.girjungleresort.com/rooms/",
+                "https://www.girjungleresort.com/tariff/",
+                "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+              ]
+            }
+          },
+          "notes": "Google official-site nightly quote INR4489 for November24-26 2026, two adults, breakfast included, room/tax basis unspecified, snapshot pages/gir-hotel.json. Official static tariff expired March2026, so not presented as current. Registered Hotel is application category, not a legal registration claim.",
+          "qualification": "Business-owned website confirms Anil Farms Gir Jungle Resort identity."
+        }
+      },
+      "sources": [
+        "https://www.girjungleresort.com/rooms/",
+        "https://www.girjungleresort.com/tariff/",
+        "https://www.google.com/maps/search/Hotel+Anil+Farmhouse+Sasan+Gir"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "restaurants",
+      "key": "r601",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "avg_cost_per_person": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "cuisine": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+                "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+                "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+              ]
+            }
+          },
+          "notes": "Wanderlog specifically quotes Gujarati thali INR150; secondary representative meal price, no official current menu. Cross-check Restaurant Guru reports1-200. Map snapshot pages/gir-restaurant.json verifies actual Sasan location despite Wanderlog's broad Somnath area label.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://www.google.com/maps/search/Hotel+Gir+Kathiyawadi+Sasan+Gir",
+        "https://wanderlog.com/place/details/2815014/gir-kathiyawadi-sasan-gir",
+        "https://restaurant-guru.in/Gir-kathiyawadi-restaurant-Sasan"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Destination, GUJARAT_DESTINATIONS } from '../data/destinations';
+import { useCatalog } from "../api";
+import type { Destination } from "../api/types";
 import { ArrowUpRight, MapPin, Ticket, Star, Clock, Info } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
 
@@ -13,9 +14,13 @@ export const FeaturedDestinations: React.FC<FeaturedDestinationsProps> = ({
   onStartTripWithDestination,
 }) => {
   // Filter the featured 6 sites asked by user prompt: Somnath, Dwarka, Rann of Kutch, Gir, Modhera, Champaner
+  const catalog = useCatalog();
+  const GUJARAT_DESTINATIONS = catalog.data ?? [];
   const featuredIds = ['somnath', 'dwarka', 'rann-of-kutch', 'gir', 'modhera', 'champaner'];
-  const featuredDestinations = GUJARAT_DESTINATIONS.filter(d => featuredIds.includes(d.id));
+  const featuredDestinations = GUJARAT_DESTINATIONS.slice(0, 3);
 
+  if(catalog.loading) return <p role="status">Loading destinations...</p>;
+  if(catalog.error) return <p role="alert">{catalog.error} <button onClick={catalog.reload}>Retry</button></p>;
   return (
     <section id="explore" className="bg-salt py-16 lg:py-24 border-b border-stone/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

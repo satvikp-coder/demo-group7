@@ -1,0 +1,20 @@
+{
+  "verificationBasis": "User approved the 24 project-attributed records for seeding. Broad CSV source labels are preserved; independent field verification is not claimed.",
+  "approvedFiles": {
+    "attractions.csv": {
+      "sha256": "9de7418ab1d9bacc847244e69e6e648d278739c0c48f649a25cb94c6350f673a",
+      "rows": 14
+    },
+    "hotels.csv": {
+      "sha256": "52d83f3b9862fbadb653581d2a83585c073f482e47a5e3459279f6ebe6ad120a",
+      "rows": 5
+    },
+    "restaurants.csv": {
+      "sha256": "e70d7028f1ebb4ee176e1bbb6d17d4a6e1b1086ac4ec1d040f9006ef76b8f2ac",
+      "rows": 5
+    }
+  },
+  "excludedFiles": {
+    "routes.csv": "All 56 current rows explicitly say Simulated OpenRouteService Route (No API Key). Do not insert them."
+  }
+}

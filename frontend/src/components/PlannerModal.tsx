@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import {
-  Destination,
-  GUJARAT_DESTINATIONS,
-  getCityById,
-} from "../data/destinations";
+import React, { useState, useEffect, useRef } from "react";
+import type { Destination } from "../api/types";
+import { api, useCatalog, EMPTY_DESTINATION, errorMessage, configFromTrip } from "../api";
 import { ImageWithFallback } from "./ImageWithFallback";
 import {
   X,
@@ -21,7 +18,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { StrategyComparisonModal } from "./StrategyComparisonModal";
-import {
+import type {
   OptimizationStrategy,
   PlannerConfigPayload,
 } from "../utils/itineraryPlanner";
@@ -53,7 +50,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
   // Step 1: Selected single city ID
   const [selectedCityId, setSelectedCityId] = useState<string>(() => {
-    return preselectedDestination?.id || "somnath";
+    return preselectedDestination?.id || "";
   });
 
   // Step 2: Logistics state
@@ -67,22 +64,28 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   const [showComparisonModal, setShowComparisonModal] =
     useState<boolean>(false);
 
-  // Active City
-  const activeCity = getCityById(selectedCityId) || GUJARAT_DESTINATIONS[0];
+  const catalog = useCatalog(isOpen);
+  const destinations = catalog.data ?? [];
+  const getCityById = (id: string) => destinations.find(d => d.id === id);
+  const activeCity = getCityById(selectedCityId) || destinations[0] || EMPTY_DESTINATION;
+  const [pending, setPending] = useState(false);
+  const pendingRef = useRef(false);
+  const [requestError, setRequestError] = useState("");
+  const [createdTrip, setCreatedTrip] = useState<{key:string;id:string} | null>(null);
 
   // Sync selectedCityId and default starting hotel when modal opens
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && catalog.data?.length) {
       setStep(1);
       const initialCityId =
-        initialConfig?.cityId || preselectedDestination?.id || selectedCityId || "somnath";
+        initialConfig?.cityId || preselectedDestination?.id || selectedCityId || destinations[0].id;
       setSelectedCityId(initialCityId);
-      const cityObj = getCityById(initialCityId) || GUJARAT_DESTINATIONS[0];
+      const cityObj = getCityById(initialCityId) || destinations[0];
       const preferredForCity = initialConfig?.startingHotelId || preferredHotels?.[initialCityId];
       if (preferredForCity && cityObj.hotels && cityObj.hotels.some(h => h.id === preferredForCity)) {
         setStartingHotelId(preferredForCity);
-      } else if (cityObj.hotels && cityObj.hotels.length > 0) {
-        setStartingHotelId(cityObj.hotels[0].id);
+      } else {
+        setStartingHotelId(cityObj.hotels[0]?.id ?? "");
       }
 
       if (initialConfig?.tripDays) setTripDays(initialConfig.tripDays);
@@ -92,18 +95,18 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
         setWheelchairOnly(initialConfig.wheelchairAccessibleOnly);
       }
     }
-  }, [isOpen, preselectedDestination, initialConfig]);
+  }, [isOpen, preselectedDestination, initialConfig, catalog.data]);
 
   // When city changes, load preferred stay or fallback to first hotel
   const handleCityChange = (cityId: string) => {
     setSelectedCityId(cityId);
     const cityObj = getCityById(cityId);
     const preferredForCity = preferredHotels?.[cityId];
-    if (preferredForCity) {
+    if (preferredForCity && cityObj?.hotels.some(h => h.id === preferredForCity)) {
       setStartingHotelId(preferredForCity);
     } else if (cityObj && cityObj.hotels.length > 0) {
       setStartingHotelId(cityObj.hotels[0].id);
-    }
+    } else { setStartingHotelId(""); }
   };
 
   const handleStartingHotelChange = (hotelId: string) => {
@@ -127,18 +130,25 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleGenerate = () => {
-    onGenerateItinerary({
-      cityId: activeCity.id,
-      tripDays,
-      budget,
-      startingHotelId: startingHotelId || activeCity.hotels[0]?.id || "",
-      startTime: startTime || "08:00 AM",
-      wheelchairAccessibleOnly: wheelchairOnly,
-    });
-    onClose();
+  const handleGenerate = async () => {
+    if(pendingRef.current) return;
+    pendingRef.current = true; setPending(true); setRequestError("");
+    const config: PlannerConfigPayload = {cityId:activeCity.id,tripDays,budget,startingHotelId,
+      startTime,wheelchairAccessibleOnly:wheelchairOnly};
+    try {
+      const key=JSON.stringify(config);
+      let id=createdTrip?.key===key ? createdTrip.id : undefined;
+      if(!id) { const result=await api.createTrip(config); id=result.trip.id; setCreatedTrip({key,id}); }
+      const generated=await api.generate(id);
+      onGenerateItinerary(configFromTrip(generated.trip));
+      onClose();
+    } catch(error) { setRequestError(errorMessage(error)); }
+    finally { pendingRef.current = false; setPending(false); }
   };
 
+  if(catalog.loading) return <p role="status">Loading planner destinations... <button onClick={onClose}>Close</button></p>;
+  if(catalog.error) return <p role="alert">{catalog.error} <button onClick={catalog.reload}>Retry</button> <button onClick={onClose}>Close</button></p>;
+  if(!activeCity.id) return <p role="status">No destinations available. <button onClick={onClose}>Close</button></p>;
   const startingHotelObj =
     activeCity.hotels.find((h) => h.id === startingHotelId) ||
     activeCity.hotels[0];
@@ -155,6 +165,8 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
         className="bg-salt border-2 border-gold max-w-3xl w-full text-charcoal p-5 sm:p-8 relative shadow-2xl my-6 animate-fadeIn rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
+        {pending && <p role="status">Saving and generating your itinerary...</p>}
+        {requestError && <p role="alert">{requestError}</p>}
         {/* Header Bar */}
         <div className="flex items-start justify-between border-b border-stone/30 pb-4 mb-6">
           <div>
@@ -336,7 +348,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
               {/* City Selector Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
-                {GUJARAT_DESTINATIONS.map((c) => {
+                {destinations.map((c) => {
                   const isSelected = c.id === selectedCityId;
                   return (
                     <button
@@ -706,7 +718,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
                   <button
                     type="button"
-                    onClick={handleGenerate}
+                    onClick={handleGenerate} disabled={pending || !startingHotelId}
                     className="bg-gold hover:bg-ink hover:text-gold text-ink border border-gold font-mono text-xs font-bold px-6 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl transition-all rounded-lg"
                   >
                     <Compass className="w-4 h-4 text-ink hover:text-gold" />
@@ -734,19 +746,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             startTime: startTime || "08:00 AM",
             wheelchairAccessibleOnly: wheelchairOnly,
           }}
-          onSelectStrategy={(strategy: OptimizationStrategy) => {
+          onSelectStrategy={(strategy, savedConfig) => {
+            if(savedConfig) { onGenerateItinerary(savedConfig); onClose(); }
             setShowComparisonModal(false);
-            onGenerateItinerary({
-              cityId: activeCity.id,
-              tripDays,
-              budget,
-              startingHotelId:
-                startingHotelId || activeCity.hotels[0]?.id || "",
-              startTime: startTime || "08:00 AM",
-              strategy,
-              wheelchairAccessibleOnly: wheelchairOnly,
-            });
-            onClose();
           }}
         />
       )}

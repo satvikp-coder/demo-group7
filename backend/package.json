@@ -1,0 +1,45 @@
+{
+  "name": "heritage-tourism-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Express and PostgreSQL backend scaffold for Heritage Tourism Planner",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "start": "node --import tsx server.js",
+    "dev": "node --import tsx --watch server.js",
+    "test": "node --import tsx --test tests/*.test.js",
+    "db:schema": "node scripts/apply-schema.js",
+    "db:seed": "node scripts/seed.js",
+    "db:verify": "node scripts/verify-seed.js",
+    "test:auth": "node --import tsx scripts/test-auth-http.js",
+    "test:db": "node scripts/test-db-constraints.js",
+    "test:destinations": "node --import tsx scripts/test-destinations-http.js",
+    "db:migrate": "node scripts/migrate.js",
+    "test:trips": "node --import tsx scripts/test-trips-http.js",
+    "test:admin": "node --import tsx scripts/test-admin-http.js",
+    "test:frontend": "node scripts/test-frontend-browser.js",
+    "operator:approve": "node scripts/provision-operator.js",
+    "test:integration": "npm run test:auth && npm run test:destinations && npm run test:trips && npm run test:admin && npm run test:db",
+    "build": "node scripts/check-syntax.js",
+    "db:adopt": "node scripts/adopt-seed.js",
+    "db:backup": "node scripts/backup.js backup",
+    "db:restore": "node scripts/backup.js restore",
+    "data:freshness": "node scripts/data-freshness.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^7.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "tsx": "^4.23.15",
+    "zod": "^4.1.12"
+  }
+}

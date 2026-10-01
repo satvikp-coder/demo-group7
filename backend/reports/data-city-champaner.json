@@ -1,0 +1,179 @@
+{
+  "city": "champaner",
+  "checkedAt": "2026-09-30T17:59:53.019Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/destinations/champaner",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/d2d25199-8588-4f94-979a-8c6ad90f62da/attractions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/d2d25199-8588-4f94-979a-8c6ad90f62da/restaurants",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/d2d25199-8588-4f94-979a-8c6ad90f62da/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/d2d25199-8588-4f94-979a-8c6ad90f62da/hotels?sort=rating",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/d2d25199-8588-4f94-979a-8c6ad90f62da/hotels?sort=value",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/bd7f63b3-d91c-44d6-96e5-dd7c79b4241e/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/bd7f63b3-d91c-44d6-96e5-dd7c79b4241e",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/bd7f63b3-d91c-44d6-96e5-dd7c79b4241e/budget",
+      "status": 200
+    }
+  ],
+  "counts": {
+    "attractions": 2,
+    "hotels": 1,
+    "restaurants": 1
+  },
+  "attractionVisits": 1,
+  "summary": {
+    "legs": [
+      {
+        "to": "08fc7423-e550-45be-8b39-2d07d6d51169",
+        "from": "b358a1dd-3505-468b-8796-83687da12176",
+        "path": [
+          "b358a1dd-3505-468b-8796-83687da12176",
+          "08fc7423-e550-45be-8b39-2d07d6d51169"
+        ],
+        "method": "direct",
+        "minutes": 21,
+        "day_number": 1,
+        "distance_km": 11.6
+      },
+      {
+        "to": "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+        "from": "08fc7423-e550-45be-8b39-2d07d6d51169",
+        "path": [
+          "08fc7423-e550-45be-8b39-2d07d6d51169",
+          "ef2f9db2-0612-446b-9527-3b97f69ad99f"
+        ],
+        "method": "direct",
+        "minutes": 13,
+        "day_number": 1,
+        "distance_km": 13.16
+      },
+      {
+        "to": "b358a1dd-3505-468b-8796-83687da12176",
+        "from": "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+        "path": [
+          "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+          "b358a1dd-3505-468b-8796-83687da12176"
+        ],
+        "method": "direct",
+        "minutes": 35,
+        "day_number": 1,
+        "distance_km": 16.8
+      },
+      {
+        "to": "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+        "from": "b358a1dd-3505-468b-8796-83687da12176",
+        "path": [
+          "b358a1dd-3505-468b-8796-83687da12176",
+          "ef2f9db2-0612-446b-9527-3b97f69ad99f"
+        ],
+        "method": "direct",
+        "minutes": 35,
+        "day_number": 2,
+        "distance_km": 16.8
+      },
+      {
+        "to": "b358a1dd-3505-468b-8796-83687da12176",
+        "from": "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+        "path": [
+          "ef2f9db2-0612-446b-9527-3b97f69ad99f",
+          "b358a1dd-3505-468b-8796-83687da12176"
+        ],
+        "method": "direct",
+        "minutes": 35,
+        "day_number": 2,
+        "distance_km": 16.8
+      }
+    ],
+    "status": "scheduled",
+    "routing": {
+      "dijkstra_calls": 0,
+      "direct_route_hits": 5,
+      "unreachable_pairs": 0
+    },
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "route_rows": 6,
+    "hotel_total": 18184,
+    "skipped_meals": [],
+    "hotel_replaced": false,
+    "lodging_nights": 2,
+    "hotel_over_budget": false,
+    "starting_hotel_id": "b358a1dd-3505-468b-8796-83687da12176",
+    "excluded_attractions": [
+      {
+        "id": "11dd458f-61c8-47ba-b45c-61b4e046f34e",
+        "name": "Kevada Masjid",
+        "reason": "entry_price_unknown"
+      }
+    ],
+    "transport_cost_known": false,
+    "hotel_budget_shortfall": 0,
+    "unscheduled_attractions": []
+  },
+  "budget": {
+    "trip_id": "bd7f63b3-d91c-44d6-96e5-dd7c79b4241e",
+    "budget": 20000,
+    "hotel": 18184,
+    "attractions": 35,
+    "meals": 600,
+    "transit": 0,
+    "total": 18819,
+    "remaining": 1181,
+    "over_budget": false,
+    "generated": true,
+    "hotel_over_budget": false,
+    "transport_cost_known": false,
+    "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+  },
+  "apiPassed": true,
+  "cleanupCompleted": true
+}

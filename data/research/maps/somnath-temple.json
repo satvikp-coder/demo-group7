@@ -1,0 +1,84 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Somnath+Temple&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 247678724,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 120383261,
+      "lat": "20.8877607",
+      "lon": "70.4013906",
+      "category": "amenity",
+      "type": "place_of_worship",
+      "place_rank": 30,
+      "importance": 0.44635990349034044,
+      "addresstype": "amenity",
+      "name": "Somnath Temple",
+      "display_name": "Somnath Temple, Somnath Beach Road, Somnath, Veraval, Patan Veraval Taluka, Gir Somnath, Gujarat, 362268, India",
+      "extratags": {
+        "barrier": "wall",
+        "website": "https://somnath.org/",
+        "religion": "hindu",
+        "wikipedia": "en:Somnath temple",
+        "hindu:deity": "Somnath",
+        "denomination": "shaivism",
+        "place_of_worship": "jyotirlinga"
+      },
+      "boundingbox": [
+        "20.8872588",
+        "20.8886731",
+        "70.4000588",
+        "70.4021302"
+      ]
+    },
+    {
+      "place_id": 419489779,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 1524037890,
+      "lat": "20.1446034",
+      "lon": "85.7529174",
+      "category": "amenity",
+      "type": "place_of_worship",
+      "place_rank": 30,
+      "importance": 6.161364156553013e-05,
+      "addresstype": "amenity",
+      "name": "Somnath Temple",
+      "display_name": "Somnath Temple, SH 13, Budhapada, Jatani, Khordha, Odisha, 752050, India",
+      "extratags": {
+        "building": "yes",
+        "religion": "hindu",
+        "opening_hours": "24/7"
+      },
+      "boundingbox": [
+        "20.1441394",
+        "20.1449105",
+        "85.7524580",
+        "85.7533589"
+      ]
+    },
+    {
+      "place_id": 248393748,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 387205455,
+      "lat": "20.8880374",
+      "lon": "70.4012501",
+      "category": "building",
+      "type": "temple",
+      "place_rank": 30,
+      "importance": 4.968719005107221e-05,
+      "addresstype": "building",
+      "name": "Somnath Temple",
+      "display_name": "Somnath Temple, Ahilyabai Somnath Mandir Road, Somnath, Veraval, Patan Veraval Taluka, Gir Somnath, Gujarat, 362200, India",
+      "extratags": null,
+      "boundingbox": [
+        "20.8878464",
+        "20.8881709",
+        "70.4009292",
+        "70.4015681"
+      ]
+    }
+  ]
+}

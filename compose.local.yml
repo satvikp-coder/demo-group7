@@ -1,0 +1,29 @@
+# Automatic first boot for a private persistent local production-like stack.
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    init: true
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_ADMIN_URL:?Use npm run local:up}
+      DATABASE_SSL: disable
+      DB_APP_ROLE: heritage_app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: [node, scripts/bootstrap-local.js]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging:
+      driver: local
+      options:
+        max-size: '10m'
+        max-file: '5'
+  backend:
+    depends_on:
+      bootstrap:
+        condition: service_completed_successfully

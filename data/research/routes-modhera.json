@@ -1,0 +1,255 @@
+{
+  "city": "modhera",
+  "checked": "2026-09-30",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/72.145478,23.583383;72.133078,23.583421;72.131204,23.586714;72.135230,23.582704?annotations=distance,duration",
+  "nodes": [
+    {
+      "id": "0d8f9b18-a625-4bf9-b475-88059d9265ee",
+      "external_id": "a402",
+      "slug": "modheshwari-mata-temple",
+      "destination_id": "7158942c-ac57-494c-b9a6-51d98c6179aa",
+      "name": "Modheshwari Mata Temple",
+      "lat": "23.583383",
+      "lng": "72.145478",
+      "duration_hours": "1.00",
+      "rating": null,
+      "category": "Religious",
+      "entry_fee": "Free general darshan",
+      "entry_fee_numeric": "0.00",
+      "opening_time": null,
+      "closing_time": null,
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "One hour is the lower end of a published 1-2 hour visit recommendation. Published daily opening hours conflict; confirm with temple before travel. Accessibility unknown.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "This Modhera shrine is dedicated to Modheshwari, a form of Parvati or Durga revered by the Modh community.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; Google Maps; local tour operator visitor guide",
+      "source_url": "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "7cd6fb1b-6aa2-49bc-8ecd-eb6026ee0234",
+      "external_id": "a401",
+      "slug": "modhera-sun-temple",
+      "destination_id": "7158942c-ac57-494c-b9a6-51d98c6179aa",
+      "name": "Modhera Sun Temple",
+      "lat": "23.583421",
+      "lng": "72.133078",
+      "duration_hours": "2.00",
+      "rating": null,
+      "category": "Heritage",
+      "entry_fee": "INR20 Indian online admission; foreign online ticket INR250; booking conditions apply",
+      "entry_fee_numeric": "20.00",
+      "opening_time": "08:30:00",
+      "closing_time": "17:30:00",
+      "wheelchair_accessible": null,
+      "physical_demand": null,
+      "best_time_note": "Stored hours follow Gujarat Tourism's visitor brochure. Other sources describe sunrise to sunset. Two hours is a published visitor-duration recommendation, not a fixed tour. General wheelchair access remains unverified; entrance amenities do not establish access to stepped areas.",
+      "transport_mode": "road",
+      "image_url": null,
+      "image_alt": null,
+      "description": "The Sun Temple complex contains a carved shrine hall, an assembly hall and Surya Kund, a stepped reservoir lined with small shrines. It dates to the Solanki period.",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Gujarat Tourism; ASI ticketing listings; OpenStreetMap",
+      "source_url": "https://www.gujarattourism.com/content/dam/gujrattourism/images/ebroucher/Explore_Ahmedabad_n_Gandhinagar_Brochure.pdf",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "attraction"
+    },
+    {
+      "id": "47813e20-92bf-43e4-9655-97dd51781f6b",
+      "external_id": "h401",
+      "slug": "modhera-sunrise-resort",
+      "destination_id": "7158942c-ac57-494c-b9a6-51d98c6179aa",
+      "name": "Modhera Sunrise Resort",
+      "lat": "23.586714",
+      "lng": "72.131204",
+      "price_per_night": 2833,
+      "rating": "4.3",
+      "stay_type": "Registered Hotel",
+      "tier": null,
+      "location": "Behind the Sun Temple, Modhera, Gujarat 384412",
+      "description": "Modhera Sunrise Resort offers accommodation including traditional-style bhungas and tents near the Sun Temple, with a pool and dining facilities.",
+      "value_score": null,
+      "image_url": null,
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Official resort website; Google Maps Cleartrip quote",
+      "source_url": "https://modherasunriseresort.com/",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "hotel"
+    },
+    {
+      "id": "371b5c44-4c74-4825-a2cd-75073617622c",
+      "external_id": "r401",
+      "slug": "eulogia-restro-cafe-modhera",
+      "destination_id": "7158942c-ac57-494c-b9a6-51d98c6179aa",
+      "name": "Eulogia Restro Cafe, Sun Temple Modhera",
+      "lat": "23.582704",
+      "lng": "72.135230",
+      "rating": "2.9",
+      "avg_cost_per_person": 200,
+      "location": "Sun Temple, Modhera, Gujarat 384412",
+      "cuisine": "Cafe food; vegetarian options",
+      "gujarati_name": null,
+      "hindi_name": null,
+      "gujarati_description": null,
+      "hindi_description": null,
+      "source": "Google Maps business listing; Restaurant Guru",
+      "source_url": "https://www.google.com/maps/search/Eulogia+Restro+Cafe+Sun+Temple+Modhera",
+      "source_date": "2026-09-29T18:30:00.000Z",
+      "provenance_status": "unverified",
+      "source_row_hash": null,
+      "kind": "restaurant"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        1625.4,
+        2086.3,
+        1425.1
+      ],
+      [
+        1621.8,
+        0,
+        460.9,
+        237.9
+      ],
+      [
+        2082.8,
+        460.9,
+        0,
+        698.9
+      ],
+      [
+        1421.6,
+        237.9,
+        698.9,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "ybagkent_JMpAgAACAAAANsKAAAjAAAAYivAQ0CErUAhUfFEYQzBQSkCAAAIAAAA2woAACMAAAB7JwEAGNxMBA7ZZwFG2kwEl9pnARoA7w0AAAAA",
+        "location": [
+          72.145944,
+          23.58299
+        ],
+        "name": "",
+        "distance": 64.47830724
+      },
+      {
+        "hint": "j7SBipC0gYotAAAAAAAAAA4BAADFAgAA3TH4QQAAAAD1EzxDIoP2Qy0AAAAAAAAADgEAAMUCAAB7JwEALa5MBCDeZwHWqUwEvdpnAQoALxMAAAAA",
+        "location": [
+          72.134189,
+          23.584288
+        ],
+        "name": "",
+        "distance": 148.6037041
+      },
+      {
+        "hint": "j7SBipC0gYpBAAAALwAAAJADAAAAAAAA9TE3Qj1XAEKLjx5EAAAAAEEAAAAvAAAAkAMAAAAAAAB7JwEAl6JMBPfnZwGEokwEmudnASYAjxEAAAAA",
+        "location": [
+          72.131223,
+          23.586807
+        ],
+        "name": "",
+        "distance": 10.48097736
+      },
+      {
+        "hint": "yId8iI20gYo6AAAALgAAAAAAAAAAAAAAAG_DQS2rlkEAAAAAAAAAADoAAAAuAAAAAAAAAAAAAAB7JwEAT7JMBCHYZwE-skwE8NdnAQAAvwYAAAAA",
+        "location": [
+          72.135247,
+          23.582753
+        ],
+        "name": "",
+        "distance": 5.697578804
+      }
+    ],
+    "durations": [
+      [
+        0,
+        135.8,
+        202,
+        108.9
+      ],
+      [
+        136.2,
+        0,
+        66.2,
+        43.3
+      ],
+      [
+        202.4,
+        66.2,
+        0,
+        109.5
+      ],
+      [
+        109.3,
+        43.5,
+        109.7,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "ybagkent_JMpAgAACAAAANsKAAAjAAAAYivAQ0CErUAhUfFEYQzBQSkCAAAIAAAA2woAACMAAAB7JwEAGNxMBA7ZZwFG2kwEl9pnARoA7w0AAAAA",
+        "location": [
+          72.145944,
+          23.58299
+        ],
+        "name": "",
+        "distance": 64.47830724
+      },
+      {
+        "hint": "j7SBipC0gYotAAAAAAAAAA4BAADFAgAA3TH4QQAAAAD1EzxDIoP2Qy0AAAAAAAAADgEAAMUCAAB7JwEALa5MBCDeZwHWqUwEvdpnAQoALxMAAAAA",
+        "location": [
+          72.134189,
+          23.584288
+        ],
+        "name": "",
+        "distance": 148.6037041
+      },
+      {
+        "hint": "j7SBipC0gYpBAAAALwAAAJADAAAAAAAA9TE3Qj1XAEKLjx5EAAAAAEEAAAAvAAAAkAMAAAAAAAB7JwEAl6JMBPfnZwGEokwEmudnASYAjxEAAAAA",
+        "location": [
+          72.131223,
+          23.586807
+        ],
+        "name": "",
+        "distance": 10.48097736
+      },
+      {
+        "hint": "yId8iI20gYo6AAAALgAAAAAAAAAAAAAAAG_DQS2rlkEAAAAAAAAAADoAAAAuAAAAAAAAAAAAAAB7JwEAT7JMBCHYZwE-skwE8NdnAQAAvwYAAAAA",
+        "location": [
+          72.135247,
+          23.582753
+        ],
+        "name": "",
+        "distance": 5.697578804
+      }
+    ]
+  },
+  "notes": "OSRM driving profile over OpenStreetMap roads; modelled travel time, not live traffic. Coordinates are representative mapped points, snapped to roads. Backend currently treats route rows as bidirectional; directional asymmetry remains a planner limitation. No fare is supplied."
+}

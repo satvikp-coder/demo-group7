@@ -1,0 +1,34 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Rukmini+Temple+Dwarka&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 248186884,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 3903603202,
+      "lat": "22.2573308",
+      "lon": "68.9643978",
+      "category": "amenity",
+      "type": "place_of_worship",
+      "place_rank": 30,
+      "importance": 0.13618373728802152,
+      "addresstype": "amenity",
+      "name": "Rukmini Devi Temple",
+      "display_name": "Rukmini Devi Temple, NH51, Saroj, Ghanshyam Nagar, Devbhumi Dwarka, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, 361335, India",
+      "extratags": {
+        "building": "temple",
+        "religion": "hindu",
+        "wikidata": "Q24931006",
+        "wikipedia": "en:Rukmini Devi Temple",
+        "wikimedia_commons": "Category:Rukmini Devi Temple, Dwarka"
+      },
+      "boundingbox": [
+        "22.2572808",
+        "22.2573808",
+        "68.9643478",
+        "68.9644478"
+      ]
+    }
+  ]
+}

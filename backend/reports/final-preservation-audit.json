@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-29T22:04:34.372152+05:30",
+  "changedExistingFiles": [
+    "backend/reports/frontend-browser-report.json",
+    "frontend/scripts/run-experiments.ts",
+    "backend/reports/trips-http-report.json",
+    "backend/reports/admin-http-report.json",
+    "backend/reports/frontend-build-report.json",
+    "CODEX_HANDOFF.md",
+    "backend/scripts/test-frontend-browser.js",
+    "backend/reports/destinations-http-report.json",
+    "docs/research/Research_Experiment_Plan.md",
+    "docs/research/experiment_results.json",
+    "backend/reports/auth-http-report.json",
+    "tests/frontend/browser_api.py"
+  ],
+  "frontendApplicationFilesUnchanged": true,
+  "historicalExperimentArchivesMatchBaseline": {
+    "docs/research/experiment_results.previous-client.json": true,
+    "docs/research/Research_Experiment_Plan.previous-client.md": true
+  },
+  "gitAvailable": false
+}

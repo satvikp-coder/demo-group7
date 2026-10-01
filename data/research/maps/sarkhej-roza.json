@@ -1,0 +1,58 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Sarkhej+Roza&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 246100580,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 499625062,
+      "lat": "22.9920346",
+      "lon": "72.5050271",
+      "category": "historic",
+      "type": "tomb",
+      "place_rank": 30,
+      "importance": 0.3869235073939477,
+      "addresstype": "historic",
+      "name": "Sarkhej Roza",
+      "display_name": "Sarkhej Roza, Jawaharlal Nehru Road, Quresh Nagar Society, Makarba, Sarkhej, Vejalpur Taluka, Ahmedabad, Gujarat, 380051, India",
+      "extratags": {
+        "wikidata": "Q15697211",
+        "wikipedia": "en:Sarkhej Roza",
+        "wikimedia_commons": "Category:Sarkhej Roza"
+      },
+      "boundingbox": [
+        "22.9900937",
+        "22.9940451",
+        "72.5027497",
+        "72.5074877"
+      ]
+    },
+    {
+      "place_id": 246103942,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 499625055,
+      "lat": "22.9936791",
+      "lon": "72.5053933",
+      "category": "amenity",
+      "type": "place_of_worship",
+      "place_rank": 30,
+      "importance": 6.633783474474735e-05,
+      "addresstype": "amenity",
+      "name": "Sarkhej Roza",
+      "display_name": "Sarkhej Roza, Prahlad Nagar, Makarba, Sarkhej, Vejalpur Taluka, Ahmedabad, Gujarat, 380051, India",
+      "extratags": {
+        "religion": "muslim",
+        "wikidata": "Q87789625",
+        "wikimedia_commons": "Category:Roza of Baba Ishaq and Bawa Ganj Baksh, Sarkhej Roza"
+      },
+      "boundingbox": [
+        "22.9927855",
+        "22.9940451",
+        "72.5044934",
+        "72.5062874"
+      ]
+    }
+  ]
+}

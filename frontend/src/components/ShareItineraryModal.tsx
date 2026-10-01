@@ -44,6 +44,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
       setTimeout(() => setCopied(false), 2500);
     } catch (err) {
       console.error("Failed to copy link:", err);
+      window.alert("Unable to copy the link. Select the shareable link and copy it manually.");
     }
   };
 
@@ -58,6 +59,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
     } catch (err: any) {
       if (err?.name !== "AbortError") {
         console.warn("Native share could not be completed:", err);
+        window.alert("Unable to share the itinerary. Copy the shareable link instead.");
       }
     }
   };

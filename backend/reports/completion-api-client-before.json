@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "name": "Invalid successful JSON response is rejected",
+      "passed": true,
+      "result": true
+    },
+    {
+      "name": "Missing budget values cannot become fabricated zero totals",
+      "passed": true,
+      "result": true
+    },
+    {
+      "name": "Invalid collection shape is rejected",
+      "passed": true,
+      "result": true
+    },
+    {
+      "name": "Missing catalog identity fields cannot display a fabricated blank destination",
+      "passed": false,
+      "result": false
+    },
+    {
+      "name": "Malformed destination detail is rejected",
+      "passed": false,
+      "result": false
+    },
+    {
+      "name": "Persisted itinerary rejects another trip's budget",
+      "passed": true,
+      "result": true
+    },
+    {
+      "name": "Malformed login never stores an invalid token",
+      "passed": true,
+      "result": true
+    },
+    {
+      "name": "Late old-session 401 cannot clear a new login",
+      "passed": true,
+      "result": true
+    },
+    {
+      "name": "Current-session 401 still clears authentication",
+      "passed": true,
+      "result": true
+    }
+  ],
+  "verified": false
+}

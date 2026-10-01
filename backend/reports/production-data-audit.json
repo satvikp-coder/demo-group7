@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-01T04:52:49.978Z",
+  "verified": true,
+  "counts": {
+    "destinations": 8,
+    "attractions": 25,
+    "hotels": 11,
+    "restaurants": 12,
+    "routes": 131
+  },
+  "duplicateEntities": [],
+  "invalidCoordinates": [],
+  "images": [
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/kankaria-lake/Kankaria-Lake-Thumbnail.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    },
+    {
+      "url": "https://gujarattourism.com/content/dam/gujrattourism/images/june/Adalaj-ni-Vav.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "available": true,
+      "rights": "External source retains rights; redistribution license not established; existing category fallback preserved"
+    }
+  ],
+  "routing": {
+    "rows": 131,
+    "reverseEvidence": 121,
+    "asymmetric": 93
+  },
+  "imagePolicy": "HEAD only; no copyrighted images downloaded. Availability is time-sensitive; failures use existing safe assets. Unknown rights are not represented as licensed."
+}

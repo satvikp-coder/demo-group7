@@ -1,0 +1,113 @@
+{
+  "startedAt": "2026-10-01T09:02:01Z",
+  "verified": true,
+  "users": [
+    "707dd87b-3a30-4c28-9ff4-590141838af1"
+  ],
+  "checks": [
+    {
+      "name": "Registration, login, auth/me and five dashboard refreshes through built app",
+      "passed": true
+    },
+    {
+      "name": "All eight cities: real search/details/children/planner/selected hotel/budget/reload/persisted API",
+      "passed": true
+    },
+    {
+      "name": "Rapid double actions produce exactly one registration/login/trip/generation request",
+      "passed": true
+    },
+    {
+      "name": "Refresh during a real database-blocked generation preserves the committed plan and dashboard recovery without duplicate generation",
+      "passed": true
+    },
+    {
+      "name": "PDF download embeds cross-origin font styles without suppressing errors",
+      "passed": true
+    },
+    {
+      "name": "Frontend/backend/PostgreSQL restart preserves exact itinerary and budget",
+      "passed": true
+    },
+    {
+      "name": "Fresh login dashboard lists PostgreSQL trips and its Open Itinerary control restores the saved plan",
+      "passed": true
+    },
+    {
+      "name": "Fresh browser session logs in and reopens persisted shared trip without generating",
+      "passed": true
+    },
+    {
+      "name": "Existing Remove control hides session history after refresh and preserves the saved PostgreSQL trip",
+      "passed": true
+    },
+    {
+      "name": "SPA direct navigation and logout",
+      "passed": true
+    },
+    {
+      "name": "No console/page/network errors during successful production flows",
+      "passed": true
+    }
+  ],
+  "cities": [
+    {
+      "slug": "ahmedabad",
+      "tripId": "6f923125-0081-4bb7-a386-cdb27d0fc2f8",
+      "total": 10928,
+      "passed": true
+    },
+    {
+      "slug": "champaner",
+      "tripId": "2bd94fb6-277c-4587-99ae-708dba7057b4",
+      "total": 18819,
+      "passed": true
+    },
+    {
+      "slug": "dwarka",
+      "tripId": "9bbf52b7-7d68-406c-a760-b72bd171fdd7",
+      "total": 5430,
+      "passed": true
+    },
+    {
+      "slug": "gir-national-park",
+      "tripId": "4ad5fd7a-2fe3-41c3-9f2d-b58f74b20022",
+      "total": 12928,
+      "passed": true
+    },
+    {
+      "slug": "modhera",
+      "tripId": "eb0a748d-17b5-4996-bf54-e1c19362d4c8",
+      "total": 6486,
+      "passed": true
+    },
+    {
+      "slug": "rann-of-kutch",
+      "tripId": "6c0eb2b9-6e55-473e-b763-517698589ca5",
+      "total": 11650,
+      "passed": true
+    },
+    {
+      "slug": "saputara",
+      "tripId": "9812af95-92a0-4ee6-b004-d4c5ae1ac407",
+      "total": 9820,
+      "passed": true
+    },
+    {
+      "slug": "somnath",
+      "tripId": "db96834a-54c5-4a19-bda6-4d4060718bfc",
+      "total": 9144,
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "interruptedGeneration": {
+    "tripId": "1f7a3806-bcf9-46ef-996d-75c338eee99f",
+    "requests": 1,
+    "persisted": true
+  }
+}

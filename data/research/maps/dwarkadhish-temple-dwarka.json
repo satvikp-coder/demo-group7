@@ -1,0 +1,35 @@
+{
+  "url": "https://nominatim.openstreetmap.org/search?q=Dwarkadhish+Temple+Dwarka&format=jsonv2&limit=3&extratags=1",
+  "checked": "2026-09-30",
+  "results": [
+    {
+      "place_id": 247792355,
+      "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 91573157,
+      "lat": "22.2377737",
+      "lon": "68.9675115",
+      "category": "landuse",
+      "type": "religious",
+      "place_rank": 24,
+      "importance": 0.40554112705548934,
+      "addresstype": "religious",
+      "name": "Dwarkadhish Temple",
+      "display_name": "Dwarkadhish Temple, Old, Aboti Brahmin Vadi, Devbhumi Dwarka, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, 361335, India",
+      "extratags": {
+        "phone": "+912892234080",
+        "website": "https://www.dwarkadhish.org/",
+        "religion": "hindu",
+        "wikidata": "Q1268294",
+        "wikipedia": "en:Dwarkadhish Temple",
+        "wikimedia_commons": "Category:Dwarakadheesh Temple"
+      },
+      "boundingbox": [
+        "22.2371673",
+        "22.2383990",
+        "68.9670804",
+        "68.9681711"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+# Normalize ordinary text; keep pinned research/migration bytes unchanged.
+* text=auto eol=lf
+data/** -text
+database/** -text
+# Preserve backend source and checksum-ledger inputs exactly.
+backend/** -text
+# Historical UI hash fixtures require the original checkout line endings.
+frontend/src/api/index.ts -text
+frontend/src/api/types.ts text eol=crlf
+frontend/src/App.tsx -text
+frontend/src/components/AccessibilityBadge.tsx text eol=crlf
+frontend/src/components/AdminDashboardView.tsx -text
+frontend/src/components/AlgorithmStatsPanel.tsx text eol=crlf
+frontend/src/components/AuthView.tsx text eol=crlf
+frontend/src/components/BestTimeNote.tsx text eol=crlf
+frontend/src/components/BudgetPlannerView.tsx -text
+frontend/src/components/ChevronDivider.tsx text eol=crlf
+frontend/src/components/DestinationDetailView.tsx -text
+frontend/src/components/DijkstraVisualizer.tsx -text
+frontend/src/components/ExploreView.tsx text eol=crlf
+frontend/src/components/FeaturedDestinations.tsx text eol=crlf
+frontend/src/components/Footer.tsx -text
+frontend/src/components/Hero.tsx text eol=crlf
+frontend/src/components/HomeTransitionOverlay.tsx text eol=crlf
+frontend/src/components/HotelsView.tsx -text
+frontend/src/components/ImageWithFallback.tsx text eol=crlf
+frontend/src/components/InvalidSharedLinkView.tsx text eol=crlf
+frontend/src/components/ItineraryView.tsx -text
+frontend/src/components/Navbar.tsx text eol=crlf
+frontend/src/components/NotFoundView.tsx text eol=crlf
+frontend/src/components/OfflineBanner.tsx -text
+frontend/src/components/OfflineRouteMap.tsx text eol=crlf
+frontend/src/components/PlannerModal.tsx text eol=crlf
+frontend/src/components/ProfileDashboardView.tsx -text
+frontend/src/components/PwaInstallPrompt.tsx -text
+frontend/src/components/ResearchView.tsx -text
+frontend/src/components/ShareItineraryModal.tsx -text
+frontend/src/components/StrategyComparisonModal.tsx -text
+frontend/src/components/ValueProps.tsx text eol=crlf
+frontend/src/components/WhatIfPanel.tsx text eol=crlf
+frontend/src/context/LanguageContext.tsx text eol=crlf
+frontend/src/context/ThemeContext.tsx text eol=crlf
+frontend/src/main.tsx text eol=crlf
+frontend/src/utils/itineraryPlanner.ts text eol=crlf
+frontend/src/utils/offlineStorage.ts text eol=crlf
+frontend/src/utils/router.ts text eol=crlf
+frontend/src/utils/shareUrl.ts text eol=crlf
+frontend/public/sw.js text eol=crlf

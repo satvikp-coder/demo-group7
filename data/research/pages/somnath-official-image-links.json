@@ -1,0 +1,90 @@
+{
+  "requested": "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html",
+  "checked": "2026-09-30",
+  "images": [
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg",
+      "class": "imgW100p",
+      "alt": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/Somnath-Temple-1.jpg",
+      "class": "imgW100pBorderR mt-1",
+      "alt": "Somnath"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(18).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(6).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(2).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(7).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(1).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(13).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(12).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(10).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(23).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/somnath-temple/gallery/Somnath-Temple-(27).jpg",
+      "alt": "Shree Somnath Jyotirlinga Temple",
+      "title": "Shree Somnath Jyotirlinga Temple"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/other-images/by-road.png",
+      "alt": "By Road"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/other-images/by-train.png",
+      "alt": "By Train"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/other-images/by-air.png",
+      "alt": "By Air"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/triveni-sangam/Triveni-Sangam-Thumbnail.jpg",
+      "alt": "Triveni Sangam"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/bhalka-tirth/Bhalka-Tirth-Thumbnail.jpg",
+      "alt": "Bhalka Tirth"
+    },
+    {
+      "src": "/content/dam/gujrattourism/images/religious-sites/koteshwar-mahadev-temple/Koteshwar-Mahadev-Temple-Thumbnail.jpg",
+      "alt": "Koteshwar Mahadev "
+    }
+  ]
+}

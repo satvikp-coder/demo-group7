@@ -1,9 +1,8 @@
 import React, { useState, useMemo } from "react";
-import { GUJARAT_DESTINATIONS } from "../data/destinations";
+import { api, useApi } from "../api";
 import { ItineraryConfig } from "./ItineraryView";
 import { useLanguage } from "../context/LanguageContext";
-import { getLatestOfflineTrip } from "../utils/offlineStorage";
-import { generateStrategyItinerary } from "../utils/itineraryPlanner";
+
 import {
   DollarSign,
   ArrowLeft,
@@ -26,7 +25,7 @@ interface BudgetPlannerViewProps {
   config: ItineraryConfig | null;
   onBackToItinerary: () => void;
   onBackToPlanner: () => void;
-  onSelectDestination?: (dest: import("../data/destinations").Destination) => void;
+  onSelectDestination?: (dest: import("../api/types").Destination) => void;
   onBudgetChange?: (budget: number) => void;
 }
 
@@ -39,65 +38,32 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 }) => {
   const { language, t, getName } = useLanguage();
 
-  const cachedTrip = getLatestOfflineTrip();
-  const activeConfig = config || cachedTrip?.config || null;
-
-  const tripDays = activeConfig?.tripDays || 2;
-
-  // Compute cost breakdown from the active itinerary configuration — single source of truth
-  const costResult = useMemo(() => {
-    if (!activeConfig) return null;
-    return generateStrategyItinerary(
-      {
-        cityId: activeConfig.cityId,
-        tripDays: activeConfig.tripDays || 2,
-        budget: activeConfig.budget || 8500,
-        startingHotelId: activeConfig.startingHotelId || "",
-        startTime: activeConfig.startTime || "08:00 AM",
-        strategy: activeConfig.strategy || "distance-first",
-        wheelchairAccessibleOnly: activeConfig.wheelchairAccessibleOnly,
-      },
-      activeConfig.strategy || "distance-first",
-      language,
-    );
-  }, [activeConfig, language]);
-
-  const travelCost = costResult?.transitTotalCost ?? 0;
-  const hotelCost = costResult?.hotelTotalCost ?? 0;
-  const entryCost = costResult?.attractionTotalCost ?? 0;
-  const foodCost = costResult?.mealTotalCost ?? 0;
-
-  // Grand total derived from active itinerary — this is the one source of truth
-  const totalEstimatedCost = travelCost + hotelCost + entryCost + foodCost;
-
-  // Initial budget cap: use the active config's budget, fall back to computed total if no config
-  const [allocatedBudget, setAllocatedBudget] = useState<number>(
-    activeConfig?.budget ?? totalEstimatedCost ?? 8500,
-  );
+  const activeConfig = config;
+  const request = useApi(async signal => {
+    const id = activeConfig?.tripId ?? "";
+    const [budget, dto] = await Promise.all([api.budget(id, signal), api.trip(id, signal)]);
+    const city = await api.destination(dto.trip.destination_id, signal);
+    return {budget, dto, city};
+  }, [activeConfig?.tripId]);
+  const tripDays = request.data?.dto.trip.trip_days ?? 0;
+  const travelCost = request.data?.budget.transit ?? 0;
+  const hotelCost = request.data?.budget.hotel ?? 0;
+  const entryCost = request.data?.budget.attractions ?? 0;
+  const foodCost = request.data?.budget.meals ?? 0;
+  const totalEstimatedCost = request.data?.budget.total ?? 0;
+  const [simulatedBudget, setAllocatedBudget] = useState<number>(0);
+  const allocatedBudget = request.data?.budget.budget ?? 0;
   const [budgetInputError, setBudgetInputError] = useState<string>("");
 
   const [appliedTips, setAppliedTips] = useState<string[]>([]);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
 
   // ── ASI discount: mathematically correct 10% of actual entry cost ──────────
-  const asiDiscount = appliedTips.includes("pass")
-    ? Math.round(entryCost * 0.1)
-    : 0;
-
-  // ── Effective per-category costs reflecting applied tips ───────────────────
-  const effectiveTravelCost = Math.max(
-    0,
-    travelCost - (appliedTips.includes("transit") ? 1100 : 0),
-  );
-  const effectiveHotelCost = Math.max(
-    0,
-    hotelCost - (appliedTips.includes("hotel") ? 2200 : 0),
-  );
-  const effectiveEntryCost = Math.max(0, entryCost - asiDiscount);
-
-  // Grand total is derived from category sums — no independent calculation
-  const currentEffectiveCost =
-    effectiveTravelCost + effectiveHotelCost + effectiveEntryCost + foodCost;
+  const effectiveTravelCost = travelCost;
+  const effectiveHotelCost = hotelCost;
+  const effectiveEntryCost = entryCost;
+  const asiDiscount = 0;
+  const currentEffectiveCost = totalEstimatedCost;
 
   const currentIsOver = currentEffectiveCost > allocatedBudget;
   const currentOverAmount = currentEffectiveCost - allocatedBudget;
@@ -110,37 +76,38 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
   const handlePrint = () => window.print();
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator
-        .share({
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
           title: "Gujarat Heritage Budget Ledger",
           text: `Financial breakdown for my ${tripDays}-day Gujarat Heritage trip: Total ₹${currentEffectiveCost.toLocaleString()}`,
           url: window.location.href,
-        })
-        .catch(() => {});
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      setSavedShareNotice(true);
-      setTimeout(() => setSavedShareNotice(false), 3000);
+        });
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        setSavedShareNotice(true);
+        setTimeout(() => setSavedShareNotice(false), 3000);
+      }
+    } catch (error) {
+      if ((error as Error).name !== "AbortError") {
+        setBudgetInputError("Unable to share the budget. Copy the page address manually.");
+      }
     }
   };
 
-  const toggleTip = (tipId: string) => {
-    setAppliedTips((prev) =>
-      prev.includes(tipId) ? prev.filter((t) => t !== tipId) : [...prev, tipId],
-    );
+  const toggleTip = (_tipId: string) => {
+    setBudgetInputError("The ledger shows saved costs. Change trip parameters in the planner to generate a new budget.");
   };
-
-  // City name for display
-  const activeCity = activeConfig?.cityId
-    ? GUJARAT_DESTINATIONS.find((d) => d.id === activeConfig.cityId)
-    : null;
-  const cityName = activeCity ? getName(activeCity) : "Heritage";
+  const activeCity = request.data?.city;
+  const cityName = activeCity ? getName(activeCity) : "";
+  if(request.loading) return <p role="status">Loading saved trip budget...</p>;
+  if(request.error || !request.data) return <p role="alert">{request.error || "Generate a trip first."} <button onClick={request.reload}>Retry</button> <button onClick={onBackToPlanner}>Open planner</button></p>;
 
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-6xl mx-auto space-y-8">
+        {request.data.budget.transport_cost_known === false && <p role="status">Transport fares are unknown and excluded from this saved total.</p>}
         {/* Navigation Action Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
           <div className="flex items-center gap-3">
@@ -250,11 +217,11 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                     if (isNaN(raw) || raw < 0) {
                       setBudgetInputError("Budget cannot be negative.");
                       setAllocatedBudget(0);
-                      if (onBudgetChange) onBudgetChange(0);
+                      setBudgetInputError("Use Adjust Trip Parameters to save a new budget.");
                     } else {
                       setBudgetInputError("");
                       setAllocatedBudget(raw);
-                      if (onBudgetChange) onBudgetChange(raw);
+                      setBudgetInputError("Use Adjust Trip Parameters to save a new budget.");
                     }
                   }}
                   className="bg-salt text-ink font-mono font-bold text-base px-2 py-1 border border-gold outline-none w-28 rounded-md"
@@ -322,8 +289,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                     your budget.
                   </span>
                   <span className="text-stone text-[11px] block">
-                    Apply one of the optimization tips below or adjust your trip
-                    duration in the planner.
+                    Adjust your selected hotel or trip duration in the planner.
                   </span>
                 </div>
               </div>
@@ -367,7 +333,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 </div>
               </div>
               <span className={`font-bold text-sm ${appliedTips.includes("transit") ? "text-emerald-700" : "text-charcoal"}`}>
-                ₹{effectiveTravelCost.toLocaleString("en-IN")}
+                {request.data.budget.transport_cost_known === false ? "Unknown (excluded)" : `₹${effectiveTravelCost.toLocaleString("en-IN")}`}
                 {appliedTips.includes("transit") && travelCost > 0 && (
                   <span className="block text-[10px] font-normal text-stone line-through">
                     ₹{travelCost.toLocaleString("en-IN")}
@@ -453,7 +419,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             {/* Total row */}
             <div className="flex items-center justify-between p-3 bg-ink text-salt border border-gold rounded-xl">
               <span className="font-bold text-xs uppercase tracking-wider">
-                Grand Total (after tips)
+                Grand Total (persisted stops)
               </span>
               <span className="font-bold text-gold text-base">
                 ₹{currentEffectiveCost.toLocaleString("en-IN")}
@@ -472,13 +438,13 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               </h3>
             </div>
             <span className="font-mono text-xs text-gold font-bold">
-              Tip Savings Available: ₹{(2200 + asiDiscount + 1100).toLocaleString("en-IN")}
+              Tip Savings: Not available from the server
             </span>
           </div>
 
           <p className="text-xs font-mono text-stone">
-            Select optimization measures below to dynamically apply cost
-            reductions to your active itinerary ledger:
+            The server has no verified savings data for these options. Adjust trip
+            parameters to generate a new persisted budget:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
@@ -496,7 +462,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                   Stay Saver
                 </span>
                 <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px] rounded-md">
-                  Save ₹2,200
+                  Savings not available
                 </span>
               </div>
               <h4 className="font-display text-sm font-bold">
@@ -509,7 +475,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
                 {appliedTips.includes("hotel")
                   ? "✓ Applied to Ledger"
-                  : "+ Apply Saving"}
+                  : "Review in planner"}
               </div>
             </button>
 
@@ -527,20 +493,19 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                   ASI Tariff Pass
                 </span>
                 <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px] rounded-md">
-                  Save ₹{Math.round(entryCost * 0.1).toLocaleString("en-IN")}
+                  Savings not available
                 </span>
               </div>
               <h4 className="font-display text-sm font-bold">
                 Book Online ASI Combination Ticket
               </h4>
               <p className="text-[11px] opacity-90 font-normal">
-                Purchase digital QR tickets online via the ASI portal to receive
-                a 10% discount on total entry fees (₹{entryCost.toLocaleString("en-IN")} × 10%).
+                No verified combination-ticket price is available for this trip.
               </p>
               <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
                 {appliedTips.includes("pass")
                   ? "✓ Applied to Ledger"
-                  : "+ Apply Saving"}
+                  : "Review in planner"}
               </div>
             </button>
 
@@ -558,7 +523,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                   GSRTC Express Transit
                 </span>
                 <span className="font-bold text-madder bg-salt px-1.5 py-0.5 text-[10px] rounded-md">
-                  Save ₹1,100
+                  Savings not available
                 </span>
               </div>
               <h4 className="font-display text-sm font-bold">
@@ -571,7 +536,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
               <div className="pt-1 text-[10px] font-bold uppercase flex items-center gap-1">
                 {appliedTips.includes("transit")
                   ? "✓ Applied to Ledger"
-                  : "+ Apply Saving"}
+                  : "Review in planner"}
               </div>
             </button>
           </div>

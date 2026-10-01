@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Destination, GUJARAT_DESTINATIONS } from "../data/destinations";
+import { api, useApi, loadItinerary } from "../api";
 import { ItineraryConfig } from "./ItineraryView";
 import { useLanguage } from "../context/LanguageContext";
 import {
@@ -46,7 +46,7 @@ interface ProfileDashboardViewProps {
   onOpenItinerary: (config: ItineraryConfig) => void;
   onOpenExplore: () => void;
   onOpenPlanner: () => void;
-  onOpenAdminDashboard?: () => void;
+  onOpenAdminDashboard?: (hotelId?: string, create?: boolean) => void;
   onLogout: () => void;
 }
 
@@ -83,157 +83,25 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
     null,
   );
 
-  const [savedTrips, setSavedTrips] = useState<SavedTrip[]>(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const stored = localStorage.getItem("heritage_saved_trips");
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            // Ensure any previously saved trips also have explicit cityId
-            return parsed.map((t: SavedTrip) => {
-              if (!t.config?.cityId) {
-                const resolvedCity =
-                  (t.config?.selectedSites && t.config.selectedSites[0]) ||
-                  (t.id.includes("kutch") ? "rann-of-kutch" : t.id.includes("solanki") ? "modhera" : "somnath");
-                return {
-                  ...t,
-                  config: {
-                    ...t.config,
-                    cityId: resolvedCity,
-                    startingHotelId:
-                      t.config?.startingHotelId ||
-                      (resolvedCity === "rann-of-kutch"
-                        ? "toran-rann"
-                        : resolvedCity === "modhera"
-                        ? "toran-modhera"
-                        : undefined),
-                    startTime: t.config?.startTime || "08:00 AM",
-                  },
-                };
-              }
-              return t;
-            });
-          }
-        }
-      } catch (err) {
-        console.warn("Failed to read saved trips from localStorage", err);
-      }
-    }
-    return [
-      {
-        id: "trip-solanki-3d",
-        title: "3-Day Solanki & Heritage Stepwell Circuit",
-        dates: "OCT 12 - 14, 2026",
-        daysCount: 3,
-        totalCost: 12800,
-        planningProgress: 80,
-        statusLabel: "3 of 4 Stays Booked",
-        sitesCount: 3,
-        sitesList: ["Modhera Sun Temple", "Champaner-Pavagadh", "Adalaj Ni Vav"],
-        config: {
-          cityId: "modhera",
-          selectedSites: ["modhera", "champaner", "adalaj"],
-          tripDays: 3,
-          budget: 12000,
-          startingHotelId: "toran-modhera",
-          startTime: "08:00 AM",
-        },
-      },
-      {
-        id: "trip-kutch-5d",
-        title: "5-Day Great Rann & Kutchi Craft Trail",
-        dates: "NOV 04 - 08, 2026",
-        daysCount: 5,
-        totalCost: 24500,
-        planningProgress: 45,
-        statusLabel: "In Draft • Permit Pending",
-        sitesCount: 4,
-        sitesList: [
-          "Rann of Kutch",
-          "Hodka Crafts",
-          "Bhuj Palace",
-          "Somnath Temple",
-        ],
-        config: {
-          cityId: "rann-of-kutch",
-          selectedSites: ["rann-of-kutch", "somnath", "gir"],
-          tripDays: 5,
-          budget: 25000,
-          startingHotelId: "toran-rann",
-          startTime: "08:00 AM",
-        },
-      },
-    ];
-  });
-
-  // Keep localStorage in sync with saved trips state
-  React.useEffect(() => {
-    try {
-      localStorage.setItem("heritage_saved_trips", JSON.stringify(savedTrips));
-    } catch (err) {
-      console.warn("Failed to persist saved trips", err);
-    }
-  }, [savedTrips]);
-
-  const handleOpenTrip = (trip: SavedTrip) => {
-    const targetCityId =
-      trip.config?.cityId ||
-      (trip.config?.selectedSites && trip.config.selectedSites[0]) ||
-      (trip.id.includes("kutch") ? "rann-of-kutch" : trip.id.includes("solanki") ? "modhera" : "somnath");
-
-    const completeConfig: ItineraryConfig = {
-      ...trip.config,
-      cityId: targetCityId,
-      tripDays: trip.config?.tripDays || trip.daysCount || 2,
-      budget: trip.config?.budget || trip.totalCost || 8500,
-      startingHotelId:
-        trip.config?.startingHotelId ||
-        (targetCityId === "rann-of-kutch"
-          ? "toran-rann"
-          : targetCityId === "modhera"
-          ? "toran-modhera"
-          : undefined),
-      startTime: trip.config?.startTime || "08:00 AM",
-    };
-
-    onOpenItinerary(completeConfig);
-  };
-
-  const [operatorListings, setOperatorListings] = useState([
-    {
-      id: "op-1",
-      name: "Champaner Toran Heritage Haven",
-      type: "Toran Hotel",
-      destination: "Champaner-Pavagadh",
-      status: "Verified & Active",
-      lastUpdated: "2 days ago",
-      price: "₹2,000 / night",
-    },
-    {
-      id: "op-2",
-      name: "Modhera Sun Temple Heritage Lodge",
-      type: "Registered Hotel",
-      destination: "Modhera",
-      status: "Under ASI Audit",
-      lastUpdated: "Oct 1, 2026",
-      price: "₹3,200 / night",
-    },
-    {
-      id: "op-3",
-      name: "Hodka Artisans Homestay",
-      type: "Homestay",
-      destination: "Rann of Kutch",
-      status: "Verified & Active",
-      lastUpdated: "Sep 28, 2026",
-      price: "₹2,200 / night",
-    },
-  ]);
-
+  const request = useApi(async () => {
+    const hidden: string[] = JSON.parse(sessionStorage.getItem("heritage_api_hidden_trip_ids") || "[]");
+    const ids = (await api.savedTrips()).map(row => row.id).filter(id => !hidden.includes(id));
+    const trips = await Promise.all(ids.map(id => loadItinerary(id)));
+    const listings = currentUser?.role === "operator" ? await api.adminList("hotels") : [];
+    return {trips:trips.map(({config,result,dto}) => ({id:config.tripId,title:result.activeCity.name,
+      dates:dto.trip.created_at,daysCount:config.tripDays,totalCost:result.totalCost,planningProgress:dto.trip.generated_at?100:0,
+      statusLabel:dto.trip.generation_summary?.status ?? "Not generated",sitesCount:result.attractionCount,
+      sitesList:result.dayPlans.flatMap(d=>d.stops.filter(s=>s.type==="attraction").map(s=>s.name)),config})),
+      listings:listings.map(h=>({id:h.id,name:h.name,type:h.stay_type,destination:h.destination_id,
+        status:h.provenance_status,lastUpdated:"Not available",price:`₹${h.price_per_night} / night`}))};
+  }, [currentUser?.email,currentUser?.role]);
+  const savedTrips = request.data?.trips ?? [];
+  const operatorListings = request.data?.listings ?? [];
+  const handleOpenTrip = (trip: SavedTrip) => onOpenItinerary(trip.config);
   const handleSettingsSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSaveSuccessNotice(
-      "Account details updated successfully in heritage ledger!",
+      "Account editing is not available from the API yet. No changes were saved.",
     );
     setTimeout(() => {
       setSaveSuccessNotice(null);
@@ -242,9 +110,15 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
   const handleDeleteTrip = (tripId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    setSavedTrips((prev) => prev.filter((t) => t.id !== tripId));
+    const ids: string[] = JSON.parse(sessionStorage.getItem("heritage_api_trip_ids") || "[]");
+    sessionStorage.setItem("heritage_api_trip_ids", JSON.stringify(ids.filter(id => id !== tripId)));
+    const hidden: string[] = JSON.parse(sessionStorage.getItem("heritage_api_hidden_trip_ids") || "[]");
+    sessionStorage.setItem("heritage_api_hidden_trip_ids", JSON.stringify([...new Set([...hidden,tripId])]));
+    request.reload();
   };
 
+  if(request.loading) return <p role="status">Loading account records...</p>;
+  if(request.error) return <p role="alert">{request.error} <button onClick={request.reload}>Retry</button></p>;
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-5xl mx-auto space-y-10">
@@ -261,7 +135,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                     : "Heritage Tourist"}
                 </span>
                 <span className="font-mono text-[10px] text-stone">
-                  • Demo Account
+                  • Signed-in Account
                 </span>
               </div>
 
@@ -273,10 +147,10 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
               <button
                 onClick={() =>
-                  setRole(role === "tourist" ? "operator" : "tourist")
+                  setSaveSuccessNotice("Your role is supplied by the authenticated server account.")
                 }
                 className="bg-salt/10 hover:bg-salt/20 text-gold border border-gold/40 px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"
-                title="Toggle between Tourist and Tour Operator mode to test both layouts"
+                title="Account role from the authentication server"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-gold" />
                 <span>
@@ -286,7 +160,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
               {currentUser && onOpenAdminDashboard && (
                 <button
-                  onClick={onOpenAdminDashboard}
+                  onClick={() => onOpenAdminDashboard?.()}
                   className="bg-gold text-ink hover:bg-gold/90 border border-gold font-bold px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"
                 >
                   <ShieldCheck className="w-3.5 h-3.5 text-ink" />
@@ -312,7 +186,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
             <span>•</span>
             <span>Saved Routes: {savedTrips.length}</span>
             <span>•</span>
-            <span>Active Ledger ID: #GL-8802</span>
+            <span>Account ID: {currentUser?.email}</span>
           </div>
         </div>
 
@@ -443,11 +317,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
               </div>
 
               <button
-                onClick={() =>
-                  alert(
-                    "New listing application initialized. Tourism guild form submitted.",
-                  )
-                }
+                onClick={() => onOpenAdminDashboard?.(undefined, true)}
                 className="inline-flex items-center gap-2 bg-madder hover:bg-madder/90 text-salt text-xs font-mono font-bold px-4 py-2 border border-madder shadow-xs transition-colors cursor-pointer shrink-0 rounded-lg"
               >
                 <Plus className="w-4 h-4 text-salt" />
@@ -484,7 +354,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                       {item.price}
                     </span>
                     <button
-                      onClick={() => alert(`Editing listing "${item.name}"...`)}
+                      onClick={() => onOpenAdminDashboard?.(item.id)}
                       className="bg-salt hover:bg-stone/20 text-charcoal border border-stone/40 px-3 py-1.5 cursor-pointer flex items-center gap-1 rounded-lg"
                     >
                       <Edit3 className="w-3.5 h-3.5 text-ink" />

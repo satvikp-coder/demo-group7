@@ -1,0 +1,209 @@
+{
+  "city": "somnath",
+  "checkedAt": "2026-09-30T17:59:48.197Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/destinations/somnath",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/58ce0ce1-ecf6-4bb3-93c0-23c9a778d919/attractions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/58ce0ce1-ecf6-4bb3-93c0-23c9a778d919/restaurants",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/58ce0ce1-ecf6-4bb3-93c0-23c9a778d919/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/58ce0ce1-ecf6-4bb3-93c0-23c9a778d919/hotels?sort=rating",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/58ce0ce1-ecf6-4bb3-93c0-23c9a778d919/hotels?sort=value",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/909bf7fc-a76f-4702-a6dc-9d118c7463ad/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/909bf7fc-a76f-4702-a6dc-9d118c7463ad",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/909bf7fc-a76f-4702-a6dc-9d118c7463ad/budget",
+      "status": 200
+    }
+  ],
+  "counts": {
+    "attractions": 4,
+    "hotels": 1,
+    "restaurants": 2
+  },
+  "attractionVisits": 4,
+  "summary": {
+    "legs": [
+      {
+        "to": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+        "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+        "path": [
+          "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "2885318d-f5c9-49de-a6a7-ad1d0da78bba"
+        ],
+        "method": "direct",
+        "minutes": 5,
+        "day_number": 1,
+        "distance_km": 3.63
+      },
+      {
+        "to": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+        "from": "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+        "path": [
+          "2885318d-f5c9-49de-a6a7-ad1d0da78bba",
+          "74a280c4-b24d-4366-ba07-88fa2d4a6489"
+        ],
+        "method": "direct",
+        "minutes": 5,
+        "day_number": 1,
+        "distance_km": 4.07
+      },
+      {
+        "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+        "from": "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+        "path": [
+          "74a280c4-b24d-4366-ba07-88fa2d4a6489",
+          "df7dfe02-bf46-4434-8596-d90dad17298f"
+        ],
+        "method": "direct",
+        "minutes": 6,
+        "day_number": 1,
+        "distance_km": 3.64
+      },
+      {
+        "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+        "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+        "path": [
+          "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "836c1ff8-cc88-4245-92e1-d07417803a2b"
+        ],
+        "method": "direct",
+        "minutes": 3,
+        "day_number": 1,
+        "distance_km": 3.71
+      },
+      {
+        "to": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+        "from": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+        "path": [
+          "836c1ff8-cc88-4245-92e1-d07417803a2b",
+          "d19a83f4-a708-4ff6-8d60-375530f32bbe"
+        ],
+        "method": "direct",
+        "minutes": 8,
+        "day_number": 2,
+        "distance_km": 6.88
+      },
+      {
+        "to": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+        "from": "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+        "path": [
+          "d19a83f4-a708-4ff6-8d60-375530f32bbe",
+          "f0869456-0e5d-4e69-9815-35693a2f34e3"
+        ],
+        "method": "direct",
+        "minutes": 4,
+        "day_number": 2,
+        "distance_km": 1.2
+      },
+      {
+        "to": "df7dfe02-bf46-4434-8596-d90dad17298f",
+        "from": "f0869456-0e5d-4e69-9815-35693a2f34e3",
+        "path": [
+          "f0869456-0e5d-4e69-9815-35693a2f34e3",
+          "df7dfe02-bf46-4434-8596-d90dad17298f"
+        ],
+        "method": "direct",
+        "minutes": 7,
+        "day_number": 2,
+        "distance_km": 5.07
+      },
+      {
+        "to": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+        "from": "df7dfe02-bf46-4434-8596-d90dad17298f",
+        "path": [
+          "df7dfe02-bf46-4434-8596-d90dad17298f",
+          "836c1ff8-cc88-4245-92e1-d07417803a2b"
+        ],
+        "method": "direct",
+        "minutes": 3,
+        "day_number": 2,
+        "distance_km": 3.71
+      }
+    ],
+    "status": "scheduled",
+    "routing": {
+      "dijkstra_calls": 0,
+      "direct_route_hits": 15,
+      "unreachable_pairs": 4
+    },
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "route_rows": 15,
+    "hotel_total": 7944,
+    "skipped_meals": [],
+    "hotel_replaced": false,
+    "lodging_nights": 2,
+    "hotel_over_budget": false,
+    "starting_hotel_id": "836c1ff8-cc88-4245-92e1-d07417803a2b",
+    "excluded_attractions": [],
+    "transport_cost_known": false,
+    "hotel_budget_shortfall": 0,
+    "unscheduled_attractions": []
+  },
+  "budget": {
+    "trip_id": "909bf7fc-a76f-4702-a6dc-9d118c7463ad",
+    "budget": 20000,
+    "hotel": 7944,
+    "attractions": 0,
+    "meals": 1200,
+    "transit": 0,
+    "total": 9144,
+    "remaining": 10856,
+    "over_budget": false,
+    "generated": true,
+    "hotel_over_budget": false,
+    "transport_cost_known": false,
+    "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+  },
+  "apiPassed": true,
+  "cleanupCompleted": true
+}

@@ -92,6 +92,7 @@ export type OptimizationStrategy =
   "budget-first" | "rating-first" | "distance-first";
 
 export interface PlannerConfigPayload {
+  tripId?: string;
   cityId: string;
   tripDays: number;
   budget: number;
@@ -102,6 +103,7 @@ export interface PlannerConfigPayload {
 }
 
 export interface ItineraryStop {
+  legDistanceKm?: number;
   id: string;
   type: "hotel" | "attraction" | "meal" | "transit" | "cultural";
   name: string;

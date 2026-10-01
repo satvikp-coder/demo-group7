@@ -40,6 +40,7 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
+  if (event.request.cache === "no-store" || event.request.headers.has("Authorization") || url.pathname.startsWith("/api/")) return;
 
   // Handle standard page & asset requests with Network-first, fallback to Cache
   event.respondWith(

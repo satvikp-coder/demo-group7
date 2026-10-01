@@ -1,0 +1,27 @@
+{
+  "name": "heritage-tourism-project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "local:up": "node scripts/local-stack.js up",
+    "local:stop": "node scripts/local-stack.js stop",
+    "local:restart": "node scripts/local-stack.js restart",
+    "local:status": "node scripts/local-stack.js status",
+    "local:seed": "node scripts/local-stack.js seed",
+    "local:verify": "node scripts/local-stack.js verify",
+    "local:operator": "node scripts/local-stack.js operator",
+    "local:backup": "node scripts/local-stack.js backup",
+    "local:restore": "node scripts/local-stack.js restore",
+    "test:local": "node scripts/test-local.js",
+    "test:all:local": "node scripts/test-local-all.js",
+    "test:unit": "npm --prefix backend test && npm --prefix frontend test",
+    "test:frontend": "npm --prefix frontend test",
+    "test:backend": "npm --prefix backend test",
+    "test:planner": "npm --prefix frontend run test:planner",
+    "test:integration": "npm --prefix backend run test:integration",
+    "test:browser": "npm --prefix backend run test:frontend",
+    "test:all": "node scripts/test-all.js",
+    "test:production": "node scripts/test-production.js",
+    "audit:source": "node scripts/source-audit.js"
+  }
+}

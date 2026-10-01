@@ -9,11 +9,13 @@ import {
 } from "../../frontend/src/utils/destinationTrie";
 import { GUJARAT_DESTINATIONS } from "../../frontend/src/data/destinations";
 
+let assertions = 0;
 function assert(condition: boolean, message: string) {
   if (!condition) {
     console.error(`❌ FAIL: ${message}`);
     process.exit(1);
   }
+  assertions++;
   console.log(`✅ PASS: ${message}`);
 }
 
@@ -352,4 +354,4 @@ console.log("\n--- Test Group 6: Dynamic Admin CMS Invalidation (resetDestinatio
   assert(afterDeleteDest === null || !afterDeleteDest.has(testDestId), "Post-delete: Deleted destination is no longer returned by Trie");
 }
 
-console.log("\n🎉 All 28 Trie unit, integration, fuzzy Levenshtein & dynamic CMS tests PASSED successfully!\n");
+console.log(`\nAll ${assertions} assertions passed.\n`);

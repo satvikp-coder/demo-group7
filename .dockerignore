@@ -1,0 +1,15 @@
+**/node_modules
+**/dist
+**/.npm-cache
+**/.cache
+**/*.log
+**/.env
+**/.env.*
+**/*.env
+.git
+**/__pycache__
+backend/reports
+backups
+tests
+docs
+**/*.dump

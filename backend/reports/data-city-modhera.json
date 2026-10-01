@@ -1,0 +1,185 @@
+{
+  "city": "modhera",
+  "checkedAt": "2026-09-30T17:59:51.091Z",
+  "exchanges": [
+    {
+      "method": "GET",
+      "path": "/destinations/modhera",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/7158942c-ac57-494c-b9a6-51d98c6179aa/attractions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/7158942c-ac57-494c-b9a6-51d98c6179aa/restaurants",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/7158942c-ac57-494c-b9a6-51d98c6179aa/hotels?sort=price",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/7158942c-ac57-494c-b9a6-51d98c6179aa/hotels?sort=rating",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/destinations/7158942c-ac57-494c-b9a6-51d98c6179aa/hotels?sort=value",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/trips",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/trips/5d035fdf-dd0e-4b93-b687-6f8edad79257/generate-itinerary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/5d035fdf-dd0e-4b93-b687-6f8edad79257",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/trips/5d035fdf-dd0e-4b93-b687-6f8edad79257/budget",
+      "status": 200
+    }
+  ],
+  "counts": {
+    "attractions": 2,
+    "hotels": 1,
+    "restaurants": 1
+  },
+  "attractionVisits": 2,
+  "summary": {
+    "legs": [
+      {
+        "to": "7cd6fb1b-6aa2-49bc-8ecd-eb6026ee0234",
+        "from": "47813e20-92bf-43e4-9655-97dd51781f6b",
+        "path": [
+          "47813e20-92bf-43e4-9655-97dd51781f6b",
+          "7cd6fb1b-6aa2-49bc-8ecd-eb6026ee0234"
+        ],
+        "method": "direct",
+        "minutes": 2,
+        "day_number": 1,
+        "distance_km": 0.46
+      },
+      {
+        "to": "371b5c44-4c74-4825-a2cd-75073617622c",
+        "from": "7cd6fb1b-6aa2-49bc-8ecd-eb6026ee0234",
+        "path": [
+          "7cd6fb1b-6aa2-49bc-8ecd-eb6026ee0234",
+          "371b5c44-4c74-4825-a2cd-75073617622c"
+        ],
+        "method": "direct",
+        "minutes": 1,
+        "day_number": 1,
+        "distance_km": 0.24
+      },
+      {
+        "to": "47813e20-92bf-43e4-9655-97dd51781f6b",
+        "from": "371b5c44-4c74-4825-a2cd-75073617622c",
+        "path": [
+          "371b5c44-4c74-4825-a2cd-75073617622c",
+          "47813e20-92bf-43e4-9655-97dd51781f6b"
+        ],
+        "method": "direct",
+        "minutes": 2,
+        "day_number": 1,
+        "distance_km": 0.7
+      },
+      {
+        "to": "0d8f9b18-a625-4bf9-b475-88059d9265ee",
+        "from": "47813e20-92bf-43e4-9655-97dd51781f6b",
+        "path": [
+          "47813e20-92bf-43e4-9655-97dd51781f6b",
+          "0d8f9b18-a625-4bf9-b475-88059d9265ee"
+        ],
+        "method": "direct",
+        "minutes": 4,
+        "day_number": 2,
+        "distance_km": 2.09
+      },
+      {
+        "to": "371b5c44-4c74-4825-a2cd-75073617622c",
+        "from": "0d8f9b18-a625-4bf9-b475-88059d9265ee",
+        "path": [
+          "0d8f9b18-a625-4bf9-b475-88059d9265ee",
+          "371b5c44-4c74-4825-a2cd-75073617622c"
+        ],
+        "method": "direct",
+        "minutes": 2,
+        "day_number": 2,
+        "distance_km": 1.43
+      },
+      {
+        "to": "47813e20-92bf-43e4-9655-97dd51781f6b",
+        "from": "371b5c44-4c74-4825-a2cd-75073617622c",
+        "path": [
+          "371b5c44-4c74-4825-a2cd-75073617622c",
+          "47813e20-92bf-43e4-9655-97dd51781f6b"
+        ],
+        "method": "direct",
+        "minutes": 2,
+        "day_number": 2,
+        "distance_km": 0.7
+      }
+    ],
+    "status": "scheduled",
+    "routing": {
+      "dijkstra_calls": 0,
+      "direct_route_hits": 7,
+      "unreachable_pairs": 0
+    },
+    "warnings": [
+      "transport_fares_unknown"
+    ],
+    "route_rows": 6,
+    "hotel_total": 5666,
+    "skipped_meals": [],
+    "hotel_replaced": false,
+    "lodging_nights": 2,
+    "hotel_over_budget": false,
+    "starting_hotel_id": "47813e20-92bf-43e4-9655-97dd51781f6b",
+    "excluded_attractions": [],
+    "transport_cost_known": false,
+    "hotel_budget_shortfall": 0,
+    "unscheduled_attractions": []
+  },
+  "budget": {
+    "trip_id": "5d035fdf-dd0e-4b93-b687-6f8edad79257",
+    "budget": 20000,
+    "hotel": 5666,
+    "attractions": 20,
+    "meals": 800,
+    "transit": 0,
+    "total": 6486,
+    "remaining": 13514,
+    "over_budget": false,
+    "generated": true,
+    "hotel_over_budget": false,
+    "transport_cost_known": false,
+    "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+  },
+  "apiPassed": true,
+  "cleanupCompleted": true
+}

@@ -1,0 +1,609 @@
+{
+  "city": "saputara",
+  "checked": "2026-10-01",
+  "records": [
+    {
+      "table": "attractions",
+      "key": "a801",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+              ],
+              "note": "Official tourism identifies Saputara Lake."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+                "https://gujaratexplorers.com/destination/saputara-lake/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+                "https://www.google.com/maps/search/Saputara+Lake+Boating"
+              ]
+            }
+          },
+          "notes": "Duration midpoint of published 1-2 hours. General free access is not free boat admission. Map snapshot pages/saputara-lake.json; boat-house rating not applied to whole lake. Physical accessibility unverified.",
+          "qualification": "Official tourism identifies Saputara Lake."
+        }
+      },
+      "sources": [
+        "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html",
+        "https://gujaratexplorers.com/destination/saputara-lake/",
+        "https://myholidayhappiness.com/place/gujarat/saputara/saputara-lake",
+        "https://www.google.com/maps/search/Saputara+Lake+Boating"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "attractions",
+      "key": "a802",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+              ],
+              "note": "Official tourism mentions Sunset Point; identity only, not mapped coordinates or hours."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.openstreetmap.org/node/4832550858",
+                "https://gujaratexplorers.com/destination/sunset-point/",
+                "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+              ]
+            }
+          },
+          "notes": "Published one-hour visit recommendation and free viewpoint fee; no invented fixed opening hours.",
+          "qualification": "Official tourism mentions Sunset Point; identity only, not mapped coordinates or hours."
+        }
+      },
+      "sources": [
+        "https://www.openstreetmap.org/node/4832550858",
+        "https://gujaratexplorers.com/destination/sunset-point/",
+        "https://myholidayhappiness.com/place/gujarat/saputara/sunset-point-saputara"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "attractions",
+      "key": "a803",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "category": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "duration_hours": {
+              "classification": "derived_value",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "entry_fee": {
+              "classification": "dated_published_tariff",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "entry_fee_numeric": {
+              "classification": "unknown",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "best_time_note": {
+              "classification": "time_sensitive_or_qualified",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "transport_mode": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+                "https://www.google.com/maps/search/Saputara+Museum",
+                "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+              ]
+            }
+          },
+          "notes": "Secondary Indian adult prices conflict (2,5,10). Official directory lists student1 and foreign50 but no Indian adult amount. Numeric price remains unknown, so existing planner excludes this attraction. One-hour duration from MakeMyTrip. Closure snapshot pages/saputara-museum.json.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf",
+        "https://www.google.com/maps/search/Saputara+Museum",
+        "https://www.makemytrip.com/tripideas/attractions/saputara-museum"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "hotels",
+      "key": "h801",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "partially_verified",
+          "fields": {
+            "name": {
+              "classification": "verified_identity_only",
+              "checked": "2026-10-01",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/"
+              ],
+              "note": "Hotel-chain website confirms Aakar Lords Inn Saputara identity."
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "price_per_night": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "stay_type": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "description": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.lordshotels.com/inn-akar-saputara/",
+                "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+              ]
+            }
+          },
+          "notes": "Archived pages/saputara-hotel.json: Cleartrip nightly INR4560 for September30-October1 2026, two adults, breakfast included; room and tax basis unspecified. Dynamic snapshot, not guaranteed tariff. Registered Hotel is app classification, not verified legal registration.",
+          "qualification": "Hotel-chain website confirms Aakar Lords Inn Saputara identity."
+        }
+      },
+      "sources": [
+        "https://www.lordshotels.com/inn-akar-saputara/",
+        "https://www.google.com/maps/search/Aakar+Lords+Inn+Saputara"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    },
+    {
+      "table": "restaurants",
+      "key": "r801",
+      "values": {
+        "provenance_review": {
+          "checked": "2026-10-01",
+          "status": "reviewed_unverified",
+          "fields": {
+            "name": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "slug": {
+              "classification": "project_classification",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "lat": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "lng": {
+              "classification": "mapped_point_not_independently_surveyed",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "rating": {
+              "classification": "dynamic_quote",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "avg_cost_per_person": {
+              "classification": "secondary_source_estimate",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "location": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "cuisine": {
+              "classification": "archive_review_only",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            },
+            "source": {
+              "classification": "source_metadata",
+              "source_date": "2026-09-30",
+              "sources": [
+                "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+                "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+                "https://tohotel.com/hotel/anandosaputara"
+              ]
+            }
+          },
+          "notes": "Justdial specifically lists INR350 for two: representative per-person175, not a menu tariff. Rating4.1 is restaurant Justdial rating, not hotel Google4.0. Hotel compound coordinate used for its attached restaurant; booking listing corroborates on-site Indian lunch/dinner. Map snapshot pages/saputara-anando-selected.json.",
+          "qualification": "Archived sources reviewed; no independently confirmed primary identity found in this pass. Row remains unverified."
+        }
+      },
+      "sources": [
+        "https://www.justdial.com/Saputara/Anando-Restaurant-Gotiyamal/9999P2631-2631-120605152307-V1Q2_BZDET",
+        "https://www.google.com/maps/search/Hotel+Anando+Saputara",
+        "https://tohotel.com/hotel/anandosaputara"
+      ],
+      "notes": "Production field-level review; does not promote row provenance_status."
+    }
+  ]
+}

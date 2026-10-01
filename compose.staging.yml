@@ -1,0 +1,4 @@
+# Isolated test project only. Never add these ports to a public deployment.
+services:
+  postgres:
+    ports: ['127.0.0.1:${PG_TEST_PORT:-55433}:5432']

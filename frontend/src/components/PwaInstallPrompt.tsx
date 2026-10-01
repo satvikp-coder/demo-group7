@@ -76,8 +76,8 @@ export const PwaInstallPrompt: React.FC<PwaInstallPromptProps> = ({
       </div>
 
       <p className="text-stone font-body text-xs leading-relaxed">
-        Save this itinerary for offline use in signal-blind heritage areas
-        (stepwells, temples, wildlife sanctuaries).
+        Install the app shell for offline access. Loading saved itineraries and
+        budgets requires a connection to the server.
       </p>
 
       {isSuccess ? (
