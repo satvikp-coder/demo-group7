@@ -5,9 +5,14 @@ function byNameAndId(a, b) {
 }
 
 export function sortHotels(hotels, sort = "price") {
-  if (!["price", "rating", "name", "value"].includes(sort)) throw new Error("Unsupported hotel sort");
+  if (!["price", "rating", "name", "value", "distance"].includes(sort)) throw new Error("Unsupported hotel sort");
   return mergeSort(hotels, (a, b) => {
-    if (sort === "price") return Number(a.price_per_night) - Number(b.price_per_night) || byNameAndId(a, b);
+    if (sort === "price" || sort === "distance") {
+      const field=sort==='price'?'price_per_night':'distance_km';
+      if(a[field]==null&&b[field]!=null)return 1;
+      if(a[field]!=null&&b[field]==null)return -1;
+      return Number(a[field])-Number(b[field]) || byNameAndId(a,b);
+    }
     if (sort === "rating" || sort === "value") {
       const field = sort === "value" ? "value_score" : "rating";
       // NULL means unknown, not a fabricated zero-star rating.

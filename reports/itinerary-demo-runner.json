@@ -1,0 +1,143 @@
+{
+  "phase": "demo",
+  "startedAt": "2026-10-09T14:34:28.045Z",
+  "verified": true,
+  "isolatedDatabase": "heritage_audit_ba934bec5f1449dfb27f429d72fc866f",
+  "expansion": {
+    "before": {
+      "destinations": 8,
+      "attractions": 25,
+      "hotels": 11,
+      "restaurants": 12,
+      "routes": 131,
+      "users": 0,
+      "trips": 0,
+      "itinerary_stops": 0,
+      "budgets": 0
+    },
+    "after": {
+      "destinations": 8,
+      "attractions": 33,
+      "hotels": 23,
+      "restaurants": 12,
+      "routes": 163,
+      "users": 0,
+      "trips": 0,
+      "itinerary_stops": 0,
+      "budgets": 0
+    },
+    "imported": {
+      "release": "20261009",
+      "dryRun": false,
+      "inserted": [
+        {
+          "table": "hotels",
+          "key": "exp-20261009-hotel-good-night-ahmedabad",
+          "id": "f3773b1d-31d6-409e-a722-5ad6a749b53c"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-hotel-volga-ahmedabad",
+          "id": "121964a4-f201-4802-8493-de05e9423f2f"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-ramada-ahmedabad-ahmedabad",
+          "id": "55a7f4a5-279f-45f7-8600-e8efea858149"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-radisson-blu-ahmedabad-ahmedabad",
+          "id": "f0e48b19-b5a6-4c39-a06b-805216aa0c93"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-hyatt-ahmedabad-ahmedabad",
+          "id": "cc396fb4-d69b-46b3-8f62-f7839f0ee473"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-holiday-inn-express-ahmedabad-prahlad-nagar-ahmedabad",
+          "id": "b1e3efa6-4add-4f73-aba5-25b6fa994061"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-the-parterre-ahmedabad-ahmedabad",
+          "id": "7335c728-512a-47e3-befd-036bf8faed62"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-hotel-maruti-ahmedabad",
+          "id": "010c6203-c985-4956-8bb9-c307e6bba17c"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-bhadra-fort-ahmedabad",
+          "id": "f9a0289d-4fbb-42b5-b5a2-cd6bb0e9df54"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-teen-darwaza-ahmedabad",
+          "id": "72dec7df-4891-429f-888f-8bffb31938cf"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-amritavarshini-vav-ahmedabad",
+          "id": "dd59c583-6f0a-46ad-bada-2280f09bd45c"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-raipur-gate-ahmedabad",
+          "id": "0c17d656-87c8-4527-aa99-d965d3588716"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-kalupur-darwaza-ahmedabad",
+          "id": "17e3ed9a-d060-4c98-9152-d602b9944d99"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-astodia-darwaza-ahmedabad",
+          "id": "216afb09-af96-4ae7-ab10-6537f86f2c90"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-manek-burj-ahmedabad",
+          "id": "a4cca469-c08f-4b1f-b2b2-42bf70e48ae7"
+        },
+        {
+          "table": "attractions",
+          "key": "exp-20261009-tomb-of-ahmad-shah-ahmedabad",
+          "id": "0cc332fd-3602-4b70-903f-13c08eec70ea"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-lilavati-atithigruh-somnath",
+          "id": "5564b1b8-5c1f-45d7-ac68-eb0e33abef3e"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-maheshwari-samaj-atithi-gruh-somnath",
+          "id": "18bc9fb8-1a40-42bf-bd14-0c1176ee7949"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-sagar-darshan-atithigruh-somnath",
+          "id": "539c1119-a2b8-4b0f-a56f-25544f9b8cfe"
+        },
+        {
+          "table": "hotels",
+          "key": "exp-20261009-vip-atithigruh-somnath",
+          "id": "9ede7de8-8a2b-44d2-977e-389fc7e16e8b"
+        }
+      ],
+      "preserved": [],
+      "routesInserted": 32
+    },
+    "idempotent": true,
+    "originalRowsPreserved": true,
+    "dryRunRolledBack": true
+  },
+  "isolatedDatabaseRemoved": true,
+  "finishedAt": "2026-10-09T14:35:48.643Z"
+}

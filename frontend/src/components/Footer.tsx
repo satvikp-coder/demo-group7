@@ -179,6 +179,7 @@ export const Footer: React.FC<FooterProps> = ({
             )}
           </div>
           <div className="flex items-center gap-4">
+            <a href={`${import.meta.env.BASE_URL}image-credits.html`} className="hover:text-gold transition-colors">Photo credits</a><a href={`${import.meta.env.BASE_URL}data-credits.html`} className="hover:text-gold transition-colors">Data sources</a>
             <span className="text-gold/80">
               Colors: Ink Indigo, Salt White, Madder Red, Stepwell Gold
             </span>

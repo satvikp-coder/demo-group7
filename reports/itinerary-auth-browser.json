@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "checks": [
+    "Guest generation requires sign-in and keeps draft",
+    "Invalid login correctly rejected",
+    "Real authorized create/generate queries and persisted attractions render",
+    "Refresh restores authenticated persisted trip",
+    "Repeated authenticated generations succeed",
+    "Expired signed JWT rejected and reauthentication preserves draft",
+    "Missing and forged tokens remain rejected by backend"
+  ],
+  "tripId": "f13fc0e5-b566-4d88-8df5-c39327811cdf"
+}

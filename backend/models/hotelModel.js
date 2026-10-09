@@ -16,3 +16,8 @@ export async function listByDestination(destinationId) {
   );
   return rows;
 }
+
+export async function hotelAnchor(slug) {
+  if(!slug) return null;
+  return (await pool.query('SELECT name,lat,lng FROM attractions WHERE slug=$1',[slug])).rows[0] ?? null;
+}

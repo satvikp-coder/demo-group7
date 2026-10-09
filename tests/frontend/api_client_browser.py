@@ -14,14 +14,16 @@ with sync_playwright() as p:
     page.route("**/__api-client-test", lambda r: r.fulfill(content_type="text/html", body="<html></html>"))
     page.goto(base + "/__api-client-test")
     page.evaluate("async () => { window.client = await import('/src/api/index.ts'); }")
+    # Transport fixtures must reach response validation, not stop at the auth preflight.
+    page.evaluate("sessionStorage.setItem('heritage_api_token','intercepted-test-session')")
     def run(name, expression):
         result = page.evaluate(expression)
         report["checks"].append({"name": name, "passed": result is True, "result": result})
     page.route("**/trips/check/budget", lambda r: r.fulfill(status=200, content_type="text/html", body="<html>proxy fallback</html>"))
-    run("Invalid successful JSON response is rejected", "async () => { try { await client.api.budget('check'); return false; } catch (e) { return e instanceof client.ApiError; } }")
+    run("Invalid successful JSON response is rejected", "async () => { try { await client.api.budget('check'); return false; } catch (e) { return e instanceof client.ApiError && e.message === 'Server returned an invalid response.'; } }")
     page.unroute("**/trips/check/budget")
     page.route("**/trips/check/budget", lambda r: r.fulfill(status=200, json={}))
-    run("Missing budget values cannot become fabricated zero totals", "async () => { try { await client.api.budget('check'); return false; } catch (e) { return e instanceof client.ApiError; } }")
+    run("Missing budget values cannot become fabricated zero totals", "async () => { try { await client.api.budget('check'); return false; } catch (e) { return e instanceof client.ApiError && e.message === 'Server returned an invalid budget response.'; } }")
     page.route("**/destinations?**", lambda r: r.fulfill(status=200, json={"items":[]}))
     run("Invalid collection shape is rejected", "async () => { try { await client.api.destinations(); return false; } catch (e) { return e instanceof client.ApiError; } }")
     page.unroute("**/destinations?**")
@@ -39,7 +41,7 @@ with sync_playwright() as p:
     run("Batched empty-city catalog remains truthful", "async () => { const rows = await client.api.catalog(); return rows.length === 1 && rows[0].attractions.length === 0; }")
     budget = {"trip_id":"another-trip","budget":100,"hotel":120,"attractions":0,"meals":0,"transit":0,"total":120,"remaining":-20}
     page.route("**/trips/mismatch", lambda r: r.fulfill(status=200, json={"trip":{"id":"mismatch"},"days":[],"budget":budget}))
-    run("Persisted itinerary rejects another trip's budget", "async () => { try { await client.api.trip('mismatch'); return false; } catch (e) { return e instanceof client.ApiError; } }")
+    run("Persisted itinerary rejects another trip's budget", "async () => { try { await client.api.trip('mismatch'); return false; } catch (e) { return e instanceof client.ApiError && e.message === 'Server returned a budget for a different trip.'; } }")
     page.route("**/auth/login", lambda r: r.fulfill(status=200, json={}))
     run("Malformed login never stores an invalid token", "async () => { sessionStorage.clear(); try { await client.api.login('test@example.com','unused'); } catch {} return client.session.token() === null; }")
     held = []

@@ -22,6 +22,10 @@
     "test:browser": "npm --prefix backend run test:frontend",
     "test:all": "node scripts/test-all.js",
     "test:production": "node scripts/test-production.js",
-    "audit:source": "node scripts/source-audit.js"
+    "test:audit:regressions": "node scripts/test-audit-regressions.js",
+    "audit:source": "node scripts/source-audit.js",
+    "audit:images": "npm --prefix frontend run audit:images --",
+    "test:itinerary": "node scripts/test-itinerary-workflow.js",
+    "local:expand": "node scripts/local-stack.js expand"
   }
 }

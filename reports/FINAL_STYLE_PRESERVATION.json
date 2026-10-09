@@ -1,0 +1,209 @@
+{
+  "verified": true,
+  "components": [
+    {
+      "path": "frontend/src/App.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/context/ThemeContext.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/context/LanguageContext.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/WhatIfPanel.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ValueProps.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/StrategyComparisonModal.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ShareItineraryModal.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ResearchView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/PwaInstallPrompt.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ProfileDashboardView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/PlannerModal.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": false,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/OfflineRouteMap.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/OfflineBanner.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/NotFoundView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/Navbar.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": false,
+      "approvedBreakpointOnly": true
+    },
+    {
+      "path": "frontend/src/components/ItineraryView.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": false,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/InvalidSharedLinkView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ImageWithFallback.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/HotelsView.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": false,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/HomeTransitionOverlay.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/Hero.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/Footer.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": false,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/FeaturedDestinations.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ExploreView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/DijkstraVisualizer.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/DestinationDetailView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/ChevronDivider.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/BudgetPlannerView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/BestTimeNote.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": false,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/AuthView.tsx",
+      "approvedRequestedFeature": true,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/AlgorithmStatsPanel.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/AdminDashboardView.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    },
+    {
+      "path": "frontend/src/components/AccessibilityBadge.tsx",
+      "approvedRequestedFeature": false,
+      "preserved": true,
+      "approvedBreakpointOnly": false
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "source_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3Bnwr%5B%22historic%22%5D%2823.00%2C72.55%2C23.08%2C72.64%29%3Bout+center+tags%3B",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "checked": "2026-10-09",
+  "response": {
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.11 87bfad18",
+    "osm3s": {
+      "timestamp_osm_base": "2026-10-09T03:50:34Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+      {
+        "type": "node",
+        "id": 440367265,
+        "lat": 23.0174361,
+        "lon": 72.5947812,
+        "tags": {
+          "historic": "city_gate",
+          "name": "Raipur Gate",
+          "tourism": "attraction",
+          "wikidata": "Q15109890",
+          "wikimedia_commons": "Category:Gates of Ahmedabad",
+          "wikipedia": "en:Gates_of_Ahmedabad"
+        }
+      },
+      {
+        "type": "node",
+        "id": 627507732,
+        "lat": 23.011307,
+        "lon": 72.570155,
+        "tags": {
+          "historic": "ruins"
+        }
+      },
+      {
+        "type": "node",
+        "id": 885244320,
+        "lat": 23.0269688,
+        "lon": 72.6001949,
+        "tags": {
+          "historic": "ruins",
+          "name": "Panch Kua Dawaza"
+        }
+      },
+      {
+        "type": "node",
+        "id": 885247897,
+        "lat": 23.0308435,
+        "lon": 72.5979371,
+        "tags": {
+          "historic": "ruins",
+          "name": "Kalupur Darwaza"
+        }
+      },
+      {
+        "type": "node",
+        "id": 2377178503,
+        "lat": 23.0168415,
+        "lon": 72.5909706,
+        "tags": {
+          "addr:city": "ahmedabad",
+          "historic": "city_gate",
+          "name": "Astodia Darwaza",
+          "name:en": "Astodia Gate",
+          "wikidata": "Q15109890",
+          "wikimedia_commons": "Category:Gates of Ahmedabad",
+          "wikipedia": "en:Gates of Ahmedabad"
+        }
+      },
+      {
+        "type": "node",
+        "id": 2377178507,
+        "lat": 23.0243491,
+        "lon": 72.5845551,
+        "tags": {
+          "historic": "city_gate",
+          "name": "Teen Darwaza",
+          "wikidata": "Q18752661",
+          "wikimedia_commons": "Category:Teen Darwaja",
+          "wikipedia": "en:Teen Darwaza"
+        }
+      },
+      {
+        "type": "node",
+        "id": 2477174077,
+        "lat": 23.0674245,
+        "lon": 72.5645716,
+        "tags": {
+          "amenity": "restaurant",
+          "cuisine": "Punjabi,_SouthIndia,_Gujarati Thali.",
+          "historic": "monument",
+          "name": "Vrundavan Restaurant;AKHBAR NAGAR CIRCLE",
+          "name:en": "AKHBAR NAGAR CIRCLE"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3195844536,
+        "lat": 23.0251588,
+        "lon": 72.5972035,
+        "tags": {
+          "historic": "city_gate",
+          "name": "Panch Kuva Darwaja"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3195844560,
+        "lat": 23.0228883,
+        "lon": 72.5987131,
+        "tags": {
+          "historic": "memorial"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3293762463,
+        "lat": 23.0396601,
+        "lon": 72.5502314,
+        "tags": {
+          "addr:city": "ahmedabad",
+          "addr:place": "temple",
+          "historic": "monument",
+          "name": "Jain temple"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3335472847,
+        "lat": 23.0350026,
+        "lon": 72.5968882,
+        "tags": {
+          "historic": "ruins",
+          "name": "Prem Darwaza"
+        }
+      },
+      {
+        "type": "node",
+        "id": 4460013790,
+        "lat": 23.0124252,
+        "lon": 72.581461,
+        "tags": {
+          "historic": "city_gate",
+          "name": "Jamalpur Darwaja",
+          "name:en": "Jamalpur Darwaja",
+          "tourism": "attraction",
+          "wikidata": "Q15109890",
+          "wikimedia_commons": "Category:Gates of Ahmedabad",
+          "wikipedia": "en:Gates_of_Ahmedabad"
+        }
+      },
+      {
+        "type": "node",
+        "id": 4794246525,
+        "lat": 23.0747492,
+        "lon": 72.578474,
+        "tags": {
+          "historic": "memorial",
+          "name": "Maneklal Smriti Hall",
+          "name:en": "Maneklal Smriti Hall"
+        }
+      },
+      {
+        "type": "node",
+        "id": 4937816350,
+        "lat": 23.0246644,
+        "lon": 72.5971063,
+        "tags": {
+          "historic": "monument",
+          "inscription": "State protected monument (S-GJ-1)",
+          "man_made": "stepwell",
+          "name": "Amritavarshini Vav",
+          "wikidata": "Q4748686",
+          "wikimedia_commons": "Category:Amritvarshini Vav",
+          "wikipedia": "en:Amritavarshini Vav"
+        }
+      },
+      {
+        "type": "node",
+        "id": 7159077261,
+        "lat": 23.013937,
+        "lon": 72.584438,
+        "tags": {
+          "denomination": "sunni",
+          "historic": "tomb",
+          "name": "Hazrat Makhdum Shah Dargah",
+          "religion": "muslim",
+          "tomb": "mausoleum"
+        }
+      },
+      {
+        "type": "node",
+        "id": 10591957837,
+        "lat": 23.023791,
+        "lon": 72.5879279,
+        "tags": {
+          "historic": "tomb",
+          "name": "Tomb of ahmad shah"
+        }
+      },
+      {
+        "type": "node",
+        "id": 12092227912,
+        "lat": 23.0218041,
+        "lon": 72.579743,
+        "tags": {
+          "historic": "memorial",
+          "inscription": "8 August 1956 In Memory of Martyrs of Mahagujarat Movement Year 1958",
+          "material": "stone",
+          "memorial": "stele",
+          "name": "Mahagujarat Shahid Smarak"
+        }
+      },
+      {
+        "type": "node",
+        "id": 14067868308,
+        "lat": 23.020077,
+        "lon": 72.5900104,
+        "tags": {
+          "historic": "wayside_shrine",
+          "religion": "hindu"
+        }
+      },
+      {
+        "type": "node",
+        "id": 14068187989,
+        "lat": 23.0207919,
+        "lon": 72.5537946,
+        "tags": {
+          "historic": "memorial"
+        }
+      },
+      {
+        "type": "way",
+        "id": 323895535,
+        "center": {
+          "lat": 23.0268471,
+          "lon": 72.5810166
+        },
+        "tags": {
+          "barrier": "fence",
+          "description": "Monument of National Importance. N-GJ-3.",
+          "historic": "monument",
+          "name": "Sidi Saiyad Mosque",
+          "wikidata": "Q2032778",
+          "wikipedia": "en:Sidi Saiyyed Mosque"
+        }
+      },
+      {
+        "type": "way",
+        "id": 605629475,
+        "center": {
+          "lat": 23.0220746,
+          "lon": 72.5773393
+        },
+        "tags": {
+          "access": "permissive",
+          "historic": "monument",
+          "name": "Manek Burj",
+          "wikidata": "Q18745720",
+          "wikimedia_commons": "Category:Manek Burj",
+          "wikipedia": "en:Manek Burj"
+        }
+      },
+      {
+        "type": "way",
+        "id": 843168356,
+        "center": {
+          "lat": 23.0239713,
+          "lon": 72.5812005
+        },
+        "tags": {
+          "building": "yes",
+          "historic": "fort",
+          "layer": "1",
+          "name": "Bhadra Fort",
+          "tourism": "attraction",
+          "wikidata": "Q3544561",
+          "wikimedia_commons": "Category:Bhadra Fort",
+          "wikipedia": "en:Bhadra Fort"
+        }
+      },
+      {
+        "type": "way",
+        "id": 1136222353,
+        "center": {
+          "lat": 23.023976,
+          "lon": 72.5812121
+        },
+        "tags": {
+          "building": "yes",
+          "historic": "fort",
+          "name": "Bhadra fort"
+        }
+      },
+      {
+        "type": "way",
+        "id": 1395130544,
+        "center": {
+          "lat": 23.0374451,
+          "lon": 72.592974
+        },
+        "tags": {
+          "building": "yes",
+          "historic": "city_gate",
+          "name": "Daryapur Gate"
+        }
+      },
+      {
+        "type": "way",
+        "id": 1395130545,
+        "center": {
+          "lat": 23.0377815,
+          "lon": 72.5879516
+        },
+        "tags": {
+          "building": "yes",
+          "historic": "city_gate",
+          "name": "Delhi Gate"
+        }
+      }
+    ]
+  }
+}

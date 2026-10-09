@@ -1,0 +1,32 @@
+{
+  "/": {
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  "/health": {
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  "/ready": {
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  "/api/destinations/catalog?limit=100": {
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  "/api/trips": {
+    "status": 401,
+    "expected": 401,
+    "passed": true
+  },
+  "/api/admin/status": {
+    "status": 401,
+    "expected": 401,
+    "passed": true
+  }
+}

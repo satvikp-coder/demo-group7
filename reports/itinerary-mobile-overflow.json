@@ -1,0 +1,242 @@
+[
+  {
+    "tag": "svg",
+    "cls": {},
+    "text": "",
+    "right": 689
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 683
+  },
+  {
+    "tag": "DIV",
+    "cls": "flex flex-col items-center text-center space-y-1.5 group max-w-[110px]",
+    "text": "#5Sabarmati Ashram15:47:00",
+    "right": 798.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-xs transition-transform  shadow-sm bg-white text-ink border-gold",
+    "text": "#5",
+    "right": 765.796875
+  },
+  {
+    "tag": "SPAN",
+    "cls": "",
+    "text": "#5",
+    "right": 753
+  },
+  {
+    "tag": "SPAN",
+    "cls": "font-bold text-[11px] text-ink truncate w-full",
+    "text": "Sabarmati Ashram",
+    "right": 798.609375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "bg-ink/10 text-ink px-1.5 py-0.5 text-[9px] font-bold border border-ink/20 uppercase",
+    "text": "15:47:00",
+    "right": 774.40625
+  },
+  {
+    "tag": "DIV",
+    "cls": "flex-1 flex flex-col items-center justify-center space-y-1 px-1 min-w-[30px]",
+    "text": "5.41 km",
+    "right": 836.609375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "text-[9px] text-stone font-bold",
+    "text": "5.41 km",
+    "right": 832.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "w-full h-0.5 bg-gold flex items-center justify-center relative",
+    "text": "",
+    "right": 832.609375
+  },
+  {
+    "tag": "svg",
+    "cls": {},
+    "text": "",
+    "right": 840.609375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 834.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "flex flex-col items-center text-center space-y-1.5 group max-w-[110px]",
+    "text": "Chandravilas Dining Hall19:30:00",
+    "right": 954.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-xs transition-transform  shadow-sm bg-gold text-ink border-ink",
+    "text": "",
+    "right": 919.609375
+  },
+  {
+    "tag": "svg",
+    "cls": {},
+    "text": "",
+    "right": 907.609375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 898.9426879882812
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 896.2760620117188
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 905.609375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "font-bold text-[11px] text-ink truncate w-full",
+    "text": "Chandravilas Dining Hall",
+    "right": 954.609375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "bg-ink/10 text-ink px-1.5 py-0.5 text-[9px] font-bold border border-ink/20 uppercase",
+    "text": "19:30:00",
+    "right": 928.203125
+  },
+  {
+    "tag": "DIV",
+    "cls": "flex-1 flex flex-col items-center justify-center space-y-1 px-1 min-w-[30px]",
+    "text": "1.22 km",
+    "right": 992.609375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "text-[9px] text-stone font-bold",
+    "text": "1.22 km",
+    "right": 988.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "w-full h-0.5 bg-gold flex items-center justify-center relative",
+    "text": "",
+    "right": 988.609375
+  },
+  {
+    "tag": "svg",
+    "cls": {},
+    "text": "",
+    "right": 996.609375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 990.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "flex flex-col items-center text-center space-y-1.5 group max-w-[110px]",
+    "text": "French Haveli Heritage Stay20:33:00",
+    "right": 1110.609375
+  },
+  {
+    "tag": "DIV",
+    "cls": "w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-xs transition-transform  shadow-sm bg-ink text-gold border-gold",
+    "text": "",
+    "right": 1075.609375
+  },
+  {
+    "tag": "svg",
+    "cls": {},
+    "text": "",
+    "right": 1063.609375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1054.2760009765625
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1055.6160888671875
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1055.6160888671875
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1056.9427490234375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1057.609375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1058.28271484375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1058.28271484375
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1052.9493408203125
+  },
+  {
+    "tag": "path",
+    "cls": {},
+    "text": "",
+    "right": 1052.9493408203125
+  },
+  {
+    "tag": "rect",
+    "cls": {},
+    "text": "",
+    "right": 1060.9427490234375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "font-bold text-[11px] text-ink truncate w-full",
+    "text": "French Haveli Heritage Stay",
+    "right": 1110.609375
+  },
+  {
+    "tag": "SPAN",
+    "cls": "bg-ink/10 text-ink px-1.5 py-0.5 text-[9px] font-bold border border-ink/20 uppercase",
+    "text": "20:33:00",
+    "right": 1084.203125
+  }
+]

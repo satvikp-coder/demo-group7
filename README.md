@@ -11,6 +11,8 @@ The React application uses a real Express/PostgreSQL backend to search destinati
 - Destination and attraction search with backend Trie prefix matching; the shared academic Trie also includes tested Levenshtein fuzzy search.
 - Destination details, attractions and hotels; restaurant data supports the API and meal scheduling.
 - Hotel sorting by price, rating and value using the shared Merge Sort implementation.
+- Two-stage Low Cost / Budget / Premium hotel selection, with clearly labeled straight-line proximity and stored price estimates.
+- Synchronized distance/cost/rating priorities totaling 100%, with persisted scoring explanations for evaluated feasible candidates.
 - Registration, login, authenticated trip discovery and persisted itinerary/budget retrieval.
 - Route-aware, multi-day planning with selected-hotel retention and explicit incomplete-plan warnings.
 - Known-cost budget breakdowns, strategy comparison, PDF export and an educational Dijkstra visualizer.
@@ -81,13 +83,21 @@ docs/       Setup, deployment, academic design and research documentation
 
 The approved catalog is verified during release acceptance; see [release verification](docs/RELEASE_VERIFICATION.md) for the dated measured result.
 
-| Records | Count |
-|---|---:|
-| Destinations | 8 |
-| Attractions | 25 |
-| Hotels | 11 |
-| Restaurants | 12 |
-| Routes | 131 |
+| Records | Base import | With reviewed 20261009 expansion |
+|---|---:|---:|
+| Destinations | 8 | 8 |
+| Attractions | 25 | 33 |
+| Hotels | 11 | 23 |
+| Restaurants | 12 | 12 |
+| Routes | 131 | 163 |
+
+After backing up an existing installation, `npm run local:expand` adds the reviewed
+Ahmedabad/Somnath records without overwriting originals. See
+[dataset provenance and limitations](reports/DATABASE_EXPANSION_REPORT.md) and
+[current itinerary acceptance](reports/FINAL_DEMO_READINESS.md). Unknown prices,
+ratings and visit durations remain unknown; no live availability is claimed.
+`npm run test:itinerary -- demo` runs the expanded API matrix and production-build
+browser demonstration against a disposable PostgreSQL database.
 
 These are catalog counts, not a claim that every tourism field is independently verified. The original CSVs cover only part of the catalog; researched JSON supplements supply the remaining destinations and road evidence. Simulated CSV routes are excluded from the approved import.
 

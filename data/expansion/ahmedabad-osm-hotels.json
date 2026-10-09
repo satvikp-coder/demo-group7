@@ -1,0 +1,345 @@
+{
+  "source_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A20%5D%3Bnode%5B%22tourism%22%3D%22hotel%22%5D%2823.0%2C72.5%2C23.08%2C72.65%29%3Bout+tags+center%3B",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "checked": "2026-10-09",
+  "response": {
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.11 87bfad18",
+    "osm3s": {
+      "timestamp_osm_base": "2026-10-09T03:49:35Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+      {
+        "type": "node",
+        "id": 631801191,
+        "lat": 23.0125449,
+        "lon": 72.5679747,
+        "tags": {
+          "name": "Spice",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 631807605,
+        "lat": 23.0156138,
+        "lon": 72.5656966,
+        "tags": {
+          "name": "Dev Regency",
+          "stars": "3",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 695652801,
+        "lat": 23.0613841,
+        "lon": 72.579973,
+        "tags": {
+          "name": "Sabermati Ashram Guesthouse",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 695666628,
+        "lat": 23.0292295,
+        "lon": 72.5834609,
+        "tags": {
+          "name": "Hotel Alkan",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 1746708886,
+        "lat": 23.042462,
+        "lon": 72.5144059,
+        "tags": {
+          "name": "The Grand Bhagwati",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 2034297656,
+        "lat": 23.0037105,
+        "lon": 72.6379538,
+        "tags": {
+          "name": "Kaka Bhajipav",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 2377178375,
+        "lat": 23.0268808,
+        "lon": 72.5816588,
+        "tags": {
+          "email": "goodnight.hotel@gmail.com",
+          "internet_access": "yes",
+          "internet_access:fee": "no",
+          "name": "Good Night",
+          "phone": "+91 79 2550 7181",
+          "tourism": "hotel",
+          "website": "http://hotelgoodnight.co.in"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683245,
+        "lat": 23.0264847,
+        "lon": 72.5821262,
+        "tags": {
+          "name": "Comfort",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683252,
+        "lat": 23.0267135,
+        "lon": 72.581946,
+        "tags": {
+          "internet_access": "yes",
+          "internet_access:fee": "yes",
+          "name": "Mehul",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683253,
+        "lat": 23.0266885,
+        "lon": 72.5819313,
+        "tags": {
+          "internet_access": "yes",
+          "internet_access:fee": "yes",
+          "name": "Metropole",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683254,
+        "lat": 23.0552316,
+        "lon": 72.5908571,
+        "tags": {
+          "amenity": "restaurant",
+          "name": "Naeeka",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683650,
+        "lat": 23.0253454,
+        "lon": 72.5829711,
+        "tags": {
+          "name": "Sahara",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683652,
+        "lat": 23.0268157,
+        "lon": 72.582027,
+        "tags": {
+          "internet_access": "yes",
+          "internet_access:fee": "no",
+          "name": "Volga",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3306683653,
+        "lat": 23.0263496,
+        "lon": 72.5824954,
+        "tags": {
+          "name": "ZK",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 4325329000,
+        "lat": 23.0333487,
+        "lon": 72.5578806,
+        "tags": {
+          "name": "hotel honey bonney",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 5214871421,
+        "lat": 23.0106115,
+        "lon": 72.5048495,
+        "tags": {
+          "name": "Ramada",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 5216116021,
+        "lat": 23.0149614,
+        "lon": 72.5951405,
+        "tags": {
+          "addr:housenumber": "F.P.No 52",
+          "addr:postcode": "380021",
+          "addr:street": "Kankaria Road",
+          "email": "hotelmiracle@hotmail.com",
+          "name": "\u0939\u094b\u091f\u0932 \u092e\u0940\u0930\u0947\u0915\u0932",
+          "opening_hours": "24/7",
+          "operator": "Neel",
+          "phone": "07925453888",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 5328881122,
+        "lat": 23.0178297,
+        "lon": 72.567758,
+        "tags": {
+          "name": "Jalaram Parotha House",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 5819416524,
+        "lat": 23.0232906,
+        "lon": 72.5572097,
+        "tags": {
+          "internet_access:fee": "no",
+          "name": "Radisson Blu",
+          "operator": "Radisson",
+          "smoking": "isolated",
+          "stars": "5",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 5920607885,
+        "lat": 23.0391529,
+        "lon": 72.530495,
+        "tags": {
+          "internet_access": "wlan",
+          "name": "Hyatt Vastrapore Lake",
+          "name:en": "Hyatt Ahmedabad (Vastrapore Lake)",
+          "name:hi": "Hyatt Ahmedabad (Vastrapore Lake)",
+          "opening_hours": "24/7",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 6181737085,
+        "lat": 23.0639876,
+        "lon": 72.5813581,
+        "tags": {
+          "name": "Hotel King Palace",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 7274647486,
+        "lat": 23.0270204,
+        "lon": 72.6011501,
+        "tags": {
+          "internet_access": "wlan",
+          "name": "Kirti Executive Lounge",
+          "opening_hours": "24/7",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 9312261617,
+        "lat": 23.011444,
+        "lon": 72.5106175,
+        "tags": {
+          "addr:housenumber": "38/1",
+          "addr:postcode": "380015",
+          "addr:street": "Prahladnagar",
+          "internet_access": "wlan",
+          "name": "Holiday Inn Express",
+          "phone": "+91 79 4900 4141",
+          "tourism": "hotel",
+          "website": "https://www.ihg.com/"
+        }
+      },
+      {
+        "type": "node",
+        "id": 10261856809,
+        "lat": 23.0269056,
+        "lon": 72.5829956,
+        "tags": {
+          "name": "Hotel Kamran Palace",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 10673361438,
+        "lat": 23.0509007,
+        "lon": 72.5037209,
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:housenumber": "Opposite Thaltej Park, Beside Hind Super Mart",
+          "addr:postcode": "380059",
+          "addr:street": "Thaltej Road",
+          "air_conditioning": "yes",
+          "banquets": "3",
+          "brand": "The Parterre, Ahmedabad",
+          "ele": "6",
+          "email": "info@theparterre.in",
+          "events_centre:conference": "2",
+          "internet_access": "yes",
+          "internet_access:fee": "customers",
+          "laundry_service": "yes",
+          "name": "The Parterre",
+          "reception_desk": "yes",
+          "reservation": "yes",
+          "restaurant": "yes",
+          "room_service": "yes",
+          "rooms": "44",
+          "tourism": "hotel",
+          "website": "https://www.theparterre.in/",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "node",
+        "id": 11181690377,
+        "lat": 23.041029,
+        "lon": 72.5520935,
+        "tags": {
+          "addr:housenumber": "3rd Floor, Sanskar Complex",
+          "addr:street": "Drive In Rd, Sarvottam Nagar Society, Navrangpura, Ahmedabad",
+          "name": "Hotel Surya Villas by SrUrban Hotels",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 11661742069,
+        "lat": 23.0300339,
+        "lon": 72.5992998,
+        "tags": {
+          "addr:street": "Kalupur Road",
+          "name": "Marshall",
+          "tourism": "hotel"
+        }
+      }
+    ]
+  }
+}

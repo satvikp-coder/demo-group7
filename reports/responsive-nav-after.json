@@ -1,0 +1,35 @@
+{
+  "phase": "after",
+  "verified": true,
+  "viewports": [
+    {
+      "width": 390,
+      "clippedButtons": [],
+      "hindiNavigationFit": "passed",
+      "compactNavigation": "passed",
+      "planButton": "passed"
+    },
+    {
+      "width": 768,
+      "clippedButtons": [],
+      "hindiNavigationFit": "passed",
+      "compactNavigation": "passed",
+      "planButton": "passed"
+    },
+    {
+      "width": 1024,
+      "clippedButtons": [],
+      "hindiNavigationFit": "passed"
+    },
+    {
+      "width": 1280,
+      "clippedButtons": [],
+      "hindiNavigationFit": "passed"
+    },
+    {
+      "width": 1440,
+      "clippedButtons": [],
+      "hindiNavigationFit": "passed"
+    }
+  ]
+}

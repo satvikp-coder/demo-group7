@@ -1,3 +1,4 @@
+import { hotelCategory } from '../../dsa/planning/hotelPolicy.ts';
 import { pool } from "../config/database.js";
 import { HttpError } from "../middleware/errorHandler.js";
 
@@ -39,11 +40,12 @@ export async function selectedHotel(client, hotelId, destinationId) {
 export async function create(client, userId, input) {
   const destination = await client.query("SELECT id FROM destinations WHERE id = $1", [input.destination_id]);
   if (!destination.rowCount) throw new HttpError(404, "Destination not found");
-  await selectedHotel(client, input.starting_hotel_id, input.destination_id);
+  const hotel = await selectedHotel(client, input.starting_hotel_id, input.destination_id);
+  if(input.hotel_category && hotelCategory(hotel.price_per_night)!==input.hotel_category) throw new HttpError(422,"Selected hotel does not match the requested category");
   return (await client.query(
-    `INSERT INTO trips (user_id,destination_id,trip_days,budget,starting_hotel_id,start_time,strategy,wheelchair_accessible_only)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`,
-    [userId,input.destination_id,input.days,input.budget,input.starting_hotel_id,input.start_time,input.strategy,input.wheelchair_accessible_only],
+    `INSERT INTO trips (user_id,destination_id,trip_days,budget,starting_hotel_id,start_time,strategy,wheelchair_accessible_only,hotel_category,weights,travelers,rooms,start_date)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13) RETURNING *`,
+    [userId,input.destination_id,input.days,input.budget,input.starting_hotel_id,input.start_time,input.strategy,input.wheelchair_accessible_only,input.hotel_category??hotelCategory(hotel.price_per_night),input.weights??null,input.travelers??1,input.rooms??1,input.start_date??null],
   )).rows[0];
 }
 export async function resources(client, trip) {
@@ -51,6 +53,7 @@ export async function resources(client, trip) {
   const attractions = (await client.query("SELECT * FROM attractions WHERE destination_id = $1 ORDER BY id", [trip.destination_id])).rows;
   const restaurants = (await client.query("SELECT * FROM restaurants WHERE destination_id = $1 ORDER BY avg_cost_per_person, id", [trip.destination_id])).rows;
   const hotel = await selectedHotel(client, trip.starting_hotel_id, trip.destination_id);
+  if(trip.hotel_category && hotelCategory(hotel.price_per_night)!==trip.hotel_category) throw new HttpError(422,"Hotel price category changed. Select a matching property again before generating.");
   const routes = (await client.query("SELECT * FROM routes WHERE destination_id = $1 ORDER BY distance_km, travel_time_minutes, id", [trip.destination_id])).rows;
   return { attractions, restaurants, hotel, routes };
 }
@@ -67,8 +70,8 @@ export async function savePlan(client, trip, plan) {
     );
   }
   await client.query(
-    `UPDATE trips SET strategy=$2,wheelchair_accessible_only=$3,generation_summary=$4,generated_at=CURRENT_TIMESTAMP WHERE id=$1`,
-    [trip.id,trip.strategy,trip.wheelchair_accessible_only,JSON.stringify(plan.summary)],
+    `UPDATE trips SET strategy=$2,wheelchair_accessible_only=$3,generation_summary=$4,weights=$5,generated_at=CURRENT_TIMESTAMP WHERE id=$1`,
+    [trip.id,trip.strategy,trip.wheelchair_accessible_only,JSON.stringify(plan.summary),trip.weights??null],
   );
 }
 export async function stops(client, tripId) {

@@ -1,0 +1,10 @@
+{
+  "status": 401,
+  "authorizationPresent": false,
+  "response": {
+    "error": {
+      "message": "Bearer token required"
+    }
+  },
+  "visibleError": "Bearer token required"
+}

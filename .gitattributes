@@ -20,10 +20,10 @@ frontend/src/components/DijkstraVisualizer.tsx -text
 frontend/src/components/ExploreView.tsx text eol=crlf
 frontend/src/components/FeaturedDestinations.tsx text eol=crlf
 frontend/src/components/Footer.tsx -text
-frontend/src/components/Hero.tsx text eol=crlf
+frontend/src/components/Hero.tsx -text
 frontend/src/components/HomeTransitionOverlay.tsx text eol=crlf
 frontend/src/components/HotelsView.tsx -text
-frontend/src/components/ImageWithFallback.tsx text eol=crlf
+frontend/src/components/ImageWithFallback.tsx -text
 frontend/src/components/InvalidSharedLinkView.tsx text eol=crlf
 frontend/src/components/ItineraryView.tsx -text
 frontend/src/components/Navbar.tsx text eol=crlf
@@ -37,12 +37,18 @@ frontend/src/components/ResearchView.tsx -text
 frontend/src/components/ShareItineraryModal.tsx -text
 frontend/src/components/StrategyComparisonModal.tsx -text
 frontend/src/components/ValueProps.tsx text eol=crlf
-frontend/src/components/WhatIfPanel.tsx text eol=crlf
+frontend/src/components/WhatIfPanel.tsx -text
 frontend/src/context/LanguageContext.tsx text eol=crlf
 frontend/src/context/ThemeContext.tsx text eol=crlf
 frontend/src/main.tsx text eol=crlf
 frontend/src/utils/itineraryPlanner.ts text eol=crlf
 frontend/src/utils/offlineStorage.ts text eol=crlf
 frontend/src/utils/router.ts text eol=crlf
-frontend/src/utils/shareUrl.ts text eol=crlf
+frontend/src/utils/shareUrl.ts -text
 frontend/public/sw.js text eol=crlf
+
+# Preserve reviewed image manifests and new controls across platforms.
+frontend/public/assets/photographs/manifest.json text eol=crlf
+frontend/public/catalog-expansion.json text eol=crlf
+frontend/src/components/HotelCategoryPicker.tsx text eol=crlf
+frontend/src/components/PriorityControls.tsx -text

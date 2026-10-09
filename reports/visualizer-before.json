@@ -1,0 +1,7 @@
+{
+  "expectedReverseKm": 9,
+  "actualReverseKm": 1,
+  "missingRouteDistance": 0,
+  "missingRouteDescription": "Dijkstra search complete! Shortest path identified (0 km).",
+  "syntheticUnitFixturesOnly": true
+}

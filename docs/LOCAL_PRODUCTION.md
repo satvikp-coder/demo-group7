@@ -50,6 +50,27 @@ it refuses conflicting edits to previously managed records. Review such changes
 using the approved-data adoption procedure in [PRODUCTION.md](PRODUCTION.md).
 Do not use development reset scripts on saved data.
 
+The reviewed itinerary expansion is a separate additive command, not a reset or
+automatic replacement of curated data:
+
+```sh
+npm run local:backup -- backups/before-catalog-expansion.dump
+npm run local:expand
+```
+
+Run `local:up` first to build the current importer and apply migrations. Expansion
+is transactional and idempotent; the expected combined catalog is 8 destinations,
+33 attractions, 23 hotels, 12 restaurants and 163 routes. It preserves matching
+existing identities without overwriting them. See
+[sources and unknown facts](../reports/DATABASE_EXPANSION_REPORT.md). Hotel prices
+are estimates, and unknown attraction fees/durations exclude those new records
+from timed scheduling. The original base `local:verify` command checks its managed
+records, not independent factual completeness of this expansion.
+
+For the new planner acceptance suite, run `npm run test:itinerary -- demo` using
+the isolated-test database configuration below. It checks real authentication,
+categories, weights, persistence, browser controls and import preservation.
+
 Register a tourist in the UI. To approve your own operator account locally:
 
 ```sh

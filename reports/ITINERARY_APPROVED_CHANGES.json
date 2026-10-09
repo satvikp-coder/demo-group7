@@ -1,0 +1,86 @@
+{
+  "authorization": "User explicitly requested category selection, preference controls, optimizer explanations and necessary UI repairs. Preserve all unrelated source. Exact hashes fail future unreviewed edits.",
+  "evidence": [
+    "itinerary-auth-runner.json",
+    "itinerary-categories-runner.json",
+    "itinerary-weights-runner.json",
+    "itinerary-expanded-runner.json"
+  ],
+  "files": {
+    "frontend/src/App.tsx": {
+      "baselineSha256": "a112f27b9a2cbd7a0db5d1e5148310c688bb146f0b3e26a89464b124b78c8509",
+      "sha256": "2946540a334d35e1f1e4fa85b4b9b28f066aeed86f49d50e0491c6ef21eeb125",
+      "reason": "Draft-preserving authentication handoff and PWA overlay suppression during planner/auth"
+    },
+    "frontend/src/api/index.ts": {
+      "baselineSha256": "611081f3fba265f9695bef77ff1f05d6ac0509f68d6d7fd6ec1b5ae17a9b3518",
+      "sha256": "179a3fe719d7b0f09d8ea1cfc32a89971a620a413b88712041715fef76965cb0",
+      "reason": "Auth errors, selected category/priorities/group/date API contract, persisted date labels, truthful unknown prices; preserve legacy strategy-only research experiments; round displayed distance sums to route precision"
+    },
+    "frontend/src/api/types.ts": {
+      "baselineSha256": "42dc618dbe2750f8b11cfc37ff947bef94caeb9ff1f056d73fceb664b367bc1f",
+      "sha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac",
+      "reason": "Typed hotel category/geographic/provenance response fields"
+    },
+    "frontend/src/components/AuthView.tsx": {
+      "baselineSha256": "15e8526ea741901dbc6f7895949dfe0c8095473562fd249a57af056de22a3e66",
+      "sha256": "02a23815297ad87ddccc6ce8693113a8f47fffd54a1b92a59af8b0f71b2cbd85",
+      "reason": "Sign-in reason notice"
+    },
+    "frontend/src/components/BestTimeNote.tsx": {
+      "baselineSha256": "c6f4a6f1b6c2fb6bc0587d17e98cb2d236431e75105fe484b1d7aa9c76013b33",
+      "sha256": "d2cd4dd2cb4a87be2d049cc41a27894cb6575dae7156cc53d127137b8df70722",
+      "reason": "Reproduced mobile overflow: constrain note width and flex shrinking"
+    },
+    "frontend/src/components/Footer.tsx": {
+      "baselineSha256": "9165b57d4b843fdc074b90ee929c14a1f7fcd046ce002ad069d58574297cafc9",
+      "sha256": "41ca9c5ae452d7414e5ed753938662c1820e01cf3b00ba750641c2ec364c0494",
+      "reason": "Required ODbL data attribution link"
+    },
+    "frontend/src/components/HotelCategoryPicker.tsx": {
+      "baselineSha256": null,
+      "sha256": "ed4c078c26d58de309bfe244618d0448749c572b13a46cf1a90dcb1554aa214a",
+      "reason": "Explicitly requested two-stage category/property selector"
+    },
+    "frontend/src/components/HotelsView.tsx": {
+      "baselineSha256": "5dc849a7d6a876a2374e470291123be648adf212b1b7bcf2d7c58d48975ee9d1",
+      "sha256": "6bae86ffce11e4e68679beaddb2fa97402d2decd3bb85bc9d39c61f857582972",
+      "reason": "Category/distance filters, missing-price guard, honest accommodation badge and numeric width"
+    },
+    "frontend/src/components/ItineraryView.tsx": {
+      "baselineSha256": "372e3ffdf792ab57817a3734a8496ad978efb1280eb8172c4f91a84aff9fbaf7",
+      "sha256": "22e3307dc10b1f5967e1d67f0d87e88a9c9f77395f1fbeff3156e4c2e18c8f80",
+      "reason": "Requested weighted result explanation and group fields; mobile stop detail wrapping"
+    },
+    "frontend/src/components/PlannerModal.tsx": {
+      "baselineSha256": "8f4ab3c96855665ffbdfd075b5f5a651353f095e47cfd8649cfc32ba7dd2ac0f",
+      "sha256": "03224f5a3e777652a2337cd3ca0e8f322272e235543fda8b8ada7441c9246f84",
+      "reason": "Requested category/priority/date/group inputs and auth handoff; overflow-safe vertical alignment keeps tall logistics controls reachable"
+    },
+    "frontend/src/components/PriorityControls.tsx": {
+      "baselineSha256": null,
+      "sha256": "989dc8f3b62d9a96ba4f64fb447f93aa43caf607768b78c520c28d44262823ff",
+      "reason": "Requested synchronized accessible integer sliders"
+    },
+    "frontend/src/components/StrategyComparisonModal.tsx": {
+      "baselineSha256": "7e0b07f5b811fbe357c7cd18e15c17d6dcbac45af315d70909eb513c82edf5a0",
+      "sha256": "774a2a4740f1387b96ef852b4814680c19884ded802d704ccc96f61087c4e2d5",
+      "reason": "Current group/date inputs and explicit weighted preset descriptions"
+    },
+    "frontend/src/utils/itineraryPlanner.ts": {
+      "baselineSha256": "23ea6c24f45d9489a3ca07080d2efd8d1a0c88eb3e1f1724842b2fe3dda3363d",
+      "sha256": "10488e452add9c734a68741dad1dbddea24c626dc80ad4e1aa1cbcc8ad5fdb52",
+      "reason": "Shared planner contract type additions only; reference algorithm unchanged"
+    },
+    "frontend/public/catalog-expansion.json": {
+      "baselineSha256": null,
+      "sha256": "88557773b755e68795068c261092894fabd0e48e89a400fe992a019f9f669841",
+      "reason": "ODbL derived data access with provenance"
+    },
+    "frontend/public/data-credits.html": {
+      "baselineSha256": null,
+      "sha256": "99ffc16fda7e447e3f79fb3ab396599801d5f6380a6ed2f5e4bcc9f143929de9",
+      "reason": "Required data license/source attribution"
+    }
+  }
+}

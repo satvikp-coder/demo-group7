@@ -63,3 +63,11 @@ backend/reports/completion-readonly-before.json
 backend/reports/completion-production-before.json
 # npm is the supported lockfile and install workflow
 frontend/bun.lock
+# Large generated audit traces remain local; curated demonstration screenshots are public.
+reports/*.txt
+reports/*.png
+!reports/demo-*.png
+!reports/auth-itinerary-before.png
+!reports/itinerary-live-login-handoff.png
+backend/reports/images/*.png
+backend/reports/images/*.jpg

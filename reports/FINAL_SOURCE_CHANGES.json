@@ -1,0 +1,94 @@
+{
+  "baseline": "backups/full-audit-source-20261008T064356Z.zip",
+  "changedExistingFiles": [
+    {
+      "path": "CODEX_HANDOFF.md",
+      "before": "607ebfc5135572a1373decf92725218848dd511f134fd8fd2c131f7c94edb392",
+      "after": "c9f1eac252b0691e63feb76cc9b9b3e30732bc14e94710ee22323d33fce4cbad"
+    },
+    {
+      "path": "package.json",
+      "before": "85152d5c05a6b6f31fe82f57a47857f8dd79f072fae0e7fb04e507a98b945426",
+      "after": "bc8a2cc331f124113f480ca9f45a06fd57151fbd0ef767c2b7715a6c6d1af4f9"
+    },
+    {
+      "path": "backend/tests/trips.test.js",
+      "before": "0c2b581b424ebd4205d54a2e40193965161f10b97dde659354c75f92820a2d9c",
+      "after": "0ef2f483477c6bea6cb6ff0b284d85656278f3d53f20d4c94bc826f28cabe7a2"
+    },
+    {
+      "path": "dsa/greedy/routeBuilder.ts",
+      "before": "b9235adde7a7e417ff85202e62e629193931b87b7834c19390d73c060c6e889d",
+      "after": "9128d987f1829d309ceaec5984e430b58d1611c294c175436c974f2dba417d10"
+    },
+    {
+      "path": "backend/services/tripPlanner.js",
+      "before": "157b58057323027a64a6b54642c02965a9503897d13ffa8afe16f6a8c610314b",
+      "after": "6e9f9ac03de9ab64cce624a94a1b377498f848dd427ed00ece584eecb7ce120a"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "before": "1355b90efcf2ce2d670e5d839e264589c3c42385083fb325b9cc2af46c3d2b9d",
+      "after": "bae67a6fede2ca326bd88f7e011c022601dfbe44fe0f47642e2a3d5004becc1d"
+    },
+    {
+      "path": "frontend/package.json",
+      "before": "39390fcbdbc5198ecebd784861c127701659dc2e5e4d37524a42557a03c30c7e",
+      "after": "5dc87278a32fefc77e38686ef55e22ad59ad98ab7e8cbdf93d1855aed6c3689b"
+    },
+    {
+      "path": "scripts/source-audit.js",
+      "before": "90e94e764ccfc0c7afe2e26a4d90c247bc13a3b5ef2df30ad9b8bbf24aae4780",
+      "after": "9f1a0292b49f8a1f5ce8ce5924fe86f36b952f3da6e2b936dbcb8d7faecf9cad"
+    },
+    {
+      "path": "frontend/src/utils/shareUrl.ts",
+      "before": "d308d381e7d488cf23c8a71d8b23fb19c6eb9061c0ec6355673d2e7941386358",
+      "after": "65c6b3fb47f5ea0f8af1c9d5ed7539b0a98949176e701a7b18ba9f9c3a721c01"
+    },
+    {
+      "path": "frontend/src/components/WhatIfPanel.tsx",
+      "before": "d0fae8a6201da9b2674085143db61eb1d090a6a890789dbea7a0a9f544cfe3ef",
+      "after": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4"
+    },
+    {
+      "path": "frontend/src/components/StrategyComparisonModal.tsx",
+      "before": "204643c6fc587d9f9eccb5463636cc5b83b5bc3abdcd8d6707c5ad2852c7ca59",
+      "after": "7e0b07f5b811fbe357c7cd18e15c17d6dcbac45af315d70909eb513c82edf5a0"
+    },
+    {
+      "path": "frontend/src/components/ShareItineraryModal.tsx",
+      "before": "77730b09703f515a5897db70733c735e0f63f9ae615cc8a6e3b615f18123819e",
+      "after": "cf92e783ee19d73985c72a67cf79993b0ce3ebd99e12fb0f547899109e09a42c"
+    },
+    {
+      "path": "frontend/src/components/Navbar.tsx",
+      "before": "0cf185c3751bfd89f8a572e81a9696082bba42234127af2a88b20723657a1633",
+      "after": "fdaf8c6318acc0759f790f03e365ac3f369df8dcde1028381a422f913cd7c809"
+    },
+    {
+      "path": "frontend/src/components/ItineraryView.tsx",
+      "before": "af2cc6e720e8c85b0baaf23a2b2d393247241fee7416bb3963a470d176d0e2c2",
+      "after": "372e3ffdf792ab57817a3734a8496ad978efb1280eb8172c4f91a84aff9fbaf7"
+    },
+    {
+      "path": "frontend/src/components/DijkstraVisualizer.tsx",
+      "before": "e351daa95201f06a86b478e04f8516eab28ea72c8523380f93f200317524157d",
+      "after": "d0760f628a4fd37b508b233b7f7d3e1dfdd6c995b89eb8f0bac2c7b2b3448980"
+    }
+  ],
+  "newSourceFiles": [
+    "backend/scripts/reproduce-currency-boundary.js",
+    "backend/scripts/reproduce-rating-order.js",
+    "frontend/scripts/reproduce-visualizer.ts",
+    "scripts/test-audit-regressions.js",
+    "scripts/test-audit-styles.js",
+    "scripts/test-source-approval.js",
+    "scripts/write-final-audit-readiness.py",
+    "scripts/write-full-audit-reports.py",
+    "tests/frontend/audit_regressions.py",
+    "tests/frontend/audit_responsive_nav.py",
+    "tests/frontend/visualizer.test.ts"
+  ],
+  "missingBaselineFiles": []
+}

@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "Missing primary displays a decoded, explicitly identified category illustration",
+    "Same mounted component recovers a valid new source after a previous error",
+    "HTTP 200 HTML is rejected by the browser decoder and falls back",
+    "Missing custom and category fallbacks reach a self-contained decoded terminal SVG",
+    "Failed srcSet is cleared when rendering a fallback",
+    "Real photograph state and attribution recover after multiple failure modes"
+  ],
+  "verified": true
+}

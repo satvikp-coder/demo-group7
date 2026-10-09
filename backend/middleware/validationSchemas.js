@@ -38,5 +38,6 @@ export const searchQuery = paginationQuery.extend({
   prefix: z.string().trim().min(1).max(100),
 }).strict();
 export const hotelQuery = paginationQuery.extend({
-  sort: z.enum(["price", "rating", "name", "value"]).default("price"),
+  category: z.enum(["Low Cost","Budget","Premium"]).optional(),
+  sort: z.enum(["price", "rating", "name", "value", "distance"]).default("price"),
 }).strict();

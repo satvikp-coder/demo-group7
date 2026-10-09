@@ -1,0 +1,154 @@
+{
+  "source_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3Bnwr%5B%22tourism%22~%22hotel%7Cguest_house%22%5D%2820.86%2C70.36%2C20.94%2C70.46%29%3Bout+center+tags%3B",
+  "checked": "2026-10-09",
+  "license": "ODbL-1.0",
+  "response": {
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.11 87bfad18",
+    "osm3s": {
+      "timestamp_osm_base": "2026-10-09T03:52:35Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+      {
+        "type": "node",
+        "id": 3179784293,
+        "lat": 20.8887202,
+        "lon": 70.4058835,
+        "tags": {
+          "name": "Somnath Trust Booking Office",
+          "tourism": "guest_house"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3294480441,
+        "lat": 20.8867653,
+        "lon": 70.4058753,
+        "tags": {
+          "name": "Bhavan",
+          "tourism": "guest_house"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3294480442,
+        "lat": 20.8885311,
+        "lon": 70.4033419,
+        "tags": {
+          "name": "Chetan Guest House",
+          "tourism": "guest_house"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3294480444,
+        "lat": 20.8887617,
+        "lon": 70.4044453,
+        "tags": {
+          "name": "Hotel Avadh",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3294480445,
+        "lat": 20.8888989,
+        "lon": 70.4044263,
+        "tags": {
+          "name": "Hotel Kailash",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3294480446,
+        "lat": 20.8883497,
+        "lon": 70.4035361,
+        "tags": {
+          "name": "Hotel Krishna",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3294481247,
+        "lat": 20.9119895,
+        "lon": 70.3621212,
+        "tags": {
+          "name": "Shyam",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 3749584980,
+        "lat": 20.888574,
+        "lon": 70.4030013,
+        "tags": {
+          "addr:city": "Gir-Somnath",
+          "addr:housenumber": "Near Somnath Temple",
+          "addr:postcode": "362268",
+          "addr:street": "Long Street, Prabhas Patan",
+          "name": "Shri Radhe",
+          "operator": "Manager",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "node",
+        "id": 4296915004,
+        "lat": 20.889873,
+        "lon": 70.4062377,
+        "tags": {
+          "name": "Lilavati Atithigruh",
+          "tourism": "guest_house"
+        }
+      },
+      {
+        "type": "way",
+        "id": 431684520,
+        "center": {
+          "lat": 20.8899095,
+          "lon": 70.4070512
+        },
+        "tags": {
+          "building": "yes",
+          "name": "Maheshwari Samaj Atithi Gruh",
+          "tourism": "guest_house"
+        }
+      },
+      {
+        "type": "way",
+        "id": 431685086,
+        "center": {
+          "lat": 20.8892259,
+          "lon": 70.4000282
+        },
+        "tags": {
+          "building": "yes",
+          "name": "Sagar Darshan Atithigruh",
+          "phone": "+91 2876-231212",
+          "tourism": "guest_house",
+          "website": "https://somnath.org/"
+        }
+      },
+      {
+        "type": "way",
+        "id": 431685423,
+        "center": {
+          "lat": 20.8885538,
+          "lon": 70.4005307
+        },
+        "tags": {
+          "building": "yes",
+          "name": "VIP Atithigruh",
+          "operator": "Somnath Trust",
+          "phone": "+91 2876 231212",
+          "tourism": "guest_house",
+          "website": "https://somnath.org/"
+        }
+      }
+    ]
+  }
+}

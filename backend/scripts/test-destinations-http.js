@@ -39,6 +39,17 @@ async function request(path, expectedStatus = 200) {
 }
 
 let cacheEvidence;
+
+function assertHotelRows(actual,expected){
+ const mapped=actual.map(row=>{
+  const {hotel_category,distance_km,distance_type,anchor_name,price_basis,...stored}=row;
+  assert.equal(hotel_category,row.price_per_night==null?null:row.price_per_night<1500?'Low Cost':row.price_per_night<=4000?'Budget':'Premium');
+  assert.equal(distance_type,'approximate straight-line');assert.ok(typeof anchor_name==='string');
+  assert.ok(Number.isFinite(distance_km)&&distance_km>=0);assert.ok(typeof price_basis==='string'&&price_basis.length>0);
+  return stored;
+ });
+ assert.deepEqual(mapped,jsonValue(expected)); // Every original database field and order still exact.
+}
 try {
   const cities = (await pool.query("SELECT * FROM destinations ORDER BY name, id")).rows;
   assert.deepEqual(cities.map(c=>c.slug).sort(), ['ahmedabad','champaner','dwarka','gir-national-park','modhera','rann-of-kutch','saputara','somnath']);
@@ -77,10 +88,10 @@ try {
     const nameOrder = (await pool.query(
       "SELECT * FROM hotels WHERE destination_id = $1 ORDER BY name, id", [destination.id],
     )).rows;
-    assert.deepEqual(await request(base + "/hotels?sort=price"), jsonValue(priceOrder));
-    assert.deepEqual(await request(base + "/hotels?sort=rating"), jsonValue(ratingOrder));
-    assert.deepEqual(await request(base + "/hotels?sort=name"), jsonValue(nameOrder));
-    assert.deepEqual(await request(base + "/hotels?sort=rating&limit=1&offset=1"), jsonValue(ratingOrder.slice(1, 2)));
+    assertHotelRows(await request(base + "/hotels?sort=price"), priceOrder);
+    assertHotelRows(await request(base + "/hotels?sort=rating"), ratingOrder);
+    assertHotelRows(await request(base + "/hotels?sort=name"), nameOrder);
+    assertHotelRows(await request(base + "/hotels?sort=rating&limit=1&offset=1"), ratingOrder.slice(1, 2));
   }
 
   const before = destinationSearchCache.getStatus();

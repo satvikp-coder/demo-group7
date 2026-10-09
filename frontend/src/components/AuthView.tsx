@@ -15,6 +15,7 @@ import {
 import { useLanguage } from "../context/LanguageContext";
 
 interface AuthViewProps {
+  notice?: string;
   initialMode?: "login" | "register";
   onCloseOrGuest: () => void;
   onAuthSuccess?: (user: {
@@ -25,6 +26,7 @@ interface AuthViewProps {
 }
 
 export const AuthView: React.FC<AuthViewProps> = ({
+  notice,
   initialMode = "login",
   onCloseOrGuest,
   onAuthSuccess,
@@ -219,7 +221,8 @@ export const AuthView: React.FC<AuthViewProps> = ({
               </div>
             )}
 
-            {formGeneralError && (
+            {notice && <p role="status">{notice}</p>}
+          {formGeneralError && (
               <div className="mb-6 p-4 bg-madder/10 border-l-4 border-madder text-madder font-mono text-xs flex items-center gap-2 rounded-xl">
                 <AlertCircle className="w-4 h-4 shrink-0" />
                 <span>{formGeneralError}</span>

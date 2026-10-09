@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "checks": [
+    "Invalid destination rejected",
+    "Invalid hotel rejected",
+    "Category mismatch rejected",
+    "Invalid total rejected",
+    "Fractional weights rejected",
+    "Missing weight rejected",
+    "Extra weight rejected",
+    "Invalid travelers rejected",
+    "Invalid rooms rejected",
+    "Invalid calendar date rejected",
+    "Tight budget returns honest infeasibility",
+    "Real IDs, candidate retrieval and persisted budget agree",
+    "Missing price is rejected, never free",
+    "Changed hotel/category rejected on regeneration",
+    "Coordinate change invalidates archived OSRM routes",
+    "Database rejects missing/extra/fractional/out-of-range weights",
+    "Concurrent generation atomically preserves stable stops"
+  ]
+}

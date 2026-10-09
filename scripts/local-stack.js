@@ -37,7 +37,7 @@ export async function localAction(action,args=[]){
  else if(action==='restart'){
   await localCompose(['restart','postgres','backend','frontend'],'local-restart',env);
   await waitFor(origin+'/ready');console.log('Restart complete; saved PostgreSQL data preserved.');
- }else if(action==='seed'||action==='verify')await localCompose(['run','--rm','maintenance','npm','run',action==='seed'?'db:seed':'db:verify'],'local-'+action,env);
+ }else if(action==='seed'||action==='verify'||action==='expand')await localCompose(['run','--rm','--build','maintenance','npm','run',action==='seed'?'db:seed':action==='expand'?'db:expand':'db:verify'],'local-'+action,env);
  else if(action==='operator'){
   if(args.length!==1||!/^\S+@\S+\.\S+$/.test(args[0]))throw new Error('Usage: npm run local:operator -- EMAIL');
   await localCompose(['run','--rm','maintenance','npm','run','operator:approve','--',args[0]],'local-operator',env);

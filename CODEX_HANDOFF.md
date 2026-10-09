@@ -2,60 +2,60 @@
 
 ## Project Summary
 
-Gujarat Heritage Tourism Planner: React/Express/PostgreSQL with shared DSA modules. Current supported product is locally production-ready; public hosting remains external.
+Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL and shared DSA modules. Preserve the existing architecture and visual identity.
 
 ## Current Goal
 
-Maintain the finalized production-ready source in satvikp-coder/demo-group7. The next product step is external public deployment / hosting configuration.
+Publish the verified image, integration and itinerary repairs to the existing main branch. Check the Actions run associated with the published commit.
 
 ## Current Project State
 
-This release synchronizes the verified local application with the existing main history. Runtime frontend/backend/DSA code and visuals are preserved. Inspect Git HEAD and its Actions run for the published commit and remote CI state.
+Local acceptance completed 2026-10-09. CONDITIONALLY_READY for the documented university demo. Current catalog: 8 destinations, 33 attractions, 23 hotels, 12 restaurants, 163 routes. See reports/FINAL_DEMO_READINESS.md; older release reports are historical.
 
 ## Completed
 
-Repository cleanup, professional README, current API/setup/testing documentation, artifact exclusions, public privacy review and local verification. Original LICENSE, team credits, approved data and academic implementations are retained.
+Reproduced and repaired Bearer-token user flow; real authenticated generation, category/property selection, geographic filtering, synchronized 100% priorities and weighted existing planner. Added 20 sourced records and 32 routes safely. Shared image recovery/fallbacks, full audit, regression and browser demonstration completed. Original records preserved against a restored backup.
 
 ## Files Changed
 
-README.md; .gitignore; .gitattributes; documentation; portable historical source-audit paths. See docs/RELEASE_VERIFICATION.md for final disposition.
+Frontend API/planner/auth/hotel/image components; backend hotel/trip models, validation and planner; shared planning utilities; local maintenance image refresh; tests, workflow and reports. See reports/09_BUG_FIX_LOG.md and the commit diff.
 
 ## Files Created
 
-docs/RELEASE_VERIFICATION.md; sanitized public continuity record.
+Migrations 005-007; category and priority controls; sourced expansion data/importer; licensed photograph assets and credits; repeatable image/itinerary tests; reports/01_PROJECT_ARCHITECTURE_AUDIT.md through reports/10_FINAL_PRODUCTION_READINESS.md plus eight itinerary reports.
 
 ## Technical Decisions
 
-No product development or source reorganization. Preserve pinned source/evidence/migration bytes across checkouts. Test-only fixes supply PORT explicitly and wait for real route transitions. Runtime API search is prefix-only; shared Levenshtein fuzzy search remains a tested academic implementation. Keep large generated traces and private archives local.
+Extend the existing constrained greedy/graph engine with bounded candidate scoring, not a parallel engine. Unknown prices/ratings remain unknown. Distances identify straight-line versus road estimates. Preserve exact migration/evidence/source bytes using Git attributes. Keep private historical continuity and backups outside the public checkout.
 
 ## Dependencies / Setup Changes
 
-No runtime dependency changes. Use locked npm installs. Node 22.18+, Docker Compose v2, PostgreSQL 17; Python/Chrome for browser tests.
+Use locked npm installs, Node 22, PostgreSQL 17, Docker Compose, Python and Chrome for browser tests. Frontend source-map-js patched to 1.2.2. Existing live database safely migrated without reset.
 
 ## Commands Used
 
-git clone/fetch/status/diff; npm ci --prefix backend/frontend; npm run local:up; sequential test:all:local, test:production and test:local.
+npm run test:all; npm run test:production; npm run test:itinerary -- demo; npm run audit:images; python scripts/audit-images.py; npm run local:up; npm run local:expand; npm run local:verify; npm run local:restart. Tests use isolated databases; never run destructive fixtures against user data.
 
 ## Testing Completed
 
-Fresh unified 18/18, production-container 16/16, and persistent-local 4/4 gates passed. All eight destinations and tourist/operator flows passed. Both dependency audits found zero vulnerabilities. All 147 protected source files (89 frontend) match pre-cleanup hashes. See docs/RELEASE_VERIFICATION.md for timestamps and exact evidence.
+Local unified 18/18 gates PASS (2026-10-09T09:12:08Z); container 16/16 PASS (14:34:17Z); expanded production-build demo/auth/API matrix PASS (14:35:48Z). 17 API checks, four demo journeys, 60 image page/viewport states, 66 decoded assets; zero broken images. Detailed evidence in reports/END_TO_END_TEST_RESULTS.md. These are local results; consult GitHub Actions for remote CI.
 
 ## Current Issues / Bugs
 
-No application change requested. Public deployment, provider secrets/TLS/backups/monitoring remain external. Tourism facts have documented unknowns.
+42 intentional image fallbacks remain among 76 entity associations; 34 associations use genuine photographs. Dataset expansion covers Ahmedabad/Somnath, not every city. Unknown fares, rates, availability and calendar constraints remain explicit. Gujarati, native-device certification and public hosting remain incomplete; no blanket production certification.
 
 ## Important Warnings
 
-Never publish private environments, archives, tokens, local machine paths or browser-session data. Do not reset databases or replay historical seed writers. Run catalog-mutating suites sequentially. Preserve frontend visual design and unknown tourism fields.
+Never publish environments, secrets, private backups or session traces. Never reset/reseed the live database. Preserve unknown tourism facts and provenance. Run mutating suites sequentially and in isolated databases. Existing account/session records must remain intact.
 
 ## Next Steps
 
-External public deployment / hosting configuration. Follow docs/PRODUCTION.md for provider secrets, database, HTTPS, backups, monitoring and public smoke tests. Check the release commit Actions result before deployment.
+Complete normal push and inspect remote CI; fix any reproduced portability failure without weakening tests. Public hosting requires its own configured environment and verification. Follow reports/FINAL_DEMO_READINESS.md for reproducible demo steps and limitations.
 
 ## Last Session Summary
 
-Final source cleanup and documentation completed with fresh local tests. No frontend visual source or runtime product behavior changed. Full private continuity history remains in the original local application; this public record contains project-relative information only.
+Local implementation, installed application verification and reports are complete. Public checkout synchronized with reviewed source/assets/evidence; privacy and checkout hash review precede publication. No force push or database reset.
 
 ## Last Updated
 
-2026-10-01T09:11:26.199993+00:00 UTC / Asia/Calcutta (UTC+05:30). Local release verification completed.
+2026-10-09T20:13:09.000915+00:00 UTC / Asia/Calcutta (UTC+05:30).

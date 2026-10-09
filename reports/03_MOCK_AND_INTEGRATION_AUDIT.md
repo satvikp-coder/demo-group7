@@ -1,0 +1,9 @@
+# Mock and integration audit
+
+Runtime catalog, hotel ranking, planner, budget and saved profile use actual APIs and PostgreSQL. No dummy successful booking or fake availability was added. Static frontend destination/reference planner modules are academic/test inputs and excluded from the production runtime graph (build-audit gate). Constants for labels, categories, preferences and test fixtures are legitimate static data.
+
+AUD-003/004: What If used debounced values for a real request and claimed live recomputation; repaired to current settings and explicit Save-to-generate behavior. Saved confirmation now disappears when settings differ. AUD-005: sharing copy overstated public access; corrected to owner-authenticated link and accessible modal title. AUD-007: missing ratings were given 4.5 in greedy scoring; fixed to neutral unknown score while preserving genuine zero. AUD-008: graph presentation invented reverse edges/zero-length unreachable paths; repaired to persisted directed evidence. Strategy descriptions now match actual weighting and retained hotel.
+
+Account-edit controls truthfully state that no API exists. Profile Remove is intentional session hiding, not a database delete. Unknown transport fares, prices and accessibility are not promoted to facts. Offline shell caching does not claim offline authenticated data. Illustrations are explicitly identified fallbacks; they do not pretend to depict hotels. Actual bookings, live room availability, public recipient sharing, Gujarati UI and external permit/calendar providers remain absent. No substitute provider workflow was invented.
+
+Search indicators (TODO/mock/sample/setTimeout/static arrays) were inspected in context; timers serve debouncing/animation/cache/test behavior. Fixture seed scripts run only in separate test databases during this audit. See 09 for canonical defect IDs and backend/reports/images/IMAGE_REPAIR_REPORT.md for all photo/fallback identities.

@@ -83,8 +83,7 @@ export function generateDijkstraSteps(
     edgesList.forEach((edge) => {
       if (edge.from === nodeId)
         neighbors.push({ neighborId: edge.to, weight: edge.distanceKm });
-      else if (edge.to === nodeId)
-        neighbors.push({ neighborId: edge.from, weight: edge.distanceKm });
+      // Saved journey legs are directional. The return leg has its own weight.
     });
     return neighbors;
   };
@@ -211,12 +210,13 @@ export function generateDijkstraSteps(
     }
   }
 
-  const finalDist =
-    distances[effectiveTarget] !== Infinity ? distances[effectiveTarget] : 0;
+  const finalDist = distances[effectiveTarget] ?? Infinity;
+  const reachable = Number.isFinite(finalDist);
+  if (!reachable) finalPath.length = 0;
 
   steps.push({
     stepIndex: steps.length,
-    description: `Dijkstra search complete! Shortest path identified (${finalDist} km).`,
+    description: reachable ? `Dijkstra search complete! Shortest path identified (${finalDist} km).` : "No saved route connects the selected nodes.",
     currentNodeId: null,
     visitedNodeIds: [...visitedNodes],
     frontierNodeIds: [],
@@ -226,7 +226,7 @@ export function generateDijkstraSteps(
     relaxedEdge: null,
     isComplete: true,
     finalPath,
-    finalDistance: Math.round(finalDist * 10) / 10,
+    finalDistance: reachable ? Math.round(finalDist * 10) / 10 : Number.NaN,
   });
 
   return steps;

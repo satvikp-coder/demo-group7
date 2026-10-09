@@ -1,0 +1,829 @@
+{
+  "verified": true,
+  "checks": [
+    "Expansion category switch shows Low Cost Maruti, historical Budget Good Night and original Premium properties",
+    "Backend category, named anchor and distance ordering verified",
+    "Selected real hotel UUID/category persists and renders after generation",
+    "Hotel/category mismatch rejected",
+    "Browser inputs reach persisted dates/travelers/weights and explanation",
+    "Seven weight scenarios independently scored, deterministic repeated generation, invalid weights rejected",
+    "Refresh reads saved latest result, desktop/mobile no overflow",
+    "New ahmedabad Low Cost Hotel Maruti generates using real saved routes",
+    "New somnath Low Cost Lilavati Atithigruh generates using real saved routes",
+    "New somnath Budget Sagar Darshan Atithigruh generates using real saved routes"
+  ],
+  "scenarios": [
+    {
+      "rooms": 1,
+      "score": 0.9928571428571429,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 10,
+        "rating": 10,
+        "distance": 80
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 1,
+          "score": 0.9928571428571429,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 2,
+          "score": 0.6378677585683962,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 3,
+          "score": 0.3975280558083103,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 4,
+          "score": 0.37884440400363945,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 5,
+          "score": 0.3550652107976946,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 6,
+          "score": 0.19285714285714287,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "faddd5f37ebb7c7e"
+    },
+    {
+      "rooms": 1,
+      "score": 0.9928571428571429,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 80,
+        "rating": 10,
+        "distance": 10
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 1,
+          "score": 0.9928571428571429,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 2,
+          "score": 0.9484834698210496,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 3,
+          "score": 0.9184410069760388,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 4,
+          "score": 0.916105550500455,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 5,
+          "score": 0.9131331513497118,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 6,
+          "score": 0.8928571428571429,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "faddd5f37ebb7c7e"
+    },
+    {
+      "rooms": 1,
+      "score": 0.9428571428571428,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 10,
+        "rating": 80,
+        "distance": 10
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 1,
+          "score": 0.9428571428571428,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 2,
+          "score": 0.8984834698210495,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 3,
+          "score": 0.8684410069760389,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 4,
+          "score": 0.8661055505004549,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 5,
+          "score": 0.8631331513497118,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 6,
+          "score": 0.8428571428571429,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "faddd5f37ebb7c7e"
+    },
+    {
+      "rooms": 1,
+      "score": 0.9764285714285714,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 33,
+        "rating": 33,
+        "distance": 34
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 1,
+          "score": 0.9764285714285714,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 2,
+          "score": 0.8255580831058542,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 3,
+          "score": 0.7234137094328177,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 4,
+          "score": 0.7154731574158325,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 5,
+          "score": 0.7053670003033059,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 6,
+          "score": 0.6364285714285715,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "faddd5f37ebb7c7e"
+    },
+    {
+      "rooms": 1,
+      "score": 1,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 0,
+        "rating": 0,
+        "distance": 100
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 1,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 2,
+          "score": 0.5562632696390667,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 3,
+          "score": 0.25583864118895927,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 4,
+          "score": 0.23248407643312075,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 5,
+          "score": 0.20276008492568962,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 6,
+          "score": 0,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "faddd5f37ebb7c7e"
+    },
+    {
+      "rooms": 1,
+      "score": 1,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 100,
+        "rating": 0,
+        "distance": 0
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 1,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 2,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 3,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 4,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 5,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 6,
+          "score": 1,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "7fbbc4e422a77eb6"
+    },
+    {
+      "rooms": 1,
+      "score": 0.9285714285714286,
+      "method": "bounded_multi_start_greedy",
+      "weights": {
+        "cost": 0,
+        "rating": 100,
+        "distance": 0
+      },
+      "travelers": 2,
+      "candidates": [
+        {
+          "id": "7fbbc4e422a77eb6",
+          "rank": 1,
+          "score": 0.9285714285714286,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.23248407643312075
+          },
+          "known_cost": 11500,
+          "distance_km": 94.5,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d29d14295d9c87fa",
+          "rank": 2,
+          "score": 0.9285714285714286,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.25583864118895927
+          },
+          "known_cost": 11500,
+          "distance_km": 94.28,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "d884640bd621a888",
+          "rank": 3,
+          "score": 0.9285714285714286,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0
+          },
+          "known_cost": 11500,
+          "distance_km": 96.69,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "e9e5bb56ab4fabbd",
+          "rank": 4,
+          "score": 0.9285714285714286,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.5562632696390667
+          },
+          "known_cost": 11500,
+          "distance_km": 91.44999999999999,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "faddd5f37ebb7c7e",
+          "rank": 5,
+          "score": 0.9285714285714286,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 1
+          },
+          "known_cost": 11500,
+          "distance_km": 87.27,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        },
+        {
+          "id": "fe9a24110312d5a3",
+          "rank": 6,
+          "score": 0.9285714285714286,
+          "feasible": true,
+          "utilities": {
+            "cost": 1,
+            "rating": 0.9285714285714286,
+            "distance": 0.20276008492568964
+          },
+          "known_cost": 11500,
+          "distance_km": 94.78,
+          "rating_mean": 4.642857142857143,
+          "rating_coverage": 1,
+          "attraction_count": 6
+        }
+      ],
+      "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+      "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+      "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+      "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+      "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+      "evaluated_count": 6,
+      "selected_candidate_id": "7fbbc4e422a77eb6"
+    }
+  ]
+}

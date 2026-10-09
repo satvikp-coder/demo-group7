@@ -1,0 +1,58 @@
+{
+  "verified": true,
+  "comparison": "Current live database versus separately restored full-audit baseline backup",
+  "tables": {
+    "destinations": {
+      "count": 8,
+      "digest": "5c32df46f226d9c7fcee32da34176f69"
+    },
+    "attractions": {
+      "count": 25,
+      "digest": "587e0086ca35c5f8d1ecae151322aeec"
+    },
+    "hotels": {
+      "count": 11,
+      "digest": "14cf0ad4cfe05d1249a620e4a9c2a0e2"
+    },
+    "restaurants": {
+      "count": 12,
+      "digest": "60df9e1cfc3b8c8ca22ca8b734415465"
+    },
+    "routes": {
+      "count": 131,
+      "digest": "02876cf30664dc635ef9f7e652f2e175"
+    },
+    "users": {
+      "count": 1,
+      "digest": "815b52ae18b45e5c5660e3289a31039e"
+    },
+    "trips": {
+      "count": 0,
+      "digest": "d751713988987e9331980363e24189ce"
+    },
+    "itinerary_stops": {
+      "count": 0,
+      "digest": "d751713988987e9331980363e24189ce"
+    },
+    "budgets": {
+      "count": 0,
+      "digest": "d751713988987e9331980363e24189ce"
+    },
+    "seed_managed_rows": {
+      "count": 187,
+      "digest": "1896e76c50185f2ad7ca7c480a5c1fbd"
+    },
+    "schema_migrations": {
+      "count": 5,
+      "digest": "927254e06027edd31af3111ccb2f2ebc"
+    },
+    "destination_nearby_attractions": {
+      "count": 0,
+      "digest": "d751713988987e9331980363e24189ce"
+    },
+    "destination_nearby_hotels": {
+      "count": 0,
+      "digest": "d751713988987e9331980363e24189ce"
+    }
+  }
+}

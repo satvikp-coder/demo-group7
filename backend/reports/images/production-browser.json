@@ -1,0 +1,2380 @@
+{
+  "base": "http://localhost:8080",
+  "phase": "production",
+  "pages": [
+    {
+      "path": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/explore",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/ahmedabad",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/monument.svg",
+          "alt": "Photograph unavailable; generic illustration for Calico Textile Museum",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kankaria-lake.webp",
+          "alt": "Kankaria Lake",
+          "width": 960,
+          "height": 636,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sabarmati-ashram.webp",
+          "alt": "Sabarmati Ashram",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sarkhej-roza.webp",
+          "alt": "Sarkhej Roza",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sidi-saiyyed-mosque.webp",
+          "alt": "Sidi Saiyyed Mosque & Old Pols",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/champaner",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Jami Masjid, Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kevada-masjid.webp",
+          "alt": "Kevada Masjid",
+          "width": 584,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/dwarka",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bet-dwarka.webp",
+          "alt": "Bet Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarkadhish Temple",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/nageshwar-temple.webp",
+          "alt": "Nageshwar Jyotirlinga",
+          "width": 730,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rukmini-temple.webp",
+          "alt": "Rukmini Devi Temple",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/gir-national-park",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/devalia-lions.webp",
+          "alt": "Devalia Interpretation Zone Bus Safari",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir Jungle Safari (Sinh Sadan reporting point)",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/modhera",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modheshwari-temple.webp",
+          "alt": "Modheshwari Mata Temple",
+          "width": 960,
+          "height": 723,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/rann-of-kutch",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kalo-dungar.webp",
+          "alt": "Kalo Dungar",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann near Dhordo",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/saputara",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara Lake",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/monument.svg",
+          "alt": "Photograph unavailable; generic illustration for Saputara Museum",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-sunset-point.webp",
+          "alt": "Sunset Point Saputara",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/somnath",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bhalka-tirth.webp",
+          "alt": "Bhalka Tirth",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-beach.webp",
+          "alt": "Somnath Beach",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath Temple",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/monument.svg",
+          "alt": "Photograph unavailable; generic illustration for Triveni Sangam",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/hotels",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay Homestay exterior",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier Registered Hotel exterior",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG Heritage Hotel exterior",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/itinerary",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/budget",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/profile",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/admin",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/login",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/register",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/research",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/missing",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/image-credits.html",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Sabarmati riverfront, Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Jami Masjid, Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarkadhish Temple, Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Asiatic lions in Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Sun Temple, Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara Lake and hill town",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath Temple",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli, Ahmedabad \u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u009d exterior",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-heritage-resort.webp",
+          "alt": "Champaner Heritage Resort",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sabarmati-ashram.webp",
+          "alt": "Sabarmati Ashram, Ahmedabad",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sarkhej-roza.webp",
+          "alt": "Sarkhej Roza, Ahmedabad",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sidi-saiyyed-mosque.webp",
+          "alt": "Sidi Saiyyed Mosque, Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kankaria-lake.webp",
+          "alt": "Kankaria Lake, Ahmedabad",
+          "width": 960,
+          "height": 636,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/nageshwar-temple.webp",
+          "alt": "Nageshwar Jyotirlinga, Dwarka",
+          "width": 730,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rukmini-temple.webp",
+          "alt": "Rukmini Devi Temple, Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kevada-masjid.webp",
+          "alt": "Kevada Masjid, Champaner",
+          "width": 584,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/devalia-lions.webp",
+          "alt": "Asiatic lions at Devalia, Gir",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modheshwari-temple.webp",
+          "alt": "Modheshwari Mata Temple, Modhera",
+          "width": 960,
+          "height": 723,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kalo-dungar.webp",
+          "alt": "View from Kalo Dungar",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/chandravilas-ahmedabad.webp",
+          "alt": "Chandravilas Restaurant, Ahmedabad",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/vishalla-thali.webp",
+          "alt": "Gujarati thali served at Vishalla, Ahmedabad",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bet-dwarka.webp",
+          "alt": "Bet Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bhalka-tirth.webp",
+          "alt": "Bhalka Tirth, near Somnath",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-beach.webp",
+          "alt": "Somnath Beach",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-sunset-point.webp",
+          "alt": "Sunset Point, Saputara",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/explore",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/ahmedabad",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/monument.svg",
+          "alt": "Photograph unavailable; generic illustration for Calico Textile Museum",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kankaria-lake.webp",
+          "alt": "Kankaria Lake",
+          "width": 960,
+          "height": 636,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sabarmati-ashram.webp",
+          "alt": "Sabarmati Ashram",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sarkhej-roza.webp",
+          "alt": "Sarkhej Roza",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sidi-saiyyed-mosque.webp",
+          "alt": "Sidi Saiyyed Mosque & Old Pols",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/champaner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Jami Masjid, Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kevada-masjid.webp",
+          "alt": "Kevada Masjid",
+          "width": 584,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/dwarka",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bet-dwarka.webp",
+          "alt": "Bet Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarkadhish Temple",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/nageshwar-temple.webp",
+          "alt": "Nageshwar Jyotirlinga",
+          "width": 730,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rukmini-temple.webp",
+          "alt": "Rukmini Devi Temple",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/gir-national-park",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/devalia-lions.webp",
+          "alt": "Devalia Interpretation Zone Bus Safari",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir Jungle Safari (Sinh Sadan reporting point)",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/modhera",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modheshwari-temple.webp",
+          "alt": "Modheshwari Mata Temple",
+          "width": 960,
+          "height": 723,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/rann-of-kutch",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kalo-dungar.webp",
+          "alt": "Kalo Dungar",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann near Dhordo",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/saputara",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara Lake",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/monument.svg",
+          "alt": "Photograph unavailable; generic illustration for Saputara Museum",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-sunset-point.webp",
+          "alt": "Sunset Point Saputara",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/destination/somnath",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bhalka-tirth.webp",
+          "alt": "Bhalka Tirth",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-beach.webp",
+          "alt": "Somnath Beach",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath Temple",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/monument.svg",
+          "alt": "Photograph unavailable; generic illustration for Triveni Sangam",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/hotels",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay Homestay exterior",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier Registered Hotel exterior",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG Heritage Hotel exterior",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/itinerary",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/budget",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/profile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/admin",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/login",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/register",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/research",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/missing",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": [],
+      "horizontalOverflow": false
+    },
+    {
+      "path": "/image-credits.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:8080/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Sabarmati riverfront, Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Jami Masjid, Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarkadhish Temple, Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/gir-national-park.webp",
+          "alt": "Asiatic lions in Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Sun Temple, Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara Lake and hill town",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath Temple",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli, Ahmedabad \u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u009d exterior",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/champaner-heritage-resort.webp",
+          "alt": "Champaner Heritage Resort",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sabarmati-ashram.webp",
+          "alt": "Sabarmati Ashram, Ahmedabad",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sarkhej-roza.webp",
+          "alt": "Sarkhej Roza, Ahmedabad",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/sidi-saiyyed-mosque.webp",
+          "alt": "Sidi Saiyyed Mosque, Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kankaria-lake.webp",
+          "alt": "Kankaria Lake, Ahmedabad",
+          "width": 960,
+          "height": 636,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/nageshwar-temple.webp",
+          "alt": "Nageshwar Jyotirlinga, Dwarka",
+          "width": 730,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/rukmini-temple.webp",
+          "alt": "Rukmini Devi Temple, Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kevada-masjid.webp",
+          "alt": "Kevada Masjid, Champaner",
+          "width": 584,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/devalia-lions.webp",
+          "alt": "Asiatic lions at Devalia, Gir",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/modheshwari-temple.webp",
+          "alt": "Modheshwari Mata Temple, Modhera",
+          "width": 960,
+          "height": 723,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/kalo-dungar.webp",
+          "alt": "View from Kalo Dungar",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/chandravilas-ahmedabad.webp",
+          "alt": "Chandravilas Restaurant, Ahmedabad",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/vishalla-thali.webp",
+          "alt": "Gujarati thali served at Vishalla, Ahmedabad",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bet-dwarka.webp",
+          "alt": "Bet Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/bhalka-tirth.webp",
+          "alt": "Bhalka Tirth, near Somnath",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/somnath-beach.webp",
+          "alt": "Somnath Beach",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:8080/assets/photographs/saputara-sunset-point.webp",
+          "alt": "Sunset Point, Saputara",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "imageHttpErrors": [],
+  "failedImageRequests": []
+}

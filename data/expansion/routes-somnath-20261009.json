@@ -1,0 +1,433 @@
+{
+  "city": "somnath",
+  "checked": "2026-10-09",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/70.384880,20.911796;70.401391,20.887761;70.412766,20.884563;70.402828,20.885133;70.393221,20.926537;70.408111,20.899600;70.406238,20.889873;70.407051,20.88991;70.400028,20.889226?annotations=distance,duration",
+  "nodes": [
+    {
+      "external_id": "a102",
+      "lat": "20.911796",
+      "lng": "70.384880",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a101",
+      "lat": "20.887761",
+      "lng": "70.401391",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a103",
+      "lat": "20.884563",
+      "lng": "70.412766",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a104",
+      "lat": "20.885133",
+      "lng": "70.402828",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "h101",
+      "lat": "20.926537",
+      "lng": "70.393221",
+      "kind": "hotel"
+    },
+    {
+      "external_id": "r102",
+      "lat": "20.899600",
+      "lng": "70.408111",
+      "kind": "restaurant"
+    },
+    {
+      "external_id": "exp-20261009-lilavati-atithigruh-somnath",
+      "lat": 20.889873,
+      "lng": 70.406238,
+      "kind": "hotel"
+    },
+    {
+      "external_id": "exp-20261009-maheshwari-samaj-atithi-gruh-somnath",
+      "lat": 20.88991,
+      "lng": 70.407051,
+      "kind": "hotel"
+    },
+    {
+      "external_id": "exp-20261009-sagar-darshan-atithigruh-somnath",
+      "lat": 20.889226,
+      "lng": 70.400028,
+      "kind": "hotel"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        4070.1,
+        5329.4,
+        4974.7,
+        3625.2,
+        4281.3,
+        4393.5,
+        4441.4,
+        4168.2
+      ],
+      [
+        4070.1,
+        0,
+        1317.5,
+        962.8,
+        6151.2,
+        3642.8,
+        1166.5,
+        1214.4,
+        351.8
+      ],
+      [
+        5541.9,
+        1304.4,
+        0,
+        1203.4,
+        6877,
+        4368.6,
+        1484.7,
+        1532.6,
+        1512.8
+      ],
+      [
+        4854.9,
+        928.2,
+        1259.5,
+        0,
+        7579.1,
+        5070.8,
+        1108.5,
+        1156.4,
+        1136.6
+      ],
+      [
+        3888.9,
+        6500.2,
+        5739.1,
+        6470,
+        0,
+        3711,
+        5888.7,
+        5936.6,
+        6598.3
+      ],
+      [
+        5239.1,
+        2905.1,
+        2144,
+        2874.9,
+        6432.8,
+        0,
+        2293.6,
+        2341.5,
+        3003.2
+      ],
+      [
+        4477.4,
+        933.1,
+        1186.8,
+        832.1,
+        7093.1,
+        4584.7,
+        0,
+        120.6,
+        1141.5
+      ],
+      [
+        4525.3,
+        981,
+        1234.7,
+        880,
+        7141,
+        4632.6,
+        120.6,
+        0,
+        1189.4
+      ],
+      [
+        4168.2,
+        351.8,
+        1525.9,
+        1171.2,
+        6249.3,
+        3740.9,
+        1374.9,
+        1422.8,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "Qf2Mj0T9jI8-AAAAUQAAAAAAAADpAAAATqPPQWZpBkIAAAAAJHLBQj4AAABRAAAAAAAAAOkAAABSKAEASv0xBCsVPwHw_DEEtBY_AQAAHxAAAAAA",
+        "location": [
+          70.38497,
+          20.911403
+        ],
+        "name": "",
+        "distance": 44.50718853
+      },
+      {
+        "hint": "ONJJg66qfYisAAAAcgAAAAAAAABmAAAA4WOPQqnMPUIAAAAADEsrQqwAAAByAAAAAAAAAGYAAABSKAEAbz0yBMG7PgFvPTIE0bg-AQAA7xAAAAAA",
+        "location": [
+          70.401391,
+          20.888513
+        ],
+        "name": "",
+        "distance": 83.25798607
+      },
+      {
+        "hint": "NiqKj3Lyi48QAAAAAgAAAGQAAAA8AAAAhbCSQVJq6T_SC-BCuMOFQhAAAAACAAAAZAAAADwAAABSKAEApWkyBECtPgHeaTIEU6w-AQ4AHxAAAAAA",
+        "location": [
+          70.412709,
+          20.8848
+        ],
+        "name": "Gita Mandir Road",
+        "distance": 26.90155357
+      },
+      {
+        "hint": "cal9iNyIh4_fAAAAPgAAAGwBAAAAAAAA5bS5QgOezUFJ1BdDAAAAAN8AAAA-AAAAbAEAAAAAAABSKAEAmUQyBBuyPgEMQzIEja4-AQYATxIAAAAA",
+        "location": [
+          70.403225,
+          20.886043
+        ],
+        "name": "Somnath Beach Road",
+        "distance": 108.8913537
+      },
+      {
+        "hint": "R9Nti____38kAAAAPgAAAAAAAAAAAAAA-s2sQomCcEIAAAAAAAAAACQAAAA-AAAAAAAAAAAAAABSKAEAQh0yBL1PPwGFHTIESVA_AQAAHwcAAAAA",
+        "location": [
+          70.393154,
+          20.926397
+        ],
+        "name": "",
+        "distance": 16.99504271
+      },
+      {
+        "hint": "PHuMj1dLj48JAAAADAAAAB8AAAB4AAAA7GSAQFP4mkBWQElBBo5HQgkAAAAMAAAAHwAAAHgAAABSKAEAaVcyBP7mPgGvVzIEEOc-AQgATwoAAAAA",
+        "location": [
+          70.408041,
+          20.899582
+        ],
+        "name": "",
+        "distance": 7.551674122
+      },
+      {
+        "hint": "WKd9iF2nfYhkAAAAWAAAAI8AAAAAAAAAcb0nQnsYEkIT0W1CAAAAAGQAAABYAAAAjwAAAAAAAABSKAEAXlAyBKTBPgFeUDIEEcE-AQIArwUAAAAA",
+        "location": [
+          70.406238,
+          20.89002
+        ],
+        "name": "",
+        "distance": 16.27516483
+      },
+      {
+        "hint": "dwuKj3oLio9UAAAAbwAAAAAAAAAAAAAAHNUMQhM8OEIAAAAAAAAAAFQAAABvAAAAAAAAAAAAAABSKAEArlIyBDfBPgGLUzIENsE-AQAATwsAAAAA",
+        "location": [
+          70.40683,
+          20.889911
+        ],
+        "name": "",
+        "distance": 22.99680103
+      },
+      {
+        "hint": "w6p9iMWqfYgdAAAAAAAAAGsAAABUAAAAvFWgQQAAAAAao5RCFoZoQh0AAAAAAAAAawAAAFQAAABSKAEAVTkyBOS_PgEcODIEir4-AQQA3xEAAAAA",
+        "location": [
+          70.400341,
+          20.889572
+        ],
+        "name": "",
+        "distance": 50.28176305
+      }
+    ],
+    "durations": [
+      [
+        0,
+        297.1,
+        383.5,
+        418.5,
+        252.7,
+        349.2,
+        326.6,
+        338,
+        314
+      ],
+      [
+        298.3,
+        0,
+        135.5,
+        170.5,
+        439.6,
+        300.1,
+        160,
+        171.4,
+        71.9
+      ],
+      [
+        378.2,
+        139.4,
+        0,
+        183.1,
+        420.8,
+        281.3,
+        180,
+        191.4,
+        167.2
+      ],
+      [
+        426.8,
+        172.6,
+        188.7,
+        0,
+        533.2,
+        393.7,
+        213.2,
+        224.6,
+        200.4
+      ],
+      [
+        320.8,
+        360.2,
+        320.9,
+        425.7,
+        0,
+        169.4,
+        333.8,
+        345.2,
+        377.1
+      ],
+      [
+        331.3,
+        229,
+        189.7,
+        294.5,
+        356.6,
+        0,
+        202.6,
+        214,
+        245.9
+      ],
+      [
+        338.7,
+        126.4,
+        135.1,
+        170.1,
+        441.4,
+        301.9,
+        0,
+        38.5,
+        154.2
+      ],
+      [
+        350.1,
+        137.8,
+        146.5,
+        181.5,
+        452.8,
+        313.3,
+        41.8,
+        0,
+        165.6
+      ],
+      [
+        315.2,
+        65.4,
+        163.2,
+        198.2,
+        456.5,
+        317,
+        187.7,
+        199.1,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "Qf2Mj0T9jI8-AAAAUQAAAAAAAADpAAAATqPPQWZpBkIAAAAAJHLBQj4AAABRAAAAAAAAAOkAAABSKAEASv0xBCsVPwHw_DEEtBY_AQAAHxAAAAAA",
+        "location": [
+          70.38497,
+          20.911403
+        ],
+        "name": "",
+        "distance": 44.50718853
+      },
+      {
+        "hint": "ONJJg66qfYisAAAAcgAAAAAAAABmAAAA4WOPQqnMPUIAAAAADEsrQqwAAAByAAAAAAAAAGYAAABSKAEAbz0yBMG7PgFvPTIE0bg-AQAA7xAAAAAA",
+        "location": [
+          70.401391,
+          20.888513
+        ],
+        "name": "",
+        "distance": 83.25798607
+      },
+      {
+        "hint": "NiqKj3Lyi48QAAAAAgAAAGQAAAA8AAAAhbCSQVJq6T_SC-BCuMOFQhAAAAACAAAAZAAAADwAAABSKAEApWkyBECtPgHeaTIEU6w-AQ4AHxAAAAAA",
+        "location": [
+          70.412709,
+          20.8848
+        ],
+        "name": "Gita Mandir Road",
+        "distance": 26.90155357
+      },
+      {
+        "hint": "cal9iNyIh4_fAAAAPgAAAGwBAAAAAAAA5bS5QgOezUFJ1BdDAAAAAN8AAAA-AAAAbAEAAAAAAABSKAEAmUQyBBuyPgEMQzIEja4-AQYATxIAAAAA",
+        "location": [
+          70.403225,
+          20.886043
+        ],
+        "name": "Somnath Beach Road",
+        "distance": 108.8913537
+      },
+      {
+        "hint": "R9Nti____38kAAAAPgAAAAAAAAAAAAAA-s2sQomCcEIAAAAAAAAAACQAAAA-AAAAAAAAAAAAAABSKAEAQh0yBL1PPwGFHTIESVA_AQAAHwcAAAAA",
+        "location": [
+          70.393154,
+          20.926397
+        ],
+        "name": "",
+        "distance": 16.99504271
+      },
+      {
+        "hint": "PHuMj1dLj48JAAAADAAAAB8AAAB4AAAA7GSAQFP4mkBWQElBBo5HQgkAAAAMAAAAHwAAAHgAAABSKAEAaVcyBP7mPgGvVzIEEOc-AQgATwoAAAAA",
+        "location": [
+          70.408041,
+          20.899582
+        ],
+        "name": "",
+        "distance": 7.551674122
+      },
+      {
+        "hint": "WKd9iF2nfYhkAAAAWAAAAI8AAAAAAAAAcb0nQnsYEkIT0W1CAAAAAGQAAABYAAAAjwAAAAAAAABSKAEAXlAyBKTBPgFeUDIEEcE-AQIArwUAAAAA",
+        "location": [
+          70.406238,
+          20.89002
+        ],
+        "name": "",
+        "distance": 16.27516483
+      },
+      {
+        "hint": "dwuKj3oLio9UAAAAbwAAAAAAAAAAAAAAHNUMQhM8OEIAAAAAAAAAAFQAAABvAAAAAAAAAAAAAABSKAEArlIyBDfBPgGLUzIENsE-AQAATwsAAAAA",
+        "location": [
+          70.40683,
+          20.889911
+        ],
+        "name": "",
+        "distance": 22.99680103
+      },
+      {
+        "hint": "w6p9iMWqfYgdAAAAAAAAAGsAAABUAAAAvFWgQQAAAAAao5RCFoZoQh0AAAAAAAAAawAAAFQAAABSKAEAVTkyBOS_PgEcODIEir4-AQQA3xEAAAAA",
+        "location": [
+          70.400341,
+          20.889572
+        ],
+        "name": "",
+        "distance": 50.28176305
+      }
+    ]
+  },
+  "notes": "Modelled OSRM driving over OSM; new endpoints only, directional evidence; no live traffic or fares."
+}

@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <div className="hidden lg:flex items-center space-x-6 text-sm font-medium">
             <button
               onClick={() => handleNavClick("explore")}
               className="text-salt/90 hover:text-gold transition-colors duration-150 flex items-center gap-1.5 cursor-pointer"
@@ -208,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Mobile menu button & Compact Language Toggle */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <LanguageToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -228,7 +228,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-ink border-t border-stone/30 px-4 pt-4 pb-6 space-y-3">
+        <div className="lg:hidden bg-ink border-t border-stone/30 px-4 pt-4 pb-6 space-y-3">
           <button
             onClick={() => handleNavClick("explore")}
             className="w-full text-left py-2 text-salt hover:text-gold text-sm font-medium border-b border-stone/20 flex items-center justify-between"

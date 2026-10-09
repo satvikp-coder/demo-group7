@@ -21,11 +21,11 @@ export const BestTimeNote: React.FC<BestTimeNoteProps> = ({
         setIsExpanded((prev) => !prev);
       }}
       title={`${note} (click to toggle full text)`}
-      className={`group cursor-pointer inline-flex items-center gap-1.5 text-xs text-stone font-body italic transition-colors hover:text-charcoal ${className}`}
+      className={`group cursor-pointer inline-flex max-w-full min-w-0 items-center gap-1.5 text-xs text-stone font-body italic transition-colors hover:text-charcoal ${className}`}
     >
       <Clock className="w-3.5 h-3.5 text-gold shrink-0" />
       <span
-        className={`font-sans italic transition-all ${
+        className={`min-w-0 font-sans italic transition-all ${
           isExpanded
             ? "whitespace-normal block break-words"
             : "truncate line-clamp-1"

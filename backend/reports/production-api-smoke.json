@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-01T08:56:14.659Z",
+  "checkedAt": "2026-10-09T14:30:26.672Z",
   "verified": true,
   "checks": [
     {
@@ -45,50 +45,50 @@
       "requests": 40,
       "concurrency": 8,
       "failures": 0,
-      "p50Ms": 65,
-      "p95Ms": 338,
-      "maxMs": 345,
-      "elapsedMs": 557
+      "p50Ms": 18,
+      "p95Ms": 47,
+      "maxMs": 51,
+      "elapsedMs": 121
     },
     {
       "name": "destination",
       "requests": 40,
       "concurrency": 8,
       "failures": 0,
-      "p50Ms": 128,
-      "p95Ms": 197,
-      "maxMs": 200,
-      "elapsedMs": 698
+      "p50Ms": 20,
+      "p95Ms": 32,
+      "maxMs": 43,
+      "elapsedMs": 110
     },
     {
       "name": "trip-retrieval",
       "requests": 40,
       "concurrency": 8,
       "failures": 0,
-      "p50Ms": 527,
-      "p95Ms": 1000,
-      "maxMs": 1032,
-      "elapsedMs": 2571
+      "p50Ms": 28,
+      "p95Ms": 66,
+      "maxMs": 75,
+      "elapsedMs": 159
     },
     {
       "name": "authentication",
       "requests": 6,
       "concurrency": 3,
       "failures": 0,
-      "p50Ms": 2242,
-      "p95Ms": 2659,
-      "maxMs": 2659,
-      "elapsedMs": 4515
+      "p50Ms": 239,
+      "p95Ms": 254,
+      "maxMs": 254,
+      "elapsedMs": 459
     },
     {
       "name": "itinerary-generation",
       "requests": 8,
       "concurrency": 2,
       "failures": 0,
-      "p50Ms": 505,
-      "p95Ms": 788,
-      "maxMs": 788,
-      "elapsedMs": 2114
+      "p50Ms": 94,
+      "p95Ms": 106,
+      "maxMs": 106,
+      "elapsedMs": 377
     }
   ],
   "cities": [
@@ -195,8 +195,8 @@
           "Total Cost": 8.21,
           "Plan Rows": 2,
           "Plan Width": 1436,
-          "Actual Startup Time": 0.207,
-          "Actual Total Time": 0.21,
+          "Actual Startup Time": 0.096,
+          "Actual Total Time": 0.097,
           "Actual Rows": 3,
           "Actual Loops": 1,
           "Sort Key": [
@@ -240,11 +240,11 @@
               "Total Cost": 8.16,
               "Plan Rows": 1,
               "Plan Width": 1436,
-              "Actual Startup Time": 0.037,
-              "Actual Total Time": 0.044,
+              "Actual Startup Time": 0.023,
+              "Actual Total Time": 0.026,
               "Actual Rows": 3,
               "Actual Loops": 1,
-              "Index Cond": "(destination_id = '74042f7d-2c89-4efd-bbfd-0d20ebb14f9f'::uuid)",
+              "Index Cond": "(destination_id = '633eac5c-45a0-4b48-89d6-8be07412b508'::uuid)",
               "Rows Removed by Index Recheck": 0,
               "Shared Hit Blocks": 3,
               "Shared Read Blocks": 0,
@@ -271,9 +271,9 @@
           "Temp Read Blocks": 0,
           "Temp Written Blocks": 0
         },
-        "Planning Time": 0.245,
+        "Planning Time": 0.127,
         "Triggers": [],
-        "Execution Time": 0.366
+        "Execution Time": 0.159
       }
     ],
     "destination-routes": [
@@ -286,8 +286,8 @@
           "Total Cost": 13.68,
           "Plan Rows": 63,
           "Plan Width": 618,
-          "Actual Startup Time": 0.246,
-          "Actual Total Time": 0.256,
+          "Actual Startup Time": 0.187,
+          "Actual Total Time": 0.193,
           "Actual Rows": 63,
           "Actual Loops": 1,
           "Sort Key": [
@@ -320,11 +320,11 @@
               "Total Cost": 11.64,
               "Plan Rows": 63,
               "Plan Width": 618,
-              "Actual Startup Time": 0.019,
-              "Actual Total Time": 0.07,
+              "Actual Startup Time": 0.014,
+              "Actual Total Time": 0.043,
               "Actual Rows": 63,
               "Actual Loops": 1,
-              "Filter": "(destination_id = '74042f7d-2c89-4efd-bbfd-0d20ebb14f9f'::uuid)",
+              "Filter": "(destination_id = '633eac5c-45a0-4b48-89d6-8be07412b508'::uuid)",
               "Rows Removed by Filter": 68,
               "Shared Hit Blocks": 10,
               "Shared Read Blocks": 0,
@@ -351,9 +351,9 @@
           "Temp Read Blocks": 0,
           "Temp Written Blocks": 0
         },
-        "Planning Time": 0.338,
+        "Planning Time": 0.194,
         "Triggers": [],
-        "Execution Time": 0.344
+        "Execution Time": 0.262
       }
     ],
     "persisted-stops": [
@@ -370,11 +370,11 @@
           "Total Cost": 8.16,
           "Plan Rows": 1,
           "Plan Width": 887,
-          "Actual Startup Time": 0.061,
-          "Actual Total Time": 0.07,
+          "Actual Startup Time": 0.047,
+          "Actual Total Time": 0.052,
           "Actual Rows": 14,
           "Actual Loops": 1,
-          "Index Cond": "(trip_id = '0d4cf398-44f5-456a-b946-b64ed8a7237f'::uuid)",
+          "Index Cond": "(trip_id = '276ca7e2-737f-48e6-8bb5-bb0dcd2038fd'::uuid)",
           "Rows Removed by Index Recheck": 0,
           "Shared Hit Blocks": 2,
           "Shared Read Blocks": 0,
@@ -399,9 +399,9 @@
           "Temp Read Blocks": 0,
           "Temp Written Blocks": 0
         },
-        "Planning Time": 0.198,
+        "Planning Time": 0.094,
         "Triggers": [],
-        "Execution Time": 0.278
+        "Execution Time": 0.084
       }
     ]
   },

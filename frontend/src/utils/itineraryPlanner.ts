@@ -1,3 +1,4 @@
+import type {PriorityWeights} from '../../../dsa/planning/priorities';
 import {
   Destination,
   Attraction,
@@ -92,6 +93,11 @@ export type OptimizationStrategy =
   "budget-first" | "rating-first" | "distance-first";
 
 export interface PlannerConfigPayload {
+  travelers?: number;
+  rooms?: number;
+  startDate?: string;
+  weights?: PriorityWeights;
+  hotelCategory?: "Low Cost" | "Budget" | "Premium";
   tripId?: string;
   cityId: string;
   tripDays: number;

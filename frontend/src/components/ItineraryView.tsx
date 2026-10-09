@@ -1,3 +1,4 @@
+import type {PriorityWeights} from '../../../dsa/planning/priorities';
 import { displayNumber } from "../api";
 import React, { useState, useRef, useMemo, useEffect } from "react";
 import { DESIGN_TOKENS } from "../data/colors";
@@ -47,6 +48,11 @@ import {
 } from "lucide-react";
 
 export interface ItineraryConfig {
+  travelers?: number;
+  rooms?: number;
+  startDate?: string;
+  weights?: PriorityWeights;
+  hotelCategory?: "Low Cost" | "Budget" | "Premium";
   tripId?: string;
   cityId: string;
   tripDays: number;
@@ -146,12 +152,6 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     config.budget || 8500,
   );
   const [sliderDays, setSliderDays] = useState<number>(config.tripDays || 2);
-  const [debouncedBudget, setDebouncedBudget] = useState<number>(
-    config.budget || 8500,
-  );
-  const [debouncedDays, setDebouncedDays] = useState<number>(
-    config.tripDays || 2,
-  );
   const [isSavedWhatIfNotice, setIsSavedWhatIfNotice] =
     useState<boolean>(false);
 
@@ -159,17 +159,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     setActiveConfig(config);
     setSliderBudget(config.budget || 8500);
     setSliderDays(config.tripDays || 2);
-    setDebouncedBudget(config.budget || 8500);
-    setDebouncedDays(config.tripDays || 2);
   }, [config]);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedBudget(sliderBudget);
-      setDebouncedDays(sliderDays);
-    }, 300);
-    return () => clearTimeout(handler);
-  }, [sliderBudget, sliderDays]);
 
   const activeStrategy =
     activeConfig.strategy || config.strategy || "distance-first";
@@ -194,7 +184,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const handleSaveWhatIfVersion = async () => {
     setPendingSave(true); setSaveError("");
     try {
-      const saved = await createItinerary({...request.data.config,budget:debouncedBudget,tripDays:debouncedDays});
+      const saved = await createItinerary({...request.data.config,budget:sliderBudget,tripDays:sliderDays});
       setActiveConfig(saved.config); onPersistedConfig?.(saved.config);
       setIsSavedWhatIfNotice(true); setIsWhatIfOpen(false);
     } catch(error) { setSaveError(errorMessage(error)); }
@@ -205,8 +195,6 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
     setActiveConfig(config);
     setSliderBudget(config.budget || 8500);
     setSliderDays(config.tripDays || 2);
-    setDebouncedBudget(config.budget || 8500);
-    setDebouncedDays(config.tripDays || 2);
   };
 
   const numDays = request.data.dto.trip.trip_days;
@@ -484,6 +472,17 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           id="printable-itinerary"
           className="printable-content space-y-8 bg-salt p-2 sm:p-4 border border-stone/20"
         >
+          {request.data?.dto.trip.generation_summary?.optimization && (() => {
+            const optimization=request.data.dto.trip.generation_summary.optimization;
+            const chosen=optimization.candidates.find((candidate:any)=>candidate.id===optimization.selected_candidate_id);
+            return <section aria-label="Your Priorities" className="bg-ink text-salt p-6 border-2 border-gold rounded-2xl space-y-3">
+              <h2 className="font-display text-xl text-gold">Your Priorities</h2>
+              <p>Distance: {optimization.weights.distance}% | Cost: {optimization.weights.cost}% | Rating: {optimization.weights.rating}%</p>
+              <p>Why this itinerary? It has the highest weighted score among {optimization.evaluated_count} feasible candidates evaluated by the existing greedy planner. A global optimum is not guaranteed.</p>
+              <p>{chosen?.attraction_count} attractions | {chosen?.distance_km.toFixed(1)} km of saved route estimates | INR {chosen?.known_cost.toLocaleString('en-IN')} known estimated costs | Rating: {chosen?.rating_mean == null ? 'Unknown' : chosen.rating_mean.toFixed(2) + '/5'} | Score: {optimization.score.toFixed(4)}</p>
+              <p className="text-sm text-stone">Costs include {optimization.rooms} room(s) per night and known admission/meal costs for {optimization.travelers} traveler(s). Transport fares remain unknown. Ratings use known values with a coverage adjustment; prices are estimates, not live availability.</p>
+            </section>;
+          })()}
           {/* Header Banner */}
           <div className="itinerary-header-banner bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-6 relative overflow-hidden shadow-lg rounded-2xl">
             <div className="absolute inset-0 bg-stepwell-pattern opacity-10 pointer-events-none" />
@@ -750,7 +749,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                   : { hasConflict: false, warningMessage: "" };
 
                               return (
-                                <div className="flex items-start gap-3 w-full sm:w-auto">
+                                <div className="flex flex-wrap sm:flex-nowrap items-start gap-3 w-full sm:w-auto min-w-0">
                                   {/* Stop Photo Thumbnail if available */}
                                   {stop.imageUrl && (
                                     <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 overflow-hidden border border-stone/30 bg-charcoal rounded-lg">
@@ -779,7 +778,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                                   </div>
 
                                   {/* Stop Icon & Description */}
-                                  <div className="flex-1 min-w-0">
+                                  <div className="flex-1 basis-full sm:basis-auto min-w-0">
                                     <div className="flex flex-wrap items-center gap-2 font-bold text-sm text-ink">
                                       {stop.type === "meal" ? (
                                         <>

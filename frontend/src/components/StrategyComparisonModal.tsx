@@ -48,7 +48,7 @@ export const StrategyComparisonModal: React.FC<
       rows.push(await createItinerary(config, strategy));
     }
     return rows;
-  }, [config.cityId,config.tripDays,config.budget,config.startingHotelId,config.startTime,config.wheelchairAccessibleOnly,isOpen], isOpen);
+  }, [config.cityId,config.tripDays,config.budget,config.startingHotelId,config.startTime,config.wheelchairAccessibleOnly,config.rooms,config.travelers,config.startDate,config.hotelCategory,isOpen], isOpen);
   const results = request.data?.map(row => row.result) ?? [];
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => { if(e.key === "Escape") onClose(); };
@@ -88,21 +88,21 @@ export const StrategyComparisonModal: React.FC<
       subtitle: "Greedy cost & fee minimization",
       icon: <TrendingDown className="w-4 h-4 text-emerald-400" />,
       badgeColor: "border-emerald-600/50 bg-emerald-950/20 text-emerald-300",
-      description: "Strictly minimizes hotel tariff, entrance fees, and meal expenses.",
+      description: "Applies 80% cost, 10% distance and 10% rating to evaluated feasible candidates; your hotel is retained.",
     },
     "rating-first": {
       title: "Rating-first",
       subtitle: "Top-rated heritage quality",
       icon: <Star className="w-4 h-4 text-gold" />,
       badgeColor: "border-gold/50 bg-amber-950/20 text-gold",
-      description: "Prioritizes highest-rated monuments (>= 4.6★) and heritage stays.",
+      description: "Applies 80% rating, 10% cost and 10% distance; unknown ratings are not invented.",
     },
     "distance-first": {
       title: "Distance-first",
       subtitle: "Nearest-neighbor distance minimization",
       icon: <Navigation className="w-4 h-4 text-sky-400" />,
       badgeColor: "border-sky-600/50 bg-sky-950/20 text-sky-300",
-      description: "Groups geographically proximate stops to reduce drive time.",
+      description: "Applies 80% distance, 10% cost and 10% rating to saved route distances.",
     },
   };
 

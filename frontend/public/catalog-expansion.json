@@ -1,0 +1,636 @@
+{
+  "version": 1,
+  "checked": "2026-10-09",
+  "attribution": "OpenStreetMap contributors, ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "records": [
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-hotel-good-night-ahmedabad",
+      "values": {
+        "slug": "hotel-good-night-ahmedabad",
+        "name": "Hotel Good Night",
+        "lat": 23.026881,
+        "lng": 72.581659,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.hotelgoodnight.co.in/tariff.html",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.hotelgoodnight.co.in/tariff.html",
+            "https://www.openstreetmap.org/node/2377178375"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Historical published standard double-room tariff INR1700, effective February2014; taxes extra. NOT a current quote. Confirm with hotel before budgeting.",
+          "price_basis": "Historical published standard double-room tariff INR1700, effective February2014; taxes extra. NOT a current quote. Confirm with hotel before budgeting."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": 1700,
+        "location": "Opposite Sidi Saiyad Jali, Lal Darwaja, Ahmedabad",
+        "description": "Historical published standard double-room tariff INR1700, effective February2014; taxes extra. NOT a current quote. Confirm with hotel before budgeting."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-hotel-volga-ahmedabad",
+      "values": {
+        "slug": "hotel-volga-ahmedabad",
+        "name": "Hotel Volga",
+        "lat": 23.026816,
+        "lng": 72.582027,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/3306683652",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/3306683652"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped identity/location only; star classification is not a guest rating. No room price or availability inferred. Registered Hotel is the existing generic schema type, not a claim of tourism registration.",
+          "price_basis": "Price unknown; excluded from category matching and generation."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Mapped accommodation in Ahmedabad. Confirm current operation, facilities, occupancy and rates directly with the property."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-ramada-ahmedabad-ahmedabad",
+      "values": {
+        "slug": "ramada-ahmedabad-ahmedabad",
+        "name": "Ramada Ahmedabad",
+        "lat": 23.010611,
+        "lng": 72.50485,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/5214871421",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/5214871421"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped identity/location only; star classification is not a guest rating. No room price or availability inferred. Registered Hotel is the existing generic schema type, not a claim of tourism registration.",
+          "price_basis": "Price unknown; excluded from category matching and generation."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Mapped accommodation in Ahmedabad. Confirm current operation, facilities, occupancy and rates directly with the property."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-radisson-blu-ahmedabad-ahmedabad",
+      "values": {
+        "slug": "radisson-blu-ahmedabad-ahmedabad",
+        "name": "Radisson Blu Ahmedabad",
+        "lat": 23.023291,
+        "lng": 72.55721,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/5819416524",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/5819416524"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped identity/location only; star classification is not a guest rating. No room price or availability inferred. Registered Hotel is the existing generic schema type, not a claim of tourism registration.",
+          "price_basis": "Price unknown; excluded from category matching and generation."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Mapped accommodation in Ahmedabad. Confirm current operation, facilities, occupancy and rates directly with the property."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-hyatt-ahmedabad-ahmedabad",
+      "values": {
+        "slug": "hyatt-ahmedabad-ahmedabad",
+        "name": "Hyatt Ahmedabad",
+        "lat": 23.039153,
+        "lng": 72.530495,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/5920607885",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/5920607885"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped identity/location only; star classification is not a guest rating. No room price or availability inferred. Registered Hotel is the existing generic schema type, not a claim of tourism registration.",
+          "price_basis": "Price unknown; excluded from category matching and generation."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Mapped accommodation in Ahmedabad. Confirm current operation, facilities, occupancy and rates directly with the property."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-holiday-inn-express-ahmedabad-prahlad-nagar-ahmedabad",
+      "values": {
+        "slug": "holiday-inn-express-ahmedabad-prahlad-nagar-ahmedabad",
+        "name": "Holiday Inn Express Ahmedabad Prahlad Nagar",
+        "lat": 23.011444,
+        "lng": 72.510617,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/9312261617",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/9312261617"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped identity/location only; star classification is not a guest rating. No room price or availability inferred. Registered Hotel is the existing generic schema type, not a claim of tourism registration.",
+          "price_basis": "Price unknown; excluded from category matching and generation."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Mapped accommodation in Ahmedabad. Confirm current operation, facilities, occupancy and rates directly with the property."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-the-parterre-ahmedabad-ahmedabad",
+      "values": {
+        "slug": "the-parterre-ahmedabad-ahmedabad",
+        "name": "The Parterre Ahmedabad",
+        "lat": 23.050901,
+        "lng": 72.503721,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/10673361438",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/10673361438"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped identity/location only; star classification is not a guest rating. No room price or availability inferred. Registered Hotel is the existing generic schema type, not a claim of tourism registration.",
+          "price_basis": "Price unknown; excluded from category matching and generation."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Mapped accommodation in Ahmedabad. Confirm current operation, facilities, occupancy and rates directly with the property."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261009-hotel-maruti-ahmedabad",
+      "values": {
+        "slug": "hotel-maruti-ahmedabad",
+        "name": "Hotel Maruti",
+        "lat": 23.018092,
+        "lng": 72.567065,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.hotelmaruti.com/",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.hotelmaruti.com/"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Undated property-published standard AC tariff starts at INR1400 (another standard rate INR1700 is listed). Starting-price planning estimate only; occupancy/taxes/current rate must be confirmed, not live availability.",
+          "price_basis": "Undated property-published standard AC tariff starts at INR1400 (another standard rate INR1700 is listed). Starting-price planning estimate only; occupancy/taxes/current rate must be confirmed, not live availability."
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": 1400,
+        "location": "Pritam Nagar, Ellisbridge, Paldi, Ahmedabad",
+        "description": "Undated property-published standard AC tariff starts at INR1400 (another standard rate INR1700 is listed). Starting-price planning estimate only; occupancy/taxes/current rate must be confirmed, not live availability."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-bhadra-fort-ahmedabad",
+      "values": {
+        "slug": "bhadra-fort-ahmedabad",
+        "name": "Bhadra Fort",
+        "lat": 23.023971,
+        "lng": 72.5812,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/way/843168356",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/way/843168356"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Fort",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Bhadra Fort is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-teen-darwaza-ahmedabad",
+      "values": {
+        "slug": "teen-darwaza-ahmedabad",
+        "name": "Teen Darwaza",
+        "lat": 23.024349,
+        "lng": 72.584555,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/2377178507",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/2377178507"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Monument",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Teen Darwaza is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-amritavarshini-vav-ahmedabad",
+      "values": {
+        "slug": "amritavarshini-vav-ahmedabad",
+        "name": "Amritavarshini Vav",
+        "lat": 23.024664,
+        "lng": 72.597106,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/4937816350",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/4937816350"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Stepwell",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Amritavarshini Vav is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-raipur-gate-ahmedabad",
+      "values": {
+        "slug": "raipur-gate-ahmedabad",
+        "name": "Raipur Gate",
+        "lat": 23.017436,
+        "lng": 72.594781,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/440367265",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/440367265"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Monument",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Raipur Gate is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-kalupur-darwaza-ahmedabad",
+      "values": {
+        "slug": "kalupur-darwaza-ahmedabad",
+        "name": "Kalupur Darwaza",
+        "lat": 23.030843,
+        "lng": 72.597937,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/885247897",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/885247897"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Monument",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Kalupur Darwaza is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-astodia-darwaza-ahmedabad",
+      "values": {
+        "slug": "astodia-darwaza-ahmedabad",
+        "name": "Astodia Darwaza",
+        "lat": 23.016842,
+        "lng": 72.590971,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/2377178503",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/2377178503"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Monument",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Astodia Darwaza is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-manek-burj-ahmedabad",
+      "values": {
+        "slug": "manek-burj-ahmedabad",
+        "name": "Manek Burj",
+        "lat": 23.022075,
+        "lng": 72.577339,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/way/605629475",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/way/605629475"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Monument",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Manek Burj is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261009-tomb-of-ahmad-shah-ahmedabad",
+      "values": {
+        "slug": "tomb-of-ahmad-shah-ahmedabad",
+        "name": "Tomb of Ahmad Shah",
+        "lat": 23.023791,
+        "lng": 72.587928,
+        "rating": null,
+        "source": "Reviewed OSM identity/location and cited property facts; unknown fields retained",
+        "source_url": "https://www.openstreetmap.org/node/10591957837",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://www.openstreetmap.org/node/10591957837"
+          ],
+          "license": "OSM facts: ODbL-1.0; property factual tariff references; no copyrighted media copied",
+          "notes": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+        },
+        "category": "Heritage",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Tomb of Ahmad Shah is a mapped heritage site in Ahmedabad. Confirm visitor access locally.",
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "somnath",
+      "key": "exp-20261009-lilavati-atithigruh-somnath",
+      "values": {
+        "slug": "lilavati-atithigruh-somnath",
+        "name": "Lilavati Atithigruh",
+        "lat": 20.889873,
+        "lng": 70.406238,
+        "price_per_night": 750,
+        "rating": null,
+        "stay_type": "Registered Hotel",
+        "location": "Prabhas Patan, Somnath, Gujarat",
+        "description": "Trust-published Two-bed non-AC room; INR1000 refundable deposit extra. GST extra; indicative tariff, confirm current rates and occupancy. No live availability.",
+        "image_url": null,
+        "source": "Shree Somnath Trust published tariffs and OSM mapped location",
+        "source_url": "https://somnath.org/pilgrim-facilities",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://somnath.org/pilgrim-facilities",
+            "https://www.openstreetmap.org/node/4296915004"
+          ],
+          "price_basis": "Trust-published Two-bed non-AC room; INR1000 refundable deposit extra. GST extra; indicative tariff, confirm current rates and occupancy. No live availability.",
+          "license": "OSM location ODbL-1.0; factual tariff extraction, no media copied",
+          "notes": "Existing generic accommodation schema type does not establish tourism registration. Rating unknown. Refundable deposit is not an expense and is excluded from budget."
+        }
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "somnath",
+      "key": "exp-20261009-maheshwari-samaj-atithi-gruh-somnath",
+      "values": {
+        "slug": "maheshwari-samaj-atithi-gruh-somnath",
+        "name": "Maheshwari Samaj Atithi Gruh",
+        "lat": 20.88991,
+        "lng": 70.407051,
+        "price_per_night": 750,
+        "rating": null,
+        "stay_type": "Registered Hotel",
+        "location": "Prabhas Patan, Somnath, Gujarat",
+        "description": "Trust-published Two-bed non-AC room; INR1000 refundable deposit extra. GST extra; indicative tariff, confirm current rates and occupancy. No live availability.",
+        "image_url": null,
+        "source": "Shree Somnath Trust published tariffs and OSM mapped location",
+        "source_url": "https://somnath.org/pilgrim-facilities",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://somnath.org/pilgrim-facilities",
+            "https://www.openstreetmap.org/way/431684520"
+          ],
+          "price_basis": "Trust-published Two-bed non-AC room; INR1000 refundable deposit extra. GST extra; indicative tariff, confirm current rates and occupancy. No live availability.",
+          "license": "OSM location ODbL-1.0; factual tariff extraction, no media copied",
+          "notes": "Existing generic accommodation schema type does not establish tourism registration. Rating unknown. Refundable deposit is not an expense and is excluded from budget."
+        }
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "somnath",
+      "key": "exp-20261009-sagar-darshan-atithigruh-somnath",
+      "values": {
+        "slug": "sagar-darshan-atithigruh-somnath",
+        "name": "Sagar Darshan Atithigruh",
+        "lat": 20.889226,
+        "lng": 70.400028,
+        "price_per_night": 3400,
+        "rating": null,
+        "stay_type": "Registered Hotel",
+        "location": "Prabhas Patan, Somnath, Gujarat",
+        "description": "Trust-published Two-bed Premier Room; INR4400 refundable deposit extra. GST extra; indicative tariff, confirm current rates and occupancy. No live availability.",
+        "image_url": null,
+        "source": "Shree Somnath Trust published tariffs and OSM mapped location",
+        "source_url": "https://somnath.org/pilgrim-facilities",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://somnath.org/pilgrim-facilities",
+            "https://www.openstreetmap.org/way/431685086"
+          ],
+          "price_basis": "Trust-published Two-bed Premier Room; INR4400 refundable deposit extra. GST extra; indicative tariff, confirm current rates and occupancy. No live availability.",
+          "license": "OSM location ODbL-1.0; factual tariff extraction, no media copied",
+          "notes": "Existing generic accommodation schema type does not establish tourism registration. Rating unknown. Refundable deposit is not an expense and is excluded from budget."
+        }
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "somnath",
+      "key": "exp-20261009-vip-atithigruh-somnath",
+      "values": {
+        "slug": "vip-atithigruh-somnath",
+        "name": "VIP Atithigruh",
+        "lat": 20.888554,
+        "lng": 70.400531,
+        "price_per_night": null,
+        "rating": null,
+        "stay_type": "Registered Hotel",
+        "location": "Prabhas Patan, Somnath, Gujarat",
+        "description": "Price unknown; no category assigned.",
+        "image_url": null,
+        "source": "Shree Somnath Trust published tariffs and OSM mapped location",
+        "source_url": "https://somnath.org/pilgrim-facilities",
+        "source_date": "2026-10-09",
+        "provenance_status": "project_approved",
+        "provenance_review": {
+          "checked": "2026-10-09",
+          "sources": [
+            "https://somnath.org/pilgrim-facilities",
+            "https://www.openstreetmap.org/way/431685423"
+          ],
+          "price_basis": "Price unknown; no category assigned.",
+          "license": "OSM location ODbL-1.0; factual tariff extraction, no media copied",
+          "notes": "Existing generic accommodation schema type does not establish tourism registration. Rating unknown. Refundable deposit is not an expense and is excluded from budget."
+        }
+      }
+    }
+  ]
+}

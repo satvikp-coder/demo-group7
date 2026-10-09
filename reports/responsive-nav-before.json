@@ -1,0 +1,32 @@
+{
+  "phase": "before",
+  "verified": true,
+  "viewports": [
+    {
+      "width": 390,
+      "clippedButtons": []
+    },
+    {
+      "width": 768,
+      "clippedButtons": [
+        {
+          "text": "PLAN ITINERARY",
+          "left": 756.546875,
+          "right": 852.59375
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "clippedButtons": []
+    },
+    {
+      "width": 1280,
+      "clippedButtons": []
+    },
+    {
+      "width": 1440,
+      "clippedButtons": []
+    }
+  ]
+}

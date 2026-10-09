@@ -1,0 +1,8 @@
+{
+  "phase": "auth",
+  "startedAt": "2026-10-08T15:32:58.780Z",
+  "verified": true,
+  "isolatedDatabase": "heritage_audit_59ba00fee36446ada3ec70adb1503817",
+  "isolatedDatabaseRemoved": true,
+  "finishedAt": "2026-10-08T15:33:15.431Z"
+}

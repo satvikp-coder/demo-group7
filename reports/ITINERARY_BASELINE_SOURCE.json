@@ -1,0 +1,2560 @@
+{
+  "createdAt": "2026-10-08T15:27:23.882653+00:00",
+  "gitAvailable": false,
+  "checkpoint": "backups/itinerary-source-20261008T152703Z.zip",
+  "archiveBytes": 14751240,
+  "files": [
+    {
+      "path": "vercel.json",
+      "sha256": "c700e16fcc92ffe6985c8736d9b9018e3ea98b99814ee7c0c72a00ea24367d22",
+      "bytes": 296
+    },
+    {
+      "path": "compose.yml",
+      "sha256": "dd73e16f138a58d4e2e7e9c3e30acb5a636b3e2d4cd7e053de5ea22697093348",
+      "bytes": 2339
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "52bd617c54edf4e766a5582ca5e07acdc3cd1dc3c907af24879ecd0ab8734f14",
+      "bytes": 3719
+    },
+    {
+      "path": "compose.tls.yml",
+      "sha256": "86dfb54b334aa9d9a9155dd67c3be8551e28d04db670692106a2748f2820c9b7",
+      "bytes": 579
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "16615fe27ca1ef3ed864723f844372a8441c6c2393b673cd94fc5a41d5d68dcc",
+      "bytes": 1397
+    },
+    {
+      "path": "compose.staging.yml",
+      "sha256": "de1149db77d042430bf92c7ae1f1fa0e8b0f8356b787b1b35a3b5b43e7984004",
+      "bytes": 151
+    },
+    {
+      "path": "compose.local.yml",
+      "sha256": "94104f9cc94cde06c87eb4b5ba005a33a41594acaf99ddfd860c7edfcb55eef0",
+      "bytes": 752
+    },
+    {
+      "path": "CODEX_HANDOFF.md",
+      "sha256": "c9f1eac252b0691e63feb76cc9b9b3e30732bc14e94710ee22323d33fce4cbad",
+      "bytes": 99755
+    },
+    {
+      "path": ".dockerignore",
+      "sha256": "a9fb54036e1f26e335e16ab78bafec9188e72f38876fbc6c663c93db674703d9",
+      "bytes": 149
+    },
+    {
+      "path": ".env.production.example",
+      "sha256": "12d261fca784def87f9168418b77d5c90e7bf750d119b152473eeb01b2bf3096",
+      "bytes": 469
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9fab68297a6faba31d59b18bdf65faceacf62d7ae79e69f5eeb52fb860b37d65",
+      "bytes": 1077
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "737e4c86d75f788b1be25c5fe11901bc9e5940b16698f1e55c57272d53eed275",
+      "bytes": 2372
+    },
+    {
+      "path": "package.json",
+      "sha256": "bc8a2cc331f124113f480ca9f45a06fd57151fbd0ef767c2b7715a6c6d1af4f9",
+      "bytes": 1377
+    },
+    {
+      "path": "README.md",
+      "sha256": "6ebecb6b680400dce283df8bc3ce22f2176daf483bade4fd03bf8740a5860068",
+      "bytes": 14541
+    },
+    {
+      "path": "deploy/postgres-init.sh",
+      "sha256": "c7acd1bdf6ace06c477587c4dac744e672db58ca8d72710f3a72d795757e3b48",
+      "bytes": 320
+    },
+    {
+      "path": "deploy/Caddyfile",
+      "sha256": "f5897cff13a772fd112c005b5879a12d81ba796983701d812b24f0f3f59e67fd",
+      "bytes": 107
+    },
+    {
+      "path": ".github/workflows/production.yml",
+      "sha256": "30ff611e7c60d14f7f7b1601df1bd800f4d14796a4bd7a67e010723cfd110635",
+      "bytes": 1928
+    },
+    {
+      "path": "docs/TEAM_RESPONSIBILITIES.md",
+      "sha256": "0e6df99c4df83bc6134e1b268d3d7bcd81d194cc4c5625ebc10a2b5916d7a449",
+      "bytes": 5279
+    },
+    {
+      "path": "scripts/report-production-files.js",
+      "sha256": "e73c070aadecf402d73eb16d2d55d9f3a90fa68ef8f6cab93f8c26e4183f632d",
+      "bytes": 8005
+    },
+    {
+      "path": "scripts/report-local-readiness.js",
+      "sha256": "69dbc7f92ef1bb4b5e7f2b77a9db57665948ef5cc91e24bd1a6dec4f18f78f0a",
+      "bytes": 19032
+    },
+    {
+      "path": "scripts/production-smoke.js",
+      "sha256": "69fbe176bfb30d9876f18705f1416c5a7d699d016bf780a18d2e28979c89caa8",
+      "bytes": 10733
+    },
+    {
+      "path": "scripts/local-stack.js",
+      "sha256": "5ee3816060eef9c07cf9f32dbeb65195a077606574302a2dbaa7eedeae88d53c",
+      "bytes": 4873
+    },
+    {
+      "path": "scripts/inspect-original-images.py",
+      "sha256": "e36c09bca3411d6259c05be0c77a3eb33887f39f045e9e67d40537ba841ccf20",
+      "bytes": 1175
+    },
+    {
+      "path": "scripts/image-data-snapshot.py",
+      "sha256": "d518b893e826723c94b79613287fec8c205121b19394cf88f73467ccf66b7703",
+      "bytes": 1494
+    },
+    {
+      "path": "scripts/data-audit.js",
+      "sha256": "3f23efc9a822045a8d38ae6b75aac2fa12cfb7bba15b2efe65ec9a22acfbcaec",
+      "bytes": 2730
+    },
+    {
+      "path": "scripts/create-audit-baseline.py",
+      "sha256": "10b10a2a2f07766d87c8049290166a28ac26a2be2700f1b0cfe2957d3b219937",
+      "bytes": 2058
+    },
+    {
+      "path": "scripts/compare-image-recovery.py",
+      "sha256": "707cb818a1fbdca7428c6ff24b170500916dc6fca7fba2f21d3275a24ca1873e",
+      "bytes": 1142
+    },
+    {
+      "path": "scripts/audit-images.py",
+      "sha256": "f5ac8f8662e430ad2aa46bfd76760fffb58b6ccda9c9b2b58f0a6a1678a93bd8",
+      "bytes": 8695
+    },
+    {
+      "path": "scripts/audit-image-preservation.mjs",
+      "sha256": "fb50521f04121cc2800d3d9026adb7fc2a4796fad1006da3015c4e475202fddc",
+      "bytes": 2451
+    },
+    {
+      "path": "scripts/acquire-images.py",
+      "sha256": "46589a72670f49a6461f285ad5ecd66eae32f46d7efb1a657710fb8fde108b33",
+      "bytes": 7363
+    },
+    {
+      "path": "scripts/test-audit-regressions.js",
+      "sha256": "2fb3b48cf55c198557a87a5c89445a08ff5896391f257a598f3876060f74d547",
+      "bytes": 2583
+    },
+    {
+      "path": "scripts/test-all.js",
+      "sha256": "5ecc8e243a59d9f165b340adcb8e7767400b965fc7c4bef0feece34ffd97486a",
+      "bytes": 4436
+    },
+    {
+      "path": "scripts/start-image-dev-api.js",
+      "sha256": "46d834b362aece9071c8d82c55bafe24b67ad02e7a03ba353657b860bb6e59bb",
+      "bytes": 548
+    },
+    {
+      "path": "scripts/source-audit.js",
+      "sha256": "9f1a0292b49f8a1f5ce8ce5924fe86f36b952f3da6e2b936dbcb8d7faecf9cad",
+      "bytes": 5103
+    },
+    {
+      "path": "scripts/run.js",
+      "sha256": "04a7d58f774facfe063195b13ce39a5b90f5ec3e5e027c10850579827f8ca28e",
+      "bytes": 2175
+    },
+    {
+      "path": "scripts/review-champaner-original.py",
+      "sha256": "fdf034dcb7b68231e8b620b37b819223fbad2fd4f9daed3f9c8fcfd41f8a113e",
+      "bytes": 1044
+    },
+    {
+      "path": "scripts/research-images.py",
+      "sha256": "53dea6c5044f5f37e7d1f1a736e3f7a864ef657067ec26dd9eca76a1d6e89e52",
+      "bytes": 1540
+    },
+    {
+      "path": "scripts/test-production.js",
+      "sha256": "2e4767dc0d3ba6d06556e1d6b8b1750a55a4f11a3040bc4c9ffd351b0dff2cca",
+      "bytes": 11753
+    },
+    {
+      "path": "scripts/test-local.js",
+      "sha256": "e00e4c528f0e6eaed2fbf50155b5a568f1417844bc9e953c3f0b056ec78eb051",
+      "bytes": 4431
+    },
+    {
+      "path": "scripts/test-local-all.js",
+      "sha256": "7727db7eebe99913bc984b442d2e8db204ef8cb29aea9d2300dd7c7e01f9e5f1",
+      "bytes": 1043
+    },
+    {
+      "path": "scripts/test-audit-styles.js",
+      "sha256": "9c8a7bde00cd87a52dc4a3d70a1d41bf1f1bc664aa45c8fe2b980ce332757517",
+      "bytes": 1824
+    },
+    {
+      "path": "scripts/upgrade-local.js",
+      "sha256": "5ad6f53244da00462213b87e3f82cba3b6126e7bb3189cebd5b76f4079024c7f",
+      "bytes": 2349
+    },
+    {
+      "path": "scripts/test-source-approval.js",
+      "sha256": "4bf450cb4b7c39dc17f938d8f7f58796c8c096b99133bbdd8b2eaeeb45eeb737",
+      "bytes": 764
+    },
+    {
+      "path": "scripts/validate-catalog-images.ts",
+      "sha256": "8737e1e62d09749541bd65917bb339e0394de37c4f854af1f554d5c635b7d4d0",
+      "bytes": 3556
+    },
+    {
+      "path": "data/routes.csv",
+      "sha256": "b8c8ad044753ab0467eb3bafbdee7bb27022bd61488a841720418876ca299c5e",
+      "bytes": 4867
+    },
+    {
+      "path": "data/restaurants.csv",
+      "sha256": "e70d7028f1ebb4ee176e1bbb6d17d4a6e1b1086ac4ec1d040f9006ef76b8f2ac",
+      "bytes": 614
+    },
+    {
+      "path": "dsa/trie/Trie.ts",
+      "sha256": "9255eb9006b26c5084840bca1c9c86327d304784c6ae13cf2996e649eb46f7bd",
+      "bytes": 7425
+    },
+    {
+      "path": "dsa/trie/README.md",
+      "sha256": "475107dd6a2740fd1530753d808930852db7b31c51720112d5d758b3e30d9c6b",
+      "bytes": 350
+    },
+    {
+      "path": "database/seeds/somnath_dwarka_seed.sql",
+      "sha256": "34cda6b2728b26ca99806436cac0823a3e72dae0a90255f60f1104e1154d22a2",
+      "bytes": 2805
+    },
+    {
+      "path": "database/seeds/README.md",
+      "sha256": "e4769b89d7bb46bc657ef3735339cd2bfc897ea4c4b7591e50c9b21a1b49d434",
+      "bytes": 1013
+    },
+    {
+      "path": "database/seeds/ahmedabad_gujarat_full_seed.sql",
+      "sha256": "1bacb753733fc7a7e6e3b6a89b35c250cd7992445a0e83bfd6ae4bacf642f8f0",
+      "bytes": 34942
+    },
+    {
+      "path": "dsa/sorting/README.md",
+      "sha256": "04cd6ba2522cf042209cb299aaacdee0691c21b0482c1f2ba8fd15d441c3e9c1",
+      "bytes": 335
+    },
+    {
+      "path": "dsa/sorting/mergeSort.ts",
+      "sha256": "672367e677a674313978f1fc49a3a73541e0ff1c9cb72c11671267673172bbe2",
+      "bytes": 817
+    },
+    {
+      "path": "dsa/README.md",
+      "sha256": "ac556b837af0f9f2517c6e71ba124d89324d011f9dfd75feb74308aa31c7ee12",
+      "bytes": 951
+    },
+    {
+      "path": "tests/README.md",
+      "sha256": "7377efd9d31f6bfc01f6531732448485ca933469b9b3343055300a2bcc394211",
+      "bytes": 2727
+    },
+    {
+      "path": "docs/research/Research_Experiment_Plan.previous-client.md",
+      "sha256": "aea24bec548248e2c7c36bae6de8cbc7ae51211eb23e5693869f2b2191d89bd2",
+      "bytes": 8189
+    },
+    {
+      "path": "database/schema/schema.sql",
+      "sha256": "2adb0ed1a517671bb147ba45dedd8311d0e52329a113531bd10e1b708f8f95fc",
+      "bytes": 11066
+    },
+    {
+      "path": "database/schema/README.md",
+      "sha256": "1b4c747330943ea043294d38e74d9160ad94058f80cb35102fd4acac3acb06f8",
+      "bytes": 1673
+    },
+    {
+      "path": "database/schema/heritage_planner_schema.sql",
+      "sha256": "576a5c186d8b21e32084b98540bff94ffdb0f2ce39c2f59671924f8fb3e19721",
+      "bytes": 9660
+    },
+    {
+      "path": "database/README.md",
+      "sha256": "8b978a0f6a40b293010b978362bd921ac4f39548a92ea92041ddbd42423e2457",
+      "bytes": 2854
+    },
+    {
+      "path": "dsa/priorityQueue/README.md",
+      "sha256": "0fd7b41c7eb617697304ab51a9c7a7303a9d9daab3d38628337b688718a12525",
+      "bytes": 400
+    },
+    {
+      "path": "dsa/priorityQueue/MinHeap.ts",
+      "sha256": "38c105f282b06bacb6ae7727f4bf9d608e47c32ba5df040fc8ae925ef3aa5a9f",
+      "bytes": 1711
+    },
+    {
+      "path": "dsa/package.json",
+      "sha256": "a93aeed8ac7b5acf540996c445797ff7f15ac35d170b71cc443ddbd7a47216c9",
+      "bytes": 240
+    },
+    {
+      "path": "data/images/photograph-sources.json",
+      "sha256": "e79b03091204d30bd6fa0ee29fbf1cd80f3157d8a87f090d36324f30b4b470ef",
+      "bytes": 12801
+    },
+    {
+      "path": "data/hotels.csv",
+      "sha256": "52d83f3b9862fbadb653581d2a83585c073f482e47a5e3459279f6ebe6ad120a",
+      "bytes": 691
+    },
+    {
+      "path": "dsa/hashTable/README.md",
+      "sha256": "6cd522226c48fd26195d3877bc8233d1d76f6ee3af34924478ffed4d9afa45aa",
+      "bytes": 265
+    },
+    {
+      "path": "dsa/hashTable/HashTable.ts",
+      "sha256": "51fb9c125ae6bb0439df2a117fcf02ae2583057d2f272dbc2d946b57a6cceba0",
+      "bytes": 1499
+    },
+    {
+      "path": "scripts/write-image-repair-report.py",
+      "sha256": "04653031534a2f9122d16a614e47c7e84020eb44c39fd2df95aa98ebbbce0589",
+      "bytes": 9127
+    },
+    {
+      "path": "scripts/write-full-audit-reports.py",
+      "sha256": "03b5b425d27b17a991748a164ada382adae3f725fc40ee9b2d0072b9b9cc640f",
+      "bytes": 21017
+    },
+    {
+      "path": "scripts/write-final-audit-readiness.py",
+      "sha256": "a059e69997f1641b90f97d55c34b4d952aeea98779f58dad9f6f1175a2fac260",
+      "bytes": 10280
+    },
+    {
+      "path": "database/migrations/README.md",
+      "sha256": "3228512c7ab5bef80fe93ff3398c214347dbd2c191d507dcbd64c49aca29b76f",
+      "bytes": 585
+    },
+    {
+      "path": "data/attractions.csv",
+      "sha256": "9de7418ab1d9bacc847244e69e6e648d278739c0c48f649a25cb94c6350f673a",
+      "bytes": 1911
+    },
+    {
+      "path": "data/CHANGELOG.md",
+      "sha256": "a7d8eb786e8653a41e154c1f4b133b8e31d108028ee982382f075be300dbcba6",
+      "bytes": 673
+    },
+    {
+      "path": "dsa/greedy/routeBuilder.ts",
+      "sha256": "9128d987f1829d309ceaec5984e430b58d1611c294c175436c974f2dba417d10",
+      "bytes": 1777
+    },
+    {
+      "path": "dsa/greedy/README.md",
+      "sha256": "e28d075997adf3956593c95d77bbb06674038dd362b3e601dccd942142a37f51",
+      "bytes": 577
+    },
+    {
+      "path": "dsa/greedy/daySplitter.ts",
+      "sha256": "594ebc8e3784d967f0d4c05d991f7d0779112ead36c7869caf29cbfac4c57719",
+      "bytes": 1077
+    },
+    {
+      "path": "dsa/greedy/budgetAllocator.ts",
+      "sha256": "f5879304bc019e4d19415d66f63779c7d952ba72b73cf9d82dfdab0de61b7f89",
+      "bytes": 3815
+    },
+    {
+      "path": "tests/frontend/completion_display_probe.py",
+      "sha256": "d39cdc74de9053bf6a7ab6a62c33260019ba38d93dbaa6a69a214c61f51e270f",
+      "bytes": 1123
+    },
+    {
+      "path": "tests/frontend/completion_auxiliary.py",
+      "sha256": "91d69a7be1e0a007008106507cd69d5799e9ca8f7dc6b92cb861e9c3d951141f",
+      "bytes": 9435
+    },
+    {
+      "path": "tests/frontend/completion_auth_controls.py",
+      "sha256": "a358f764eb5f54cedee168d2675017b248cc4f9568279a2a01e7f541eeb1977a",
+      "bytes": 2640
+    },
+    {
+      "path": "tests/frontend/completion-source-audit.mjs",
+      "sha256": "546023a73192de44c44aa65d1c74c42d06e9fe651822135cc88ba7a7fd41bbfe",
+      "bytes": 2815
+    },
+    {
+      "path": "tests/frontend/catalog-images.test.ts",
+      "sha256": "bec58f38057e8e77abb0116d020f6009d714b62ec193ebe58d47a0ef3c264ca6",
+      "bytes": 3497
+    },
+    {
+      "path": "tests/frontend/build-audit.mjs",
+      "sha256": "ad5f2a709bacf0f9de42ddfc2e9f696701a2784e9646dbcf0084022b62bfd986",
+      "bytes": 993
+    },
+    {
+      "path": "tests/frontend/browser_api.py",
+      "sha256": "dff009f6e8159995d62e5c8471e6c662031ff29666c6260ccfa6696b07230629",
+      "bytes": 23502
+    },
+    {
+      "path": "tests/frontend/audit_responsive_nav.py",
+      "sha256": "c1544d28fb8db6273d814a187cabb7cf78712610bb226b80bb5e4b1102211672",
+      "bytes": 2253
+    },
+    {
+      "path": "tests/frontend/audit_regressions.py",
+      "sha256": "4b35911abd342423bf8f96b74069b80f1b936ffffee70a8f07c45b0fd1be7859",
+      "bytes": 4294
+    },
+    {
+      "path": "tests/frontend/api_client_browser.py",
+      "sha256": "c64f8c2e457566685431765a5bc14f55d63bb1f4ab7ad3041b6efeb850f6867b",
+      "bytes": 5663
+    },
+    {
+      "path": "tests/frontend/image_component_browser.py",
+      "sha256": "f04f75e1e24094a0b2088e5659b4773e1d5e989098faf7a0556fab6165c280b8",
+      "bytes": 3353
+    },
+    {
+      "path": "tests/frontend/completion_research.py",
+      "sha256": "29ded3f15f25c6baafc858b74e4cd9c48f0436c00ac5825b75fd05881ad1946a",
+      "bytes": 3078
+    },
+    {
+      "path": "tests/frontend/completion_platform.py",
+      "sha256": "1b9151dfbb43a381099d29ec6aefe454fded3ee5a609f1b9b28253523241fd02",
+      "bytes": 2842
+    },
+    {
+      "path": "tests/frontend/completion_idle.py",
+      "sha256": "caaf58d7bbb45e7d6a5873ec63650878fc162d03d1ef047a6c7b694b0e2a9929",
+      "bytes": 1622
+    },
+    {
+      "path": "tests/frontend/completion_flows.py",
+      "sha256": "9b04a0c30e1bc617980e9db991e9104231f3cc7876241999de44014e3e7a9c09",
+      "bytes": 8951
+    },
+    {
+      "path": "tests/frontend/planner.test.ts",
+      "sha256": "60e5c0df26c283d70b6c4e85a44d4a97f3e2df17d9c0352ff9e30ac4c5c09370",
+      "bytes": 12357
+    },
+    {
+      "path": "tests/frontend/local_success.py",
+      "sha256": "43c60b0d04b73cf51ff4b5e1cc7696d90fb7ee7cc6f367b3a258dc97bbe51d72",
+      "bytes": 11896
+    },
+    {
+      "path": "tests/frontend/image_functional_browser.py",
+      "sha256": "5b6a117c1bc0017a16d35853debc0298917269ef9fb464c7470753a9c9094597",
+      "bytes": 8977
+    },
+    {
+      "path": "tests/frontend/README.md",
+      "sha256": "37d57423370c45cdad02a815266027237212c7584731d0f06bdf90d835e4fbe7",
+      "bytes": 168
+    },
+    {
+      "path": "tests/frontend/visualizer.test.ts",
+      "sha256": "4625e4496349fadc315e31916b6d87dc359790a0cc8d008888309445504e73ac",
+      "bytes": 886
+    },
+    {
+      "path": "tests/backend/README.md",
+      "sha256": "34ea073f5b92c81078cc53b6f2c666542bc7ebc9beb67e84ca646a84347173f9",
+      "bytes": 169
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "a0090d46e31a1cc69c3b6adb8089def6c538b77988d0de7e77787db9586a9c8b",
+      "bytes": 1354
+    },
+    {
+      "path": "docs/REPOSITORY_STRUCTURE.md",
+      "sha256": "f41f0b9ce69b89a33d3b46a0b9938a717394846c84275666f842433d57473ef4",
+      "bytes": 1622
+    },
+    {
+      "path": "docs/RELEASE_VERIFICATION.md",
+      "sha256": "7b4927d765dc8a636454ee0be049d6a9ba7345cc79e0e8883a063fdb36f574c7",
+      "bytes": 7069
+    },
+    {
+      "path": "docs/PRODUCTION.md",
+      "sha256": "4d220e25e2c19b55e2514d04736ba6153b2fcb7bc24b5efb95aeff5a268c4a18",
+      "bytes": 19073
+    },
+    {
+      "path": "tests/dsa/trie.test.ts",
+      "sha256": "b0ad750f446f64ede066f115b78a9b3a1e193da8fbab9f86f04e99fab3e6d2b1",
+      "bytes": 17378
+    },
+    {
+      "path": "tests/dsa/README.md",
+      "sha256": "c88e4a2ecada9a2872b51cc7e1a5c185c72514fb2e78f9830256207a5e5e14e7",
+      "bytes": 281
+    },
+    {
+      "path": "data/cleaned/README.md",
+      "sha256": "904819be3ba5ce7a38bd5fe11991b34aa8a96c39a4e3775c1b0c758d12fa0785",
+      "bytes": 180
+    },
+    {
+      "path": "docs/IMAGES.md",
+      "sha256": "19ecfaa859067ce11cb9f6e565cb26e2af1e54ac3c21d3f55403f7985b9da16e",
+      "bytes": 6422
+    },
+    {
+      "path": "docs/LOCAL_PRODUCTION.md",
+      "sha256": "ad4c90fecb97bf7fa5b0cd85210673cbcead944adbd8d85c0f6b0d36ba34bb82",
+      "bytes": 7200
+    },
+    {
+      "path": "data/research/before-coverage.json",
+      "sha256": "bc6c922e8ef2803188cabbadc3dc64b379aefe3198c984eafce9a2679b06c3bd",
+      "bytes": 36331
+    },
+    {
+      "path": "data/research/ahmedabad.json",
+      "sha256": "3b754ff69367015d69f40b21011fd544f7009c02507810d2a82b72b426466544",
+      "bytes": 35521
+    },
+    {
+      "path": "data/research/champaner.json",
+      "sha256": "92b27019d7c10b66eb1c86b9eb23d29f0ed88144ea938270680030f0d017d8d4",
+      "bytes": 8886
+    },
+    {
+      "path": "data/research/dwarka.json",
+      "sha256": "f596e4d82aa91d18d6e22b2ff1dd4b18a9363b2252817e05511e0512fdf433d6",
+      "bytes": 16872
+    },
+    {
+      "path": "docs/research/experiment_results.previous-backend.json",
+      "sha256": "f5ebb2153a58919b781c431c6f04210ca4ab6a4831db22e647343eb89b51e7c2",
+      "bytes": 38935
+    },
+    {
+      "path": "docs/research/experiment_results.json",
+      "sha256": "7271b64817309c8e32b92ecbb7ae4975287b8ad2767a035cf5a990dc066e43e0",
+      "bytes": 91517
+    },
+    {
+      "path": "docs/research/experiment_comparison.previous-backend.json",
+      "sha256": "6e107237064d71b3fc8340aa36ec88aec777e08c1cd06a163544b35d5830a076",
+      "bytes": 6632
+    },
+    {
+      "path": "docs/research/experiment_comparison.json",
+      "sha256": "f2f74fbda3fcda4c259204305743bac83ea0d0c044fdcba3a9b4094a47df6317",
+      "bytes": 11983
+    },
+    {
+      "path": "data/research/gir-national-park.json",
+      "sha256": "cddeaad16dd94bfc2d237c2acfa89c855d837155385142bf1c370fa637df399a",
+      "bytes": 8153
+    },
+    {
+      "path": "docs/research/README.md",
+      "sha256": "64b337bd87150ea26ccfdcb99498f8f3cfba2a8b420949bbbcba60025598ce53",
+      "bytes": 559
+    },
+    {
+      "path": "docs/research/experiment_results.previous-client.json",
+      "sha256": "a040dc8e3d85ba8aaed0285958246bc96a13cd4e6d72e1bbba556aca59159d3c",
+      "bytes": 6614
+    },
+    {
+      "path": "docs/research/Research_Experiment_Plan.md",
+      "sha256": "3313d2e9b987547cbcc7943a1e6e16aa6e573310d819950103868199e63ba9d7",
+      "bytes": 1332
+    },
+    {
+      "path": "docs/research/Research_Experiment_Plan.previous-backend.md",
+      "sha256": "c2a72d511c1ad025f85f9fddba8387332b67aa8296fb0597897c779e5d71e946",
+      "bytes": 1158
+    },
+    {
+      "path": "data/raw/README.md",
+      "sha256": "86bc19461c1af0157cba5ceba5e84aa6a159f4e6b7caf80fa793a7a15e35a7e5",
+      "bytes": 151
+    },
+    {
+      "path": "data/research/production-provenance-saputara.json",
+      "sha256": "97bf3c12dfe18344191586892665c41d33d300001b49a2e7dc359ee8fcbce927",
+      "bytes": 29542
+    },
+    {
+      "path": "data/research/production-provenance-rann-of-kutch.json",
+      "sha256": "75e4ed875c36956bf67dd36c267ed82c0488a07002747d221301e48de915c8bd",
+      "bytes": 26280
+    },
+    {
+      "path": "data/research/production-provenance-modhera.json",
+      "sha256": "138468623bd310a689c9aca76b63380f9f0a9af70ef380551fe5341cc59423e6",
+      "bytes": 30229
+    },
+    {
+      "path": "data/research/production-provenance-gir-national-park.json",
+      "sha256": "0c7aa01e76790ea5043a95ee6b42ed34a47c8f0d32d95765ca78fd2945a9218d",
+      "bytes": 24542
+    },
+    {
+      "path": "data/research/production-provenance-champaner.json",
+      "sha256": "700e7743c4955fa354e7d481b888f2e44bd5ab38f42520ead80f1b248eae9d8d",
+      "bytes": 30793
+    },
+    {
+      "path": "data/research/unresolved-research.json",
+      "sha256": "c1dd564d4a80acd3a25072835fbae4afdd399047d5dc217fa74fd738aa542f56",
+      "bytes": 5131
+    },
+    {
+      "path": "data/research/ui-baseline.json",
+      "sha256": "41863f38f1a4b575827c5f5a8932e51a83f907c0d10534f0a391bf119d3178dc",
+      "bytes": 14528
+    },
+    {
+      "path": "data/research/somnath.json",
+      "sha256": "56f61e153a715a682ffb62149e457329e679f055744ba1cc34c1ed28cf7450c4",
+      "bytes": 14800
+    },
+    {
+      "path": "data/research/saputara.json",
+      "sha256": "533069419aa536bbf5f2035c1020ef819b1845f3600e0eaabe91fb20eb128a94",
+      "bytes": 8405
+    },
+    {
+      "path": "data/research/routes-somnath.json",
+      "sha256": "8da55363a78df23e4cd38effcd6622a2d4facb058fa837d8d5b4be4d01427f82",
+      "bytes": 13823
+    },
+    {
+      "path": "data/research/routes-saputara.json",
+      "sha256": "ef158169828ea5edab9efbb5189ff5e80c42c93f5990506aeb5b590718748305",
+      "bytes": 11083
+    },
+    {
+      "path": "data/research/routes-rann-of-kutch.json",
+      "sha256": "62b4d7e24daf6fcf716c1327056672ee9fac815aef420a84d5f6717db85935d7",
+      "bytes": 8863
+    },
+    {
+      "path": "data/research/routes-modhera.json",
+      "sha256": "b17ae6e79d43ec06bcf01192450e20de9079709fb7495096758837b53ca66ff0",
+      "bytes": 8858
+    },
+    {
+      "path": "data/research/routes-gir-national-park.json",
+      "sha256": "f37e889e20d024b196eed6028e7d42987d0268a2a18f6e69b18eca677e305979",
+      "bytes": 9117
+    },
+    {
+      "path": "data/research/routes-dwarka.json",
+      "sha256": "415c78b03f19ed145d4c1c894f461869b1ac7dea658dacea221b91f73205cd73",
+      "bytes": 15740
+    },
+    {
+      "path": "data/research/routes-champaner.json",
+      "sha256": "6d07eb7b2b62df95202c71bcd736e546f632618dd84e36b12b863796933268a5",
+      "bytes": 8905
+    },
+    {
+      "path": "data/research/routes-ahmedabad.json",
+      "sha256": "38f31df5b5e1aa97cd202579319f2bc59e7edc86dea73401e8ea91d3bd52b85d",
+      "bytes": 27601
+    },
+    {
+      "path": "data/research/route-overrides-saputara.json",
+      "sha256": "459e9fa55ac96557c9afd00653d90390b12c7bbe665555e8b752fd10d02a220a",
+      "bytes": 2543
+    },
+    {
+      "path": "data/research/route-overrides-rann-of-kutch.json",
+      "sha256": "0c1ed87af538277eec4dbbd44707219158bbd19ed3a4be77f094bb2873d61b72",
+      "bytes": 1514
+    },
+    {
+      "path": "data/research/route-overrides-champaner.json",
+      "sha256": "23a603e5a1a5a839e29173825c27c65b46ac483eac4aaa4cc84a919e4f801c4c",
+      "bytes": 1459
+    },
+    {
+      "path": "data/research/rann-of-kutch.json",
+      "sha256": "806cc2770c8d0ab794ab1739b6a2a93685babb4cb7ac0c56b7c96b1660fbc5b2",
+      "bytes": 8715
+    },
+    {
+      "path": "data/research/modhera.json",
+      "sha256": "56c1ec2a24fc8ba458d4867296c62601c026c7fb8b1430e125b20f54746055c3",
+      "bytes": 8925
+    },
+    {
+      "path": "dsa/graph/README.md",
+      "sha256": "76e4469506082c67c9fb1249b27c4d53704634fd3062f908fa0e9a5618b8b0f0",
+      "bytes": 271
+    },
+    {
+      "path": "dsa/graph/Graph.ts",
+      "sha256": "26e1a81eedd2f18379a8245d6f321ef40585b626054b30d6b7422e9618268aec",
+      "bytes": 2523
+    },
+    {
+      "path": "dsa/dijkstra/README.md",
+      "sha256": "7fb298b9238408e77d4a22c818f5dca2f5aa6c71eca24c823e9c7a0371740dcb",
+      "bytes": 505
+    },
+    {
+      "path": "dsa/dijkstra/dijkstra.ts",
+      "sha256": "00b687ee88a8b59b93e6aad506b5af27054a2cc54ca198753f58fa2343991754",
+      "bytes": 1792
+    },
+    {
+      "path": "docs/foundation/07_Data_Collection_Plan.md",
+      "sha256": "dff1f71c3d2ae4fcf35a476f63c785a73bd276245766bc364488e6f0862a1118",
+      "bytes": 7093
+    },
+    {
+      "path": "docs/foundation/06_Database_Design.md",
+      "sha256": "61445f1a6c41e8d8b8c82841f21b2baafad9bc438e9a5346dc81b041ea761f4f",
+      "bytes": 19108
+    },
+    {
+      "path": "docs/foundation/05_Frontend_Documentation.md",
+      "sha256": "edab7906ea450b76ab21b0e55f61bdf15fbb4493f4238a70f2ce2c77a2752b01",
+      "bytes": 8327
+    },
+    {
+      "path": "docs/foundation/04_DSA_Architecture.md",
+      "sha256": "83a163fc208c2eb630d314dda09a7153c1be77889b6889decf76cd6bfd6d1923",
+      "bytes": 15153
+    },
+    {
+      "path": "docs/foundation/03_System_Architecture.md",
+      "sha256": "5993012248eb02eaf8d5b82622e541fce5cae915bbb5764e1267196647a629b2",
+      "bytes": 11036
+    },
+    {
+      "path": "docs/foundation/02_Requirements_Specification.md",
+      "sha256": "41a2b278d2dabfb5a9489939debb150d0abb86731127cef7159a342979a86050",
+      "bytes": 12856
+    },
+    {
+      "path": "docs/foundation/01_Project_Proposal.md",
+      "sha256": "f872b9ab17964cdcd5358daeb1f863712af89851862545d9359c95d284cb7e8f",
+      "bytes": 14922
+    },
+    {
+      "path": "docs/foundation/00_Foundation_Audit.md",
+      "sha256": "07864b3f5e6b985b84894b597a15675a54f28ca044dbf096f32c28f97a0f7f42",
+      "bytes": 5485
+    },
+    {
+      "path": "docs/meeting-notes/README.md",
+      "sha256": "7402593d5a1242776819e2ebdc17a93df472a58d3365af0174d0d372e6cff7f5",
+      "bytes": 141
+    },
+    {
+      "path": "docs/diagrams/README.md",
+      "sha256": "bb16902f3a8bd8068a79a40c719c873db1a301a77646cfd2bc3a6be693835723",
+      "bytes": 3229
+    },
+    {
+      "path": "docs/diagrams/09_trie_search_flow.mmd",
+      "sha256": "6197477b73c38e634a2026014674c85661578d7d6236d76780c01327405dbf53",
+      "bytes": 2145
+    },
+    {
+      "path": "docs/diagrams/08_greedy_flow.mmd",
+      "sha256": "661726af11d98e06e68bfe6567204b641b8d9fb1dff9b7d789160833eef8c6ee",
+      "bytes": 3406
+    },
+    {
+      "path": "docs/diagrams/05_database_er_diagram.mmd",
+      "sha256": "e392b317337b956a3327515cce09f1159e55225febae8f7e36c2f1efe07c2e7f",
+      "bytes": 2415
+    },
+    {
+      "path": "docs/diagrams/04_dsa_architecture.mmd",
+      "sha256": "d93c75c34f081568757877686dacda002fbcc69fc217bd74f81bb1975f6ef4c3",
+      "bytes": 1862
+    },
+    {
+      "path": "docs/diagrams/02_use_case_diagram.mmd",
+      "sha256": "df766afffcd4b3b65f07660026f280b0dc346c191e4beaf87ddc81a3e7a66a7f",
+      "bytes": 1159
+    },
+    {
+      "path": "docs/diagrams/01_system_architecture.mmd",
+      "sha256": "db2c12e3cb0aad93fb852e58cebfcf7c031504a985c3c9c2a4197a046376aac5",
+      "bytes": 1556
+    },
+    {
+      "path": "data/research/maps/chandravilas-ahmedabad.json",
+      "sha256": "75c1fefad61fe0d2d1527e6ba2f4098632f0c6bb745651e3fe47e792ab77dc7e",
+      "bytes": 1090
+    },
+    {
+      "path": "data/research/maps/champaner-heritage-resort.json",
+      "sha256": "49d4a83c77761e2140b48d52769bcf907eb565ad312ce30437537a1232fb3680",
+      "bytes": 167
+    },
+    {
+      "path": "data/research/maps/calico-museum-ahmedabad.json",
+      "sha256": "b309ba7a1c8edfcf86aeb5a1c8b056d9ed6f1305cffea8053823eb132d6357f0",
+      "bytes": 2206
+    },
+    {
+      "path": "data/research/maps/bhalka-tirth.json",
+      "sha256": "3243dabdeb4a321ad5e350d4804ce983562ae43bdb065750697e12b252d084d4",
+      "bytes": 899
+    },
+    {
+      "path": "data/research/maps/bet-dwarka.json",
+      "sha256": "e124e335bc79fc8b77972e3b744e10d7652c0b126eb818d14b20666f849a4b1f",
+      "bytes": 924
+    },
+    {
+      "path": "data/research/maps/agashiye-ahmedabad.json",
+      "sha256": "b6851d9b386446fddd6d52215437db7166b1c6e59ac414225428cbfb9bcef740",
+      "bytes": 968
+    },
+    {
+      "path": "data/research/maps/adalaj-stepwell.json",
+      "sha256": "827bcfe1bec3ce0e366a48960f7373e80c9e844560c63ff87fbecf71b8191c04",
+      "bytes": 1219
+    },
+    {
+      "path": "data/research/maps/jami-masjid-champaner.json",
+      "sha256": "c1101d7a01fd8ef6c66f4f31909687fd85c3cc1d1b60b1cac5e44ff14e375cd9",
+      "bytes": 163
+    },
+    {
+      "path": "data/research/maps/house-of-mg-ahmedabad.json",
+      "sha256": "dfb0598614e5a45b7520b22f166fe1fe8ade39f8855ed13d1b4bcaeb733bd2fb",
+      "bytes": 996
+    },
+    {
+      "path": "data/research/maps/french-haveli-ahmedabad.json",
+      "sha256": "a0db6e9779a1cf08cd8904a747458f6b9f367186df71dc9708f836bb6ece0b04",
+      "bytes": 1055
+    },
+    {
+      "path": "data/research/maps/dwarkadhish-temple-dwarka.json",
+      "sha256": "33ebb18af0756ed3045bd8db08ab2fc7f4be413dbd771837a82fdbe8c8139456",
+      "bytes": 1180
+    },
+    {
+      "path": "data/research/maps/kankaria-lake.json",
+      "sha256": "c6fc1ede5b8df57ef42f9de760c7df692eb2c0103b21ce4edfcae64d098f26d2",
+      "bytes": 1028
+    },
+    {
+      "path": "data/research/maps/kalo-dungar-gujarat.json",
+      "sha256": "28821a964731425bad0dde93a1048b9e5e4c14ffe6d3b31440f10a703fbd10cf",
+      "bytes": 994
+    },
+    {
+      "path": "data/research/maps/kevada-mosque-champaner.json",
+      "sha256": "6f721cf643f366a9f543da91fc175907ec07bc47d8e204b5d22b62c1d4c77337",
+      "bytes": 165
+    },
+    {
+      "path": "data/research/maps/lemon-tree-ahmedabad.json",
+      "sha256": "25579b09f67fbd013a5c2a6f711b0d19a72ba6bc4681bc48dadb02e8cd32103f",
+      "bytes": 162
+    },
+    {
+      "path": "data/research/pages/73f7d3e7111a48e6.html",
+      "sha256": "99635b2505128d3e87c4defab2dc6270d60a0b439e3d2d5fbeed46d62ce0c208",
+      "bytes": 347782
+    },
+    {
+      "path": "data/research/pages/5f46644fdb588b10.json",
+      "sha256": "935a0e862a35cda9bae7eef3810afffe30ee1211d8a11071cebe921db69055d7",
+      "bytes": 196
+    },
+    {
+      "path": "data/research/pages/5f46644fdb588b10.html",
+      "sha256": "796a4cf842e48fe5c14936cc393ce951ac5f3ebe79e93f50fdb1e7defc6e4b30",
+      "bytes": 232709
+    },
+    {
+      "path": "data/research/pages/ahmedabad-french-price.json",
+      "sha256": "ee0d4bffa69cf570ebc83c0cb5a3d04bcb7e53b57ad0bdf51c26f153e649a3f1",
+      "bytes": 4187
+    },
+    {
+      "path": "data/research/pages/73f7d3e7111a48e6.json",
+      "sha256": "1b7ed73fd857bd82138233a2fec81349b5e65f9fb9d590eeeeb122b9ff610232",
+      "bytes": 204
+    },
+    {
+      "path": "data/research/maps/lemon-tree-premier-ahmedabad.json",
+      "sha256": "e3fa37da953e1a794a3233b0e5890698d4a0ae0013b7744cae5aa0fb46e40c53",
+      "bytes": 170
+    },
+    {
+      "path": "data/research/maps/modhera-sunrise-resort.json",
+      "sha256": "4894ff043d52d444589f70d10d5bdc8c9f7f380b30165e543bf938f4921826d1",
+      "bytes": 164
+    },
+    {
+      "path": "data/research/pages/ahmedabad-lemon-price.json",
+      "sha256": "479d43663830af599ae5cab402024448c8e8e36dc56b8b23bbd9800566354522",
+      "bytes": 4709
+    },
+    {
+      "path": "data/research/pages/ahmedabad-housemg-price.json",
+      "sha256": "f9ba7069dcebe6497328ae78d9e31194a1bb1107288ced808557498db26840a5",
+      "bytes": 4316
+    },
+    {
+      "path": "data/research/pages/b0fdeef2c9c7a17d.html",
+      "sha256": "7426d2d283bcd0361af8e4d73af0ec37bf155ad148d03511ac605e114e96c441",
+      "bytes": 223629
+    },
+    {
+      "path": "data/research/maps/modheshwari-mata-modhera.json",
+      "sha256": "4f518b728175b22d88392213c7f0ee53cc94109c3f1e4dd7bb4dff0598a6da5b",
+      "bytes": 166
+    },
+    {
+      "path": "data/research/pages/b0fdeef2c9c7a17d.json",
+      "sha256": "be3ee5b7be85cba661749fbfd69cf3d0325296354357380415a4a2dd7c827bf5",
+      "bytes": 188
+    },
+    {
+      "path": "data/research/maps/saputara-museum.json",
+      "sha256": "964bdfbaf518e17428e1bf949bb6fc3013314a52e43c98d1246f307c3b73e1f4",
+      "bytes": 157
+    },
+    {
+      "path": "data/research/maps/saputara-lake.json",
+      "sha256": "4f0b9044a26cd7b7a219a5a33e929dac387fc088402779036eba761fdbe1b2d7",
+      "bytes": 992
+    },
+    {
+      "path": "data/research/maps/sabarmati-ashram-ahmedabad.json",
+      "sha256": "4486232fafb09b1ec0d1c6e6ca50652ec7f19940d4f20df83f70fad4246b0e87",
+      "bytes": 1076
+    },
+    {
+      "path": "data/research/maps/rukmini-temple-dwarka.json",
+      "sha256": "b4bad1977862672a04727505af6e8e1c308727dcfa60dc0859c343baf730561a",
+      "bytes": 1144
+    },
+    {
+      "path": "data/research/maps/premier-somnath.json",
+      "sha256": "1f66b9a8f3f126645b4862cae4cb63dee04e5e27ac4007187dfa3a35de263dc5",
+      "bytes": 157
+    },
+    {
+      "path": "data/research/maps/nageshwar-jyotirlinga.json",
+      "sha256": "c23f3ae3072b53992344b165a4f853c3c93d46be42f00100558e51c4e40a6c91",
+      "bytes": 163
+    },
+    {
+      "path": "data/research/maps/somnath-beach.json",
+      "sha256": "f50c309b7d9b0e6775f0ee8773d2fb1144eb9c2012962f7f5b0092cc3c2eee27",
+      "bytes": 893
+    },
+    {
+      "path": "data/research/maps/sidi-saiyyed-mosque.json",
+      "sha256": "addb7ac952dd469c1aa89e2625605c320ed217b97e0fffc897929c9894c7f627",
+      "bytes": 161
+    },
+    {
+      "path": "data/research/maps/sidi-saiyed-ahmedabad.json",
+      "sha256": "65b44c0f95fa9d60d3177c1696e2317f4b1b115b009ad478316d9c6c4589a4d8",
+      "bytes": 163
+    },
+    {
+      "path": "data/research/maps/sarkhej-roza.json",
+      "sha256": "d02e513783c168c4b56fa3c882bb943f53e73f22ad687c5a59eca9286b88ed36",
+      "bytes": 1920
+    },
+    {
+      "path": "data/research/maps/sunset-point-saputara.json",
+      "sha256": "24d7cf8421704df944f2c98a43ce4b4f798ca496633b4b51a0a014c90e163148",
+      "bytes": 872
+    },
+    {
+      "path": "data/research/maps/sun-temple-modhera.json",
+      "sha256": "e9dcb4a26b5bce48b7f9fe51322833d5cc692e7cac81303751a7df21462fcb25",
+      "bytes": 2722
+    },
+    {
+      "path": "data/research/maps/somnath-temple.json",
+      "sha256": "3bbe1c2910866cbb51caeb8005466ff784639264738751293f527f52f998a83a",
+      "bytes": 2702
+    },
+    {
+      "path": "data/research/maps/toran-dwarka.json",
+      "sha256": "11d6df2019aa9547664fd8b7eeb9887812f474e85ed23bbb1b0d93ad1a978b69",
+      "bytes": 154
+    },
+    {
+      "path": "data/research/maps/toran-somnath.json",
+      "sha256": "5992633944335977d323e41d0d512603863cf2ea9b694f0a29eaa63ae76d4da7",
+      "bytes": 155
+    },
+    {
+      "path": "data/research/pages/champaner-kevada-selected.json",
+      "sha256": "3d34c19678da8968598daba975b169a425fd16c5aa40932261502ca8a7c0994d",
+      "bytes": 4258
+    },
+    {
+      "path": "data/research/pages/champaner-jami.json",
+      "sha256": "8fdb87a9d33435ef40fa0dcfc46205198c781e7398dcf1963e3c492917f0e74a",
+      "bytes": 1352
+    },
+    {
+      "path": "data/research/pages/champaner-hotel.json",
+      "sha256": "02567d156ce393150caa70525d2ce0f6d4bc71f979252bca7b703d25b2e9c3b2",
+      "bytes": 2912
+    },
+    {
+      "path": "data/research/pages/champaner-hotel-restaurant-route.json",
+      "sha256": "9e360168a5565351f403e85d2dcb9cc61656dc902263cc4ec11846138e516492",
+      "bytes": 1208
+    },
+    {
+      "path": "data/research/pages/champaner-hotel-kevada-route.json",
+      "sha256": "0f925ac4805304fe957b23a522be7179e0da172eaec7d0c1b077f513537bffb6",
+      "bytes": 1509
+    },
+    {
+      "path": "data/research/pages/champaner-hotel-jami-route.json",
+      "sha256": "cfae756af040df3221a37a9bf532117c4d6f43bf75ef674a05daa10f215cad51",
+      "bytes": 1586
+    },
+    {
+      "path": "data/research/pages/bet-dwarka-selected.json",
+      "sha256": "9740a90726115f183266159b59091f7a0e2c377962b8b3525eae3796448be61c",
+      "bytes": 4475
+    },
+    {
+      "path": "data/research/pages/bet-dwarka-map.json",
+      "sha256": "da7e9deb9a4a766fd434e9d5f4bfdadfd1adf80d27417000b911a833e04de1cf",
+      "bytes": 1119
+    },
+    {
+      "path": "data/research/maps/triveni-sangam-somnath.json",
+      "sha256": "15835593820fd98b225e1b66060bc0f8abff5b4aa330b3e715fc120f96ae59a5",
+      "bytes": 962
+    },
+    {
+      "path": "data/research/pages/darshan-palace-map.json",
+      "sha256": "35ccefe9ddc32db2a82ca35991ab680dce1d6b754321ae75c5f2437be99766ad",
+      "bytes": 3381
+    },
+    {
+      "path": "data/research/pages/completion-category-evidence.json",
+      "sha256": "6f760a745797eb1b83a3ce5f189c01d546dbdabff7a13baec474c398ede54879",
+      "bytes": 1714
+    },
+    {
+      "path": "data/research/pages/champaner-restaurant.json",
+      "sha256": "99c9307585017aea992b64cc27e3d9ee031cb379504b5db4fd77d1d0c3476222",
+      "bytes": 3404
+    },
+    {
+      "path": "data/research/pages/champaner-official-image-links.json",
+      "sha256": "e56f9f23a3ad0adf62e0c20ab2281cacd43805e4cd181d74f3d0c4da6fdd119f",
+      "bytes": 2800
+    },
+    {
+      "path": "data/research/pages/champaner-kevada.json",
+      "sha256": "0354dfac43859c5fcd8cf265d98dc7ede4569e36cf6990120c90867b0216b621",
+      "bytes": 1088
+    },
+    {
+      "path": "data/research/pages/gir-devalia-selected.json",
+      "sha256": "b15fe7c156c8f7feea0357b245d33debc9f431aa7d63a211eddd02ea17d30097",
+      "bytes": 2965
+    },
+    {
+      "path": "data/research/pages/dwarka-official-image-links.json",
+      "sha256": "8240fee568311f92db95cd87cebdd8776090e9181330435235867489ef024419",
+      "bytes": 2161
+    },
+    {
+      "path": "data/research/maps/vishala-ahmedabad.json",
+      "sha256": "a6fd583460bfc05928f4ad7f0192235ec6cde5725f8b5cdf30a236b2ed79b396",
+      "bytes": 2223
+    },
+    {
+      "path": "data/research/pages/gir-devalia.json",
+      "sha256": "43f27ab3a8fc619b76c6b9cd5a198acede2263c916d2c915d95d7696ae0fc69a",
+      "bytes": 1185
+    },
+    {
+      "path": "data/research/pages/gir-hotel.json",
+      "sha256": "ef2e477aadbb7ff5dc4cdb96b10866b2b453c7ee5e0063d633f06c3179fa170c",
+      "bytes": 4125
+    },
+    {
+      "path": "data/research/pages/gir-restaurant.json",
+      "sha256": "1f4dab4d3e3fa6d8cb843fa2d2116bd52c98eef63666d1bf1ee7a95c77ac5b89",
+      "bytes": 1419
+    },
+    {
+      "path": "data/research/maps/white-rann-dhordo.json",
+      "sha256": "3512b4c276fa35930f3007bf30b2812829b4654501a69fd481fc3d63973916f4",
+      "bytes": 159
+    },
+    {
+      "path": "data/research/maps/vishalla-ahmedabad.json",
+      "sha256": "4a2dbdcbc408364a64b7b99dda1d7d8f1cb5a44aec3f548d5f195633200c66fe",
+      "bytes": 160
+    },
+    {
+      "path": "data/research/pages/gir-safari-entrance.json",
+      "sha256": "db3d81d3f4954b48df03322c827428cb64824752c440ad69958788cdc2664252",
+      "bytes": 1708
+    },
+    {
+      "path": "data/research/pages/gopi-dwarka-map.json",
+      "sha256": "c48eb952cc07c37bc0e295edf7d47e0a793da97df00ae8ce022ff4b7e2168b73",
+      "bytes": 1248
+    },
+    {
+      "path": "data/research/pages/triveni-somnath-map.json",
+      "sha256": "53fa34d14f89795766c82a3b75e81642b6066c23d5ea1b37a6ef646253c2feac",
+      "bytes": 4908
+    },
+    {
+      "path": "data/research/pages/toran-official-booking.json",
+      "sha256": "805dac8ac362d0192b7eadffdef3caf37152fe75412ac3303c9ff693408743bd",
+      "bytes": 1712
+    },
+    {
+      "path": "data/research/pages/toran-dwarka-room.json",
+      "sha256": "c0df584c1cc2eabe899767688062e13c9657de14df41d31c34c5d742c14844c7",
+      "bytes": 2499
+    },
+    {
+      "path": "data/research/pages/toran-dwarka-map.json",
+      "sha256": "3a75d28128c5ebb5ad76195452d8b239516d6658180cf84a0c70e7b9526372e4",
+      "bytes": 2773
+    },
+    {
+      "path": "data/research/pages/somnath-official-image-links.json",
+      "sha256": "ab385cd932a320194350d68faa4abab952d64ca245c29e25059f7de54f25bdf7",
+      "bytes": 3652
+    },
+    {
+      "path": "data/research/pages/shrinath-dwarka.json",
+      "sha256": "06ddd46674609ddebaf2916fbfb2715b02b75c57676b7136287ab61e95ad1c54",
+      "bytes": 1474
+    },
+    {
+      "path": "data/research/pages/saputara-sunset-restaurant-route.json",
+      "sha256": "abae332d1e61a439f9175b270dd6ece698fa361f01db727530896e459a674948",
+      "bytes": 1243
+    },
+    {
+      "path": "data/research/pages/saputara-sunset-museum-route.json",
+      "sha256": "e19ae92c948e27699dcf008c3f799736a34ead446dea9a6687a69a9b20fa97bf",
+      "bytes": 1457
+    },
+    {
+      "path": "data/research/pages/saputara-sunset-lake-route.json",
+      "sha256": "356ba1d2482326d29c7902e44c4c63d180ffd3f8c6c7af8336bf1ac975d16168",
+      "bytes": 1396
+    },
+    {
+      "path": "data/research/pages/saputara-sunset-hotel-route.json",
+      "sha256": "7123a36492163fad89edceb24171abe4dc365717dce8c9d557cf5af018cfd4f9",
+      "bytes": 1286
+    },
+    {
+      "path": "data/research/pages/saputara-restaurant.json",
+      "sha256": "f8b9746dfe33f0574781d014c3bc2cbe656fcadf0a28116a984f7e67e43ba09a",
+      "bytes": 2533
+    },
+    {
+      "path": "data/research/pages/saputara-official-image-links.json",
+      "sha256": "3c70e0fdf70c615551059268a914e43a2c5f0a706f5ee241b77825667f6f0046",
+      "bytes": 4398
+    },
+    {
+      "path": "data/research/pages/saputara-museum.json",
+      "sha256": "409a8da6d1b9f6cd8533f4c62d9d5efa89a6b9ccc00fa6f592197f4ccabb686c",
+      "bytes": 1319
+    },
+    {
+      "path": "data/research/pages/saputara-lake.json",
+      "sha256": "5532e9161232cb8f2642043512445fe29187d733ab1d9e1a9606eabec6be3ec5",
+      "bytes": 1412
+    },
+    {
+      "path": "data/research/pages/saputara-hotel.json",
+      "sha256": "f7197310709c264b1f007cb012e05bfa4b8070582bb19068d8c615958a0f7b21",
+      "bytes": 5258
+    },
+    {
+      "path": "data/research/pages/saputara-anando.json",
+      "sha256": "e647263182640229cc90d273ec7dfef48d8b332362c4a5f991050c75b70ca137",
+      "bytes": 1927
+    },
+    {
+      "path": "data/research/pages/saputara-anando-selected.json",
+      "sha256": "0169eb29836bb1ebc38d13d53b3b618d86a45d0dd6a799bfc6c4bacc6802223d",
+      "bytes": 3853
+    },
+    {
+      "path": "data/research/pages/rann-white.json",
+      "sha256": "50d0d39d48615ecf595ad5305604130e2e3ef6fd4c49f6c21c539b1340901abd",
+      "bytes": 1671
+    },
+    {
+      "path": "data/research/pages/rann-white-selected.json",
+      "sha256": "a23c88aa78e0057de212655c6d83e7dd4caa361a10f647bd5818b548c777b3db",
+      "bytes": 1859
+    },
+    {
+      "path": "data/research/pages/rann-of-kutch-official-image-links.json",
+      "sha256": "6f6ab52c2336dda7c567e19dd734d2dd3d96d042322ea670e85c39282dad91aa",
+      "bytes": 2225
+    },
+    {
+      "path": "data/research/pages/rann-kalo.json",
+      "sha256": "61086bc2d3323cf307af4657fdad0a857b69a95cd51519bf3006bfc43ccac5d1",
+      "bytes": 984
+    },
+    {
+      "path": "data/research/pages/rann-kalo-white-route.json",
+      "sha256": "15f05d28df8a03a1ea592750f2c5c44d81c4897c71f1b6734c9035475cf4c99c",
+      "bytes": 1166
+    },
+    {
+      "path": "data/research/pages/rann-hotel.json",
+      "sha256": "2c22f01b47317d7e4af7bad494aafccde64febb20a123422c70d2dab50e9b0a8",
+      "bytes": 1114
+    },
+    {
+      "path": "data/research/pages/rann-hotel-white-route.json",
+      "sha256": "12c56bd68d82f65a202ba5581d91f63430cc21eb20fa4acc7bf35258cdd19dec",
+      "bytes": 1099
+    },
+    {
+      "path": "data/research/pages/rann-hotel-selected.json",
+      "sha256": "f30451cbb9d01af49bc2dd2da177e96e7d7cc3b9b30ef1f342316a65edef4d5a",
+      "bytes": 2140
+    },
+    {
+      "path": "data/research/pages/premier-somnath-map.json",
+      "sha256": "624c4d18330c62e5fed5d62065b1cf6c38b403b42cee46b7d721a7aa2aa82dbd",
+      "bytes": 2712
+    },
+    {
+      "path": "data/research/pages/nageshwar-map.json",
+      "sha256": "c0425935ad152fd7a66d6eb9d79df2f73955882bb4e2f45ed2a53e1b86dbe21e",
+      "bytes": 4158
+    },
+    {
+      "path": "data/research/pages/modhera-restaurant.json",
+      "sha256": "12619f2ecde81acead2a1737855a9441e5030b66bc62c520c94e912080d85b6c",
+      "bytes": 2267
+    },
+    {
+      "path": "data/research/pages/modhera-official-image-links.json",
+      "sha256": "33442183b2338c0994c492a16aa655b470f7c270eb902c3fc058dd6312761f45",
+      "bytes": 4894
+    },
+    {
+      "path": "data/research/pages/modhera-mata.json",
+      "sha256": "df9445ea0849b1e8484fb617ded874ef0a48543d0c3a16d780be703575f0129c",
+      "bytes": 1261
+    },
+    {
+      "path": "data/research/pages/modhera-hotel.json",
+      "sha256": "dc9038b780de75672074944388a22150aec43cf7e413edc62835e0f887f06b5a",
+      "bytes": 1115
+    },
+    {
+      "path": "data/research/pages/modhera-hotel-selected.json",
+      "sha256": "4277ab2ba4db70cdccfad4d64b2b7abc09bbcba272b5736b36722e71eb38d69d",
+      "bytes": 2992
+    },
+    {
+      "path": "data/research/pages/modhera-cafe.json",
+      "sha256": "6d0c065730ea37cbc096c5464f8534ea3dc3413acdc3c5c1f56ff5914f5e59d9",
+      "bytes": 1513
+    },
+    {
+      "path": "data/research/pages/honest-somnath-map.json",
+      "sha256": "e7b106386da617549b90973106b12ec6a5f25e003d148514ab7214be3361b0dc",
+      "bytes": 2095
+    },
+    {
+      "path": "backend/README.md",
+      "sha256": "698bbefd5c1a5c82251984d979427d2eec83262fdae982bab70a8f13e68d5667",
+      "bytes": 17622
+    },
+    {
+      "path": "backend/package.json",
+      "sha256": "665349585f51a4a98666eab0a53c923440485f5125802136255908b95b6a5be8",
+      "bytes": 1773
+    },
+    {
+      "path": "backend/package-lock.json",
+      "sha256": "7a34e0fc3e26366974b7572a9734daf77288b60002302e54b5f942bf9ae54b5b",
+      "bytes": 74389
+    },
+    {
+      "path": "backend/server.js",
+      "sha256": "382372e187e3446a8f8ce06b7d6f243c969e63ecf10872eaf27a27be73cadf0b",
+      "bytes": 4234
+    },
+    {
+      "path": "backend/.env.example",
+      "sha256": "e08c923a2f99fbf7931580b794b85fe9c0fb6a1591ce9cf024aa47ce7bd134fb",
+      "bytes": 1121
+    },
+    {
+      "path": "backend/migrations/004-field-provenance-review.sql",
+      "sha256": "ab0abd58ef28e856e931f9e687007f3c6b7ce7800ce67c0c736516e122e7b5b9",
+      "bytes": 405
+    },
+    {
+      "path": "backend/models/userModel.js",
+      "sha256": "6fda5f71ce9bf85edc8a23831e8ca2d12b258e0601234f914b40ca2b97114468",
+      "bytes": 1054
+    },
+    {
+      "path": "backend/services/hotelRanking.js",
+      "sha256": "1a0ef473241c035aea0b0c9960dc13c9d5a4debb8d649889f7d154e55b7e8428",
+      "bytes": 991
+    },
+    {
+      "path": "backend/services/destinationSearchCache.js",
+      "sha256": "792d7d6797ad07504a67590fecafb873cb83337409a380a8f15b3a4eca0d190f",
+      "bytes": 3044
+    },
+    {
+      "path": "backend/services/logger.js",
+      "sha256": "4289b6d66a9e212e8155eed60057f00ea38a29db5e04dc4e745c0ab528d847df",
+      "bytes": 590
+    },
+    {
+      "path": "backend/services/README.md",
+      "sha256": "f4644c0e576ab7e3ae865bc53d32f0c0421433d9327196fa2af156d8c9856098",
+      "bytes": 699
+    },
+    {
+      "path": "backend/.gitignore",
+      "sha256": "92d7b3d60a94ad82d85e9d5f1a76e2e88fa9e3fd20213f0c97af2c8cb430c035",
+      "bytes": 68
+    },
+    {
+      "path": "backend/Dockerfile",
+      "sha256": "bf5f4d024094131096a660980976184fc4d93b44c10a37365a243f0edd46ca4f",
+      "bytes": 725
+    },
+    {
+      "path": "backend/services/tripPlanner.js",
+      "sha256": "6e9f9ac03de9ab64cce624a94a1b377498f848dd427ed00ece584eecb7ce120a",
+      "bytes": 9156
+    },
+    {
+      "path": "backend/migrations/001-trip-generation.sql",
+      "sha256": "0299aac7e1da2aad19cfa05497c71d328910abbcfa8daecfe2f1cdfebf4836f5",
+      "bytes": 154
+    },
+    {
+      "path": "backend/migrations/003-directional-road-estimates.sql",
+      "sha256": "b820c930675dfe41151c26d2ba762f532e6f2230efffdc5df3160d1c18d4bb52",
+      "bytes": 659
+    },
+    {
+      "path": "backend/migrations/002-seed-ownership.sql",
+      "sha256": "b6c8f2d012c1f62e2b980becda49db475f659a94edaf1f658756fc60920f5a73",
+      "bytes": 224
+    },
+    {
+      "path": "backend/models/hotelModel.js",
+      "sha256": "33a0810bf204a53163c127fc94405c1a80b6f074f7a2dfc6b222168a509fa3a2",
+      "bytes": 465
+    },
+    {
+      "path": "backend/models/destinationModel.js",
+      "sha256": "fbafc34cd6d885f553e4a909a045e128aad1bfa757bc83981f2924370b3b4fd7",
+      "bytes": 2301
+    },
+    {
+      "path": "backend/models/budgetModel.js",
+      "sha256": "f8b523dff0f8f5680bb85a81419978a7711aefaad3ef39963e8ecec30e3650ed",
+      "bytes": 1643
+    },
+    {
+      "path": "backend/models/attractionModel.js",
+      "sha256": "0aa65ed01c14c4c976afc37b7e5bb5961f3e989342bd2a8933904317e46decc9",
+      "bytes": 484
+    },
+    {
+      "path": "backend/models/adminModel.js",
+      "sha256": "fe2793cb5259b3603f0d6b114c19c50cdbb3c98430d1ab02909c1933ae772fce",
+      "bytes": 2547
+    },
+    {
+      "path": "backend/models/restaurantModel.js",
+      "sha256": "fe459bcb9abd9209ce84e0ff5cc94eae8362731d1ae9fa51de89c57002ba57d8",
+      "bytes": 484
+    },
+    {
+      "path": "backend/models/README.md",
+      "sha256": "2f4fe08f0a09036086ff68da0b9ce3b4d230b524da261a1b59c5791bf728e8f8",
+      "bytes": 459
+    },
+    {
+      "path": "backend/models/itineraryStopModel.js",
+      "sha256": "891f44cec192b2d972670894b2ff3739bb4c4302c87f6733e92d7fa7c0e24c0f",
+      "bytes": 447
+    },
+    {
+      "path": "backend/models/routeModel.js",
+      "sha256": "a471c5a1efd3527598ab64b517cf13463dbc8df3716edcc69c730ac902b97afe",
+      "bytes": 391
+    },
+    {
+      "path": "backend/models/tripModel.js",
+      "sha256": "0a17422c26131fd133c2fd77fde56b141185d1e46757fcbc82e9357bfe0d405b",
+      "bytes": 4475
+    },
+    {
+      "path": "backend/compose.postgres.yml",
+      "sha256": "450f876ca0a26d246276ca0ad1b77e1a8587cae01485f122e7517b19aea03720",
+      "bytes": 594
+    },
+    {
+      "path": "backend/config/README.md",
+      "sha256": "bf89f889732b5ba19ffea8f6553ae18e984132ee45d4fa3f0aa1fe04b12bd49f",
+      "bytes": 213
+    },
+    {
+      "path": "backend/config/poolOptions.js",
+      "sha256": "de3a0b475ceef813d91ca576200d11f1d00ed2e78a7fea65dfc5bae58e98e129",
+      "bytes": 1404
+    },
+    {
+      "path": "backend/config/env.js",
+      "sha256": "ff01dc9a6be5f98637df989bc10ea9a7aefc0c435e9437bce4d672258d19d83e",
+      "bytes": 3073
+    },
+    {
+      "path": "backend/config/database.js",
+      "sha256": "c397f04d6975bca8ea0f43a7b7815d93c70313542c7e5983aa09ae09ab31ff35",
+      "bytes": 442
+    },
+    {
+      "path": "backend/middleware/validationSchemas.js",
+      "sha256": "c0796baa14e330ff9e5d19e94fe3e9e7667b019476942f6bcf82e7f575b9a459",
+      "bytes": 1689
+    },
+    {
+      "path": "backend/middleware/validate.js",
+      "sha256": "187a5ee84c6e246f39304310d976df0e89db225d43f7033da4a8e339dfdd22bd",
+      "bytes": 708
+    },
+    {
+      "path": "backend/middleware/README.md",
+      "sha256": "a13cd80b34dbccb0f270bc03cacc4c9ac1bee960455185305e5defec80c1dea7",
+      "bytes": 439
+    },
+    {
+      "path": "backend/middleware/production.js",
+      "sha256": "6c2070b6797737ed1e04a180f48d6d4d3164c3616a785d4780fb406bb5aaed72",
+      "bytes": 1160
+    },
+    {
+      "path": "backend/middleware/loadDestination.js",
+      "sha256": "806ba86d5b4af26ae27d190e8cd33a22033d5d05696e7da9da494edf0c3cfc71",
+      "bytes": 357
+    },
+    {
+      "path": "backend/middleware/errorHandler.js",
+      "sha256": "7837c7474f5780763322ca55111258c354d09fc27f59fa4bc89a660ed798d402",
+      "bytes": 2211
+    },
+    {
+      "path": "backend/middleware/auth.js",
+      "sha256": "3e4559d50cad39d751752d949f3a4b38ce8d0dad893e537bbde606524f673dd6",
+      "bytes": 1732
+    },
+    {
+      "path": "backend/middleware/adminSchemas.js",
+      "sha256": "f3bd8af815e372afb875941d3277b811934cbdb4d5f27c3c8f2681baf2898bea",
+      "bytes": 3485
+    },
+    {
+      "path": "backend/controllers/budgetController.js",
+      "sha256": "3a009a42a912495836d1d2ffc97c4e9d1a4e43ceddcbe47b01221006740f979f",
+      "bytes": 269
+    },
+    {
+      "path": "backend/controllers/authController.js",
+      "sha256": "82fbd3f31f5855d1019db55d6cfb73656f8d2347202deac6c6cc5de77496e17b",
+      "bytes": 1995
+    },
+    {
+      "path": "backend/controllers/attractionController.js",
+      "sha256": "85cc4fbb95baea123f4d98375b770a059f8c84e0ebf52cda5b792734a637956e",
+      "bytes": 240
+    },
+    {
+      "path": "backend/controllers/adminController.js",
+      "sha256": "fdd8e9be05bcf14593935a329876073fbb219b0a557d6d3c93efb7d7cd1bb10b",
+      "bytes": 1742
+    },
+    {
+      "path": "backend/controllers/tripController.js",
+      "sha256": "f82b231fc08c422a6aec38487eda031d14365322df415fdebffb82f0cc0f2108",
+      "bytes": 1970
+    },
+    {
+      "path": "backend/controllers/hotelController.js",
+      "sha256": "bf1e268b32f60c44189846f5cc31ee674d99673d8a247ddee5684099865abe23",
+      "bytes": 352
+    },
+    {
+      "path": "backend/controllers/restaurantController.js",
+      "sha256": "1c3178bb831903796d4f3c0b6e7d349c3be7eceb1e41d1e5e128e57423f15191",
+      "bytes": 240
+    },
+    {
+      "path": "backend/controllers/destinationController.js",
+      "sha256": "decee6a5c3a6e683ecb6f6a0317f89430dfaee0abeae5193378a964a5e14283a",
+      "bytes": 679
+    },
+    {
+      "path": "backend/controllers/README.md",
+      "sha256": "18372a45366e3d7771332afc28bc8513a0711afc0e894d7f6e4a6410dbe63db5",
+      "bytes": 715
+    },
+    {
+      "path": "backend/routes/tripRoutes.js",
+      "sha256": "5df95112964b9e46fca9a6fe158d0aba016ea922ce1e3f1353d44dda122484b3",
+      "bytes": 1718
+    },
+    {
+      "path": "backend/routes/restaurantRoutes.js",
+      "sha256": "9cc9c15dc8034f6bb6e67212bd1eccf3087f4d1ec349f589d34ae7ea7ff01f0b",
+      "bytes": 515
+    },
+    {
+      "path": "backend/routes/README.md",
+      "sha256": "39d0e432210182a4f2481587704379b74cf2f21461112e937b7b08d73b3ced5e",
+      "bytes": 455
+    },
+    {
+      "path": "backend/routes/hotelRoutes.js",
+      "sha256": "6307553db8754e44c75ff8a84c44b81f8bd642aff63b25741927844f0fcab82d",
+      "bytes": 490
+    },
+    {
+      "path": "backend/routes/destinationRoutes.js",
+      "sha256": "989dd0e4c9b7fc5e58936a4b4aac25ae0e3d8800b40b099d2529e334111f2305",
+      "bytes": 1158
+    },
+    {
+      "path": "backend/routes/budgetRoutes.js",
+      "sha256": "97469aeba252c1e03a2e08858955e2d981115590eb50a0600e3c35e3790572e6",
+      "bytes": 172
+    },
+    {
+      "path": "backend/routes/authRoutes.js",
+      "sha256": "b9aa73ef6f749d2eefcda81bd81f9605c5bb6f9ff2558e310d338e0fac581605",
+      "bytes": 636
+    },
+    {
+      "path": "backend/routes/attractionRoutes.js",
+      "sha256": "79a791b044a62abaff305b124267f101f741c0af13724a5391338314a8ec1946",
+      "bytes": 515
+    },
+    {
+      "path": "backend/routes/adminRoutes.js",
+      "sha256": "a6295751b617a20854030997363fd168adbd7c19c2844454064bb9ed9f228b4e",
+      "bytes": 1681
+    },
+    {
+      "path": "backend/tests/trips.test.js",
+      "sha256": "0ef2f483477c6bea6cb6ff0b284d85656278f3d53f20d4c94bc826f28cabe7a2",
+      "bytes": 4706
+    },
+    {
+      "path": "backend/tests/seed.test.js",
+      "sha256": "97064ed0e7f357299cfbf2351e77f673b3438768dd1e5edd5e1437f7ddb2f62e",
+      "bytes": 1774
+    },
+    {
+      "path": "backend/tests/scaffold.test.js",
+      "sha256": "661138ee6e8f2c7ec80ebec9118c141c48bfc545abd2fb895457991015dd6a0f",
+      "bytes": 4988
+    },
+    {
+      "path": "backend/tests/production.test.js",
+      "sha256": "8f61238f2f31f5ad5e273c6545b6e4bf091f085804f71adbedb6432d3cb23010",
+      "bytes": 6554
+    },
+    {
+      "path": "backend/tests/destinations.test.js",
+      "sha256": "a1ad8832446459b4c08ca6ef15724d655201ea4a89f6f824861cb42bd9b45a94",
+      "bytes": 5006
+    },
+    {
+      "path": "backend/tests/admin.test.js",
+      "sha256": "aea77ba52d9aaf81711f017db3005a18b83b89526899841f13be4c893ceb7677",
+      "bytes": 1186
+    },
+    {
+      "path": "backend/scripts/migrate-trips.js",
+      "sha256": "75bf75241417fae8c2d77d8226318586740ec461a9239d0d388e4f3499395ed0",
+      "bytes": 294
+    },
+    {
+      "path": "backend/scripts/database.js",
+      "sha256": "471ba5c39bcae7d83e2c3cf424d1b01032899b33275c7f8fda81f62c93813b0d",
+      "bytes": 612
+    },
+    {
+      "path": "backend/scripts/data-freshness.js",
+      "sha256": "e0adc5a4e1ad20d0d18ddca54c5fb4cac0fc5995e1c1b83f9307e24b0cd53a09",
+      "bytes": 1661
+    },
+    {
+      "path": "backend/scripts/csvSource.js",
+      "sha256": "8a6d26660675fd55ce5236582e1ee4869e34a3a30f592016605259be2f0ad6a9",
+      "bytes": 5839
+    },
+    {
+      "path": "backend/scripts/check-syntax.js",
+      "sha256": "eaf3cb367e5c082132fbb8b32cab964db398f93ba76723e6f6b1085a648f8f42",
+      "bytes": 630
+    },
+    {
+      "path": "backend/scripts/capture-raw-evidence.js",
+      "sha256": "023e583b60c218f1c1bc6d4c7ba119e6484348ddd1a6a110a984862232cac358",
+      "bytes": 7244
+    },
+    {
+      "path": "backend/scripts/bootstrap-local.js",
+      "sha256": "b3ed33fc18195967e4ef09a409b218fc59b77e718a679e1a83787c41196f3737",
+      "bytes": 1118
+    },
+    {
+      "path": "backend/scripts/backup.js",
+      "sha256": "6020424b27400114ce26a69011150351349ab437a23c3ae88f6593887c915018",
+      "bytes": 3330
+    },
+    {
+      "path": "backend/scripts/audit-seed.js",
+      "sha256": "e4a0985c0e2393082eedb0fa574e0634dc717d4a1eb4e45df282f5828b421bbd",
+      "bytes": 2811
+    },
+    {
+      "path": "backend/scripts/audit-research.js",
+      "sha256": "d23ace9bb51f6e9286dfca90c1058fd7d4a631b88a2704614457cfddc539c4d9",
+      "bytes": 4052
+    },
+    {
+      "path": "backend/scripts/audit-final-data.js",
+      "sha256": "98b5eaaaf69536fae5591ab44effc27697f4d77fbdfa0041f522d40ab3c3532a",
+      "bytes": 1488
+    },
+    {
+      "path": "backend/scripts/audit-data-completion.js",
+      "sha256": "9f87bdb914005d315f3abce6e2c2a3f6e944d5841f63b1485cd7c8af775c8af3",
+      "bytes": 6354
+    },
+    {
+      "path": "backend/scripts/audit-completion-integrity.js",
+      "sha256": "e048910790f6d6440793529459841cec606a3f410a11bbdf3c7e4a04847fa835",
+      "bytes": 4570
+    },
+    {
+      "path": "backend/scripts/apply-schema.js",
+      "sha256": "06d3713b0107ae40eeb8585097d3e9faf6546847a1ddd1cde43ee8748ea6e7d7",
+      "bytes": 515
+    },
+    {
+      "path": "backend/scripts/adopt-seed.js",
+      "sha256": "e3de60674741cf8dd7e7358dbeb8ec6aeff7e67b0cf8ea6099e3ba158392ecc3",
+      "bytes": 1095
+    },
+    {
+      "path": "backend/scripts/research-maps.py",
+      "sha256": "47e642bffce32aa1de5ab8bc0b19efb7b5f19b93af2d68292d90a64fd601a5f9",
+      "bytes": 1210
+    },
+    {
+      "path": "backend/scripts/research-map-browser.py",
+      "sha256": "7871d6b474efb0471e73e5bcabe5974eb67cd560bec9e0c21e5ee69d637e0b9c",
+      "bytes": 816
+    },
+    {
+      "path": "backend/scripts/research-completion-categories.js",
+      "sha256": "ef8cb2500b0afdf1a1baaa420ec897a88d87771d2f97f8a274492c11037d0a62",
+      "bytes": 2190
+    },
+    {
+      "path": "backend/scripts/reproduce-rating-order.js",
+      "sha256": "6f9c3f02a00357c4add7c01903dd471a83fbebd12f5332dd1827fac7fb1ae66f",
+      "bytes": 642
+    },
+    {
+      "path": "backend/scripts/reproduce-currency-boundary.js",
+      "sha256": "d2b07e2822b17f0e58c2d5eb09487c2a1ccc60724de0645b202d1e31cfa5d671",
+      "bytes": 1657
+    },
+    {
+      "path": "backend/scripts/report-research-provenance.js",
+      "sha256": "6c73b9ab395ac27983694d64bd396f8f0c89e8c71194cb94f57c42fea583f545",
+      "bytes": 3855
+    },
+    {
+      "path": "backend/scripts/provision-operator.js",
+      "sha256": "d09e72884fdbb4028b2167cb76fcde96400d5c1f50ad4f84e1587761809697da",
+      "bytes": 566
+    },
+    {
+      "path": "backend/scripts/migrate.js",
+      "sha256": "f0269aa290ff851994318bcb2440bfa089a350b8dfa8fe249407f4352eb5cdf4",
+      "bytes": 2831
+    },
+    {
+      "path": "backend/scripts/seed-approvals.json",
+      "sha256": "b12f3b90a58ab9fe7676f04ca3d51c7573d0563fcbf94afb9b3864bfb2716262",
+      "bytes": 741
+    },
+    {
+      "path": "backend/scripts/research-toran.py",
+      "sha256": "bdf5bc3daa71b2c98aa9488bd05bf20c08035e932167845fee29668482e354f6",
+      "bytes": 623
+    },
+    {
+      "path": "backend/scripts/research-routes.py",
+      "sha256": "e3fdd4e9cd9224c8f5ca1f12303fbb7f2ff017d6638f05b3734b671fc6bd41da",
+      "bytes": 1675
+    },
+    {
+      "path": "backend/scripts/research-page.py",
+      "sha256": "ffe964d37671b5f18b3411d595e1b1712783cfaa7a03e280c60de4e5ac9150a7",
+      "bytes": 974
+    },
+    {
+      "path": "backend/scripts/seed.js",
+      "sha256": "38d16afa33efb819ed226e2b463052245038a5447870bc85b3a7bb640dac6b5e",
+      "bytes": 9633
+    },
+    {
+      "path": "backend/scripts/seed-research.js",
+      "sha256": "35c71a880bf49216f4aaa2a9686130ebf5b65c9e0bbb8a5bd165cf533c8e62b0",
+      "bytes": 5650
+    },
+    {
+      "path": "backend/scripts/seed-research-routes.js",
+      "sha256": "7c7cfadb74a451fbd80bbbbb718467b6763dcdbb99ec7a38ec4df78f1d63ce5f",
+      "bytes": 5811
+    },
+    {
+      "path": "backend/scripts/seedOwnership.js",
+      "sha256": "0d89cde84f06c79b3328f89276626470d5f4097b43d9f867f0c9294c66f0a54c",
+      "bytes": 2704
+    },
+    {
+      "path": "backend/scripts/write-completion-verification.js",
+      "sha256": "e62ca135dce63259aab8da6eb8d23a48a26dab668abd25e8235e97f89de03364",
+      "bytes": 39901
+    },
+    {
+      "path": "backend/scripts/verify-seed.js",
+      "sha256": "3ff46a97c2290da7c775e9d2e409e9f59d453d1a8b58a1b13356b545c6799e74",
+      "bytes": 652
+    },
+    {
+      "path": "backend/scripts/test-trips-http.js",
+      "sha256": "e7ad849da7bac55e1565220a2d17df0165dea70bdf4c5d6ba28abf2ffafba4a9",
+      "bytes": 12810
+    },
+    {
+      "path": "backend/scripts/test-researched-city.js",
+      "sha256": "1560dea60daa90ca1c143e409ee96f96f5192c4380f5c4fba62bbd861f921e59",
+      "bytes": 2812
+    },
+    {
+      "path": "backend/scripts/test-research-preservation.js",
+      "sha256": "d3ea21abf56111a45800c9c7cdd3a9c97f91599d486f5c6baa2b3c3390149364",
+      "bytes": 1640
+    },
+    {
+      "path": "backend/scripts/test-research-browser.js",
+      "sha256": "8cfe07931d2e662b2674a2ed4287ee834942e59723ba69b173bdd6ff55232d8d",
+      "bytes": 1002
+    },
+    {
+      "path": "backend/scripts/test-frontend-browser.js",
+      "sha256": "03ae9fc8a5dcd962e6494d9dd84e239af2f89dbeb1f8a581f991391b07a3fc5a",
+      "bytes": 2129
+    },
+    {
+      "path": "backend/scripts/test-destinations-http.js",
+      "sha256": "8e88263f644b7cbcfdc769e7ec5e03688ec76bc91ca5d29141024eef3f76bb5f",
+      "bytes": 8158
+    },
+    {
+      "path": "backend/scripts/test-db-constraints.js",
+      "sha256": "b7056b74603024d95e0080e26ed9ce1c27f00632e5687dd66b6099d60bd6f142",
+      "bytes": 1809
+    },
+    {
+      "path": "backend/scripts/test-clean-startup.js",
+      "sha256": "1d285849c2810a643ffb155f5ac2048c648cdcebbf424dc33610ec0c4fc7eb60",
+      "bytes": 2169
+    },
+    {
+      "path": "backend/scripts/test-auth-http.js",
+      "sha256": "1b18641c973c05e2b8a616eeec0f606d40dc949f07c7a37af2af26d48a92e636",
+      "bytes": 7929
+    },
+    {
+      "path": "backend/scripts/test-admin-http.js",
+      "sha256": "93a4c73552b248ed3109475b6e9e00d601fbe319f5272ddbc8668122a76c88ee",
+      "bytes": 10470
+    },
+    {
+      "path": "backend/scripts/sql/table-counts.sql",
+      "sha256": "bf83543ecbfa96f626b952f47a052604da29121e190865d5f0e3b95953326924",
+      "bytes": 755
+    },
+    {
+      "path": "backend/scripts/sql/route-missing-sources.sql",
+      "sha256": "ce959a9f642d790ead177077be88f77fbf5298bcd84b7c7ab9e0e27bb883beab",
+      "bytes": 620
+    },
+    {
+      "path": "backend/scripts/sql/route-joins.sql",
+      "sha256": "0e1061fc3f67d2b6ef33ebb6dc4060a7d77faeed8b84d69ceab057f1cc1bbd12",
+      "bytes": 1100
+    },
+    {
+      "path": "frontend/metadata.json",
+      "sha256": "7480a93becfd9fbb084c55ef7e701a18f573eaf1cd09af4397b46438ae8c5c7a",
+      "bytes": 307
+    },
+    {
+      "path": "frontend/index.html",
+      "sha256": "2e1079c4641a8ec9eb83aa48f4b9f6421721d9ea212334c4f8886d3d434c8e1d",
+      "bytes": 2601
+    },
+    {
+      "path": "frontend/Dockerfile",
+      "sha256": "615a02b5e8345a516b6de76e8b84d6cc7c51fd560d57d6442d858a7aebb67a55",
+      "bytes": 651
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "5dc87278a32fefc77e38686ef55e22ad59ad98ab7e8cbdf93d1855aed6c3689b",
+      "bytes": 1274
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "bae67a6fede2ca326bd88f7e011c022601dfbe44fe0f47642e2a3d5004becc1d",
+      "bytes": 112075
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "sha256": "ee4a30cf055952534297b90b228b5115d32f8b68c74241ab8c17dacd10006c4f",
+      "bytes": 1695
+    },
+    {
+      "path": "frontend/vercel.json",
+      "sha256": "c85f30a05020d207d1d632151b1958bc59a5c3b0aebceaa8bcd6ea316b435b6d",
+      "bytes": 80
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "sha256": "7cfd1033fa3dcd524b3285dffa6bd19a84426260dfb8f0285841ebe8411940da",
+      "bytes": 554
+    },
+    {
+      "path": "frontend/nginx.conf",
+      "sha256": "ba7d8ef0d1cf0194dfe604f6375b203a8749330655c2ab5e5b9b9f9165f849ce",
+      "bytes": 2139
+    },
+    {
+      "path": "frontend/README.md",
+      "sha256": "e98105faf9f13e1f824c7854e931781a722e31f132b76fc242028d4ede4a3015",
+      "bytes": 6288
+    },
+    {
+      "path": "frontend/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "bytes": 38
+    },
+    {
+      "path": "frontend/bun.lock",
+      "sha256": "1ab3bd30d8fa49d9f554377d98aa1e0d59b4bfdfbc9c9ba52e95bea7109b4930",
+      "bytes": 88268
+    },
+    {
+      "path": "frontend/.gitignore",
+      "sha256": "db691f14fcf678985362a42c6aedb581e42cd6bb99962ce1b44aea460fb2a4df",
+      "bytes": 73
+    },
+    {
+      "path": "frontend/.env.example",
+      "sha256": "80fe8d7cd6518c66f8660ceaf2ba3ec09e420fd8652177aa38238480082de48c",
+      "bytes": 369
+    },
+    {
+      "path": "frontend/src/api/types.ts",
+      "sha256": "42dc618dbe2750f8b11cfc37ff947bef94caeb9ff1f056d73fceb664b367bc1f",
+      "bytes": 3047
+    },
+    {
+      "path": "frontend/src/api/index.ts",
+      "sha256": "611081f3fba265f9695bef77ff1f05d6ac0509f68d6d7fd6ec1b5ae17a9b3518",
+      "bytes": 21411
+    },
+    {
+      "path": "frontend/src/index.css",
+      "sha256": "68ba701ca8aecd962ad7957c4eb5e420c08fe32e736f0613aa0f7aef03b47647",
+      "bytes": 6428
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "sha256": "73d5208b29546aec722253614ef8634cc54ee008037daedc42d66fa59f76476e",
+      "bytes": 338
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "sha256": "a112f27b9a2cbd7a0db5d1e5148310c688bb146f0b3e26a89464b124b78c8509",
+      "bytes": 32906
+    },
+    {
+      "path": "frontend/src/context/ThemeContext.tsx",
+      "sha256": "1dbab6a3678ed3a8f792b2cdf02d8f548b44b34efa2779105f0588ba879256ef",
+      "bytes": 1404
+    },
+    {
+      "path": "frontend/src/context/LanguageContext.tsx",
+      "sha256": "91f9936fe64c8ebde7b052c62d242e171deeaa2eba9cb946e854926882b46304",
+      "bytes": 3493
+    },
+    {
+      "path": "frontend/src/components/AdminDashboardView.tsx",
+      "sha256": "66eaf1190e89a093f873acfa8460119dae37dd203f03e3c62fc62bead1f1d49e",
+      "bytes": 34119
+    },
+    {
+      "path": "frontend/src/components/AccessibilityBadge.tsx",
+      "sha256": "928e4b3577785e55a0890b13192f338790d5fec0e5900b58db5dac5faaa37895",
+      "bytes": 2878
+    },
+    {
+      "path": "frontend/src/components/BestTimeNote.tsx",
+      "sha256": "c6f4a6f1b6c2fb6bc0587d17e98cb2d236431e75105fe484b1d7aa9c76013b33",
+      "bytes": 1022
+    },
+    {
+      "path": "frontend/src/components/AuthView.tsx",
+      "sha256": "15e8526ea741901dbc6f7895949dfe0c8095473562fd249a57af056de22a3e66",
+      "bytes": 27795
+    },
+    {
+      "path": "frontend/src/components/AlgorithmStatsPanel.tsx",
+      "sha256": "9827f681154828515b27a379f59b252237b65dd9079826da4e4a4808529ff896",
+      "bytes": 6723
+    },
+    {
+      "path": "frontend/src/components/ChevronDivider.tsx",
+      "sha256": "2ac303de0abf196389a41e524b5296f7cbcd2d4e93da14f2be7560a79b5a18bb",
+      "bytes": 837
+    },
+    {
+      "path": "frontend/src/components/BudgetPlannerView.tsx",
+      "sha256": "4087a675dd45298f6acc68fed80a06539a40a2536bdd71deea2473c460af3cd1",
+      "bytes": 25288
+    },
+    {
+      "path": "frontend/src/components/DestinationDetailView.tsx",
+      "sha256": "35bed600e23444b4d5a048074389976b666d2a03940fc8bc21c1b331269315f9",
+      "bytes": 37306
+    },
+    {
+      "path": "frontend/src/components/WhatIfPanel.tsx",
+      "sha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",
+      "bytes": 9349
+    },
+    {
+      "path": "frontend/src/components/ValueProps.tsx",
+      "sha256": "7f18e024745b5cd16686d6a2f15800f32bd7407e9214062d6c3faaceaa1a748d",
+      "bytes": 6468
+    },
+    {
+      "path": "frontend/src/components/StrategyComparisonModal.tsx",
+      "sha256": "7e0b07f5b811fbe357c7cd18e15c17d6dcbac45af315d70909eb513c82edf5a0",
+      "bytes": 22868
+    },
+    {
+      "path": "frontend/src/components/ShareItineraryModal.tsx",
+      "sha256": "cf92e783ee19d73985c72a67cf79993b0ce3ebd99e12fb0f547899109e09a42c",
+      "bytes": 6429
+    },
+    {
+      "path": "frontend/src/components/ResearchView.tsx",
+      "sha256": "72d4477b63940841298ad15135999b41cc64f414a4ddcecc77552673a335632e",
+      "bytes": 9971
+    },
+    {
+      "path": "frontend/src/components/PwaInstallPrompt.tsx",
+      "sha256": "1c1b9e8a4b6578d7aab412a53512f5a7d8f7dabafbd79e8e8daa3973eefb1b61",
+      "bytes": 3808
+    },
+    {
+      "path": "frontend/src/components/ProfileDashboardView.tsx",
+      "sha256": "98778d02a44acc37503e9ec23625947ee32b7bcba7e31fadf4185b1a4305dbfd",
+      "bytes": 20435
+    },
+    {
+      "path": "frontend/src/components/PlannerModal.tsx",
+      "sha256": "8f4ab3c96855665ffbdfd075b5f5a651353f095e47cfd8649cfc32ba7dd2ac0f",
+      "bytes": 35445
+    },
+    {
+      "path": "frontend/src/components/OfflineRouteMap.tsx",
+      "sha256": "4a8d64d0026082eafc77c9461f150b98646becf82deb3b0a6e05a2ef4da3e2ff",
+      "bytes": 10150
+    },
+    {
+      "path": "frontend/src/components/OfflineBanner.tsx",
+      "sha256": "07cda8a92096ab643d978d0cac8f52de3c2275393c980e11b2c43a0e114a248d",
+      "bytes": 1309
+    },
+    {
+      "path": "frontend/src/components/NotFoundView.tsx",
+      "sha256": "dab854afce23eaaa17d15192aa1b054993dfc858e268105820eb075f7e17447a",
+      "bytes": 4265
+    },
+    {
+      "path": "frontend/src/components/Navbar.tsx",
+      "sha256": "fdaf8c6318acc0759f790f03e365ac3f369df8dcde1028381a422f913cd7c809",
+      "bytes": 12119
+    },
+    {
+      "path": "frontend/src/components/ItineraryView.tsx",
+      "sha256": "372e3ffdf792ab57817a3734a8496ad978efb1280eb8172c4f91a84aff9fbaf7",
+      "bytes": 44171
+    },
+    {
+      "path": "frontend/src/components/InvalidSharedLinkView.tsx",
+      "sha256": "6b82cd4b5a1c7e4e80c97447879d26966c0952b229611cbc2c7716617b48f472",
+      "bytes": 4122
+    },
+    {
+      "path": "frontend/src/components/ImageWithFallback.tsx",
+      "sha256": "c71015edfcee4f3afb098dd581fcb5807dff4203163b6f3fe028bd9767915a9c",
+      "bytes": 3535
+    },
+    {
+      "path": "frontend/src/components/HotelsView.tsx",
+      "sha256": "5dc849a7d6a876a2374e470291123be648adf212b1b7bcf2d7c58d48975ee9d1",
+      "bytes": 16435
+    },
+    {
+      "path": "frontend/src/components/HomeTransitionOverlay.tsx",
+      "sha256": "a6ea91e1049171d049e1d18bd8ed227d5d09c74d1540b86edab04141dc99a527",
+      "bytes": 3442
+    },
+    {
+      "path": "frontend/src/components/Hero.tsx",
+      "sha256": "caacd85f6ee9308d15dc12252957f59874ef907cc057c52763b6200e5639457c",
+      "bytes": 14802
+    },
+    {
+      "path": "frontend/src/components/Footer.tsx",
+      "sha256": "9165b57d4b843fdc074b90ee929c14a1f7fcd046ce002ad069d58574297cafc9",
+      "bytes": 7465
+    },
+    {
+      "path": "frontend/src/components/FeaturedDestinations.tsx",
+      "sha256": "0461b16f0acbb346db2daf35f15b083a70114c433c3222c43922889d9a46d13e",
+      "bytes": 7227
+    },
+    {
+      "path": "frontend/src/components/ExploreView.tsx",
+      "sha256": "9ddb84147164fa892f252611079de75dc02f44eaeae5216d3c64281c628477d6",
+      "bytes": 27495
+    },
+    {
+      "path": "frontend/src/components/DijkstraVisualizer.tsx",
+      "sha256": "d0760f628a4fd37b508b233b7f7d3e1dfdd6c995b89eb8f0bac2c7b2b3448980",
+      "bytes": 26678
+    },
+    {
+      "path": "frontend/src/data/translations.ts",
+      "sha256": "be4b39f6f8fd4cb2357fb57b403d64f53f08b259e8dad0347db59bd4085f5eff",
+      "bytes": 16428
+    },
+    {
+      "path": "frontend/src/data/routesCsv.ts",
+      "sha256": "9a4bfd58f8ae5eff18c442b6f7552e57e40d6de6a29f49cbca6c8e079837c454",
+      "bytes": 5029
+    },
+    {
+      "path": "frontend/src/data/destinations.ts",
+      "sha256": "4e31c53ab59939b8eb1911df8924e2ff05e4913db55662fd7c33642039322b0e",
+      "bytes": 116445
+    },
+    {
+      "path": "frontend/src/data/colors.ts",
+      "sha256": "b83255a3a80dcbe81fed5ba9602fe3f902d4a5322695cd72e92a70ff7735ea02",
+      "bytes": 1241
+    },
+    {
+      "path": "frontend/public/icon-192.png",
+      "sha256": "7c6652e0cbcb28f1a15aca24f6f0c39d5116a9304a411425a2d77a33c2d560f5",
+      "bytes": 8097
+    },
+    {
+      "path": "frontend/public/favicon.ico",
+      "sha256": "cc1970b63f7589b4fa35b76d61b045c324bd09f7406fe8e8c5eacead55d90e89",
+      "bytes": 4563
+    },
+    {
+      "path": "frontend/public/favicon-32x32.png",
+      "sha256": "5a17d95f9421d0be778db850dede17d61a16500a81400b96d469cc7a2f0ceb4d",
+      "bytes": 1417
+    },
+    {
+      "path": "frontend/public/sw.js",
+      "sha256": "796d31d9487b5298c6ba69cc742ca988ec8c1bd9644f95796e34e0089660d3e9",
+      "bytes": 3261
+    },
+    {
+      "path": "frontend/public/manifest.json",
+      "sha256": "0290110ac81efd8a3d400bb5ac63826b7169bafc714ce019b2559965974a3b3e",
+      "bytes": 760
+    },
+    {
+      "path": "frontend/public/image-credits.html",
+      "sha256": "91b1eb7ea796c864290bf821b1c31c54c655738432133de0ace4f0e4726fe1a9",
+      "bytes": 13027
+    },
+    {
+      "path": "frontend/public/icon.svg",
+      "sha256": "0980392d611dd88c54c53f78089bcbcb605d075a3142a39cb5d536ae08183cbd",
+      "bytes": 708
+    },
+    {
+      "path": "frontend/public/icon-512.png",
+      "sha256": "674a3c778a08bdaaa0d3e0b7c82bccb13655df798ce948fdcbdf366d11a68723",
+      "bytes": 20865
+    },
+    {
+      "path": "frontend/public/apple-touch-icon.png",
+      "sha256": "db5320bb32b09e6683e4bcff9859219a97ef077ea8ab87c23299b00252d305bf",
+      "bytes": 8233
+    },
+    {
+      "path": "frontend/scripts/translate-content.ts",
+      "sha256": "673782d781f6a4b63555c63e46b98ee489efe42f68d7b7a686cfbd309417cfef",
+      "bytes": 15370
+    },
+    {
+      "path": "frontend/scripts/generate-routes.ts",
+      "sha256": "16be7a46d53f0cbb591353b6838341bf9c88cda9bc54a52d7e2b845f3ec16f5a",
+      "bytes": 9144
+    },
+    {
+      "path": "frontend/scripts/run-experiments.ts",
+      "sha256": "27c47b4582acd246884559dc2372ce6b3f29794fd47eba959eddef7b0bc25f81",
+      "bytes": 9703
+    },
+    {
+      "path": "frontend/scripts/reproduce-visualizer.ts",
+      "sha256": "3b82b0f73fe79225498d57d6588039e6e4d114b2455c048540eb5028c8946e2a",
+      "bytes": 817
+    },
+    {
+      "path": "frontend/scripts/image-component-harness.tsx",
+      "sha256": "eed858066aa2eeb4132e0a6dae96cc3a24649d9fecd84e8f936dc94e9870d8ea",
+      "bytes": 649
+    },
+    {
+      "path": "frontend/src/utils/shareUrl.ts",
+      "sha256": "65c6b3fb47f5ea0f8af1c9d5ed7539b0a98949176e701a7b18ba9f9c3a721c01",
+      "bytes": 4690
+    },
+    {
+      "path": "frontend/src/utils/router.ts",
+      "sha256": "dfd5154f12d673c93c2fd574f0e190768f2031b6f9957d1ce46e1b2e5044fb86",
+      "bytes": 5553
+    },
+    {
+      "path": "frontend/src/utils/offlineStorage.ts",
+      "sha256": "6a1c4bbcb22d6d6d51b9d5e30272a36e14b8329be51a3d1af8e5d3e9a75bb66c",
+      "bytes": 3530
+    },
+    {
+      "path": "frontend/src/utils/itineraryPlanner.ts",
+      "sha256": "23ea6c24f45d9489a3ca07080d2efd8d1a0c88eb3e1f1724842b2fe3dda3363d",
+      "bytes": 44590
+    },
+    {
+      "path": "frontend/src/utils/imageSources.ts",
+      "sha256": "baa164e15b510730c3c9edece7d31f00124834f646123cdf301cca5e16285a87",
+      "bytes": 2970
+    },
+    {
+      "path": "frontend/src/utils/destinationTrie.ts",
+      "sha256": "3139611bf1b2a145459dbf61da832cea16516c236e451a18dcc3e5e6c5df5c9d",
+      "bytes": 4969
+    },
+    {
+      "path": "frontend/src/utils/bestTimeChecker.ts",
+      "sha256": "cd20317f3186e2cdce7e7ace2bf07d364f26380801bb30a59be62fb741d64b5a",
+      "bytes": 3508
+    },
+    {
+      "path": "frontend/public/assets/photographs/vishalla-thali.webp",
+      "sha256": "648cb46982a7591ab0fd6b386413417121aa7c0a785257250a20e03b08adb7ee",
+      "bytes": 192280
+    },
+    {
+      "path": "frontend/public/assets/photographs/somnath-temple.webp",
+      "sha256": "143b9773c52fa1161d8b4ab18285ea4855054e4344d559606c7ab36e19f579e2",
+      "bytes": 149512
+    },
+    {
+      "path": "frontend/public/assets/photographs/somnath-beach.webp",
+      "sha256": "b90636ec30dc22cc2358ada6f516123520b464a3b48226428bb382f1861fbd68",
+      "bytes": 92054
+    },
+    {
+      "path": "frontend/public/assets/photographs/sidi-saiyyed-mosque.webp",
+      "sha256": "769dfb01f033eb06f95a07fecb313b0f98d8ebe00c526eb8069418dc36414d2b",
+      "bytes": 272666
+    },
+    {
+      "path": "frontend/public/assets/photographs/sarkhej-roza.webp",
+      "sha256": "a571e2b61e75e6b46c574437e48571fad2d348e728363ca7357a9abaf9e23a3e",
+      "bytes": 220664
+    },
+    {
+      "path": "frontend/public/assets/photographs/saputara-sunset-point.webp",
+      "sha256": "74346f421bdfaaafd884fdecef4e06cc62fde0d9734f7f7adaf11b13474e32e1",
+      "bytes": 77636
+    },
+    {
+      "path": "frontend/public/assets/photographs/saputara-lake.webp",
+      "sha256": "9534250be1e4eedd0dfdb6c86df932ec7ab625d7a6aaaf4a5915140321e31557",
+      "bytes": 85934
+    },
+    {
+      "path": "frontend/public/assets/photographs/sabarmati-ashram.webp",
+      "sha256": "66d52018de31442379279e8a4f3c05320b04f1aeb738f550a01db27fe244c1f0",
+      "bytes": 254550
+    },
+    {
+      "path": "frontend/public/assets/photographs/rukmini-temple.webp",
+      "sha256": "b9d3c22702989d2ce283e662bff81a769009c0991e6a26fa0be3ee02f25e4c8b",
+      "bytes": 69180
+    },
+    {
+      "path": "frontend/public/assets/photographs/rann-of-kutch.webp",
+      "sha256": "967a8cc673b6b94a269d3e057462ceee1ea9efad98dd983a7a8f726ff1f7468a",
+      "bytes": 100164
+    },
+    {
+      "path": "frontend/public/assets/photographs/nageshwar-temple.webp",
+      "sha256": "5e2bf9a6327731570cc6b315558ff9b6224057ec5f474f43f25333fb27291476",
+      "bytes": 129068
+    },
+    {
+      "path": "frontend/public/assets/photographs/modheshwari-temple.webp",
+      "sha256": "802f4def2ee74057f51822582b684c13dbb7f98298e15f8cd62531a92faccdee",
+      "bytes": 116234
+    },
+    {
+      "path": "frontend/public/assets/photographs/modhera-sun-temple.webp",
+      "sha256": "37a52093da32a593d476e25e90bc54ffcd044a6da53a755b0f5420412b5efd9d",
+      "bytes": 231948
+    },
+    {
+      "path": "frontend/public/assets/photographs/manifest.json",
+      "sha256": "344822f50367180f4983fad81321ed80effe11938fba4bbc35221a8390cac2a2",
+      "bytes": 31533
+    },
+    {
+      "path": "frontend/public/assets/photographs/kevada-masjid.webp",
+      "sha256": "a0f04d86aedb291d78a8b9db3eef451f81cd9a96786f060d94ed0d19601878b7",
+      "bytes": 136848
+    },
+    {
+      "path": "frontend/public/assets/photographs/kankaria-lake.webp",
+      "sha256": "ffb780ce2938e2647fa20aa4812d848b80613385b288753a4fc25c41a41668a9",
+      "bytes": 106192
+    },
+    {
+      "path": "frontend/public/assets/photographs/kalo-dungar.webp",
+      "sha256": "07550ec5cb249178a262f9b6a98af63439b8abed933c014ef98d6d9305a632c4",
+      "bytes": 106372
+    },
+    {
+      "path": "frontend/public/assets/photographs/gir-national-park.webp",
+      "sha256": "339990a82561c8cbc9d7d1fb6531639d591e248e098e2c2701a4f49c03845c79",
+      "bytes": 114214
+    },
+    {
+      "path": "frontend/public/assets/photographs/french-haveli-ahmedabad.webp",
+      "sha256": "25119f9dce157ef19e2b24ab16dd7421c02dd3b8e05a9f7ebf761511836dcad1",
+      "bytes": 174958
+    },
+    {
+      "path": "frontend/public/assets/photographs/dwarka-dwarkadhish-temple.webp",
+      "sha256": "d47dd91b25e49add768dcabd9472c4c61a30669286ec8beb261da98a65c6012f",
+      "bytes": 136674
+    },
+    {
+      "path": "frontend/public/assets/photographs/devalia-lions.webp",
+      "sha256": "cd933315706be1e142d5612863504382b9ca854e6b3a0675e1e3a4a67966ff17",
+      "bytes": 338616
+    },
+    {
+      "path": "frontend/public/assets/photographs/chandravilas-ahmedabad.webp",
+      "sha256": "8f74ca4fde50e76b32c54c3a07ac674eb820494a18fc93abb26fdb2f1e5d8efa",
+      "bytes": 171854
+    },
+    {
+      "path": "frontend/public/assets/photographs/champaner-jami-masjid.webp",
+      "sha256": "7dfa7e7733bbea6357eeb5e9dc452fef06cea07abba578ecd2164a2060dac768",
+      "bytes": 181632
+    },
+    {
+      "path": "frontend/public/assets/photographs/champaner-heritage-resort.webp",
+      "sha256": "b1ca36edbeb46f0167b75c7a4bf35c33d7f746397f71a808679a033130b9f9b3",
+      "bytes": 129944
+    },
+    {
+      "path": "frontend/public/assets/photographs/bhalka-tirth.webp",
+      "sha256": "e3054117d07d701bdf3cf809e09001b4e33dc0ef24b8b8d87872a1331b293568",
+      "bytes": 205054
+    },
+    {
+      "path": "frontend/public/assets/photographs/bet-dwarka.webp",
+      "sha256": "e61ab8c65bb1ee2dcdf99a237600b7abb8158cdc3d9a5aa0350cdf53c4972f84",
+      "bytes": 74210
+    },
+    {
+      "path": "frontend/public/assets/photographs/ahmedabad-riverfront.webp",
+      "sha256": "011a77c99d0ed1668ee2c0412e6f2020cb21fdfb3753631860ce042dfb2cacd0",
+      "bytes": 90450
+    },
+    {
+      "path": "frontend/public/assets/photographs/adalaj-stepwell.webp",
+      "sha256": "c6c9e1957385af62b066134db8c56c2144ade7c6556700ea8a67185f3173a889",
+      "bytes": 332070
+    },
+    {
+      "path": "frontend/public/assets/categories/wildlife.svg",
+      "sha256": "dc852f3d4f0f513ad257de98f9f9779314c4a1b1b97e7f84ffb2ebae953a963f",
+      "bytes": 1238
+    },
+    {
+      "path": "frontend/public/assets/categories/temple.svg",
+      "sha256": "099643476a353cf3872debf606059d71068db37c8ac31fea1ce24112661ef99a",
+      "bytes": 1353
+    },
+    {
+      "path": "frontend/public/assets/categories/stepwell.svg",
+      "sha256": "296c9bb0ae9efcab07c749bb099a9a60e25516cfcbd9a92b4113a2863eba9b10",
+      "bytes": 1418
+    },
+    {
+      "path": "frontend/public/assets/categories/monument.svg",
+      "sha256": "e2baffb6c5f8503190ca88da110fd0a6a77fa9ff891bd0f1508e77208698b321",
+      "bytes": 1124
+    },
+    {
+      "path": "frontend/public/assets/categories/hotel.svg",
+      "sha256": "9f2d8ac2bd4f58c07541d6beb86ee734c0ea6a15c078fd73bd73656be553e220",
+      "bytes": 1245
+    },
+    {
+      "path": "frontend/public/assets/categories/dining.svg",
+      "sha256": "0f685b6ebc842052f37092e784754863f96d3010587b1afcfebb5ac110078b25",
+      "bytes": 1482
+    },
+    {
+      "path": "frontend/public/assets/hotels/rann-riders.svg",
+      "sha256": "169dcd8d0934c0e3ebb0ecc5f4f91ddc77bd038902cfc4e30641fced63f8f816",
+      "bytes": 2847
+    },
+    {
+      "path": "frontend/public/assets/destinations/somnath.svg",
+      "sha256": "ae91a7756b6078b174eb882d9af4cbf47befe60100bf5ffd694b55e40e0c92c6",
+      "bytes": 3271
+    },
+    {
+      "path": "frontend/public/assets/destinations/somnath.jpg",
+      "sha256": "92b9a3b0f5fd82d0db4d0b72542708b186b40a60e8f8f3441825da7af1fcf0f3",
+      "bytes": 466822
+    },
+    {
+      "path": "frontend/public/assets/destinations/saputara.jpg",
+      "sha256": "45535ef6549fcafcab8e2f712eaf4c18f43e9325bd4a9c7bd0dd2598676f65f6",
+      "bytes": 160222
+    },
+    {
+      "path": "frontend/public/assets/destinations/rann-of-kutch.svg",
+      "sha256": "1c7433271854f7ad5c99e7b5db14895dd3b581f1f3bd2974ec3f4cc99a9f0f03",
+      "bytes": 3916
+    },
+    {
+      "path": "frontend/public/assets/destinations/rann-of-kutch.jpg",
+      "sha256": "bdc526e520d345e09e2d93f8ddc586780115f0d9e1b6ece9b46723133d92ece2",
+      "bytes": 534206
+    },
+    {
+      "path": "frontend/public/assets/destinations/modhera.jpg",
+      "sha256": "f339c357244cdb090701aeace86c273d78d1d203b34a056b68d16a62fc32b37d",
+      "bytes": 667949
+    },
+    {
+      "path": "frontend/public/assets/destinations/gir.jpg",
+      "sha256": "49ef6654876485d2018d9fa56350718f97ad40fc359587082da4186d1ba37d5b",
+      "bytes": 128561
+    },
+    {
+      "path": "frontend/public/assets/destinations/dwarka.svg",
+      "sha256": "51fcd1432ab562f79b5b1cfddf199cd187d47672acedf14937238b668d60e232",
+      "bytes": 3126
+    },
+    {
+      "path": "frontend/public/assets/destinations/dwarka.jpg",
+      "sha256": "50730a9c7c02fb7d3105187255e42c7679f69862d7968d7ac9ae313808f92aed",
+      "bytes": 227411
+    },
+    {
+      "path": "frontend/public/assets/destinations/champaner.svg",
+      "sha256": "a7e9625c043327ede62fe0158144117a7e461d05faab2e03f237f81e766a420b",
+      "bytes": 2810
+    },
+    {
+      "path": "frontend/public/assets/destinations/champaner.jpg",
+      "sha256": "1f06ae01760bcf8d90120b79928a21bcea89e266dec17cdda83a1219361326f7",
+      "bytes": 429591
+    },
+    {
+      "path": "frontend/public/assets/destinations/ahmedabad.jpg",
+      "sha256": "9d7dd280646aa51f3a0f28388c8e1110c090d44dab271f5befaae87658abf02c",
+      "bytes": 219052
+    },
+    {
+      "path": "frontend/public/assets/attractions/adalaj-stepwell.jpg",
+      "sha256": "273805e322d5efe22d34cf81c979c010df528501db4455c4b20ae402af22c84d",
+      "bytes": 583940
+    },
+    {
+      "path": "frontend/public/assets/attractions/adalaj-stepwell.svg",
+      "sha256": "a8caed9afee55569729eaf41c396d7fbf6f1267d7237722e8f8edb88c37182d3",
+      "bytes": 4089
+    },
+    {
+      "path": "frontend/public/assets/attractions/sidi-saiyyed.jpg",
+      "sha256": "f7482c1d2a2cb36c4e38392575590438798010a1f4b829db94aead35666d958c",
+      "bytes": 549527
+    },
+    {
+      "path": "frontend/public/assets/attractions/sarkhej-roza.jpg",
+      "sha256": "3dd783a86f996ff0bff6b5fcc3bde6e836242424e82a535339a2873248a24064",
+      "bytes": 468007
+    },
+    {
+      "path": "frontend/public/assets/attractions/sabarmati-ashram.jpg",
+      "sha256": "60fa6952fb8bbe14390bc29369822bcbd7b7343ec923ec9a564d4ce3e45ed598",
+      "bytes": 517590
+    },
+    {
+      "path": "frontend/public/assets/attractions/rukmini-temple.jpg",
+      "sha256": "f2257c22b11bfe8964eac27b7f49b2033bdfae0cdc7b4b684fa4397df45deb43",
+      "bytes": 366785
+    },
+    {
+      "path": "frontend/public/assets/attractions/rani-ki-vav.jpg",
+      "sha256": "716b93fbfbf34dc5db093942ec1b0134d6fb0c2d82eab3e38a7cb6877f32a64a",
+      "bytes": 643066
+    },
+    {
+      "path": "frontend/public/assets/attractions/nirona-crafts.jpg",
+      "sha256": "53295c2682180f3017809518a5918f67df9059439f87e0efb97ecc964e6d8569",
+      "bytes": 629497
+    },
+    {
+      "path": "frontend/public/assets/attractions/nageshwar-temple.jpg",
+      "sha256": "f5829e745fdeaf61efe83308b2eaf250dd62389435fcd6a84376f652d0d049b3",
+      "bytes": 585364
+    },
+    {
+      "path": "frontend/public/assets/attractions/kankaria-lake.jpg",
+      "sha256": "79586bcd72cdd51f9c4c7edf6d7e4148f4ce20145675803641c280004ddde719",
+      "bytes": 254722
+    },
+    {
+      "path": "frontend/public/assets/attractions/kalo-dungar.jpg",
+      "sha256": "e9141f9c6c823bdfa87529930b934720bbcb7407e8368e3a77f0adb4c89c0061",
+      "bytes": 487376
+    },
+    {
+      "path": "frontend/public/assets/attractions/kalika-mata.jpg",
+      "sha256": "2494029a4ebbbb685f4ac7c8f08522e907ca8a8e7101359ebecd4d1f3274d7cc",
+      "bytes": 230862
+    },
+    {
+      "path": "frontend/public/assets/attractions/hodka-village.jpg",
+      "sha256": "79f890e0d8658e06a72870256016c80725bf8a515f45a573c28fdd355abf977c",
+      "bytes": 627054
+    },
+    {
+      "path": "frontend/public/assets/attractions/gir-lion.jpg",
+      "sha256": "8eb55f4af8022bdc18603ae11f10fe93e735306fed79cb61d5cc50cc3072baee",
+      "bytes": 583002
+    }
+  ],
+  "verified": true,
+  "notes": "Existing private environments and live database retained separately; no Git repository initialized."
+}

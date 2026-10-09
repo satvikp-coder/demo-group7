@@ -1,0 +1,9 @@
+{
+  "orphan_attractions": 0,
+  "orphan_hotels": 0,
+  "orphan_restaurants": 0,
+  "orphan_stops": 0,
+  "orphan_budgets": 0,
+  "invalid_hotel_coordinates": 0,
+  "negative_hotel_prices": 0
+}

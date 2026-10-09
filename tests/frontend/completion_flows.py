@@ -40,7 +40,7 @@ def run(page, context, base, api, check):
         hotels = page.locator('#planner-starting-hotel')
         hotel = min(children['hotels'], key=lambda h: h['price_per_night'])
         hotels.select_option(hotel['id'])
-        page.locator('[role=dialog] input[type=range]').fill('20000')
+        page.locator('#planner-budget-input').fill('20000')
         page.locator('[role=dialog] input[type=checkbox]').uncheck()
         page.get_by_role('button', name='Review Plan').click()
         with page.expect_response(lambda r: '/generate-itinerary' in r.url) as response:

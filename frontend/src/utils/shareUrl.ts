@@ -1,4 +1,4 @@
-// NOTE: Once a backend exists, this client-side URL encoding approach should be replaced with a database-backed share link (e.g. /trips/:id/share/:token) to avoid long URLs for complex itineraries -- this client-only version is a reasonable interim approach given no backend yet.
+// The encoded preferences identify a persisted private trip; they do not carry its stops or grant access.
 
 import { ItineraryConfig } from "../components/ItineraryView";
 

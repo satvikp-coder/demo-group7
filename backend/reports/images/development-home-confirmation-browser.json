@@ -1,0 +1,156 @@
+{
+  "base": "http://localhost:4310",
+  "phase": "development-home-confirmation",
+  "pages": [
+    {
+      "path": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://localhost:4310/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/rann-of-kutch.webp",
+          "alt": "White Rann of Kutch salt landscape",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/adalaj-stepwell.webp",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 825,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/ahmedabad-riverfront.webp",
+          "alt": "Ahmedabad",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/champaner-jami-masjid.webp",
+          "alt": "Champaner",
+          "width": 960,
+          "height": 640,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/dwarka-dwarkadhish-temple.webp",
+          "alt": "Dwarka",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/gir-national-park.webp",
+          "alt": "Gir National Park",
+          "width": 618,
+          "height": 440,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/modhera-sun-temple.webp",
+          "alt": "Modhera",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/rann-of-kutch.webp",
+          "alt": "Rann of Kutch",
+          "width": 960,
+          "height": 720,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/saputara-lake.webp",
+          "alt": "Saputara",
+          "width": 960,
+          "height": 540,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/somnath-temple.webp",
+          "alt": "Somnath",
+          "width": 960,
+          "height": 756,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for Lemon Tree Premier",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/photographs/french-haveli-ahmedabad.webp",
+          "alt": "French Haveli Heritage Stay",
+          "width": 720,
+          "height": 960,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://localhost:4310/assets/categories/hotel.svg",
+          "alt": "Photograph unavailable; generic illustration for The House of MG",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [],
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "imageHttpErrors": [],
+  "failedImageRequests": []
+}

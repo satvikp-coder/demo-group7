@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "checks": [
+    "Category switch has real matching records and honest empty state",
+    "Backend category, named anchor and distance ordering verified",
+    "Selected real hotel UUID/category persists and renders after generation",
+    "Hotel/category mismatch rejected"
+  ]
+}

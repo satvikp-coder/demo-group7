@@ -1,0 +1,167 @@
+{
+  "baselineFiles": 510,
+  "unchanged": 478,
+  "changed": [
+    {
+      "path": "CODEX_HANDOFF.md",
+      "baselineSha256": "c9f1eac252b0691e63feb76cc9b9b3e30732bc14e94710ee22323d33fce4cbad",
+      "sha256": "7857b5c0b6c53eb90933646675a0f3a5734b1e1de6f012f6169ad19f75dc258d"
+    },
+    {
+      "path": "package.json",
+      "baselineSha256": "bc8a2cc331f124113f480ca9f45a06fd57151fbd0ef767c2b7715a6c6d1af4f9",
+      "sha256": "255ae38d80fb99afb0e1dc951b2e0ca3aee4d7dda8ab47ca91191ff9eb819682"
+    },
+    {
+      "path": "scripts/local-stack.js",
+      "baselineSha256": "5ee3816060eef9c07cf9f32dbeb65195a077606574302a2dbaa7eedeae88d53c",
+      "sha256": "b04604f53661fb8718020f145e8612479c62802c85a4fb990079f18d0f13403e"
+    },
+    {
+      "path": "scripts/source-audit.js",
+      "baselineSha256": "9f1a0292b49f8a1f5ce8ce5924fe86f36b952f3da6e2b936dbcb8d7faecf9cad",
+      "sha256": "e527f3504de6ae4ec9fbdd32795b08566c7d12bd5104f74a3fd975e1db04d6bc"
+    },
+    {
+      "path": "scripts/test-audit-styles.js",
+      "baselineSha256": "9c8a7bde00cd87a52dc4a3d70a1d41bf1f1bc664aa45c8fe2b980ce332757517",
+      "sha256": "bd4cf7a00d7f676727fcf0326cd07d7c6d03fcf71beb450a0c12a7bfc11d2a24"
+    },
+    {
+      "path": "tests/frontend/browser_api.py",
+      "baselineSha256": "dff009f6e8159995d62e5c8471e6c662031ff29666c6260ccfa6696b07230629",
+      "sha256": "e250809d19428a8999de6cc9d43e20a703b0464c5bb2f51592033afcef3d3fb1"
+    },
+    {
+      "path": "tests/frontend/audit_regressions.py",
+      "baselineSha256": "4b35911abd342423bf8f96b74069b80f1b936ffffee70a8f07c45b0fd1be7859",
+      "sha256": "e4349891f5a225e5c0293a373554aef66999bc837b6f006b992ea0b4557fc9a6"
+    },
+    {
+      "path": "tests/frontend/completion_flows.py",
+      "baselineSha256": "9b04a0c30e1bc617980e9db991e9104231f3cc7876241999de44014e3e7a9c09",
+      "sha256": "77ead02c641601f54797331fc2e4eb11abdc582f153171106de6aeeb71400016"
+    },
+    {
+      "path": "tests/frontend/local_success.py",
+      "baselineSha256": "43c60b0d04b73cf51ff4b5e1cc7696d90fb7ee7cc6f367b3a258dc97bbe51d72",
+      "sha256": "4342fbe4f624998673a0b9b724339487eb1c2038b33643b2527af7ddd57c2eeb"
+    },
+    {
+      "path": "tests/frontend/image_functional_browser.py",
+      "baselineSha256": "5b6a117c1bc0017a16d35853debc0298917269ef9fb464c7470753a9c9094597",
+      "sha256": "fb226ca6532ee1c5356d3f4cdab96230caf3282f4829ca7364fe1d4fca2aa328"
+    },
+    {
+      "path": "backend/package.json",
+      "baselineSha256": "665349585f51a4a98666eab0a53c923440485f5125802136255908b95b6a5be8",
+      "sha256": "0e09ba360c4b1c0f8a4d881269c3423634ad359cd73dd7ed4d17432b7d0f4dbb"
+    },
+    {
+      "path": "backend/services/hotelRanking.js",
+      "baselineSha256": "1a0ef473241c035aea0b0c9960dc13c9d5a4debb8d649889f7d154e55b7e8428",
+      "sha256": "d1048024009a43563176cc055895e48b72c93767057b0aec55c0af02789f58ac"
+    },
+    {
+      "path": "backend/services/tripPlanner.js",
+      "baselineSha256": "6e9f9ac03de9ab64cce624a94a1b377498f848dd427ed00ece584eecb7ce120a",
+      "sha256": "41ebd170ebda8cbeab59dcbadb04f37e764fb18abbeb171b6db564fe64743576"
+    },
+    {
+      "path": "backend/models/hotelModel.js",
+      "baselineSha256": "33a0810bf204a53163c127fc94405c1a80b6f074f7a2dfc6b222168a509fa3a2",
+      "sha256": "918c0f101e2369c0c7c8a7b17f7093dbe7f908a1cbbd9c874cacad807c041b5a"
+    },
+    {
+      "path": "backend/models/tripModel.js",
+      "baselineSha256": "0a17422c26131fd133c2fd77fde56b141185d1e46757fcbc82e9357bfe0d405b",
+      "sha256": "08cec0609ba2b4e8e364b3709f0dc715dd5585db25e9e21ebd69a588388724ab"
+    },
+    {
+      "path": "backend/config/database.js",
+      "baselineSha256": "c397f04d6975bca8ea0f43a7b7815d93c70313542c7e5983aa09ae09ab31ff35",
+      "sha256": "c246500313e12ea8d5b33f544af89ff8290c64e8f660ff95f6d92802f2295824"
+    },
+    {
+      "path": "backend/middleware/validationSchemas.js",
+      "baselineSha256": "c0796baa14e330ff9e5d19e94fe3e9e7667b019476942f6bcf82e7f575b9a459",
+      "sha256": "91151907d8e22b8ac6246b68be635c6005d0c77df8f357ba1de16526f9f1c454"
+    },
+    {
+      "path": "backend/controllers/tripController.js",
+      "baselineSha256": "f82b231fc08c422a6aec38487eda031d14365322df415fdebffb82f0cc0f2108",
+      "sha256": "2fcd35b90c4b7f7a0e699c2b445d51c3c1859d37411ddda620950446899cab41"
+    },
+    {
+      "path": "backend/controllers/hotelController.js",
+      "baselineSha256": "bf1e268b32f60c44189846f5cc31ee674d99673d8a247ddee5684099865abe23",
+      "sha256": "ce9e2fedc3e67fbab432e22e4bf0f8e92e0e7e0d6b7423850264d29c32d46354"
+    },
+    {
+      "path": "backend/routes/tripRoutes.js",
+      "baselineSha256": "5df95112964b9e46fca9a6fe158d0aba016ea922ce1e3f1353d44dda122484b3",
+      "sha256": "c93ff6b4a51206f6f2a6bcb964b0895363fd7c744e52f3f9a4df25e856d88c29"
+    },
+    {
+      "path": "backend/scripts/test-destinations-http.js",
+      "baselineSha256": "8e88263f644b7cbcfdc769e7ec5e03688ec76bc91ca5d29141024eef3f76bb5f",
+      "sha256": "0012c3ce979d0fbb6dbc4a87af8ec14fee489807bc19d10f01d1bda650fe84a3"
+    },
+    {
+      "path": "frontend/src/api/types.ts",
+      "baselineSha256": "42dc618dbe2750f8b11cfc37ff947bef94caeb9ff1f056d73fceb664b367bc1f",
+      "sha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac"
+    },
+    {
+      "path": "frontend/src/api/index.ts",
+      "baselineSha256": "611081f3fba265f9695bef77ff1f05d6ac0509f68d6d7fd6ec1b5ae17a9b3518",
+      "sha256": "43d383e792fecb7f160946208c70148d91e323c0b78c48a1574ef14fd7dcac46"
+    },
+    {
+      "path": "frontend/src/App.tsx",
+      "baselineSha256": "a112f27b9a2cbd7a0db5d1e5148310c688bb146f0b3e26a89464b124b78c8509",
+      "sha256": "2946540a334d35e1f1e4fa85b4b9b28f066aeed86f49d50e0491c6ef21eeb125"
+    },
+    {
+      "path": "frontend/src/components/BestTimeNote.tsx",
+      "baselineSha256": "c6f4a6f1b6c2fb6bc0587d17e98cb2d236431e75105fe484b1d7aa9c76013b33",
+      "sha256": "d2cd4dd2cb4a87be2d049cc41a27894cb6575dae7156cc53d127137b8df70722"
+    },
+    {
+      "path": "frontend/src/components/AuthView.tsx",
+      "baselineSha256": "15e8526ea741901dbc6f7895949dfe0c8095473562fd249a57af056de22a3e66",
+      "sha256": "02a23815297ad87ddccc6ce8693113a8f47fffd54a1b92a59af8b0f71b2cbd85"
+    },
+    {
+      "path": "frontend/src/components/StrategyComparisonModal.tsx",
+      "baselineSha256": "7e0b07f5b811fbe357c7cd18e15c17d6dcbac45af315d70909eb513c82edf5a0",
+      "sha256": "774a2a4740f1387b96ef852b4814680c19884ded802d704ccc96f61087c4e2d5"
+    },
+    {
+      "path": "frontend/src/components/PlannerModal.tsx",
+      "baselineSha256": "8f4ab3c96855665ffbdfd075b5f5a651353f095e47cfd8649cfc32ba7dd2ac0f",
+      "sha256": "03224f5a3e777652a2337cd3ca0e8f322272e235543fda8b8ada7441c9246f84"
+    },
+    {
+      "path": "frontend/src/components/ItineraryView.tsx",
+      "baselineSha256": "372e3ffdf792ab57817a3734a8496ad978efb1280eb8172c4f91a84aff9fbaf7",
+      "sha256": "22e3307dc10b1f5967e1d67f0d87e88a9c9f77395f1fbeff3156e4c2e18c8f80"
+    },
+    {
+      "path": "frontend/src/components/HotelsView.tsx",
+      "baselineSha256": "5dc849a7d6a876a2374e470291123be648adf212b1b7bcf2d7c58d48975ee9d1",
+      "sha256": "6bae86ffce11e4e68679beaddb2fa97402d2decd3bb85bc9d39c61f857582972"
+    },
+    {
+      "path": "frontend/src/components/Footer.tsx",
+      "baselineSha256": "9165b57d4b843fdc074b90ee929c14a1f7fcd046ce002ad069d58574297cafc9",
+      "sha256": "41ca9c5ae452d7414e5ed753938662c1820e01cf3b00ba750641c2ec364c0494"
+    },
+    {
+      "path": "frontend/src/utils/itineraryPlanner.ts",
+      "baselineSha256": "23ea6c24f45d9489a3ca07080d2efd8d1a0c88eb3e1f1724842b2fe3dda3363d",
+      "sha256": "10488e452add9c734a68741dad1dbddea24c626dc80ad4e1aa1cbcc8ad5fdb52"
+    }
+  ],
+  "missing": []
+}

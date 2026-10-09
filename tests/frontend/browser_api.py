@@ -96,31 +96,42 @@ with sync_playwright() as p:
         expect(page.get_by_text("3 Restaurants", exact=True)).to_be_visible()
         check("Planner restaurant count matches real Ahmedabad collection", count=3)
         page.get_by_role("button", name="Continue to Logistics").click()
-        hotels = page.locator('[role=dialog] select').first
+        hotels = page.locator('#planner-starting-hotel')
+        expect(hotels).to_contain_text('The House of MG')
         selected = next(o for o in hotels.locator('option').evaluate_all('(els)=>els.map(e=>({value:e.value,text:e.text}))') if "The House of MG" in o["text"])
         catalog_hotels = context.request.get(API + "/destinations/ahmedabad/hotels").json()
         selected_price = next(h["price_per_night"] for h in catalog_hotels if h["id"] == selected["value"])
         expected_hotel_total = selected_price * 2
         budget_label = f"\u20b9{expected_hotel_total:,.0f}"
         hotels.select_option(selected["value"])
-        page.locator('[role=dialog] input[type=range]').fill("3000")
+        page.locator('#planner-budget-input').fill("3000")
         page.locator('[role=dialog] input[type=checkbox]').check()
         page.get_by_role("button", name="Review Plan").click()
         with page.expect_response(lambda r: "/generate-itinerary" in r.url) as generated:
             page.get_by_role("button", name="Generate Circular Plan").click()
-        dto = generated.value.json()
-        assert generated.value.status == 200
+        assert generated.value.status == 422
+        expect(page.get_by_text("No feasible itinerary", exact=False)).to_be_visible()
+        check("Weighted UI rejects infeasible selected hotel without fake generation", status=422)
+        page.get_by_role("button", name="Adjust Logistics").click()
+        page.locator('#planner-budget-input').fill("30000")
+        page.locator('[role=dialog] input[type=checkbox]').uncheck()
+        page.get_by_role("button", name="Review Plan").click()
+        with page.expect_response(lambda r: "/generate-itinerary" in r.url) as feasible:
+            page.get_by_role("button", name="Generate Circular Plan").click()
+        assert feasible.value.status == 200
+        dto = feasible.value.json()
         assert dto["trip"]["starting_hotel_id"] == selected["value"]
-        assert dto["trip"]["generation_summary"]["hotel_over_budget"] is True
+        assert dto["trip"]["generation_summary"]["hotel_over_budget"] is False
+        assert any(s["stop_type"]=="attraction" for d in dto["days"] for s in d["stops"])
         trip_id = dto["trip"]["id"]
-        expect(page.get_by_text("Your selected hotel exceeds", exact=False)).to_be_visible()
         page.reload()
         expect(page.get_by_text("Base Hotel: The House of MG", exact=False)).to_be_visible()
-        check("UI create/generate/read/reload retains chosen over-budget hotel", tripId=trip_id, hotelId=selected["value"], hotelOverBudget=True)
+        check("UI feasible generate/read/reload retains chosen hotel", tripId=trip_id, hotelId=selected["value"])
         with page.expect_response(lambda r: r.url.endswith(f"/trips/{trip_id}/budget")) as budget_response:
             page.get_by_role("button", name="Budget Planner", exact=True).first.click()
         budget = budget_response.value.json()
-        assert budget["total"] == dto["budget"]["total"] == expected_hotel_total
+        assert budget["total"] == dto["budget"]["total"]
+        assert budget["total"] == sum(float(stop["cost"]) for day in dto["days"] for stop in day["stops"])
         assert budget["hotel"] == expected_hotel_total
         expect(page.get_by_text(budget_label, exact=True).first).to_be_visible()
         assert "Save ₹2,200" not in page.locator("body").inner_text()
@@ -148,8 +159,8 @@ with sync_playwright() as p:
         page.get_by_role("button", name="Create New Heritage Route").click()
         page.get_by_role("button", name="Continue to Logistics").click()
         cheapest = min(catalog_hotels, key=lambda h: h["price_per_night"])
-        page.locator('[role=dialog] select').first.select_option(cheapest["id"])
-        page.locator('[role=dialog] input[type=range]').fill("20000")
+        page.locator('#planner-starting-hotel').select_option(cheapest["id"])
+        page.locator('#planner-budget-input').fill("20000")
         page.locator('[role=dialog] input[type=checkbox]').uncheck()
         page.get_by_role("button", name="Review Plan").click()
         with page.expect_response(lambda r: "/generate-itinerary" in r.url) as researched:

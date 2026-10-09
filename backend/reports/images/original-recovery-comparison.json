@@ -1,0 +1,128 @@
+[
+  {
+    "original": "/assets/attractions/adalaj-stepwell.jpg",
+    "candidate": "/assets/photographs/adalaj-stepwell.webp",
+    "meanAbsoluteRgbDifference": 6.114,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/attractions/gir-lion.jpg",
+    "candidate": "/assets/photographs/gir-national-park.webp",
+    "meanAbsoluteRgbDifference": 38.947,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/hodka-village.jpg",
+    "candidate": "/assets/photographs/somnath-temple.webp",
+    "meanAbsoluteRgbDifference": 59.442,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/kalika-mata.jpg",
+    "candidate": "/assets/photographs/modheshwari-temple.webp",
+    "meanAbsoluteRgbDifference": 57.502,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/kalo-dungar.jpg",
+    "candidate": "/assets/photographs/saputara-lake.webp",
+    "meanAbsoluteRgbDifference": 51.328,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/kankaria-lake.jpg",
+    "candidate": "/assets/photographs/kankaria-lake.webp",
+    "meanAbsoluteRgbDifference": 0.59,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/attractions/nageshwar-temple.jpg",
+    "candidate": "/assets/photographs/nageshwar-temple.webp",
+    "meanAbsoluteRgbDifference": 0.66,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/attractions/nirona-crafts.jpg",
+    "candidate": "/assets/photographs/somnath-temple.webp",
+    "meanAbsoluteRgbDifference": 59.709,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/rani-ki-vav.jpg",
+    "candidate": "/assets/photographs/devalia-lions.webp",
+    "meanAbsoluteRgbDifference": 51.661,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/rukmini-temple.jpg",
+    "candidate": "/assets/photographs/kevada-masjid.webp",
+    "meanAbsoluteRgbDifference": 54.186,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/attractions/sabarmati-ashram.jpg",
+    "candidate": "/assets/photographs/sabarmati-ashram.webp",
+    "meanAbsoluteRgbDifference": 0.746,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/attractions/sarkhej-roza.jpg",
+    "candidate": "/assets/photographs/sarkhej-roza.webp",
+    "meanAbsoluteRgbDifference": 0.706,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/attractions/sidi-saiyyed.jpg",
+    "candidate": "/assets/photographs/sidi-saiyyed-mosque.webp",
+    "meanAbsoluteRgbDifference": 0.798,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/destinations/ahmedabad.jpg",
+    "candidate": "/assets/photographs/ahmedabad-riverfront.webp",
+    "meanAbsoluteRgbDifference": 0.562,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/destinations/champaner.jpg",
+    "candidate": "/assets/photographs/sarkhej-roza.webp",
+    "meanAbsoluteRgbDifference": 45.421,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/destinations/dwarka.jpg",
+    "candidate": "/assets/photographs/dwarka-dwarkadhish-temple.webp",
+    "meanAbsoluteRgbDifference": 6.021,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/destinations/gir.jpg",
+    "candidate": "/assets/photographs/gir-national-park.webp",
+    "meanAbsoluteRgbDifference": 0.737,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/destinations/modhera.jpg",
+    "candidate": "/assets/photographs/modhera-sun-temple.webp",
+    "meanAbsoluteRgbDifference": 5.621,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/destinations/rann-of-kutch.jpg",
+    "candidate": "/assets/photographs/sidi-saiyyed-mosque.webp",
+    "meanAbsoluteRgbDifference": 49.542,
+    "sameFrame": false
+  },
+  {
+    "original": "/assets/destinations/saputara.jpg",
+    "candidate": "/assets/photographs/saputara-lake.webp",
+    "meanAbsoluteRgbDifference": 0.773,
+    "sameFrame": true
+  },
+  {
+    "original": "/assets/destinations/somnath.jpg",
+    "candidate": "/assets/photographs/somnath-temple.webp",
+    "meanAbsoluteRgbDifference": 5.903,
+    "sameFrame": true
+  }
+]

@@ -1,6 +1,6 @@
 {
-  "startedAt": "2026-10-01T08:54:56.948Z",
-  "project": "heritage-prod-c9478f0b",
+  "startedAt": "2026-10-09T14:28:48.986Z",
+  "project": "heritage-prod-1ca71b9b",
   "verified": true,
   "gates": [
     {
@@ -75,8 +75,8 @@
   },
   "rotatedLogs": true,
   "edgeLogsRedacted": true,
-  "memoryBefore": "61.16MiB / 3.825GiB",
-  "memoryAfter": "78.22MiB / 3.825GiB",
+  "memoryBefore": "68.27MiB / 3.825GiB",
+  "memoryAfter": "68.36MiB / 3.825GiB",
   "restartPersistence": true,
   "recoveryCounts": {
     "destinations": 8,
@@ -91,7 +91,8 @@
   },
   "recoveredTripDays": 2,
   "recoveredBudget": 6486,
-  "archiveBytes": 117864,
+  "archiveBytes": 119764,
+  "maintenanceConnectionInterrupted": true,
   "stagingStopped": true,
-  "finishedAt": "2026-10-01T09:01:38.905Z"
+  "finishedAt": "2026-10-09T14:34:17.447Z"
 }

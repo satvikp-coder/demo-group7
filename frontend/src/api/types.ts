@@ -22,6 +22,17 @@ export interface Attraction {
 }
 
 export interface Hotel {
+  hotelCategory?: "Low Cost" | "Budget" | "Premium" | null;
+  distanceKm?: number | null;
+  distanceType?: string;
+  anchorName?: string | null;
+  expandedSearch?: boolean;
+  searchRadiusKm?: number;
+  sourceUrl?: string;
+  sourceDate?: string;
+  priceBasis?: string;
+  facilities?: string[];
+
   id: string;
   name: string;
   lat: number;

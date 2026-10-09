@@ -1,0 +1,15 @@
+{
+  "source_url": "https://www.hotelmaruti.com/",
+  "checked": "2026-10-09",
+  "coordinates": {
+    "lat": 23.018092,
+    "lng": 72.5670648
+  },
+  "coordinate_field": "businessLocationCoordinates",
+  "standard_AC_published_rates_INR": [
+    1400,
+    1700
+  ],
+  "tariff_date": null,
+  "rights": "Only extracted factual values; no media or page reproduction"
+}

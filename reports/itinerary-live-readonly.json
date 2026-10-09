@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "writes": [],
+  "pageErrors": [],
+  "checks": [
+    "Installed production category API exposes added Maruti hotel",
+    "720px planner controls and 100% weights work",
+    "Guest generation redirects to sign-in without unauthorized POST or database writes"
+  ]
+}

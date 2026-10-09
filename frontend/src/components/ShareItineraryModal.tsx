@@ -1,4 +1,4 @@
-// NOTE: Once a backend exists, this client-side URL encoding approach should be replaced with a database-backed share link (e.g. /trips/:id/share/:token) to avoid long URLs for complex itineraries -- this client-only version is a reasonable interim approach given no backend yet.
+// This link carries an owned trip ID/preferences; the API still requires owner authentication.
 
 import React, { useState } from "react";
 import { X, Copy, Check, Share2, Link, Sparkles } from "lucide-react";
@@ -91,7 +91,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
             <Share2 className="w-5 h-5 text-gold" />
           </div>
           <div>
-            <h3 className="font-display font-bold text-lg text-ink">
+            <h3 id="share-itinerary-title" className="font-display font-bold text-lg text-ink">
               Share Itinerary
             </h3>
             <p className="text-xs text-stone font-mono">
@@ -102,8 +102,8 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
 
         {/* Info Banner */}
         <p className="text-xs text-charcoal bg-white border border-stone/30 p-3 mb-4 font-mono leading-relaxed rounded-xl">
-          Generates a read-only shareable link containing the complete itinerary
-          routing, timed stops, and daily breakdown.
+          This link contains the trip ID and planning preferences. The owner must
+          sign in to load the saved itinerary; it does not grant public access.
         </p>
 
         {/* Link Input + Copy Button */}
@@ -161,7 +161,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
 
         {/* Footer Note */}
         <div className="pt-3 border-t border-stone/20 flex items-center justify-between text-[11px] font-mono text-stone">
-          <span>Read-only preview</span>
+          <span>Owner sign-in required</span>
           <button
             onClick={onClose}
             className="text-stone hover:text-charcoal underline cursor-pointer"

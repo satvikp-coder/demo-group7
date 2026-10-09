@@ -1,0 +1,13 @@
+# Existing architecture — inspected 2026-10-08
+
+React 19 / TypeScript 5.8 / Vite 6 frontend, Tailwind and Motion; Express 5 ESM backend, shared TypeScript DSA modules through tsx; PostgreSQL 17 with parameterized pg queries, SQL migrations and curated provenance-bearing seed imports. There is no ORM. Existing code and visual design are retained.
+
+Browser -> nginx SPA on :8080 -> /api proxy -> private Node API :5000 -> private PostgreSQL :5432. The central frontend/src/api/index.ts validates responses, supports cancellation and authenticated requests. App.tsx owns navigation and selected records; LanguageContext supplies en/hi dictionaries. Auth uses sessionStorage JWT, bcrypt passwords and database-backed role/account checks. Public catalog/search and child endpoints supply actual tourism records. Protected trip creation/generation/read/budget use transactionally persisted plans. Operator CRUD refreshes the search cache after committed edits.
+
+backend/services/tripPlanner.js invokes shared Graph/Dijkstra/greedy helpers. Direct route evidence takes precedence; missing direct attraction pairs may use graph paths. Plans are circular, single-city, selected-hotel itineraries with time/budget/accessibility constraints. This is not a multi-city global optimizer. Costs are persisted snapshots, and unknown transport fares remain explicitly excluded. Destination Trie cache has bounded lifecycle and graceful shutdown.
+
+frontend/public contains static assets and licensed photographs; imageSources.ts resolves validated sources and curated IDs, ImageWithFallback handles actual decode failures. Build copies assets into dist; nginx serves them without database URL rewrites. data/images and the shipped manifest/credits record licenses. Database image fields and user data were preserved.
+
+compose.yml / local-production override provide nonroot nginx, private backend/database, health/readiness, persistent volume and separate maintenance role. compose.staging.yml is used only for disposable production tests. CI runs isolated suites; no external deployment was performed. Existing private env files were excluded from reports/checkpoints. No bookings, payment, live availability, background job queue or external routing provider is implemented. Map/graph views represent saved route evidence.
+
+Recovery baseline: BASELINE_SOURCE.json records a verified source ZIP because the app has no Git metadata. The sibling release Git checkout was read only. A private PostgreSQL backup was restored into a separate database and row hashes matched. See report 06 and CODEX_HANDOFF.md for continuity.

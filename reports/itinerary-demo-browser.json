@@ -1,0 +1,546 @@
+{
+  "verified": true,
+  "checks": [
+    "Ahmedabad distance UI/API/database/optimizer/persisted result/refresh",
+    "Ahmedabad cost UI/API/database/optimizer/persisted result/refresh",
+    "Ahmedabad rating UI/API/database/optimizer/persisted result/refresh",
+    "Somnath cost UI/API/database/optimizer/persisted result/refresh",
+    "Logout clears client token; protected request without credentials is401"
+  ],
+  "runs": [
+    {
+      "city": "Ahmedabad",
+      "hotel": "French Haveli Heritage Stay (\u20b95,300/night)",
+      "width": 1440,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "optimization": {
+        "rooms": 1,
+        "score": 0.9428000000000001,
+        "method": "bounded_multi_start_greedy",
+        "weights": {
+          "cost": 10,
+          "rating": 10,
+          "distance": 80
+        },
+        "travelers": 1,
+        "candidates": [
+          {
+            "id": "203f897438d1e00e",
+            "rank": 1,
+            "score": 0.9428000000000001,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9280000000000002,
+              "distance": 1
+            },
+            "known_cost": 5525,
+            "distance_km": 30.429999999999996,
+            "rating_mean": 4.640000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "6957e472029dd617",
+            "rank": 2,
+            "score": 0.9084059580230195,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9280000000000002,
+              "distance": 0.9570074475287744
+            },
+            "known_cost": 5525,
+            "distance_km": 31.7,
+            "rating_mean": 4.640000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "e0257f1a32db91de",
+            "rank": 3,
+            "score": 0.6232609343263369,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.932,
+              "distance": 0.5375761679079212
+            },
+            "known_cost": 5500,
+            "distance_km": 44.09,
+            "rating_mean": 4.66,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "4382b57c48148e92",
+            "rank": 4,
+            "score": 0.6121573459715639,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.932,
+              "distance": 0.5236966824644549
+            },
+            "known_cost": 5500,
+            "distance_km": 44.5,
+            "rating_mean": 4.66,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "edde20519a8de40a",
+            "rank": 5,
+            "score": 0.5972595802301965,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9120000000000001,
+              "distance": 0.5700744752877456
+            },
+            "known_cost": 5525,
+            "distance_km": 43.129999999999995,
+            "rating_mean": 4.5600000000000005,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "78fe8116fb5e90e6",
+            "rank": 6,
+            "score": 0.09320000000000002,
+            "feasible": true,
+            "utilities": {
+              "cost": 0,
+              "rating": 0.9320000000000002,
+              "distance": 0
+            },
+            "known_cost": 5550,
+            "distance_km": 59.97,
+            "rating_mean": 4.660000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          }
+        ],
+        "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+        "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+        "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+        "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+        "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+        "evaluated_count": 6,
+        "selected_candidate_id": "203f897438d1e00e"
+      },
+      "budget": {
+        "trip_id": "ff11c28f-6ae0-47ba-a3a2-9ce16495f2d9",
+        "budget": 30000,
+        "hotel": 5300,
+        "attractions": 25,
+        "meals": 200,
+        "transit": 0,
+        "total": 5525,
+        "remaining": 24475,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      }
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "French Haveli Heritage Stay (\u20b95,300/night)",
+      "width": 1440,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "optimization": {
+        "rooms": 1,
+        "score": 0.9469576167907923,
+        "method": "bounded_multi_start_greedy",
+        "weights": {
+          "cost": 80,
+          "rating": 10,
+          "distance": 10
+        },
+        "travelers": 1,
+        "candidates": [
+          {
+            "id": "e0257f1a32db91de",
+            "rank": 1,
+            "score": 0.9469576167907923,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.932,
+              "distance": 0.5375761679079212
+            },
+            "known_cost": 5500,
+            "distance_km": 44.09,
+            "rating_mean": 4.66,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "4382b57c48148e92",
+            "rank": 2,
+            "score": 0.9455696682464456,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.932,
+              "distance": 0.5236966824644549
+            },
+            "known_cost": 5500,
+            "distance_km": 44.5,
+            "rating_mean": 4.66,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "203f897438d1e00e",
+            "rank": 3,
+            "score": 0.5928,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9280000000000002,
+              "distance": 1
+            },
+            "known_cost": 5525,
+            "distance_km": 30.429999999999996,
+            "rating_mean": 4.640000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "6957e472029dd617",
+            "rank": 4,
+            "score": 0.5885007447528775,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9280000000000002,
+              "distance": 0.9570074475287744
+            },
+            "known_cost": 5525,
+            "distance_km": 31.7,
+            "rating_mean": 4.640000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "edde20519a8de40a",
+            "rank": 5,
+            "score": 0.5482074475287746,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9120000000000001,
+              "distance": 0.5700744752877456
+            },
+            "known_cost": 5525,
+            "distance_km": 43.129999999999995,
+            "rating_mean": 4.5600000000000005,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "78fe8116fb5e90e6",
+            "rank": 6,
+            "score": 0.09320000000000002,
+            "feasible": true,
+            "utilities": {
+              "cost": 0,
+              "rating": 0.9320000000000002,
+              "distance": 0
+            },
+            "known_cost": 5550,
+            "distance_km": 59.97,
+            "rating_mean": 4.660000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          }
+        ],
+        "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+        "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+        "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+        "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+        "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+        "evaluated_count": 6,
+        "selected_candidate_id": "e0257f1a32db91de"
+      },
+      "budget": {
+        "trip_id": "7dcaf47f-adf8-4b3c-b4dc-e544b5eec4cd",
+        "budget": 30000,
+        "hotel": 5300,
+        "attractions": 0,
+        "meals": 200,
+        "transit": 0,
+        "total": 5500,
+        "remaining": 24500,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      }
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "French Haveli Heritage Stay (\u20b95,300/night)",
+      "width": 1440,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "optimization": {
+        "rooms": 1,
+        "score": 0.8993576167907922,
+        "method": "bounded_multi_start_greedy",
+        "weights": {
+          "cost": 10,
+          "rating": 80,
+          "distance": 10
+        },
+        "travelers": 1,
+        "candidates": [
+          {
+            "id": "e0257f1a32db91de",
+            "rank": 1,
+            "score": 0.8993576167907922,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.932,
+              "distance": 0.5375761679079212
+            },
+            "known_cost": 5500,
+            "distance_km": 44.09,
+            "rating_mean": 4.66,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "4382b57c48148e92",
+            "rank": 2,
+            "score": 0.8979696682464455,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.932,
+              "distance": 0.5236966824644549
+            },
+            "known_cost": 5500,
+            "distance_km": 44.5,
+            "rating_mean": 4.66,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "203f897438d1e00e",
+            "rank": 3,
+            "score": 0.8924000000000001,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9280000000000002,
+              "distance": 1
+            },
+            "known_cost": 5525,
+            "distance_km": 30.429999999999996,
+            "rating_mean": 4.640000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "6957e472029dd617",
+            "rank": 4,
+            "score": 0.8881007447528775,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9280000000000002,
+              "distance": 0.9570074475287744
+            },
+            "known_cost": 5525,
+            "distance_km": 31.7,
+            "rating_mean": 4.640000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "edde20519a8de40a",
+            "rank": 5,
+            "score": 0.8366074475287746,
+            "feasible": true,
+            "utilities": {
+              "cost": 0.5,
+              "rating": 0.9120000000000001,
+              "distance": 0.5700744752877456
+            },
+            "known_cost": 5525,
+            "distance_km": 43.129999999999995,
+            "rating_mean": 4.5600000000000005,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          },
+          {
+            "id": "78fe8116fb5e90e6",
+            "rank": 6,
+            "score": 0.7456000000000002,
+            "feasible": true,
+            "utilities": {
+              "cost": 0,
+              "rating": 0.9320000000000002,
+              "distance": 0
+            },
+            "known_cost": 5550,
+            "distance_km": 59.97,
+            "rating_mean": 4.660000000000001,
+            "rating_coverage": 1,
+            "attraction_count": 4
+          }
+        ],
+        "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+        "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+        "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+        "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+        "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+        "evaluated_count": 6,
+        "selected_candidate_id": "e0257f1a32db91de"
+      },
+      "budget": {
+        "trip_id": "a0227d80-50f1-4003-9ee8-08edd00a2afc",
+        "budget": 30000,
+        "hotel": 5300,
+        "attractions": 0,
+        "meals": 200,
+        "transit": 0,
+        "total": 5500,
+        "remaining": 24500,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      }
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh (\u20b9750/night)",
+      "width": 390,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "optimization": {
+        "rooms": 1,
+        "score": 0.9736,
+        "method": "bounded_multi_start_greedy",
+        "weights": {
+          "cost": 80,
+          "rating": 10,
+          "distance": 10
+        },
+        "travelers": 1,
+        "candidates": [
+          {
+            "id": "2286cd3e0c5f77ea",
+            "rank": 1,
+            "score": 0.9736,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.7360000000000002,
+              "distance": 1
+            },
+            "known_cost": 1350,
+            "distance_km": 19.26,
+            "rating_mean": 4.6000000000000005,
+            "rating_coverage": 0.8,
+            "attraction_count": 4
+          },
+          {
+            "id": "eee66bbc21eb9987",
+            "rank": 2,
+            "score": 0.9723654320987655,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.7360000000000002,
+              "distance": 0.9876543209876543
+            },
+            "known_cost": 1350,
+            "distance_km": 19.330000000000002,
+            "rating_mean": 4.6000000000000005,
+            "rating_coverage": 0.8,
+            "attraction_count": 4
+          },
+          {
+            "id": "f7d0e9dbe5f77ea6",
+            "rank": 3,
+            "score": 0.8737763668430336,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.7360000000000002,
+              "distance": 0.0017636684303353745
+            },
+            "known_cost": 1350,
+            "distance_km": 24.919999999999998,
+            "rating_mean": 4.6000000000000005,
+            "rating_coverage": 0.8,
+            "attraction_count": 4
+          },
+          {
+            "id": "03ca08563e2da00f",
+            "rank": 4,
+            "score": 0.8736,
+            "feasible": true,
+            "utilities": {
+              "cost": 1,
+              "rating": 0.7360000000000002,
+              "distance": 0
+            },
+            "known_cost": 1350,
+            "distance_km": 24.93,
+            "rating_mean": 4.6000000000000005,
+            "rating_coverage": 0.8,
+            "attraction_count": 4
+          }
+        ],
+        "cost_basis": "Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded",
+        "optimality": "Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed",
+        "rating_basis": "Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value",
+        "normalization": "Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage",
+        "distance_basis": "Sum of saved route legs; return estimates retain provenance warnings",
+        "evaluated_count": 4,
+        "selected_candidate_id": "2286cd3e0c5f77ea"
+      },
+      "budget": {
+        "trip_id": "d1f04ef8-ae47-407e-bddc-6daa09d5014f",
+        "budget": 30000,
+        "hotel": 750,
+        "attractions": 0,
+        "meals": 600,
+        "transit": 0,
+        "total": 1350,
+        "remaining": 28650,
+        "over_budget": false,
+        "generated": true,
+        "hotel_over_budget": false,
+        "transport_cost_known": false,
+        "cost_basis": "Persisted stop price snapshots; unknown transport fares are excluded"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": []
+}

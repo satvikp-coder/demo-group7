@@ -73,6 +73,7 @@ export default function App() {
   const [selectedDestination, setSelectedDestination] =
     useState<Destination | null>(null);
   const [plannerOpen, setPlannerOpen] = useState<boolean>(false);
+  const [plannerAuthDraft, setPlannerAuthDraft] = useState<ItineraryConfig | null>(null);
   const [preselectedForPlanner, setPreselectedForPlanner] =
     useState<Destination | null>(null);
 
@@ -555,11 +556,13 @@ export default function App() {
                   transition={{ duration: 0.3 }}
                 >
                   <AuthView
+                    notice={plannerAuthDraft ? "Sign in to generate your itinerary. Your selected trip settings are kept." : undefined}
                     initialMode={authMode}
                     onCloseOrGuest={() => navigate("/")}
                     onAuthSuccess={(user) => {
                       setCurrentUser(user);
                       navigate("/profile");
+                      if (plannerAuthDraft) setPlannerOpen(true);
                     }}
                   />
                 </motion.div>
@@ -798,11 +801,17 @@ export default function App() {
             isOpen={plannerOpen}
             onClose={() => setPlannerOpen(false)}
             preselectedDestination={preselectedForPlanner}
-            initialConfig={activeItinerary}
+            initialConfig={plannerAuthDraft ?? activeItinerary}
             tripList={tripList}
             preferredHotels={preferredHotels}
             onSelectPreferredHotel={handleSetPreferredHotel}
+            onRequireAuthentication={(config) => {
+              setPlannerAuthDraft(config);
+              setPlannerOpen(false);
+              navigate("/login");
+            }}
             onGenerateItinerary={(config) => {
+              setPlannerAuthDraft(null);
               saveItineraryToSession(config);
               setActiveItinerary(config);
               setPlannerOpen(false);
@@ -811,7 +820,7 @@ export default function App() {
           />
 
           {/* Non-intrusive PWA Add to Home Screen Prompt */}
-          {showPwaPrompt && (
+          {showPwaPrompt && !plannerOpen && !authMode && (
             <PwaInstallPrompt
               deferredPrompt={deferredPrompt}
               onDismiss={() => {

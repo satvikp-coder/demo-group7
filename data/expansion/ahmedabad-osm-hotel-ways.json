@@ -1,0 +1,346 @@
+{
+  "source_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3Bway%5B%22tourism%22%3D%22hotel%22%5D%2822.97%2C72.48%2C23.14%2C72.70%29%3Bout+center+tags%3B",
+  "license": "ODbL-1.0",
+  "checked": "2026-10-09",
+  "response": {
+    "version": 0.6,
+    "generator": "Overpass API 0.7.62.11 87bfad18",
+    "osm3s": {
+      "timestamp_osm_base": "2026-10-09T03:50:34Z",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+    },
+    "elements": [
+      {
+        "type": "way",
+        "id": 85210256,
+        "center": {
+          "lat": 23.0270884,
+          "lon": 72.5816631
+        },
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:postcode": "380001",
+          "addr:street": "Lal Darwaja",
+          "building": "yes",
+          "cuisine": "indian",
+          "name": "House of MG",
+          "operator": "House of MG",
+          "smoking": "separated",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "way",
+        "id": 317477232,
+        "center": {
+          "lat": 23.0225058,
+          "lon": 72.5676734
+        },
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:postcode": "380006",
+          "addr:street": "Purshottam Malvankar Marg",
+          "building": "hotel",
+          "building:colour": "white",
+          "building:levels": "12",
+          "building:material": "plaster",
+          "name": "Four Points by Sheraton",
+          "operator": "Sheraton",
+          "phone": "+91 79 30912345",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "smoking": "separated",
+          "tourism": "hotel",
+          "website": "http://fourpoints.hotelsgroup.in/four-points-by-sheraton-ahmedabad.html",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "way",
+        "id": 317784183,
+        "center": {
+          "lat": 23.0239202,
+          "lon": 72.5670516
+        },
+        "tags": {
+          "building": "hotel",
+          "building:colour": "lightyellow",
+          "building:levels": "10",
+          "building:material": "plaster",
+          "internet_access": "yes",
+          "internet_access:fee": "yes",
+          "name": "Park Plaza",
+          "operator": "Park Group of Hotels",
+          "phone": "079 4050 5050",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "smoking": "separated",
+          "stars": "4",
+          "tourism": "hotel",
+          "website": "https://www.parkplaza.com/",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "way",
+        "id": 318485212,
+        "center": {
+          "lat": 23.0652744,
+          "lon": 72.5842644
+        },
+        "tags": {
+          "addr:country": "IN",
+          "addr:postcode": "380027",
+          "addr:street": "Balvantrai Mehta Road",
+          "building": "hotel",
+          "building:colour": "white",
+          "building:levels": "5",
+          "building:material": "plaster",
+          "internet_access": "yes",
+          "name": "The Metropole Hotel",
+          "phone": "+91793013 0200",
+          "roof:colour": "lightgrey",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "smoking": "dedicated",
+          "tourism": "hotel",
+          "website": "http://www.themetropolehotel.co.in",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "way",
+        "id": 318677963,
+        "center": {
+          "lat": 23.0353005,
+          "lon": 72.5601335
+        },
+        "tags": {
+          "building": "office",
+          "building:colour": "white",
+          "building:levels": "5",
+          "building:material": "plaster",
+          "internet_access": "yes",
+          "internet_access:fee": "yes",
+          "name": "Comfort Inn President",
+          "operator": "Comfort Inn",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "smoking": "dedicated",
+          "stars": "3",
+          "tourism": "hotel",
+          "website": "https://www.comfortinnpresident.com/",
+          "wheelchair": "no"
+        }
+      },
+      {
+        "type": "way",
+        "id": 323430445,
+        "center": {
+          "lat": 23.0591096,
+          "lon": 72.5228604
+        },
+        "tags": {
+          "building": "hotel",
+          "building:colour": "lightgrey;white",
+          "building:levels": "10",
+          "building:material": "plaster",
+          "internet_access": "yes",
+          "internet_access:fee": "yes",
+          "name": "Cambay Grand",
+          "phone": "0792740 0228",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "stars": "3",
+          "tourism": "hotel",
+          "website": "https://cambayhotels.com/",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "way",
+        "id": 327564855,
+        "center": {
+          "lat": 23.0320349,
+          "lon": 72.5764614
+        },
+        "tags": {
+          "barrier": "wall",
+          "internet_access": "yes",
+          "internet_access:fee": "yes",
+          "name": "Cama Hotel",
+          "operator": "Park Group of Hotels",
+          "smoking": "separated",
+          "stars": "4",
+          "tourism": "hotel",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "way",
+        "id": 366261959,
+        "center": {
+          "lat": 23.0381324,
+          "lon": 72.5145528
+        },
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:postcode": "380054",
+          "addr:street": "Judges Bunglow Road",
+          "building": "yes",
+          "building:colour": "beige",
+          "building:levels": "10",
+          "building:material": "plaster",
+          "internet_access": "wlan",
+          "name": "Pride Plaza",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "stars": "5",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "way",
+        "id": 366616705,
+        "center": {
+          "lat": 23.0284824,
+          "lon": 72.5015985
+        },
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:postcode": "380058",
+          "addr:street": "Ambli Road",
+          "brand": "DoubleTree",
+          "brand:wikidata": "Q2504643",
+          "brand:wikipedia": "en:DoubleTree",
+          "building": "hotel",
+          "contact:facebook": "https://www.facebook.com/doubletreebyhiltonahmedabad",
+          "contact:instagram": "https://www.instagram.com/doubletreeahmedabad",
+          "contact:twitter": "https://twitter.com/DTAhmedabad",
+          "email": "AMDDI_RES@hilton.com",
+          "fax": "+91 79 4105 0050",
+          "internet_access": "wlan",
+          "name": "DoubleTree By Hilton Ahmedabad",
+          "official_name": "DoubleTree by Hilton",
+          "operator": "Hilton",
+          "phone": "+91 79 4105 0000",
+          "rooms": "173",
+          "smoking": "isolated",
+          "stars": "5",
+          "tourism": "hotel",
+          "website": "https://www.hilton.com/en/hotels/amddidi-doubletree-ahmedabad/",
+          "wheelchair": "yes"
+        }
+      },
+      {
+        "type": "way",
+        "id": 366618676,
+        "center": {
+          "lat": 23.0278787,
+          "lon": 72.5121409
+        },
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:country": "IN",
+          "addr:postcode": "380015",
+          "addr:street": "Ramdev Nagar",
+          "brand": "Courtyard",
+          "brand:wikidata": "Q1053170",
+          "building": "yes",
+          "name": "Courtyard Ahmedabad",
+          "name:en": "Courtyard Ahmedabad",
+          "nohousenumber": "yes",
+          "official_name": "Courtyard by Marriott",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "way",
+        "id": 369211522,
+        "center": {
+          "lat": 23.0644707,
+          "lon": 72.5223196
+        },
+        "tags": {
+          "building": "hotel",
+          "building:colour": "white",
+          "building:levels": "9",
+          "building:material": "plaster",
+          "name": "The Fern Hotel",
+          "roof:material": "concrete",
+          "roof:shape": "flat",
+          "tourism": "hotel"
+        }
+      },
+      {
+        "type": "way",
+        "id": 460141581,
+        "center": {
+          "lat": 23.0239815,
+          "lon": 72.5072786
+        },
+        "tags": {
+          "brand": "Novotel",
+          "brand:wikidata": "Q420545",
+          "name": "Novotel Ahmedabad",
+          "operator": "Novotel",
+          "rooms": "184",
+          "tourism": "hotel",
+          "website": "http://www.novotel.com/de/hotel-8173-novotel-ahmedabad/index.shtml"
+        }
+      },
+      {
+        "type": "way",
+        "id": 522354375,
+        "center": {
+          "lat": 23.0188634,
+          "lon": 72.5917242
+        },
+        "tags": {
+          "building": "yes",
+          "description": "Boutique heritage home",
+          "internet_access": "yes",
+          "name": "French Haveli",
+          "tourism": "hotel",
+          "website": "https://frenchhaveli.com/"
+        }
+      },
+      {
+        "type": "way",
+        "id": 522455452,
+        "center": {
+          "lat": 23.0271416,
+          "lon": 72.5901916
+        },
+        "tags": {
+          "building": "yes",
+          "description": "Heritage suites",
+          "internet_access:fee": "no",
+          "name": "Dodhia Haveli",
+          "tourism": "hotel",
+          "website": "http://frenchhaveli.com/dodhia-haveli-hertiage-suites/"
+        }
+      },
+      {
+        "type": "way",
+        "id": 1152623321,
+        "center": {
+          "lat": 23.0752416,
+          "lon": 72.5266417
+        },
+        "tags": {
+          "addr:city": "Ahmedabad",
+          "addr:postcode": "380060",
+          "addr:street": "SG Highway",
+          "brand": "Renaissance",
+          "brand:wikidata": "Q2143252",
+          "building": "yes",
+          "name": "Renaissance Ahmedabad Hotel",
+          "phone": "+917940005000",
+          "tourism": "hotel",
+          "website": "https://www.marriott.com/en-us/hotels/amdbr-renaissance-ahmedabad-hotel/overview/"
+        }
+      }
+    ]
+  }
+}

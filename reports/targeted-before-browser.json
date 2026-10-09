@@ -1,0 +1,32 @@
+{
+  "phase": "before",
+  "verified": true,
+  "issues": [
+    {
+      "id": "AUD-003",
+      "reproduced": true,
+      "description": "Immediate What If save submits the previous debounced budget."
+    },
+    {
+      "id": "AUD-004",
+      "reproduced": true,
+      "description": "Claims live recomputation / shows saved status for subsequently unsaved parameters."
+    },
+    {
+      "id": "AUD-005",
+      "reproduced": true,
+      "description": "Share link copy promises a complete recipient itinerary without stating owner authentication."
+    }
+  ],
+  "checks": [
+    "Actual slider action, real POST payload and existing share dialog reviewed"
+  ],
+  "rapidSave": {
+    "selectedBudget": 20500,
+    "sentBudget": 20000
+  },
+  "oldLiveClaim": true,
+  "staleSavedNotice": true,
+  "shareText": "Share Itinerary\n\nModhera \u2022 2-Day Circular Route\n\nGenerates a read-only shareable link containing the complete itinerary routing, timed stops, and daily breakdown.\n\nSHAREABLE LINK\nCopy link\nOpen Native Share Sheet\nRead-only preview\nClose",
+  "shareAccessibleNameValid": false
+}

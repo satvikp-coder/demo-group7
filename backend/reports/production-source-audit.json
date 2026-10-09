@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-01T09:11:49.608Z",
-  "scanned": 506,
+  "checkedAt": "2026-10-09T20:13:15.553Z",
+  "scanned": 628,
   "findings": [],
   "privateEnvironmentFilesExcluded": [
     ".env.local-production"
@@ -36,16 +36,15 @@
     "frontend/public/favicon-32x32.png",
     "frontend/public/favicon.ico",
     "frontend/public/icon-192.png",
-    "frontend/public/icon-512.png"
+    "frontend/public/icon-512.png",
+    "reports/auth-itinerary-before.png",
+    "reports/demo-1.png",
+    "reports/demo-2.png",
+    "reports/demo-3.png",
+    "reports/demo-4.png",
+    "reports/itinerary-live-login-handoff.png"
   ],
-  "functionalFrontendChanges": [
-    "frontend/src/api/index.ts",
-    "frontend/src/App.tsx",
-    "frontend/src/components/AuthView.tsx",
-    "frontend/src/components/ItineraryView.tsx",
-    "frontend/src/components/PlannerModal.tsx",
-    "frontend/src/components/ProfileDashboardView.tsx"
-  ],
+  "functionalFrontendChanges": [],
   "gitHistoryAvailable": true,
   "verified": true
 }

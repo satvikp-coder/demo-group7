@@ -1,3 +1,5 @@
+> Historical 2026-10-01 release evidence. Current repairs and acceptance: [Final demo readiness](../reports/FINAL_DEMO_READINESS.md) and [test results](../reports/END_TO_END_TEST_RESULTS.md).
+
 # Release verification and repository cleanup
 
 Release target: `satvikp-coder/demo-group7`, branch `main`.

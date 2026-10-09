@@ -1,0 +1,8 @@
+{
+  "zero": 448.8,
+  "knownFour": 398.8,
+  "unknown": 448.8,
+  "zeroIncorrectlyAboveFour": true,
+  "unknownIncorrectlyAboveFour": true,
+  "databaseWrites": false
+}

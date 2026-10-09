@@ -1,0 +1,1641 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "phase": "before",
+  "pages": [
+    {
+      "path": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/modhera.jpg",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/rann-of-kutch.jpg",
+          "alt": "Great Rann of Kutch White Salt Desert at Sunset",
+          "width": 1376,
+          "height": 768,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/gir-lion.jpg",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 1280,
+          "height": 932,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/adalaj-stepwell.jpg",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 1031,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/explore",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/modhera.jpg",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/rann-of-kutch.jpg",
+          "alt": "Great Rann of Kutch White Salt Desert at Sunset",
+          "width": 1376,
+          "height": 768,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/gir-lion.jpg",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 1280,
+          "height": 932,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/adalaj-stepwell.jpg",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 1031,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/destination/ahmedabad",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/champaner",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/dwarka",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/destination/gir-national-park",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/modhera",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/rann-of-kutch",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/saputara",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/somnath",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/hotels",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/itinerary",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/modhera.jpg",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/rann-of-kutch.jpg",
+          "alt": "Great Rann of Kutch White Salt Desert at Sunset",
+          "width": 1376,
+          "height": 768,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/gir-lion.jpg",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 1280,
+          "height": 932,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/adalaj-stepwell.jpg",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 1031,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/budget",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/profile",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/admin",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/login",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/register",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/research",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/missing",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/modhera.jpg",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/rann-of-kutch.jpg",
+          "alt": "Great Rann of Kutch White Salt Desert at Sunset",
+          "width": 1376,
+          "height": 768,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/gir-lion.jpg",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 1280,
+          "height": 932,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/adalaj-stepwell.jpg",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 1031,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/explore",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/modhera.jpg",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/rann-of-kutch.jpg",
+          "alt": "Great Rann of Kutch White Salt Desert at Sunset",
+          "width": 1376,
+          "height": 768,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/gir-lion.jpg",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 1280,
+          "height": 932,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/adalaj-stepwell.jpg",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 1031,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/destination/ahmedabad",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/champaner",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/dwarka",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/destination/gir-national-park",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/modhera",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/rann-of-kutch",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/saputara",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": []
+    },
+    {
+      "path": "/destination/somnath",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/hotels",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/itinerary",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/modhera.jpg",
+          "alt": "Modhera Sun Temple Stepped Tank Ramakunda",
+          "width": 1600,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/destinations/rann-of-kutch.jpg",
+          "alt": "Great Rann of Kutch White Salt Desert at Sunset",
+          "width": 1376,
+          "height": 768,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/gir-lion.jpg",
+          "alt": "Gir National Park Asiatic Lion Reserve",
+          "width": 1280,
+          "height": 932,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/attractions/adalaj-stepwell.jpg",
+          "alt": "Adalaj Ni Vav 5-story Subterranean Stepwell",
+          "width": 1031,
+          "height": 1200,
+          "complete": true,
+          "fallback": false,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sabarmati Ashram - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "The Jami Masjid - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Gir National Park",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Sun Temple Modhera - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Kalo Dungar (The Black Hills) - Gujarat Tourism",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/monument.svg",
+          "alt": "Saputara",
+          "width": 225,
+          "height": 150,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ],
+      "broken": [
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Nageshwar Jyortiling - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/temple.svg",
+          "alt": "Shree Somnath Jyotirlinga Temple - Gujarat Tourism",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "Lemon Tree Premier",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "French Haveli Heritage Stay",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        },
+        {
+          "src": "http://127.0.0.1:8080/assets/categories/hotel.svg",
+          "alt": "The House of MG",
+          "width": 0,
+          "height": 0,
+          "complete": true,
+          "fallback": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "path": "/budget",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/profile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/admin",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/login",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/register",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/research",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    },
+    {
+      "path": "/missing",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "images": [],
+      "broken": []
+    }
+  ],
+  "errors": []
+}

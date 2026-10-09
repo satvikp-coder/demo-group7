@@ -14,7 +14,8 @@ export function scoreAttraction(
   getDistanceKm: (lat1?: number, lng1?: number, lat2?: number, lng2?: number) => number
 ): number {
   const fee = attraction.entryFeeNumeric || 0;
-  const rating = attraction.rating || 4.5;
+  // Unknown and valid zero ratings must not acquire an invented 4.5-star boost.
+  const rating = typeof attraction.rating === "number" && Number.isFinite(attraction.rating) ? attraction.rating : 0;
   const dist = getDistanceKm(
     currentLocation.lat,
     currentLocation.lng,

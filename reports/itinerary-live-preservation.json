@@ -1,0 +1,61 @@
+{
+  "verified": true,
+  "checkedAt": "2026-10-09T14:42:39.578Z",
+  "baseline": "local_restore_itinerary_20261009",
+  "tables": [
+    {
+      "table": "destinations",
+      "before": 8,
+      "after": 8,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "attractions",
+      "before": 25,
+      "after": 33,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "hotels",
+      "before": 11,
+      "after": 23,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "restaurants",
+      "before": 12,
+      "after": 12,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "routes",
+      "before": 131,
+      "after": 163,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "users",
+      "before": 1,
+      "after": 1,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "trips",
+      "before": 0,
+      "after": 0,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "itinerary_stops",
+      "before": 0,
+      "after": 0,
+      "originalRowsPreserved": true
+    },
+    {
+      "table": "budgets",
+      "before": 0,
+      "after": 0,
+      "originalRowsPreserved": true
+    }
+  ]
+}

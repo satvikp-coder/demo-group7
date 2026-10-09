@@ -1,4 +1,6 @@
+import {STRATEGY_WEIGHTS} from '../../../dsa/planning/priorities';
 import { useEffect, useRef, useState } from "react";
+import { catalogPhoto, imageSource } from "../utils/imageSources";
 import type { Destination, Attraction, Hotel, Restaurant } from "./types";
 import type { GeneratedItineraryResult, PlannerConfigPayload, OptimizationStrategy } from "../utils/itineraryPlanner";
 
@@ -15,6 +17,7 @@ export const errorMessage = (error: unknown) => error instanceof Error ? error.m
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   if (!BASE_URL) throw new ApiError("Set VITE_API_BASE_URL to the backend API URL.");
   const token = session.token();
+  if (path.startsWith('/trips') && !token) throw new ApiError('Sign in to generate or open your saved itinerary.', 401);
   let response: Response;
   try {
     response = await fetch(BASE_URL + path, { ...options, cache: "no-store", headers: {
@@ -30,6 +33,9 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   if (!response.ok) {
     // A response started by an old session must not sign out a newer login.
     if (response.status === 401 && token && session.token() === token) session.clear();
+    if (response.status === 401 && !['/auth/login','/auth/register'].includes(path)) {
+      throw new ApiError('Your session has expired. Sign in again to continue.', 401);
+    }
     const issues = body?.error?.issues?.map((issue: Row) => `${issue.path}: ${issue.message}`).join("; ");
     throw new ApiError(issues || body?.error?.message || `Request failed (${response.status})`, response.status);
   }
@@ -81,16 +87,13 @@ export const displayNumber = (value: number, digits?: number) => Number.isFinite
 const number = (value: any) => value == null ? Number.NaN : Number(value);
 const label = (value: any) => value == null ? "Not available" : String(value);
 const money = (value: any) => value == null ? "Not available" : `₹${Number(value).toLocaleString("en-IN")}`;
-// External catalog imagery has no established redistribution/hotlink permission
-// and currently fails at its source. Preserve source URLs in DB provenance; render
-// only project-owned assets through the existing category fallback component.
-export const catalogImage = (value: unknown): string => typeof value === "string" && /^\/assets\/[a-z0-9/_-]+\.(?:svg|png|jpe?g|webp)$/i.test(value) ? value : "";
+export const catalogImage = imageSource;
 function camel(row: Row): Row {
   return Object.fromEntries(Object.entries(row).map(([key,value]) => [key.replace(/_([a-z])/g, (_,c)=>c.toUpperCase()),value]));
 }
 export function attractionFromRow(row: Row): Attraction {
   return { ...camel(row), id:row.id,name:row.name,lat:number(row.lat),lng:number(row.lng),
-    imageUrl:catalogImage(row.image_url),durationHours:number(row.duration_hours),rating:number(row.rating),category:label(row.category),
+    imageUrl:catalogPhoto("attractions",row),durationHours:number(row.duration_hours),rating:number(row.rating),category:label(row.category),
     entryFee:row.entry_fee ?? money(row.entry_fee_numeric),entryFeeNumeric:number(row.entry_fee_numeric),
     wheelchairAccessible:row.wheelchair_accessible ?? undefined,physicalDemand:row.physical_demand ?? undefined } as Attraction;
 }
@@ -98,12 +101,12 @@ export function hotelFromRow(row: Row): Hotel {
   return { ...camel(row),id:row.id,name:row.name,lat:number(row.lat),lng:number(row.lng),
     pricePerNight:money(row.price_per_night),priceNumeric:number(row.price_per_night),
     rating:label(row.rating),ratingNumeric:number(row.rating),tier:row.tier ?? "Not available",
-    stayType:row.stay_type,location:label(row.location),description:[row.description, row.source_date ? `Published room estimate checked ${String(row.source_date).slice(0,10)}; confirm current rates and availability.` : "Catalog room estimate; confirm current rates and availability."].filter(Boolean).join(" "),
-    valueScore:number(row.value_score),imageUrl:catalogImage(row.image_url) } as Hotel;
+    stayType:row.stay_type,location:label(row.location),description:[row.description, row.price_per_night == null ? "Room price unknown; category matching and itinerary generation unavailable for this property." : row.source_date ? `Published room estimate checked ${String(row.source_date).slice(0,10)}; confirm current rates and availability.` : "Catalog room estimate; confirm current rates and availability."].filter(Boolean).join(" "),
+    valueScore:number(row.value_score),imageUrl:catalogPhoto("hotels",row) } as Hotel;
 }
 export function restaurantFromRow(row: Row): Restaurant {
   return { ...camel(row),id:row.id,name:row.name,lat:number(row.lat),lng:number(row.lng),
-    imageUrl:catalogImage(row.image_url),rating:number(row.rating),avgCostPerPerson:number(row.avg_cost_per_person),location:label(row.location) } as Restaurant;
+    imageUrl:catalogPhoto("restaurants",row),rating:number(row.rating),avgCostPerPerson:number(row.avg_cost_per_person),location:label(row.location) } as Restaurant;
 }
 export function destinationFromRow(row: Row): Destination {
   return { ...camel(row), id:row.id,name:row.name,district:label(row.district),location:label(row.location),
@@ -111,8 +114,8 @@ export function destinationFromRow(row: Row): Destination {
     rating:label(row.rating),ratingValue:number(row.rating),entryFee:row.entry_fee ?? money(row.entry_fee_numeric),
     entryFeeNumeric:number(row.entry_fee_numeric),bestTime:label(row.best_time),
     distanceFromAhmedabad:label(row.distance_from_ahmedabad),distanceNumeric:number(row.distance_numeric),
-    duration:label(row.duration),avgVisitTime:label(row.avg_visit_time),imageUrl:catalogImage(row.image_url),
-    imageAlt:row.image_alt ?? row.name,description:row.description ?? "",highlights:row.highlights ?? [],
+    duration:label(row.duration),avgVisitTime:label(row.avg_visit_time),imageUrl:catalogPhoto("destinations",row),
+    imageAlt:row.name,description:row.description ?? "",highlights:row.highlights ?? [],
     attractions:[],hotels:[],restaurants:[],nearbyAttractions:[],nearbyHotels:[],
     seasonalAdvisory:row.seasonal_note ? {note:row.seasonal_note,activeMonths:row.seasonal_active_months ?? [],
       gujaratiNote:row.seasonal_gujarati_note,hindiNote:row.seasonal_hindi_note,peakWindowLabel:row.seasonal_peak_window_label} : undefined,
@@ -146,8 +149,8 @@ export const api = {
       return {...destinationFromRow(row),attractions:row.attractions.map(attractionFromRow),hotels:row.hotels.map(hotelFromRow),restaurants:row.restaurants.map(restaurantFromRow)};
     });
   },
-  async hotels(id: string, sort: string, signal?: AbortSignal) {
-    return (await all(`/destinations/${idPath(id)}/hotels?sort=${encodeURIComponent(sort)}`,signal)).map(hotelFromRow);
+  async hotels(id: string, sort: string, signal?: AbortSignal, category?: string) {
+    return (await all(`/destinations/${idPath(id)}/hotels?sort=${encodeURIComponent(sort)}${category?"&category="+encodeURIComponent(category):""}`,signal)).map(hotelFromRow);
   },
   async login(email: string,password: string): Promise<SessionUser> {
     const result=await request<Row>("/auth/login",{method:"POST",body:JSON.stringify({email,password})});
@@ -169,7 +172,7 @@ export const api = {
     let hour=Number(start[1]);
     if(start[3]) hour=hour%12+(start[3].toUpperCase()==="PM"?12:0);
     const created = await request<Row>("/trips",{method:"POST",body:JSON.stringify({destination_id:config.cityId,days:config.tripDays,
-      budget:config.budget,starting_hotel_id:config.startingHotelId,start_time:`${String(hour).padStart(2,"0")}:${start[2]}`,
+      budget:config.budget,starting_hotel_id:config.startingHotelId,hotel_category:config.hotelCategory,weights:config.weights,travelers:config.travelers??1,rooms:config.rooms??1,start_date:config.startDate||undefined,start_time:`${String(hour).padStart(2,"0")}:${start[2]}`,
       strategy:config.strategy ?? "distance-first",wheelchair_accessible_only:config.wheelchairAccessibleOnly ?? false})});
     const ids = JSON.parse(sessionStorage.getItem("heritage_api_trip_ids") || "[]");
     sessionStorage.setItem("heritage_api_trip_ids", JSON.stringify([...new Set([...ids,created.trip.id])]));
@@ -226,7 +229,7 @@ export function configFromTrip(trip:Row): PlannerConfigPayload & {tripId:string}
   const hour=Number(trip.start_time.slice(0,2));
   const startTime=`${String(hour%12 || 12).padStart(2,"0")}:${trip.start_time.slice(3,5)} ${hour>=12 ? "PM" : "AM"}`;
   return {tripId:trip.id,cityId:trip.destination_id,tripDays:trip.trip_days,budget:trip.budget,
-    startingHotelId:trip.starting_hotel_id,startTime,strategy:trip.strategy,
+    startingHotelId:trip.starting_hotel_id,hotelCategory:trip.hotel_category??undefined,weights:trip.weights??undefined,travelers:trip.travelers??1,rooms:trip.rooms??1,startDate:trip.start_date?.slice(0,10),startTime,strategy:trip.strategy,
     wheelchairAccessibleOnly:trip.wheelchair_accessible_only};
 }
 // Presentation-only adaptation of persisted rows. No route selection or itinerary generation.
@@ -236,12 +239,12 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
     const stops=day.stops.map((s:Row,index:number)=>({id:s.id,referenceId:s.reference_id,
       legDistanceKm: s.reference_id === day.stops[index+1]?.reference_id ? 0 : legs.find((l:Row)=>l.day_number===day.day_number && l.from===s.reference_id && l.to===day.stops[index+1]?.reference_id)?.distance_km,type:s.stop_type,name:s.name,
       category:s.category ?? "",arrivalTime:s.arrival_time,departureTime:s.departure_time,durationMinutes:s.duration_minutes,
-      cost:number(s.cost),location:s.location ?? "",lat:number(s.lat),lng:number(s.lng),imageUrl:catalogImage(s.image_url),
+      cost:number(s.cost),location:s.location ?? "",lat:number(s.lat),lng:number(s.lng),imageUrl:catalogPhoto(({hotel:"hotels",attraction:"attractions",meal:"restaurants"} as Record<string,string>)[s.stop_type] || "attractions",s),
       description:s.description ?? "",wheelchairAccessible:s.wheelchair_accessible ?? undefined,
       physicalDemand:s.physical_demand ?? undefined,bestTimeNote:s.best_time_note ?? undefined}));
     const sum=(type:string)=>stops.filter((s:Row)=>s.type===type).reduce((n:number,s:Row)=>n+s.cost,0);
-    const km=legs.filter((l:Row)=>l.day_number===day.day_number).reduce((n:number,l:Row)=>n+Number(l.distance_km),0);
-    return {dayNumber:day.day_number,dateLabel:`DAY ${day.day_number}`,title:city.name,stops,totalKm:km,
+    const km=Math.round(legs.filter((l:Row)=>l.day_number===day.day_number).reduce((n:number,l:Row)=>n+Number(l.distance_km),0)*100)/100;
+    return {dayNumber:day.day_number,dateLabel:dto.trip.start_date?new Date(Date.parse(dto.trip.start_date.slice(0,10))+86400000*(day.day_number-1)).toISOString().slice(0,10):`DAY ${day.day_number}`,title:city.name,stops,totalKm:km,
       roadKm:legs.length ? Number.NaN : 0,boatKm:legs.length ? Number.NaN : 0,totalCost:stops.reduce((n:number,s:Row)=>n+s.cost,0),hotelCost:sum("hotel"),
       attractionCost:sum("attraction"),mealCost:sum("meal"),transitCost:sum("transit")};
   });
@@ -258,7 +261,7 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
   return {tripId:dto.trip.id,strategy:dto.trip.strategy,strategyName:dto.trip.strategy,strategyTagline:"",
     activeCity:city,startingHotel:hotel,dayPlans,totalCost:dto.budget.total,hotelTotalCost:dto.budget.hotel,
     attractionTotalCost:dto.budget.attractions,mealTotalCost:dto.budget.meals,transitTotalCost:dto.budget.transit,
-    totalDistanceKm:dayPlans.reduce((n:number,d:Row)=>n+d.totalKm,0),roadDistanceKm:dayPlans.reduce((n:number,d:Row)=>n+d.roadKm,0),boatDistanceKm:legs.length ? Number.NaN : 0,
+    totalDistanceKm:Math.round(dayPlans.reduce((n:number,d:Row)=>n+d.totalKm,0)*100)/100,roadDistanceKm:dayPlans.reduce((n:number,d:Row)=>n+d.roadKm,0),boatDistanceKm:legs.length ? Number.NaN : 0,
     attractionCount:allStops.filter((s:Row)=>s.type==="attraction").length,totalRuntimeMinutes:minutes,totalRuntimeHours:`${(minutes/60).toFixed(1)} hrs`,
     stats:{attractionsConsidered:city.attractions.length,attractionsVisited:allStops.filter((s:Row)=>s.type==="attraction").length,
       directRoadConnectionsUsed:summary.routing?.direct_route_hits ?? 0,dijkstraFallbackCalls:summary.routing?.dijkstra_calls ?? 0,
@@ -270,8 +273,8 @@ export async function loadItinerary(id:string,signal?:AbortSignal) {
   const city=await api.destination(dto.trip.destination_id,signal);
   return {dto,config:configFromTrip(dto.trip),result:persistedItinerary(dto,city)};
 }
-export async function createItinerary(config:PlannerConfigPayload,strategy:OptimizationStrategy=config.strategy ?? "distance-first") {
-  const {trip}=await api.createTrip({...config,strategy});
+export async function createItinerary(config:PlannerConfigPayload,strategy?:OptimizationStrategy) {
+  const {trip}=await api.createTrip({...config,strategy:strategy??config.strategy??"distance-first",weights:strategy&&config.weights?STRATEGY_WEIGHTS[strategy]:config.weights});
   await api.generate(trip.id);
   return loadItinerary(trip.id);
 }

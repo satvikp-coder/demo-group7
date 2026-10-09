@@ -1,3 +1,4 @@
+import {validWeights} from '../../dsa/planning/priorities.ts';
 import { Router } from "express";
 import { z } from "zod";
 import { verifyJwt, verifyAccount } from "../middleware/auth.js";
@@ -8,11 +9,17 @@ import * as controller from "../controllers/tripController.js";
 import { limiter } from "../middleware/production.js";
 import { env } from "../config/env.js";
 const generationLimit = limiter("itinerary_generation", env.GENERATION_RATE_LIMIT, 60000, true);
+const weightSchema=z.object({distance:z.number().int().min(0).max(100),cost:z.number().int().min(0).max(100),rating:z.number().int().min(0).max(100)}).strict().refine(validWeights,"Priorities must total exactly 100");
 const preferences=z.object({
+  weights:weightSchema.optional(),
   strategy:z.enum(["distance-first","budget-first","rating-first"]).optional(),
   wheelchair_accessible_only:z.boolean().optional(),
 }).strict();
 const createBody=preferences.extend({
+  travelers:z.number().int().min(1).max(20).default(1),
+  rooms:z.number().int().min(1).max(20).default(1),
+  start_date:z.string().date().optional(),
+  hotel_category:z.enum(["Low Cost","Budget","Premium"]).optional(),
   destination_id:z.string().uuid(),days:z.number().int().min(1).max(30),
   budget:z.number().int().min(1).max(10000000),starting_hotel_id:z.string().uuid(),
   start_time:z.string().regex(/^(?:[01][0-9]|2[01]):[0-5][0-9]$/, "Use HH:mm between 00:00 and 21:59"),

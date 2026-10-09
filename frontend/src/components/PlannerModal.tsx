@@ -1,6 +1,10 @@
+import {PriorityControls} from './PriorityControls';
+import {DEFAULT_WEIGHTS,type PriorityWeights} from '../../../dsa/planning/priorities';
+import {HotelCategoryPicker} from './HotelCategoryPicker';
+import {hotelCategory as classifyHotel,type HotelCategory} from '../../../dsa/planning/hotelPolicy';
 import React, { useState, useEffect, useRef } from "react";
 import type { Destination } from "../api/types";
-import { api, useCatalog, EMPTY_DESTINATION, errorMessage, configFromTrip } from "../api";
+import { api, session, ApiError, useCatalog, EMPTY_DESTINATION, errorMessage, configFromTrip } from "../api";
 import { ImageWithFallback } from "./ImageWithFallback";
 import {
   X,
@@ -34,6 +38,7 @@ interface PlannerModalProps {
   preferredHotels?: Record<string, string>;
   onSelectPreferredHotel?: (cityId: string, hotelId: string) => void;
   onGenerateItinerary: (config: PlannerConfigPayload) => void;
+  onRequireAuthentication: (config: PlannerConfigPayload) => void;
 }
 
 export const PlannerModal: React.FC<PlannerModalProps> = ({
@@ -44,6 +49,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   preferredHotels,
   onSelectPreferredHotel,
   onGenerateItinerary,
+  onRequireAuthentication,
 }) => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const { language, t, getName } = useLanguage();
@@ -54,8 +60,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   });
 
   // Step 2: Logistics state
+  const [travelers,setTravelers]=useState(1);
+  const [rooms,setRooms]=useState(1);
+  const [startDate,setStartDate]=useState("");
+  const [weights,setWeights] = useState<PriorityWeights>({...DEFAULT_WEIGHTS});
   const [tripDays, setTripDays] = useState<number>(2);
   const [budget, setBudget] = useState<number>(8500);
+  const [hotelCategory, setHotelCategory] = useState<HotelCategory>("Budget");
   const [startingHotelId, setStartingHotelId] = useState<string>("");
   const [startTime, setStartTime] = useState<string>("08:00 AM");
   const [wheelchairOnly, setWheelchairOnly] = useState<boolean>(false);
@@ -88,6 +99,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
         setStartingHotelId(cityObj.hotels[0]?.id ?? "");
       }
 
+      setHotelCategory(initialConfig?.hotelCategory ?? classifyHotel((cityObj.hotels.find(h=>h.id===preferredForCity)??cityObj.hotels[0])?.priceNumeric) ?? "Budget");
+      setTravelers(initialConfig?.travelers??1);setRooms(initialConfig?.rooms??1);setStartDate(initialConfig?.startDate??"");
+      setWeights(initialConfig?.weights ?? {...DEFAULT_WEIGHTS});
       if (initialConfig?.tripDays) setTripDays(initialConfig.tripDays);
       if (initialConfig?.budget) setBudget(initialConfig.budget);
       if (initialConfig?.startTime) setStartTime(initialConfig.startTime);
@@ -102,6 +116,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
     setSelectedCityId(cityId);
     const cityObj = getCityById(cityId);
     const preferredForCity = preferredHotels?.[cityId];
+    setHotelCategory(classifyHotel((cityObj?.hotels.find(h=>h.id===preferredForCity)??cityObj?.hotels[0])?.priceNumeric)??"Budget");
     if (preferredForCity && cityObj?.hotels.some(h => h.id === preferredForCity)) {
       setStartingHotelId(preferredForCity);
     } else if (cityObj && cityObj.hotels.length > 0) {
@@ -134,15 +149,21 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
     if(pendingRef.current) return;
     pendingRef.current = true; setPending(true); setRequestError("");
     const config: PlannerConfigPayload = {cityId:activeCity.id,tripDays,budget,startingHotelId,
-      startTime,wheelchairAccessibleOnly:wheelchairOnly};
+      startTime,hotelCategory,weights,travelers,rooms,startDate,wheelchairAccessibleOnly:wheelchairOnly};
     try {
+      if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error("Choose 1 to 20 travelers and rooms.");
+      if (!startingHotelId) throw new Error("Select a hotel in the chosen category.");
+      if (!session.token()) { setCreatedTrip(null); onRequireAuthentication(config); return; }
       const key=JSON.stringify(config);
       let id=createdTrip?.key===key ? createdTrip.id : undefined;
       if(!id) { const result=await api.createTrip(config); id=result.trip.id; setCreatedTrip({key,id}); }
       const generated=await api.generate(id);
       onGenerateItinerary(configFromTrip(generated.trip));
       onClose();
-    } catch(error) { setRequestError(errorMessage(error)); }
+    } catch(error) {
+      if (error instanceof ApiError && error.status === 401) { setCreatedTrip(null); onRequireAuthentication(config); }
+      else setRequestError(errorMessage(error));
+    }
     finally { pendingRef.current = false; setPending(false); }
   };
 
@@ -150,19 +171,18 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   if(catalog.error) return <p role="alert">{catalog.error} <button onClick={catalog.reload}>Retry</button> <button onClick={onClose}>Close</button></p>;
   if(!activeCity.id) return <p role="status">No destinations available. <button onClick={onClose}>Close</button></p>;
   const startingHotelObj =
-    activeCity.hotels.find((h) => h.id === startingHotelId) ||
-    activeCity.hotels[0];
+    activeCity.hotels.find((h) => h.id === startingHotelId);
 
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="planner-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-ink/85 backdrop-blur-xs overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-start justify-center p-3 sm:p-4 bg-ink/85 backdrop-blur-xs overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="bg-salt border-2 border-gold max-w-3xl w-full text-charcoal p-5 sm:p-8 relative shadow-2xl my-6 animate-fadeIn rounded-2xl"
+        className="bg-salt border-2 border-gold max-w-3xl w-full text-charcoal p-5 sm:p-8 relative shadow-2xl my-auto animate-fadeIn rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {pending && <p role="status">Saving and generating your itinerary...</p>}
@@ -531,22 +551,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     <Hotel className="w-4 h-4 text-gold" />
                     3. {t("planner.startingHotel", "Starting Hotel / Stay")}
                   </label>
-                  <select
-                    id="planner-starting-hotel"
-                    value={startingHotelId}
-                    onChange={(e) => handleStartingHotelChange(e.target.value)}
-                    className="w-full bg-salt text-charcoal font-mono text-xs p-2.5 border border-stone/40 outline-none focus:border-gold focus:ring-1 focus:ring-gold cursor-pointer font-bold rounded-lg"
-                  >
-                    {activeCity.hotels.map((h) => {
-                      const isPref = preferredHotels?.[selectedCityId] === h.id;
-                      return (
-                        <option key={h.id} value={h.id}>
-                          {h.name} ({h.pricePerNight}/night • {h.tier}){" "}
-                          {isPref ? "★ (Preferred Stay)" : ""}
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <HotelCategoryPicker destinationId={activeCity.id} category={hotelCategory} hotelId={startingHotelId} onCategory={setHotelCategory} onHotel={handleStartingHotelChange}/>
                   {startingHotelObj && (
                     <div className="font-mono text-[11px] text-stone space-y-1">
                       <p>
@@ -580,6 +585,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   </select>
                 </div>
 
+                <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl col-span-1 md:col-span-2">
+                  <label className="block text-xs">Start date (optional)<input aria-label="Trip start date" type="date" value={startDate} onChange={e=>setStartDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">Travelers<input aria-label="Travelers" type="number" min="1" max="20" value={travelers} onChange={e=>setTravelers(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">Rooms<input aria-label="Rooms" type="number" min="1" max="20" value={rooms} onChange={e=>setRooms(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <p className="text-xs text-stone">Admission and meal estimates are per traveler; nightly lodging is multiplied by rooms. Confirm room occupancy with the property. One lodging night per itinerary day; live availability and date-specific closures are not supplied.</p>
+                </div>
+                <PriorityControls value={weights} onChange={setWeights}/>
                 {/* 5. Accessibility Constraint Toggle */}
                 <div className="bg-emerald-50/50 border border-emerald-300 p-4 space-y-2 col-span-1 md:col-span-2 rounded-xl">
                   <label className="flex items-start sm:items-center justify-between gap-3 cursor-pointer">
@@ -709,7 +721,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                   <button
                     type="button"
-                    onClick={() => setShowComparisonModal(true)}
+                    disabled={!startingHotelId} onClick={() => { if(!session.token()) { onRequireAuthentication({cityId:activeCity.id,tripDays,budget,startingHotelId,hotelCategory,weights,travelers,rooms,startDate,startTime,wheelchairAccessibleOnly:wheelchairOnly}); return; } setShowComparisonModal(true); }}
                     className="bg-salt hover:bg-ink hover:text-salt text-ink border-2 border-gold font-mono text-xs font-bold px-5 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md transition-all rounded-lg"
                   >
                     <SlidersHorizontal className="w-4 h-4 text-gold" />
@@ -742,7 +754,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             cityId: activeCity.id,
             tripDays,
             budget,
-            startingHotelId: startingHotelId || activeCity.hotels[0]?.id || "",
+            startingHotelId,hotelCategory,weights,travelers,rooms,startDate,
             startTime: startTime || "08:00 AM",
             wheelchairAccessibleOnly: wheelchairOnly,
           }}

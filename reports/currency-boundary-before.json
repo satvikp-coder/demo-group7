@@ -1,0 +1,41 @@
+{
+  "expectedVisits": 3,
+  "actualVisits": 2,
+  "fees": [
+    0.3,
+    0.6,
+    0.1
+  ],
+  "selected": [
+    0.3,
+    0.6
+  ],
+  "exactCostInPaise": 50000,
+  "steps": [
+    {
+      "type": "hotel",
+      "cost": 499
+    },
+    {
+      "type": "attraction",
+      "cost": 0.3
+    },
+    {
+      "type": "attraction",
+      "cost": 0.6
+    },
+    {
+      "type": "hotel",
+      "cost": 0
+    }
+  ],
+  "unscheduled": [
+    {
+      "id": "fixture-2",
+      "name": "Decimal fee unit fixture 2",
+      "reason": "Not scheduled within available routes, time and budget"
+    }
+  ],
+  "syntheticUnitFixturesOnly": true,
+  "databaseWrites": false
+}

@@ -27,6 +27,10 @@ try:
         page.get_by_role('button',name='Run Simulation Matrix',exact=True).click()
         expect(page.locator('tbody tr')).to_have_count(22,timeout=60000)
         assert len(page.evaluate("JSON.parse(sessionStorage.getItem('heritage_api_trip_ids'))"))==22
+        token=page.evaluate("sessionStorage.getItem('heritage_api_token')")
+        for trip_id in page.evaluate("JSON.parse(sessionStorage.getItem('heritage_api_trip_ids'))"):
+            saved=context.request.get(api+'/trips/'+trip_id,headers={'Authorization':'Bearer '+token})
+            assert saved.status==200 and saved.json()['trip']['weights'] is None
         report['checks'].append({'name':'Research UI creates and displays 22 actual persisted server plans','passed':True})
         prompt=page.get_by_role('dialog',name='Add Heritage Tourism Planner to Home Screen',exact=True)
         if prompt.count(): prompt.get_by_role('button',name='Maybe Later',exact=True).click()

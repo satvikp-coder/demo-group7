@@ -1,3 +1,4 @@
+import {HOTEL_CATEGORIES,type HotelCategory} from '../../../dsa/planning/hotelPolicy';
 import { displayNumber } from "../api";
 import React, { useState } from "react";
 import { Destination, Hotel } from "../api/types";
@@ -19,7 +20,7 @@ import {
 
 export type HotelData = Hotel;
 
-type SortCriterion = "value" | "rating" | "price";
+type SortCriterion = "value" | "rating" | "price" | "distance";
 
 interface HotelsViewProps {
   selectedCityId?: string;
@@ -42,7 +43,8 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
   const activeDestination = catalog.data?.find(d => d.id === selectedCityId) ?? catalog.data?.[0] ?? EMPTY_DESTINATION;
   const cityName = getName(activeDestination);
   const [sortOrder, setSortOrder] = useState<SortCriterion>("value");
-  const hotelsRequest = useApi(signal => api.hotels(activeDestination.id, sortOrder, signal), [activeDestination.id, sortOrder], !!activeDestination.id);
+  const [category,setCategory]=useState<HotelCategory|''>('');
+  const hotelsRequest = useApi(signal => api.hotels(activeDestination.id, sortOrder, signal,category||undefined), [activeDestination.id, sortOrder,category], !!activeDestination.id);
   const currentHotels: Hotel[] = hotelsRequest.data ?? [];
   const [localPreferredMap, setLocalPreferredMap] = useState<
     Record<string, string>
@@ -66,7 +68,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
     }
 
     setAssignedNotice(
-      `Set "${hotel.name}" as preferred stay for ${cityName}. Saved to itinerary engine.`,
+      `Set "${hotel.name}" as preferred stay for ${cityName}. Selected for your next itinerary.`,
     );
     setTimeout(() => {
       setAssignedNotice(null);
@@ -101,7 +103,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
         return (
           <span className="inline-flex items-center gap-1 bg-salt text-charcoal border border-stone/50 font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-md">
             <HotelIcon className="w-3 h-3 text-ink" />
-            Tourism Guild Registered
+            Accommodation
           </span>
         );
     }
@@ -181,6 +183,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           )}
         </div>
 
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter hotel category">{(['',...HOTEL_CATEGORIES] as const).map(value=><button key={value} aria-pressed={category===value} onClick={()=>setCategory(value)} className="px-3 py-2 border border-gold rounded-lg text-xs">{value||'All categories'}</button>)}</div>
         {/* ================= 2. SORT / RE-RANK CONTROL ================= */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border-2 border-stone/40 p-4 shadow-2xs font-mono text-xs rounded-xl">
           <div className="flex items-center gap-2">
@@ -191,7 +194,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-stone text-[11px]">Sort By:</span>
+            <span className="text-stone text-[11px]">Sort By:</span><button onClick={()=>setSortOrder("distance")} aria-pressed={sortOrder==="distance"} className="px-3 py-1.5 border border-gold rounded-lg">Nearest (straight-line)</button>
 
             <button
               onClick={() => setSortOrder("value")}
@@ -230,6 +233,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
         {/* ================= 3. RANKED LIST OF HOTELS ================= */}
         <div className="space-y-4">
+          {!sortedHotels.length&&<p role="status">No matching hotels with known prices in this category and search area.</p>}
           {sortedHotels.map((hotel, index) => {
             const rankNumber = index + 1;
             const isChosen = currentPreferredHotelId === hotel.id;
@@ -249,7 +253,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                       {rankNumber}
                     </div>
 
-                    {hotel.imageUrl && (
+                    {(
                       <ImageWithFallback
                         src={hotel.imageUrl}
                         alt={`${hotel.name} ${hotel.stayType} exterior`}
@@ -287,7 +291,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
                       <p className="font-body text-xs text-charcoal/90 leading-relaxed max-w-xl">
                         {hotel.description}
-                      </p>
+                      </p><p className="text-xs text-stone">{hotel.hotelCategory??"Category unknown"} | {hotel.distanceKm==null?"Distance unknown":`${hotel.distanceKm.toFixed(1)} km approximate straight-line from ${hotel.anchorName}`}</p><p className="text-xs text-stone">{hotel.priceBasis}</p>
 
                       <div className="space-y-1 pt-1 max-w-xs font-mono text-[10px]">
                         <div className="flex justify-between text-stone">
@@ -298,7 +302,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
                         </div>
                         <div className="w-full h-2 bg-stone/20 border border-stone/40 overflow-hidden rounded-full">
                           <div
-                            style={{ width: `${hotel.valueScore}%` }}
+                            style={{ width: `${Number.isFinite(hotel.valueScore)?Math.max(0,Math.min(100,hotel.valueScore)):0}%` }}
                             className="h-full bg-gold transition-all duration-500 rounded-full"
                           />
                         </div>
@@ -308,7 +312,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
                   <div className="shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-stone/20 flex md:flex-col items-center justify-end gap-2">
                     <button
-                      onClick={() => handleSelectHotel(hotel)}
+                      disabled={!Number.isFinite(hotel.priceNumeric)} onClick={() => handleSelectHotel(hotel)}
                       className={`w-full md:w-auto text-xs font-mono font-bold px-4 py-2.5 border transition-all cursor-pointer flex items-center justify-center gap-2 rounded-lg ${
                         isChosen
                           ? "bg-ink text-gold border-gold shadow-xs"

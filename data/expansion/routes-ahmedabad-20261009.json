@@ -1,0 +1,803 @@
+{
+  "city": "ahmedabad",
+  "checked": "2026-10-09",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/72.505393,22.993679;72.580136,23.167140;72.592476,23.054180;72.581010,23.027020;72.599521,23.006143;72.580638,23.060165;72.576958,23.029284;72.581536,23.027062;72.591743,23.018845;72.535706,22.993642;72.581617,23.027038;72.589368,23.024425;72.581659,23.026881;72.567065,23.018092?annotations=distance,duration",
+  "nodes": [
+    {
+      "external_id": "a305",
+      "lat": "22.993679",
+      "lng": "72.505393",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a302",
+      "lat": "23.167140",
+      "lng": "72.580136",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a304",
+      "lat": "23.054180",
+      "lng": "72.592476",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a303",
+      "lat": "23.027020",
+      "lng": "72.581010",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a306",
+      "lat": "23.006143",
+      "lng": "72.599521",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "a301",
+      "lat": "23.060165",
+      "lng": "72.580638",
+      "kind": "attraction"
+    },
+    {
+      "external_id": "h302",
+      "lat": "23.029284",
+      "lng": "72.576958",
+      "kind": "hotel"
+    },
+    {
+      "external_id": "h303",
+      "lat": "23.027062",
+      "lng": "72.581536",
+      "kind": "hotel"
+    },
+    {
+      "external_id": "h301",
+      "lat": "23.018845",
+      "lng": "72.591743",
+      "kind": "hotel"
+    },
+    {
+      "external_id": "r302",
+      "lat": "22.993642",
+      "lng": "72.535706",
+      "kind": "restaurant"
+    },
+    {
+      "external_id": "r301",
+      "lat": "23.027038",
+      "lng": "72.581617",
+      "kind": "restaurant"
+    },
+    {
+      "external_id": "r303",
+      "lat": "23.024425",
+      "lng": "72.589368",
+      "kind": "restaurant"
+    },
+    {
+      "external_id": "exp-20261009-hotel-good-night-ahmedabad",
+      "lat": 23.026881,
+      "lng": 72.581659,
+      "kind": "hotel"
+    },
+    {
+      "external_id": "exp-20261009-hotel-maruti-ahmedabad",
+      "lat": 23.018092,
+      "lng": 72.567065,
+      "kind": "hotel"
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        25273.4,
+        13730.7,
+        10035.3,
+        11224.4,
+        13953.6,
+        9969.1,
+        10030,
+        10803,
+        3657.9,
+        10086.6,
+        10657,
+        10086.6,
+        7920.9
+      ],
+      [
+        23790,
+        0,
+        18409.6,
+        19965.8,
+        23547.8,
+        14834.1,
+        19899.6,
+        19960.5,
+        21646.3,
+        26276,
+        20017.1,
+        20041.1,
+        20017.1,
+        20151.9
+      ],
+      [
+        14870.8,
+        18712.1,
+        0,
+        3777.5,
+        6418.1,
+        6183.6,
+        4094.7,
+        3772.1,
+        5873.7,
+        10776.5,
+        3828.8,
+        4164.6,
+        3828.8,
+        6143.6
+      ],
+      [
+        11506.8,
+        19896.5,
+        3995.6,
+        0,
+        3997.8,
+        6171.3,
+        717.9,
+        294.9,
+        2096.2,
+        6999,
+        51.3,
+        1076.6,
+        51.3,
+        2366.1
+      ],
+      [
+        11677.6,
+        23650.2,
+        7702.6,
+        4479.7,
+        0,
+        9925.1,
+        4897.4,
+        4474.4,
+        2834.1,
+        8052.3,
+        4605.1,
+        3203.4,
+        4605.1,
+        4608.3
+      ],
+      [
+        13479.9,
+        15546.2,
+        3648.7,
+        5250,
+        8832.1,
+        0,
+        5183.8,
+        5244.7,
+        6930.5,
+        10069,
+        5301.4,
+        5413.3,
+        5301.4,
+        5436.1
+      ],
+      [
+        11601.8,
+        19165.4,
+        4276.5,
+        581.1,
+        4578.9,
+        5440.3,
+        0,
+        575.8,
+        2677.3,
+        7094,
+        632.4,
+        1657.7,
+        632.4,
+        2461.1
+      ],
+      [
+        11512.1,
+        19901.8,
+        4000.9,
+        5.3,
+        4003.1,
+        6176.6,
+        723.2,
+        0,
+        2101.6,
+        7004.3,
+        56.7,
+        1081.9,
+        56.7,
+        2371.4
+      ],
+      [
+        12206.3,
+        21953.7,
+        6204.7,
+        2783.2,
+        2485.3,
+        8228.6,
+        3200.9,
+        2777.9,
+        0,
+        7698.5,
+        1896,
+        1048.7,
+        1896,
+        4296.5
+      ],
+      [
+        5573.9,
+        25168.2,
+        11220.2,
+        7524.8,
+        9383.1,
+        11443.1,
+        7458.6,
+        7519.5,
+        8292.5,
+        0,
+        7576.1,
+        8146.5,
+        7576.1,
+        5410.4
+      ],
+      [
+        11512.3,
+        19901.9,
+        4001.1,
+        305.7,
+        4003.3,
+        6176.8,
+        723.4,
+        300.4,
+        2101.7,
+        7004.5,
+        0,
+        1032.5,
+        0,
+        2371.6
+      ],
+      [
+        12993.2,
+        21530,
+        5094.3,
+        1933.7,
+        2943.9,
+        7804.8,
+        2351.5,
+        1928.4,
+        1223.2,
+        8485.4,
+        1708.6,
+        0,
+        1708.6,
+        3999.6
+      ],
+      [
+        11512.3,
+        19901.9,
+        4001.1,
+        305.7,
+        4003.3,
+        6176.8,
+        723.4,
+        300.4,
+        2101.7,
+        7004.5,
+        0,
+        1032.5,
+        0,
+        2371.6
+      ],
+      [
+        9329.9,
+        19931.2,
+        5983.2,
+        2287.8,
+        4378.4,
+        6206.1,
+        2221.6,
+        2282.5,
+        3055.5,
+        4822.1,
+        2339.1,
+        2909.5,
+        2339.1,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "aRIwlGoSMJQWAAAAYAAAAP8AAAAAAAAAnKZ4QSQrhUK0DDFDAAAAABYAAABgAAAA_wAAAAAAAABSKAEAWlhSBMjcXgExWFIED9teASYALxEAAAAA",
+        "location": [
+          72.505434,
+          22.99412
+        ],
+        "name": "",
+        "distance": 49.01857838
+      },
+      {
+        "hint": "2ETHjgtqx46qAAAAnwAAANIDAAAAAAAAp_CNQmdMhEIT8MtDAAAAAKoAAACfAAAA0gMAAAAAAABSKAEAzn1TBG-BYQEofFMEpIBhAQ4AjwkAAAAA",
+        "location": [
+          72.580558,
+          23.167343
+        ],
+        "name": "",
+        "distance": 48.7072564
+      },
+      {
+        "hint": "83FZhGELNJEXAAAAGAAAAF4AAABSAAAAoQzOQd5u10F4MtJCrYu2QhcAAAAYAAAAXgAAAFIAAABSKAEAzatTBJnJXwFcrFMEZMdfAQYA3wQAAAAA",
+        "location": [
+          72.592333,
+          23.054745
+        ],
+        "name": "",
+        "distance": 64.26370505
+      },
+      {
+        "hint": "iJdShP___38EAAAABAAAAAAAAAAPAAAA-LrUQAAAAAAAAAAA_WS3QQQAAAAEAAAAAAAAAA8AAABSKAEA34BTBEtdXwGSf1METF1fAQAAXwsAAAAA",
+        "location": [
+          72.581343,
+          23.027019
+        ],
+        "name": "",
+        "distance": 34.13389361
+      },
+      {
+        "hint": "R8H4kEnB-JAAAAAALgAAAAAAAABqAAAAAAAAAISRmkEAAAAANj0wQgAAAAAuAAAAAAAAAGoAAABSKAEAqr9TBDUMXwHhx1MEvwtfAQAADw8AAAAA",
+        "location": [
+          72.597418,
+          23.006261
+        ],
+        "name": "",
+        "distance": 215.9608976
+      },
+      {
+        "hint": "5XxXhCRyXJUOAAAAAAAAAAAAAAAAAAAAc5wcQQAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAABSKAEA3HlTBE3cXwEeflMExd5fAQAAfwgAAAAAI3Jclf___38AAAAADQAAAAAAAABKAAAAAAAAANt1EEEAAAAALuZNQgAAAAANAAAAAAAAAEoAAABSKAEA3HlTBE3cXwEeflMExd5fAQAAHw4AAAAA",
+        "location": [
+          72.579548,
+          23.059533
+        ],
+        "name": "Ashram Road",
+        "distance": 131.8061899
+      },
+      {
+        "hint": "8aoXit_yC5MAAAAAFwAAAAsAAAB7AAAAsWstP2CgyUH3k0hBQAQHQwAAAAAXAAAACwAAAHsAAABSKAEATnBTBK9mXwG-b1MEJGZfAQIAXwgAAAAA",
+        "location": [
+          72.577102,
+          23.029423
+        ],
+        "name": "",
+        "distance": 21.32678803
+      },
+      {
+        "hint": "iJdShP___38AAAAABAAAAAAAAAAPAAAAdBqqP9M6qkAAAAAA_WS3QQAAAAAEAAAAAAAAAA8AAABSKAEA4YBTBHtdXwGggVMEdl1fAQAAXwsAAAAA",
+        "location": [
+          72.581345,
+          23.027067
+        ],
+        "name": "",
+        "distance": 19.58602507
+      },
+      {
+        "hint": "f4X9iIOF_YgCAAAADwAAAAAAAAAAAAAAZi7IP_KiI0EAAAAAAAAAAAIAAAAPAAAAAAAAAAAAAABSKAEAv6lTBGc9XwF_qVMEXT1fAQAA7xUAAAAA",
+        "location": [
+          72.591807,
+          23.018855
+        ],
+        "name": "",
+        "distance": 6.653051362
+      },
+      {
+        "hint": "yNz-jf___38VAAAAMQAAAAQAAAAAAAAAe3UXQllrR0LHf95AAAAAABUAAAAxAAAABAAAAAAAAABSKAEAi8xSBKrZXgGazlIE6tpeAQIALwkAAAAA",
+        "location": [
+          72.535179,
+          22.993322
+        ],
+        "name": "Narol-Sarkhej Road",
+        "distance": 64.62273631
+      },
+      {
+        "hint": "fZdShICXUoREAAAAAAAAAAAAAABqAAAAH1LjQQAAAAAAAAAANPgvQkQAAAAAAAAAAAAAAGoAAABSKAEA84FTBIZcXwHxgVMEXl1fAQAAfwUAAAAA",
+        "location": [
+          72.581619,
+          23.026822
+        ],
+        "name": "",
+        "distance": 23.92165992
+      },
+      {
+        "hint": "N7Bigf___38CAAAAFgAAAD0AAAAAAAAA4-IrQNkerkFIVIdCAAAAAAIAAAAWAAAAPQAAAAAAAABSKAEAK6BTBJNTXwE4oFMEKVNfAQIAPwUAAAAA",
+        "location": [
+          72.589355,
+          23.024531
+        ],
+        "name": "Gandhi Road",
+        "distance": 11.81429232
+      },
+      {
+        "hint": "fZdShICXUoREAAAAAAAAAAAAAABqAAAAH1LjQQAAAAAAAAAANPgvQkQAAAAAAAAAAAAAAGoAAABSKAEA84FTBIZcXwEbglMEwVxfAQAAfwUAAAAA",
+        "location": [
+          72.581619,
+          23.026822
+        ],
+        "name": "",
+        "distance": 7.713836216
+      },
+      {
+        "hint": "ZExsgR0uUoQLAAAAFgAAAAAAAABMAAAAwN4pQSOXlkEAAAAArMuHQgsAAAAWAAAAAAAAAEwAAABSKAEAPUlTBJM6XwEZSVMEbDpfAQAALwgAAAAA",
+        "location": [
+          72.567101,
+          23.018131
+        ],
+        "name": "Dr. Hariprasad Desai Marg",
+        "distance": 5.680764787
+      }
+    ],
+    "durations": [
+      [
+        0,
+        1371.8,
+        957.9,
+        714,
+        804.6,
+        933.9,
+        718,
+        713.6,
+        792.4,
+        317.2,
+        727.9,
+        807.9,
+        727.9,
+        592.3
+      ],
+      [
+        1208.7,
+        0,
+        1085.5,
+        1180.1,
+        1426.5,
+        892.2,
+        1184.1,
+        1179.7,
+        1316.4,
+        1351.4,
+        1194,
+        1273.6,
+        1194,
+        1186.5
+      ],
+      [
+        1008.3,
+        1143.9,
+        0,
+        255.4,
+        457.5,
+        417.6,
+        313.1,
+        255,
+        425.6,
+        711.5,
+        269.3,
+        325.8,
+        269.3,
+        411.3
+      ],
+      [
+        772.5,
+        1168,
+        263.8,
+        0,
+        280.3,
+        373.7,
+        60.3,
+        19.5,
+        170.2,
+        456.1,
+        13.9,
+        117.3,
+        13.9,
+        155.9
+      ],
+      [
+        817.9,
+        1467.4,
+        531.9,
+        354,
+        0,
+        673.1,
+        394.4,
+        353.6,
+        245.2,
+        528.1,
+        366.6,
+        279.7,
+        366.6,
+        339.5
+      ],
+      [
+        891.8,
+        920.7,
+        260,
+        310,
+        556.4,
+        0,
+        314,
+        309.6,
+        446.3,
+        616.6,
+        323.9,
+        405.1,
+        323.9,
+        316.4
+      ],
+      [
+        793.8,
+        1163.8,
+        296,
+        52.1,
+        332.4,
+        369.5,
+        0,
+        51.7,
+        222.3,
+        477.4,
+        66,
+        169.4,
+        66,
+        177.2
+      ],
+      [
+        772.9,
+        1168.4,
+        264.2,
+        0.4,
+        280.7,
+        374.1,
+        60.7,
+        0,
+        170.6,
+        456.5,
+        14.3,
+        117.7,
+        14.3,
+        156.3
+      ],
+      [
+        849.7,
+        1374.1,
+        476.2,
+        260.7,
+        213.6,
+        579.8,
+        301.1,
+        260.3,
+        0,
+        533.3,
+        265.5,
+        151.7,
+        265.5,
+        294.5
+      ],
+      [
+        389,
+        1493,
+        722.7,
+        478.8,
+        551.3,
+        698.7,
+        482.8,
+        478.4,
+        557.2,
+        0,
+        492.7,
+        572.7,
+        492.7,
+        357.1
+      ],
+      [
+        782.9,
+        1178.4,
+        274.2,
+        30.3,
+        290.7,
+        384.1,
+        70.7,
+        29.9,
+        180.6,
+        466.5,
+        0,
+        126.2,
+        0,
+        166.3
+      ],
+      [
+        933.2,
+        1336.3,
+        386.7,
+        188.2,
+        254.4,
+        542,
+        228.6,
+        187.8,
+        174.8,
+        616.8,
+        183.2,
+        0,
+        183.2,
+        324.2
+      ],
+      [
+        782.9,
+        1178.4,
+        274.2,
+        30.3,
+        290.7,
+        384.1,
+        70.7,
+        29.9,
+        180.6,
+        466.5,
+        0,
+        126.2,
+        0,
+        166.3
+      ],
+      [
+        642.5,
+        1165.9,
+        395.6,
+        151.7,
+        319.6,
+        371.6,
+        155.7,
+        151.3,
+        230.1,
+        326.1,
+        165.6,
+        245.6,
+        165.6,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "aRIwlGoSMJQWAAAAYAAAAP8AAAAAAAAAnKZ4QSQrhUK0DDFDAAAAABYAAABgAAAA_wAAAAAAAABSKAEAWlhSBMjcXgExWFIED9teASYALxEAAAAA",
+        "location": [
+          72.505434,
+          22.99412
+        ],
+        "name": "",
+        "distance": 49.01857838
+      },
+      {
+        "hint": "2ETHjgtqx46qAAAAnwAAANIDAAAAAAAAp_CNQmdMhEIT8MtDAAAAAKoAAACfAAAA0gMAAAAAAABSKAEAzn1TBG-BYQEofFMEpIBhAQ4AjwkAAAAA",
+        "location": [
+          72.580558,
+          23.167343
+        ],
+        "name": "",
+        "distance": 48.7072564
+      },
+      {
+        "hint": "83FZhGELNJEXAAAAGAAAAF4AAABSAAAAoQzOQd5u10F4MtJCrYu2QhcAAAAYAAAAXgAAAFIAAABSKAEAzatTBJnJXwFcrFMEZMdfAQYA3wQAAAAA",
+        "location": [
+          72.592333,
+          23.054745
+        ],
+        "name": "",
+        "distance": 64.26370505
+      },
+      {
+        "hint": "iJdShP___38EAAAABAAAAAAAAAAPAAAA-LrUQAAAAAAAAAAA_WS3QQQAAAAEAAAAAAAAAA8AAABSKAEA34BTBEtdXwGSf1METF1fAQAAXwsAAAAA",
+        "location": [
+          72.581343,
+          23.027019
+        ],
+        "name": "",
+        "distance": 34.13389361
+      },
+      {
+        "hint": "R8H4kEnB-JAAAAAALgAAAAAAAABqAAAAAAAAAISRmkEAAAAANj0wQgAAAAAuAAAAAAAAAGoAAABSKAEAqr9TBDUMXwHhx1MEvwtfAQAADw8AAAAA",
+        "location": [
+          72.597418,
+          23.006261
+        ],
+        "name": "",
+        "distance": 215.9608976
+      },
+      {
+        "hint": "5XxXhCRyXJUOAAAAAAAAAAAAAAAAAAAAc5wcQQAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAAAAAABSKAEA3HlTBE3cXwEeflMExd5fAQAAfwgAAAAAI3Jclf___38AAAAADQAAAAAAAABKAAAAAAAAANt1EEEAAAAALuZNQgAAAAANAAAAAAAAAEoAAABSKAEA3HlTBE3cXwEeflMExd5fAQAAHw4AAAAA",
+        "location": [
+          72.579548,
+          23.059533
+        ],
+        "name": "Ashram Road",
+        "distance": 131.8061899
+      },
+      {
+        "hint": "8aoXit_yC5MAAAAAFwAAAAsAAAB7AAAAsWstP2CgyUH3k0hBQAQHQwAAAAAXAAAACwAAAHsAAABSKAEATnBTBK9mXwG-b1MEJGZfAQIAXwgAAAAA",
+        "location": [
+          72.577102,
+          23.029423
+        ],
+        "name": "",
+        "distance": 21.32678803
+      },
+      {
+        "hint": "iJdShP___38AAAAABAAAAAAAAAAPAAAAdBqqP9M6qkAAAAAA_WS3QQAAAAAEAAAAAAAAAA8AAABSKAEA4YBTBHtdXwGggVMEdl1fAQAAXwsAAAAA",
+        "location": [
+          72.581345,
+          23.027067
+        ],
+        "name": "",
+        "distance": 19.58602507
+      },
+      {
+        "hint": "f4X9iIOF_YgCAAAADwAAAAAAAAAAAAAAZi7IP_KiI0EAAAAAAAAAAAIAAAAPAAAAAAAAAAAAAABSKAEAv6lTBGc9XwF_qVMEXT1fAQAA7xUAAAAA",
+        "location": [
+          72.591807,
+          23.018855
+        ],
+        "name": "",
+        "distance": 6.653051362
+      },
+      {
+        "hint": "yNz-jf___38VAAAAMQAAAAQAAAAAAAAAe3UXQllrR0LHf95AAAAAABUAAAAxAAAABAAAAAAAAABSKAEAi8xSBKrZXgGazlIE6tpeAQIALwkAAAAA",
+        "location": [
+          72.535179,
+          22.993322
+        ],
+        "name": "Narol-Sarkhej Road",
+        "distance": 64.62273631
+      },
+      {
+        "hint": "fZdShICXUoREAAAAAAAAAAAAAABqAAAAH1LjQQAAAAAAAAAANPgvQkQAAAAAAAAAAAAAAGoAAABSKAEA84FTBIZcXwHxgVMEXl1fAQAAfwUAAAAA",
+        "location": [
+          72.581619,
+          23.026822
+        ],
+        "name": "",
+        "distance": 23.92165992
+      },
+      {
+        "hint": "N7Bigf___38CAAAAFgAAAD0AAAAAAAAA4-IrQNkerkFIVIdCAAAAAAIAAAAWAAAAPQAAAAAAAABSKAEAK6BTBJNTXwE4oFMEKVNfAQIAPwUAAAAA",
+        "location": [
+          72.589355,
+          23.024531
+        ],
+        "name": "Gandhi Road",
+        "distance": 11.81429232
+      },
+      {
+        "hint": "fZdShICXUoREAAAAAAAAAAAAAABqAAAAH1LjQQAAAAAAAAAANPgvQkQAAAAAAAAAAAAAAGoAAABSKAEA84FTBIZcXwEbglMEwVxfAQAAfwUAAAAA",
+        "location": [
+          72.581619,
+          23.026822
+        ],
+        "name": "",
+        "distance": 7.713836216
+      },
+      {
+        "hint": "ZExsgR0uUoQLAAAAFgAAAAAAAABMAAAAwN4pQSOXlkEAAAAArMuHQgsAAAAWAAAAAAAAAEwAAABSKAEAPUlTBJM6XwEZSVMEbDpfAQAALwgAAAAA",
+        "location": [
+          72.567101,
+          23.018131
+        ],
+        "name": "Dr. Hariprasad Desai Marg",
+        "distance": 5.680764787
+      }
+    ]
+  },
+  "notes": "OSRM modelled driving estimates, not live traffic; directional distances/durations; no fares. Existing route rows are preserved. Only new hotel endpoints are imported; snaps over250m rejected."
+}

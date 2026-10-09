@@ -94,10 +94,10 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
           </div>
           <div>
             <h3 className="font-display text-base font-bold text-gold uppercase tracking-wider">
-              Live "What If?" Scenario Explorer
+              "What If?" Route Settings
             </h3>
             <p className="text-[11px] text-stone">
-              Drag sliders to re-calculate circular greedy route in real time.
+              Adjust the settings, then Save to generate and persist a new route. Costs below describe the saved plan.
             </p>
           </div>
         </div>
@@ -120,7 +120,7 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
             onClick={onSaveVersion}
             className="bg-madder hover:bg-madder/90 text-salt border border-madder text-xs font-mono font-bold px-3.5 py-1.5 flex items-center gap-1.5 cursor-pointer shadow-xs transition-colors"
           >
-            {isSavedNotice ? (
+            {isSavedNotice && !isModified ? (
               <>
                 <Check className="w-3.5 h-3.5 text-salt" />
                 <span>Saved Active Plan!</span>

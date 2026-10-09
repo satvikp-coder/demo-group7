@@ -11,7 +11,8 @@
     "translate": "tsx scripts/translate-content.ts",
     "test": "npm run test:unit && npm run test:planner",
     "lint": "tsc --noEmit",
-    "test:unit": "tsx ../tests/dsa/trie.test.ts && tsx --test ../tests/frontend/catalog-images.test.ts",
+    "audit:images": "tsx ../scripts/validate-catalog-images.ts",
+    "test:unit": "tsx ../tests/dsa/trie.test.ts && tsx --test ../tests/frontend/catalog-images.test.ts && tsx --test ../tests/frontend/visualizer.test.ts",
     "test:planner": "tsx ../tests/frontend/planner.test.ts",
     "test:all": "npm test && npm run lint && npm run build"
   },

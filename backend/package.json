@@ -27,7 +27,8 @@
     "db:adopt": "node scripts/adopt-seed.js",
     "db:backup": "node scripts/backup.js backup",
     "db:restore": "node scripts/backup.js restore",
-    "data:freshness": "node scripts/data-freshness.js"
+    "data:freshness": "node scripts/data-freshness.js",
+    "db:expand": "node scripts/expand-catalog.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

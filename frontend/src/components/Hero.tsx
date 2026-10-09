@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { useCatalog } from "../api";
 import type { Destination } from "../api/types";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 interface HeroProps {
   onStartPlanning: () => void;
@@ -170,7 +171,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm rounded-xl"
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group rounded-lg">
-                  <img
+                  <ImageWithFallback
                     src="/assets/destinations/modhera.jpg"
                     alt="Modhera Sun Temple Stepped Tank Ramakunda"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
@@ -194,9 +195,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8 rounded-xl"
               >
                 <div className="relative h-44 sm:h-52 overflow-hidden group rounded-lg">
-                  <img
+                  <ImageWithFallback
                     src="/assets/destinations/rann-of-kutch.jpg"
-                    alt="Great Rann of Kutch White Salt Desert at Sunset"
+                    alt="White Rann of Kutch salt landscape"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
@@ -218,7 +219,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 className="terrace-card-even bg-ink p-1.5 border border-stone/40 shadow-sm rounded-xl"
               >
                 <div className="relative h-40 sm:h-48 overflow-hidden group rounded-lg">
-                  <img
+                  <ImageWithFallback
                     src="/assets/attractions/gir-lion.jpg"
                     alt="Gir National Park Asiatic Lion Reserve"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
@@ -242,7 +243,7 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                 className="terrace-card-odd bg-ink p-1.5 border border-stone/40 shadow-sm mt-6 sm:mt-8 rounded-xl"
               >
                 <div className="relative h-40 sm:h-48 overflow-hidden group rounded-lg">
-                  <img
+                  <ImageWithFallback
                     src="/assets/attractions/adalaj-stepwell.jpg"
                     alt="Adalaj Ni Vav 5-story Subterranean Stepwell"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-lg"
