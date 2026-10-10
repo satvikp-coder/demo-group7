@@ -15,10 +15,20 @@ Gujarati dictionary test, uploading evidence. Git attributes preserve all14 revi
 frontend hashes after a fresh staged checkout. Source scan and private-value review
 found no credentials or unapproved frontend changes in the curated release.
 
-Publication checkpoint: feature branch/PR and its remote CI result are the remaining
-release actions. This is not a claim that the new workflow has passed remotely.
-The prior main workflow37985673390 succeeded; that result is historical only.
+Published code commit:2927b9472f923815be8632642094d92f870fd4d8 on
+phase2/university-release. [Pull request1](https://github.com/satvikp-coder/demo-group7/pull/1)
+is open against main; nothing merged.
 
-Existing public Vercel integrations previously failed. Local container verification
+[GitHub Actions38039970377](https://github.com/satvikp-coder/demo-group7/actions/runs/38039970377)
+completed SUCCESS2026-10-10T09:08:32Z for that exact code commit. Unified tests,
+localization, expanded Phase2 production API/browser, professor demo, production
+containers and evidence upload all passed. The separate PR-triggered run also
+executes the workflow; consult current PR checks for that result.
+
+The connector could read CI but returned403 when opening a PR. The existing Git
+credential manager session successfully created it; no credential was printed,
+written into source or sent to another host.
+
+Both existing Vercel integrations report failed deployments for this commit as well. Local container verification
 does not certify those services. Provider access/configuration and a separately
 authorized deployment remain necessary; no hosting success is claimed.

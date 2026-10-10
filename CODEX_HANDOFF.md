@@ -63,8 +63,8 @@ npm run audit:images; python scripts/phase2-preservation.py --verify.
 Development18/18 and production-container16/16 gates passed2026-10-10.
 Expanded production preview,32 cross-destination API scenarios, accommodation
 validation/persistence, responsive1440/768/390 and professor demo passed.
-Fresh checkout source hashes and local backup restoration passed. Installed image
-and final remote CI results belong in the Phase2 final report when completed.
+Fresh checkout source hashes and local backup restoration passed. Installed image67-asset/60-state verification passed. GitHub Actions38039970377
+passed for code2927b94; see Phase2 reports.
 
 ## Current Issues / Bugs
 
@@ -81,14 +81,17 @@ Keep private historical continuity outside the public release checkout.
 
 ## Next Steps
 
-Finish installed image verification, publish reviewed branch/PR and inspect CI.
+Code2927b94 is published; PR1 open; Actions38039970377 passed all suites.
+Installed60-state image verification and67 decoded assets passed.
+Final report publication and latest PR checks remain; both Vercel checks failed.
 No automatic merge/public deployment. Report remaining factual/provider limits.
 
 ## Last Session Summary
 
 Local Phase2 code/data installed with original-row preservation and isolated
-regression evidence. Source publication and remote checks follow final review.
+regression evidence. Code and PR1 published; exact-code CI passed. Final documentation records the
+verified outcome and remaining Vercel/public hosting limitations.
 
 ## Last Updated
 
-2026-10-10T08:58:01.348294+00:00 UTC / Asia/Calcutta (UTC+05:30).
+2026-10-10T14:26:14.586007+00:00 UTC / Asia/Calcutta (UTC+05:30).

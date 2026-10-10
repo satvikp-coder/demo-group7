@@ -16,7 +16,7 @@ All commands below completed successfully on 2026-10-10 unless marked pending.
 | Responsive Phase2 browser | 1440/768/390: authentication, zero nights, saved refresh, decoded images, no overflow/page exceptions, Gujarati persistence PASS |
 | TypeScript / source / style guards | PASS;14 explicitly reviewed Phase2 hashes, no unauthorized UI changes |
 | Installed-data/image audit | Original9-table fingerprints preserved;67 decoded assets and60 browser states PASS |
-| GitHub CI | Pending feature-branch publication |
+| GitHub CI | SUCCESS run38039970377, exact code commit2927b94; all configured steps passed |
 
 The final full suite includes64 browser groups, API/client/security/database checks,
 package audits and production build. Container tests include a real backup restore,

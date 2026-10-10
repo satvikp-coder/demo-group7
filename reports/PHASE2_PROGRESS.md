@@ -1,3 +1,13 @@
+# Current release status
+
+Code commit2927b94 published to phase2/university-release; PR1 open/unmerged.
+GitHub Actions38039970377 SUCCESS for the exact code commit, including all suites.
+The separate PR run is being observed. Both Vercel deployment checks failed;
+public hosting remains unverified. No merge/deployment command was performed.
+Local acceptance and full data preservation passed. After a later session gap,
+Docker Desktop was stopped; it is being restarted before final localhost verification.
+Remaining action: final documentation commit, observe its CI, confirm local health.
+
 # Phase 2 progress
 
 Current phase: final installed browser/image verification and GitHub publication.

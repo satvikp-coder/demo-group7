@@ -3,8 +3,9 @@
 **CONDITIONALLY_READY** for the documented local university demonstration.
 The tested application uses the real API/database and existing optimizer. Geographic
 coverage improved, but current-price, scheduling, photography and localization
-limitations prevent an unrestricted readiness claim. Remote CI status is tracked
-separately in PHASE2_GITHUB_DEPLOYMENT.md; public deployment is not verified.
+limitations prevent an unrestricted readiness claim. GitHub Actions passed for code commit2927b94 (run38039970377).
+PR1 remains open and unmerged. Both Vercel deployment checks failed; public deployment
+is not verified. Details: PHASE2_GITHUB_DEPLOYMENT.md.
 
 ## Data and preservation
 
