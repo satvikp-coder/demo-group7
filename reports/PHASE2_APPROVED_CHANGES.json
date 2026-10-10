@@ -1,0 +1,80 @@
+{
+  "authorization": "Phase2 explicitly requests accommodation semantics, Gujarati integration and licensed photo enrichment. Exact hashes preserve all unrelated source guards.",
+  "evidence": [
+    "phase2-import-tests.json",
+    "phase2-browser-tests.json",
+    "phase2-cross-destination-tests.json"
+  ],
+  "files": {
+    "frontend/src/api/index.ts": {
+      "baselineSha256": "179a3fe719d7b0f09d8ea1cfc32a89971a620a413b88712041715fef76965cb0",
+      "sha256": "92baf76f91b4b75d325a17dd81b9de83b10a7d0cc890642a18d861f2883bba02",
+      "reason": "Explicit lodging/date API fields, stored nightly-rate restoration and unavailable historical price text"
+    },
+    "frontend/src/components/ItineraryView.tsx": {
+      "baselineSha256": "22e3307dc10b1f5967e1d67f0d87e88a9c9f77395f1fbeff3156e4c2e18c8f80",
+      "sha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
+      "reason": "Actual lodging-night counts and zero-room-charge wording in existing result layout"
+    },
+    "frontend/src/components/Navbar.tsx": {
+      "baselineSha256": "fdaf8c6318acc0759f790f03e365ac3f369df8dcde1028381a422f913cd7c809",
+      "sha256": "e506724e48ed008921029f09b91398996d4afd894d7b37c1866c40a357754ac1",
+      "reason": "Additional Gujarati language choice, preserving English/Hindi and button styling"
+    },
+    "frontend/src/components/PlannerModal.tsx": {
+      "baselineSha256": "03224f5a3e777652a2337cd3ca0e8f322272e235543fda8b8ada7441c9246f84",
+      "sha256": "8b6416575b9b93d7bfb89a0afa7f45056452d0848a98118a5e8c3fb969840544",
+      "reason": "Requested explicit nights and optional accommodation dates; draft and comparison persistence"
+    },
+    "frontend/src/components/StrategyComparisonModal.tsx": {
+      "baselineSha256": "774a2a4740f1387b96ef852b4814680c19884ded802d704ccc96f61087c4e2d5",
+      "sha256": "01e784367ee2c0211da6ee020074153cc885101919e41599dbb747461dacd8f1",
+      "reason": "Regenerate comparison when lodging inputs change"
+    },
+    "frontend/src/context/LanguageContext.tsx": {
+      "baselineSha256": "91f9936fe64c8ebde7b052c62d242e171deeaa2eba9cb946e854926882b46304",
+      "sha256": "78e0b8e95599f4dc163db15741d11bd6ae85fe1248d9121cc224cd588dcf0649",
+      "reason": "Persist Gujarati preference and use available stored Gujarati entity translations"
+    },
+    "frontend/src/data/gujarati.ts": {
+      "baselineSha256": null,
+      "sha256": "58fd1087c4a88cc0b73267682a032c7daa1e6ac427dbc00c279b3778e955eb3c",
+      "reason": "Gujarati copy for all108 existing dictionary keys"
+    },
+    "frontend/src/data/translations.ts": {
+      "baselineSha256": "be4b39f6f8fd4cb2357fb57b403d64f53f08b259e8dad0347db59bd4085f5eff",
+      "sha256": "a81f68e7f75b347c3769d00e09bf457821fa572201c3e22296d2778af75d233a",
+      "reason": "Register Gujarati dictionary and retain legacy translation adapter"
+    },
+    "frontend/src/utils/itineraryPlanner.ts": {
+      "baselineSha256": "10488e452add9c734a68741dad1dbddea24c626dc80ad4e1aa1cbcc8ad5fdb52",
+      "sha256": "cadd4c14dcc4d28870584cb4885eb5e4bc0f81ba1e3de54cdd18f12f629657af",
+      "reason": "Backward-compatible optional accommodation input types"
+    },
+    "frontend/public/image-credits.html": {
+      "baselineSha256": "91b1eb7ea796c864290bf821b1c31c54c655738432133de0ace4f0e4726fe1a9",
+      "sha256": "9354347bab25f13a5b611ad70345f2ab7a9850b3d199ea08fb2c0598df2bea06",
+      "reason": "Attribution for licensed Bhadra Fort photograph"
+    },
+    "frontend/public/assets/photographs/bhadra-fort-clock-ahmedabad.webp": {
+      "baselineSha256": null,
+      "sha256": "5e00eb10ec825365bb7817afbbf95c49ae4011000ba3f072492a7dad31428bf4",
+      "reason": "Visually reviewed Bhadra Fort photograph by Tejaherwal, CC BY-SA4.0"
+    },
+    "frontend/public/assets/photographs/manifest.json": {
+      "baselineSha256": "344822f50367180f4983fad81321ed80effe11938fba4bbc35221a8390cac2a2",
+      "sha256": "5377425ca57e3ece6c7b87b2a992f7510b30236f19c0a5e22e5cd9d7a1c25812",
+      "reason": "Connect Bhadra Fort identity to local photograph and provenance"
+    },
+    "frontend/public/catalog-phase2.json": {
+      "baselineSha256": null,
+      "sha256": "1cff7fe906ec974b71053c1a2043f243cde10e5a9bdd7ea7ae0ce8e69ba620b5",
+      "reason": "Public ODbL derived Phase2 catalog and attribution link; no private or user data"
+    },
+    "frontend/public/data-credits.html": {
+      "baselineSha256": "99ffc16fda7e447e3f79fb3ab396599801d5f6380a6ed2f5e4bcc9f143929de9",
+      "sha256": "caef151a887839811dca6ed8bd3d2f9db8e915bb60d4880fc8c4ab4d0d7d72be",
+      "reason": "Public ODbL derived Phase2 catalog and attribution link; no private or user data"
+    }
+  }
+}

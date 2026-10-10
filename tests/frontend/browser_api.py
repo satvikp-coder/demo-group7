@@ -101,7 +101,8 @@ with sync_playwright() as p:
         selected = next(o for o in hotels.locator('option').evaluate_all('(els)=>els.map(e=>({value:e.value,text:e.text}))') if "The House of MG" in o["text"])
         catalog_hotels = context.request.get(API + "/destinations/ahmedabad/hotels").json()
         selected_price = next(h["price_per_night"] for h in catalog_hotels if h["id"] == selected["value"])
-        expected_hotel_total = selected_price * 2
+        expect(page.get_by_label("Lodging nights", exact=True)).to_have_value("1")
+        expected_hotel_total = selected_price * 1
         budget_label = f"\u20b9{expected_hotel_total:,.0f}"
         hotels.select_option(selected["value"])
         page.locator('#planner-budget-input').fill("3000")
@@ -334,6 +335,8 @@ with sync_playwright() as p:
         report["verified"] = True
     except Exception as error:
         report["failure"] = str(error)
+        try: page.screenshot(path=str(ROOT / "backend/reports/frontend-failure.png"), timeout=5000)
+        except Exception: pass
         try: report["failurePageText"] = page.locator('body').inner_text(timeout=2000)
         except Exception: report["failurePageText"] = "Unavailable after failure"
         raise

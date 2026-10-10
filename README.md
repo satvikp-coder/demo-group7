@@ -101,6 +101,22 @@ browser demonstration against a disposable PostgreSQL database.
 
 These are catalog counts, not a claim that every tourism field is independently verified. The original CSVs cover only part of the catalog; researched JSON supplements supply the remaining destinations and road evidence. Simulated CSV routes are excluded from the approved import.
 
+### Phase 2 university release
+
+The additive `npm run local:enrich` import follows `local:expand` and produces
+8 destinations, 44 attractions, 43 hotels, 12 restaurants and 322 routes. Back up
+first; both imports preserve existing records. Most new hotels have unknown
+current prices and are not assigned a price category. New attractions without
+known fees/durations remain discovery records, not timed planner candidates.
+See [Phase 2 coverage](reports/PHASE2_DATA_COVERAGE.md),
+[feasibility](reports/PHASE2_ITINERARY_FEASIBILITY.md), and
+[release evidence](reports/PHASE2_FINAL_READINESS.md).
+
+New forms support explicit lodging nights and Gujarati for the existing dictionary;
+English/Hindi remain available. Some newer controls remain English.
+`npm run test:phase2:production:local` verifies the expanded catalog in an isolated
+database and production frontend at desktop, tablet and mobile widths.
+
 ## Quick Start
 
 Install Node.js 22.18+ and Docker with Compose v2 (Linux containers), then:

@@ -1,377 +1,389 @@
 [
-    {
-        "key":  "ahmedabad-riverfront",
-        "file":  "File:Sabarmati riverside.jpg",
-        "title":  "Sabarmati riverfront, Ahmedabad",
-        "records":  [
-                        "destinations:ahmedabad"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/ahmedabad.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "destinations:Ahmedabad"
-                  ]
-    },
-    {
-        "key":  "champaner-jami-masjid",
-        "file":  "File:Jama Mosque,PMS.jpg",
-        "title":  "Jami Masjid, Champaner",
-        "records":  [
-                        "destinations:champaner",
-                        "attractions:jami-masjid-champaner"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/champaner.jpg"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "destinations:Champaner",
-                      "attractions:Jami Masjid, Champaner"
-                  ]
-    },
-    {
-        "key":  "dwarka-dwarkadhish-temple",
-        "file":  "File:Dwarakadheesh Temple, 2014.jpg",
-        "title":  "Dwarkadhish Temple, Dwarka",
-        "records":  [
-                        "destinations:dwarka",
-                        "attractions:dwarkadhish-temple-dwarka"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/dwarka.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "destinations:Dwarka",
-                      "attractions:Dwarkadhish Temple"
-                  ]
-    },
-    {
-        "key":  "gir-national-park",
-        "file":  "File:Gir lion-Gir forest,junagadh,gujarat,india.jpeg",
-        "title":  "Asiatic lions in Gir National Park",
-        "records":  [
-                        "destinations:gir-national-park",
-                        "attractions:gir-jungle-safari"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/gir.jpg",
-                        "/assets/attractions/gir-lion.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "destinations:Gir National Park",
-                      "attractions:Gir Jungle Safari (Sinh Sadan reporting point)"
-                  ]
-    },
-    {
-        "key":  "modhera-sun-temple",
-        "file":  "File:Surya mandhir.jpg",
-        "title":  "Sun Temple, Modhera",
-        "records":  [
-                        "destinations:modhera",
-                        "attractions:modhera-sun-temple"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/modhera.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "destinations:Modhera",
-                      "attractions:Modhera Sun Temple"
-                  ]
-    },
-    {
-        "key":  "rann-of-kutch",
-        "file":  "File:Rann of Kutch - White Desert.jpg",
-        "title":  "White Rann of Kutch",
-        "records":  [
-                        "destinations:rann-of-kutch",
-                        "attractions:white-rann-dhordo"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/rann-of-kutch.jpg"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "destinations:Rann of Kutch",
-                      "attractions:White Rann near Dhordo"
-                  ]
-    },
-    {
-        "key":  "saputara-lake",
-        "file":  "File:Lake Saputara.jpg",
-        "title":  "Saputara Lake and hill town",
-        "records":  [
-                        "destinations:saputara",
-                        "attractions:saputara-lake"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/saputara.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "destinations:Saputara",
-                      "attractions:Saputara Lake"
-                  ]
-    },
-    {
-        "key":  "somnath-temple",
-        "file":  "File:Somanath mandir (cropped).jpg",
-        "title":  "Somnath Temple",
-        "records":  [
-                        "destinations:somnath",
-                        "attractions:somnath-temple-somnath"
-                    ],
-        "aliases":  [
-                        "/assets/destinations/somnath.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "destinations:Somnath",
-                      "attractions:Somnath Temple"
-                  ]
-    },
-    {
-        "key":  "french-haveli-ahmedabad",
-        "file":  "File:French Haveli 4.jpg",
-        "title":  "French Haveli, Ahmedabad ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â exterior",
-        "records":  [
-                        "hotels:french-haveli-heritage-stay-ahmedabad"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "hotels:French Haveli Heritage Stay"
-                  ]
-    },
-    {
-        "key":  "champaner-heritage-resort",
-        "file":  "File:Champaner Heritage Resort.jpg",
-        "title":  "Champaner Heritage Resort",
-        "records":  [
-                        "hotels:champaner-heritage-resort"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "hotels:Champaner Heritage Resort"
-                  ]
-    },
-    {
-        "key":  "adalaj-stepwell",
-        "file":  "File:Adalaj ki Vav Gujarat 240A1370 72.jpg",
-        "title":  "Adalaj Stepwell",
-        "records":  [
-                        "attractions:adalaj-ni-vav-stepwell-ahmedabad"
-                    ],
-        "aliases":  [
-                        "/assets/attractions/adalaj-stepwell.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "attractions:Adalaj Ni Vav Stepwell"
-                  ]
-    },
-    {
-        "key":  "sabarmati-ashram",
-        "file":  "File:GANDHI ASHRAM 03.jpg",
-        "title":  "Sabarmati Ashram, Ahmedabad",
-        "records":  [
-                        "attractions:sabarmati-ashram-ahmedabad"
-                    ],
-        "aliases":  [
-                        "/assets/attractions/sabarmati-ashram.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "attractions:Sabarmati Ashram"
-                  ]
-    },
-    {
-        "key":  "sarkhej-roza",
-        "file":  "File:Sarkhej.JPG",
-        "title":  "Sarkhej Roza, Ahmedabad",
-        "records":  [
-                        "attractions:sarkhej-roza-ahmedabad"
-                    ],
-        "aliases":  [
-                        "/assets/attractions/sarkhej-roza.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "attractions:Sarkhej Roza"
-                  ]
-    },
-    {
-        "key":  "sidi-saiyyed-mosque",
-        "file":  "File:Sidi Saiyyed Mosque, Ahmedabad.jpg",
-        "title":  "Sidi Saiyyed Mosque, Ahmedabad",
-        "records":  [
-                        "attractions:sidi-saiyyed-mosque-old-pols-ahmedabad"
-                    ],
-        "aliases":  [
-                        "/assets/attractions/sidi-saiyyed.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "attractions:Sidi Saiyyed Mosque \u0026 Old Pols"
-                  ]
-    },
-    {
-        "key":  "kankaria-lake",
-        "file":  "File:Kankaria Carnival 2 Ahmedabad.JPG",
-        "title":  "Kankaria Lake, Ahmedabad",
-        "records":  [
-                        "attractions:kankaria-lake-ahmedabad"
-                    ],
-        "aliases":  [
-                        "/assets/attractions/kankaria-lake.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "attractions:Kankaria Lake"
-                  ]
-    },
-    {
-        "key":  "nageshwar-temple",
-        "file":  "File:Nageshwar.JPG",
-        "title":  "Nageshwar Jyotirlinga, Dwarka",
-        "records":  [
-                        "attractions:nageshwar-jyotirlinga-dwarka"
-                    ],
-        "aliases":  [
-                        "/assets/attractions/nageshwar-temple.jpg"
-                    ],
-        "recovered":  true,
-        "names":  [
-                      "attractions:Nageshwar Jyotirlinga"
-                  ]
-    },
-    {
-        "key":  "rukmini-temple",
-        "file":  "File:Rukmini temple.JPG",
-        "title":  "Rukmini Devi Temple, Dwarka",
-        "records":  [
-                        "attractions:rukmini-devi-temple-dwarka"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "attractions:Rukmini Devi Temple"
-                  ]
-    },
-    {
-        "key":  "kevada-masjid",
-        "file":  "File:Kevada Mosque, Champaner.jpg",
-        "title":  "Kevada Masjid, Champaner",
-        "records":  [
-                        "attractions:kevada-masjid"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "attractions:Kevada Masjid"
-                  ]
-    },
-    {
-        "key":  "devalia-lions",
-        "file":  "File:Asiatic Lions at Devaliya Gir.jpg",
-        "title":  "Asiatic lions at Devalia, Gir",
-        "records":  [
-                        "attractions:devalia-bus-safari"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "attractions:Devalia Interpretation Zone Bus Safari"
-                  ]
-    },
-    {
-        "key":  "modheshwari-temple",
-        "file":  "File:Modheshwari Temple, Modhera.jpg",
-        "title":  "Modheshwari Mata Temple, Modhera",
-        "records":  [
-                        "attractions:modheshwari-mata-temple"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "attractions:Modheshwari Mata Temple"
-                  ]
-    },
-    {
-        "key":  "kalo-dungar",
-        "file":  "File:Rann of Kutch - Highest Point.jpg",
-        "title":  "View from Kalo Dungar",
-        "records":  [
-                        "attractions:kalo-dungar"
-                    ],
-        "recovered":  false,
-        "names":  [
-                      "attractions:Kalo Dungar"
-                  ]
-    },
-    {
-        "key":  "chandravilas-ahmedabad",
-        "file":  "File:ChandraVilas Restaurant Today.jpg",
-        "title":  "Chandravilas Restaurant, Ahmedabad",
-        "records":  [
-                        "restaurants:chandravilas-dining-hall-ahmedabad"
-                    ],
-        "names":  [
-                      "restaurants:Chandravilas Dining Hall"
-                  ]
-    },
-    {
-        "key":  "vishalla-thali",
-        "file":  "File:Gujarati Thali at Vishalla.jpg",
-        "title":  "Gujarati thali served at Vishalla, Ahmedabad",
-        "records":  [
-                        "restaurants:vishalla-village-restaurant-ahmedabad"
-                    ],
-        "names":  [
-                      "restaurants:Vishalla Village Restaurant"
-                  ]
-    },
-    {
-        "key":  "bet-dwarka",
-        "file":  "File:Bet Dwarka during Dwaraka DWARASPDB 2015 (12).jpg",
-        "title":  "Bet Dwarka",
-        "records":  [
-                        "attractions:bet-dwarka-dwarka"
-                    ],
-        "names":  [
-                      "attractions:Bet Dwarka"
-                  ]
-    },
-    {
-        "key":  "bhalka-tirth",
-        "file":  "File:BHALKA-06.jpg",
-        "title":  "Bhalka Tirth, near Somnath",
-        "records":  [
-                        "attractions:bhalka-tirth-somnath"
-                    ],
-        "names":  [
-                      "attractions:Bhalka Tirth"
-                  ]
-    },
-    {
-        "key":  "somnath-beach",
-        "file":  "File:Somnath Beach evening.jpg",
-        "title":  "Somnath Beach",
-        "records":  [
-                        "attractions:somnath-beach-somnath"
-                    ],
-        "names":  [
-                      "attractions:Somnath Beach"
-                  ]
-    },
-    {
-        "key":  "saputara-sunset-point",
-        "file":  "File:Saputara sunset point - panoramio.jpg",
-        "title":  "Sunset Point, Saputara",
-        "records":  [
-                        "attractions:sunset-point-saputara"
-                    ],
-        "names":  [
-                      "attractions:Sunset Point Saputara"
-                  ]
-    }
+  {
+    "key": "ahmedabad-riverfront",
+    "file": "File:Sabarmati riverside.jpg",
+    "title": "Sabarmati riverfront, Ahmedabad",
+    "records": [
+      "destinations:ahmedabad"
+    ],
+    "aliases": [
+      "/assets/destinations/ahmedabad.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "destinations:Ahmedabad"
+    ]
+  },
+  {
+    "key": "champaner-jami-masjid",
+    "file": "File:Jama Mosque,PMS.jpg",
+    "title": "Jami Masjid, Champaner",
+    "records": [
+      "destinations:champaner",
+      "attractions:jami-masjid-champaner"
+    ],
+    "aliases": [
+      "/assets/destinations/champaner.jpg"
+    ],
+    "recovered": false,
+    "names": [
+      "destinations:Champaner",
+      "attractions:Jami Masjid, Champaner"
+    ]
+  },
+  {
+    "key": "dwarka-dwarkadhish-temple",
+    "file": "File:Dwarakadheesh Temple, 2014.jpg",
+    "title": "Dwarkadhish Temple, Dwarka",
+    "records": [
+      "destinations:dwarka",
+      "attractions:dwarkadhish-temple-dwarka"
+    ],
+    "aliases": [
+      "/assets/destinations/dwarka.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "destinations:Dwarka",
+      "attractions:Dwarkadhish Temple"
+    ]
+  },
+  {
+    "key": "gir-national-park",
+    "file": "File:Gir lion-Gir forest,junagadh,gujarat,india.jpeg",
+    "title": "Asiatic lions in Gir National Park",
+    "records": [
+      "destinations:gir-national-park",
+      "attractions:gir-jungle-safari"
+    ],
+    "aliases": [
+      "/assets/destinations/gir.jpg",
+      "/assets/attractions/gir-lion.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "destinations:Gir National Park",
+      "attractions:Gir Jungle Safari (Sinh Sadan reporting point)"
+    ]
+  },
+  {
+    "key": "modhera-sun-temple",
+    "file": "File:Surya mandhir.jpg",
+    "title": "Sun Temple, Modhera",
+    "records": [
+      "destinations:modhera",
+      "attractions:modhera-sun-temple"
+    ],
+    "aliases": [
+      "/assets/destinations/modhera.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "destinations:Modhera",
+      "attractions:Modhera Sun Temple"
+    ]
+  },
+  {
+    "key": "rann-of-kutch",
+    "file": "File:Rann of Kutch - White Desert.jpg",
+    "title": "White Rann of Kutch",
+    "records": [
+      "destinations:rann-of-kutch",
+      "attractions:white-rann-dhordo"
+    ],
+    "aliases": [
+      "/assets/destinations/rann-of-kutch.jpg"
+    ],
+    "recovered": false,
+    "names": [
+      "destinations:Rann of Kutch",
+      "attractions:White Rann near Dhordo"
+    ]
+  },
+  {
+    "key": "saputara-lake",
+    "file": "File:Lake Saputara.jpg",
+    "title": "Saputara Lake and hill town",
+    "records": [
+      "destinations:saputara",
+      "attractions:saputara-lake"
+    ],
+    "aliases": [
+      "/assets/destinations/saputara.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "destinations:Saputara",
+      "attractions:Saputara Lake"
+    ]
+  },
+  {
+    "key": "somnath-temple",
+    "file": "File:Somanath mandir (cropped).jpg",
+    "title": "Somnath Temple",
+    "records": [
+      "destinations:somnath",
+      "attractions:somnath-temple-somnath"
+    ],
+    "aliases": [
+      "/assets/destinations/somnath.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "destinations:Somnath",
+      "attractions:Somnath Temple"
+    ]
+  },
+  {
+    "key": "french-haveli-ahmedabad",
+    "file": "File:French Haveli 4.jpg",
+    "title": "French Haveli, Ahmedabad ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â exterior",
+    "records": [
+      "hotels:french-haveli-heritage-stay-ahmedabad"
+    ],
+    "recovered": false,
+    "names": [
+      "hotels:French Haveli Heritage Stay"
+    ]
+  },
+  {
+    "key": "champaner-heritage-resort",
+    "file": "File:Champaner Heritage Resort.jpg",
+    "title": "Champaner Heritage Resort",
+    "records": [
+      "hotels:champaner-heritage-resort"
+    ],
+    "recovered": false,
+    "names": [
+      "hotels:Champaner Heritage Resort"
+    ]
+  },
+  {
+    "key": "adalaj-stepwell",
+    "file": "File:Adalaj ki Vav Gujarat 240A1370 72.jpg",
+    "title": "Adalaj Stepwell",
+    "records": [
+      "attractions:adalaj-ni-vav-stepwell-ahmedabad"
+    ],
+    "aliases": [
+      "/assets/attractions/adalaj-stepwell.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "attractions:Adalaj Ni Vav Stepwell"
+    ]
+  },
+  {
+    "key": "sabarmati-ashram",
+    "file": "File:GANDHI ASHRAM 03.jpg",
+    "title": "Sabarmati Ashram, Ahmedabad",
+    "records": [
+      "attractions:sabarmati-ashram-ahmedabad"
+    ],
+    "aliases": [
+      "/assets/attractions/sabarmati-ashram.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "attractions:Sabarmati Ashram"
+    ]
+  },
+  {
+    "key": "sarkhej-roza",
+    "file": "File:Sarkhej.JPG",
+    "title": "Sarkhej Roza, Ahmedabad",
+    "records": [
+      "attractions:sarkhej-roza-ahmedabad"
+    ],
+    "aliases": [
+      "/assets/attractions/sarkhej-roza.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "attractions:Sarkhej Roza"
+    ]
+  },
+  {
+    "key": "sidi-saiyyed-mosque",
+    "file": "File:Sidi Saiyyed Mosque, Ahmedabad.jpg",
+    "title": "Sidi Saiyyed Mosque, Ahmedabad",
+    "records": [
+      "attractions:sidi-saiyyed-mosque-old-pols-ahmedabad"
+    ],
+    "aliases": [
+      "/assets/attractions/sidi-saiyyed.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "attractions:Sidi Saiyyed Mosque & Old Pols"
+    ]
+  },
+  {
+    "key": "kankaria-lake",
+    "file": "File:Kankaria Carnival 2 Ahmedabad.JPG",
+    "title": "Kankaria Lake, Ahmedabad",
+    "records": [
+      "attractions:kankaria-lake-ahmedabad"
+    ],
+    "aliases": [
+      "/assets/attractions/kankaria-lake.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "attractions:Kankaria Lake"
+    ]
+  },
+  {
+    "key": "nageshwar-temple",
+    "file": "File:Nageshwar.JPG",
+    "title": "Nageshwar Jyotirlinga, Dwarka",
+    "records": [
+      "attractions:nageshwar-jyotirlinga-dwarka"
+    ],
+    "aliases": [
+      "/assets/attractions/nageshwar-temple.jpg"
+    ],
+    "recovered": true,
+    "names": [
+      "attractions:Nageshwar Jyotirlinga"
+    ]
+  },
+  {
+    "key": "rukmini-temple",
+    "file": "File:Rukmini temple.JPG",
+    "title": "Rukmini Devi Temple, Dwarka",
+    "records": [
+      "attractions:rukmini-devi-temple-dwarka"
+    ],
+    "recovered": false,
+    "names": [
+      "attractions:Rukmini Devi Temple"
+    ]
+  },
+  {
+    "key": "kevada-masjid",
+    "file": "File:Kevada Mosque, Champaner.jpg",
+    "title": "Kevada Masjid, Champaner",
+    "records": [
+      "attractions:kevada-masjid"
+    ],
+    "recovered": false,
+    "names": [
+      "attractions:Kevada Masjid"
+    ]
+  },
+  {
+    "key": "devalia-lions",
+    "file": "File:Asiatic Lions at Devaliya Gir.jpg",
+    "title": "Asiatic lions at Devalia, Gir",
+    "records": [
+      "attractions:devalia-bus-safari"
+    ],
+    "recovered": false,
+    "names": [
+      "attractions:Devalia Interpretation Zone Bus Safari"
+    ]
+  },
+  {
+    "key": "modheshwari-temple",
+    "file": "File:Modheshwari Temple, Modhera.jpg",
+    "title": "Modheshwari Mata Temple, Modhera",
+    "records": [
+      "attractions:modheshwari-mata-temple"
+    ],
+    "recovered": false,
+    "names": [
+      "attractions:Modheshwari Mata Temple"
+    ]
+  },
+  {
+    "key": "kalo-dungar",
+    "file": "File:Rann of Kutch - Highest Point.jpg",
+    "title": "View from Kalo Dungar",
+    "records": [
+      "attractions:kalo-dungar"
+    ],
+    "recovered": false,
+    "names": [
+      "attractions:Kalo Dungar"
+    ]
+  },
+  {
+    "key": "chandravilas-ahmedabad",
+    "file": "File:ChandraVilas Restaurant Today.jpg",
+    "title": "Chandravilas Restaurant, Ahmedabad",
+    "records": [
+      "restaurants:chandravilas-dining-hall-ahmedabad"
+    ],
+    "names": [
+      "restaurants:Chandravilas Dining Hall"
+    ]
+  },
+  {
+    "key": "vishalla-thali",
+    "file": "File:Gujarati Thali at Vishalla.jpg",
+    "title": "Gujarati thali served at Vishalla, Ahmedabad",
+    "records": [
+      "restaurants:vishalla-village-restaurant-ahmedabad"
+    ],
+    "names": [
+      "restaurants:Vishalla Village Restaurant"
+    ]
+  },
+  {
+    "key": "bet-dwarka",
+    "file": "File:Bet Dwarka during Dwaraka DWARASPDB 2015 (12).jpg",
+    "title": "Bet Dwarka",
+    "records": [
+      "attractions:bet-dwarka-dwarka"
+    ],
+    "names": [
+      "attractions:Bet Dwarka"
+    ]
+  },
+  {
+    "key": "bhalka-tirth",
+    "file": "File:BHALKA-06.jpg",
+    "title": "Bhalka Tirth, near Somnath",
+    "records": [
+      "attractions:bhalka-tirth-somnath"
+    ],
+    "names": [
+      "attractions:Bhalka Tirth"
+    ]
+  },
+  {
+    "key": "somnath-beach",
+    "file": "File:Somnath Beach evening.jpg",
+    "title": "Somnath Beach",
+    "records": [
+      "attractions:somnath-beach-somnath"
+    ],
+    "names": [
+      "attractions:Somnath Beach"
+    ]
+  },
+  {
+    "key": "saputara-sunset-point",
+    "file": "File:Saputara sunset point - panoramio.jpg",
+    "title": "Sunset Point, Saputara",
+    "records": [
+      "attractions:sunset-point-saputara"
+    ],
+    "names": [
+      "attractions:Sunset Point Saputara"
+    ]
+  },
+  {
+    "key": "bhadra-fort-clock-ahmedabad",
+    "file": "File:Bhadra Fort 2 jpeg.jpg",
+    "title": "Bhadra Fort clock facade, Ahmedabad",
+    "records": [
+      "attractions:bhadra-fort-ahmedabad"
+    ],
+    "names": [
+      "attractions:Bhadra Fort"
+    ],
+    "recovered": false
+  }
 ]

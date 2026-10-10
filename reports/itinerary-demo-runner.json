@@ -1,8 +1,8 @@
 {
   "phase": "demo",
-  "startedAt": "2026-10-09T14:34:28.045Z",
+  "startedAt": "2026-10-10T08:46:26.201Z",
   "verified": true,
-  "isolatedDatabase": "heritage_audit_ba934bec5f1449dfb27f429d72fc866f",
+  "isolatedDatabase": "heritage_audit_eb1173b794fe478992331cf2a17effe7",
   "expansion": {
     "before": {
       "destinations": 8,
@@ -33,102 +33,102 @@
         {
           "table": "hotels",
           "key": "exp-20261009-hotel-good-night-ahmedabad",
-          "id": "f3773b1d-31d6-409e-a722-5ad6a749b53c"
+          "id": "ebd85daf-ffd1-403b-ad20-18a1e467a5e5"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-hotel-volga-ahmedabad",
-          "id": "121964a4-f201-4802-8493-de05e9423f2f"
+          "id": "5ce7d5cb-5867-4519-8806-4cb4b7138776"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-ramada-ahmedabad-ahmedabad",
-          "id": "55a7f4a5-279f-45f7-8600-e8efea858149"
+          "id": "2702ab43-20c7-4c89-a3cf-09b028ec0aa6"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-radisson-blu-ahmedabad-ahmedabad",
-          "id": "f0e48b19-b5a6-4c39-a06b-805216aa0c93"
+          "id": "274988b3-cbba-4c4f-820a-070faa37b6c4"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-hyatt-ahmedabad-ahmedabad",
-          "id": "cc396fb4-d69b-46b3-8f62-f7839f0ee473"
+          "id": "7a12b899-5e58-4b46-9d62-05c57e7fe16a"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-holiday-inn-express-ahmedabad-prahlad-nagar-ahmedabad",
-          "id": "b1e3efa6-4add-4f73-aba5-25b6fa994061"
+          "id": "c267897e-5b6b-4e71-be72-e0fe042bb43c"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-the-parterre-ahmedabad-ahmedabad",
-          "id": "7335c728-512a-47e3-befd-036bf8faed62"
+          "id": "26be8757-b8cd-4d7c-a393-127c25dec305"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-hotel-maruti-ahmedabad",
-          "id": "010c6203-c985-4956-8bb9-c307e6bba17c"
+          "id": "6f8ac321-28b2-4596-83d1-3950d2df6052"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-bhadra-fort-ahmedabad",
-          "id": "f9a0289d-4fbb-42b5-b5a2-cd6bb0e9df54"
+          "id": "0325a0b6-b1f5-42fd-9c71-4ae3268fb8f6"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-teen-darwaza-ahmedabad",
-          "id": "72dec7df-4891-429f-888f-8bffb31938cf"
+          "id": "e9ab87ad-2671-4d04-bc88-76a7b958225b"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-amritavarshini-vav-ahmedabad",
-          "id": "dd59c583-6f0a-46ad-bada-2280f09bd45c"
+          "id": "4e998ef5-0073-469e-a4bf-d3b6e125a969"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-raipur-gate-ahmedabad",
-          "id": "0c17d656-87c8-4527-aa99-d965d3588716"
+          "id": "9d51a6d9-8d84-4f91-aa7d-7c52a1a5596e"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-kalupur-darwaza-ahmedabad",
-          "id": "17e3ed9a-d060-4c98-9152-d602b9944d99"
+          "id": "b89fe69c-e886-42bf-9e60-7c8c539db00d"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-astodia-darwaza-ahmedabad",
-          "id": "216afb09-af96-4ae7-ab10-6537f86f2c90"
+          "id": "101c0c16-b1d6-4add-b97f-952d1898450e"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-manek-burj-ahmedabad",
-          "id": "a4cca469-c08f-4b1f-b2b2-42bf70e48ae7"
+          "id": "d83040cb-d7ab-4ca2-bf5d-8017abd4cb4c"
         },
         {
           "table": "attractions",
           "key": "exp-20261009-tomb-of-ahmad-shah-ahmedabad",
-          "id": "0cc332fd-3602-4b70-903f-13c08eec70ea"
+          "id": "b0d24215-6b90-4054-bed2-03ff8d49820a"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-lilavati-atithigruh-somnath",
-          "id": "5564b1b8-5c1f-45d7-ac68-eb0e33abef3e"
+          "id": "483aa199-2d05-46fb-bc63-79731e985518"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-maheshwari-samaj-atithi-gruh-somnath",
-          "id": "18bc9fb8-1a40-42bf-bd14-0c1176ee7949"
+          "id": "b172d141-6d62-49c7-92a9-0a11bd4fcf4a"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-sagar-darshan-atithigruh-somnath",
-          "id": "539c1119-a2b8-4b0f-a56f-25544f9b8cfe"
+          "id": "bb638a28-37c9-4697-a0d7-8a4ba7651ac7"
         },
         {
           "table": "hotels",
           "key": "exp-20261009-vip-atithigruh-somnath",
-          "id": "9ede7de8-8a2b-44d2-977e-389fc7e16e8b"
+          "id": "a19e2bac-cb94-4373-8528-8d4046201336"
         }
       ],
       "preserved": [],
@@ -139,5 +139,5 @@
     "dryRunRolledBack": true
   },
   "isolatedDatabaseRemoved": true,
-  "finishedAt": "2026-10-09T14:35:48.643Z"
+  "finishedAt": "2026-10-10T08:48:36.677Z"
 }

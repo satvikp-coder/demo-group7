@@ -3,6 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "local:enrich": "node scripts/local-stack.js enrich",
+    "test:phase2:production:local": "node scripts/test-local-all.js phase2-production",
+    "test:phase2": "node scripts/test-phase2-data.js",
+    "test:localization": "node --import ./backend/node_modules/tsx/dist/loader.mjs --test tests/frontend/localization.test.ts",
+    "test:phase2:data:local": "node scripts/test-local-all.js phase2",
     "local:up": "node scripts/local-stack.js up",
     "local:stop": "node scripts/local-stack.js stop",
     "local:restart": "node scripts/local-stack.js restart",

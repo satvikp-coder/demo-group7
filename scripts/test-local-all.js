@@ -7,7 +7,9 @@ const url=new URL(env.DATABASE_ADMIN_URL);url.hostname='localhost';url.port=env.
 try{
  await run('docker',[...localArgs,'-f','compose.staging.yml','up','-d','postgres'],{env,cwd:localRoot,name:'local-full-suite-db-access'});
  await waitFor(env.CORS_ORIGIN+'/ready');
- await npm(['run','test:all'],{env:{...env,DATABASE_URL:url.href},cwd:localRoot,name:'local-full-suite'});
+ if(process.argv[2]?.startsWith('phase2'))await run(process.execPath,['scripts/test-phase2-data.js',...(process.argv[2]==='phase2-production'?['--production']:[])],{env:{...env,DATABASE_URL:url.href},cwd:localRoot,name:'phase2-data'});
+ else if(process.argv[2]==='itinerary-demo')await run(process.execPath,['scripts/test-itinerary-workflow.js','demo'],{env:{...env,DATABASE_URL:url.href},cwd:localRoot,name:'itinerary-demo'});
+ else await npm(['run','test:all'],{env:{...env,DATABASE_URL:url.href},cwd:localRoot,name:'local-full-suite'});
 }catch(error){console.error(error.message);process.exitCode=1;}
 finally{
  // Recreate only PostgreSQL with the original PRIVATE network configuration.

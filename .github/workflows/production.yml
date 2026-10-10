@@ -47,6 +47,8 @@ jobs:
       - run: python -m playwright install --with-deps chrome
       # Database tests and browser fixtures execute sequentially, on isolated databases.
       - run: npm run test:all
+      - run: npm run test:localization
+      - run: npm run test:phase2 -- --production
       - run: npm run test:itinerary -- demo
       - run: npm run test:production
       - uses: actions/upload-artifact@v4
@@ -59,4 +61,7 @@ jobs:
             backend/reports/production-source-audit.json
             reports/itinerary-*.json
             reports/demo-*.png
+            reports/phase2-*.json
+            reports/phase2-browser-*.png
+            reports/phase2-gujarati-*.png
           retention-days: 14

@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-10T09:00:14.509080+00:00",
+  "verified": true,
+  "tables": {
+    "destinations": {
+      "originalCount": 8,
+      "finalCount": 8,
+      "allOriginalRowsPreserved": true
+    },
+    "attractions": {
+      "originalCount": 33,
+      "finalCount": 44,
+      "allOriginalRowsPreserved": true
+    },
+    "hotels": {
+      "originalCount": 23,
+      "finalCount": 43,
+      "allOriginalRowsPreserved": true
+    },
+    "restaurants": {
+      "originalCount": 12,
+      "finalCount": 12,
+      "allOriginalRowsPreserved": true
+    },
+    "routes": {
+      "originalCount": 163,
+      "finalCount": 322,
+      "allOriginalRowsPreserved": true
+    },
+    "users": {
+      "originalCount": 1,
+      "finalCount": 1,
+      "allOriginalRowsPreserved": true
+    },
+    "trips": {
+      "originalCount": 0,
+      "finalCount": 0,
+      "allOriginalRowsPreserved": true
+    },
+    "itinerary_stops": {
+      "originalCount": 0,
+      "finalCount": 0,
+      "allOriginalRowsPreserved": true
+    },
+    "budgets": {
+      "originalCount": 0,
+      "finalCount": 0,
+      "allOriginalRowsPreserved": true
+    }
+  },
+  "tripCompatibility": "New nullable lodging columns excluded from old-row fingerprints; all previously stored trip fields compared"
+}

@@ -71,3 +71,7 @@ reports/*.png
 !reports/itinerary-live-login-handoff.png
 backend/reports/images/*.png
 backend/reports/images/*.jpg
+
+# Curated Phase 2 demonstration evidence (isolated test accounts only).
+!reports/phase2-browser-390.png
+!reports/phase2-gujarati-1440.png

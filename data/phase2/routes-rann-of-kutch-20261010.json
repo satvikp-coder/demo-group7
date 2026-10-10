@@ -1,0 +1,208 @@
+{
+  "city": "rann-of-kutch",
+  "checked": "2026-10-10",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/69.50528,23.796686;69.599903,23.672862;69.813823,23.933547;69.52256,23.84129;69.50528,23.796686?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "h701",
+      "lat": 23.796686,
+      "lng": 69.50528
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+      "lat": 23.672862,
+      "lng": 69.599903
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a702",
+      "lat": 23.933547,
+      "lng": 69.813823
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a701",
+      "lat": 23.84129,
+      "lng": 69.52256
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r701",
+      "lat": 23.796686,
+      "lng": 69.50528
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        18317.6,
+        46437.9,
+        3721.5,
+        0
+      ],
+      [
+        18317.6,
+        0,
+        49133.3,
+        21922.2,
+        18317.6
+      ],
+      [
+        46437.9,
+        49133.3,
+        0,
+        48103.3,
+        46437.9
+      ],
+      [
+        3721.5,
+        21922.2,
+        48103.3,
+        0,
+        3721.5
+      ],
+      [
+        0,
+        18317.6,
+        46437.9,
+        3721.5,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "UtNtjC_hm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAABSKAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "7XidiO54nYgSAAAAAAAAAIABAAAAAAAA0blHQQAAAACbNYVDAAAAABIAAAAAAAAAgAEAAAAAAABSKAEARQMmBGY4aQGfAiYEHjhpARQArxIAAAAA",
+        "location": [
+          69.600069,
+          23.672934
+        ],
+        "name": "",
+        "distance": 18.71665782
+      },
+      {
+        "hint": "wjYriHpyvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAABSKAEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "iGsrhFe3j44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAABSKAEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "UtNtjC_hm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAABSKAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      }
+    ],
+    "durations": [
+      [
+        0,
+        1192.4,
+        3690.7,
+        747.5,
+        0
+      ],
+      [
+        1191.8,
+        0,
+        2781.9,
+        1912.7,
+        1191.8
+      ],
+      [
+        3693.3,
+        2777.6,
+        0,
+        4243.3,
+        3693.3
+      ],
+      [
+        747.5,
+        1918.1,
+        4243,
+        0,
+        747.5
+      ],
+      [
+        0,
+        1192.4,
+        3690.7,
+        747.5,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "UtNtjC_hm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAABSKAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "7XidiO54nYgSAAAAAAAAAIABAAAAAAAA0blHQQAAAACbNYVDAAAAABIAAAAAAAAAgAEAAAAAAABSKAEARQMmBGY4aQGfAiYEHjhpARQArxIAAAAA",
+        "location": [
+          69.600069,
+          23.672934
+        ],
+        "name": "",
+        "distance": 18.71665782
+      },
+      {
+        "hint": "wjYriHpyvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAABSKAEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "iGsrhFe3j44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAABSKAEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "UtNtjC_hm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAABSKAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      }
+    ]
+  }
+}

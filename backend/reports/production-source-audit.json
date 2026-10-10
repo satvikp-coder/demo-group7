@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-09T20:13:15.553Z",
-  "scanned": 628,
+  "checkedAt": "2026-10-10T09:01:42.640Z",
+  "scanned": 681,
   "findings": [],
   "privateEnvironmentFilesExcluded": [
     ".env.local-production"
@@ -42,7 +42,14 @@
     "reports/demo-2.png",
     "reports/demo-3.png",
     "reports/demo-4.png",
-    "reports/itinerary-live-login-handoff.png"
+    "reports/itinerary-live-login-handoff.png",
+    "reports/phase2-bhadra-preview.png",
+    "reports/phase2-browser-1440.png",
+    "reports/phase2-browser-390.png",
+    "reports/phase2-browser-768.png",
+    "reports/phase2-gujarati-1440.png",
+    "reports/phase2-gujarati-390.png",
+    "reports/phase2-gujarati-768.png"
   ],
   "functionalFrontendChanges": [],
   "gitHistoryAvailable": true,

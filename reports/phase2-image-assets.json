@@ -1,0 +1,341 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "checked": [
+    {
+      "path": "/apple-touch-icon.png",
+      "mime": "image/png",
+      "bytes": 8233
+    },
+    {
+      "path": "/favicon-32x32.png",
+      "mime": "image/png",
+      "bytes": 1417
+    },
+    {
+      "path": "/favicon.ico",
+      "mime": "image/x-icon",
+      "bytes": 4563
+    },
+    {
+      "path": "/icon-192.png",
+      "mime": "image/png",
+      "bytes": 8097
+    },
+    {
+      "path": "/icon-512.png",
+      "mime": "image/png",
+      "bytes": 20865
+    },
+    {
+      "path": "/icon.svg",
+      "mime": "image/svg+xml",
+      "bytes": 708
+    },
+    {
+      "path": "/assets/attractions/adalaj-stepwell.jpg",
+      "mime": "image/jpeg",
+      "bytes": 583940
+    },
+    {
+      "path": "/assets/attractions/adalaj-stepwell.svg",
+      "mime": "image/svg+xml",
+      "bytes": 4089
+    },
+    {
+      "path": "/assets/attractions/gir-lion.jpg",
+      "mime": "image/jpeg",
+      "bytes": 583002
+    },
+    {
+      "path": "/assets/attractions/hodka-village.jpg",
+      "mime": "image/jpeg",
+      "bytes": 627054
+    },
+    {
+      "path": "/assets/attractions/kalika-mata.jpg",
+      "mime": "image/jpeg",
+      "bytes": 230862
+    },
+    {
+      "path": "/assets/attractions/kalo-dungar.jpg",
+      "mime": "image/jpeg",
+      "bytes": 487376
+    },
+    {
+      "path": "/assets/attractions/kankaria-lake.jpg",
+      "mime": "image/jpeg",
+      "bytes": 254722
+    },
+    {
+      "path": "/assets/attractions/nageshwar-temple.jpg",
+      "mime": "image/jpeg",
+      "bytes": 585364
+    },
+    {
+      "path": "/assets/attractions/nirona-crafts.jpg",
+      "mime": "image/jpeg",
+      "bytes": 629497
+    },
+    {
+      "path": "/assets/attractions/rani-ki-vav.jpg",
+      "mime": "image/jpeg",
+      "bytes": 643066
+    },
+    {
+      "path": "/assets/attractions/rukmini-temple.jpg",
+      "mime": "image/jpeg",
+      "bytes": 366785
+    },
+    {
+      "path": "/assets/attractions/sabarmati-ashram.jpg",
+      "mime": "image/jpeg",
+      "bytes": 517590
+    },
+    {
+      "path": "/assets/attractions/sarkhej-roza.jpg",
+      "mime": "image/jpeg",
+      "bytes": 468007
+    },
+    {
+      "path": "/assets/attractions/sidi-saiyyed.jpg",
+      "mime": "image/jpeg",
+      "bytes": 549527
+    },
+    {
+      "path": "/assets/categories/dining.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1482
+    },
+    {
+      "path": "/assets/categories/hotel.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1245
+    },
+    {
+      "path": "/assets/categories/monument.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1124
+    },
+    {
+      "path": "/assets/categories/stepwell.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1418
+    },
+    {
+      "path": "/assets/categories/temple.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1353
+    },
+    {
+      "path": "/assets/categories/wildlife.svg",
+      "mime": "image/svg+xml",
+      "bytes": 1238
+    },
+    {
+      "path": "/assets/destinations/ahmedabad.jpg",
+      "mime": "image/jpeg",
+      "bytes": 219052
+    },
+    {
+      "path": "/assets/destinations/champaner.jpg",
+      "mime": "image/jpeg",
+      "bytes": 429591
+    },
+    {
+      "path": "/assets/destinations/champaner.svg",
+      "mime": "image/svg+xml",
+      "bytes": 2810
+    },
+    {
+      "path": "/assets/destinations/dwarka.jpg",
+      "mime": "image/jpeg",
+      "bytes": 227411
+    },
+    {
+      "path": "/assets/destinations/dwarka.svg",
+      "mime": "image/svg+xml",
+      "bytes": 3126
+    },
+    {
+      "path": "/assets/destinations/gir.jpg",
+      "mime": "image/jpeg",
+      "bytes": 128561
+    },
+    {
+      "path": "/assets/destinations/modhera.jpg",
+      "mime": "image/jpeg",
+      "bytes": 667949
+    },
+    {
+      "path": "/assets/destinations/rann-of-kutch.jpg",
+      "mime": "image/jpeg",
+      "bytes": 534206
+    },
+    {
+      "path": "/assets/destinations/rann-of-kutch.svg",
+      "mime": "image/svg+xml",
+      "bytes": 3916
+    },
+    {
+      "path": "/assets/destinations/saputara.jpg",
+      "mime": "image/jpeg",
+      "bytes": 160222
+    },
+    {
+      "path": "/assets/destinations/somnath.jpg",
+      "mime": "image/jpeg",
+      "bytes": 466822
+    },
+    {
+      "path": "/assets/destinations/somnath.svg",
+      "mime": "image/svg+xml",
+      "bytes": 3271
+    },
+    {
+      "path": "/assets/hotels/rann-riders.svg",
+      "mime": "image/svg+xml",
+      "bytes": 2847
+    },
+    {
+      "path": "/assets/photographs/adalaj-stepwell.webp",
+      "mime": "image/webp",
+      "bytes": 332070
+    },
+    {
+      "path": "/assets/photographs/ahmedabad-riverfront.webp",
+      "mime": "image/webp",
+      "bytes": 90450
+    },
+    {
+      "path": "/assets/photographs/bet-dwarka.webp",
+      "mime": "image/webp",
+      "bytes": 74210
+    },
+    {
+      "path": "/assets/photographs/bhadra-fort-clock-ahmedabad.webp",
+      "mime": "image/webp",
+      "bytes": 147730
+    },
+    {
+      "path": "/assets/photographs/bhalka-tirth.webp",
+      "mime": "image/webp",
+      "bytes": 205054
+    },
+    {
+      "path": "/assets/photographs/champaner-heritage-resort.webp",
+      "mime": "image/webp",
+      "bytes": 129944
+    },
+    {
+      "path": "/assets/photographs/champaner-jami-masjid.webp",
+      "mime": "image/webp",
+      "bytes": 181632
+    },
+    {
+      "path": "/assets/photographs/chandravilas-ahmedabad.webp",
+      "mime": "image/webp",
+      "bytes": 171854
+    },
+    {
+      "path": "/assets/photographs/devalia-lions.webp",
+      "mime": "image/webp",
+      "bytes": 338616
+    },
+    {
+      "path": "/assets/photographs/dwarka-dwarkadhish-temple.webp",
+      "mime": "image/webp",
+      "bytes": 136674
+    },
+    {
+      "path": "/assets/photographs/french-haveli-ahmedabad.webp",
+      "mime": "image/webp",
+      "bytes": 174958
+    },
+    {
+      "path": "/assets/photographs/gir-national-park.webp",
+      "mime": "image/webp",
+      "bytes": 114214
+    },
+    {
+      "path": "/assets/photographs/kalo-dungar.webp",
+      "mime": "image/webp",
+      "bytes": 106372
+    },
+    {
+      "path": "/assets/photographs/kankaria-lake.webp",
+      "mime": "image/webp",
+      "bytes": 106192
+    },
+    {
+      "path": "/assets/photographs/kevada-masjid.webp",
+      "mime": "image/webp",
+      "bytes": 136848
+    },
+    {
+      "path": "/assets/photographs/modhera-sun-temple.webp",
+      "mime": "image/webp",
+      "bytes": 231948
+    },
+    {
+      "path": "/assets/photographs/modheshwari-temple.webp",
+      "mime": "image/webp",
+      "bytes": 116234
+    },
+    {
+      "path": "/assets/photographs/nageshwar-temple.webp",
+      "mime": "image/webp",
+      "bytes": 129068
+    },
+    {
+      "path": "/assets/photographs/rann-of-kutch.webp",
+      "mime": "image/webp",
+      "bytes": 100164
+    },
+    {
+      "path": "/assets/photographs/rukmini-temple.webp",
+      "mime": "image/webp",
+      "bytes": 69180
+    },
+    {
+      "path": "/assets/photographs/sabarmati-ashram.webp",
+      "mime": "image/webp",
+      "bytes": 254550
+    },
+    {
+      "path": "/assets/photographs/saputara-lake.webp",
+      "mime": "image/webp",
+      "bytes": 85934
+    },
+    {
+      "path": "/assets/photographs/saputara-sunset-point.webp",
+      "mime": "image/webp",
+      "bytes": 77636
+    },
+    {
+      "path": "/assets/photographs/sarkhej-roza.webp",
+      "mime": "image/webp",
+      "bytes": 220664
+    },
+    {
+      "path": "/assets/photographs/sidi-saiyyed-mosque.webp",
+      "mime": "image/webp",
+      "bytes": 272666
+    },
+    {
+      "path": "/assets/photographs/somnath-beach.webp",
+      "mime": "image/webp",
+      "bytes": 92054
+    },
+    {
+      "path": "/assets/photographs/somnath-temple.webp",
+      "mime": "image/webp",
+      "bytes": 149512
+    },
+    {
+      "path": "/assets/photographs/vishalla-thali.webp",
+      "mime": "image/webp",
+      "bytes": 192280
+    }
+  ],
+  "errors": []
+}

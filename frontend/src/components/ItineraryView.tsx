@@ -50,6 +50,9 @@ import {
 export interface ItineraryConfig {
   travelers?: number;
   rooms?: number;
+  lodgingNights?: number;
+  arrivalDate?: string;
+  departureDate?: string;
   startDate?: string;
   weights?: PriorityWeights;
   hotelCategory?: "Low Cost" | "Budget" | "Premium";
@@ -480,7 +483,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               <p>Distance: {optimization.weights.distance}% | Cost: {optimization.weights.cost}% | Rating: {optimization.weights.rating}%</p>
               <p>Why this itinerary? It has the highest weighted score among {optimization.evaluated_count} feasible candidates evaluated by the existing greedy planner. A global optimum is not guaranteed.</p>
               <p>{chosen?.attraction_count} attractions | {chosen?.distance_km.toFixed(1)} km of saved route estimates | INR {chosen?.known_cost.toLocaleString('en-IN')} known estimated costs | Rating: {chosen?.rating_mean == null ? 'Unknown' : chosen.rating_mean.toFixed(2) + '/5'} | Score: {optimization.score.toFixed(4)}</p>
-              <p className="text-sm text-stone">Costs include {optimization.rooms} room(s) per night and known admission/meal costs for {optimization.travelers} traveler(s). Transport fares remain unknown. Ratings use known values with a coverage adjustment; prices are estimates, not live availability.</p>
+              <p className="text-sm text-stone">Costs include {optimization.rooms} room(s) for {request.data.dto.trip.generation_summary?.lodging_nights ?? numDays} night(s) and known admission/meal costs for {optimization.travelers} traveler(s). Transport fares remain unknown. Ratings use known values with a coverage adjustment; prices are estimates, not live availability.</p>
             </section>;
           })()}
           {/* Header Banner */}
@@ -856,7 +859,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                               <span className="font-bold text-ink text-sm">
                                 {stop.cost > 0
                                   ? `₹${displayNumber(stop.cost)}`
-                                  : "Free / Included"}
+                                  : stop.type === "hotel" ? "No room charge at this stop" : "Free / Included"}
                               </span>
                               <span className="text-[10px] text-stone">
                                 Duration: {stop.durationMinutes} mins
@@ -894,7 +897,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs">
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
                     <span className="text-stone text-[10px] uppercase block">
-                      Hotels ({numDays} Nights)
+                      Hotels ({request.data.dto.trip.generation_summary?.lodging_nights ?? numDays} Nights)
                     </span>
                     <span className="font-bold text-salt text-sm">
                       ₹{displayNumber(totalHotelCost)}

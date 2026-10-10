@@ -1,0 +1,720 @@
+{
+  "city": "dwarka",
+  "checked": "2026-10-10",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/68.978602,22.245748;68.960179,22.240855;69.01058,22.209819;69.014184,22.202806;69.019296,22.224518;68.968727,22.244199;68.966474,22.243349;68.967512,22.237774;69.087015,22.336061;68.964398,22.257331;69.095999,22.451995;68.964614,22.239932;68.9682,22.2405?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "h202",
+      "lat": 22.245748,
+      "lng": 68.978602
+    },
+    {
+      "kind": "hotel",
+      "external_id": "h201",
+      "lat": 22.240855,
+      "lng": 68.960179
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-ginger-dwarka",
+      "lat": 22.209819,
+      "lng": 69.01058
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-the-fern-sattva-resort-dwarka",
+      "lat": 22.202806,
+      "lng": 69.014184
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-hawthorn-suites-by-wyndham-dwarka",
+      "lat": 22.224518,
+      "lng": 69.019296
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-lemon-tree-premier-dwarka",
+      "lat": 22.244199,
+      "lng": 68.968727
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-vits-devbhumi-dwarka",
+      "lat": 22.243349,
+      "lng": 68.966474
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a201",
+      "lat": 22.237774,
+      "lng": 68.967512
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a202",
+      "lat": 22.336061,
+      "lng": 69.087015
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a203",
+      "lat": 22.257331,
+      "lng": 68.964398
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a204",
+      "lat": 22.451995,
+      "lng": 69.095999
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r202",
+      "lat": 22.239932,
+      "lng": 68.964614
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r201",
+      "lat": 22.2405,
+      "lng": 68.9682
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        2911.6,
+        8946,
+        8089.2,
+        6932,
+        1605.6,
+        2019.3,
+        2045.3,
+        16189.7,
+        3649.4,
+        34722.6,
+        2502.7,
+        1588.8
+      ],
+      [
+        2477.7,
+        0,
+        10236.2,
+        9379.4,
+        8222.2,
+        1366.3,
+        981.2,
+        1119.9,
+        17674.4,
+        2047.5,
+        33020.6,
+        686.4,
+        1185.3
+      ],
+      [
+        6755.8,
+        7609.5,
+        0,
+        3813,
+        2655.8,
+        6605.7,
+        6717.1,
+        6743.2,
+        22913.8,
+        8347.3,
+        39420.5,
+        7200.6,
+        6286.7
+      ],
+      [
+        7583.3,
+        8437.1,
+        1036.7,
+        0,
+        3483.4,
+        7433.3,
+        7544.7,
+        7570.8,
+        23741.4,
+        9174.8,
+        40248,
+        8028.2,
+        7114.2
+      ],
+      [
+        7345,
+        8198.8,
+        5229.1,
+        4372.3,
+        0,
+        7195,
+        7306.4,
+        7332.5,
+        23503.1,
+        8936.5,
+        40009.7,
+        7789.9,
+        6875.9
+      ],
+      [
+        1605.8,
+        1243.3,
+        9364.2,
+        8507.4,
+        7350.3,
+        0,
+        605.7,
+        1234.9,
+        16558.5,
+        1862,
+        32935.2,
+        968.6,
+        643.5
+      ],
+      [
+        1733.6,
+        988.6,
+        9492.1,
+        8635.3,
+        7478.1,
+        622.2,
+        0,
+        835.3,
+        16930.3,
+        1726.4,
+        32799.6,
+        569,
+        771.4
+      ],
+      [
+        2305.9,
+        1119.9,
+        9342.4,
+        8485.6,
+        7328.4,
+        1194.5,
+        832,
+        0,
+        17502.6,
+        2363.5,
+        33436.7,
+        514.2,
+        737.2
+      ],
+      [
+        16181,
+        17671.6,
+        25030.6,
+        24173.9,
+        23016.7,
+        16423.9,
+        16779.2,
+        17502.6,
+        0,
+        18409.4,
+        21725.3,
+        17262.7,
+        16817
+      ],
+      [
+        3199.3,
+        2052.2,
+        10957.8,
+        10101,
+        8943.8,
+        2087.9,
+        1702.7,
+        2361.1,
+        18395.9,
+        0,
+        31417,
+        2094.8,
+        2237
+      ],
+      [
+        34252.8,
+        33007,
+        42011.3,
+        41154.5,
+        39997.3,
+        33141.4,
+        32756.3,
+        33414.7,
+        21725.3,
+        31359,
+        0,
+        33148.4,
+        33290.6
+      ],
+      [
+        2067.6,
+        686.4,
+        9349.8,
+        8493,
+        7335.8,
+        956.2,
+        569,
+        514.2,
+        17264.2,
+        2100.5,
+        33173.7,
+        0,
+        498.9
+      ],
+      [
+        1620.4,
+        1183.8,
+        9018.8,
+        8162,
+        7004.8,
+        509,
+        613.7,
+        737.2,
+        16817,
+        2145.2,
+        33218.4,
+        497.4,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "k877jZbO-41zAAAADwAAAAAAAAAAAAAAdsefQinIIkEAAAAAAAAAAHMAAAAPAAAAAAAAAAAAAABSKAEAWoccBEBxUwGqhxwEdHFTAQAADwkAAAAA",
+        "location": [
+          68.978522,
+          22.245696
+        ],
+        "name": "",
+        "distance": 10.05900434
+      },
+      {
+        "hint": "4D6OlOQ-jpSvAAAAjwAAAGAAAAD6AAAAvaESQrRy7UEEJaFBQhNQQlcAAABIAAAAMAAAAHwAAABSKAEA1j4cBFReUwGzPxwEV15TAQgAfxYAAAAA",
+        "location": [
+          68.959958,
+          22.240852
+        ],
+        "name": "",
+        "distance": 22.78718196
+      },
+      {
+        "hint": "PcrLkz_Ky5MoAAAALQAAAAAAAAAAAAAA2TbeQSR9-UEAAAAAAAAAACgAAAAtAAAAAAAAAAAAAABSKAEAmwQdBK3kUgGUBB0EG-VSAQAArxAAAAAA",
+        "location": [
+          69.010587,
+          22.209709
+        ],
+        "name": "",
+        "distance": 12.20202622
+      },
+      {
+        "hint": "BcrLkwjKy5OkAAAAEwAAAD4AAACcAQAAThEJQrQBfUC7GVBBlg2sQlIAAAAKAAAAHwAAAM4AAABSKAEAPhMdBPrJUgGoEh0EtslSAQIAnwkAAAAA",
+        "location": [
+          69.014334,
+          22.202874
+        ],
+        "name": "",
+        "distance": 17.20052252
+      },
+      {
+        "hint": "nsrpkt1u0ZMIAAAAEwAAAN4BAABSAAAAmRZaQMOT_kAoKEdDrCkHQggAAAATAAAA3gEAAFIAAABSKAEA9CYdBCMeUwGgJh0Ehh5TARoATwMAAAAA",
+        "location": [
+          69.01938,
+          22.224419
+        ],
+        "name": "",
+        "distance": 13.97064298
+      },
+      {
+        "hint": "KyHoif___38nAAAARgAAAAwAAAAdAAAAtiExQnQoB0IgHVpB7S3-QScAAABGAAAADAAAAB0AAABSKAEAVGEcBFNsUwEXYRwEZ2tTAQQAvxEAAAAA",
+        "location": [
+          68.968788,
+          22.244435
+        ],
+        "name": "",
+        "distance": 26.87914854
+      },
+      {
+        "hint": "ZLeUlGe3lJQPAAAAAAAAAHwAAAB0AAAAi6vMQAAAAAD6oU5CeJNAQg8AAAAAAAAAfAAAAHQAAABSKAEANVgcBNloUwFKWBwEFWhTAQQAjwUAAAAA",
+        "location": [
+          68.966453,
+          22.243545
+        ],
+        "name": "",
+        "distance": 21.81145244
+      },
+      {
+        "hint": "XuHLkybNzpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAABSKAEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "_vW5hb25epMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAABSKAEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "w_W5hTK_Q5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAABSKAEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "49Ffg8SHbZUUAAAAFQAAAD8BAAASAAAAmGS3QfUBs0FJqK9D4pSdQRQAAAAVAAAAPwEAABIAAABSKAEAcFMeBEOXVgE_Uh4EG5dWAR4AvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "14aXgsec2ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAABSKAEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      },
+      {
+        "hint": "-kmJifyylJQLAAAABAAAAAwAAAAhAAAAiuxDQf5AeEAHpllB5PUQQgsAAAAEAAAADAAAACEAAABSKAEAml8cBA1eUwEIXxwE9FxTAQIAfxIAAAAA",
+        "location": [
+          68.968346,
+          22.240781
+        ],
+        "name": "",
+        "distance": 34.56563914
+      }
+    ],
+    "durations": [
+      [
+        0,
+        212,
+        487.6,
+        459.7,
+        389.7,
+        132.9,
+        141.6,
+        198.3,
+        968.9,
+        235.2,
+        1612.3,
+        160,
+        128.6
+      ],
+      [
+        196.2,
+        0,
+        558.2,
+        530.3,
+        460.3,
+        123.5,
+        112.6,
+        124.3,
+        1041.5,
+        177.2,
+        1549.5,
+        74.7,
+        114
+      ],
+      [
+        353.2,
+        394.6,
+        0,
+        263,
+        184.8,
+        320.3,
+        324.2,
+        385.7,
+        1238.3,
+        417.8,
+        1794.9,
+        342.6,
+        311.2
+      ],
+      [
+        395.6,
+        437,
+        81.9,
+        0,
+        227.2,
+        362.7,
+        366.6,
+        428.1,
+        1280.7,
+        460.2,
+        1837.3,
+        385,
+        353.6
+      ],
+      [
+        413.1,
+        454.5,
+        347.3,
+        319.4,
+        0,
+        380.2,
+        384.1,
+        445.6,
+        1298.2,
+        477.7,
+        1854.8,
+        402.5,
+        371.1
+      ],
+      [
+        134.3,
+        124.2,
+        496.3,
+        468.4,
+        398.4,
+        0,
+        61.8,
+        122.1,
+        954.3,
+        141.8,
+        1518.9,
+        74.5,
+        54.9
+      ],
+      [
+        131.1,
+        103.5,
+        493.1,
+        465.2,
+        395.2,
+        58.4,
+        0,
+        98.5,
+        976.4,
+        126.7,
+        1503.8,
+        50.9,
+        64.6
+      ],
+      [
+        186.5,
+        127.4,
+        534.7,
+        506.8,
+        436.8,
+        110.6,
+        92.6,
+        0,
+        1028.6,
+        184,
+        1561.1,
+        62.1,
+        81.7
+      ],
+      [
+        965.6,
+        1039.1,
+        1402.2,
+        1374.3,
+        1304.3,
+        937.8,
+        968.7,
+        1031.1,
+        0,
+        1062.3,
+        1485.2,
+        985.9,
+        961.8
+      ],
+      [
+        216.1,
+        172.9,
+        578.1,
+        550.2,
+        480.2,
+        143.4,
+        132.5,
+        186,
+        1061.4,
+        0,
+        1446.3,
+        138.4,
+        149.6
+      ],
+      [
+        1588.4,
+        1542.9,
+        1950.4,
+        1922.5,
+        1852.5,
+        1515.7,
+        1504.8,
+        1558.3,
+        1484.9,
+        1443.2,
+        0,
+        1510.7,
+        1521.9
+      ],
+      [
+        144.1,
+        71,
+        498.4,
+        470.5,
+        400.5,
+        68.2,
+        47.8,
+        63.7,
+        986.2,
+        139.2,
+        1516.3,
+        0,
+        39.3
+      ],
+      [
+        120.2,
+        104.4,
+        479.1,
+        451.2,
+        381.2,
+        44.3,
+        60.2,
+        78.6,
+        962.3,
+        151.6,
+        1528.7,
+        33.4,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "k877jZbO-41zAAAADwAAAAAAAAAAAAAAdsefQinIIkEAAAAAAAAAAHMAAAAPAAAAAAAAAAAAAABSKAEAWoccBEBxUwGqhxwEdHFTAQAADwkAAAAA",
+        "location": [
+          68.978522,
+          22.245696
+        ],
+        "name": "",
+        "distance": 10.05900434
+      },
+      {
+        "hint": "4D6OlOQ-jpSvAAAAjwAAAGAAAAD6AAAAvaESQrRy7UEEJaFBQhNQQlcAAABIAAAAMAAAAHwAAABSKAEA1j4cBFReUwGzPxwEV15TAQgAfxYAAAAA",
+        "location": [
+          68.959958,
+          22.240852
+        ],
+        "name": "",
+        "distance": 22.78718196
+      },
+      {
+        "hint": "PcrLkz_Ky5MoAAAALQAAAAAAAAAAAAAA2TbeQSR9-UEAAAAAAAAAACgAAAAtAAAAAAAAAAAAAABSKAEAmwQdBK3kUgGUBB0EG-VSAQAArxAAAAAA",
+        "location": [
+          69.010587,
+          22.209709
+        ],
+        "name": "",
+        "distance": 12.20202622
+      },
+      {
+        "hint": "BcrLkwjKy5OkAAAAEwAAAD4AAACcAQAAThEJQrQBfUC7GVBBlg2sQlIAAAAKAAAAHwAAAM4AAABSKAEAPhMdBPrJUgGoEh0EtslSAQIAnwkAAAAA",
+        "location": [
+          69.014334,
+          22.202874
+        ],
+        "name": "",
+        "distance": 17.20052252
+      },
+      {
+        "hint": "nsrpkt1u0ZMIAAAAEwAAAN4BAABSAAAAmRZaQMOT_kAoKEdDrCkHQggAAAATAAAA3gEAAFIAAABSKAEA9CYdBCMeUwGgJh0Ehh5TARoATwMAAAAA",
+        "location": [
+          69.01938,
+          22.224419
+        ],
+        "name": "",
+        "distance": 13.97064298
+      },
+      {
+        "hint": "KyHoif___38nAAAARgAAAAwAAAAdAAAAtiExQnQoB0IgHVpB7S3-QScAAABGAAAADAAAAB0AAABSKAEAVGEcBFNsUwEXYRwEZ2tTAQQAvxEAAAAA",
+        "location": [
+          68.968788,
+          22.244435
+        ],
+        "name": "",
+        "distance": 26.87914854
+      },
+      {
+        "hint": "ZLeUlGe3lJQPAAAAAAAAAHwAAAB0AAAAi6vMQAAAAAD6oU5CeJNAQg8AAAAAAAAAfAAAAHQAAABSKAEANVgcBNloUwFKWBwEFWhTAQQAjwUAAAAA",
+        "location": [
+          68.966453,
+          22.243545
+        ],
+        "name": "",
+        "distance": 21.81145244
+      },
+      {
+        "hint": "XuHLkybNzpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAABSKAEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "_vW5hb25epMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAABSKAEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "w_W5hTK_Q5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAABSKAEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "49Ffg8SHbZUUAAAAFQAAAD8BAAASAAAAmGS3QfUBs0FJqK9D4pSdQRQAAAAVAAAAPwEAABIAAABSKAEAcFMeBEOXVgE_Uh4EG5dWAR4AvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "14aXgsec2ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAABSKAEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      },
+      {
+        "hint": "-kmJifyylJQLAAAABAAAAAwAAAAhAAAAiuxDQf5AeEAHpllB5PUQQgsAAAAEAAAADAAAACEAAABSKAEAml8cBA1eUwEIXxwE9FxTAQIAfxIAAAAA",
+        "location": [
+          68.968346,
+          22.240781
+        ],
+        "name": "",
+        "distance": 34.56563914
+      }
+    ]
+  }
+}

@@ -95,6 +95,9 @@ export type OptimizationStrategy =
 export interface PlannerConfigPayload {
   travelers?: number;
   rooms?: number;
+  lodgingNights?: number;
+  arrivalDate?: string;
+  departureDate?: string;
   startDate?: string;
   weights?: PriorityWeights;
   hotelCategory?: "Low Cost" | "Budget" | "Premium";

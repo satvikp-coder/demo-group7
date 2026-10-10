@@ -8,6 +8,7 @@ const uiChanges=[],functionalFrontendChanges=[];
 const baseline=JSON.parse(readFileSync(new URL('backend/reports/production-source-baseline.json',root),'utf8'));
 const approved=JSON.parse(readFileSync(new URL('reports/APPROVED_FRONTEND_REPAIRS.json',root),'utf8')).files;
 const itineraryApproved=JSON.parse(readFileSync(new URL('reports/ITINERARY_APPROVED_CHANGES.json',root),'utf8')).files;
+const phase2Approved=JSON.parse(readFileSync(new URL('../reports/PHASE2_APPROVED_CHANGES.json',import.meta.url),'utf8')).files;
 function visit(dir,relative='') {
  for(const entry of readdirSync(dir,{withFileTypes:true})) {
   if(['node_modules','dist','.git','__pycache__'].includes(entry.name))continue;
@@ -16,7 +17,7 @@ function visit(dir,relative='') {
   if(/^\.env(?:\.|$)/.test(entry.name)&&!entry.name.endsWith('.example')){privateFiles.push(path);continue;}
   if(path.startsWith('frontend/src/')||path.startsWith('frontend/public/')){
    const hash=createHash('sha256').update(readFileSync(url)).digest('hex');
-   if(baseline[path]!==hash && approved[path]!==hash && itineraryApproved[path]?.sha256!==hash) {
+   if(baseline[path]!==hash && approved[path]!==hash && itineraryApproved[path]?.sha256!==hash && phase2Approved[path]?.sha256!==hash) {
     // Permit only this nonvisual PDF font-loading option. Reversing this exact
     // edit must reproduce the original whole-file hash, including every JSX byte.
     const pdfOptionOnly=path==='frontend/src/components/ItineraryView.tsx' && createHash('sha256').update(readFileSync(url,'utf8').replace('{ quality: 0.95, loadExternalStyleSheet: true }','{ quality: 0.95 }')).digest('hex')===baseline[path];

@@ -69,8 +69,8 @@ wheelchair access; Rukmini Temple is marked inaccessible; 23 attraction values
 remain unknown and are excluded by wheelchair-only planning. Missing ratings,
 travel fares, mode splits and algorithm timings remain unavailable. Unknown
 transport costs display as excluded, rather than verified free transport.
-Hotel choice is retained when over budget. One lodging night per trip day is
-the existing backend contract. Simulated CSV routes remain excluded.
+Hotel choice is retained when over budget. New plans default to days minus one lodging nights, adjustable with optional
+arrival/departure dates. Old requests and saved rows retain their original night convention. Simulated CSV routes remain excluded.
 
 The profile discovers owned trips from PostgreSQL after a new login. There is no
 account-update, preview or verified-discount endpoint; account edits report unsupported; What If generates a new persisted version on Save; budget

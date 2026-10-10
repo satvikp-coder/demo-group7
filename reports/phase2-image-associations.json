@@ -1,0 +1,1288 @@
+{
+  "base": "http://localhost:8080",
+  "records": [
+    {
+      "kind": "destinations",
+      "id": "b02ec0dc-3a52-48b3-8dd2-dfa559c7c1d5",
+      "slug": "ahmedabad",
+      "name": "Ahmedabad",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/ahmedabad-riverfront.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Sabarmati_riverside.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "32c4a8e4-fedd-4548-ad78-1d83380d3640",
+      "slug": "adalaj-ni-vav-stepwell-ahmedabad",
+      "name": "Adalaj Ni Vav Stepwell",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/june/Adalaj-ni-Vav.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/adalaj-stepwell.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Adalaj_ki_Vav_Gujarat_240A1370_72.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "8c36d270-6bbf-4a53-bb97-8138c4afa106",
+      "slug": "amritavarshini-vav-ahmedabad",
+      "name": "Amritavarshini Vav",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "c42e1d44-2f14-4dd7-bd0a-3c879b89addf",
+      "slug": "astodia-darwaza-ahmedabad",
+      "name": "Astodia Darwaza",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "6836e31b-89e0-4b68-a140-0734a907089b",
+      "slug": "bhadra-fort-ahmedabad",
+      "name": "Bhadra Fort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/bhadra-fort-clock-ahmedabad.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Bhadra_Fort_2_jpeg.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "ab4b6e65-4a34-48ba-8792-9c0b5af11bad",
+      "slug": "calico-textile-museum-ahmedabad",
+      "name": "Calico Textile Museum",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+      "slug": "kalupur-darwaza-ahmedabad",
+      "name": "Kalupur Darwaza",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "0b7d9a31-7570-4093-978f-98a843f6a4cf",
+      "slug": "kankaria-lake-ahmedabad",
+      "name": "Kankaria Lake",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/kankaria-lake/Kankaria-Lake-Thumbnail.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/kankaria-lake.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Kankaria_Carnival_2_Ahmedabad.JPG"
+    },
+    {
+      "kind": "attractions",
+      "id": "e01c4277-1f41-459e-a335-186895f6538d",
+      "slug": "manek-burj-ahmedabad",
+      "name": "Manek Burj",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "c63a5333-57bd-44df-bc8e-f824bef61f4e",
+      "slug": "raipur-gate-ahmedabad",
+      "name": "Raipur Gate",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "be5730b8-4c1f-4e0d-a1e1-541b9c94ba36",
+      "slug": "sabarmati-ashram-ahmedabad",
+      "name": "Sabarmati Ashram",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/gandhi-circuit/sabarmati-ashram-(gandhi-smarak-sangrahalaya)/Sabarmati-Ashram-Banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/sabarmati-ashram.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:GANDHI_ASHRAM_03.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "6cca73aa-876d-417f-a181-a0d4c6af9567",
+      "slug": "sarkhej-roza-ahmedabad",
+      "name": "Sarkhej Roza",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/sarkhej-roza.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Sarkhej.JPG"
+    },
+    {
+      "kind": "attractions",
+      "id": "fff920bc-e67b-4420-b727-cb777a952e2d",
+      "slug": "sidi-saiyyed-mosque-old-pols-ahmedabad",
+      "name": "Sidi Saiyyed Mosque & Old Pols",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/sidi-saiyyed-mosque.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Sidi_Saiyyed_Mosque,_Ahmedabad.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "045d43c6-4ca3-46e6-8684-fad2c48006d6",
+      "slug": "teen-darwaza-ahmedabad",
+      "name": "Teen Darwaza",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+      "slug": "tomb-of-ahmad-shah-ahmedabad",
+      "name": "Tomb of Ahmad Shah",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "2a55e4b0-ad46-4133-b54d-a393ea209ec3",
+      "slug": "hotel-maruti-ahmedabad",
+      "name": "Hotel Maruti",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "2f077d86-770e-4a0a-b6c8-caff49e1f548",
+      "slug": "lemon-tree-premier-ahmedabad",
+      "name": "Lemon Tree Premier",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "5e22eaba-9c9a-4bd0-8538-06e4c7ccb95e",
+      "slug": "french-haveli-heritage-stay-ahmedabad",
+      "name": "French Haveli Heritage Stay",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/french-haveli-ahmedabad.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:French_Haveli_4.jpg"
+    },
+    {
+      "kind": "hotels",
+      "id": "ffaebdd3-1ae0-456d-ae34-0ac0b150ccf0",
+      "slug": "the-house-of-mg-ahmedabad",
+      "name": "The House of MG",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "4ac5c9dd-a63d-4e26-afc4-a4d7875b59a7",
+      "slug": "holiday-inn-express-ahmedabad-prahlad-nagar-ahmedabad",
+      "name": "Holiday Inn Express Ahmedabad Prahlad Nagar",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "8c279476-81d4-4fba-82aa-2547ed2549d3",
+      "slug": "hotel-good-night-ahmedabad",
+      "name": "Hotel Good Night",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "f3440508-499c-451a-a57b-44cdc24d0697",
+      "slug": "hotel-volga-ahmedabad",
+      "name": "Hotel Volga",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "2d6d6d8b-52d2-4619-af86-fdf88501b86e",
+      "slug": "hyatt-ahmedabad-ahmedabad",
+      "name": "Hyatt Ahmedabad",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "f32288d8-7551-4d00-b737-1c08e56f4371",
+      "slug": "radisson-blu-ahmedabad-ahmedabad",
+      "name": "Radisson Blu Ahmedabad",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "c0c85785-f0b1-462a-9bf8-7c47b83ce20b",
+      "slug": "ramada-ahmedabad-ahmedabad",
+      "name": "Ramada Ahmedabad",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "eee03cab-a0a3-4065-9b15-28e6d2c9cfd0",
+      "slug": "the-parterre-ahmedabad-ahmedabad",
+      "name": "The Parterre Ahmedabad",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "a2541695-146a-4dff-aced-2d1a6a5e85f5",
+      "slug": "agashiye-terrace-restaurant-ahmedabad",
+      "name": "Agashiye Terrace Restaurant",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "51f55c66-7f28-467d-b542-e7ef2daa750a",
+      "slug": "chandravilas-dining-hall-ahmedabad",
+      "name": "Chandravilas Dining Hall",
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/chandravilas-ahmedabad.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:ChandraVilas_Restaurant_Today.jpg"
+    },
+    {
+      "kind": "restaurants",
+      "id": "1afd10f7-3b8e-4ce7-b91c-91fed3745f72",
+      "slug": "vishalla-village-restaurant-ahmedabad",
+      "name": "Vishalla Village Restaurant",
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/vishalla-thali.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Gujarati_Thali_at_Vishalla.jpg"
+    },
+    {
+      "kind": "destinations",
+      "id": "8ad9145c-fbeb-466b-9a4d-78d032a476cb",
+      "slug": "champaner",
+      "name": "Champaner",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/champaner-jami-masjid.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Jama_Mosque,PMS.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+      "slug": "east-bhadra-gate-champaner",
+      "name": "East Bhadra Gate",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+      "slug": "ek-minar-ki-masjid-champaner",
+      "name": "Ek Minar ki Masjid",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+      "slug": "helical-stepwell-champaner",
+      "name": "Helical Stepwell",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "cc7eae7f-e761-43e5-aee2-2c2671c050c2",
+      "slug": "jami-masjid-champaner",
+      "name": "Jami Masjid, Champaner",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/unesco-world-heritage-site/champaner-&-pavagadh/jami-masjid/Jami-Masjid-Banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/champaner-jami-masjid.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Jama_Mosque,PMS.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+      "slug": "kevada-masjid",
+      "name": "Kevada Masjid",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/kevada-masjid.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Kevada_Mosque,_Champaner.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+      "slug": "maqbara-mandvi-champaner",
+      "name": "Maqbara Mandvi",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+      "slug": "octagonal-stepwell-champaner",
+      "name": "Octagonal Stepwell",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+      "slug": "sahar-ki-masjid-champaner",
+      "name": "Sahar ki Masjid",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+      "slug": "south-bhadra-gate-champaner",
+      "name": "South Bhadra Gate",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "c1a109b2-78ab-4b8c-87af-1c6ef75735ba",
+      "slug": "hotel-sarvottam-baska-champaner",
+      "name": "Hotel Sarvottam, Baska",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "fd837939-438c-4ac7-9907-527abb1173f0",
+      "slug": "champaner-heritage-resort",
+      "name": "Champaner Heritage Resort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/champaner-heritage-resort.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Champaner_Heritage_Resort.jpg"
+    },
+    {
+      "kind": "restaurants",
+      "id": "0bbc8b98-5f4e-4c85-b031-29cb9318aa49",
+      "slug": "sarvottam-restaurant-halol",
+      "name": "Hotel Sarvottam Restaurant, Halol",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "destinations",
+      "id": "4bae3552-396e-49f3-9e29-5e41c0a7f0fe",
+      "slug": "dwarka",
+      "name": "Dwarka",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/dwarka-dwarkadhish-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Dwarakadheesh_Temple,_2014.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "e42a26be-0f64-4e38-82e7-453fee298070",
+      "slug": "bet-dwarka-dwarka",
+      "name": "Bet Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/bet-dwarka.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Bet_Dwarka_during_Dwaraka_DWARASPDB_2015_(12).jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "6b8e35ba-ec90-45cb-953e-55f24a66473b",
+      "slug": "dwarkadhish-temple-dwarka",
+      "name": "Dwarkadhish Temple",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/dwarka-dwarkadhish-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Dwarakadheesh_Temple,_2014.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "9208093c-d349-4443-a149-a8c54b2aba7d",
+      "slug": "nageshwar-jyotirlinga-dwarka",
+      "name": "Nageshwar Jyotirlinga",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/destinations/dwarka/religious-sites/nageshwar-jyotirlinga/Nageshwarlnga_1.JPG",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/nageshwar-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Nageshwar.JPG"
+    },
+    {
+      "kind": "attractions",
+      "id": "aef1c74b-72e8-4f77-ac7f-115fa1d95cb8",
+      "slug": "rukmini-devi-temple-dwarka",
+      "name": "Rukmini Devi Temple",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/rukmini-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Rukmini_temple.JPG"
+    },
+    {
+      "kind": "hotels",
+      "id": "ae1e8cea-8b50-4d35-b772-877183975d94",
+      "slug": "hotel-darshan-palace-dwarka",
+      "name": "Hotel Darshan Palace",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "eaf47a96-5913-42ea-bd13-e901ce0934ae",
+      "slug": "toran-hotel-dwarka-dwarka",
+      "name": "Toran Hotel Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "be52c916-2076-4ebc-bffd-7205e947530d",
+      "slug": "ginger-dwarka",
+      "name": "Ginger Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "5ab29d1a-9d89-4ea1-98bd-41d66896638b",
+      "slug": "hawthorn-suites-by-wyndham-dwarka",
+      "name": "Hawthorn Suites by Wyndham Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "8104b9fe-ca25-4c8c-8e81-c324b8be2025",
+      "slug": "lemon-tree-premier-dwarka",
+      "name": "Lemon Tree Premier, Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "b78a4340-a786-4308-aee4-22acb2c6c85a",
+      "slug": "the-fern-sattva-resort-dwarka",
+      "name": "The Fern Sattva Resort Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "9d9d9e91-5a97-40de-8ea9-7252b7bf4eeb",
+      "slug": "vits-devbhumi-dwarka",
+      "name": "VITS Devbhumi, Dwarka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "9efe6b18-8474-4238-a900-c0791222cd7a",
+      "slug": "shrinath-dining-hall-dwarka",
+      "name": "Shrinath Dining Hall",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "eb3cbb26-d7ff-41ce-b56f-327a6879ce8a",
+      "slug": null,
+      "name": "Toran Dining Hall Dwarka",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "destinations",
+      "id": "2bb9f6cb-05df-45ce-a1dc-208df990c799",
+      "slug": "gir-national-park",
+      "name": "Gir National Park",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/gir-national-park.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Gir_lion-Gir_forest,junagadh,gujarat,india.jpeg"
+    },
+    {
+      "kind": "attractions",
+      "id": "4cc3f543-a81b-44a1-9256-f2bbb1d7823e",
+      "slug": "devalia-bus-safari",
+      "name": "Devalia Interpretation Zone Bus Safari",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/devalia-lions.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Asiatic_Lions_at_Devaliya_Gir.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "d10d7caa-eebe-4488-b2d0-24368392de75",
+      "slug": "gir-jungle-safari",
+      "name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/gir-national-park.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Gir_lion-Gir_forest,junagadh,gujarat,india.jpeg"
+    },
+    {
+      "kind": "hotels",
+      "id": "2e5ddc6e-4040-42a5-ab28-02e2da6b8d2e",
+      "slug": "anil-farms-gir-jungle-resort",
+      "name": "Anil Farms Gir Jungle Resort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "c10e3fc6-2dd8-472a-82a8-7290e29cbcac",
+      "slug": "gir-birding-lodge-gir-national-park",
+      "name": "Gir Birding Lodge",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "9266a418-61de-4c58-b4b4-5163b566adc2",
+      "slug": "gokul-farmhouse-sasan-gir-gir-national-park",
+      "name": "Gokul Farmhouse, Sasan Gir",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "331f1399-c5f8-4b13-96f0-37b9a88f1226",
+      "slug": "lion-safari-camp-sasan-gir-gir-national-park",
+      "name": "Lion Safari Camp, Sasan Gir",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "0ae989b1-41c3-4586-b27c-8422d323bf4d",
+      "slug": "sinh-sadan-guest-house-gir-national-park",
+      "name": "Sinh Sadan Guest House",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "96f306e1-ca22-4dde-b6b6-280486375996",
+      "slug": "gir-kathiyawadi-restaurant",
+      "name": "Hotel Gir Kathiyawadi Sasan Gir",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "destinations",
+      "id": "ca25aeb9-9816-438c-8433-2d37d5a2d380",
+      "slug": "modhera",
+      "name": "Modhera",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/modhera-sun-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Surya_mandhir.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "383ea996-d973-4d13-8c28-33bfb03725a6",
+      "slug": "modhera-sun-temple",
+      "name": "Modhera Sun Temple",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/suryamandir/suryamandir.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/modhera-sun-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Surya_mandhir.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+      "slug": "modhera-vav-modhera",
+      "name": "Modhera Vav",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "0eef628e-41fc-4608-a2de-b7fcc17fd770",
+      "slug": "modheshwari-mata-temple",
+      "name": "Modheshwari Mata Temple",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/modheshwari-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Modheshwari_Temple,_Modhera.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+      "slug": "sun-temple-museum-modhera",
+      "name": "Sun Temple Museum, Modhera",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "77c6cd3d-a35b-41ec-8bf4-467f20bf7927",
+      "slug": "modhera-sunrise-resort",
+      "name": "Modhera Sunrise Resort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "f1745a47-162c-4f87-ada9-920b779de26e",
+      "slug": "hotel-shivalik-mehsana-modhera",
+      "name": "Hotel Shivalik, Mehsana",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "bf59901c-cd0b-456a-bf5f-9c46c29173aa",
+      "slug": "hotel-sunshine-mehsana-modhera",
+      "name": "Hotel Sunshine, Mehsana",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "ec78f910-335d-41a6-b37d-d375cea3bec6",
+      "slug": "the-grand-raveta-patan-modhera",
+      "name": "The Grand Raveta, Patan",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "8bb96758-48ab-4728-8e4e-97b5889db42f",
+      "slug": "eulogia-restro-cafe-modhera",
+      "name": "Eulogia Restro Cafe, Sun Temple Modhera",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "destinations",
+      "id": "e5840a55-a2b0-4ced-8b9b-da41c9f64214",
+      "slug": "rann-of-kutch",
+      "name": "Rann of Kutch",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/rann-of-kutch.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Rann_of_Kutch_-_White_Desert.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "18896d46-3687-4141-a079-84644b9dfb20",
+      "slug": "kalo-dungar",
+      "name": "Kalo Dungar",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/kalo-dungar/Kalo-Dungar-Banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/kalo-dungar.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Rann_of_Kutch_-_Highest_Point.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "461b6d70-9192-4b82-9aef-0e28eb35eb72",
+      "slug": "white-rann-dhordo",
+      "name": "White Rann near Dhordo",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/rann-of-kutch.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Rann_of_Kutch_-_White_Desert.jpg"
+    },
+    {
+      "kind": "hotels",
+      "id": "1f2e84fe-9f94-452a-adf8-db4e4492b2da",
+      "slug": "gateway-to-rann-resort",
+      "name": "Gateway to Rann Resort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "4ad5324b-3a25-45b2-b352-8eba4b62513e",
+      "slug": "shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+      "name": "Shaam-e-Sarhad Village Resort, Hodka",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "a98b1276-61b7-498b-a9d8-b13865421f6f",
+      "slug": "gateway-rann-dining",
+      "name": "Gateway to Rann Resort dining room",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "destinations",
+      "id": "9ff9f987-9e4a-4e8a-b2e6-2fd518ac063f",
+      "slug": "saputara",
+      "name": "Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/saputara-lake.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Lake_Saputara.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "b41bbbf1-5f2c-4e19-8450-f62bae8ae452",
+      "slug": "saputara-lake",
+      "name": "Saputara Lake",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/saputara-lake.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Lake_Saputara.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+      "slug": "saputara-museum",
+      "name": "Saputara Museum",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+      "slug": "sunrise-point-saputara",
+      "name": "Sunrise Point, Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "attractions",
+      "id": "ae7290ed-3050-4654-8070-a2573aacb2ee",
+      "slug": "sunset-point-saputara",
+      "name": "Sunset Point Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/saputara-sunset-point.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Saputara_sunset_point_-_panoramio.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+      "slug": "table-point-saputara",
+      "name": "Table Point, Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "5590bec2-0f68-4dd4-b3b9-9c7c55432aa0",
+      "slug": "aakar-lords-inn-saputara",
+      "name": "Aakar Lords Inn Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "6c9771cb-d127-4f5c-84f5-132a349fb55f",
+      "slug": "hotel-lake-view-saputara",
+      "name": "Hotel Lake View, Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "056a8398-0a43-42f9-9f20-98e10c790135",
+      "slug": "hotel-purohit-saputara",
+      "name": "Hotel Purohit, Saputara",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "4c90057a-6101-40a9-92e2-7e36949fa4ba",
+      "slug": "hotel-sejal-inn-saputara",
+      "name": "Hotel Sejal Inn",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "7e726206-c87f-48ba-8162-57bb73e106d6",
+      "slug": "patang-residency-saputara",
+      "name": "Patang Residency",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "127d8c28-23be-4bc5-9f4d-083155083400",
+      "slug": "shilpi-hill-resort-saputara",
+      "name": "Shilpi Hill Resort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "cce96653-0719-43cb-9317-46ad8aa2cb22",
+      "slug": "toran-hill-resort-saputara",
+      "name": "Toran Hill Resort",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "fff61338-77ea-4966-b293-91054e5b6317",
+      "slug": "anando-restaurant-saputara",
+      "name": "Anando Restaurant Saputara",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "destinations",
+      "id": "42ac1244-c2e0-434e-9f46-e739a188301e",
+      "slug": "somnath",
+      "name": "Somnath",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/somnath-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Somanath_mandir_(cropped).jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "122cef78-7c4f-4bf1-a61a-b1e1db6cd012",
+      "slug": "bhalka-tirth-somnath",
+      "name": "Bhalka Tirth",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/bhalka-tirth.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:BHALKA-06.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "137e5d83-1522-4411-a2dc-cc95f2766c1b",
+      "slug": "somnath-beach-somnath",
+      "name": "Somnath Beach",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/photographs/somnath-beach.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Somnath_Beach_evening.jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "6b153aac-83f0-415c-8491-0df6e32d1829",
+      "slug": "somnath-temple-somnath",
+      "name": "Somnath Temple",
+      "original": "https://gujarattourism.com/content/dam/gujrattourism/images/religious-sites/somnath-temple/somnath-temple-banner.jpg",
+      "emptyOriginal": false,
+      "resolved": "/assets/photographs/somnath-temple.webp",
+      "state": "photo",
+      "credit": "https://commons.wikimedia.org/wiki/File:Somanath_mandir_(cropped).jpg"
+    },
+    {
+      "kind": "attractions",
+      "id": "84e92094-41ca-47f1-b98a-f5e86f60dde5",
+      "slug": "triveni-sangam-somnath",
+      "name": "Triveni Sangam",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/monument.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "cc2a8fc3-3e19-4c9a-be49-c9034a38666d",
+      "slug": "lilavati-atithigruh-somnath",
+      "name": "Lilavati Atithigruh",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "015616d4-fbdf-413e-ad1c-ffb997bad7dd",
+      "slug": "maheshwari-samaj-atithi-gruh-somnath",
+      "name": "Maheshwari Samaj Atithi Gruh",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "2dcc75af-b287-4760-9991-2b82d1504b87",
+      "slug": "sagar-darshan-atithigruh-somnath",
+      "name": "Sagar Darshan Atithigruh",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "cfcf1921-713c-4fc1-9e4a-71b38e101b7a",
+      "slug": "premier-somnath-somnath",
+      "name": "Premier Somnath",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "hotels",
+      "id": "2323eeb9-6ef7-4504-8bd3-bd06d179d21d",
+      "slug": "vip-atithigruh-somnath",
+      "name": "VIP Atithigruh",
+      "original": null,
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/hotel.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "d113244e-9131-45de-8faa-3dccfeca98a7",
+      "slug": "honest-restaurant-somnath-somnath",
+      "name": "Honest Restaurant Somnath",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    },
+    {
+      "kind": "restaurants",
+      "id": "212cc3d2-a673-41e6-9e82-7313ec684b59",
+      "slug": null,
+      "name": "Toran Dining Hall Somnath",
+      "emptyOriginal": true,
+      "resolved": "/assets/categories/dining.svg",
+      "state": "fallback"
+    }
+  ],
+  "assets": [
+    {
+      "source": "/assets/photographs/ahmedabad-riverfront.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 90450
+    },
+    {
+      "source": "/assets/photographs/adalaj-stepwell.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 332070
+    },
+    {
+      "source": "/assets/categories/monument.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 1124
+    },
+    {
+      "source": "/assets/photographs/bhadra-fort-clock-ahmedabad.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 147730
+    },
+    {
+      "source": "/assets/photographs/kankaria-lake.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 106192
+    },
+    {
+      "source": "/assets/photographs/sabarmati-ashram.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 254550
+    },
+    {
+      "source": "/assets/photographs/sarkhej-roza.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 220664
+    },
+    {
+      "source": "/assets/photographs/sidi-saiyyed-mosque.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 272666
+    },
+    {
+      "source": "/assets/categories/hotel.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 1245
+    },
+    {
+      "source": "/assets/photographs/french-haveli-ahmedabad.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 174958
+    },
+    {
+      "source": "/assets/categories/dining.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 1482
+    },
+    {
+      "source": "/assets/photographs/chandravilas-ahmedabad.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 171854
+    },
+    {
+      "source": "/assets/photographs/vishalla-thali.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 192280
+    },
+    {
+      "source": "/assets/photographs/champaner-jami-masjid.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 181632
+    },
+    {
+      "source": "/assets/photographs/kevada-masjid.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 136848
+    },
+    {
+      "source": "/assets/photographs/champaner-heritage-resort.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 129944
+    },
+    {
+      "source": "/assets/photographs/dwarka-dwarkadhish-temple.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 136674
+    },
+    {
+      "source": "/assets/photographs/bet-dwarka.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 74210
+    },
+    {
+      "source": "/assets/photographs/nageshwar-temple.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 129068
+    },
+    {
+      "source": "/assets/photographs/rukmini-temple.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 69180
+    },
+    {
+      "source": "/assets/photographs/gir-national-park.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 114214
+    },
+    {
+      "source": "/assets/photographs/devalia-lions.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 338616
+    },
+    {
+      "source": "/assets/photographs/modhera-sun-temple.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 231948
+    },
+    {
+      "source": "/assets/photographs/modheshwari-temple.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 116234
+    },
+    {
+      "source": "/assets/photographs/rann-of-kutch.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 100164
+    },
+    {
+      "source": "/assets/photographs/kalo-dungar.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 106372
+    },
+    {
+      "source": "/assets/photographs/saputara-lake.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 85934
+    },
+    {
+      "source": "/assets/photographs/saputara-sunset-point.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 77636
+    },
+    {
+      "source": "/assets/photographs/somnath-temple.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 149512
+    },
+    {
+      "source": "/assets/photographs/bhalka-tirth.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 205054
+    },
+    {
+      "source": "/assets/photographs/somnath-beach.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 92054
+    }
+  ],
+  "sourceReferences": [],
+  "errors": []
+}

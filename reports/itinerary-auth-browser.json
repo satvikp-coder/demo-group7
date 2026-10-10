@@ -9,5 +9,5 @@
     "Expired signed JWT rejected and reauthentication preserves draft",
     "Missing and forged tokens remain rejected by backend"
   ],
-  "tripId": "f13fc0e5-b566-4d88-8df5-c39327811cdf"
+  "tripId": "19fac8c9-f59f-4766-afab-627dd51eb78a"
 }

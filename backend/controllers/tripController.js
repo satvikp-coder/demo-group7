@@ -1,3 +1,4 @@
+import {lodgingSubtotal} from '../../dsa/planning/accommodation.ts';
 import * as trips from "../models/tripModel.js";
 import * as budgets from "../models/budgetModel.js";
 import { buildPlan } from "../services/tripPlanner.js";
@@ -13,8 +14,8 @@ export async function list(req,res) {
 export async function create(req,res) {
   const result=await trips.transaction(async client => {
     const trip=await trips.create(client,req.user.id,req.validated.body);
-    const hotel=await trips.selectedHotel(client,trip.starting_hotel_id,trip.destination_id);
-    const total=Number(hotel.price_per_night)*trip.trip_days*(trip.rooms??1);
+    const hotel=await trips.selectedHotel(client,trip.starting_hotel_id,trip.destination_id,trip.lodging_nights??trip.trip_days);
+    const total=lodgingSubtotal(hotel.price_per_night,trip.lodging_nights??trip.trip_days,trip.rooms??1);
     return {trip,hotel_over_budget:total>trip.budget,hotel_total:total,hotel_replaced:false};
   });
   res.status(201).json(result);

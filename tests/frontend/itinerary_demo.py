@@ -17,7 +17,10 @@ with sync_playwright() as p:
   page.get_by_role('button',name=re.compile('^'+city)).click();page.get_by_role('button',name='Continue to Logistics').click()
   if index==0:
    page.get_by_role('button',name='Low Cost',exact=True).click();expect(page.locator('#planner-starting-hotel')).to_contain_text('Hotel Maruti')
-   page.get_by_role('button',name='Budget',exact=True).click();expect(page.locator('#planner-starting-hotel')).to_contain_text('Hotel Good Night')
+   with page.expect_response(lambda r:'/hotels' in r.url and 'category=Budget' in r.url) as budget_hotels:page.get_by_role('button',name='Budget',exact=True).click()
+   assert budget_hotels.value.status==200
+   assert all(h['name']!='Hotel Good Night' for h in budget_hotels.value.json())
+   expect(page.locator('#planner-starting-hotel')).not_to_contain_text('Hotel Good Night')
   page.get_by_role('button',name=category,exact=True).click()
   page.wait_for_function('(name)=>Array.from(document.querySelectorAll("#planner-starting-hotel option")).some(e=>e.textContent.includes(name))',arg=hotel_name)
   selected=next(o for o in page.locator('#planner-starting-hotel option').evaluate_all('(els)=>els.map(e=>({id:e.value,name:e.textContent}))') if hotel_name in o['name'])

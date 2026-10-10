@@ -1,0 +1,45 @@
+{
+  "query": "[out:json][timeout:25];nwr[tourism~\"^(hotel|guest_house|attraction|museum)$\"][name](23.72129,69.40256,23.96129,69.64256);out center tags;",
+  "checked": "2026-10-10T03:08:07.865393+00:00",
+  "license": "ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-10T03:06:56Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 1545707831,
+      "lat": 23.7998618,
+      "lon": 69.5040793,
+      "tags": {
+        "name": "Rann Utsav",
+        "place": "locality",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1722942271,
+      "lat": 23.8296519,
+      "lon": 69.5205981,
+      "tags": {
+        "name": "Rann",
+        "place": "locality",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9271272718,
+      "lat": 23.8037332,
+      "lon": 69.5091888,
+      "tags": {
+        "name": "Tent City Dhorda",
+        "tourism": "hotel"
+      }
+    }
+  ]
+}

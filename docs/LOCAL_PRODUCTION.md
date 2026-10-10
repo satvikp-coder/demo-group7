@@ -164,3 +164,13 @@ hotlink/distribution permission and reliable availability are established.
 Public hosting still requires a chosen account, production database, protected
 secrets, URLs/domain/DNS, HTTPS termination, provider backup scheduling and monitoring.
 Use [PRODUCTION.md](PRODUCTION.md) for that separate deployment step.
+
+## Phase 2 additive enrichment
+
+After a verified backup, run `npm run local:up`, `npm run local:expand`, then
+`npm run local:enrich`. Existing installations already containing the first
+expansion may run only the final enrichment command after upgrading.
+The expected combined catalog is 8/44/43/12/322 (destinations/attractions/hotels/
+restaurants/routes). Both imports are transactional and idempotent. No reset is
+required. Migration008 adds nullable accommodation fields without changing old
+trips. See [Phase 2 readiness](../reports/PHASE2_FINAL_READINESS.md).

@@ -1,0 +1,3116 @@
+{
+  "query": "[out:json][timeout:25];nwr[tourism~\"^(hotel|guest_house|attraction|museum)$\"][name](22.117774,68.847512,22.357774000000003,69.087512);out center tags;",
+  "checked": "2026-10-10T03:08:06.983572+00:00",
+  "license": "ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-10T03:06:56Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 5077296582,
+      "lat": 22.24119,
+      "lon": 68.97435,
+      "tags": {
+        "addr:street": "Jamnagar Road",
+        "name": "The Dwarika Hotel",
+        "phone": "+912892235970",
+        "tourism": "hotel",
+        "website": "https://www.thedwarikahotel.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7890166489,
+      "lat": 22.2356804,
+      "lon": 68.9689975,
+      "tags": {
+        "name": "Pandava Wells",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12184222927,
+      "lat": 22.241733,
+      "lon": 68.9611258,
+      "tags": {
+        "name": "Devang",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12413875830,
+      "lat": 22.2348824,
+      "lon": 68.9661626,
+      "tags": {
+        "name": "Beach Point",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13176014972,
+      "lat": 22.2381262,
+      "lon": 68.9584488,
+      "tags": {
+        "name": "KM Horizon Point",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13625889613,
+      "lat": 22.2439201,
+      "lon": 68.9657532,
+      "tags": {
+        "name": "Trimurti enterprise",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1316394867,
+      "center": {
+        "lat": 22.2463132,
+        "lon": 68.9567085
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Saurastra Leuva Patel Samaj Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1316394890,
+      "center": {
+        "lat": 22.2417327,
+        "lon": 68.9611089
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Hotel Devang",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1319889584,
+      "center": {
+        "lat": 22.1920327,
+        "lon": 69.0200941
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Goverdhan Green Resort",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1319889585,
+      "center": {
+        "lat": 22.1917181,
+        "lon": 69.0200736
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Goverdhan Green Resort",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1341843399,
+      "center": {
+        "lat": 22.1911426,
+        "lon": 69.0196357
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Goverdhan Green Resort",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1341843444,
+      "center": {
+        "lat": 22.1921267,
+        "lon": 69.0201823
+      },
+      "tags": {
+        "building": "yes",
+        "layer": "1",
+        "name": "Goverdhan Green Resort",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1341926489,
+      "center": {
+        "lat": 22.2028059,
+        "lon": 69.0141842
+      },
+      "tags": {
+        "building": "yes",
+        "layer": "1",
+        "name": "The Fern Sattva Resort Dwarka",
+        "stars": "5",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1341926552,
+      "center": {
+        "lat": 22.2098193,
+        "lon": 69.0105802
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Ginger Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223128,
+      "center": {
+        "lat": 22.2386269,
+        "lon": 68.9714102
+      },
+      "tags": {
+        "building": "yes",
+        "building:levels": "6",
+        "name": "Hotel Pride Comfort",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223142,
+      "center": {
+        "lat": 22.2390409,
+        "lon": 68.9718533
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Anokhi kripa bhavan",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223143,
+      "center": {
+        "lat": 22.238504,
+        "lon": 68.9716366
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sanatan hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223144,
+      "center": {
+        "lat": 22.238602,
+        "lon": 68.9721114
+      },
+      "tags": {
+        "building": "yes",
+        "name": "DM Bhavan Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223145,
+      "center": {
+        "lat": 22.2387064,
+        "lon": 68.9720734
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Balvi Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223172,
+      "center": {
+        "lat": 22.2388294,
+        "lon": 68.9727319
+      },
+      "tags": {
+        "building": "yes",
+        "name": "NEHAL BHAVAN",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223176,
+      "center": {
+        "lat": 22.238793,
+        "lon": 68.972952
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sonal Krupa hotel",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223178,
+      "center": {
+        "lat": 22.2388109,
+        "lon": 68.9735199
+      },
+      "tags": {
+        "building": "yes",
+        "name": "MEHUL ASHOK DABHI",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223184,
+      "center": {
+        "lat": 22.2390986,
+        "lon": 68.9709607
+      },
+      "tags": {
+        "building": "apartments",
+        "name": "The Grand Dwarika",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223189,
+      "center": {
+        "lat": 22.239081,
+        "lon": 68.9711865
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Ashapura Bhuvan Guest House",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223192,
+      "center": {
+        "lat": 22.2392337,
+        "lon": 68.9712979
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Khodiyar krupa",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223199,
+      "center": {
+        "lat": 22.239275,
+        "lon": 68.9718592
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Om shanti bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223203,
+      "center": {
+        "lat": 22.2393692,
+        "lon": 68.9722379
+      },
+      "tags": {
+        "building": "yes",
+        "name": "NARAYAN NIWAS",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223206,
+      "center": {
+        "lat": 22.2390861,
+        "lon": 68.9726974
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Avadh Bhavan",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223218,
+      "center": {
+        "lat": 22.2391215,
+        "lon": 68.9729413
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Silver Palace",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223228,
+      "center": {
+        "lat": 22.2391111,
+        "lon": 68.9739195
+      },
+      "tags": {
+        "building": "yes",
+        "name": "MEHUL ASHOK DABHI",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223233,
+      "center": {
+        "lat": 22.2401421,
+        "lon": 68.9738316
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Devkinandan",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223235,
+      "center": {
+        "lat": 22.2403282,
+        "lon": 68.97405
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Pushpak",
+        "stars": "2",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223237,
+      "center": {
+        "lat": 22.2401148,
+        "lon": 68.9740917
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel project",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223241,
+      "center": {
+        "lat": 22.24024,
+        "lon": 68.9744528
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Kuber",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223251,
+      "center": {
+        "lat": 22.2390037,
+        "lon": 68.9745109
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Raza Auto Parts and Repair",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223274,
+      "center": {
+        "lat": 22.2378957,
+        "lon": 68.9744734
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Siddharth bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223277,
+      "center": {
+        "lat": 22.2378159,
+        "lon": 68.9743188
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Siddharth bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1342223278,
+      "center": {
+        "lat": 22.2377635,
+        "lon": 68.9741912
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Siddharth bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177591,
+      "center": {
+        "lat": 22.2388799,
+        "lon": 68.9703894
+      },
+      "tags": {
+        "building": "yes",
+        "name": "AAVKAR STAY POINT",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177592,
+      "center": {
+        "lat": 22.2388791,
+        "lon": 68.9702649
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shree Vallabh",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177593,
+      "center": {
+        "lat": 22.2388422,
+        "lon": 68.97014
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Gomti View",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177594,
+      "center": {
+        "lat": 22.2387544,
+        "lon": 68.9699672
+      },
+      "tags": {
+        "building": "yes",
+        "name": "The Grand Mashru",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177624,
+      "center": {
+        "lat": 22.2386249,
+        "lon": 68.9696382
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Janki",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177625,
+      "center": {
+        "lat": 22.2385043,
+        "lon": 68.9695879
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Royal Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177626,
+      "center": {
+        "lat": 22.2383808,
+        "lon": 68.9695274
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shakti Nivas",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177670,
+      "center": {
+        "lat": 22.2382156,
+        "lon": 68.9692139
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Om Shanti",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177683,
+      "center": {
+        "lat": 22.2384275,
+        "lon": 68.9690976
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Gomti",
+        "stars": "2",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177691,
+      "center": {
+        "lat": 22.2382222,
+        "lon": 68.9684821
+      },
+      "tags": {
+        "building": "yes",
+        "name": "\u0aae\u0acb\u0a9a\u0ac0 \u0a9c\u0acd\u0a9e\u0abe\u0aa4\u0abf \u0aa7\u0ab0\u0acd\u0aae\u0ab6\u0abe\u0ab3\u0abe",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343177733,
+      "center": {
+        "lat": 22.23764,
+        "lon": 68.9680393
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shree Krishna",
+        "stars": "4",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343435805,
+      "center": {
+        "lat": 22.2403394,
+        "lon": 68.9757604
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Uma bhavan",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343435821,
+      "center": {
+        "lat": 22.2394531,
+        "lon": 68.9762267
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hari har Bhavan",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343498479,
+      "center": {
+        "lat": 22.1901815,
+        "lon": 69.0235808
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "The Sky Imperial - Bapu\u2019s Resort",
+        "stars": "3",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343498484,
+      "center": {
+        "lat": 22.1904368,
+        "lon": 69.0238452
+      },
+      "tags": {
+        "building": "yes",
+        "name": "The Sky Imperial - Bapu\u2019s Resort",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343578573,
+      "center": {
+        "lat": 22.1951555,
+        "lon": 69.0199444
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Bijal rabari House",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343589723,
+      "center": {
+        "lat": 22.2058323,
+        "lon": 69.0142272
+      },
+      "tags": {
+        "building": "yes",
+        "name": "SHRI SAINATH ENTERPRISE",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343589757,
+      "center": {
+        "lat": 22.2086596,
+        "lon": 69.0132
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Madhuvan Suites By Blues Hotels",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343717936,
+      "center": {
+        "lat": 22.2379854,
+        "lon": 68.9764158
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Jay Thaker Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343718011,
+      "center": {
+        "lat": 22.2368778,
+        "lon": 68.9782547
+      },
+      "tags": {
+        "building": "yes",
+        "name": "\u0a9c\u0ab2\u0abe\u0ab0\u0abe\u0aae \u0ab8\u0acb\u0ab8\u0abe\u0aaf\u0a9f\u0ac0 \u0aae\u0ab9\u0abe\u0ab2\u200c\u0a95\u0acd\u0ab7\u0aae\u0ac0 \u0ab9\u0acb\u0a9f\u0ab2\u0aa8\u0ac0 \u0aac\u0abe\u0a9c\u0ac1\u0aae\u0abe\u0a82",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343832238,
+      "center": {
+        "lat": 22.2399255,
+        "lon": 68.972281
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Lunai Sadan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343832239,
+      "center": {
+        "lat": 22.2399982,
+        "lon": 68.9723921
+      },
+      "tags": {
+        "building": "yes",
+        "name": "KARAMAN NARAN GUJARIYA",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343832241,
+      "center": {
+        "lat": 22.2400964,
+        "lon": 68.9725302
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Ram Palace",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1343832243,
+      "center": {
+        "lat": 22.2410839,
+        "lon": 68.9715567
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel chhaya",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1344282686,
+      "center": {
+        "lat": 22.2289575,
+        "lon": 69.0228
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree amba bhagat ni jagya Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1344352506,
+      "center": {
+        "lat": 22.2174915,
+        "lon": 69.0159642
+      },
+      "tags": {
+        "building": "house",
+        "name": "MADHAV GARDEN RESTAURANT",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1344373865,
+      "center": {
+        "lat": 22.2245176,
+        "lon": 69.0192961
+      },
+      "tags": {
+        "brand": "Hawthorn Suites",
+        "brand:wikidata": "Q5685511",
+        "building": "yes",
+        "layer": "1",
+        "name": "Hawthorn Suites Wyndham",
+        "official_name": "Hawthorn Suites by Wyndham",
+        "short_name": "Hawthorn",
+        "stars": "5",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1351612939,
+      "center": {
+        "lat": 22.1622129,
+        "lon": 69.0604188
+      },
+      "tags": {
+        "building": "yes",
+        "name": "\u0a97\u0acb\u0ab0\u0ac0\u0a82\u0a9c\u0abe \u0a97\u0acc-\u0ab6\u0abe\u0ab3\u0abe",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367421150,
+      "center": {
+        "lat": 22.2385487,
+        "lon": 68.9679944
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Murli Morari Dharamshala Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367421158,
+      "center": {
+        "lat": 22.2389668,
+        "lon": 68.9678839
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Gandhi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367421165,
+      "center": {
+        "lat": 22.2383703,
+        "lon": 68.9674344
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Radhe Sadan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367421179,
+      "center": {
+        "lat": 22.2386546,
+        "lon": 68.9667082
+      },
+      "tags": {
+        "building": "yes",
+        "name": "PAVITRA DWARKA",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367426029,
+      "center": {
+        "lat": 22.2379868,
+        "lon": 68.9663194
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Bahan Bargwad",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367426037,
+      "center": {
+        "lat": 22.2383645,
+        "lon": 68.966234
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dwarka Puri Guest House",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672582,
+      "center": {
+        "lat": 22.2363721,
+        "lon": 68.9662817
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Kutchi Dharamshala - Kutch Samaj Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672583,
+      "center": {
+        "lat": 22.236313,
+        "lon": 68.9660598
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shri Kutch Gurjar Kshatriya",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672584,
+      "center": {
+        "lat": 22.2362001,
+        "lon": 68.9657984
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Rajput Seva Samaj Vishramgruh Dev Bhoomi Dwarka DharamshalaRajput Seva Samaj Vishramgruh Dev Bhoomi Dwarka Dharamshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672587,
+      "center": {
+        "lat": 22.2360113,
+        "lon": 68.9658747
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Devbhoomi Residency, Dwarika Gujarat",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672591,
+      "center": {
+        "lat": 22.2358045,
+        "lon": 68.9656107
+      },
+      "tags": {
+        "building": "yes",
+        "name": "\u0ab0\u0abe\u0aae\u0a9c\u0ac0 \u0a86\u0ab6\u0acd\u0ab0\u0aae \u0ab0\u0abe\u0aae\u0a9c\u0ac0 \u0aae\u0a82\u0aa6\u0abf\u0ab0",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672600,
+      "center": {
+        "lat": 22.2367846,
+        "lon": 68.9660246
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Rame Ram Dharmshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672601,
+      "center": {
+        "lat": 22.2369404,
+        "lon": 68.9658899
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Vishwakarma Bhavan AC Dormitory",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672607,
+      "center": {
+        "lat": 22.2372143,
+        "lon": 68.9662118
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Sundar Palace",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672612,
+      "center": {
+        "lat": 22.2376785,
+        "lon": 68.9658206
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Dwarkesh",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672613,
+      "center": {
+        "lat": 22.2379059,
+        "lon": 68.9659657
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Devi bhawan bhagwat dhwaja sthal",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1367672617,
+      "center": {
+        "lat": 22.2386215,
+        "lon": 68.9659987
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shree Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433636133,
+      "center": {
+        "lat": 22.237018,
+        "lon": 68.9656839
+      },
+      "tags": {
+        "building": "yes",
+        "name": "H\u00f4tel Sanidhya",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433636137,
+      "center": {
+        "lat": 22.2374192,
+        "lon": 68.965462
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Samved Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433636145,
+      "center": {
+        "lat": 22.2378728,
+        "lon": 68.9654208
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Radhabai Patel Dharamshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433636146,
+      "center": {
+        "lat": 22.2380581,
+        "lon": 68.9652517
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Aaradhya Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646743,
+      "center": {
+        "lat": 22.2362467,
+        "lon": 68.965245
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Satnamvadi dharamshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646744,
+      "center": {
+        "lat": 22.2363583,
+        "lon": 68.9652342
+      },
+      "tags": {
+        "building": "yes",
+        "name": "BRAHMAKSHATRIYA ATITHI BHAVAN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646745,
+      "center": {
+        "lat": 22.2365651,
+        "lon": 68.9651545
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Jay Ranchhod Gujarati Dharmshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646782,
+      "center": {
+        "lat": 22.2368823,
+        "lon": 68.9646388
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sardar Patel Vadi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646793,
+      "center": {
+        "lat": 22.2381059,
+        "lon": 68.9643026
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Devi Bhuvan Dharamshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646794,
+      "center": {
+        "lat": 22.2382604,
+        "lon": 68.9639797
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Dwarkadhish Atithi Gruh, Botad Vala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646795,
+      "center": {
+        "lat": 22.2382773,
+        "lon": 68.964176
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Botadvada Dharmsala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646799,
+      "center": {
+        "lat": 22.2384991,
+        "lon": 68.9646769
+      },
+      "tags": {
+        "building": "yes",
+        "layer": "1",
+        "name": "Bangur Dharamsala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646810,
+      "center": {
+        "lat": 22.2386269,
+        "lon": 68.9642108
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel The Grand Ladhukara",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646829,
+      "center": {
+        "lat": 22.2389537,
+        "lon": 68.9620879
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Bijal Home stay",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646830,
+      "center": {
+        "lat": 22.2389702,
+        "lon": 68.9618651
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dwarkadhish Lords Eco Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646832,
+      "center": {
+        "lat": 22.2392031,
+        "lon": 68.961867
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel The Manek",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646837,
+      "center": {
+        "lat": 22.2394693,
+        "lon": 68.9622883
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Mulabapa ni Jagya",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433646838,
+      "center": {
+        "lat": 22.2393769,
+        "lon": 68.9625115
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shhidhnath",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433659877,
+      "center": {
+        "lat": 22.2408045,
+        "lon": 68.9601846
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Narayan Avezika Comfort",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433659893,
+      "center": {
+        "lat": 22.2417283,
+        "lon": 68.9598497
+      },
+      "tags": {
+        "building": "yes",
+        "layer": "1",
+        "name": "Government Circuit House",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915826,
+      "center": {
+        "lat": 22.2386345,
+        "lon": 68.9685608
+      },
+      "tags": {
+        "building": "yes",
+        "name": "ASHIRVAD BHAVAN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915843,
+      "center": {
+        "lat": 22.2393878,
+        "lon": 68.9680917
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Bansi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915847,
+      "center": {
+        "lat": 22.2391808,
+        "lon": 68.9683762
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL KINARA & TOURS AND TRAVELS",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915848,
+      "center": {
+        "lat": 22.2390251,
+        "lon": 68.9684755
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Haridwar Niwas",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915858,
+      "center": {
+        "lat": 22.2397232,
+        "lon": 68.9680628
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shri Ram Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915867,
+      "center": {
+        "lat": 22.2400804,
+        "lon": 68.9682672
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Uttam",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433915870,
+      "center": {
+        "lat": 22.2399245,
+        "lon": 68.9684935
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Haridarshan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929916,
+      "center": {
+        "lat": 22.2392613,
+        "lon": 68.9678586
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Sky",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929918,
+      "center": {
+        "lat": 22.2393771,
+        "lon": 68.9677898
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Nand Nandan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929922,
+      "center": {
+        "lat": 22.2394916,
+        "lon": 68.9678668
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Kailash",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929926,
+      "center": {
+        "lat": 22.2397401,
+        "lon": 68.9678682
+      },
+      "tags": {
+        "building": "yes",
+        "name": "New mahadev dinning hall and restaurant",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929927,
+      "center": {
+        "lat": 22.2399623,
+        "lon": 68.9678588
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sri Shyam Sadan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929941,
+      "center": {
+        "lat": 22.239976,
+        "lon": 68.9672649
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Guru Kipa Bhaban",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929969,
+      "center": {
+        "lat": 22.2400455,
+        "lon": 68.9664621
+      },
+      "tags": {
+        "building": "yes",
+        "name": "SHREE RADHA KRISHNA MANDIR - SHRI SHYAMA TRUST",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1433929970,
+      "center": {
+        "lat": 22.2399953,
+        "lon": 68.966314
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL SHREE HARI INN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048777,
+      "center": {
+        "lat": 22.2390829,
+        "lon": 68.965038
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dwarkesh homstay",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048784,
+      "center": {
+        "lat": 22.2395135,
+        "lon": 68.9647819
+      },
+      "tags": {
+        "building": "yes",
+        "name": "THE BHANU INN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048789,
+      "center": {
+        "lat": 22.2397626,
+        "lon": 68.964695
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Leela\u2019s",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048790,
+      "center": {
+        "lat": 22.2397757,
+        "lon": 68.964787
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL GAYATRI",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048803,
+      "center": {
+        "lat": 22.2399106,
+        "lon": 68.9656421
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Chandni",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048804,
+      "center": {
+        "lat": 22.2399512,
+        "lon": 68.9658198
+      },
+      "tags": {
+        "building": "yes",
+        "name": "hotel trimurti",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048809,
+      "center": {
+        "lat": 22.2396123,
+        "lon": 68.9657744
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Vishwakarma Dharmshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048814,
+      "center": {
+        "lat": 22.2393051,
+        "lon": 68.9658734
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Agrawal Seva Sadan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434048816,
+      "center": {
+        "lat": 22.239138,
+        "lon": 68.9659274
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel lord krishna",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067766,
+      "center": {
+        "lat": 22.2390115,
+        "lon": 68.9646551
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Madhav Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067769,
+      "center": {
+        "lat": 22.2391581,
+        "lon": 68.964608
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Vanjha Samaj Darji Wadi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067770,
+      "center": {
+        "lat": 22.23934,
+        "lon": 68.9645409
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shri Vanja Gnati Dharmshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067774,
+      "center": {
+        "lat": 22.2395906,
+        "lon": 68.964466
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Avenir",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067775,
+      "center": {
+        "lat": 22.2396889,
+        "lon": 68.9644239
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Narayan Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067776,
+      "center": {
+        "lat": 22.2397757,
+        "lon": 68.9644593
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Giriraj Enterprise",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067778,
+      "center": {
+        "lat": 22.2397466,
+        "lon": 68.9643206
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Vrundavan Guest House",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067779,
+      "center": {
+        "lat": 22.2396804,
+        "lon": 68.9641722
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Gopal Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067786,
+      "center": {
+        "lat": 22.2391218,
+        "lon": 68.9638796
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Gokul Bhuvan Dharamshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067787,
+      "center": {
+        "lat": 22.2392584,
+        "lon": 68.9639495
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Raj Palace",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067794,
+      "center": {
+        "lat": 22.2396629,
+        "lon": 68.9635638
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Damani Atithi Griha",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067814,
+      "center": {
+        "lat": 22.2400937,
+        "lon": 68.9629255
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Chitrakut Bungalows - Homestay in Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067815,
+      "center": {
+        "lat": 22.2404204,
+        "lon": 68.9626567
+      },
+      "tags": {
+        "building": "yes",
+        "name": "NIRALI HOMESTAY",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067826,
+      "center": {
+        "lat": 22.2409019,
+        "lon": 68.9622747
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dwarkadhish Tourism",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067834,
+      "center": {
+        "lat": 22.2401709,
+        "lon": 68.9642251
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Lohana Atithi Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067836,
+      "center": {
+        "lat": 22.2408728,
+        "lon": 68.9637181
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Matki chok kokila bhawan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067838,
+      "center": {
+        "lat": 22.2409582,
+        "lon": 68.9631461
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Tirthraj",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434067839,
+      "center": {
+        "lat": 22.2408239,
+        "lon": 68.9631192
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sharda Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139546,
+      "center": {
+        "lat": 22.2414612,
+        "lon": 68.9657044
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL LAXMI",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139552,
+      "center": {
+        "lat": 22.2419036,
+        "lon": 68.9657096
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Purushottam",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139561,
+      "center": {
+        "lat": 22.2412654,
+        "lon": 68.9655614
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Sanskruti Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139562,
+      "center": {
+        "lat": 22.2412683,
+        "lon": 68.9654715
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Park Royal",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139564,
+      "center": {
+        "lat": 22.2413159,
+        "lon": 68.9652868
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Vaividhya Atithi Gruh",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139569,
+      "center": {
+        "lat": 22.2414421,
+        "lon": 68.965127
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Swastik",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139571,
+      "center": {
+        "lat": 22.2412599,
+        "lon": 68.9648575
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Murlidhar guest house",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139587,
+      "center": {
+        "lat": 22.2411454,
+        "lon": 68.9646399
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Vaibhav",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139588,
+      "center": {
+        "lat": 22.241112,
+        "lon": 68.964496
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Milan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139636,
+      "center": {
+        "lat": 22.2424422,
+        "lon": 68.9654814
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Tulsi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139640,
+      "center": {
+        "lat": 22.2426093,
+        "lon": 68.9653937
+      },
+      "tags": {
+        "building": "yes",
+        "name": "GAYATRI GUEST HOUSE",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139641,
+      "center": {
+        "lat": 22.2427377,
+        "lon": 68.9653548
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Ganga",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139642,
+      "center": {
+        "lat": 22.2427768,
+        "lon": 68.9652535
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Svasti",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1434139643,
+      "center": {
+        "lat": 22.2426613,
+        "lon": 68.9651444
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Swati Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215280,
+      "center": {
+        "lat": 22.2401256,
+        "lon": 68.9654996
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Vrajvihari dharmashala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215291,
+      "center": {
+        "lat": 22.2403445,
+        "lon": 68.9644383
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Pari Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215299,
+      "center": {
+        "lat": 22.2404643,
+        "lon": 68.9655944
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Jay Jhulelal Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215303,
+      "center": {
+        "lat": 22.2406997,
+        "lon": 68.9657653
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Havemor ice cream parlour",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215308,
+      "center": {
+        "lat": 22.2409003,
+        "lon": 68.9657049
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Jayanti",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215310,
+      "center": {
+        "lat": 22.2409447,
+        "lon": 68.965689
+      },
+      "tags": {
+        "building": "yes",
+        "name": "otel Wisnu Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215311,
+      "center": {
+        "lat": 22.2410252,
+        "lon": 68.9657742
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Yamuna Guest House",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215313,
+      "center": {
+        "lat": 22.2410203,
+        "lon": 68.9656776
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Ram Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215319,
+      "center": {
+        "lat": 22.2408036,
+        "lon": 68.9647373
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Grand Continent - Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215320,
+      "center": {
+        "lat": 22.2407479,
+        "lon": 68.9646088
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Rajdhani",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436215321,
+      "center": {
+        "lat": 22.2406219,
+        "lon": 68.9644534
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Ravechi Krupa",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232671,
+      "center": {
+        "lat": 22.2402129,
+        "lon": 68.9660411
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shiv",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232684,
+      "center": {
+        "lat": 22.2404637,
+        "lon": 68.9661384
+      },
+      "tags": {
+        "building": "yes",
+        "name": "anantvaibhavpalace",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232685,
+      "center": {
+        "lat": 22.2404182,
+        "lon": 68.9660444
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Balaji Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232693,
+      "center": {
+        "lat": 22.2408556,
+        "lon": 68.9662724
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Vaishnav Bairagi (Ramanandi Sadhu) Samaj",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232694,
+      "center": {
+        "lat": 22.2408565,
+        "lon": 68.9663337
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Ramanandi samaj vadi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232695,
+      "center": {
+        "lat": 22.2407846,
+        "lon": 68.9665573
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shiv Laheri",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232696,
+      "center": {
+        "lat": 22.2408564,
+        "lon": 68.9664174
+      },
+      "tags": {
+        "building": "yes",
+        "name": "PRINCE",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232699,
+      "center": {
+        "lat": 22.2409964,
+        "lon": 68.9665762
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shiv Ganga Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232702,
+      "center": {
+        "lat": 22.2411069,
+        "lon": 68.9665142
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Krishnashraya",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232704,
+      "center": {
+        "lat": 22.2411482,
+        "lon": 68.966032
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Aarti",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232710,
+      "center": {
+        "lat": 22.2412391,
+        "lon": 68.9668027
+      },
+      "tags": {
+        "building": "yes",
+        "name": "KULDEVI KRUPA HOTEL",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232711,
+      "center": {
+        "lat": 22.2412189,
+        "lon": 68.9669951
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Agraval Bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232717,
+      "center": {
+        "lat": 22.240612,
+        "lon": 68.9672847
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Madhuvan Sadan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232728,
+      "center": {
+        "lat": 22.2409746,
+        "lon": 68.9677913
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Center Dwarka Old location",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232732,
+      "center": {
+        "lat": 22.2402971,
+        "lon": 68.9669903
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Radha Madhav",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232738,
+      "center": {
+        "lat": 22.2403152,
+        "lon": 68.9674931
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel shree darshan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232742,
+      "center": {
+        "lat": 22.2402794,
+        "lon": 68.9679326
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shreeji Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232745,
+      "center": {
+        "lat": 22.2402486,
+        "lon": 68.9682518
+      },
+      "tags": {
+        "building": "yes",
+        "name": "OTEL SHREE RADHE",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436232752,
+      "center": {
+        "lat": 22.2404334,
+        "lon": 68.9680795
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Jay Rajavir Dharmshala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240259,
+      "center": {
+        "lat": 22.2411547,
+        "lon": 68.9678645
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Thaker Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240263,
+      "center": {
+        "lat": 22.2408042,
+        "lon": 68.9684923
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shree gurukrupa",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240266,
+      "center": {
+        "lat": 22.2409749,
+        "lon": 68.9684784
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree valand samaj",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240267,
+      "center": {
+        "lat": 22.2411334,
+        "lon": 68.9685041
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL KUTCHI PALACE DWARKA",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240268,
+      "center": {
+        "lat": 22.2412,
+        "lon": 68.9684989
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Radhe Krishna",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240275,
+      "center": {
+        "lat": 22.2411216,
+        "lon": 68.9672298
+      },
+      "tags": {
+        "brand": "OYO",
+        "brand:wikidata": "Q24906315",
+        "building": "yes",
+        "name": "OYO 45119 Hotel New Heritage",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240276,
+      "center": {
+        "lat": 22.241147,
+        "lon": 68.9673456
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Mahadev rajestani",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240284,
+      "center": {
+        "lat": 22.2411749,
+        "lon": 68.9675121
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shakti",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240291,
+      "center": {
+        "lat": 22.2419851,
+        "lon": 68.966303
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Guruprerna Beacon Resort, Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240310,
+      "center": {
+        "lat": 22.2433489,
+        "lon": 68.9664738
+      },
+      "tags": {
+        "building": "yes",
+        "name": "VITS Devbhumi, Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240314,
+      "center": {
+        "lat": 22.2434677,
+        "lon": 68.9660141
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Vishnu Nivas",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436240319,
+      "center": {
+        "lat": 22.2436429,
+        "lon": 68.9662905
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sar aapka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1449664779,
+      "center": {
+        "lat": 22.2418476,
+        "lon": 68.9677804
+      },
+      "tags": {
+        "building": "yes",
+        "name": "SALMA SUMAR HINGORJA",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1449664780,
+      "center": {
+        "lat": 22.2416391,
+        "lon": 68.9679789
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Rudra Plaza",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1449664781,
+      "center": {
+        "lat": 22.2419748,
+        "lon": 68.9682212
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Nayi samaj Dharma Shala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1449664785,
+      "center": {
+        "lat": 22.2422569,
+        "lon": 68.9683153
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL KRISHA",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1449664787,
+      "center": {
+        "lat": 22.2426373,
+        "lon": 68.9683313
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL ANTILIA INN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1485546119,
+      "center": {
+        "lat": 22.2398221,
+        "lon": 68.9616356
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Sea View",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1485546120,
+      "center": {
+        "lat": 22.2397774,
+        "lon": 68.9615533
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL MADHUSUDAN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1485546124,
+      "center": {
+        "lat": 22.2411004,
+        "lon": 68.9620103
+      },
+      "tags": {
+        "building": "yes",
+        "name": "MOMAI BHAVAN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1485546130,
+      "center": {
+        "lat": 22.2414595,
+        "lon": 68.9614414
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Ashirwad bunglow Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486400479,
+      "center": {
+        "lat": 22.2425403,
+        "lon": 68.9656985
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel  Divine Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486400491,
+      "center": {
+        "lat": 22.2432402,
+        "lon": 68.9655159
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL AADHUNIK",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486400492,
+      "center": {
+        "lat": 22.2431946,
+        "lon": 68.9656864
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Kashi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486400494,
+      "center": {
+        "lat": 22.2433581,
+        "lon": 68.9656888
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Gokul",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486403315,
+      "center": {
+        "lat": 22.2441987,
+        "lon": 68.9687268
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Lemon Tree Premier, Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486403338,
+      "center": {
+        "lat": 22.244641,
+        "lon": 68.9668329
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Kavya",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486403339,
+      "center": {
+        "lat": 22.2446689,
+        "lon": 68.966672
+      },
+      "tags": {
+        "building": "yes",
+        "name": "HOTEL HOLISTON",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486403340,
+      "center": {
+        "lat": 22.2445114,
+        "lon": 68.9664449
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Pu.Jasvantiben Jayntilal Kundaliya. Atithigruh",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486403341,
+      "center": {
+        "lat": 22.2442755,
+        "lon": 68.9667176
+      },
+      "tags": {
+        "building": "yes",
+        "name": "SHREE HOTEL",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1486403355,
+      "center": {
+        "lat": 22.2444494,
+        "lon": 68.9657615
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Regenta Central Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487300779,
+      "center": {
+        "lat": 22.2449285,
+        "lon": 68.964908
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Poojan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487300785,
+      "center": {
+        "lat": 22.2455945,
+        "lon": 68.9647816
+      },
+      "tags": {
+        "building": "yes",
+        "name": "UJALA BHAVAN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487300798,
+      "center": {
+        "lat": 22.2469601,
+        "lon": 68.9648515
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Daksh The Grand Goverdhan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487312170,
+      "center": {
+        "lat": 22.2463138,
+        "lon": 68.9708368
+      },
+      "tags": {
+        "building": "yes",
+        "name": "B k bhavan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487692241,
+      "center": {
+        "lat": 22.2460307,
+        "lon": 68.960087
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dwarka Yatra",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487692242,
+      "center": {
+        "lat": 22.2459216,
+        "lon": 68.9604255
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Bansi Palace - Managed By Dwarka Dekho",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487692243,
+      "center": {
+        "lat": 22.245851,
+        "lon": 68.9608859
+      },
+      "tags": {
+        "building": "yes",
+        "name": "DWARKA BRAHMANI BHAVAN",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487692245,
+      "center": {
+        "lat": 22.2462838,
+        "lon": 68.9609957
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Samyak bunglow",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1487692252,
+      "center": {
+        "lat": 22.2465839,
+        "lon": 68.9597567
+      },
+      "tags": {
+        "building": "yes",
+        "name": "SUNRISE HOSPITALITY",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488694141,
+      "center": {
+        "lat": 22.2475264,
+        "lon": 68.9607859
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Radhe Radhe Home stay",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488694190,
+      "center": {
+        "lat": 22.2475308,
+        "lon": 68.9592995
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Kadva Patel Samaj Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488694232,
+      "center": {
+        "lat": 22.2464663,
+        "lon": 68.9573388
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Kadva Patel Samaj / Uma Atithi Gruh - Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488700537,
+      "center": {
+        "lat": 22.2500882,
+        "lon": 68.9616027
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shree Swaminarayan Raj Bhavan Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488700575,
+      "center": {
+        "lat": 22.2497858,
+        "lon": 68.9580868
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotal Raj inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488703875,
+      "center": {
+        "lat": 22.2518063,
+        "lon": 68.9610763
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dev Bhavan Dwarka",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488703891,
+      "center": {
+        "lat": 22.2526478,
+        "lon": 68.9607687
+      },
+      "tags": {
+        "building": "yes",
+        "name": "The Grand Pratap hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1488703892,
+      "center": {
+        "lat": 22.2522075,
+        "lon": 68.9604444
+      },
+      "tags": {
+        "building": "yes",
+        "name": "SHRI NANABHAI BHARVAD SEVA SAMAJ GUJRAT",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1558580979,
+      "center": {
+        "lat": 22.2800248,
+        "lon": 68.9479078
+      },
+      "tags": {
+        "building": "yes",
+        "name": "The Sky Comfort Beach Hotel",
+        "tourism": "hotel"
+      }
+    }
+  ]
+}

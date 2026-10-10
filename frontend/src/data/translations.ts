@@ -1,10 +1,12 @@
-export type Language = "en" | "hi";
+import {GUJARATI} from "./gujarati";
+export type Language = "en" | "hi" | "gu";
 
 export interface TranslationDictionary {
   [key: string]: string;
 }
 
 export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
+  gu: GUJARATI,
   en: {
     // Navbar & Navigation
     "nav.brand": "Gujarat Heritage Directory",
@@ -302,6 +304,7 @@ export interface UIStrings {
   [key: string]: {
     en: string;
     hi: string;
+    gu: string;
   };
 }
 
@@ -311,6 +314,7 @@ export const UI_TRANSLATIONS: UIStrings = new Proxy(
     get: (_, key: string) => {
       return {
         en: TRANSLATIONS.en[key] || key,
+        gu: TRANSLATIONS.gu[key] || TRANSLATIONS.en[key] || key,
         hi: TRANSLATIONS.hi[key] || TRANSLATIONS.en[key] || key,
       };
     },

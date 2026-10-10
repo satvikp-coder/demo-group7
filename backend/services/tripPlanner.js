@@ -1,3 +1,5 @@
+import {datedOperation} from './operatingSchedule.js';
+import {accommodationNights,lodgingSubtotal} from '../../dsa/planning/accommodation.ts';
 import {createHash} from 'node:crypto';
 import {utility,weightedScore,validWeights,DEFAULT_WEIGHTS,STRATEGY_WEIGHTS} from '../../dsa/planning/priorities.ts';
 import {HttpError} from '../middleware/errorHandler.js';
@@ -79,7 +81,9 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
     cache.set(key,result);
     return result;
   }
-  const hotelCost=Number(hotel.price_per_night)*trip.trip_days*rooms;
+  const nights=accommodationNights({days:trip.trip_days,lodging_nights:trip.lodging_nights,arrival_date:trip.arrival_date,departure_date:trip.departure_date});
+  const hotelCost=lodgingSubtotal(hotel.price_per_night,nights,rooms);
+  if(hotelCost===null)throw new HttpError(422,"Price unavailable - check current rates before planning an overnight stay");
   let remaining=trip.budget-hotelCost;
   // Catalog fees use two decimal places. Keep the available balance in paise
   // precision so e.g. 1 - .30 - .60 still affords the final .10 admission.
@@ -119,7 +123,9 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
       skippedMeals.push({day_number:day,meal:kind,reason:"No affordable restaurant with known routes fitting the meal window and hotel return"});
       return false;
     }
-    stop("hotel",hotel,clock,15,Number(hotel.price_per_night)*rooms,"departure");
+    // Allocate purchased room nights to daily ledger rows; optional extra arrival/departure nights go on day one.
+    const chargedNights=(day<=Math.min(nights,trip.trip_days)?1:0)+(day===1?Math.max(0,nights-trip.trip_days):0);
+    stop("hotel",hotel,clock,15,lodgingSubtotal(hotel.price_per_night,chargedNights,rooms),"departure");
     const quota=getMaxAttractionsPerDay(filterAttractionsByBudget(eligible,remaining,visited).length,trip.trip_days-day+1,trip.strategy);
     let count=0;
     while(count<quota) {
@@ -132,9 +138,14 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
         let arrival=clock+route.minutes;
         if(a.opening_time) arrival=Math.max(arrival,minutes(a.opening_time));
         const duration=Math.ceil(a.durationHours*60);
-        const closing=a.closing_time ? minutes(a.closing_time) : 1439;
+        let closing=a.closing_time ? minutes(a.closing_time) : 1439;
+        const operation=datedOperation(a,trip.start_date,day,clock+route.minutes,duration);
+        if(operation?.closed)continue;
+        let scheduled=a;
+        if(operation){arrival=operation.arrival;closing=operation.closing;scheduled={...a,entryFeeNumeric:operation.fee*travelers,best_time_note:operation.advisory};}
+        if(scheduled.entryFeeNumeric>remaining)continue;
         if(arrival+duration>closing || arrival+duration+back.minutes+15>1439) continue;
-        choices.push({attraction:a,route,arrival,duration,distance:route.distance_km+back.distance_km,cost:a.entryFeeNumeric,rating:a.rating});
+        choices.push({attraction:scheduled,route,arrival,duration,distance:route.distance_km+back.distance_km,cost:scheduled.entryFeeNumeric,rating:a.rating});
       }
       for(const choice of choices) {
         choice.score=trip.weights?weightedScore({distance:utility(choice.distance,choices.map(c=>c.distance),true),cost:utility(choice.cost,choices.map(c=>c.cost),true),rating:choice.rating==null?0:Math.max(0,Math.min(1,choice.rating/5))},trip.weights)
@@ -168,7 +179,7 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
     status:!visited.size() || skippedMeals.length || unvisited.length ? "incomplete" : "scheduled",
     starting_hotel_id:hotel.id,hotel_replaced:false,hotel_total:hotelCost,
     hotel_over_budget:hotelCost>trip.budget,hotel_budget_shortfall:Math.max(0,hotelCost-trip.budget),
-    lodging_nights:trip.trip_days,transport_cost_known:legs.length===0,
+    lodging_nights:nights,nightly_room_estimate:hotel.price_per_night==null?null:Number(hotel.price_per_night),lodging_basis:trip.lodging_nights==null&&!trip.arrival_date?"legacy_days":"explicit_nights",lodging_taxes_known:false,transport_cost_known:legs.length===0,
     excluded_attractions:excluded,unscheduled_attractions:unvisited,skipped_meals:skippedMeals,
     warnings,route_rows:routes.length,routing:stats,legs,
   }};
@@ -204,6 +215,6 @@ export function buildPlan(trip,resources) {
   distance_basis:'Sum of saved route legs; return estimates retain provenance warnings',cost_basis:'Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded',rating_basis:'Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value',
   normalization:'Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage',
   optimality:'Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed',
-  candidates:candidates.map(({plan,...metrics},index)=>({...metrics,rank:index+1,feasible:true})),travelers:trip.travelers??1,rooms:trip.rooms??1};
+  candidates:candidates.map(({plan,...metrics},index)=>({...metrics,rank:index+1,feasible:true})),travelers:trip.travelers??1,rooms:trip.rooms??1,lodging_nights:selected.plan.summary.lodging_nights};
  return selected.plan;
 }

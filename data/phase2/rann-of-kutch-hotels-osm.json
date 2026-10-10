@@ -1,0 +1,44 @@
+{
+  "query": "[out:json][timeout:25];nwr[tourism~\"^(hotel|guest_house|resort|camp_site)$\"][name](23.49129,69.17256,23.99129,69.87256);out center tags;",
+  "checked": "2026-10-10T03:08:36.750202+00:00",
+  "license": "ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-10T03:06:56Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 4002822856,
+      "lat": 23.6728617,
+      "lon": 69.5999025,
+      "tags": {
+        "name": "Shaam-e-Sarhad",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4692119493,
+      "lat": 23.666873,
+      "lon": 69.6019836,
+      "tags": {
+        "name": "mr budhiya home stay",
+        "name:en": "mr budhiya home stay",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9271272718,
+      "lat": 23.8037332,
+      "lon": 69.5091888,
+      "tags": {
+        "name": "Tent City Dhorda",
+        "tourism": "hotel"
+      }
+    }
+  ]
+}

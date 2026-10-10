@@ -1,0 +1,15 @@
+{
+  "devalia-bus-safari": {
+    "source_url": "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx",
+    "checked": "2026-10-10",
+    "closed_weekdays": [3],
+    "summer_from": "03-01",
+    "summer_through": "06-15",
+    "summer_windows": [[420,630],[990,1110]],
+    "winter_windows": [[450,660],[900,1020]],
+    "slot_minutes": 30,
+    "weekday_indian_fee": 150,
+    "weekend_indian_fee": 190,
+    "limitations": "Indian visitor estimate; festival charges, nationality, permit availability and exceptional closures require confirmation. No booking is made."
+  }
+}

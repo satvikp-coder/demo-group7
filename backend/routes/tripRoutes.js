@@ -1,3 +1,4 @@
+import {accommodationNights} from '../../dsa/planning/accommodation.ts';
 import {validWeights} from '../../dsa/planning/priorities.ts';
 import { Router } from "express";
 import { z } from "zod";
@@ -18,6 +19,9 @@ const preferences=z.object({
 const createBody=preferences.extend({
   travelers:z.number().int().min(1).max(20).default(1),
   rooms:z.number().int().min(1).max(20).default(1),
+  lodging_nights:z.number().int().min(0).max(31).optional(),
+  arrival_date:z.string().date().optional(),
+  departure_date:z.string().date().optional(),
   start_date:z.string().date().optional(),
   hotel_category:z.enum(["Low Cost","Budget","Premium"]).optional(),
   destination_id:z.string().uuid(),days:z.number().int().min(1).max(30),
@@ -25,7 +29,7 @@ const createBody=preferences.extend({
   start_time:z.string().regex(/^(?:[01][0-9]|2[01]):[0-5][0-9]$/, "Use HH:mm between 00:00 and 21:59"),
   strategy:z.enum(["distance-first","budget-first","rating-first"]).default("distance-first"),
   wheelchair_accessible_only:z.boolean().default(false),
-}).strict();
+}).strict().superRefine((input,ctx)=>{try{accommodationNights(input);}catch(error){ctx.addIssue({code:"custom",message:error.message,path:["lodging_nights"]});}});
 const router=Router();
 router.use(verifyJwt,verifyAccount);
 router.get('/',validate(paginationQuery,'query'),controller.list);

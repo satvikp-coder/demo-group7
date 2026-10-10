@@ -99,9 +99,9 @@ export function attractionFromRow(row: Row): Attraction {
 }
 export function hotelFromRow(row: Row): Hotel {
   return { ...camel(row),id:row.id,name:row.name,lat:number(row.lat),lng:number(row.lng),
-    pricePerNight:money(row.price_per_night),priceNumeric:number(row.price_per_night),
+    pricePerNight:row.price_per_night==null?"Price unavailable \u2014 check current rates":money(row.price_per_night),priceNumeric:number(row.price_per_night),
     rating:label(row.rating),ratingNumeric:number(row.rating),tier:row.tier ?? "Not available",
-    stayType:row.stay_type,location:label(row.location),description:[row.description, row.price_per_night == null ? "Room price unknown; category matching and itinerary generation unavailable for this property." : row.source_date ? `Published room estimate checked ${String(row.source_date).slice(0,10)}; confirm current rates and availability.` : "Catalog room estimate; confirm current rates and availability."].filter(Boolean).join(" "),
+    stayType:row.stay_type,location:label(row.location),description:[row.description, row.price_per_night == null ? "Price unavailable \u2014 check current rates. Overnight budgeting is unavailable; this does not mean a free room." : row.source_date ? `Published room estimate checked ${String(row.source_date).slice(0,10)}; confirm current rates and availability.` : "Catalog room estimate; confirm current rates and availability."].filter(Boolean).join(" "),
     valueScore:number(row.value_score),imageUrl:catalogPhoto("hotels",row) } as Hotel;
 }
 export function restaurantFromRow(row: Row): Restaurant {
@@ -172,7 +172,7 @@ export const api = {
     let hour=Number(start[1]);
     if(start[3]) hour=hour%12+(start[3].toUpperCase()==="PM"?12:0);
     const created = await request<Row>("/trips",{method:"POST",body:JSON.stringify({destination_id:config.cityId,days:config.tripDays,
-      budget:config.budget,starting_hotel_id:config.startingHotelId,hotel_category:config.hotelCategory,weights:config.weights,travelers:config.travelers??1,rooms:config.rooms??1,start_date:config.startDate||undefined,start_time:`${String(hour).padStart(2,"0")}:${start[2]}`,
+      budget:config.budget,starting_hotel_id:config.startingHotelId,hotel_category:config.hotelCategory,weights:config.weights,travelers:config.travelers??1,rooms:config.rooms??1,lodging_nights:config.lodgingNights,arrival_date:config.arrivalDate||undefined,departure_date:config.departureDate||undefined,start_date:config.startDate||undefined,start_time:`${String(hour).padStart(2,"0")}:${start[2]}`,
       strategy:config.strategy ?? "distance-first",wheelchair_accessible_only:config.wheelchairAccessibleOnly ?? false})});
     const ids = JSON.parse(sessionStorage.getItem("heritage_api_trip_ids") || "[]");
     sessionStorage.setItem("heritage_api_trip_ids", JSON.stringify([...new Set([...ids,created.trip.id])]));
@@ -229,7 +229,7 @@ export function configFromTrip(trip:Row): PlannerConfigPayload & {tripId:string}
   const hour=Number(trip.start_time.slice(0,2));
   const startTime=`${String(hour%12 || 12).padStart(2,"0")}:${trip.start_time.slice(3,5)} ${hour>=12 ? "PM" : "AM"}`;
   return {tripId:trip.id,cityId:trip.destination_id,tripDays:trip.trip_days,budget:trip.budget,
-    startingHotelId:trip.starting_hotel_id,hotelCategory:trip.hotel_category??undefined,weights:trip.weights??undefined,travelers:trip.travelers??1,rooms:trip.rooms??1,startDate:trip.start_date?.slice(0,10),startTime,strategy:trip.strategy,
+    startingHotelId:trip.starting_hotel_id,hotelCategory:trip.hotel_category??undefined,weights:trip.weights??undefined,travelers:trip.travelers??1,rooms:trip.rooms??1,lodgingNights:trip.lodging_nights??undefined,arrivalDate:trip.arrival_date?.slice(0,10),departureDate:trip.departure_date?.slice(0,10),startDate:trip.start_date?.slice(0,10),startTime,strategy:trip.strategy,
     wheelchairAccessibleOnly:trip.wheelchair_accessible_only};
 }
 // Presentation-only adaptation of persisted rows. No route selection or itinerary generation.
@@ -251,7 +251,7 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
   const allStops=dayPlans.flatMap((d:Row)=>d.stops);
   const hotelStop=allStops.find((s:Row)=>s.type==="hotel");
   const hotel=hotelFromRow({id:dto.trip.starting_hotel_id,name:hotelStop?.name ?? "Not available",
-    lat:hotelStop?.lat,lng:hotelStop?.lng,price_per_night:hotelStop?.cost});
+    lat:hotelStop?.lat,lng:hotelStop?.lng,price_per_night:Object.hasOwn(summary,"nightly_room_estimate")?summary.nightly_room_estimate:hotelStop?.cost/(dto.trip.rooms??1)});
   const minutes=allStops.reduce((n:number,s:Row)=>n+Number(s.durationMinutes ?? 0),0)+legs.reduce((n:number,l:Row)=>n+Number(l.minutes),0);
   const warnings:string[]=["Costs use catalog price snapshots, not live quotes. Confirm current tariffs, opening hours and availability before travel."];
   if(summary.warnings?.includes("reverse_route_estimate_unverified")) warnings.push("Some return-road estimates reuse forward evidence; reverse routing is unverified for those legs.");
