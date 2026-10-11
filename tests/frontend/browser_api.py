@@ -282,7 +282,7 @@ with sync_playwright() as p:
                 login(empty_page, tourist_email, password)
                 empty_page.get_by_role("button", name="Create New Heritage Route").click()
                 empty_page.get_by_role("button", name=name + " Not available", exact=True).click()
-                expect(empty_page.get_by_text("0 Hotel Options", exact=True)).to_be_visible()
+                expect(empty_page.get_by_text("0 Recorded Hotels", exact=True)).to_be_visible()
                 expect(empty_page.get_by_text("0 Restaurants", exact=True)).to_be_visible()
                 empty_page.close()
                 check("Real empty city has zero hotels/restaurants without fallback", status=200)

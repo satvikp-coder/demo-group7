@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:scheduling:local": "node scripts/test-local-all.js phase3-scheduling-production",
+    "local:hotel-coverage": "node scripts/local-stack.js hotel-coverage",
     "local:demo:check": "node scripts/local-demo-check.js",
     "test:demo:local": "node scripts/test-local-all.js itinerary-demo",
     "test:phase3:local": "node scripts/test-local-all.js phase3",

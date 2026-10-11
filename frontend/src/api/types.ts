@@ -22,6 +22,7 @@ export interface Attraction {
 }
 
 export interface Hotel {
+  bookingConditions?: {minimum_guests?:number;priced_guests_per_room?:number};
   hotelCategory?: "Low Cost" | "Budget" | "Premium" | null;
   distanceKm?: number | null;
   distanceType?: string;

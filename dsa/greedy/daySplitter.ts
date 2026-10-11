@@ -8,18 +8,19 @@ export function getMaxAttractionsPerDay(
   strategy: string
 ): number {
   if (remainingDays <= 1) {
-    return Math.max(1, Math.min(4, remainingAttractionsCount));
+    return Math.max(1, remainingAttractionsCount);
   }
   
   // Calculate balanced daily quota based on unvisited attractions and remaining days
   const balancedQuota = Math.ceil(remainingAttractionsCount / remainingDays);
   
-  // Rating-first focuses on deep quality (1-2 per day), while budget & distance balance across available daylight
+  // Balance remaining days; the scheduler's evidenced hours, travel and budget
+  // constraints decide feasibility rather than an arbitrary three-stop cap.
   if (strategy === "rating-first") {
-    return Math.max(1, Math.min(3, balancedQuota));
+    return Math.max(1, balancedQuota);
   }
   
-  return Math.max(1, Math.min(3, balancedQuota));
+  return Math.max(1, balancedQuota);
 }
 
 export function isLunchTime(currentClock: number, lunchInserted: boolean): boolean {

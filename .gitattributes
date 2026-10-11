@@ -63,3 +63,7 @@ frontend/public/catalog-phase2.json -text
 frontend/src/data/phase3Translations.ts -text
 frontend/src/data/hotelTranslations.ts -text
 frontend/src/data/accommodationTranslations.ts -text
+
+# Exact reviewed public hotel source bytes.
+frontend/public/data-credits.html -text
+frontend/public/catalog-hotel-coverage.json -text

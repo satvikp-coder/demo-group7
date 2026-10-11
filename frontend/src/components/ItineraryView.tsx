@@ -1,3 +1,4 @@
+import {scheduleGaps} from '../../../dsa/planning/scheduleGaps';
 import type {PriorityWeights} from '../../../dsa/planning/priorities';
 import {resizeAccommodation} from '../../../dsa/planning/resizeAccommodation';
 import { displayNumber } from "../api";
@@ -226,6 +227,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
   const handleDownloadPdf = async () => {
     if (!pdfContainerRef.current) return;
+    const imageLoadingStates: {image: HTMLImageElement;loading: string|null}[] = [];
     setIsGeneratingPdf(true);
     try {
       const [jspdfModule, html2canvasModule] = await Promise.all([
@@ -236,9 +238,18 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       const html2canvas = html2canvasModule.default || (html2canvasModule as any);
 
       const element = pdfContainerRef.current;
+      // Decode can remain pending for off-screen lazy images. Start those local
+      // requests before either renderer clones the itinerary; restore lazy loading later.
+      element.querySelectorAll('img').forEach(image => {
+        imageLoadingStates.push({image,loading:image.getAttribute('loading')});
+        image.loading = 'eager';
+      });
+      const existingClones = new Set(document.querySelectorAll('.html2canvas-container'));
       let canvas: HTMLCanvasElement;
       try {
-        canvas = await html2canvas(element, {
+        let captureTimer: ReturnType<typeof setTimeout> | undefined;
+        try {
+        canvas = await Promise.race([html2canvas(element, {
           scale: 2,
           useCORS: true,
           allowTaint: true,
@@ -248,12 +259,21 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
           scrollY: 0,
           windowWidth: element.scrollWidth || document.documentElement.offsetWidth,
           windowHeight: element.scrollHeight,
-        });
+          imageTimeout: 10000,
+        }), new Promise<HTMLCanvasElement>((_, reject) => {
+          captureTimer = setTimeout(() => reject(new Error('PDF capture timed out while waiting for external resources')), 15000);
+        })]);
+        } finally { clearTimeout(captureTimer); }
       } catch (e: any) {
+        // The canvas library waits indefinitely for cloned external fonts. Remove
+        // only this export's abandoned clone before using the existing fallback.
+        document.querySelectorAll('.html2canvas-container').forEach(clone => {
+          if (!existingClones.has(clone)) clone.remove();
+        });
         // Fallback to dom-to-image-more for okLab colour support
         const domToImageModule = await import("dom-to-image-more");
         const domToImage = domToImageModule.default || domToImageModule;
-        const dataUrl = await domToImage.toJpeg(element, { quality: 0.95, loadExternalStyleSheet: true });
+        const dataUrl = await domToImage.toJpeg(element, { quality: 0.95, loadExternalStyleSheet: true, httpTimeout: 5000 });
         const img = new Image();
         await new Promise<void>((resolve, reject) => {
           img.onload = () => resolve();
@@ -297,6 +317,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       console.error("Error generating itinerary PDF:", err);
       window.print();
     } finally {
+      imageLoadingStates.forEach(({image,loading}) => {
+        if (loading===null) image.removeAttribute('loading'); else image.setAttribute('loading',loading);
+      });
       setIsGeneratingPdf(false);
     }
   };
@@ -708,6 +731,11 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     </div>
                   </div>
 
+                  {(request.data?.dto.trip.generation_summary?.free_time ?? scheduleGaps(request.data?.dto.days.flatMap((d: any)=>d.stops)??[],request.data?.dto.trip.generation_summary?.legs??[])).filter((gap: any) => gap.day_number === day.dayNumber).map((gap: any) => (
+                    <p key={`${gap.day_number}-${gap.before_stop_order}`} role="note" className="text-sm text-stone" data-testid="itinerary-free-time">
+                      Free / personal time: {gap.start_time.slice(0,5)}–{gap.end_time.slice(0,5)} ({gap.duration_minutes} minutes). {gap.reason}
+                    </p>
+                  ))}
                   {/* Circular Timed Stops List */}
                   <div className="space-y-4">
                     <AnimatePresence mode="popLayout">
@@ -717,7 +745,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
                         const accessibleLabel =
                           stop.type === "meal"
-                            ? `Stop ${stopNumber} of ${day.stops.length}: Lunch break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${displayNumber(stop.cost)}`
+                            ? `Stop ${stopNumber} of ${day.stops.length}: ${stop.category} break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${displayNumber(stop.cost)}`
                             : stop.type === "hotel"
                               ? isFinalStop
                                 ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, completing circular route`

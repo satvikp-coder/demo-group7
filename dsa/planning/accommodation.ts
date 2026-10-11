@@ -24,3 +24,12 @@ export function lodgingSubtotal(rate:unknown,nights:number,rooms:number):number|
  if(rate==null||rate===''||!Number.isFinite(Number(rate))||Number(rate)<0)return null;
  return Math.round(Number(rate)*100)*nights*rooms/100;
 }
+/** Only apply sourced conditions to a purchased stay, never to a zero-night route anchor. */
+export interface LodgingConditions {minimum_guests?:number;priced_guests_per_room?:number}
+export function lodgingGuestIssue(conditions:LodgingConditions|undefined,nights:number,travelers:number,rooms:number):{kind:'minimum'|'rooms';minimum?:number;capacity?:number;requiredRooms?:number}|null {
+ if(nights===0||!conditions)return null;
+ const minimum=conditions.minimum_guests,capacity=conditions.priced_guests_per_room;
+ if(Number.isInteger(minimum)&&minimum!>0&&travelers<minimum!)return {kind:'minimum',minimum};
+ if(Number.isInteger(capacity)&&capacity!>0&&travelers>rooms*capacity!)return {kind:'rooms',capacity,requiredRooms:Math.ceil(travelers/capacity!)};
+ return null;
+}

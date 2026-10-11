@@ -3,8 +3,8 @@
   "files": {
     "frontend/src/components/ItineraryView.tsx": {
       "baselineSha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
-      "sha256": "bb53578f1f9fcecd6d18bece3af98d12c9a66919c12c2f1158ca27e3ac5da38d",
-      "reason": "WhatIf creates a new version with consistent nights and checkout, showing proposed nights"
+      "sha256": "4f73b6c2b260694eff80b5495af580406dbb6635132247b77d8845fa74a082b8",
+      "reason": "Current/legacy schedule gaps, correct dinner accessibility, eagerly load off-screen images temporarily for real PDF export and bound resource waits; UI styles retained"
     },
     "frontend/src/components/WhatIfPanel.tsx": {
       "baselineSha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",
@@ -53,23 +53,43 @@
     },
     "frontend/src/components/HotelCategoryPicker.tsx": {
       "baselineSha256": "ed4c078c26d58de309bfe244618d0448749c572b13a46cf1a90dcb1554aa214a",
-      "sha256": "1fcac050c301456572df98637d1c90d5a1e95ad463ea9544302f478bae2adfef",
-      "reason": "Requested English/Hindi/Gujarati hotel selection labels and honest estimate/empty-state explanations; API enum values and existing styles unchanged"
+      "sha256": "f6be2be35c4b87e5178ee7535a3895f1d68dd499329569404637b0f8ce1d1af2",
+      "reason": "User-requested hotel catalog/category count clarity and all recorded hotel detail visibility; no fabricated rates or selection contract changes"
     },
     "frontend/src/data/hotelTranslations.ts": {
       "baselineSha256": null,
-      "sha256": "6a6fe814426a1d37f0d888c5ed9f45efc87048fbc4fe14014ae492c0ec32d9d4",
-      "reason": "Requested English/Hindi/Gujarati hotel selection labels and honest estimate/empty-state explanations; API enum values and existing styles unchanged"
+      "sha256": "7fb58b78674ebef59800764a65dc419e53298b46fabe5975199651379e222787",
+      "reason": "User-requested hotel catalog/category count clarity and all recorded hotel detail visibility; no fabricated rates or selection contract changes"
     },
     "frontend/src/components/PlannerModal.tsx": {
       "baselineSha256": "8b6416575b9b93d7bfb89a0afa7f45056452d0848a98118a5e8c3fb969840544",
-      "sha256": "704aa40f5c6c378a60685f168510d4eac3801a0dd1eea5d22c09f2e6fa5e7c0b",
-      "reason": "Translate accommodation inputs/validation with unchanged styles; correct admission unit advisory for vehicle-priced safari; reject unaffordable accommodation before trip writes with exact subtotal and shortfall"
+      "sha256": "5eb9e35fba98dc72631e91ac0df3b489c92cd74ca0991f66068a78abdbbc2b78",
+      "reason": "User-requested sourced hotel tier coverage; carry explicit guest/quoted-room conditions and reject unsupported occupancy before writing trips"
     },
     "frontend/src/data/accommodationTranslations.ts": {
       "baselineSha256": null,
-      "sha256": "dfe0b071753d4979d975e329f63f0f2f0315d94cf51279538e0f6faf4862c973",
-      "reason": "Translate accommodation inputs/validation with unchanged styles; correct admission unit advisory for vehicle-priced safari; reject unaffordable accommodation before trip writes with exact subtotal and shortfall"
+      "sha256": "c2207071fa40246beb313aeca6312d1a511ad0d0af5c79a332a37c774458eccf",
+      "reason": "User-requested sourced hotel tier coverage; carry explicit guest/quoted-room conditions and reject unsupported occupancy before writing trips"
+    },
+    "frontend/src/api/index.ts": {
+      "baselineSha256": "92baf76f91b4b75d325a17dd81b9de83b10a7d0cc890642a18d861f2883bba02",
+      "sha256": "038199c127d50bf7c4dcd0a753e63609022a01c4d08946fa062f0089356358a6",
+      "reason": "User-requested sourced hotel tier coverage; carry explicit guest/quoted-room conditions and reject unsupported occupancy before writing trips"
+    },
+    "frontend/src/api/types.ts": {
+      "baselineSha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac",
+      "sha256": "74b7b98ac06e17fa39f86bab9f4db79f5620e60ccafde8ee597878dae39edce9",
+      "reason": "User-requested sourced hotel tier coverage; carry explicit guest/quoted-room conditions and reject unsupported occupancy before writing trips"
+    },
+    "frontend/public/data-credits.html": {
+      "baselineSha256": "caef151a887839811dca6ed8bd3d2f9db8e915bb60d4880fc8c4ab4d0d7d72be",
+      "sha256": "e970345948a9e910eb5eeca561afa898de7a6de387d5f9a0473d882006d29322",
+      "reason": "Public derived hotel coverage download and attribution; no product layout changes"
+    },
+    "frontend/public/catalog-hotel-coverage.json": {
+      "baselineSha256": null,
+      "sha256": "d5e9eb6e85d5c397ca07cadba022d9f68c61f396c0b06845a2df6a9d69c85645",
+      "reason": "Sourced factual catalog and ODbL attribution; no private data"
     }
   }
 }

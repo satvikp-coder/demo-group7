@@ -1,0 +1,214 @@
+{
+  "city": "gir-national-park",
+  "checked": "2026-10-11",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/70.455709,21.523366;70.42776,20.901773;70.504063,21.169664;70.598454,21.168967;70.589057,21.149547?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-hotel-sapphire-junagadh-near-gir-national-park",
+      "name": "Hotel Sapphire, Junagadh",
+      "lat": 21.523366,
+      "lng": 70.455709
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-dwarkesh-farm-resort-somnath-near-gir-national-park",
+      "name": "Dwarkesh Farm & Resort, Somnath",
+      "lat": 20.901773,
+      "lng": 70.42776
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a602",
+      "name": "Devalia Interpretation Zone Bus Safari",
+      "lat": 21.169664,
+      "lng": 70.504063
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a601",
+      "name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+      "lat": 21.168967,
+      "lng": 70.598454
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r601",
+      "name": "Hotel Gir Kathiyawadi Sasan Gir",
+      "lat": 21.149547,
+      "lng": 70.589057
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        93583.8,
+        54108.2,
+        53195.5,
+        55720.2
+      ],
+      [
+        93685,
+        0,
+        43133.7,
+        43366,
+        40841.3
+      ],
+      [
+        54133.3,
+        43031.5,
+        0,
+        10910.2,
+        13434.9
+      ],
+      [
+        53220.7,
+        43263.7,
+        10910.2,
+        0,
+        2524.7
+      ],
+      [
+        55745.4,
+        40739,
+        13434.9,
+        2524.7,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "hffkhMqo7IhiAAAAnAAAAAAAAAAAAAAA_YeJQv7b10IAAAAAAAAAAGIAAACcAAAAAAAAAAAAAACIKAEAnREzBKhrSAGdETMEpmtIAQAA7wUAAAAA",
+        "location": [
+          70.455709,
+          21.523368
+        ],
+        "name": "",
+        "distance": 0.2214478387
+      },
+      {
+        "hint": "ZnCJj2lwiY8JAQAAPAAAAHoBAAAAAAAAkqPdQudexkEZGB1DAAAAAAkBAAA8AAAAegEAAAAAAACIKAEAaaQyBIvvPgFwpDIEje8-ARAATwoAAAAA",
+        "location": [
+          70.427753,
+          20.901771
+        ],
+        "name": "",
+        "distance": 0.7610801384
+      },
+      {
+        "hint": "3eTKhfcA9ol2AAAARwAAAFcMAADeBQAART9WQ6yj_kJSCbJFxHspRXYAAABHAAAAVwwAAN4FAACIKAEAZc4zBGoGQwF_zjMEAAZDAVAAHxAAAAAA",
+        "location": [
+          70.504037,
+          21.16977
+        ],
+        "name": "",
+        "distance": 12.04283398
+      },
+      {
+        "hint": "NMvZgYKqK4gEAAAAEgAAAAwAAAA4AAAA1aj8QHFW-UEGWLBB-hvHQgQAAAASAAAADAAAADgAAACIKAEALz81BG8CQwE2PzUERwNDAQIA_xAAAAAA",
+        "location": [
+          70.598447,
+          21.168751
+        ],
+        "name": "SH26",
+        "distance": 23.92641645
+      },
+      {
+        "hint": "gdHEhQx5aJBMAAAACwAAADwBAAAAAAAA-oQLQ7A1k0EJkg5EAAAAAEwAAAALAAAAPAEAAAAAAACIKAEAJxs1BCS3QgGBGjUEa7dCAQoAzwwAAAAA",
+        "location": [
+          70.589223,
+          21.149476
+        ],
+        "name": "",
+        "distance": 18.95190139
+      }
+    ],
+    "durations": [
+      [
+        0,
+        4281.9,
+        3241.6,
+        3190.9,
+        3330.6
+      ],
+      [
+        4319.9,
+        0,
+        2998.9,
+        2452.7,
+        2312.9
+      ],
+      [
+        3244.2,
+        3000,
+        0,
+        610.3,
+        750
+      ],
+      [
+        3191.7,
+        2452.9,
+        612,
+        0,
+        139.7
+      ],
+      [
+        3331.5,
+        2313.2,
+        751.8,
+        139.8,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "hffkhMqo7IhiAAAAnAAAAAAAAAAAAAAA_YeJQv7b10IAAAAAAAAAAGIAAACcAAAAAAAAAAAAAACIKAEAnREzBKhrSAGdETMEpmtIAQAA7wUAAAAA",
+        "location": [
+          70.455709,
+          21.523368
+        ],
+        "name": "",
+        "distance": 0.2214478387
+      },
+      {
+        "hint": "ZnCJj2lwiY8JAQAAPAAAAHoBAAAAAAAAkqPdQudexkEZGB1DAAAAAAkBAAA8AAAAegEAAAAAAACIKAEAaaQyBIvvPgFwpDIEje8-ARAATwoAAAAA",
+        "location": [
+          70.427753,
+          20.901771
+        ],
+        "name": "",
+        "distance": 0.7610801384
+      },
+      {
+        "hint": "3eTKhfcA9ol2AAAARwAAAFcMAADeBQAART9WQ6yj_kJSCbJFxHspRXYAAABHAAAAVwwAAN4FAACIKAEAZc4zBGoGQwF_zjMEAAZDAVAAHxAAAAAA",
+        "location": [
+          70.504037,
+          21.16977
+        ],
+        "name": "",
+        "distance": 12.04283398
+      },
+      {
+        "hint": "NMvZgYKqK4gEAAAAEgAAAAwAAAA4AAAA1aj8QHFW-UEGWLBB-hvHQgQAAAASAAAADAAAADgAAACIKAEALz81BG8CQwE2PzUERwNDAQIA_xAAAAAA",
+        "location": [
+          70.598447,
+          21.168751
+        ],
+        "name": "SH26",
+        "distance": 23.92641645
+      },
+      {
+        "hint": "gdHEhQx5aJBMAAAACwAAADwBAAAAAAAA-oQLQ7A1k0EJkg5EAAAAAEwAAAALAAAAPAEAAAAAAACIKAEAJxs1BCS3QgGBGjUEa7dCAQoAzwwAAAAA",
+        "location": [
+          70.589223,
+          21.149476
+        ],
+        "name": "",
+        "distance": 18.95190139
+      }
+    ]
+  },
+  "basis": "OSRM/OpenStreetMap modeled driving distance/time; not live traffic or fare"
+}

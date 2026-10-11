@@ -4,7 +4,7 @@ import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {createPool} from './database.js';
 const directory=new URL('../../data/expansion/',import.meta.url);
-const fields=new Set(['slug','name','lat','lng','rating','source','source_url','source_date','provenance_status','image_url','provenance_review','stay_type','price_per_night','location','description','category','entry_fee','entry_fee_numeric','duration_hours','opening_time','closing_time','best_time_note']);
+const fields=new Set(['slug','name','lat','lng','rating','source','source_url','source_date','provenance_status','image_url','provenance_review','stay_type','tier','price_per_night','location','description','category','entry_fee','entry_fee_numeric','duration_hours','opening_time','closing_time','best_time_note']);
 export function loadExpansion(directoryOverride=directory,release="20261009"){
  if(!/^20[0-9]{6}$/.test(release))throw new Error("Invalid catalog release");
  const manifest=JSON.parse(readFileSync(new URL('catalog-'+release+'.json',directoryOverride),'utf8'));
@@ -12,13 +12,17 @@ export function loadExpansion(directoryOverride=directory,release="20261009"){
  for(const r of manifest.records){
   if(!['hotels','attractions'].includes(r.table)||!['ahmedabad','somnath','dwarka','champaner','modhera','gir-national-park','rann-of-kutch','saputara'].includes(r.city)||!new RegExp('^exp-'+release+'-[a-z0-9-]+$').test(r.key)||keys.has(r.key))throw new Error('Invalid or duplicate expansion identity');keys.add(r.key);
   const v=r.values;if(!v.name||!v.slug||!v.source_url?.startsWith('https://')||!v.provenance_review?.sources?.length||Object.keys(v).some(k=>!fields.has(k)))throw new Error('Missing provenance or unsupported field');
+  if(v.tier!=null&&!['Budget','Mid-range','Luxury'].includes(v.tier))throw new Error('Invalid hotel price tier');
+  const conditions=v.provenance_review?.booking_conditions;
+  if(conditions&&Object.entries(conditions).some(([k,n])=>!['minimum_guests','priced_guests_per_room'].includes(k)||!Number.isInteger(n)||n<1||n>50))throw new Error('Invalid sourced guest conditions');
   if(!Number.isFinite(v.lat)||v.lat<20||v.lat>25||!Number.isFinite(v.lng)||v.lng<68||v.lng>75)throw new Error('Expansion coordinates outside Gujarat bounds');
   for(const key of ['rating','price_per_night','entry_fee_numeric','duration_hours'])if(v[key]!=null&&(!Number.isFinite(v[key])||v[key]<0))throw new Error('Invalid factual numeric value');
  }
  return manifest;
 }
-export async function applyExpansion(pool,{dryRun=false,phase2=false}={}){
- const release=phase2?'20261010':'20261009',activeDirectory=phase2?new URL('../../data/phase2/',import.meta.url):directory;
+export async function applyExpansion(pool,{dryRun=false,phase2=false,hotelCoverage=false}={}){
+ if(phase2&&hotelCoverage)throw new Error('Select one catalog release at a time');
+ const release=hotelCoverage?'20261011':phase2?'20261010':'20261009',activeDirectory=hotelCoverage?new URL('../../data/hotel-coverage/',import.meta.url):phase2?new URL('../../data/phase2/',import.meta.url):directory;
  const catalog=loadExpansion(activeDirectory,release),client=await pool.connect(),report={release,dryRun,inserted:[],preserved:[],routesInserted:0};
  try{
   await client.query('BEGIN');await client.query('SELECT pg_advisory_xact_lock($1)',[70072026]);
@@ -50,4 +54,4 @@ export async function applyExpansion(pool,{dryRun=false,phase2=false}={}){
   await client.query(dryRun?'ROLLBACK':'COMMIT');return report;
  }catch(e){await client.query('ROLLBACK');throw e;}finally{client.release();}
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){const pool=createPool();try{console.log(JSON.stringify(await applyExpansion(pool,{dryRun:process.argv.includes('--dry-run'),phase2:process.argv.includes('--phase2')}),null,2));}catch(e){console.error(e.code??e.message);process.exitCode=1;}finally{await pool.end();}}
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){const pool=createPool();try{console.log(JSON.stringify(await applyExpansion(pool,{dryRun:process.argv.includes('--dry-run'),phase2:process.argv.includes('--phase2'),hotelCoverage:process.argv.includes('--hotel-coverage')}),null,2));}catch(e){console.error(e.code??e.message);process.exitCode=1;}finally{await pool.end();}}

@@ -1,4 +1,4 @@
-import {accommodationNights,lodgingSubtotal} from '../../../dsa/planning/accommodation';
+import {accommodationNights,lodgingSubtotal,lodgingGuestIssue} from '../../../dsa/planning/accommodation';
 import {PriorityControls} from './PriorityControls';
 import {DEFAULT_WEIGHTS,type PriorityWeights} from '../../../dsa/planning/priorities';
 import {HotelCategoryPicker} from './HotelCategoryPicker';
@@ -161,6 +161,12 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
       accommodationNights({days:tripDays,lodging_nights:nights,arrival_date:arrivalDate,departure_date:departureDate});
       if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error(t("stay.invalidGroup"));
       if (!startingHotelId) throw new Error(t("stay.hotelRequired"));
+      const guestIssue=lodgingGuestIssue(startingHotelObj?.bookingConditions,nights,travelers,rooms);
+      if(guestIssue){
+        const values:Record<string,string|number>={hotel:startingHotelObj?.name??'',minimum:guestIssue.minimum??0,capacity:guestIssue.capacity??0,rooms:guestIssue.requiredRooms??rooms,travelers};
+        setStep(2);
+        throw new Error(t(guestIssue.kind==='minimum'?'stay.minimumGuests':'stay.quotedRooms').replace(/\{(\w+)\}/g,(match,key)=>String(values[key]??match)));
+      }
       const hotelTotal=lodgingSubtotal(startingHotelObj?.priceNumeric??null,nights,rooms);
       if(hotelTotal!==null&&hotelTotal>budget){
         const money=(value:number)=>new Intl.NumberFormat(language+'-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(value);
@@ -441,9 +447,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                     </span>
                     <span>
                       {activeCity.hotels.length}{" "}
-                      {language === "hi"
-                        ? "होटल"
-                        : "Hotel Options"}
+                      {t('hotel.recorded')}
                     </span>
                     <span>
                       {activeCity.restaurants.length}{" "}

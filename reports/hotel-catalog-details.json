@@ -1,0 +1,727 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "destination": "Ahmedabad",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 3,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 1440,
+      "category": "Low Cost",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 1440,
+      "category": "Budget",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 1440,
+      "category": "Premium",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 3,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 768,
+      "category": "Low Cost",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 768,
+      "category": "Budget",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 768,
+      "category": "Premium",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Ahmedabad",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 12,
+      "unknownPrices": 7,
+      "selectable": 3,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Champaner",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 3,
+      "unknownPrices": 0,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Dwarka",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 9,
+      "unknownPrices": 5,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Gir National Park",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 7,
+      "unknownPrices": 4,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Modhera",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 6,
+      "unknownPrices": 3,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Rann of Kutch",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 4,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Saputara",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 9,
+      "unknownPrices": 6,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 390,
+      "category": "Low Cost",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 390,
+      "category": "Budget",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 2,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    },
+    {
+      "destination": "Somnath",
+      "width": 390,
+      "category": "Premium",
+      "recordedHotels": 6,
+      "unknownPrices": 1,
+      "selectable": 1,
+      "allDetailsVisible": true,
+      "exactApiIds": true
+    }
+  ],
+  "writes": [],
+  "pageErrors": []
+}

@@ -32,6 +32,7 @@ try {
  if(phase==='demo'){
   report.phase2Expansion=await applyExpansion(isolated,{phase2:true});
   report.phase3Enrichment=await applyEnrichment(isolated);
+  report.hotelCoverage=await applyExpansion(isolated,{hotelCoverage:true});
  }
  backend=spawn(process.execPath,['--import','tsx','server.js'],{cwd:new URL('../backend/',import.meta.url),env,windowsHide:true,stdio:'ignore'});await waitFor('http://localhost:5310/ready');
  if(['expanded','demo'].includes(phase))await run(process.execPath,['backend/scripts/test-itinerary-api.js'],{env:{...env,API_TEST_URL:'http://localhost:5310/api'},name:'itinerary-api-matrix'});

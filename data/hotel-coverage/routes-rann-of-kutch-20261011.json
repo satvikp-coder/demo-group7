@@ -1,0 +1,214 @@
+{
+  "city": "rann-of-kutch",
+  "checked": "2026-10-11",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/69.670918,23.249184;69.64731,23.233137;69.813823,23.933547;69.52256,23.84129;69.50528,23.796686?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-hotel-sahara-palace-bhuj-near-rann-of-kutch",
+      "name": "Hotel Sahara Palace, Bhuj",
+      "lat": 23.249184,
+      "lng": 69.670918
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-hotel-prince-residency-bhuj-near-rann-of-kutch",
+      "name": "Hotel Prince Residency, Bhuj",
+      "lat": 23.233137,
+      "lng": 69.64731
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a702",
+      "name": "Kalo Dungar",
+      "lat": 23.933547,
+      "lng": 69.813823
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a701",
+      "name": "White Rann near Dhordo",
+      "lat": 23.84129,
+      "lng": 69.52256
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r701",
+      "name": "Gateway to Rann Resort dining room",
+      "lat": 23.796686,
+      "lng": 69.50528
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        3352.4,
+        88918.4,
+        84734,
+        81129.3
+      ],
+      [
+        3622.3,
+        0,
+        91661.6,
+        87477.2,
+        83872.5
+      ],
+      [
+        88742.2,
+        91216.6,
+        0,
+        48103.3,
+        46437.9
+      ],
+      [
+        84557.7,
+        87032.2,
+        48103.3,
+        0,
+        3721.5
+      ],
+      [
+        80953.1,
+        83427.6,
+        46437.9,
+        3721.5,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "YFqQjv___38EAQAAlQEAAAkAAAAaAAAAKCZZQr7t8EFt6_g_PVCqQIIAAADLAAAABQAAAA0AAACIKAEADRgnBLfBYgEGGCcEIMFiAQIADxEAAAAA",
+        "location": [
+          69.670925,
+          23.249335
+        ],
+        "name": "",
+        "distance": 16.73816282
+      },
+      {
+        "hint": "aLgIjWm4CI2AAAAAPwAAAAAAAAAAAAAAbv5VQkGy0UEAAAAAAAAAAIAAAAA_AAAAAAAAAAAAAACIKAEAerwmBMyCYgHOuyYEcYJiAQAAXwkAAAAA",
+        "location": [
+          69.647482,
+          23.233228
+        ],
+        "name": "",
+        "distance": 20.28508857
+      },
+      {
+        "hint": "pjoriM5xvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAACIKAEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "W24rhEu1j44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAACIKAEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "0dJtjDbfm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAACIKAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      }
+    ],
+    "durations": [
+      [
+        0,
+        249.1,
+        4338.1,
+        4758.1,
+        4037.2
+      ],
+      [
+        254.5,
+        0,
+        4501.1,
+        4921.1,
+        4200.2
+      ],
+      [
+        4327.6,
+        4472.7,
+        0,
+        4243.3,
+        3693.3
+      ],
+      [
+        4744.6,
+        4889.7,
+        4243,
+        0,
+        747.5
+      ],
+      [
+        4018.9,
+        4164,
+        3690.7,
+        747.5,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "YFqQjv___38EAQAAlQEAAAkAAAAaAAAAKCZZQr7t8EFt6_g_PVCqQIIAAADLAAAABQAAAA0AAACIKAEADRgnBLfBYgEGGCcEIMFiAQIADxEAAAAA",
+        "location": [
+          69.670925,
+          23.249335
+        ],
+        "name": "",
+        "distance": 16.73816282
+      },
+      {
+        "hint": "aLgIjWm4CI2AAAAAPwAAAAAAAAAAAAAAbv5VQkGy0UEAAAAAAAAAAIAAAAA_AAAAAAAAAAAAAACIKAEAerwmBMyCYgHOuyYEcYJiAQAAXwkAAAAA",
+        "location": [
+          69.647482,
+          23.233228
+        ],
+        "name": "",
+        "distance": 20.28508857
+      },
+      {
+        "hint": "pjoriM5xvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAACIKAEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "W24rhEu1j44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAACIKAEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "0dJtjDbfm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAACIKAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      }
+    ]
+  },
+  "basis": "OSRM/OpenStreetMap modeled driving distance/time; not live traffic or fare"
+}

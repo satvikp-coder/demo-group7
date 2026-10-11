@@ -1,0 +1,320 @@
+{
+  "city": "modhera",
+  "checked": "2026-10-11",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/72.32958,23.59994;72.39208,23.4742;72.133078,23.583421;72.137004,23.582665;72.145478,23.583383;72.134128,23.582391;72.13523,23.582704?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-the-grand-takshak-mehsana-near-modhera",
+      "name": "The Grand Takshak, Mehsana",
+      "lat": 23.59994,
+      "lng": 72.32958
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-shankus-waterpark-and-resort-mehsana-near-modhera",
+      "name": "Shankus Waterpark and Resort, Mehsana",
+      "lat": 23.4742,
+      "lng": 72.39208
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a401",
+      "name": "Modhera Sun Temple",
+      "lat": 23.583421,
+      "lng": 72.133078
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261010-modhera-vav-modhera",
+      "name": "Modhera Vav",
+      "lat": 23.582665,
+      "lng": 72.137004
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a402",
+      "name": "Modheshwari Mata Temple",
+      "lat": 23.583383,
+      "lng": 72.145478
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261010-sun-temple-museum-modhera",
+      "name": "Sun Temple Museum, Modhera",
+      "lat": 23.582391,
+      "lng": 72.134128
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r401",
+      "name": "Eulogia Restro Cafe, Sun Temple Modhera",
+      "lat": 23.582704,
+      "lng": 72.13523
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        17651.3,
+        21502.5,
+        21170.7,
+        19958.3,
+        21408.3,
+        21302.2
+      ],
+      [
+        20642.4,
+        0,
+        37801.6,
+        37469.8,
+        36257.4,
+        37707.4,
+        37601.3
+      ],
+      [
+        24764.4,
+        38242.4,
+        0,
+        441.6,
+        1621.8,
+        456.1,
+        237.9
+      ],
+      [
+        24322.9,
+        37800.9,
+        651.7,
+        0,
+        1180.3,
+        557.5,
+        451.4
+      ],
+      [
+        23201.7,
+        36679.7,
+        1625.4,
+        1293.6,
+        0,
+        1531.2,
+        1425.1
+      ],
+      [
+        24670.3,
+        38148.3,
+        456.1,
+        347.4,
+        1527.6,
+        0,
+        255.8
+      ],
+      [
+        24564.2,
+        38042.2,
+        237.9,
+        241.3,
+        1421.6,
+        255.8,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "1638k____38OAAAASQAAAIQDAACwAAAABMnLQXWJ00IEectE1BmfQw4AAABJAAAAhAMAALAAAACIKAEAHKlPBEQbaAFsqU8ERBtoARwAPwsAAAAA",
+        "location": [
+          72.3295,
+          23.59994
+        ],
+        "name": "Mehsana Bypass Road",
+        "distance": 8.166651201
+      },
+      {
+        "hint": "cWI6hv___38WAAAAvgAAAGkAAABZAwAAfYfLQSwrOUMp0ehCVNxtRBYAAAC-AAAAaQAAAFkDAACIKAEAcaBQBGQvZgGQnVAEGDBmAQQA7wAAAAAA",
+        "location": [
+          72.392817,
+          23.47402
+        ],
+        "name": "",
+        "distance": 77.88655318
+      },
+      {
+        "hint": "Jb6Biia-gYotAAAAAAAAAA4BAADFAgAA3TH4QQAAAAD1EzxDIoP2Qy0AAAAAAAAADgEAAMUCAACIKAEALa5MBCDeZwHWqUwEvdpnAQoALxMAAAAA",
+        "location": [
+          72.134189,
+          23.584288
+        ],
+        "name": "",
+        "distance": 148.6037041
+      },
+      {
+        "hint": "jaU6hv___38CAAAAOwAAAC8AAAAdAAAAvyIWQIxpe0L0L1JC0wwDQgIAAAA7AAAALwAAAB0AAACIKAEA77lMBK7XZwEsuUwEyddnAQQAjwAAAAAA",
+        "location": [
+          72.137199,
+          23.582638
+        ],
+        "name": "",
+        "distance": 20.129561
+      },
+      {
+        "hint": "LK2gkVrT_JMpAgAACAAAANsKAAAjAAAAYivAQ0CErUAhUfFEYQzBQSkCAAAIAAAA2woAACMAAACIKAEAGNxMBA7ZZwFG2kwEl9pnARoA7w0AAAAA",
+        "location": [
+          72.145944,
+          23.58299
+        ],
+        "name": "",
+        "distance": 64.47830724
+      },
+      {
+        "hint": "npd8iFknJZNAAAAAogAAAGEAAAClAgAALYWPQmDRMkMZZtpCx2I8REAAAACiAAAAYQAAAKUCAACIKAEAMa5MBHvVZwHwrUwEt9ZnAQwAPxAAAAAA",
+        "location": [
+          72.134193,
+          23.582075
+        ],
+        "name": "",
+        "distance": 35.62113914
+      },
+      {
+        "hint": "nJd8iCO-gYo6AAAALgAAAAAAAAAAAAAAAG_DQS2rlkEAAAAAAAAAADoAAAAuAAAAAAAAAAAAAACIKAEAT7JMBCHYZwE-skwE8NdnAQAAvwYAAAAA",
+        "location": [
+          72.135247,
+          23.582753
+        ],
+        "name": "",
+        "distance": 5.697578804
+      }
+    ],
+    "durations": [
+      [
+        0,
+        1003.2,
+        1235,
+        1195.9,
+        1116.8,
+        1211.5,
+        1208.1
+      ],
+      [
+        1212.4,
+        0,
+        2198.4,
+        2159.3,
+        2080.2,
+        2174.9,
+        2171.5
+      ],
+      [
+        1423.1,
+        2186.7,
+        0,
+        55.9,
+        136.2,
+        63,
+        43.3
+      ],
+      [
+        1367.2,
+        2130.8,
+        79.2,
+        0,
+        80.3,
+        55.7,
+        52.3
+      ],
+      [
+        1304.2,
+        2067.8,
+        135.8,
+        96.7,
+        0,
+        112.3,
+        108.9
+      ],
+      [
+        1399.6,
+        2163.2,
+        63.1,
+        32.4,
+        112.7,
+        0,
+        36.2
+      ],
+      [
+        1396.2,
+        2159.8,
+        43.5,
+        29,
+        109.3,
+        36.1,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "1638k____38OAAAASQAAAIQDAACwAAAABMnLQXWJ00IEectE1BmfQw4AAABJAAAAhAMAALAAAACIKAEAHKlPBEQbaAFsqU8ERBtoARwAPwsAAAAA",
+        "location": [
+          72.3295,
+          23.59994
+        ],
+        "name": "Mehsana Bypass Road",
+        "distance": 8.166651201
+      },
+      {
+        "hint": "cWI6hv___38WAAAAvgAAAGkAAABZAwAAfYfLQSwrOUMp0ehCVNxtRBYAAAC-AAAAaQAAAFkDAACIKAEAcaBQBGQvZgGQnVAEGDBmAQQA7wAAAAAA",
+        "location": [
+          72.392817,
+          23.47402
+        ],
+        "name": "",
+        "distance": 77.88655318
+      },
+      {
+        "hint": "Jb6Biia-gYotAAAAAAAAAA4BAADFAgAA3TH4QQAAAAD1EzxDIoP2Qy0AAAAAAAAADgEAAMUCAACIKAEALa5MBCDeZwHWqUwEvdpnAQoALxMAAAAA",
+        "location": [
+          72.134189,
+          23.584288
+        ],
+        "name": "",
+        "distance": 148.6037041
+      },
+      {
+        "hint": "jaU6hv___38CAAAAOwAAAC8AAAAdAAAAvyIWQIxpe0L0L1JC0wwDQgIAAAA7AAAALwAAAB0AAACIKAEA77lMBK7XZwEsuUwEyddnAQQAjwAAAAAA",
+        "location": [
+          72.137199,
+          23.582638
+        ],
+        "name": "",
+        "distance": 20.129561
+      },
+      {
+        "hint": "LK2gkVrT_JMpAgAACAAAANsKAAAjAAAAYivAQ0CErUAhUfFEYQzBQSkCAAAIAAAA2woAACMAAACIKAEAGNxMBA7ZZwFG2kwEl9pnARoA7w0AAAAA",
+        "location": [
+          72.145944,
+          23.58299
+        ],
+        "name": "",
+        "distance": 64.47830724
+      },
+      {
+        "hint": "npd8iFknJZNAAAAAogAAAGEAAAClAgAALYWPQmDRMkMZZtpCx2I8REAAAACiAAAAYQAAAKUCAACIKAEAMa5MBHvVZwHwrUwEt9ZnAQwAPxAAAAAA",
+        "location": [
+          72.134193,
+          23.582075
+        ],
+        "name": "",
+        "distance": 35.62113914
+      },
+      {
+        "hint": "nJd8iCO-gYo6AAAALgAAAAAAAAAAAAAAAG_DQS2rlkEAAAAAAAAAADoAAAAuAAAAAAAAAAAAAACIKAEAT7JMBCHYZwE-skwE8NdnAQAAvwYAAAAA",
+        "location": [
+          72.135247,
+          23.582753
+        ],
+        "name": "",
+        "distance": 5.697578804
+      }
+    ]
+  },
+  "basis": "OSRM/OpenStreetMap modeled driving distance/time; not live traffic or fare"
+}

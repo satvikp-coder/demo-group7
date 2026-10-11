@@ -276,3 +276,13 @@ See the existing [LICENSE](LICENSE), preserved from the upstream repository. Sou
 ## Contributors / Team
 
 **Group 07, CSC210 / Ahmedabad University:** Satvik, Manya, Aryan and Sonam. Original responsibilities and academic credits are preserved in [Team Responsibilities](docs/TEAM_RESPONSIBILITIES.md).
+
+### Hotel category coverage
+
+After the existing expansion/enrichment/refinement imports, back up the local database with `npm run local:backup`, then run `npm run local:hotel-coverage -- --dry-run` and `npm run local:hotel-coverage`. This additive, repeatable import adds 13 sourced properties and cached road-route pairs without updating existing records. All eight destinations then have at least one priced choice in Low Cost, Budget and Premium, including clearly identified nearby towns. Published room rates are indicative snapshots; confirm current rates, taxes, occupancy and availability. Unknown ratings and photo rights remain unknown. See [hotel tier sources and validation](reports/HOTEL_TIER_COVERAGE.md).
+
+### Itinerary scheduling and personal time
+
+The scheduler balances known attractions over the remaining trip days without an arbitrary three/four-visit limit. Actual route times, admission budgets, opening windows and calendar restrictions still constrain visits. Unused intervals of at least one hour are shown as personal time, with the following evidenced transfer excluded. Sparse catalogs are not filled with invented activities or repeated visits. Older saved plans receive the same disclosure from their saved stops and legs without modifying their records. Generate a new plan to apply the expanded visit allocation.
+
+Run `npm run test:scheduling:local` for isolated eight-destination interval/overlap tests and production-browser checks of current/legacy saved responses at desktop, tablet and mobile sizes. See [scheduling repair evidence](reports/SCHEDULE_GAP_REPAIR.md).

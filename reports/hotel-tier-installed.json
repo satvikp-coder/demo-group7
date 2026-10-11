@@ -1,0 +1,397 @@
+{
+  "verified": true,
+  "readOnly": true,
+  "checkedAt": "2026-10-11T17:29:59.549933+00:00",
+  "destinations": [
+    {
+      "destination": "Ahmedabad",
+      "slug": "ahmedabad",
+      "recorded": 12,
+      "unknownPrices": 7,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Maruti",
+              "id": "2a55e4b0-ad46-4133-b54d-a393ea209ec3",
+              "nightlyEstimate": 1400,
+              "distanceKm": 1.74,
+              "locality": "Pritam Nagar, Ellisbridge, Paldi, Ahmedabad"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Alka Inn, Ahmedabad",
+              "id": "bc06405f-9943-4568-970a-2bac9109e555",
+              "nightlyEstimate": 1700,
+              "distanceKm": 0.31,
+              "locality": "Ahmedabad, Gujarat"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 3,
+          "hotels": [
+            {
+              "name": "Lemon Tree Premier",
+              "id": "2f077d86-770e-4a0a-b6c8-caff49e1f548",
+              "nightlyEstimate": 5239,
+              "distanceKm": 0.49,
+              "locality": "Off Nehru Bridge, Sabarmati River Front, Ahmedabad 380001, Gujarat"
+            },
+            {
+              "name": "French Haveli Heritage Stay",
+              "id": "5e22eaba-9c9a-4bd0-8538-06e4c7ccb95e",
+              "nightlyEstimate": 5300,
+              "distanceKm": 1.43,
+              "locality": "1824 Khija Sheri, Dhal Ni Pol, opposite Jain temple, Ahmedabad 380001"
+            },
+            {
+              "name": "The House of MG",
+              "id": "ffaebdd3-1ae0-456d-ae34-0ac0b150ccf0",
+              "nightlyEstimate": 8469,
+              "distanceKm": 0.05,
+              "locality": "Opposite Sidi Saiyad Jali, Lal Darwaja, Ahmedabad 380001, Gujarat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Champaner",
+      "slug": "champaner",
+      "recorded": 3,
+      "unknownPrices": 0,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Rajdhani And Guest House, Halol",
+              "id": "3fa915a5-3f04-439b-b6be-5875ceb8606b",
+              "nightlyEstimate": 800,
+              "distanceKm": 7.72,
+              "locality": "Halol, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Sarvottam, Baska",
+              "id": "c1a109b2-78ab-4b8c-87af-1c6ef75735ba",
+              "nightlyEstimate": 2000,
+              "distanceKm": 9.83,
+              "locality": "Baska, near Halol, Gujarat"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Champaner Heritage Resort",
+              "id": "fd837939-438c-4ac7-9907-527abb1173f0",
+              "nightlyEstimate": 9092,
+              "distanceKm": 9.04,
+              "locality": "Village Bhamaria, off Champaner-Jambughoda Road, Gujarat 389360"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Dwarka",
+      "slug": "dwarka",
+      "recorded": 9,
+      "unknownPrices": 5,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Mathura Bhavan, Dwarka",
+              "id": "f41a9e2f-9d17-4fe5-879e-001ef5fbd9cf",
+              "nightlyEstimate": 896,
+              "distanceKm": 0.38,
+              "locality": "Dwarka, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 2,
+          "hotels": [
+            {
+              "name": "Hotel Darshan Palace",
+              "id": "ae1e8cea-8b50-4d35-b772-877183975d94",
+              "nightlyEstimate": 2460,
+              "distanceKm": 1.45,
+              "locality": "Jalaram Road, near Laxmi Marble, Rampara, Ghanshyam Nagar, Dwarka 361335"
+            },
+            {
+              "name": "Toran Hotel Dwarka",
+              "id": "eaf47a96-5913-42ea-bd13-e901ce0934ae",
+              "nightlyEstimate": 2900,
+              "distanceKm": 0.83,
+              "locality": "Near Circuit House, Civil Hospital Road, Dwarka, Gujarat"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "IRA by Orchid Dwarka",
+              "id": "d362c108-0b3e-44f1-be82-fe619299f2db",
+              "nightlyEstimate": 5156,
+              "distanceKm": 0.18,
+              "locality": "Dwarka, Gujarat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Gir National Park",
+      "slug": "gir-national-park",
+      "recorded": 7,
+      "unknownPrices": 4,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Sapphire, Junagadh",
+              "id": "70e1248e-de01-4958-96af-bc48f5411270",
+              "nightlyEstimate": 908,
+              "distanceKm": 42.09,
+              "locality": "Junagadh, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Dwarkesh Farm & Resort, Somnath",
+              "id": "778c5d25-9036-43eb-82e2-2d51f3fd279a",
+              "nightlyEstimate": 2159,
+              "distanceKm": 34.59,
+              "locality": "Somnath, Gujarat"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Anil Farms Gir Jungle Resort",
+              "id": "2e5ddc6e-4040-42a5-ab28-02e2da6b8d2e",
+              "nightlyEstimate": 4489,
+              "distanceKm": 2.27,
+              "locality": "Bhalchhel, Mendarda, Sasan Gir, Gujarat 362135"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Modhera",
+      "slug": "modhera",
+      "recorded": 6,
+      "unknownPrices": 3,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "The Grand Takshak, Mehsana",
+              "id": "4a404679-17c3-4f60-86a8-95e16b2b6a21",
+              "nightlyEstimate": 1050,
+              "distanceKm": 20.11,
+              "locality": "Mehsana, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Modhera Sunrise Resort",
+              "id": "77c6cd3d-a35b-41ec-8bf4-467f20bf7927",
+              "nightlyEstimate": 2833,
+              "distanceKm": 0.41,
+              "locality": "Behind the Sun Temple, Modhera, Gujarat 384412"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Shankus Waterpark and Resort, Mehsana",
+              "id": "5df11d23-6e3f-4cc8-aa9c-5df53959b7d0",
+              "nightlyEstimate": 4879,
+              "distanceKm": 29.06,
+              "locality": "Mehsana, Gujarat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "recorded": 4,
+      "unknownPrices": 1,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Sahara Palace, Bhuj",
+              "id": "a13099c5-692a-4625-b243-07978f98f802",
+              "nightlyEstimate": 1199,
+              "distanceKm": 67.55,
+              "locality": "Bhuj, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Hotel Prince Residency, Bhuj",
+              "id": "80861806-2306-4afc-83e7-d17f70d36908",
+              "nightlyEstimate": 2561,
+              "distanceKm": 68.81,
+              "locality": "Bhuj, Gujarat"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Gateway to Rann Resort",
+              "id": "1f2e84fe-9f94-452a-adf8-db4e4492b2da",
+              "nightlyEstimate": 5775,
+              "distanceKm": 5.26,
+              "locality": "Dhordo village, Gorewali Post, Bhuj taluka, Kutch370510"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Saputara",
+      "slug": "saputara",
+      "recorded": 9,
+      "unknownPrices": 6,
+      "categories": {
+        "Low Cost": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Manas Cottage, Saputara",
+              "id": "4f118ec1-b7b9-441b-9c68-9762c80967f0",
+              "nightlyEstimate": 1430,
+              "distanceKm": 0.56,
+              "locality": "Saputara, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Savshanti Motels, Saputara",
+              "id": "53669cd7-6fb2-403b-b36d-4acc987c5927",
+              "nightlyEstimate": 2800,
+              "distanceKm": 0.4,
+              "locality": "Saputara, Gujarat"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Aakar Lords Inn Saputara",
+              "id": "5590bec2-0f68-4dd4-b3b9-9c7c55432aa0",
+              "nightlyEstimate": 4560,
+              "distanceKm": 0.32,
+              "locality": "Saputara-Nashik Road, opposite Lake View Garden Circle, Saputara 394720"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "destination": "Somnath",
+      "slug": "somnath",
+      "recorded": 6,
+      "unknownPrices": 1,
+      "categories": {
+        "Low Cost": {
+          "choices": 2,
+          "hotels": [
+            {
+              "name": "Lilavati Atithigruh",
+              "id": "cc2a8fc3-3e19-4c9a-be49-c9034a38666d",
+              "nightlyEstimate": 750,
+              "distanceKm": 0.56,
+              "locality": "Prabhas Patan, Somnath, Gujarat"
+            },
+            {
+              "name": "Maheshwari Samaj Atithi Gruh",
+              "id": "015616d4-fbdf-413e-ad1c-ffb997bad7dd",
+              "nightlyEstimate": 750,
+              "distanceKm": 0.63,
+              "locality": "Prabhas Patan, Somnath, Gujarat"
+            }
+          ]
+        },
+        "Budget": {
+          "choices": 2,
+          "hotels": [
+            {
+              "name": "Sagar Darshan Atithigruh",
+              "id": "2dcc75af-b287-4760-9991-2b82d1504b87",
+              "nightlyEstimate": 3400,
+              "distanceKm": 0.22,
+              "locality": "Prabhas Patan, Somnath, Gujarat"
+            },
+            {
+              "name": "Premier Somnath",
+              "id": "cfcf1921-713c-4fc1-9e4a-71b38e101b7a",
+              "nightlyEstimate": 3972,
+              "distanceKm": 4.39,
+              "locality": "Unique Plaza complex, Junagadh Highway Road, near Regenta Hotel, Bhalpara Part, Gujarat 362268"
+            }
+          ]
+        },
+        "Premium": {
+          "choices": 1,
+          "hotels": [
+            {
+              "name": "Lords Inn Somnath",
+              "id": "f7ebfcad-ec51-4c83-8053-eac5e6b8c7e4",
+              "nightlyEstimate": 4255,
+              "distanceKm": 1.28,
+              "locality": "Somnath, Gujarat"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "hotels": 56,
+  "newSourcedHotels": 13,
+  "knownPrices": 29
+}

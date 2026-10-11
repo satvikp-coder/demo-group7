@@ -1,0 +1,510 @@
+{
+  "version": 1,
+  "release": "20261011",
+  "checked": "2026-10-11",
+  "attribution": "OpenStreetMap contributors,ODbL-1.0 for relevant coordinates and OSRM road models. Property/provider facts linked individually; no media copied.",
+  "records": [
+    {
+      "table": "hotels",
+      "city": "ahmedabad",
+      "key": "exp-20261011-hotel-alka-inn-ahmedabad",
+      "values": {
+        "slug": "hotel-alka-inn-ahmedabad",
+        "name": "Hotel Alka Inn, Ahmedabad",
+        "lat": 23.02884,
+        "lng": 72.583368,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.hotelalkainn.com/tariff.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.hotelalkainn.com/tariff.html",
+            "https://www.hotelalkainn.com/contact.html"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Official undated double-room tariff; taxes extra; current rates require confirmation. Priced room: Standard double-occupancy room. Checked2026-10-11; indicative published estimate, not a live quote or booking. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "Standard double-occupancy room",
+          "coordinate_basis": "Official property map center; approximate property location",
+          "booking_conditions": {
+            "priced_guests_per_room": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Mid-range",
+        "price_per_night": 1700,
+        "location": "Ahmedabad, Gujarat",
+        "description": "Real accommodation in Ahmedabad. The listed estimate is for Standard double-occupancy room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "champaner",
+      "key": "exp-20261011-hotel-rajdhani-and-guest-house-halol-near-champaner",
+      "values": {
+        "slug": "hotel-rajdhani-and-guest-house-halol-near-champaner",
+        "name": "Hotel Rajdhani And Guest House, Halol",
+        "lat": 22.51065,
+        "lng": 73.467538,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://yatradham.org/halol-hotel-rajdhani-and-guest-house-pavagadh.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://yatradham.org/halol-hotel-rajdhani-and-guest-house-pavagadh.html",
+            "https://www.hotelrajdhani.in/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider starting room estimate;40 taxes shown separately; minimum2guests/max2. Priced room: 2 Bed Non AC Deluxe Room. Checked2026-10-11; indicative published estimate, not a live quote or booking. Minimum2guests in the sourced stay. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "2 Bed Non AC Deluxe Room",
+          "coordinate_basis": "Official property map center; approximate property location",
+          "booking_conditions": {
+            "priced_guests_per_room": 2,
+            "minimum_guests": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Budget",
+        "price_per_night": 800,
+        "location": "Halol, Gujarat",
+        "description": "Real accommodation in Halol. Included in the wider nearby search for champaner. The listed estimate is for 2 Bed Non AC Deluxe Room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261011-mathura-bhavan-dwarka",
+      "values": {
+        "slug": "mathura-bhavan-dwarka",
+        "name": "Mathura Bhavan, Dwarka",
+        "lat": 22.239272,
+        "lng": 68.970864,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://yatradham.org/dwarka-mathura-bhavan.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://yatradham.org/dwarka-mathura-bhavan.html",
+            "https://www.mappls.com/direction-from-current-location-to-mathura%2Bbhawan%2C%2Bdwarka%2C%2Bgujarat%2C%2B361335?%40zdata=ZnJvbSsrdG8rNjguOTcwODY0LDIyLjIzOTI3MixTRDJBQkIrdmlh"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider starting room estimate;44.80 taxes shown separately;max4. Priced room: 2 Bed Non AC Room. Checked2026-10-11; indicative published estimate, not a live quote or booking. Minimum2guests in the sourced stay. Estimate covers up to4guests per room; additional guest charges must be confirmed.",
+          "priced_room": "2 Bed Non AC Room",
+          "coordinate_basis": "Public Mappls pin SD2ABB direction coordinates; matches the Bhathan Chowk property address and independently published plus-code6XQC+Q8G",
+          "booking_conditions": {
+            "minimum_guests": 2,
+            "priced_guests_per_room": 4
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Budget",
+        "price_per_night": 896,
+        "location": "Dwarka, Gujarat",
+        "description": "Real accommodation in Dwarka. The listed estimate is for 2 Bed Non AC Room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261011-ira-by-orchid-dwarka-dwarka",
+      "values": {
+        "slug": "ira-by-orchid-dwarka-dwarka",
+        "name": "IRA by Orchid Dwarka",
+        "lat": 22.2394,
+        "lng": 68.9678,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://irahotels.com/dwarka.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://irahotels.com/dwarka.html"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Official published nightly room estimate; taxes extra. Priced room: Deluxe Room. Checked2026-10-11; indicative published estimate, not a live quote or booking.",
+          "priced_room": "Deluxe Room",
+          "coordinate_basis": "Official property GeoCoordinates metadata",
+          "booking_conditions": {},
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Luxury",
+        "price_per_night": 5156,
+        "location": "Dwarka, Gujarat",
+        "description": "Real accommodation in Dwarka. The listed estimate is for Deluxe Room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "gir-national-park",
+      "key": "exp-20261011-hotel-sapphire-junagadh-near-gir-national-park",
+      "values": {
+        "slug": "hotel-sapphire-junagadh-near-gir-national-park",
+        "name": "Hotel Sapphire, Junagadh",
+        "lat": 21.523366,
+        "lng": 70.455709,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.goibibo.com/hotels/g-pu-hotels-under-1000-in-junagadh-hotel.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.goibibo.com/hotels/g-pu-hotels-under-1000-in-junagadh-hotel.html",
+            "https://us.trip.com/hotels/junagadh-hotel-detail-6527650/hotel-sapphire/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider current public room-night estimate;90 taxes/fees shown separately; no live booking/availability claim. Priced room: Published room-night estimate. Checked2026-10-11; indicative published estimate, not a live quote or booking.",
+          "priced_room": "Published room-night estimate",
+          "coordinate_basis": "Provider precise hotel map coordinates; matches JBComplex,oppositeSTStand,Junagadh",
+          "booking_conditions": {},
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Budget",
+        "price_per_night": 908,
+        "location": "Junagadh, Gujarat",
+        "description": "Real accommodation in Junagadh. Included in the wider nearby search for gir national park. The listed estimate is for Published room-night estimate; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "gir-national-park",
+      "key": "exp-20261011-dwarkesh-farm-resort-somnath-near-gir-national-park",
+      "values": {
+        "slug": "dwarkesh-farm-resort-somnath-near-gir-national-park",
+        "name": "Dwarkesh Farm & Resort, Somnath",
+        "lat": 20.901773,
+        "lng": 70.42776,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.easemytrip.com/hotels/dwarkesh-farm-resort-4925169/",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.easemytrip.com/hotels/dwarkesh-farm-resort-4925169/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider public room-night estimate;125 taxes/fees shown separately; this is the Somnath property within the wider Gir search area, not the similarly named Sasan farm. Priced room: Deluxe Room (2 guests,1 room; room only). Checked2026-10-11; indicative published estimate, not a live quote or booking. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "Deluxe Room (2 guests,1 room; room only)",
+          "coordinate_basis": "Provider property GeoCoordinates metadata; Somnath locality, not Sasan Gir",
+          "booking_conditions": {
+            "priced_guests_per_room": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Mid-range",
+        "price_per_night": 2159,
+        "location": "Somnath, Gujarat",
+        "description": "Real accommodation in Somnath. Included in the wider nearby search for gir national park. The listed estimate is for Deluxe Room (2 guests,1 room; room only); confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "modhera",
+      "key": "exp-20261011-the-grand-takshak-mehsana-near-modhera",
+      "values": {
+        "slug": "the-grand-takshak-mehsana-near-modhera",
+        "name": "The Grand Takshak, Mehsana",
+        "lat": 23.59994,
+        "lng": 72.32958,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://yatradham.org/mehsana-the-grand-takshak.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://yatradham.org/mehsana-the-grand-takshak.html",
+            "https://www.easemytrip.com/hotels/hotel-the-grand-takshak-1865903/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider published2guest room contribution includesGST; current dates require confirmation. Priced room: 2 Bed Non AC Room. Checked2026-10-11; indicative published estimate, not a live quote or booking. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "2 Bed Non AC Room",
+          "coordinate_basis": "Provider property GeoCoordinates metadata; address matches Ishita Arcade,NugarCircle",
+          "booking_conditions": {
+            "priced_guests_per_room": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Budget",
+        "price_per_night": 1050,
+        "location": "Mehsana, Gujarat",
+        "description": "Real accommodation in Mehsana. Included in the wider nearby search for modhera. The listed estimate is for 2 Bed Non AC Room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "modhera",
+      "key": "exp-20261011-shankus-waterpark-and-resort-mehsana-near-modhera",
+      "values": {
+        "slug": "shankus-waterpark-and-resort-mehsana-near-modhera",
+        "name": "Shankus Waterpark and Resort, Mehsana",
+        "lat": 23.4742,
+        "lng": 72.39208,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.easemytrip.com/hotels/shankus-waterpark-and-resort-1143187/",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.easemytrip.com/hotels/shankus-waterpark-and-resort-1143187/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider published room-night estimate;708 taxes/fees separately;breakfast included; no availability claim. Priced room: Cottage (2 guests,1room). Checked2026-10-11; indicative published estimate, not a live quote or booking. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "Cottage (2 guests,1room)",
+          "coordinate_basis": "Provider property GeoCoordinates metadata",
+          "booking_conditions": {
+            "priced_guests_per_room": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Luxury",
+        "price_per_night": 4879,
+        "location": "Mehsana, Gujarat",
+        "description": "Real accommodation in Mehsana. Included in the wider nearby search for modhera. The listed estimate is for Cottage (2 guests,1room); confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "rann-of-kutch",
+      "key": "exp-20261011-hotel-sahara-palace-bhuj-near-rann-of-kutch",
+      "values": {
+        "slug": "hotel-sahara-palace-bhuj-near-rann-of-kutch",
+        "name": "Hotel Sahara Palace, Bhuj",
+        "lat": 23.249184,
+        "lng": 69.670918,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://yatradham.org/bhuj-sahara-palace-hotel.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://yatradham.org/bhuj-sahara-palace-hotel.html",
+            "https://nominatim.openstreetmap.org/search?q=Hotel+Sahara+Palace+Bhuj+India&format=jsonv2&limit=3&addressdetails=1"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider starting room estimate;tax wording conflicts with separate59.95 tax line, taxes not certified;max2. Priced room: 2 Bed Non AC Room. Checked2026-10-11; indicative published estimate, not a live quote or booking. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "2 Bed Non AC Room",
+          "coordinate_basis": "OpenStreetMap named property match",
+          "booking_conditions": {
+            "priced_guests_per_room": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Budget",
+        "price_per_night": 1199,
+        "location": "Bhuj, Gujarat",
+        "description": "Real accommodation in Bhuj. Included in the wider nearby search for rann of kutch. The listed estimate is for 2 Bed Non AC Room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "rann-of-kutch",
+      "key": "exp-20261011-hotel-prince-residency-bhuj-near-rann-of-kutch",
+      "values": {
+        "slug": "hotel-prince-residency-bhuj-near-rann-of-kutch",
+        "name": "Hotel Prince Residency, Bhuj",
+        "lat": 23.233137,
+        "lng": 69.64731,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.ixigo.com/hotels/hotel-prince-residency-in-bhuj-1111947-d",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.ixigo.com/hotels/hotel-prince-residency-in-bhuj-1111947-d",
+            "https://nominatim.openstreetmap.org/search?q=Prince+Residency+Bhuj&format=jsonv2&limit=3"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider per-night per-room estimate;370 taxes/fees separately. Priced room: Standard Room. Checked2026-10-11; indicative published estimate, not a live quote or booking.",
+          "priced_room": "Standard Room",
+          "coordinate_basis": "OpenStreetMap named hotel match; distinct from Hotel Prince",
+          "booking_conditions": {},
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Mid-range",
+        "price_per_night": 2561,
+        "location": "Bhuj, Gujarat",
+        "description": "Real accommodation in Bhuj. Included in the wider nearby search for rann of kutch. The listed estimate is for Standard Room; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261011-manas-cottage-saputara",
+      "values": {
+        "slug": "manas-cottage-saputara",
+        "name": "Manas Cottage, Saputara",
+        "lat": 20.578573,
+        "lng": 73.75075,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.makemytrip.com/hotels/saputara-hotels-with-room_service.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.makemytrip.com/hotels/saputara-hotels-with-room_service.html",
+            "https://www.easemytrip.com/hotels/manas-cottage-saputara-1897678/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider public displayed room-night offer;252 taxes/fees separately; varies by dates, no availability claim. Priced room: Private room in homestay. Checked2026-10-11; indicative published estimate, not a live quote or booking.",
+          "priced_room": "Private room in homestay",
+          "coordinate_basis": "Provider property GeoCoordinates metadata, crosschecked with independent Gujjutours property location",
+          "booking_conditions": {},
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Homestay",
+        "tier": "Budget",
+        "price_per_night": 1430,
+        "location": "Saputara, Gujarat",
+        "description": "Real accommodation in Saputara. The listed estimate is for Private room in homestay; confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261011-savshanti-motels-saputara",
+      "values": {
+        "slug": "savshanti-motels-saputara",
+        "name": "Savshanti Motels, Saputara",
+        "lat": 20.573062,
+        "lng": 73.745703,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://yatradham.org/savshanti-motels-saputara.html",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://yatradham.org/savshanti-motels-saputara.html",
+            "https://savshantihotels.com/contact-us/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider starting room estimate, no meals;140 taxes shown separately;max2. Priced room: 2 Bed AC Room (EP Plan). Checked2026-10-11; indicative published estimate, not a live quote or booking. Estimate covers up to2guests per room; additional guest charges must be confirmed.",
+          "priced_room": "2 Bed AC Room (EP Plan)",
+          "coordinate_basis": "Decoded published property plus-code HPFW+67G near Saputara as7JGMHPFW+67G; precise point at code-area center",
+          "booking_conditions": {
+            "priced_guests_per_room": 2
+          },
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Mid-range",
+        "price_per_night": 2800,
+        "location": "Saputara, Gujarat",
+        "description": "Real accommodation in Saputara. The listed estimate is for 2 Bed AC Room (EP Plan); confirm current rates, occupancy and property policies at the linked source."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "somnath",
+      "key": "exp-20261011-lords-inn-somnath-somnath",
+      "values": {
+        "slug": "lords-inn-somnath-somnath",
+        "name": "Lords Inn Somnath",
+        "lat": 20.895632,
+        "lng": 70.410387,
+        "rating": null,
+        "source": "Reviewed property identity, published room estimate and location references",
+        "source_url": "https://www.ixigo.com/hotels/hotels-in-somnath",
+        "source_date": "2026-10-11",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-11",
+          "sources": [
+            "https://www.ixigo.com/hotels/hotels-in-somnath",
+            "https://www.lordshotels.com/inn-somnath/"
+          ],
+          "license": "Factual property/price references only; no publisher photos or descriptions redistributed. OpenStreetMap contributors ODbL-1.0 where coordinate source is OSM.",
+          "price_kind": "published_estimate",
+          "price_currency": "INR",
+          "price_basis": "Provider public per-night per-room estimate; taxes/inclusions require confirmation. Priced room: Published room-night estimate. Checked2026-10-11; indicative published estimate, not a live quote or booking.",
+          "priced_room": "Published room-night estimate",
+          "coordinate_basis": "Official property GeoCoordinates metadata",
+          "booking_conditions": {},
+          "notes": "Room estimate is a sourced snapshot and may vary by dates. Taxes, extra guests, live availability, guest ratings and image rights are not invented. Stay-type schema label does not certify government registration."
+        },
+        "stay_type": "Registered Hotel",
+        "tier": "Luxury",
+        "price_per_night": 4255,
+        "location": "Somnath, Gujarat",
+        "description": "Real accommodation in Somnath. The listed estimate is for Published room-night estimate; confirm current rates, occupancy and property policies at the linked source."
+      }
+    }
+  ],
+  "limitations": [
+    "Indicative sourced room snapshots only; no live rates or availability.",
+    "Nearby towns are shown under their actual locality, not misrepresented as the destination town.",
+    "Price categories use base nightly estimates; taxes/fees are additional or unconfirmed unless specifically stated.",
+    "Guest ratings/photos remain unknown; intentional hotel fallback used."
+  ]
+}

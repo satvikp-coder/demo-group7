@@ -1,3 +1,4 @@
+import {scheduleGaps} from '../../dsa/planning/scheduleGaps.ts';
 import {datedOperation} from './operatingSchedule.js';
 import {admissionEstimate} from './admissionPolicy.js';
 import {accommodationNights,lodgingSubtotal} from '../../dsa/planning/accommodation.ts';
@@ -173,6 +174,9 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
   }
   const unvisited=eligible.filter(a=>!visited.has(a.id)).map(a=>({id:a.id,name:a.name,reason:"Not scheduled within available routes, time and budget"}));
   const warnings=[];
+  // A sparse catalog may legitimately leave personal time. Report the interval
+  // separately from the evidenced transfer; never invent an attraction or booking.
+  const freeTime=scheduleGaps(stops,legs);
   if(!routes.length) warnings.push("no_route_data");
   if(staleRoutes.length) warnings.push("stale_route_coordinates_excluded");
   if(hotelCost>trip.budget) warnings.push("starting_hotel_over_budget");
@@ -186,7 +190,7 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
     hotel_over_budget:hotelCost>trip.budget,hotel_budget_shortfall:Math.max(0,hotelCost-trip.budget),
     lodging_nights:nights,nightly_room_estimate:hotel.price_per_night==null?null:Number(hotel.price_per_night),lodging_basis:trip.lodging_nights==null&&!trip.arrival_date?"legacy_days":"explicit_nights",lodging_taxes_known:false,transport_cost_known:legs.length===0,
     excluded_attractions:excluded,unscheduled_attractions:unvisited,skipped_meals:skippedMeals,
-    warnings,route_rows:routes.length,routing:stats,legs,
+    warnings,free_time:freeTime,route_rows:routes.length,routing:stats,legs,
   }};
 }
 

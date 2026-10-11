@@ -10,7 +10,7 @@ async function call(path,body,status=200){
 const email='nights-'+randomUUID()+'@example.test',password=randomBytes(24).toString('hex')+'Aa9!';
 await call('/auth/register',{name:'Isolated accommodation test',email,password,role:'tourist'},201);token=(await call('/auth/login',{email,password})).token;
 const destination=await call('/destinations/ahmedabad'),hotel=(await call('/destinations/ahmedabad/hotels?category=Premium'))[0];
-const baseInput={destination_id:destination.id,starting_hotel_id:hotel.id,days:1,budget:100000,start_time:'08:00',weights:{distance:34,cost:33,rating:33}};
+const baseInput={destination_id:destination.id,starting_hotel_id:hotel.id,days:1,budget:100000,travelers:2,start_time:'08:00',weights:{distance:34,cost:33,rating:33}};
 for(const patch of [{lodging_nights:0},{days:2,lodging_nights:1},{days:3,lodging_nights:2,rooms:3},{days:2,arrival_date:'2026-10-10',departure_date:'2026-10-11'},{}]){
  const input={...baseInput,...patch},nights=patch.lodging_nights??(patch.arrival_date?1:input.days),rooms=patch.rooms??1;
  const created=await call('/trips',input,201);assert.equal(created.hotel_total,Number(hotel.price_per_night)*nights*rooms);

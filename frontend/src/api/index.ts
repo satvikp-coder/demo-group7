@@ -99,6 +99,7 @@ export function attractionFromRow(row: Row): Attraction {
 }
 export function hotelFromRow(row: Row): Hotel {
   return { ...camel(row),id:row.id,name:row.name,lat:number(row.lat),lng:number(row.lng),
+    bookingConditions:row.provenance_review?.booking_conditions,
     pricePerNight:row.price_per_night==null?"Price unavailable \u2014 check current rates":money(row.price_per_night),priceNumeric:number(row.price_per_night),
     rating:label(row.rating),ratingNumeric:number(row.rating),tier:row.tier ?? "Not available",
     stayType:row.stay_type,location:label(row.location),description:[row.description, row.price_per_night == null ? "Price unavailable \u2014 check current rates. Overnight budgeting is unavailable; this does not mean a free room." : row.source_date ? `Published room estimate checked ${String(row.source_date).slice(0,10)}; confirm current rates and availability.` : "Catalog room estimate; confirm current rates and availability."].filter(Boolean).join(" "),

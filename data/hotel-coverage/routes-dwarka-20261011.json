@@ -1,0 +1,379 @@
+{
+  "city": "dwarka",
+  "checked": "2026-10-11",
+  "source_url": "https://router.project-osrm.org/table/v1/driving/68.970864,22.239272;68.9678,22.2394;69.095999,22.451995;68.967512,22.237774;69.087015,22.336061;68.964398,22.257331;68.964614,22.239932;68.9682,22.2405?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-mathura-bhavan-dwarka",
+      "name": "Mathura Bhavan, Dwarka",
+      "lat": 22.239272,
+      "lng": 68.970864
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-ira-by-orchid-dwarka-dwarka",
+      "name": "IRA by Orchid Dwarka",
+      "lat": 22.2394,
+      "lng": 68.9678
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a204",
+      "name": "Bet Dwarka",
+      "lat": 22.451995,
+      "lng": 69.095999
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a201",
+      "name": "Dwarkadhish Temple",
+      "lat": 22.237774,
+      "lng": 68.967512
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a202",
+      "name": "Nageshwar Jyotirlinga",
+      "lat": 22.336061,
+      "lng": 69.087015
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a203",
+      "name": "Rukmini Devi Temple",
+      "lat": 22.257331,
+      "lng": 68.964398
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r202",
+      "name": "Shrinath Dining Hall",
+      "lat": 22.239932,
+      "lng": 68.964614
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r201",
+      "name": "Toran Dining Hall Dwarka",
+      "lat": 22.2405,
+      "lng": 68.9682
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        443.7,
+        33744.7,
+        765.3,
+        17411.8,
+        2671.5,
+        847.1,
+        646.5
+      ],
+      [
+        537.4,
+        0,
+        33304.7,
+        408.6,
+        17028.9,
+        2231.5,
+        407.1,
+        263.6
+      ],
+      [
+        33643.5,
+        33279.4,
+        0,
+        33414.7,
+        21725.3,
+        31359,
+        33148.4,
+        33290.6
+      ],
+      [
+        765.3,
+        647,
+        33436.7,
+        0,
+        17502.6,
+        2363.5,
+        514.2,
+        737.2
+      ],
+      [
+        17207,
+        17028.9,
+        21725.3,
+        17502.6,
+        0,
+        18409.4,
+        17262.7,
+        16817
+      ],
+      [
+        2589.9,
+        2225.9,
+        31417,
+        2361.1,
+        18395.9,
+        0,
+        2094.8,
+        2237
+      ],
+      [
+        772.7,
+        408.6,
+        33173.7,
+        514.2,
+        17264.2,
+        2100.5,
+        0,
+        498.9
+      ],
+      [
+        441.7,
+        263.6,
+        33218.4,
+        737.2,
+        16817,
+        2145.2,
+        497.4,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "uDF9iEvYy5MNAAAACgAAAAAAAAAAAAAAImOhQWTVa0EAAAAAAAAAAA0AAAAKAAAAAAAAAAAAAACIKAEAcmkcBB5YUwFwaRwEKFhTAQAATxAAAAAA",
+        "location": [
+          68.970866,
+          22.239262
+        ],
+        "name": "Jakat Nakat Road",
+        "distance": 1.126367622
+      },
+      {
+        "hint": "miMAjobYy5NdAAAAPwAAAAAAAAAKAAAAaiGcQWiHT0EAAAAA_ksHQC4AAAAgAAAAAAAAAAUAAACIKAEAJ10cBKRYUwF4XRwEqFhTAQAAHwsAAAAA",
+        "location": [
+          68.967719,
+          22.239396
+        ],
+        "name": "",
+        "distance": 8.362713794
+      },
+      {
+        "hint": "D9Rfg_l_bZUUAAAAFQAAAD8BAAASAAAAmGS3QfUBs0FJqK9D4pSdQRQAAAAVAAAAPwEAABIAAACIKAEAcFMeBEOXVgE_Uh4EG5dWAR4AvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "cNjLkz3EzpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAACIKAEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "5ve5hRSxepMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAACIKAEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "q_e5hX-2Q5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAACIKAEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "D4mXgvWT2ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAACIKAEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      },
+      {
+        "hint": "m06JiU-qlJQLAAAABAAAAAwAAAAhAAAAiuxDQf5AeEAHpllB5PUQQgsAAAAEAAAADAAAACEAAACIKAEAml8cBA1eUwEIXxwE9FxTAQIAfxIAAAAA",
+        "location": [
+          68.968346,
+          22.240781
+        ],
+        "name": "",
+        "distance": 34.56563914
+      }
+    ],
+    "durations": [
+      [
+        0,
+        46.6,
+        1522.5,
+        95.1,
+        999.7,
+        178.5,
+        58.1,
+        52.8
+      ],
+      [
+        47.8,
+        0,
+        1502.5,
+        74.3,
+        984.1,
+        158.5,
+        38.1,
+        37.2
+      ],
+      [
+        1509.3,
+        1494.5,
+        0,
+        1525.2,
+        1451.8,
+        1410.1,
+        1477.6,
+        1488.8
+      ],
+      [
+        86.2,
+        77.5,
+        1528,
+        0,
+        1028.6,
+        184,
+        62.1,
+        81.7
+      ],
+      [
+        983.1,
+        986.7,
+        1452.1,
+        1031.1,
+        0,
+        1062.3,
+        985.9,
+        961.8
+      ],
+      [
+        170.1,
+        155.3,
+        1413.2,
+        186,
+        1061.4,
+        0,
+        138.4,
+        149.6
+      ],
+      [
+        49.9,
+        35.1,
+        1483.2,
+        63.7,
+        986.2,
+        139.2,
+        0,
+        39.3
+      ],
+      [
+        30.6,
+        34.2,
+        1495.6,
+        78.6,
+        962.3,
+        151.6,
+        33.4,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "uDF9iEvYy5MNAAAACgAAAAAAAAAAAAAAImOhQWTVa0EAAAAAAAAAAA0AAAAKAAAAAAAAAAAAAACIKAEAcmkcBB5YUwFwaRwEKFhTAQAATxAAAAAA",
+        "location": [
+          68.970866,
+          22.239262
+        ],
+        "name": "Jakat Nakat Road",
+        "distance": 1.126367622
+      },
+      {
+        "hint": "miMAjobYy5NdAAAAPwAAAAAAAAAKAAAAaiGcQWiHT0EAAAAA_ksHQC4AAAAgAAAAAAAAAAUAAACIKAEAJ10cBKRYUwF4XRwEqFhTAQAAHwsAAAAA",
+        "location": [
+          68.967719,
+          22.239396
+        ],
+        "name": "",
+        "distance": 8.362713794
+      },
+      {
+        "hint": "D9Rfg_l_bZUUAAAAFQAAAD8BAAASAAAAmGS3QfUBs0FJqK9D4pSdQRQAAAAVAAAAPwEAABIAAACIKAEAcFMeBEOXVgE_Uh4EG5dWAR4AvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "cNjLkz3EzpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAACIKAEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "5ve5hRSxepMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAACIKAEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "q_e5hX-2Q5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAACIKAEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "D4mXgvWT2ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAACIKAEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      },
+      {
+        "hint": "m06JiU-qlJQLAAAABAAAAAwAAAAhAAAAiuxDQf5AeEAHpllB5PUQQgsAAAAEAAAADAAAACEAAACIKAEAml8cBA1eUwEIXxwE9FxTAQIAfxIAAAAA",
+        "location": [
+          68.968346,
+          22.240781
+        ],
+        "name": "",
+        "distance": 34.56563914
+      }
+    ]
+  },
+  "basis": "OSRM/OpenStreetMap modeled driving distance/time; not live traffic or fare"
+}

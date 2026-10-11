@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "minimumGuestsChecked": true,
+      "roomCapacityChecked": true,
+      "validGuestLoginHandoff": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "width": 768,
+      "minimumGuestsChecked": true,
+      "roomCapacityChecked": true,
+      "validGuestLoginHandoff": true,
+      "writes": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "minimumGuestsChecked": true,
+      "roomCapacityChecked": true,
+      "validGuestLoginHandoff": true,
+      "writes": [],
+      "errors": []
+    }
+  ]
+}

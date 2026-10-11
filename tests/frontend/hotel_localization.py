@@ -30,11 +30,21 @@ with sync_playwright() as p:
    expect(page.get_by_label(nights_label,exact=True)).to_have_value('1')
    def category_response(r,value):
     return '/hotels' in r.url and parse_qs(urlparse(r.url).query).get('category')==[value]
+   # New sourced Low Cost hotel can legitimately become the initial category.
+   # Move to Budget first so the Low Cost click actually changes request keys.
+   if page.get_by_role('button',name=low,exact=True).get_attribute('aria-pressed')=='true':
+    with page.expect_response(lambda r:category_response(r,'Budget')):
+     page.get_by_role('button',name=budget,exact=True).click()
    with page.expect_response(lambda r:category_response(r,'Low Cost')) as response:
     page.get_by_role('button',name=low,exact=True).click()
-   assert response.value.status==200 and response.value.json()==[]
-   expect(page.locator('#planner-starting-hotel')).to_be_disabled()
-   expect(page.get_by_role('status').filter(has_text=low)).to_be_visible()
+   low_rows=response.value.json();assert response.value.status==200
+   assert all(h['hotel_category']=='Low Cost' for h in low_rows)
+   if low_rows:
+    chooser=page.locator('#planner-starting-hotel');expect(chooser).to_be_enabled();chooser.select_option(low_rows[0]['id'])
+    assert chooser.input_value()==low_rows[0]['id']
+   else:
+    expect(page.locator('#planner-starting-hotel')).to_be_disabled()
+    expect(page.get_by_role('status').filter(has_text=low)).to_be_visible()
    with page.expect_response(lambda r:category_response(r,'Budget')) as response:
     page.get_by_role('button',name=budget,exact=True).click()
    rows=response.value.json();assert response.value.status==200 and rows
@@ -47,7 +57,7 @@ with sync_playwright() as p:
    assert not errors and not writes
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
    page.screenshot(path=f'reports/phase3-hotel-{language}-{width}.png')
-   results.append({'language':language,'width':width,'apiCategoriesUnchanged':True,'honestEmptyState':True,'selectedDatabaseId':True,'translatedLabels':True,'pageErrors':errors,'writes':writes})
+   results.append({'language':language,'width':width,'apiCategoriesUnchanged':True,'categoryResultHandling':True,'lowCostChoices':len(low_rows),'emptyStateTested':not bool(low_rows),'selectedDatabaseId':True,'translatedLabels':True,'pageErrors':errors,'writes':writes})
    context.close()
  browser.close()
 Path('reports/phase3-hotel-localization.json').write_text(json.dumps({'verified':True,'results':results},indent=2),encoding='utf-8')
