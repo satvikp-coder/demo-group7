@@ -101,18 +101,22 @@ with sync_playwright() as p:
         selected = next(o for o in hotels.locator('option').evaluate_all('(els)=>els.map(e=>({value:e.value,text:e.text}))') if "The House of MG" in o["text"])
         catalog_hotels = context.request.get(API + "/destinations/ahmedabad/hotels").json()
         selected_price = next(h["price_per_night"] for h in catalog_hotels if h["id"] == selected["value"])
-        expected_hotel_total = selected_price * 2
+        expect(page.get_by_label("Lodging nights", exact=True)).to_have_value("1")
+        expected_hotel_total = selected_price * 1
         budget_label = f"\u20b9{expected_hotel_total:,.0f}"
         hotels.select_option(selected["value"])
         page.locator('#planner-budget-input').fill("3000")
         page.locator('[role=dialog] input[type=checkbox]').check()
         page.get_by_role("button", name="Review Plan").click()
-        with page.expect_response(lambda r: "/generate-itinerary" in r.url) as generated:
-            page.get_by_role("button", name="Generate Circular Plan").click()
-        assert generated.value.status == 422
-        expect(page.get_by_text("No feasible itinerary", exact=False)).to_be_visible()
-        check("Weighted UI rejects infeasible selected hotel without fake generation", status=422)
-        page.get_by_role("button", name="Adjust Logistics").click()
+        rejected_writes=[]
+        def record_rejected(request):
+            if request.method=='POST' and ('/trips' in request.url):rejected_writes.append(request.url)
+        page.on('request',record_rejected)
+        page.get_by_role("button", name="Generate Circular Plan").click()
+        expect(page.get_by_role('alert')).to_contain_text('Accommodation alone is '+budget_label)
+        assert not rejected_writes,rejected_writes
+        page.remove_listener('request',record_rejected)
+        check("Weighted UI rejects unaffordable hotel with exact cost before creating a trip", noTripWrites=True)
         page.locator('#planner-budget-input').fill("30000")
         page.locator('[role=dialog] input[type=checkbox]').uncheck()
         page.get_by_role("button", name="Review Plan").click()
@@ -334,6 +338,8 @@ with sync_playwright() as p:
         report["verified"] = True
     except Exception as error:
         report["failure"] = str(error)
+        try: page.screenshot(path=str(ROOT / "backend/reports/frontend-failure.png"), timeout=5000)
+        except Exception: pass
         try: report["failurePageText"] = page.locator('body').inner_text(timeout=2000)
         except Exception: report["failurePageText"] = "Unavailable after failure"
         raise

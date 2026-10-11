@@ -1,3 +1,4 @@
+import {hotelPriceView} from '../../dsa/planning/hotelPolicy.ts';
 import { pool } from "../config/database.js";
 
 export async function findById(id) {
@@ -5,7 +6,7 @@ export async function findById(id) {
     "SELECT * FROM hotels WHERE id = $1",
     [id],
   );
-  return rows[0] ?? null;
+  return rows[0] ? hotelPriceView(rows[0]) : null;
 }
 
 // Fetch the complete city set so DSA sorting precedes pagination.
@@ -14,7 +15,7 @@ export async function listByDestination(destinationId) {
     "SELECT * FROM hotels WHERE destination_id = $1",
     [destinationId],
   );
-  return rows;
+  return rows.map(hotelPriceView);
 }
 
 export async function hotelAnchor(slug) {

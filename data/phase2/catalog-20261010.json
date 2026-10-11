@@ -1,0 +1,1034 @@
+{
+  "version": 1,
+  "release": "20261010",
+  "checked": "2026-10-10",
+  "attribution": "OpenStreetMap contributors, ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "records": [
+    {
+      "table": "hotels",
+      "city": "champaner",
+      "key": "exp-20261010-hotel-sarvottam-baska-champaner",
+      "values": {
+        "slug": "hotel-sarvottam-baska-champaner",
+        "name": "Hotel Sarvottam, Baska",
+        "lat": 22.4645757,
+        "lng": 73.4447997,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://hotelsarvottam.com/rooms-3/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/6976899085",
+            "https://hotelsarvottam.com/rooms-3/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/6976899085",
+          "price_basis": "Official undated Silver double-room tariff INR2000; indicative room estimate, tax/fees and current rates must be confirmed. Not live availability.",
+          "facilities": [
+            "Air conditioning",
+            "Wi-Fi",
+            "Restaurant"
+          ],
+          "price_kind": "published_estimate"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": 2000,
+        "location": "Baska, near Halol, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-sahar-ki-masjid-champaner",
+      "values": {
+        "slug": "sahar-ki-masjid-champaner",
+        "name": "Sahar ki Masjid",
+        "lat": 22.4836379,
+        "lng": 73.5315576,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/186046398",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/186046398"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/186046398"
+        },
+        "category": "Heritage",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-octagonal-stepwell-champaner",
+      "values": {
+        "slug": "octagonal-stepwell-champaner",
+        "name": "Octagonal Stepwell",
+        "lat": 22.4864461,
+        "lng": 73.5376024,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/272040337",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/272040337"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/272040337"
+        },
+        "category": "Stepwell",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-helical-stepwell-champaner",
+      "values": {
+        "slug": "helical-stepwell-champaner",
+        "name": "Helical Stepwell",
+        "lat": 22.4843521,
+        "lng": 73.5177685,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://gujarattourism.com/central-zone/panchmahal/helical-stepwell.html",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/718499923",
+            "https://gujarattourism.com/central-zone/panchmahal/helical-stepwell.html"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/718499923",
+          "hours_basis": "Gujarat Tourism published 08:00–18:00; checked2026-10-10"
+        },
+        "category": "Stepwell",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": "08:00",
+        "closing_time": "18:00",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-ek-minar-ki-masjid-champaner",
+      "values": {
+        "slug": "ek-minar-ki-masjid-champaner",
+        "name": "Ek Minar ki Masjid",
+        "lat": 22.4896249,
+        "lng": 73.5150268,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/718548502",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/718548502"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/718548502"
+        },
+        "category": "Heritage",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-maqbara-mandvi-champaner",
+      "values": {
+        "slug": "maqbara-mandvi-champaner",
+        "name": "Maqbara Mandvi",
+        "lat": 22.4953998,
+        "lng": 73.511911,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/718548504",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/718548504"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/718548504"
+        },
+        "category": "Heritage",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-south-bhadra-gate-champaner",
+      "values": {
+        "slug": "south-bhadra-gate-champaner",
+        "name": "South Bhadra Gate",
+        "lat": 22.4832624,
+        "lng": 73.5325514,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/718548509",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/718548509"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/718548509"
+        },
+        "category": "Heritage",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261010-east-bhadra-gate-champaner",
+      "values": {
+        "slug": "east-bhadra-gate-champaner",
+        "name": "East Bhadra Gate",
+        "lat": 22.4849007,
+        "lng": 73.5364414,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/718548512",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/718548512"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/718548512"
+        },
+        "category": "Heritage",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "modhera",
+      "key": "exp-20261010-hotel-shivalik-mehsana-modhera",
+      "values": {
+        "slug": "hotel-shivalik-mehsana-modhera",
+        "name": "Hotel Shivalik, Mehsana",
+        "lat": 23.5945522,
+        "lng": 72.3300456,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://shivalikhotel.in/shivalik-hotel-rooms/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1335317144",
+            "https://shivalikhotel.in/shivalik-hotel-rooms/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1335317144",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Mehsana, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "modhera",
+      "key": "exp-20261010-hotel-sunshine-mehsana-modhera",
+      "values": {
+        "slug": "hotel-sunshine-mehsana-modhera",
+        "name": "Hotel Sunshine, Mehsana",
+        "lat": 23.5847427,
+        "lng": 72.3727851,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://indianembassy-moscow.gov.in/pdf/ahmedabad.pdf",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/2525219676",
+            "https://indianembassy-moscow.gov.in/pdf/ahmedabad.pdf"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/2525219676",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Mehsana, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "modhera",
+      "key": "exp-20261010-the-grand-raveta-patan-modhera",
+      "values": {
+        "slug": "the-grand-raveta-patan-modhera",
+        "name": "The Grand Raveta, Patan",
+        "lat": 23.8396491,
+        "lng": 72.1308285,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/node/7661050654",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/7661050654"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/7661050654",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Patan, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261010-sun-temple-museum-modhera",
+      "values": {
+        "slug": "sun-temple-museum-modhera",
+        "name": "Sun Temple Museum, Modhera",
+        "lat": 23.582391,
+        "lng": 72.1341284,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/911907267",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/911907267"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/911907267"
+        },
+        "category": "Museum",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261010-modhera-vav-modhera",
+      "values": {
+        "slug": "modhera-vav-modhera",
+        "name": "Modhera Vav",
+        "lat": 23.5826652,
+        "lng": 72.1370036,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/911907271",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/911907271"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "way/911907271"
+        },
+        "category": "Stepwell",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "gir-national-park",
+      "key": "exp-20261010-lion-safari-camp-sasan-gir-gir-national-park",
+      "values": {
+        "slug": "lion-safari-camp-sasan-gir-gir-national-park",
+        "name": "Lion Safari Camp, Sasan Gir",
+        "lat": 21.1680385,
+        "lng": 70.5760592,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/node/643400662",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/643400662"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/643400662",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Sasan Gir, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "gir-national-park",
+      "key": "exp-20261010-gir-birding-lodge-gir-national-park",
+      "values": {
+        "slug": "gir-birding-lodge-gir-national-park",
+        "name": "Gir Birding Lodge",
+        "lat": 21.1799036,
+        "lng": 70.5859001,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.girbirdinglodge.com/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/643583374",
+            "https://www.girbirdinglodge.com/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/643583374",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Sasan Gir, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "gir-national-park",
+      "key": "exp-20261010-sinh-sadan-guest-house-gir-national-park",
+      "values": {
+        "slug": "sinh-sadan-guest-house-gir-national-park",
+        "name": "Sinh Sadan Guest House",
+        "lat": 21.1697222,
+        "lng": 70.5982069,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Hotels.pdf",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/2757814663",
+            "https://girlion.gujarat.gov.in/Documents/Uploads/NewsUpdates/Hotels.pdf"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/2757814663",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Sasan Gir, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "gir-national-park",
+      "key": "exp-20261010-gokul-farmhouse-sasan-gir-gir-national-park",
+      "values": {
+        "slug": "gokul-farmhouse-sasan-gir-gir-national-park",
+        "name": "Gokul Farmhouse, Sasan Gir",
+        "lat": 21.149889,
+        "lng": 70.6022914,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.girgokulfarm.in/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/13509759401",
+            "https://www.girgokulfarm.in/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/13509759401",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Sasan Gir, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261010-toran-hill-resort-saputara",
+      "values": {
+        "slug": "toran-hill-resort-saputara",
+        "name": "Toran Hill Resort",
+        "lat": 20.580551,
+        "lng": 73.7471137,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://gujarattourism.com/accommodation/toran-hotel/toran-hill-resort.html",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/2562424815",
+            "https://gujarattourism.com/accommodation/toran-hotel/toran-hill-resort.html"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/2562424815",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Saputara, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261010-hotel-purohit-saputara",
+      "values": {
+        "slug": "hotel-purohit-saputara",
+        "name": "Hotel Purohit, Saputara",
+        "lat": 20.5813974,
+        "lng": 73.7488617,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/250492076",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/250492076"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/250492076",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Saputara, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261010-hotel-lake-view-saputara",
+      "values": {
+        "slug": "hotel-lake-view-saputara",
+        "name": "Hotel Lake View, Saputara",
+        "lat": 20.5778168,
+        "lng": 73.7483815,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://lakeview.co.in/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/491098304",
+            "https://lakeview.co.in/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/491098304",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Saputara, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261010-shilpi-hill-resort-saputara",
+      "values": {
+        "slug": "shilpi-hill-resort-saputara",
+        "name": "Shilpi Hill Resort",
+        "lat": 20.5778752,
+        "lng": 73.7491047,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.shilpihillresort.com/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/491098487",
+            "https://www.shilpihillresort.com/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/491098487",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Saputara, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261010-hotel-sejal-inn-saputara",
+      "values": {
+        "slug": "hotel-sejal-inn-saputara",
+        "name": "Hotel Sejal Inn",
+        "lat": 20.5807494,
+        "lng": 73.7473873,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/549543763",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/549543763"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/549543763",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Saputara, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "saputara",
+      "key": "exp-20261010-patang-residency-saputara",
+      "values": {
+        "slug": "patang-residency-saputara",
+        "name": "Patang Residency",
+        "lat": 20.5777056,
+        "lng": 73.746329,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/way/1204951620",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1204951620"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1204951620",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Patan, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261010-table-point-saputara",
+      "values": {
+        "slug": "table-point-saputara",
+        "name": "Table Point, Saputara",
+        "lat": 20.5692077,
+        "lng": 73.7411759,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/2562424817",
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "node/2562424817"
+        },
+        "category": "Viewpoint",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261010-sunrise-point-saputara",
+      "values": {
+        "slug": "sunrise-point-saputara",
+        "name": "Sunrise Point, Saputara",
+        "lat": 20.5873546,
+        "lng": 73.7597928,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.openstreetmap.org/node/4832558992",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/4832558992"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+          "osm_identity": "node/4832558992"
+        },
+        "category": "Viewpoint",
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified.",
+        "best_time_note": "Admission fee and visit duration unknown; confirm access before planning. This entry is discovery-only until required scheduling facts are available."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261010-ginger-dwarka",
+      "values": {
+        "slug": "ginger-dwarka",
+        "name": "Ginger Dwarka",
+        "lat": 22.2098193,
+        "lng": 69.0105802,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.gingerhotels.com/hotels/ginger-dwarka",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1341926552",
+            "https://www.gingerhotels.com/hotels/ginger-dwarka"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1341926552",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Dwarka, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261010-the-fern-sattva-resort-dwarka",
+      "values": {
+        "slug": "the-fern-sattva-resort-dwarka",
+        "name": "The Fern Sattva Resort Dwarka",
+        "lat": 22.2028059,
+        "lng": 69.0141842,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.fernhotels.com/temple-towns/the-fern-sattva-resort-dwarka",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1341926489",
+            "https://www.fernhotels.com/temple-towns/the-fern-sattva-resort-dwarka"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1341926489",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Dwarka, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261010-hawthorn-suites-by-wyndham-dwarka",
+      "values": {
+        "slug": "hawthorn-suites-by-wyndham-dwarka",
+        "name": "Hawthorn Suites by Wyndham Dwarka",
+        "lat": 22.2245176,
+        "lng": 69.0192961,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://hawthorndwarka.com/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1344373865",
+            "https://hawthorndwarka.com/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1344373865",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Dwarka, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261010-lemon-tree-premier-dwarka",
+      "values": {
+        "slug": "lemon-tree-premier-dwarka",
+        "name": "Lemon Tree Premier, Dwarka",
+        "lat": 22.2441987,
+        "lng": 68.9687268,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.lemontreehotels.com/lemon-tree-premier/dwarka/hotel-dwarka/contact-us",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1486403315",
+            "https://www.lemontreehotels.com/lemon-tree-premier/dwarka/hotel-dwarka/contact-us"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1486403315",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Dwarka, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "dwarka",
+      "key": "exp-20261010-vits-devbhumi-dwarka",
+      "values": {
+        "slug": "vits-devbhumi-dwarka",
+        "name": "VITS Devbhumi, Dwarka",
+        "lat": 22.2433489,
+        "lng": 68.9664738,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.vitshotels.com/devbhumi-dwarka/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/way/1436240310",
+            "https://www.vitshotels.com/devbhumi-dwarka/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "way/1436240310",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Dwarka, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    },
+    {
+      "table": "hotels",
+      "city": "rann-of-kutch",
+      "key": "exp-20261010-shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+      "values": {
+        "slug": "shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+        "name": "Shaam-e-Sarhad Village Resort, Hodka",
+        "lat": 23.6728617,
+        "lng": 69.5999025,
+        "rating": null,
+        "source": "Reviewed mapped identity/location; field-specific sources retained",
+        "source_url": "https://www.hodka.in/home/",
+        "source_date": "2026-10-10",
+        "provenance_status": "project_approved",
+        "image_url": null,
+        "provenance_review": {
+          "checked": "2026-10-10",
+          "sources": [
+            "https://www.openstreetmap.org/node/4002822856",
+            "https://www.hodka.in/home/"
+          ],
+          "license": "OpenStreetMap contributors, ODbL-1.0; factual property references, no media copied",
+          "notes": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified. Existing schema stay type does not certify tourism registration.",
+          "osm_identity": "node/4002822856",
+          "price_basis": "Price unavailable — check current rates"
+        },
+        "stay_type": "Registered Hotel",
+        "price_per_night": null,
+        "location": "Hodka, Kutch, Gujarat",
+        "description": "Mapped identity and coordinates; current visitor access, prices, guest ratings and live availability are not independently certified."
+      }
+    }
+  ],
+  "limitations": [
+    "Narrowed geographic queries recovered Dwarka and Hodka identities after earlier endpoint failures. Current tariffs remain unknown.",
+    "Unknown prices do not classify into a price band.",
+    "Unknown attraction admissions/durations remain discovery-only.",
+    "No independently sourced new guest ratings or licensed property media.",
+    "Duplicate Maneland OSM nodes disagree; not imported.",
+    "Student hostels, restaurants tagged hotels, unnamed and generic duplicate identities excluded."
+  ]
+}

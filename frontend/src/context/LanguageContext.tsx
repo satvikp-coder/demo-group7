@@ -39,7 +39,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem("app_language");
-    if (saved === "hi" || saved === "en") {
+    if (saved === "hi" || saved === "en" || saved === "gu") {
       return saved;
     }
     return "en";
@@ -79,6 +79,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
       item: T | null | undefined,
     ): string => {
       if (!item) return "";
+      if (language === "gu" && item.gujaratiName?.trim()) return item.gujaratiName;
       if (
         language === "hi" &&
         item.hindiName &&
@@ -101,6 +102,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
       item: T | null | undefined,
     ): string => {
       if (!item) return "";
+      if (language === "gu" && item.gujaratiDescription?.trim()) return item.gujaratiDescription;
       if (
         language === "hi" &&
         item.hindiDescription &&

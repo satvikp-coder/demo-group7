@@ -1,3 +1,4 @@
+import {accommodationNights,lodgingSubtotal} from '../../../dsa/planning/accommodation';
 import {PriorityControls} from './PriorityControls';
 import {DEFAULT_WEIGHTS,type PriorityWeights} from '../../../dsa/planning/priorities';
 import {HotelCategoryPicker} from './HotelCategoryPicker';
@@ -62,6 +63,9 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   // Step 2: Logistics state
   const [travelers,setTravelers]=useState(1);
   const [rooms,setRooms]=useState(1);
+  const [lodgingNights,setLodgingNights]=useState<number|undefined>(undefined);
+  const [arrivalDate,setArrivalDate]=useState("");
+  const [departureDate,setDepartureDate]=useState("");
   const [startDate,setStartDate]=useState("");
   const [weights,setWeights] = useState<PriorityWeights>({...DEFAULT_WEIGHTS});
   const [tripDays, setTripDays] = useState<number>(2);
@@ -101,6 +105,8 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
 
       setHotelCategory(initialConfig?.hotelCategory ?? classifyHotel((cityObj.hotels.find(h=>h.id===preferredForCity)??cityObj.hotels[0])?.priceNumeric) ?? "Budget");
       setTravelers(initialConfig?.travelers??1);setRooms(initialConfig?.rooms??1);setStartDate(initialConfig?.startDate??"");
+      setLodgingNights(initialConfig?.lodgingNights ?? (initialConfig?.tripId?initialConfig.tripDays:undefined));
+      setArrivalDate(initialConfig?.arrivalDate??"");setDepartureDate(initialConfig?.departureDate??"");
       setWeights(initialConfig?.weights ?? {...DEFAULT_WEIGHTS});
       if (initialConfig?.tripDays) setTripDays(initialConfig.tripDays);
       if (initialConfig?.budget) setBudget(initialConfig.budget);
@@ -143,16 +149,25 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
+  const nights=lodgingNights??Math.max(0,tripDays-1);
   if (!isOpen) return null;
 
   const handleGenerate = async () => {
     if(pendingRef.current) return;
     pendingRef.current = true; setPending(true); setRequestError("");
     const config: PlannerConfigPayload = {cityId:activeCity.id,tripDays,budget,startingHotelId,
-      startTime,hotelCategory,weights,travelers,rooms,startDate,wheelchairAccessibleOnly:wheelchairOnly};
+      startTime,hotelCategory,weights,travelers,rooms,lodgingNights:nights,arrivalDate,departureDate,startDate,wheelchairAccessibleOnly:wheelchairOnly};
     try {
-      if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error("Choose 1 to 20 travelers and rooms.");
-      if (!startingHotelId) throw new Error("Select a hotel in the chosen category.");
+      accommodationNights({days:tripDays,lodging_nights:nights,arrival_date:arrivalDate,departure_date:departureDate});
+      if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error(t("stay.invalidGroup"));
+      if (!startingHotelId) throw new Error(t("stay.hotelRequired"));
+      const hotelTotal=lodgingSubtotal(startingHotelObj?.priceNumeric??null,nights,rooms);
+      if(hotelTotal!==null&&hotelTotal>budget){
+        const money=(value:number)=>new Intl.NumberFormat(language+'-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(value);
+        const values:Record<string,string|number>={total:money(hotelTotal),nights,rooms,budget:money(budget),shortfall:money(hotelTotal-budget)};
+        setStep(2);
+        throw new Error(t('stay.overBudget').replace(/\{(\w+)\}/g,(match,key)=>String(values[key]??match)));
+      }
       if (!session.token()) { setCreatedTrip(null); onRequireAuthentication(config); return; }
       const key=JSON.stringify(config);
       let id=createdTrip?.key===key ? createdTrip.id : undefined;
@@ -586,10 +601,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </div>
 
                 <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl col-span-1 md:col-span-2">
-                  <label className="block text-xs">Start date (optional)<input aria-label="Trip start date" type="date" value={startDate} onChange={e=>setStartDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Travelers<input aria-label="Travelers" type="number" min="1" max="20" value={travelers} onChange={e=>setTravelers(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Rooms<input aria-label="Rooms" type="number" min="1" max="20" value={rooms} onChange={e=>setRooms(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <p className="text-xs text-stone">Admission and meal estimates are per traveler; nightly lodging is multiplied by rooms. Confirm room occupancy with the property. One lodging night per itinerary day; live availability and date-specific closures are not supplied.</p>
+                  <label className="block text-xs">{t("stay.startLabel")}<input aria-label={t("stay.startAria")} type="date" value={startDate} onChange={e=>setStartDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.travelers")}<input aria-label={t("stay.travelers")} type="number" min="1" max="20" value={travelers} onChange={e=>setTravelers(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.rooms")}<input aria-label={t("stay.rooms")} type="number" min="1" max="20" value={rooms} onChange={e=>setRooms(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.nights")}<input aria-label={t("stay.nights")} type="number" min="0" max={tripDays+1} value={nights} onChange={e=>setLodgingNights(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.arrivalLabel")}<input aria-label={t("stay.arrivalAria")} type="date" value={arrivalDate} onChange={e=>setArrivalDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.departureLabel")}<input aria-label={t("stay.departureAria")} type="date" value={departureDate} onChange={e=>setDepartureDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <p className="text-xs text-stone">{t("stay.rule").replace("{nights}",String(nights)).replace("{rooms}",String(rooms))}</p>
                 </div>
                 <PriorityControls value={weights} onChange={setWeights}/>
                 {/* 5. Accessibility Constraint Toggle */}
@@ -721,7 +739,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                   <button
                     type="button"
-                    disabled={!startingHotelId} onClick={() => { if(!session.token()) { onRequireAuthentication({cityId:activeCity.id,tripDays,budget,startingHotelId,hotelCategory,weights,travelers,rooms,startDate,startTime,wheelchairAccessibleOnly:wheelchairOnly}); return; } setShowComparisonModal(true); }}
+                    disabled={!startingHotelId} onClick={() => { if(!session.token()) { onRequireAuthentication({cityId:activeCity.id,tripDays,budget,startingHotelId,hotelCategory,weights,travelers,rooms,lodgingNights:nights,arrivalDate,departureDate,startDate,startTime,wheelchairAccessibleOnly:wheelchairOnly}); return; } setShowComparisonModal(true); }}
                     className="bg-salt hover:bg-ink hover:text-salt text-ink border-2 border-gold font-mono text-xs font-bold px-5 py-3 uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md transition-all rounded-lg"
                   >
                     <SlidersHorizontal className="w-4 h-4 text-gold" />
@@ -754,7 +772,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
             cityId: activeCity.id,
             tripDays,
             budget,
-            startingHotelId,hotelCategory,weights,travelers,rooms,startDate,
+            startingHotelId,hotelCategory,weights,travelers,rooms,lodgingNights:nights,arrivalDate,departureDate,startDate,
             startTime: startTime || "08:00 AM",
             wheelchairAccessibleOnly: wheelchairOnly,
           }}

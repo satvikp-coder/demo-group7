@@ -1,0 +1,301 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-09T20:46:35Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 3556708435,
+  "lat": 22.4600373,
+  "lon": 73.5196721,
+  "tags": {
+    "historic": "castle",
+    "name": "Khandia Buraj"
+  }
+},
+{
+  "type": "node",
+  "id": 3556724150,
+  "lat": 22.4701826,
+  "lon": 73.5240036,
+  "tags": {
+    "historic": "castle",
+    "name": "Manchi Fort"
+  }
+},
+{
+  "type": "node",
+  "id": 4547356590,
+  "lat": 22.4832847,
+  "lon": 73.5330746,
+  "tags": {
+    "addr:postcode": "389360",
+    "historic": "archaeological_site",
+    "name": "Champaner-Pavagadh Archaeological Park",
+    "name:hi": "चंपानेर - पावागढ़ पुरातत्व पार्क",
+    "wikidata": "Q844427",
+    "wikipedia": "en:Champaner-Pavagadh Archaeological Park"
+  }
+},
+{
+  "type": "node",
+  "id": 6976899085,
+  "lat": 22.4645757,
+  "lon": 73.4447997,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Hotel Sarvottam - Takes Foreigners",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 186046398,
+  "center": {
+    "lat": 22.4836379,
+    "lon": 73.5315576
+  },
+  "tags": {
+    "building": "ruins",
+    "historic": "building",
+    "name": "Sahar ki Masjid"
+  }
+},
+{
+  "type": "way",
+  "id": 272040337,
+  "center": {
+    "lat": 22.4864461,
+    "lon": 73.5376024
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "man_made": "water_well",
+    "name": "Octagonal Stepwell"
+  }
+},
+{
+  "type": "way",
+  "id": 548555104,
+  "center": {
+    "lat": 22.4791842,
+    "lon": 73.5358479
+  },
+  "tags": {
+    "historic": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 548555107,
+  "center": {
+    "lat": 22.4762450,
+    "lon": 73.5326858
+  },
+  "tags": {
+    "area": "yes",
+    "historic": "yes",
+    "name": "Atak Gate",
+    "tourism": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 566349039,
+  "center": {
+    "lat": 22.4829330,
+    "lon": 73.5472664
+  },
+  "tags": {
+    "historic": "ruins"
+  }
+},
+{
+  "type": "way",
+  "id": 566349044,
+  "center": {
+    "lat": 22.4946460,
+    "lon": 73.5572447
+  },
+  "tags": {
+    "historic": "ruins"
+  }
+},
+{
+  "type": "way",
+  "id": 566349048,
+  "center": {
+    "lat": 22.4903925,
+    "lon": 73.5291435
+  },
+  "tags": {
+    "historic": "ruins",
+    "name": "Excavated Site"
+  }
+},
+{
+  "type": "way",
+  "id": 566349050,
+  "center": {
+    "lat": 22.4755599,
+    "lon": 73.5155316
+  },
+  "tags": {
+    "historic": "ruins"
+  }
+},
+{
+  "type": "way",
+  "id": 718499906,
+  "center": {
+    "lat": 22.4893995,
+    "lon": 73.5337669
+  },
+  "tags": {
+    "historic": "archaeological_site"
+  }
+},
+{
+  "type": "way",
+  "id": 718499907,
+  "center": {
+    "lat": 22.4964198,
+    "lon": 73.5301270
+  },
+  "tags": {
+    "historic": "archaeological_site"
+  }
+},
+{
+  "type": "way",
+  "id": 718499921,
+  "center": {
+    "lat": 22.4847007,
+    "lon": 73.5314974
+  },
+  "tags": {
+    "historic": "archaeological_site"
+  }
+},
+{
+  "type": "way",
+  "id": 718499923,
+  "center": {
+    "lat": 22.4843521,
+    "lon": 73.5177685
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Helical Stepped Well",
+    "wikidata": "Q62783238",
+    "wikimedia_commons": "Category:Helical stepwell, Champaner"
+  }
+},
+{
+  "type": "way",
+  "id": 718502788,
+  "center": {
+    "lat": 22.4908455,
+    "lon": 73.5411300
+  },
+  "tags": {
+    "historic": "archaeological_site"
+  }
+},
+{
+  "type": "way",
+  "id": 718548502,
+  "center": {
+    "lat": 22.4896249,
+    "lon": 73.5150268
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Ek-Minar-Ki-Masjid"
+  }
+},
+{
+  "type": "way",
+  "id": 718548504,
+  "center": {
+    "lat": 22.4953998,
+    "lon": 73.5119110
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Maqbara Mandvi"
+  }
+},
+{
+  "type": "way",
+  "id": 718548508,
+  "center": {
+    "lat": 22.4830021,
+    "lon": 73.5222517
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "name": "City Gate"
+  }
+},
+{
+  "type": "way",
+  "id": 718548509,
+  "center": {
+    "lat": 22.4832624,
+    "lon": 73.5325514
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "name": "South Bhadra Gate",
+    "ruins": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 718548512,
+  "center": {
+    "lat": 22.4849007,
+    "lon": 73.5364414
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "name": "East Bhadra Gate",
+    "ruins": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1047655071,
+  "center": {
+    "lat": 22.3369833,
+    "lon": 73.4685161
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Muni Seva Ashram",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "relation",
+  "id": 9969235,
+  "center": {
+    "lat": 22.4941021,
+    "lon": 73.5303628
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

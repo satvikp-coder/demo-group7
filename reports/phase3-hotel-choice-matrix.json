@@ -1,0 +1,87 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "destination": "Ahmedabad",
+      "categories": {
+        "Low Cost": 1,
+        "Budget": 0,
+        "Premium": 3
+      },
+      "allRecordedHotels": 11,
+      "unknownPriceHotels": 7
+    },
+    {
+      "destination": "Champaner",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 1,
+        "Premium": 1
+      },
+      "allRecordedHotels": 2,
+      "unknownPriceHotels": 0
+    },
+    {
+      "destination": "Dwarka",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 2,
+        "Premium": 0
+      },
+      "allRecordedHotels": 7,
+      "unknownPriceHotels": 5
+    },
+    {
+      "destination": "Gir National Park",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 0,
+        "Premium": 1
+      },
+      "allRecordedHotels": 5,
+      "unknownPriceHotels": 4
+    },
+    {
+      "destination": "Modhera",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 1,
+        "Premium": 0
+      },
+      "allRecordedHotels": 4,
+      "unknownPriceHotels": 3
+    },
+    {
+      "destination": "Rann of Kutch",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 0,
+        "Premium": 1
+      },
+      "allRecordedHotels": 2,
+      "unknownPriceHotels": 1
+    },
+    {
+      "destination": "Saputara",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 0,
+        "Premium": 1
+      },
+      "allRecordedHotels": 7,
+      "unknownPriceHotels": 6
+    },
+    {
+      "destination": "Somnath",
+      "categories": {
+        "Low Cost": 2,
+        "Budget": 2,
+        "Premium": 0
+      },
+      "allRecordedHotels": 5,
+      "unknownPriceHotels": 1
+    }
+  ],
+  "pageErrors": [],
+  "writes": []
+}

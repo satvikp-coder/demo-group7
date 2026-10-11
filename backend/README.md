@@ -194,8 +194,11 @@ rows first, with Dijkstra only for attraction pairs lacking a direct edge. It do
 not read CSV files during requests. Database distances replace the client's synthetic
 geographic fallback; unavailable hotel/restaurant transfer edges remain unavailable.
 The legacy hotel-selection helper is intentionally not called because it can replace
-an over-budget user selection. Lodging follows the existing convention: one night
-per requested day, charged once on each day's departure stop; return costs zero.
+an over-budget user selection. New requests may supply `lodging_nights` or both `arrival_date` and `departure_date`.
+The room subtotal is nightly estimate times nights times rooms; taxes remain unknown.
+New forms default to days minus one, with an explicit override. Requests and saved
+rows omitting these fields retain one night per day for compatibility. Return stops
+cost zero; zero purchased nights are allowed without claiming free accommodation.
 
 Only `wheelchair_accessible=true` attractions enter wheelchair-only candidate selection
 or intermediate graph nodes. False and unknown values produce explicit exclusions.

@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "reviewedFrontendCheckoutHashes": {
+    "frontend/src/api/index.ts": true,
+    "frontend/src/components/ItineraryView.tsx": true,
+    "frontend/src/components/Navbar.tsx": true,
+    "frontend/src/components/PlannerModal.tsx": true,
+    "frontend/src/components/StrategyComparisonModal.tsx": true,
+    "frontend/src/context/LanguageContext.tsx": true,
+    "frontend/src/data/gujarati.ts": true,
+    "frontend/src/data/translations.ts": true,
+    "frontend/src/utils/itineraryPlanner.ts": true,
+    "frontend/public/image-credits.html": true,
+    "frontend/public/assets/photographs/bhadra-fort-clock-ahmedabad.webp": true,
+    "frontend/public/assets/photographs/manifest.json": true,
+    "frontend/public/catalog-phase2.json": true,
+    "frontend/public/data-credits.html": true
+  },
+  "stagedFilesChecked": 758,
+  "privateValueFindings": 0,
+  "note": "Exact secret values compared privately; never exported. Source-pattern audit separately reports zero findings."
+}

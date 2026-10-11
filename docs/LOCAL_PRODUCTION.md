@@ -164,3 +164,47 @@ hotlink/distribution permission and reliable availability are established.
 Public hosting still requires a chosen account, production database, protected
 secrets, URLs/domain/DNS, HTTPS termination, provider backup scheduling and monitoring.
 Use [PRODUCTION.md](PRODUCTION.md) for that separate deployment step.
+
+## Phase 2 additive enrichment
+
+After a verified backup, run `npm run local:up`, `npm run local:expand`, then
+`npm run local:enrich`. Existing installations already containing the first
+expansion may run only the final enrichment command after upgrading.
+The expected combined catalog is 8/44/43/12/322 (destinations/attractions/hotels/
+restaurants/routes). Both imports are transactional and idempotent. No reset is
+required. Migration008 adds nullable accommodation fields without changing old
+trips. See [Phase 2 readiness](../reports/PHASE2_FINAL_READINESS.md).
+
+## Phase 3 local checks and reviewed corrections
+
+Before a presentation, run `npm run local:demo:check`. This read-only check verifies
+the local configuration, frontend, API/database readiness, eight destination
+catalogs, protected generation endpoint, migration checksums and installed image
+bytes. It prints the failing check and recovery command when something is missing.
+It does not sign in, create test accounts, import data or certify a complete trip.
+
+The reviewed six-attraction correction is separate from startup:
+
+```sh
+npm run local:backup -- backups/before-phase3.dump
+npm run local:up
+npm run local:refine -- --dry-run
+npm run local:refine
+npm run local:demo:check
+```
+
+Verify backup restoration into a new database before applying corrections. The
+import refuses unexpected existing values, preserves prior provenance and commits
+all six updates together. Repetition is a no-op; it never deletes or resets records.
+It updates five Ahmedabad visitor-guidance records and Gir's documented vehicle
+fee/operating-policy description. It does not rewrite saved trips.
+
+Use `npm run test:phase3:production:local` for the isolated expanded-catalog API and
+browser tests, including dates, rooms, safari groups, seasonal closure, saved trip
+resizing and Gujarati keyboard priorities. Run it sequentially with other suites.
+`npm run test:demo:local` rehearses authenticated generation, three Ahmedabad
+priority settings, Somnath on mobile and Modhera on tablet against the current
+reviewed catalog in a separate temporary database; the installed user is untouched.
+See [Phase 3 test evidence](../reports/PHASE3_FULL_TEST_RESULTS.md) and
+[local demo status](../reports/PHASE3_LOCAL_DEMO_READINESS.md) for current coverage
+and remaining factual/localization limitations.

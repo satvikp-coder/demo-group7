@@ -1,0 +1,43 @@
+import {HOTEL_TRANSLATIONS} from './hotelTranslations';
+import {ACCOMMODATION_TRANSLATIONS} from './accommodationTranslations';
+export const PHASE3_TRANSLATIONS = {
+ en: {
+  ...HOTEL_TRANSLATIONS.en,
+  ...ACCOMMODATION_TRANSLATIONS.en,
+  'priority.title':'Your Priorities',
+  'priority.distance':'Distance','priority.cost':'Cost','priority.rating':'Rating',
+  'priority.distanceAria':'distance priority','priority.costAria':'cost priority','priority.ratingAria':'rating priority',
+  'priority.rule':'Changing one priority redistributes the rest in their current ratio, rounded to whole percentages. If both are zero, the remainder is split evenly. Total always stays 100%.',
+  'priority.reset':'Reset priorities (34 / 33 / 33)',
+  'whatif.savedExplanation':'Adjust the settings, then Save to generate and persist a new route. Costs below describe the saved plan.',
+  'whatif.nights':'Nights in the new version',
+  'whatif.nightRule':'Changing trip length adjusts nights and checkout; an explicit zero-night visit stays at zero.',
+  'whatif.savedRoute':'Saved route:',
+ },
+ hi: {
+  ...HOTEL_TRANSLATIONS.hi,
+  ...ACCOMMODATION_TRANSLATIONS.hi,
+  'priority.title':'आपकी प्राथमिकताएँ',
+  'priority.distance':'दूरी','priority.cost':'खर्च','priority.rating':'रेटिंग',
+  'priority.distanceAria':'दूरी की प्राथमिकता','priority.costAria':'खर्च की प्राथमिकता','priority.ratingAria':'रेटिंग की प्राथमिकता',
+  'priority.rule':'एक प्राथमिकता बदलने पर बाकी प्रतिशत उनके वर्तमान अनुपात में बदलते हैं और पूर्ण संख्याओं में गोल किए जाते हैं। दोनों शून्य हों तो शेष बराबर बँटता है। कुल हमेशा100% रहता है।',
+  'priority.reset':'प्राथमिकताएँ रीसेट करें (34 / 33 / 33)',
+  'whatif.savedExplanation':'सेटिंग बदलें, फिर नया मार्ग बनाने और सहेजने के लिए सेव करें। नीचे दी गई लागत सहेजी गई योजना की है।',
+  'whatif.nights':'नए संस्करण में रातें',
+  'whatif.nightRule':'यात्रा की अवधि बदलने पर रातें और प्रस्थान की तारीख बदलती हैं। शून्य रातों की यात्रा शून्य ही रहती है।',
+  'whatif.savedRoute':'सहेजा गया मार्ग:',
+ },
+ gu: {
+  ...HOTEL_TRANSLATIONS.gu,
+  ...ACCOMMODATION_TRANSLATIONS.gu,
+  'priority.title':'તમારી પ્રાથમિકતાઓ',
+  'priority.distance':'અંતર','priority.cost':'ખર્ચ','priority.rating':'રેટિંગ',
+  'priority.distanceAria':'અંતરની પ્રાથમિકતા','priority.costAria':'ખર્ચની પ્રાથમિકતા','priority.ratingAria':'રેટિંગની પ્રાથમિકતા',
+  'priority.rule':'એક પ્રાથમિકતા બદલવાથી બાકીના ટકા તેમના હાલના પ્રમાણમાં બદલાય છે અને પૂર્ણ અંકોમાં ગોળ થાય છે. બંને શૂન્ય હોય તો બાકીનો ભાગ સરખો વહેંચાય છે. કુલ હંમેશાં100% રહે છે.',
+  'priority.reset':'પ્રાથમિકતાઓ રીસેટ કરો (34 / 33 / 33)',
+  'whatif.savedExplanation':'સેટિંગ બદલો, પછી નવો માર્ગ બનાવવા અને સાચવવા માટે સેવ કરો. નીચે દર્શાવેલ ખર્ચ સાચવેલી યોજનાનો છે.',
+  'whatif.nights':'નવા સંસ્કરણમાં રાતો',
+  'whatif.nightRule':'પ્રવાસની અવધિ બદલવાથી રાતો અને પ્રસ્થાનની તારીખ બદલાય છે. શૂન્ય રાતોનો પ્રવાસ શૂન્ય જ રહે છે.',
+  'whatif.savedRoute':'સાચવેલો માર્ગ:',
+ },
+};

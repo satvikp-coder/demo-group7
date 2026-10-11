@@ -52,3 +52,14 @@ frontend/public/assets/photographs/manifest.json text eol=crlf
 frontend/public/catalog-expansion.json text eol=crlf
 frontend/src/components/HotelCategoryPicker.tsx text eol=crlf
 frontend/src/components/PriorityControls.tsx -text
+
+# Phase 2 reviewed byte hashes must survive fresh checkouts.
+frontend/src/data/translations.ts -text
+frontend/src/data/gujarati.ts -text
+frontend/public/assets/photographs/manifest.json -text
+frontend/public/catalog-phase2.json -text
+
+# Phase 3 translation files are pinned by reviewed byte hashes.
+frontend/src/data/phase3Translations.ts -text
+frontend/src/data/hotelTranslations.ts -text
+frontend/src/data/accommodationTranslations.ts -text

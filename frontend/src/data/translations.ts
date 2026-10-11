@@ -1,11 +1,15 @@
-export type Language = "en" | "hi";
+import {GUJARATI} from "./gujarati";
+import {PHASE3_TRANSLATIONS} from './phase3Translations';
+export type Language = "en" | "hi" | "gu";
 
 export interface TranslationDictionary {
   [key: string]: string;
 }
 
 export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
+  gu: {...GUJARATI,...PHASE3_TRANSLATIONS.gu},
   en: {
+    ...PHASE3_TRANSLATIONS.en,
     // Navbar & Navigation
     "nav.brand": "Gujarat Heritage Directory",
     "nav.subtitle": "Stepwell Geometric Itinerary Engine",
@@ -150,6 +154,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "common.plan_trip": "Plan Custom Route",
   },
   hi: {
+    ...PHASE3_TRANSLATIONS.hi,
     // Navbar & Navigation
     "nav.brand": "गुजरात विरासत निर्देशिका",
     "nav.subtitle": "स्टेपवेल ज्यामितीय यात्रा इंजन",
@@ -302,6 +307,7 @@ export interface UIStrings {
   [key: string]: {
     en: string;
     hi: string;
+    gu: string;
   };
 }
 
@@ -311,6 +317,7 @@ export const UI_TRANSLATIONS: UIStrings = new Proxy(
     get: (_, key: string) => {
       return {
         en: TRANSLATIONS.en[key] || key,
+        gu: TRANSLATIONS.gu[key] || TRANSLATIONS.en[key] || key,
         hi: TRANSLATIONS.hi[key] || TRANSLATIONS.en[key] || key,
       };
     },

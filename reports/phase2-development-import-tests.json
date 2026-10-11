@@ -1,0 +1,195 @@
+{
+  "startedAt": "2026-10-10T03:09:53.145Z",
+  "verified": true,
+  "checks": [
+    "Dry run rolls back all records",
+    "Failed import rolls back earlier hotel insertion",
+    "Every original row preserved byte-for-byte in JSON values",
+    "Repeated import preserves IDs and values without duplicates",
+    "Real authenticated API validates nights, room totals, dates and persisted generation for 10 cases",
+    "Real browser explicit zero-night generation, refresh, decoded images and overflow at 1440/768/390"
+  ],
+  "before": {
+    "destinations": 8,
+    "attractions": 33,
+    "hotels": 23,
+    "restaurants": 12,
+    "routes": 163,
+    "users": 0,
+    "trips": 0
+  },
+  "after": {
+    "destinations": 8,
+    "attractions": 44,
+    "hotels": 43,
+    "restaurants": 12,
+    "routes": 322,
+    "users": 0,
+    "trips": 0
+  },
+  "imported": {
+    "release": "20261010",
+    "dryRun": false,
+    "inserted": [
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-sarvottam-baska-champaner",
+        "id": "07103923-9fc5-4f9c-8ce2-e7df34140152"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-sahar-ki-masjid-champaner",
+        "id": "c81c21cc-f378-4341-9c4b-5ebe16b8fbbc"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-octagonal-stepwell-champaner",
+        "id": "21d17f0b-93b3-4c6a-90f3-9d7d3623a07b"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-helical-stepwell-champaner",
+        "id": "9f6b83bf-196b-4d19-a4c8-e9e82fae9193"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-ek-minar-ki-masjid-champaner",
+        "id": "ae5870e7-3338-4ec5-b43a-4a3a87be524d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-maqbara-mandvi-champaner",
+        "id": "d21abfda-ad93-407b-8d9c-48b244ccc1bf"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-south-bhadra-gate-champaner",
+        "id": "83fdc8de-a381-43a2-b002-961260dbe1b1"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-east-bhadra-gate-champaner",
+        "id": "ad0f8f89-e787-4f3d-95e5-ce283ed50881"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-shivalik-mehsana-modhera",
+        "id": "618068e8-b02e-4d10-b66b-75da4c5d93f4"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-sunshine-mehsana-modhera",
+        "id": "6d991f71-70cd-468f-bd96-47e493c58532"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-the-grand-raveta-patan-modhera",
+        "id": "707ed425-b7e2-4682-9c60-7ebb0145dd05"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-sun-temple-museum-modhera",
+        "id": "0f512384-7892-40a2-afe5-1faf0b557c97"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-modhera-vav-modhera",
+        "id": "eb5fe6ba-22fc-401c-b48b-96da0613a039"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-lion-safari-camp-sasan-gir-gir-national-park",
+        "id": "5d3b8e7d-44d8-4ac8-9535-11fac15a7047"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-gir-birding-lodge-gir-national-park",
+        "id": "b6adf2a0-4836-4c8b-ab68-64ca59913fab"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-sinh-sadan-guest-house-gir-national-park",
+        "id": "b714f1a8-64e3-4ca3-bc86-690668c65079"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-gokul-farmhouse-sasan-gir-gir-national-park",
+        "id": "41d4fb04-c79a-43f0-974a-cdf59d383dd6"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-toran-hill-resort-saputara",
+        "id": "820578e0-4816-42e0-80ee-672312fe8fbf"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-purohit-saputara",
+        "id": "f80f5e6b-b35a-41c1-8c27-5c398607ed9c"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-lake-view-saputara",
+        "id": "689fd1dc-a5cb-4d17-9961-4570c2c1e273"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-shilpi-hill-resort-saputara",
+        "id": "be1cddca-32ad-4ace-8e32-b2327dc7a579"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-sejal-inn-saputara",
+        "id": "884279f4-8579-4fb3-bdd4-897a07d501bc"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-patang-residency-saputara",
+        "id": "ea0ad0a3-2e65-4022-be01-548a33fe0795"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-table-point-saputara",
+        "id": "af4dae1b-5fa3-4a21-aff1-2a56871b9903"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-sunrise-point-saputara",
+        "id": "2bf0f578-2faa-4d31-8f19-048c685ac95a"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-ginger-dwarka",
+        "id": "b9ef595c-c56c-4a80-9ea3-05bf0b9ffc49"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-the-fern-sattva-resort-dwarka",
+        "id": "461f98d1-ea86-4fac-a012-f0923cdb9fef"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hawthorn-suites-by-wyndham-dwarka",
+        "id": "7aa6dca8-7a77-42b9-9752-77e236a272f4"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-lemon-tree-premier-dwarka",
+        "id": "9fda4166-f9e2-42eb-a513-65ad4238571d"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-vits-devbhumi-dwarka",
+        "id": "49ca1e3a-bdce-4765-b5cc-71dbf117afb3"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+        "id": "e1f95ea3-01c2-4359-8bd0-7cc0a9ba7fc3"
+      }
+    ],
+    "preserved": [],
+    "routesInserted": 159
+  },
+  "isolatedDatabaseRemoved": true,
+  "finishedAt": "2026-10-10T03:10:39.249Z"
+}

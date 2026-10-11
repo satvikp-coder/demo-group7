@@ -2,60 +2,102 @@
 
 ## Project Summary
 
-Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL and shared DSA modules. Preserve the existing architecture and visual identity.
+Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL17,
+and shared DSA. Preserve architecture, design, real user data and source provenance.
 
 ## Current Goal
 
-Publish the verified image, integration and itinerary repairs to the existing main branch. Check the Actions run associated with the published commit.
+Phase3 local repairs verified and publication authorized. Publish normally on the existing phase2/university-release branch; preserve the existing PR. No merge or public deployment. Current authority: reports/PHASE3_LOCAL_DEMO_READINESS.md and reports/PHASE3_FULL_TEST_RESULTS.md.
+
+Phase2 university release. Publish a reviewed feature branch and PR, verify CI,
+without merging or activating public deployment. Current authority:
+reports/PHASE2_FINAL_READINESS.md and reports/PHASE2_PROGRESS.md.
 
 ## Current Project State
 
-Local acceptance completed 2026-10-09. CONDITIONALLY_READY for the documented university demo. Current catalog: 8 destinations, 33 attractions, 23 hotels, 12 restaurants, 163 routes. See reports/FINAL_DEMO_READINESS.md; older release reports are historical.
+Installed local catalog:8 destinations,44 attractions,43 hotels,12 restaurants,
+322 routes. Local8080 rebuilt with migration008 and additive enrichment. Original
+rows and existing user preserved; verified backup restored separately.
 
 ## Completed
 
-Reproduced and repaired Bearer-token user flow; real authenticated generation, category/property selection, geographic filtering, synchronized 100% priorities and weighted existing planner. Added 20 sourced records and 32 routes safely. Shared image recovery/fallbacks, full audit, regression and browser demonstration completed. Original records preserved against a restored backup.
+Phase3: exact lodging-budget preflight before writes, backend422 diagnosis, bounded alternative-start candidate search, sourced Gir per-vehicle/seasonal policy, correct WhatIf room-night resizing, EN/HI/GU hotel/accommodation/priority controls, six guarded attraction corrections and three licensed photos. Local full18/18, container16/16 and56 backend tests PASS; enriched32 destination scenarios,3 budget browser recoveries and9 hotel language/viewport checks PASS. Image associations38, intentional fallbacks69, broken references0. Missing rates/metadata/localization remain documented.
+
+31 source-backed records and159 modelled road connections; explicit lodging
+nights/dates with legacy compatibility; historical hotel tariff exclusion;
+dated Devalia scheduling;108-key Gujarati dictionary preserving English/Hindi;
+one additional licensed Bhadra Fort photo. Prior auth/categories/weighted planner
+remain functional. See Phase2 reports for field-level limitations.
 
 ## Files Changed
 
-Frontend API/planner/auth/hotel/image components; backend hotel/trip models, validation and planner; shared planning utilities; local maintenance image refresh; tests, workflow and reports. See reports/09_BUG_FIX_LOG.md and the commit diff.
+Trip API/model/scheduler, hotel price normalization, existing planner/result/language
+components, shared accommodation utility, maintenance/test commands, CI and docs.
+Exact frontend changes remain protected by PHASE2_APPROVED_CHANGES.json hashes.
 
 ## Files Created
 
-Migrations 005-007; category and priority controls; sourced expansion data/importer; licensed photograph assets and credits; repeatable image/itinerary tests; reports/01_PROJECT_ARCHITECTURE_AUDIT.md through reports/10_FINAL_PRODUCTION_READINESS.md plus eight itinerary reports.
+Migration008; data/phase2 manifests and source caches; accommodation and operating
+policy tests; Phase2 isolated API/browser/import tests; seven Phase2 reports and
+coverage/preservation evidence. Public ODbL derived catalog and photo attribution.
 
 ## Technical Decisions
 
-Extend the existing constrained greedy/graph engine with bounded candidate scoring, not a parallel engine. Unknown prices/ratings remain unknown. Distances identify straight-line versus road estimates. Preserve exact migration/evidence/source bytes using Git attributes. Keep private historical continuity and backups outside the public checkout.
+No reset, algorithm replacement, fabricated rates/ratings or unauthorized property
+photos. Missing fees/durations exclude discovery attractions from timed schedules.
+New forms default days minus one nights; old rows/requests retain old semantics.
+Room subtotal is rate times nights times rooms; unknown taxes/fares are excluded.
+Preserve reviewed byte hashes across Windows/Linux checkouts using Git attributes.
 
 ## Dependencies / Setup Changes
 
-Use locked npm installs, Node 22, PostgreSQL 17, Docker Compose, Python and Chrome for browser tests. Frontend source-map-js patched to 1.2.2. Existing live database safely migrated without reset.
+No new runtime dependency. Existing locked npm/Node22/PostgreSQL17/Docker and
+Python/Chrome tooling. Back up before local:up and local:enrich; see local runbook.
 
 ## Commands Used
 
-npm run test:all; npm run test:production; npm run test:itinerary -- demo; npm run audit:images; python scripts/audit-images.py; npm run local:up; npm run local:expand; npm run local:verify; npm run local:restart. Tests use isolated databases; never run destructive fixtures against user data.
+npm run test:all:local; npm run test:production;
+npm run test:phase2:production:local; npm run test:localization;
+node scripts/test-local-all.js itinerary-demo; npm run local:backup;
+npm run local:restore; npm run local:up; npm run local:enrich;
+npm run audit:images; python scripts/phase2-preservation.py --verify.
 
 ## Testing Completed
 
-Local unified 18/18 gates PASS (2026-10-09T09:12:08Z); container 16/16 PASS (14:34:17Z); expanded production-build demo/auth/API matrix PASS (14:35:48Z). 17 API checks, four demo journeys, 60 image page/viewport states, 66 decoded assets; zero broken images. Detailed evidence in reports/END_TO_END_TEST_RESULTS.md. These are local results; consult GitHub Actions for remote CI.
+Development18/18 and production-container16/16 gates passed2026-10-10.
+Expanded production preview,32 cross-destination API scenarios, accommodation
+validation/persistence, responsive1440/768/390 and professor demo passed.
+Fresh checkout source hashes and local backup restoration passed. Installed image67-asset/60-state verification passed. GitHub Actions38039970377
+passed for code2927b94; see Phase2 reports.
 
 ## Current Issues / Bugs
 
-42 intentional image fallbacks remain among 76 entity associations; 34 associations use genuine photographs. Dataset expansion covers Ahmedabad/Somnath, not every city. Unknown fares, rates, availability and calendar constraints remain explicit. Gujarati, native-device certification and public hosting remain incomplete; no blanket production certification.
+Uneven price-band choice;27 hotel prices unavailable/historical;11 new discovery
+attractions without fees/durations; partial calendar/vehicle-cost data; bounded
+heuristic scope; partial Gujarati;72 intentional photo fallbacks. Public deployment
+unverified. Do not present these as verified current quotes or live availability.
 
 ## Important Warnings
 
-Never publish environments, secrets, private backups or session traces. Never reset/reseed the live database. Preserve unknown tourism facts and provenance. Run mutating suites sequentially and in isolated databases. Existing account/session records must remain intact.
+Never publish credentials/backups/user records, reset live data, or run test:local
+against real records. Run mutating suites sequentially on disposable databases.
+Keep private historical continuity outside the public release checkout.
 
 ## Next Steps
 
-Complete normal push and inspect remote CI; fix any reproduced portability failure without weakening tests. Public hosting requires its own configured environment and verification. Follow reports/FINAL_DEMO_READINESS.md for reproducible demo steps and limitations.
+Code2927b94 is published; PR1 open; Actions38039970377 passed all suites.
+Installed60-state image verification and67 decoded assets passed.
+Final report publication and latest PR checks remain; both Vercel checks failed.
+No automatic merge/public deployment. Report remaining factual/provider limits.
 
 ## Last Session Summary
 
-Local implementation, installed application verification and reports are complete. Public checkout synchronized with reviewed source/assets/evidence; privacy and checkout hash review precede publication. No force push or database reset.
+Local Phase2 code/data installed with original-row preservation and isolated
+regression evidence. Code and PR1 published; exact-code CI passed. Final documentation records the
+verified outcome and remaining Vercel/public hosting limitations.
 
 ## Last Updated
 
-2026-10-09T20:13:09.000915+00:00 UTC / Asia/Calcutta (UTC+05:30).
+2026-10-11 UTC: Phase3 publication preparation.
+
+2026-10-10T14:26:14.586007+00:00 UTC / Asia/Calcutta (UTC+05:30).

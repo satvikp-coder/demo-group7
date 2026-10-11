@@ -1,0 +1,35 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "authenticatedGeneration": true,
+      "explicitZeroNights": true,
+      "persistedRefresh": true,
+      "imagesDecoded": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "gujaratiPersists": true
+    },
+    {
+      "width": 768,
+      "authenticatedGeneration": true,
+      "explicitZeroNights": true,
+      "persistedRefresh": true,
+      "imagesDecoded": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "gujaratiPersists": true
+    },
+    {
+      "width": 390,
+      "authenticatedGeneration": true,
+      "explicitZeroNights": true,
+      "persistedRefresh": true,
+      "imagesDecoded": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "gujaratiPersists": true
+    }
+  ]
+}

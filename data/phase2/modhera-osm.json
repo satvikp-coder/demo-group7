@@ -1,0 +1,1045 @@
+{
+  "checked": "2026-10-09T20:48:43.174530+00:00",
+  "query": "[out:json][timeout:60];(nwr(around:35000,23.583421,72.133078)[tourism~\"^(hotel|guest_house|hostel|motel)$\"];nwr(around:15000,23.583421,72.133078)[historic][name];nwr(around:15000,23.583421,72.133078)[tourism~\"^(attraction|museum|viewpoint)$\"][name];);out center tags;",
+  "source": "https://overpass-api.de/api/interpreter",
+  "license": "ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-09T20:47:36Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 2498098454,
+      "lat": 23.7618295,
+      "lon": 72.3635717,
+      "tags": {
+        "name": "Hotel Simala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2525219676,
+      "lat": 23.5847427,
+      "lon": 72.3727851,
+      "tags": {
+        "name": "Hotel Sunshine",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3902147377,
+      "lat": 23.8528628,
+      "lon": 72.1304972,
+      "tags": {
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4288489089,
+      "lat": 23.6168114,
+      "lon": 72.3842098,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Navjeevan",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4292039795,
+      "lat": 23.5917766,
+      "lon": 72.3776616,
+      "tags": {
+        "addr:postcode": "384002",
+        "addr:street": "Modhera road",
+        "name": "sahara hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4292039796,
+      "lat": 23.4825431,
+      "lon": 72.3989167,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel holiday inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293292992,
+      "lat": 23.5587998,
+      "lon": 72.3764358,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "hotel highness",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293343618,
+      "lat": 23.5781648,
+      "lon": 72.3664624,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "hotel piplaj",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293357207,
+      "lat": 23.4753713,
+      "lon": 72.3962373,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Janpath hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293362389,
+      "lat": 23.414796,
+      "lon": 72.3970084,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "hotel navjivan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293362689,
+      "lat": 23.4327218,
+      "lon": 72.3904988,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel relish",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293366519,
+      "lat": 23.4779777,
+      "lon": 72.3964034,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Aamantaran",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293387389,
+      "lat": 23.5706859,
+      "lon": 72.3704326,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "hotel janpath",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4293408094,
+      "lat": 23.6023999,
+      "lon": 72.3904249,
+      "tags": {
+        "addr:street": "Toranvadi",
+        "name": "Hotel sagar ",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294004089,
+      "lat": 23.5943795,
+      "lon": 72.3782048,
+      "tags": {
+        "addr:street": "Modhera road",
+        "name": "Ram zumpdi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294130789,
+      "lat": 23.620126,
+      "lon": 72.3869342,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Darahan hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294130796,
+      "lat": 23.640669,
+      "lon": 72.382309,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294131789,
+      "lat": 23.6185771,
+      "lon": 72.4166608,
+      "tags": {
+        "addr:street": "ashram road",
+        "name": "One ten hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294660289,
+      "lat": 23.6129664,
+      "lon": 72.4036558,
+      "tags": {
+        "addr:street": "Asharam Road",
+        "name": "Decent restaurant",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4295508091,
+      "lat": 23.5835088,
+      "lon": 72.1335164,
+      "tags": {
+        "addr:street": "modhera",
+        "historic": "monument",
+        "inscription": "N-GJ-158.",
+        "name": "Surya Kund"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4295528890,
+      "lat": 23.4989315,
+      "lon": 72.0460392,
+      "tags": {
+        "addr:street": "Bechraji ",
+        "name": "Hotel bhavni",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4295533889,
+      "lat": 23.4987771,
+      "lon": 72.0451788,
+      "tags": {
+        "addr:street": "bechraji road",
+        "name": "Umiya lodge",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4295954990,
+      "lat": 23.5904981,
+      "lon": 72.3785071,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "shree khodiyar",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296018190,
+      "lat": 23.6025105,
+      "lon": 72.3810504,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel anand ",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296062389,
+      "lat": 23.5895236,
+      "lon": 72.3773916,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel natraj",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296126289,
+      "lat": 23.5974599,
+      "lon": 72.3800222,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Real paprika",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296126389,
+      "lat": 23.5994166,
+      "lon": 72.3804618,
+      "tags": {
+        "addr:postcode": "384002",
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Maganlal bhakhri sakvada",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296607361,
+      "lat": 23.6038676,
+      "lon": 72.3811342,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Maganlal bhakhrisakvada 2",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296617436,
+      "lat": 23.3931653,
+      "lon": 72.4019931,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "hotel suhana",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296617437,
+      "lat": 23.3967264,
+      "lon": 72.3989119,
+      "tags": {
+        "name": "swagat hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296617536,
+      "lat": 23.5847293,
+      "lon": 72.3730751,
+      "tags": {
+        "name": "Honest ",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296617911,
+      "lat": 23.4427981,
+      "lon": 72.3927626,
+      "tags": {
+        "name": "Hotel bhagyoday",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296618073,
+      "lat": 23.4246863,
+      "lon": 72.3940447,
+      "tags": {
+        "name": "navjivan hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296618075,
+      "lat": 23.5431136,
+      "lon": 72.3827128,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "honest",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4296618077,
+      "lat": 23.5707671,
+      "lon": 72.3705244,
+      "tags": {
+        "name": "Rooms janpath",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4297338290,
+      "lat": 23.5426435,
+      "lon": 72.3827526,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "TGA ",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4297344389,
+      "lat": 23.5437841,
+      "lon": 72.3821155,
+      "tags": {
+        "addr:postcode": "384002",
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Rooms khodal;Khodal",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4297385690,
+      "lat": 23.6058403,
+      "lon": 72.3901887,
+      "tags": {
+        "addr:street": "St road",
+        "name": "Apsra hotel -lodge",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4298746389,
+      "lat": 23.5459849,
+      "lon": 72.3793367,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Shivala",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4298746397,
+      "lat": 23.5873863,
+      "lon": 72.3752819,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Pakvan dining hall",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4299365889,
+      "lat": 23.5098531,
+      "lon": 72.4005851,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Nagchhaya Restaurant",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4301497392,
+      "lat": 23.4433116,
+      "lon": 72.3929789,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Raj purohit",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4301504589,
+      "lat": 23.5878041,
+      "lon": 72.3758653,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Asopalav Guest house",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4301504590,
+      "lat": 23.483388,
+      "lon": 72.3970983,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel jayambe lilivadi",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4301504690,
+      "lat": 23.5086384,
+      "lon": 72.4005369,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Grand purohit",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4303548392,
+      "lat": 23.6013645,
+      "lon": 72.3901261,
+      "tags": {
+        "addr:street": "station road ",
+        "amenity": "restaurant",
+        "name": "Om Santos parotha house",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4303553429,
+      "lat": 23.6015101,
+      "lon": 72.3900482,
+      "tags": {
+        "addr:street": "station road",
+        "name": "Navrang",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4303562694,
+      "lat": 23.584148,
+      "lon": 72.3732658,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel 7 spices restaurant",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4303817992,
+      "lat": 23.5850808,
+      "lon": 72.374484,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Sankalp Hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4308904637,
+      "lat": 23.5438664,
+      "lon": 72.3820553,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Khodal",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4310271191,
+      "lat": 23.4327326,
+      "lon": 72.3907409,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Olive Plaza Guest House",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4330429491,
+      "lat": 23.5648455,
+      "lon": 72.3448495,
+      "tags": {
+        "name": "nagdev",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4330452089,
+      "lat": 23.5671434,
+      "lon": 72.3410589,
+      "tags": {
+        "addr:city": "mehsana",
+        "addr:street": "Mehsana Bypass Road SH-41/A",
+        "name": "Hotel Radhe",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4333721895,
+      "lat": 23.5431114,
+      "lon": 72.3828849,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Eat & Rest",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4688035189,
+      "lat": 23.6410241,
+      "lon": 72.3825912,
+      "tags": {
+        "addr:street": "Mehsana Bypass road SH-41/A",
+        "name": "Hotel Brahmani",
+        "name:en": "Hotel Brahmani",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4688035289,
+      "lat": 23.6414109,
+      "lon": 72.3830978,
+      "tags": {
+        "addr:street": "Mehsana Bypass road SH-41/A",
+        "name": "Hotel atithi",
+        "name:en": "Hotel atithi",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4692119094,
+      "lat": 23.8408715,
+      "lon": 72.1310207,
+      "tags": {
+        "name": "hotel garden",
+        "name:hi": "hotel garden",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5077283453,
+      "lat": 23.8435402,
+      "lon": 72.1348495,
+      "tags": {
+        "name": "Apple Residency",
+        "phone": "+918153988851",
+        "tourism": "hotel",
+        "website": "https://appleresidency.business.site/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187055,
+      "lat": 23.5215251,
+      "lon": 72.4515643,
+      "tags": {
+        "name": "Boy's Hostel A",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187056,
+      "lat": 23.5208988,
+      "lon": 72.4518178,
+      "tags": {
+        "name": "Boy's Hostel B",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187057,
+      "lat": 23.5212343,
+      "lon": 72.4523564,
+      "tags": {
+        "name": "Boy's Hostel C",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187058,
+      "lat": 23.5211184,
+      "lon": 72.4531825,
+      "tags": {
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187059,
+      "lat": 23.5208499,
+      "lon": 72.4538797,
+      "tags": {
+        "name": "Paach Gaam Hostel",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187060,
+      "lat": 23.5206765,
+      "lon": 72.4543625,
+      "tags": {
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187061,
+      "lat": 23.5202556,
+      "lon": 72.4534152,
+      "tags": {
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187063,
+      "lat": 23.5196367,
+      "lon": 72.4517947,
+      "tags": {
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187064,
+      "lat": 23.5202864,
+      "lon": 72.4517054,
+      "tags": {
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187065,
+      "lat": 23.5216833,
+      "lon": 72.4547567,
+      "tags": {
+        "name": "Girls Hostel Block D",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187066,
+      "lat": 23.521373,
+      "lon": 72.4554961,
+      "tags": {
+        "name": "Girls Hostel Block  C",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187067,
+      "lat": 23.522759,
+      "lon": 72.4553305,
+      "tags": {
+        "name": "Girls' Hostels-Block A",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187068,
+      "lat": 23.5224126,
+      "lon": 72.4561092,
+      "tags": {
+        "name": "Girl's Hostel Block B",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187069,
+      "lat": 23.5224069,
+      "lon": 72.4543222,
+      "tags": {
+        "name": "H2 Block",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187070,
+      "lat": 23.5225708,
+      "lon": 72.454008,
+      "tags": {
+        "name": "H3 Block",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187071,
+      "lat": 23.5227149,
+      "lon": 72.4543038,
+      "tags": {
+        "name": "H1 Block",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187072,
+      "lat": 23.5231329,
+      "lon": 72.4545296,
+      "tags": {
+        "name": "G3 Hostel",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187073,
+      "lat": 23.5233129,
+      "lon": 72.4548283,
+      "tags": {
+        "name": "G2 Hostel",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187074,
+      "lat": 23.5234575,
+      "lon": 72.4545375,
+      "tags": {
+        "name": "G1 Hostel",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303187077,
+      "lat": 23.5217019,
+      "lon": 72.4563605,
+      "tags": {
+        "name": "Staff Quarters- A",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5303210789,
+      "lat": 23.5212435,
+      "lon": 72.4519484,
+      "tags": {
+        "name": "Uma Privar Boy's Hostel",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5518513629,
+      "lat": 23.3899055,
+      "lon": 72.3990293,
+      "tags": {
+        "addr:street": "Ahmedabad Palanpur State Highway SH41",
+        "name": "Hotel Darshan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6449357785,
+      "lat": 23.3359577,
+      "lon": 72.054779,
+      "tags": {
+        "internet_access": "wlan",
+        "name": "Tokyo Ryokan pvt. Ltd.",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6504251108,
+      "lat": 23.3197281,
+      "lon": 72.0538441,
+      "tags": {
+        "name": "Tokyo ryokan",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7661050654,
+      "lat": 23.8396491,
+      "lon": 72.1308285,
+      "tags": {
+        "name": "The Grand Raveta",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9428005017,
+      "lat": 23.5555733,
+      "lon": 72.3636933,
+      "tags": {
+        "addr:street": "Mehsana Bypass Road",
+        "name": "होटल शिवम मेहसाना",
+        "name:en": "Hotel Shivam Mehsana",
+        "name:hi": "Parking Suvidha uplabdh hai",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9428018117,
+      "lat": 23.5556316,
+      "lon": 72.363691,
+      "tags": {
+        "addr:street": "Mehsana Bypass Road",
+        "name": "होटल शिवम मेहसाना",
+        "name:en": "Hotel Shivam mahesana",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9439097317,
+      "lat": 23.3915245,
+      "lon": 72.4023559,
+      "tags": {
+        "name": "Hotel decent truck parking",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11243630434,
+      "lat": 23.5682579,
+      "lon": 72.3711775,
+      "tags": {
+        "addr:city": "Mehsana",
+        "name": "Hotel Jodhpur Palace",
+        "name:en": "Hotel Jodhpur Palace",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12571163082,
+      "lat": 23.8524634,
+      "lon": 72.1275413,
+      "tags": {
+        "air_conditioning": "yes",
+        "bar": "no",
+        "internet_access": "no",
+        "name": "Saber Guest house",
+        "stars": "1",
+        "tourism": "hotel",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 528451213,
+      "center": {
+        "lat": 23.5922191,
+        "lon": 72.3797334
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dharmashala",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 528451217,
+      "center": {
+        "lat": 23.5915146,
+        "lon": 72.3800138
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Dharmashala",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 911907267,
+      "center": {
+        "lat": 23.582391,
+        "lon": 72.1341284
+      },
+      "tags": {
+        "addr:city": "modhera",
+        "building": "yes",
+        "building:levels": "ground floor",
+        "height": "3.3",
+        "name": "Sun Temple Museum",
+        "tourism": "museum"
+      }
+    },
+    {
+      "type": "way",
+      "id": 911907270,
+      "center": {
+        "lat": 23.5837273,
+        "lon": 72.1365306
+      },
+      "tags": {
+        "access": "yes",
+        "historic": "monument",
+        "name": "Hawa Mahal",
+        "wikidata": "Q98871709"
+      }
+    },
+    {
+      "type": "way",
+      "id": 911907271,
+      "center": {
+        "lat": 23.5826652,
+        "lon": 72.1370036
+      },
+      "tags": {
+        "access": "yes",
+        "historic": "monument",
+        "material": "stone",
+        "name": "Modhera Vav",
+        "wikidata": "Q98872738"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1335317144,
+      "center": {
+        "lat": 23.5945522,
+        "lon": 72.3300456
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Shivalik",
+        "tourism": "hotel"
+      }
+    }
+  ]
+}

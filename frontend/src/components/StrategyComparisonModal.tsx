@@ -48,7 +48,7 @@ export const StrategyComparisonModal: React.FC<
       rows.push(await createItinerary(config, strategy));
     }
     return rows;
-  }, [config.cityId,config.tripDays,config.budget,config.startingHotelId,config.startTime,config.wheelchairAccessibleOnly,config.rooms,config.travelers,config.startDate,config.hotelCategory,isOpen], isOpen);
+  }, [config.cityId,config.tripDays,config.budget,config.startingHotelId,config.startTime,config.wheelchairAccessibleOnly,config.rooms,config.lodgingNights,config.arrivalDate,config.departureDate,config.travelers,config.startDate,config.hotelCategory,isOpen], isOpen);
   const results = request.data?.map(row => row.result) ?? [];
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => { if(e.key === "Escape") onClose(); };

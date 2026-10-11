@@ -1,4 +1,5 @@
 import React from "react";
+import {useLanguage} from '../context/LanguageContext';
 import {
   Sparkles,
   RotateCcw,
@@ -24,6 +25,7 @@ export interface WhatIfPanelProps {
   onReset: () => void;
   onSaveVersion: () => void;
   isSavedNotice?: boolean;
+  proposedNights?: number;
 }
 
 export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
@@ -42,7 +44,9 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
   onReset,
   onSaveVersion,
   isSavedNotice,
+  proposedNights,
 }) => {
+  const {t}=useLanguage();
   const minBudget = Math.max(500, originalBudget - 2000);
   const maxBudget = originalBudget + 5000;
 
@@ -97,7 +101,7 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
               "What If?" Route Settings
             </h3>
             <p className="text-[11px] text-stone">
-              Adjust the settings, then Save to generate and persist a new route. Costs below describe the saved plan.
+              {t('whatif.savedExplanation')}{proposedNights!=null ? ` ${t('whatif.nights')}: ${proposedNights}. ${t('whatif.nightRule')}` : ''}
             </p>
           </div>
         </div>
@@ -235,7 +239,7 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
       {/* Live Impact Summary Bar */}
       <div className="p-2.5 bg-salt/10 border border-gold/30 flex flex-wrap items-center justify-between text-xs gap-2">
         <div className="flex items-center gap-3">
-          <span className="text-stone">Live greedy route:</span>
+          <span className="text-stone">{t('whatif.savedRoute')}</span>
           <span className="text-salt font-bold">
             ₹{liveCost.toLocaleString("en-IN")} total cost
           </span>

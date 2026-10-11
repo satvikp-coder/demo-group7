@@ -1,0 +1,95 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "language": "en",
+      "width": 1440,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "hi",
+      "width": 1440,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "gu",
+      "width": 1440,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "en",
+      "width": 768,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "hi",
+      "width": 768,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "gu",
+      "width": 768,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "hi",
+      "width": 390,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    },
+    {
+      "language": "gu",
+      "width": 390,
+      "apiCategoriesUnchanged": true,
+      "honestEmptyState": true,
+      "selectedDatabaseId": true,
+      "translatedLabels": true,
+      "pageErrors": [],
+      "writes": []
+    }
+  ]
+}

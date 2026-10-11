@@ -81,6 +81,19 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         हिं
       </button>
+      <button
+        type="button"
+        onClick={() => setLanguage("gu")}
+        aria-label="Switch to Gujarati"
+        aria-pressed={language === "gu"}
+        className={`px-2.5 py-1 text-xs font-mono rounded-md transition-all duration-150 cursor-pointer ${
+          language === "gu"
+            ? "bg-gold text-ink font-bold border border-gold shadow-sm"
+            : "text-salt/80 hover:text-salt hover:bg-stone/20"
+        }`}
+      >
+        GU
+      </button>
     </div>
   );
 

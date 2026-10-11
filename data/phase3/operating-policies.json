@@ -1,0 +1,21 @@
+{
+  "gir-jungle-safari": {
+    "source_url": "https://girlion.gujarat.gov.in/GirJungleTrailBooking.aspx",
+    "checked": "2026-10-10",
+    "closed_weekdays": [],
+    "closed_from": "06-16",
+    "closed_through": "10-15",
+    "summer_from": "03-01",
+    "summer_through": "06-15",
+    "summer_windows": [[360,540],[540,720],[960,1140]],
+    "winter_windows": [[390,570],[540,720],[900,1080]],
+    "fixed_departures": true,
+    "undated_windows": [[540,720]],
+    "fee_unit": "vehicle",
+    "capacity": 6,
+    "weekday_indian_fee": 4700,
+    "weekend_indian_fee": 4900,
+    "fee_components": {"weekday_permit":800,"weekend_permit":1000,"six_seat_category_a_vehicle":3500,"guide_g2":400},
+    "limitations": "Indicative Indian visitor estimate per six-seat Category A vehicle with a G2 guide; groups use enough vehicles for all travelers. Festival surcharges, nationality, children, vehicle/guide choices, taxes and permit availability require confirmation. No booking is made. Without a visit date, weekday pricing is an estimate and seasonal access must be checked."
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "query": "[out:json][timeout:25];(node(around:18000,20.578855,73.749413)[tourism~\"hotel|guest_house|museum|attraction|viewpoint\"][name];way(around:18000,20.578855,73.749413)[tourism~\"hotel|guest_house|museum\"][name];);out center tags;",
+  "checked": "2026-10-09T20:51:31.130907+00:00",
+  "source": "https://overpass-api.de/api/interpreter",
+  "license": "ODbL-1.0",
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-09T20:49:36Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 2562424815,
+      "lat": 20.580551,
+      "lon": 73.7471137,
+      "tags": {
+        "name": "Toran Hill Resort",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2562424817,
+      "lat": 20.5692077,
+      "lon": 73.7411759,
+      "tags": {
+        "name": "Table Point",
+        "tourism": "viewpoint"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4832550858,
+      "lat": 20.5745495,
+      "lon": 73.7323392,
+      "tags": {
+        "name": "Sunset Point",
+        "tourism": "viewpoint"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4832558992,
+      "lat": 20.5873546,
+      "lon": 73.7597928,
+      "tags": {
+        "name": "Sunrise Point",
+        "tourism": "viewpoint"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9196764820,
+      "lat": 20.5425369,
+      "lon": 73.7604101,
+      "tags": {
+        "historic": "fort",
+        "name": "Hatgad Fort",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11167380003,
+      "lat": 20.5704566,
+      "lon": 73.7424284,
+      "tags": {
+        "name": "Lake View Point",
+        "tourism": "viewpoint"
+      }
+    },
+    {
+      "type": "way",
+      "id": 250492076,
+      "center": {
+        "lat": 20.5813974,
+        "lon": 73.7488617
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Hotel Purohit",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 491098304,
+      "center": {
+        "lat": 20.5778168,
+        "lon": 73.7483815
+      },
+      "tags": {
+        "name": "Hotel Lake View",
+        "tourism": "hotel",
+        "website": "https://lakeview.co.in/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 491098487,
+      "center": {
+        "lat": 20.5778752,
+        "lon": 73.7491047
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Shilpi Hill resort",
+        "tourism": "hotel",
+        "website": "https://www.shilpihillresort.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 549381250,
+      "center": {
+        "lat": 20.5837156,
+        "lon": 73.7503511
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hotel Vaishali",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 549381251,
+      "center": {
+        "lat": 20.5841474,
+        "lon": 73.7504548
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Hill top hotel",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 549481784,
+      "center": {
+        "lat": 20.5855293,
+        "lon": 73.7515742
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Saffron valley",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 549481786,
+      "center": {
+        "lat": 20.5853921,
+        "lon": 73.7512471
+      },
+      "tags": {
+        "building": "yes",
+        "name": "Sai leela Banglow",
+        "tourism": "guest_house"
+      }
+    },
+    {
+      "type": "way",
+      "id": 549543763,
+      "center": {
+        "lat": 20.5807494,
+        "lon": 73.7473873
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Hotel Sejal Inn",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 549549399,
+      "center": {
+        "lat": 20.5820346,
+        "lon": 73.7474761
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Hotel Toran",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1204927158,
+      "center": {
+        "lat": 20.5789147,
+        "lon": 73.7447637
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Hotel Toran Purna Dormitory",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1204951615,
+      "center": {
+        "lat": 20.5795369,
+        "lon": 73.7424928
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Hotel Toran Ambika",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1204951620,
+      "center": {
+        "lat": 20.5777056,
+        "lon": 73.746329
+      },
+      "tags": {
+        "building": "hotel",
+        "name": "Patang Residency",
+        "tourism": "hotel"
+      }
+    }
+  ]
+}

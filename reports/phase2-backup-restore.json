@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "originalTablesExactlyRestored": {
+    "destinations": true,
+    "attractions": true,
+    "hotels": true,
+    "restaurants": true,
+    "routes": true,
+    "users": true,
+    "trips": true,
+    "itinerary_stops": true,
+    "budgets": true
+  }
+}

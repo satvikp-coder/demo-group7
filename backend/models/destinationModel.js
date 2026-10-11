@@ -1,3 +1,4 @@
+import {hotelPriceView} from '../../dsa/planning/hotelPolicy.ts';
 import { pool } from "../config/database.js";
 import { sortHotels } from "../services/hotelRanking.js";
 
@@ -7,10 +8,10 @@ export async function catalog(limit = 20, offset = 0) {
   const { rows } = await pool.query(`
     SELECT d.*,
       coalesce((SELECT jsonb_agg(to_jsonb(a)-'provenance_review' ORDER BY a.name,a.id) FROM attractions a WHERE a.destination_id=d.id),'[]'::jsonb) AS attractions,
-      coalesce((SELECT jsonb_agg(to_jsonb(h)-'provenance_review' ORDER BY h.id) FROM hotels h WHERE h.destination_id=d.id),'[]'::jsonb) AS hotels,
+      coalesce((SELECT jsonb_agg(to_jsonb(h) ORDER BY h.id) FROM hotels h WHERE h.destination_id=d.id),'[]'::jsonb) AS hotels,
       coalesce((SELECT jsonb_agg(to_jsonb(r)-'provenance_review' ORDER BY r.name,r.id) FROM restaurants r WHERE r.destination_id=d.id),'[]'::jsonb) AS restaurants
     FROM destinations d ORDER BY d.name,d.id LIMIT $1 OFFSET $2`, [limit,offset]);
-  return rows.map(row => ({...row,hotels:sortHotels(row.hotels,'price')}));
+  return rows.map(row => ({...row,hotels:sortHotels(row.hotels.map(hotelPriceView),'price')}));
 }
 
 export async function findById(id) {

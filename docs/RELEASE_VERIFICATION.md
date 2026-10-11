@@ -1,4 +1,4 @@
-> Historical 2026-10-01 release evidence. Current repairs and acceptance: [Final demo readiness](../reports/FINAL_DEMO_READINESS.md) and [test results](../reports/END_TO_END_TEST_RESULTS.md).
+> Historical release evidence. Current local repairs and acceptance: [Phase 3 readiness](../reports/PHASE3_LOCAL_DEMO_READINESS.md) and [test results](../reports/PHASE3_FULL_TEST_RESULTS.md).
 
 # Release verification and repository cleanup
 

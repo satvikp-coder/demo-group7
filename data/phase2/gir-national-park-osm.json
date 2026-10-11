@@ -1,0 +1,115 @@
+{
+  "checked": "2026-10-09T20:48:31.022135+00:00",
+  "query": "[out:json][timeout:60];(nwr(around:18000,21.168967,70.598454)[tourism~\"^(hotel|guest_house|hostel|motel)$\"];nwr(around:15000,21.168967,70.598454)[historic][name];nwr(around:15000,21.168967,70.598454)[tourism~\"^(attraction|museum|viewpoint)$\"][name];);out center tags;",
+  "source": "https://overpass-api.de/api/interpreter",
+  "license": "ODbL-1.0 https://www.openstreetmap.org/copyright",
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-09T20:46:35Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 630793876,
+      "lat": 21.1568539,
+      "lon": 70.5059037,
+      "tags": {
+        "name": "Devalia Lion Safari Park",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "type": "node",
+      "id": 643400662,
+      "lat": 21.1680385,
+      "lon": 70.5760592,
+      "tags": {
+        "addr:full": "Lion Safari Camp, near Hiraneshwar Check Dam, Sasan, Junagarh district",
+        "email": "sasngir@campsofindia.com",
+        "fax": "+91 2877 285920",
+        "name": "Lion Safari Camp",
+        "phone": "+91 2877 295507/8",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 643583374,
+      "lat": 21.1799036,
+      "lon": 70.5859001,
+      "tags": {
+        "ele": "137.110",
+        "name": "Gir Birding Lodge",
+        "source": "GPS",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2757814095,
+      "lat": 21.1705,
+      "lon": 70.571111,
+      "tags": {
+        "addr:city": "Sasan",
+        "name": "Maneland Jungle Lodge",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2757814663,
+      "lat": 21.1697222,
+      "lon": 70.5982069,
+      "tags": {
+        "addr:city": "Sasan",
+        "cuisine": "indian",
+        "name": "Sinh Sadan Guest House",
+        "operator": "Gujarat State Tourism Development Corporation",
+        "ref": "field_trip",
+        "tourism": "hotel",
+        "wifi": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2776884409,
+      "lat": 21.1831854,
+      "lon": 70.5782171,
+      "tags": {
+        "internet_access": "no",
+        "name": "Maneland Jungle Lodge",
+        "smoking": "no",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5982660321,
+      "lat": 21.1730925,
+      "lon": 70.5909622,
+      "tags": {
+        "addr:city": "Junagadh",
+        "addr:street": "Sasan Gir",
+        "name": "Raghvendra Aashram Sasan Gir",
+        "tourism": "hotel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13509759401,
+      "lat": 21.149889,
+      "lon": 70.6022914,
+      "tags": {
+        "contact:instagram": "gir_gokul_farm",
+        "internet_access": "wlan",
+        "name": "Gokul Farmhouse",
+        "opening_hours": "24/7",
+        "phone": "+919974659749;+919974659762",
+        "tourism": "hotel",
+        "website": "https://www.girgokulfarm.in/"
+      }
+    }
+  ]
+}

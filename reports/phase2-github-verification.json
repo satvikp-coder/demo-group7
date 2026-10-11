@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-10T14:25:55.973213+00:00",
+  "codeCommit": "2927b9472f923815be8632642094d92f870fd4d8",
+  "pullRequest": "https://github.com/satvikp-coder/demo-group7/pull/1",
+  "workflow": "https://github.com/satvikp-coder/demo-group7/actions/runs/38039970377",
+  "conclusion": "success",
+  "completedAt": "2026-10-10T09:08:32Z",
+  "verifiedSteps": [
+    "test:all",
+    "test:localization",
+    "test:phase2 -- --production",
+    "test:itinerary -- demo",
+    "test:production",
+    "evidence upload"
+  ],
+  "externalDeploymentStatuses": {
+    "Vercel - frontend": "failure",
+    "Vercel - demo-group7": "failure"
+  },
+  "merged": false
+}

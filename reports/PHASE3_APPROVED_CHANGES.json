@@ -1,0 +1,75 @@
+{
+  "authorization": "Phase3 explicitly requests local integration, budget correctness and localization; exact reviewed hashes only",
+  "files": {
+    "frontend/src/components/ItineraryView.tsx": {
+      "baselineSha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
+      "sha256": "bb53578f1f9fcecd6d18bece3af98d12c9a66919c12c2f1158ca27e3ac5da38d",
+      "reason": "WhatIf creates a new version with consistent nights and checkout, showing proposed nights"
+    },
+    "frontend/src/components/WhatIfPanel.tsx": {
+      "baselineSha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",
+      "sha256": "39f39f6ae574a9583731d3b0be448c9991592f4962f2e698a0328657b46506fd",
+      "reason": "Disclose night adjustment and correctly label saved rather than live costs; unchanged styles"
+    },
+    "frontend/src/data/translations.ts": {
+      "baselineSha256": "a81f68e7f75b347c3769d00e09bf457821fa572201c3e22296d2778af75d233a",
+      "sha256": "977979685b0c7210b10f910f1e7e6a471a28e2a21860588755738fef46d1be27",
+      "reason": "Register requested Phase3 translations for existing language architecture"
+    },
+    "frontend/src/data/phase3Translations.ts": {
+      "baselineSha256": null,
+      "sha256": "fbc384a83ec36f1b518ddb3f7c00baa0159283660ee8afaa10fa6276f5af4a2a",
+      "reason": "Translate accommodation inputs/validation with unchanged styles; correct admission unit advisory for vehicle-priced safari"
+    },
+    "frontend/public/assets/photographs/manifest.json": {
+      "baselineSha256": "5377425ca57e3ece6c7b87b2a992f7510b30236f19c0a5e22e5cd9d7a1c25812",
+      "sha256": "e2095411e18dcbe86b6fe69f6105d42cd086799d71a0486cd2a93ab62852b840",
+      "reason": "Exact-entity licensed photos; metadata, visual review and attribution preserved"
+    },
+    "frontend/public/image-credits.html": {
+      "baselineSha256": "9354347bab25f13a5b611ad70345f2ab7a9850b3d199ea08fb2c0598df2bea06",
+      "sha256": "8545ab77ee6546d5c36c1cd85a665e0c73456a405e1970049997fdac74c68606",
+      "reason": "Exact-entity licensed photos; metadata, visual review and attribution preserved"
+    },
+    "frontend/public/assets/photographs/amritavarshini-vav-interior.webp": {
+      "baselineSha256": null,
+      "sha256": "827cd699b0c7f75b0d51bdcfb30d32a01032a667f2650718ba7b21cba3503728",
+      "reason": "Exact-entity licensed photos; metadata, visual review and attribution preserved"
+    },
+    "frontend/public/assets/photographs/raipur-gate-ahmedabad.webp": {
+      "baselineSha256": null,
+      "sha256": "f7f7dd8a095dc8ae4fb11c16b8df041b473ead1009acf49c44fc8c3faefc415d",
+      "reason": "Exact-entity licensed photos; metadata, visual review and attribution preserved"
+    },
+    "frontend/public/assets/photographs/teen-darwaza-ahmedabad.webp": {
+      "baselineSha256": null,
+      "sha256": "37b00d6a871285a112ad302ea92a3efe2b7f99ff2341bd5b60b4e17939a4c763",
+      "reason": "Exact-entity licensed photos; metadata, visual review and attribution preserved"
+    },
+    "frontend/src/components/PriorityControls.tsx": {
+      "baselineSha256": "989dc8f3b62d9a96ba4f64fb447f93aa43caf607768b78c520c28d44262823ff",
+      "reason": "Translate existing weight labels, instructions and accessible slider names; preserve styles and API values",
+      "sha256": "ef4c3a815118a44af810685b9684fa8a55d1c65f63bd7fabaf8e8d9dad4b2192"
+    },
+    "frontend/src/components/HotelCategoryPicker.tsx": {
+      "baselineSha256": "ed4c078c26d58de309bfe244618d0448749c572b13a46cf1a90dcb1554aa214a",
+      "sha256": "1fcac050c301456572df98637d1c90d5a1e95ad463ea9544302f478bae2adfef",
+      "reason": "Requested English/Hindi/Gujarati hotel selection labels and honest estimate/empty-state explanations; API enum values and existing styles unchanged"
+    },
+    "frontend/src/data/hotelTranslations.ts": {
+      "baselineSha256": null,
+      "sha256": "6a6fe814426a1d37f0d888c5ed9f45efc87048fbc4fe14014ae492c0ec32d9d4",
+      "reason": "Requested English/Hindi/Gujarati hotel selection labels and honest estimate/empty-state explanations; API enum values and existing styles unchanged"
+    },
+    "frontend/src/components/PlannerModal.tsx": {
+      "baselineSha256": "8b6416575b9b93d7bfb89a0afa7f45056452d0848a98118a5e8c3fb969840544",
+      "sha256": "704aa40f5c6c378a60685f168510d4eac3801a0dd1eea5d22c09f2e6fa5e7c0b",
+      "reason": "Translate accommodation inputs/validation with unchanged styles; correct admission unit advisory for vehicle-priced safari; reject unaffordable accommodation before trip writes with exact subtotal and shortfall"
+    },
+    "frontend/src/data/accommodationTranslations.ts": {
+      "baselineSha256": null,
+      "sha256": "dfe0b071753d4979d975e329f63f0f2f0315d94cf51279538e0f6faf4862c973",
+      "reason": "Translate accommodation inputs/validation with unchanged styles; correct admission unit advisory for vehicle-priced safari; reject unaffordable accommodation before trip writes with exact subtotal and shortfall"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "authenticatedGeneration": true,
+      "whatIfSevenToOneDays": true,
+      "checkoutUpdated": true,
+      "newTripId": true,
+      "persistedRefresh": true,
+      "imagesDecoded": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "gujaratiPersists": true,
+      "gujaratiKeyboardPriorities": true
+    },
+    {
+      "width": 768,
+      "authenticatedGeneration": true,
+      "whatIfSevenToOneDays": true,
+      "checkoutUpdated": true,
+      "newTripId": true,
+      "persistedRefresh": true,
+      "imagesDecoded": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "gujaratiPersists": true,
+      "gujaratiKeyboardPriorities": true
+    },
+    {
+      "width": 390,
+      "authenticatedGeneration": true,
+      "whatIfSevenToOneDays": true,
+      "checkoutUpdated": true,
+      "newTripId": true,
+      "persistedRefresh": true,
+      "imagesDecoded": true,
+      "noOverflow": true,
+      "pageErrors": [],
+      "gujaratiPersists": true,
+      "gujaratiKeyboardPriorities": true
+    }
+  ]
+}

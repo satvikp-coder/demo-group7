@@ -1,4 +1,5 @@
-import { hotelCategory } from '../../dsa/planning/hotelPolicy.ts';
+import {accommodationNights} from '../../dsa/planning/accommodation.ts';
+import { hotelCategory, hotelPriceView } from '../../dsa/planning/hotelPolicy.ts';
 import { pool } from "../config/database.js";
 import { HttpError } from "../middleware/errorHandler.js";
 
@@ -31,28 +32,30 @@ export async function ownedTrip(client, id, userId, lock = false) {
   if (!rows[0]) throw new HttpError(404, "Trip not found");
   return rows[0];
 }
-export async function selectedHotel(client, hotelId, destinationId) {
+export async function selectedHotel(client, hotelId, destinationId, nights = 1) {
   const { rows } = await client.query("SELECT * FROM hotels WHERE id = $1 AND destination_id = $2", [hotelId, destinationId]);
   if (!rows[0]) throw new HttpError(422, "Starting hotel must belong to the selected destination");
-  if (rows[0].price_per_night === null) throw new HttpError(422, "Starting hotel has no known price");
+  rows[0]=hotelPriceView(rows[0]);
+  if (rows[0].price_per_night === null && nights > 0) throw new HttpError(422, "Starting hotel has no known price");
   return rows[0];
 }
 export async function create(client, userId, input) {
   const destination = await client.query("SELECT id FROM destinations WHERE id = $1", [input.destination_id]);
   if (!destination.rowCount) throw new HttpError(404, "Destination not found");
-  const hotel = await selectedHotel(client, input.starting_hotel_id, input.destination_id);
+  const nights=accommodationNights(input);
+  const hotel = await selectedHotel(client, input.starting_hotel_id, input.destination_id,nights);
   if(input.hotel_category && hotelCategory(hotel.price_per_night)!==input.hotel_category) throw new HttpError(422,"Selected hotel does not match the requested category");
   return (await client.query(
-    `INSERT INTO trips (user_id,destination_id,trip_days,budget,starting_hotel_id,start_time,strategy,wheelchair_accessible_only,hotel_category,weights,travelers,rooms,start_date)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13) RETURNING *`,
-    [userId,input.destination_id,input.days,input.budget,input.starting_hotel_id,input.start_time,input.strategy,input.wheelchair_accessible_only,input.hotel_category??hotelCategory(hotel.price_per_night),input.weights??null,input.travelers??1,input.rooms??1,input.start_date??null],
+    `INSERT INTO trips (user_id,destination_id,trip_days,budget,starting_hotel_id,start_time,strategy,wheelchair_accessible_only,hotel_category,weights,travelers,rooms,start_date,lodging_nights,arrival_date,departure_date)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16) RETURNING *`,
+    [userId,input.destination_id,input.days,input.budget,input.starting_hotel_id,input.start_time,input.strategy,input.wheelchair_accessible_only,input.hotel_category??hotelCategory(hotel.price_per_night),input.weights??null,input.travelers??1,input.rooms??1,input.start_date??null,input.lodging_nights!=null||input.arrival_date?nights:null,input.arrival_date??null,input.departure_date??null],
   )).rows[0];
 }
 export async function resources(client, trip) {
   // One client/snapshot, and no CSV reads or synthetic route fallback.
   const attractions = (await client.query("SELECT * FROM attractions WHERE destination_id = $1 ORDER BY id", [trip.destination_id])).rows;
   const restaurants = (await client.query("SELECT * FROM restaurants WHERE destination_id = $1 ORDER BY avg_cost_per_person, id", [trip.destination_id])).rows;
-  const hotel = await selectedHotel(client, trip.starting_hotel_id, trip.destination_id);
+  const hotel = await selectedHotel(client, trip.starting_hotel_id, trip.destination_id,trip.lodging_nights??trip.trip_days);
   if(trip.hotel_category && hotelCategory(hotel.price_per_night)!==trip.hotel_category) throw new HttpError(422,"Hotel price category changed. Select a matching property again before generating.");
   const routes = (await client.query("SELECT * FROM routes WHERE destination_id = $1 ORDER BY distance_km, travel_time_minutes, id", [trip.destination_id])).rows;
   return { attractions, restaurants, hotel, routes };
