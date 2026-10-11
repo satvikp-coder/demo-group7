@@ -6,6 +6,8 @@ Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL
 
 ## Current Goal
 
+Ranked Stays city selector verified and prepared for normal main publication. Real catalog-backed all-eight-city control; hotel loading/errors retain controls.
+
 Scheduling and hotel-tier continuation verified locally; normal main publication authorized. Earlier PR1 was merged upstream as accc245. Current evidence: reports/SCHEDULE_GAP_REPAIR.md and reports/HOTEL_TIER_COVERAGE.md. No manual merge, public deployment or secret change.
 
 ## Current Project State
@@ -37,6 +39,8 @@ No new dependencies or schema migrations. Existing private persistent PostgreSQL
 npm run test:all:local; npm run test:scheduling:local; node scripts/test-local-all.js phase3-pdf-production; npm run local:up; npm run local:demo:check; npm run audit:images; read-only preservation/source/index/privacy checks. Hotel import: local:hotel-coverage dry-run/apply/repeat after verified backup.
 
 ## Testing Completed
+
+City-selector follow-up: TypeScript/source audit PASS; local readiness7/7; Chrome24 city/viewport cases and72category/API comparisons plus3error-recovery cases PASS. Read-only, no DB writes. Evidence reports/RANKED_STAYS_CITY_SELECTOR.md.
 
 Final18/18gates,65backend tests and64browser-control groups PASS, including actual PDF download. Targeted48API cases and3width current/legacy rendering PASS. SQL98plans/315intervals/0overlaps. Isolated PDF898418bytes PASS. Installed readiness7/7 and source preservation PASS; image120records/38photos/82fallbacks/0errors. Historical16container results are not a fresh run for this repair.
 

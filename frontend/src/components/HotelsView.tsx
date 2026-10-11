@@ -1,6 +1,6 @@
 import {HOTEL_CATEGORIES,type HotelCategory} from '../../../dsa/planning/hotelPolicy';
 import { displayNumber } from "../api";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Destination, Hotel } from "../api/types";
 import { api, useApi, useCatalog, EMPTY_DESTINATION } from "../api";
 import { useLanguage } from "../context/LanguageContext";
@@ -40,7 +40,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
   const { language, t, getName } = useLanguage();
 
   const catalog = useCatalog();
-  const activeDestination = catalog.data?.find(d => d.id === selectedCityId) ?? catalog.data?.[0] ?? EMPTY_DESTINATION;
+  const [cityId, setCityId] = useState(selectedCityId);
+  useEffect(() => { setCityId(selectedCityId); }, [selectedCityId]);
+  const activeDestination = catalog.data?.find(d => d.id === cityId) ?? catalog.data?.[0] ?? EMPTY_DESTINATION;
   const cityName = getName(activeDestination);
   const [sortOrder, setSortOrder] = useState<SortCriterion>("value");
   const [category,setCategory]=useState<HotelCategory|''>('');
@@ -109,8 +111,8 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
     }
   };
 
-  if(catalog.loading || hotelsRequest.loading) return <p role="status">Loading hotels...</p>;
-  if(catalog.error || hotelsRequest.error) return <p role="alert">{catalog.error || hotelsRequest.error} <button onClick={() => {catalog.reload(); hotelsRequest.reload();}}>Retry</button></p>;
+  if(catalog.loading) return <p role="status">Loading hotels...</p>;
+  if(catalog.error) return <p role="alert">{catalog.error} <button onClick={() => {catalog.reload(); hotelsRequest.reload();}}>Retry</button></p>;
   if(!activeDestination.id) return <p role="status">No destinations available.</p>;
   const totalSelectedCount = Object.keys(activePreferredMap).length;
 
@@ -166,11 +168,17 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
         <div className="bg-white border-2 border-stone/40 p-4 font-mono text-xs text-charcoal flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs rounded-xl">
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-madder shrink-0" />
-            <span>
-              Showing hotels in{" "}
-              <strong className="text-ink font-bold">{cityName}</strong> — part
-              of your current trip.
-            </span>
+            <label htmlFor="ranked-stays-city" className="font-bold text-ink">Select city</label>
+            <select
+              id="ranked-stays-city"
+              value={activeDestination.id}
+              onChange={event => { setCityId(event.target.value); setAssignedNotice(null); }}
+              className="bg-salt text-ink border border-stone/40 px-3 py-2 rounded-lg max-w-full"
+            >
+              {catalog.data?.map(destination => (
+                <option key={destination.id} value={destination.id}>{getName(destination)}</option>
+              ))}
+            </select>
           </div>
 
           {onSelectDestination && (
@@ -233,7 +241,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
         {/* ================= 3. RANKED LIST OF HOTELS ================= */}
         <div className="space-y-4">
-          {!sortedHotels.length&&<p role="status">No matching hotels with known prices in this category and search area.</p>}
+          {hotelsRequest.loading && <p role="status">Loading hotels...</p>}
+          {hotelsRequest.error && <p role="alert">{hotelsRequest.error} <button onClick={hotelsRequest.reload}>Retry</button></p>}
+          {!hotelsRequest.loading && !hotelsRequest.error && !sortedHotels.length&&<p role="status">No matching hotels with known prices in this category and search area.</p>}
           {sortedHotels.map((hotel, index) => {
             const rankNumber = index + 1;
             const isChosen = currentPreferredHotelId === hotel.id;

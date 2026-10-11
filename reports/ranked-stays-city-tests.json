@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "width": 1440,
+      "city": "Ahmedabad",
+      "allHotels": 12,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Champaner",
+      "allHotels": 3,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Dwarka",
+      "allHotels": 9,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Gir National Park",
+      "allHotels": 7,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Modhera",
+      "allHotels": 6,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Rann of Kutch",
+      "allHotels": 4,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Saputara",
+      "allHotels": 9,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 1440,
+      "city": "Somnath",
+      "allHotels": 6,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Ahmedabad",
+      "allHotels": 12,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Champaner",
+      "allHotels": 3,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Dwarka",
+      "allHotels": 9,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Gir National Park",
+      "allHotels": 7,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Modhera",
+      "allHotels": 6,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Rann of Kutch",
+      "allHotels": 4,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Saputara",
+      "allHotels": 9,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 768,
+      "city": "Somnath",
+      "allHotels": 6,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Ahmedabad",
+      "allHotels": 12,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Champaner",
+      "allHotels": 3,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Dwarka",
+      "allHotels": 9,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Gir National Park",
+      "allHotels": 7,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Modhera",
+      "allHotels": 6,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Rann of Kutch",
+      "allHotels": 4,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Saputara",
+      "allHotels": 9,
+      "categoriesVerified": 3
+    },
+    {
+      "width": 390,
+      "city": "Somnath",
+      "allHotels": 6,
+      "categoriesVerified": 3
+    }
+  ],
+  "databaseWrites": 0
+}

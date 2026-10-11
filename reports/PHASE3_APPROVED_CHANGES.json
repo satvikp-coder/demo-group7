@@ -90,6 +90,11 @@
       "baselineSha256": null,
       "sha256": "d5e9eb6e85d5c397ca07cadba022d9f68c61f396c0b06845a2df6a9d69c85645",
       "reason": "Sourced factual catalog and ODbL attribution; no private data"
+    },
+    "frontend/src/components/HotelsView.tsx": {
+      "baselineSha256": "6bae86ffce11e4e68679beaddb2fa97402d2decd3bb85bc9d39c61f857582972",
+      "sha256": "4c5d7182bdf7fd34482913b9bcd44e86490745fe8e2a65b4e46b594e956464a1",
+      "reason": "Requested catalog-backed city selector with accessible label; hotel controls remain available during loading/errors; existing card styles preserved."
     }
   }
 }
