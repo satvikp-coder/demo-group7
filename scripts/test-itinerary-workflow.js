@@ -6,6 +6,7 @@ import {createPool} from '../backend/scripts/database.js';
 import {migrate} from '../backend/scripts/migrate.js';
 import {seedDatabase} from '../backend/scripts/seed.js';
 import {applyExpansion} from '../backend/scripts/expand-catalog.js';
+import {applyEnrichment} from '../backend/scripts/enrich-catalog.js';
 import {loadSources} from '../backend/scripts/csvSource.js';
 import {npm,run,waitFor,suiteLock} from './run.js';
 const release=suiteLock(),admin=createPool(),database='heritage_audit_'+randomUUID().replaceAll('-','');
@@ -28,6 +29,10 @@ try {
   report.expansion={before:Object.fromEntries(tables.map(t=>[t,before[t].length])),after:Object.fromEntries(tables.map(t=>[t,after[t].length])),imported,idempotent:true,originalRowsPreserved:true,dryRunRolledBack:true};
  }
 
+ if(phase==='demo'){
+  report.phase2Expansion=await applyExpansion(isolated,{phase2:true});
+  report.phase3Enrichment=await applyEnrichment(isolated);
+ }
  backend=spawn(process.execPath,['--import','tsx','server.js'],{cwd:new URL('../backend/',import.meta.url),env,windowsHide:true,stdio:'ignore'});await waitFor('http://localhost:5310/ready');
  if(['expanded','demo'].includes(phase))await run(process.execPath,['backend/scripts/test-itinerary-api.js'],{env:{...env,API_TEST_URL:'http://localhost:5310/api'},name:'itinerary-api-matrix'});
  if(phase==='demo')await run(process.execPath,['frontend/node_modules/vite/bin/vite.js','build','frontend'],{env:{...env,VITE_API_BASE_URL:'/api'},name:'itinerary-demo-build'});

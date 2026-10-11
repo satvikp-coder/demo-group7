@@ -3,6 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "local:demo:check": "node scripts/local-demo-check.js",
+    "test:demo:local": "node scripts/test-local-all.js itinerary-demo",
+    "test:phase3:local": "node scripts/test-local-all.js phase3",
+    "test:phase3:production:local": "node scripts/test-local-all.js phase3-production",
+    "local:refine": "node scripts/local-stack.js refine",
     "local:enrich": "node scripts/local-stack.js enrich",
     "test:phase2:production:local": "node scripts/test-local-all.js phase2-production",
     "test:phase2": "node scripts/test-phase2-data.js",

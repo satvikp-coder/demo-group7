@@ -119,6 +119,13 @@ database and production frontend at desktop, tablet and mobile widths.
 
 ## Quick Start
 
+For an existing local installation, `npm run local:up` starts the frontend,
+backend and persistent PostgreSQL database together at `http://localhost:8080`.
+`npm run local:demo:check` performs read-only environment checks before presenting.
+Use `npm run test:demo:local` to rehearse the real workflow in an isolated database.
+Current local repair evidence and limitations are recorded in
+[Phase 3 test results](reports/PHASE3_FULL_TEST_RESULTS.md).
+
 Install Node.js 22.18+ and Docker with Compose v2 (Linux containers), then:
 
 ```sh

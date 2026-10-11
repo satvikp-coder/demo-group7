@@ -1,0 +1,135 @@
+{
+  "release": "phase3-20261011",
+  "records": [
+    {
+      "city": "ahmedabad",
+      "slug": "amritavarshini-vav-ahmedabad",
+      "source_url": "https://heritage.ahmedabadcity.gov.in/details/132/heritage_site/en",
+      "checked": "2026-10-11",
+      "expected": {
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      },
+      "values": {
+        "entry_fee": "Free admission (AMC visitor guidance; checked2026-10-11)",
+        "entry_fee_numeric": 0,
+        "duration_hours": 0.33,
+        "opening_time": "10:00:00",
+        "closing_time": "18:00:00",
+        "best_time_note": "Municipal visitor guidance estimates20 minutes. Duration stored to hundredths of an hour and rounded up to whole scheduling minutes. Confirm temporary access changes before visiting."
+      }
+    },
+    {
+      "city": "ahmedabad",
+      "slug": "astodia-darwaza-ahmedabad",
+      "source_url": "https://heritage.ahmedabadcity.gov.in/details/84/heritage_site/en",
+      "checked": "2026-10-11",
+      "expected": {
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      },
+      "values": {
+        "entry_fee": "Free admission (AMC visitor guidance; checked2026-10-11)",
+        "entry_fee_numeric": 0,
+        "duration_hours": 0.08,
+        "opening_time": "00:00:00",
+        "closing_time": "23:59:00",
+        "best_time_note": "Municipal visitor guidance estimates5 minutes; public gateway access, daylight viewing recommended. Duration stored to hundredths of an hour and rounded up to whole scheduling minutes. Confirm temporary access changes before visiting."
+      }
+    },
+    {
+      "city": "ahmedabad",
+      "slug": "bhadra-fort-ahmedabad",
+      "source_url": "https://heritage.ahmedabadcity.gov.in/details/78/heritage_site/en",
+      "checked": "2026-10-11",
+      "expected": {
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      },
+      "values": {
+        "entry_fee": "Free admission (AMC visitor guidance; checked2026-10-11)",
+        "entry_fee_numeric": 0,
+        "duration_hours": 0.5,
+        "opening_time": "08:00:00",
+        "closing_time": "18:00:00",
+        "best_time_note": "Municipal visitor guidance estimates30 minutes; the fort hours differ from the surrounding market. Duration stored to hundredths of an hour and rounded up to whole scheduling minutes. Confirm temporary access changes before visiting."
+      }
+    },
+    {
+      "city": "ahmedabad",
+      "slug": "raipur-gate-ahmedabad",
+      "source_url": "https://heritage.ahmedabadcity.gov.in/details/93/heritage_site/en",
+      "checked": "2026-10-11",
+      "expected": {
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      },
+      "values": {
+        "entry_fee": "Free admission (AMC visitor guidance; checked2026-10-11)",
+        "entry_fee_numeric": 0,
+        "duration_hours": 0.17,
+        "opening_time": "00:00:00",
+        "closing_time": "23:59:00",
+        "best_time_note": "Municipal visitor guidance estimates10 minutes; public gateway access, daylight viewing recommended. Duration stored to hundredths of an hour and rounded up to whole scheduling minutes. Confirm temporary access changes before visiting."
+      }
+    },
+    {
+      "city": "ahmedabad",
+      "slug": "teen-darwaza-ahmedabad",
+      "source_url": "https://heritage.ahmedabadcity.gov.in/details/71/heritage_site/en",
+      "checked": "2026-10-11",
+      "expected": {
+        "entry_fee": null,
+        "entry_fee_numeric": null,
+        "duration_hours": null,
+        "opening_time": null,
+        "closing_time": null,
+        "best_time_note": "Mapped heritage identity/location. Admission fee, visit duration, hours, accessibility and guest rating unverified; excluded from timed planner until required facts are supplied."
+      },
+      "values": {
+        "entry_fee": "Free admission (AMC visitor guidance; checked2026-10-11)",
+        "entry_fee_numeric": 0,
+        "duration_hours": 0.17,
+        "opening_time": "00:00:00",
+        "closing_time": "23:59:00",
+        "best_time_note": "Municipal visitor guidance estimates10 minutes; public gateway access, daylight viewing recommended. Duration stored to hundredths of an hour and rounded up to whole scheduling minutes. Confirm temporary access changes before visiting."
+      }
+    },
+    {
+      "city": "gir-national-park",
+      "slug": "gir-jungle-safari",
+      "source_url": "https://girlion.gujarat.gov.in/GirJungleTrailBooking.aspx",
+      "checked": "2026-10-10",
+      "expected": {
+        "entry_fee_numeric": 3200,
+        "entry_fee": "Indian weekday six-seat Type B booking: permit800 + vehicle2000 + guide400 = INR3200; other dates/vehicles/nationalities differ",
+        "opening_time": "08:30:00",
+        "closing_time": "11:30:00",
+        "best_time_note": "Stored interval is the official 08:30-11:30 departure slot, not flexible admission. Report30 minutes early with permit and original ID. Other seasonal slots exist. Numeric cost covers one private Type B vehicle booking, not a per-person ticket. Current planner cannot enforce fixed departures or seasonal availability; confirm booking before relying on an itinerary."
+      },
+      "values": {
+        "entry_fee_numeric": 4700,
+        "entry_fee": "Indicative Indian weekday six-seat Category A vehicle with G2 guide: permit800 + vehicle3500 + guide400 = INR4700. Weekend4900; other choices and festival charges differ.",
+        "opening_time": null,
+        "closing_time": null,
+        "best_time_note": "Fixed seasonal safari departures and June16-October15 closure apply. See the sourced operating policy; permits, current charges and availability require confirmation."
+      }
+    }
+  ]
+}

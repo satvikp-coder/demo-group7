@@ -1,0 +1,41 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "unaffordableTotal": 16938,
+      "shortfall": 4938,
+      "rejectedBeforeTripWrite": true,
+      "sameHotelRecovered": true,
+      "explicitNights": 1,
+      "hotelTotal": 8469,
+      "knownTripTotal": 9319,
+      "refresh": true,
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "unaffordableTotal": 16938,
+      "shortfall": 4938,
+      "rejectedBeforeTripWrite": true,
+      "sameHotelRecovered": true,
+      "explicitNights": 1,
+      "hotelTotal": 8469,
+      "knownTripTotal": 9319,
+      "refresh": true,
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "unaffordableTotal": 16938,
+      "shortfall": 4938,
+      "rejectedBeforeTripWrite": true,
+      "sameHotelRecovered": true,
+      "explicitNights": 1,
+      "hotelTotal": 8469,
+      "knownTripTotal": 9319,
+      "refresh": true,
+      "pageErrors": []
+    }
+  ]
+}

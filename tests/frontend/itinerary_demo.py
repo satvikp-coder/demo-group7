@@ -9,9 +9,9 @@ with sync_playwright() as p:
  email='professor-demo-'+str(time.time_ns())+'@example.test';pw=secrets.token_urlsafe(20)+'Aa9!'
  assert context.request.post(api+'/auth/register',data={'name':'Professor demo','email':email,'password':pw,'role':'tourist'}).status==201
  page.goto(base+'/login',wait_until='domcontentloaded');page.locator('input[type=email]').fill(email);page.locator('input[type=password]').fill(pw);page.locator('button[type=submit]').click();page.wait_for_url(lambda u:'/login' not in u)
- for index,(city,category,hotel_name,priority,width) in enumerate([('Ahmedabad','Premium','French','distance',1440),('Ahmedabad','Premium','French','cost',1440),('Ahmedabad','Premium','French','rating',1440),('Somnath','Low Cost','Lilavati','cost',390)]):
+ for index,(city,category,hotel_name,priority,width) in enumerate([('Ahmedabad','Premium','French','distance',1440),('Ahmedabad','Premium','French','cost',1440),('Ahmedabad','Premium','French','rating',1440),('Somnath','Low Cost','Lilavati','cost',390),('Modhera','Budget','Modhera Sunrise','distance',768)]):
   page.set_viewport_size({'width':width,'height':720 if width==1440 else 844})
-  if width==390:
+  if width<1024:
    page.goto(base+'/profile',wait_until='domcontentloaded');page.get_by_role('button',name='Create New Heritage Route',exact=True).click()
   else:page.get_by_role('button',name='Plan Itinerary',exact=True).first.click()
   page.get_by_role('button',name=re.compile('^'+city)).click();page.get_by_role('button',name='Continue to Logistics').click()

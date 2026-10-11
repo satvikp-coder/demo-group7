@@ -1,4 +1,4 @@
-import {accommodationNights} from '../../../dsa/planning/accommodation';
+import {accommodationNights,lodgingSubtotal} from '../../../dsa/planning/accommodation';
 import {PriorityControls} from './PriorityControls';
 import {DEFAULT_WEIGHTS,type PriorityWeights} from '../../../dsa/planning/priorities';
 import {HotelCategoryPicker} from './HotelCategoryPicker';
@@ -159,8 +159,15 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
       startTime,hotelCategory,weights,travelers,rooms,lodgingNights:nights,arrivalDate,departureDate,startDate,wheelchairAccessibleOnly:wheelchairOnly};
     try {
       accommodationNights({days:tripDays,lodging_nights:nights,arrival_date:arrivalDate,departure_date:departureDate});
-      if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error("Choose 1 to 20 travelers and rooms.");
-      if (!startingHotelId) throw new Error("Select a hotel in the chosen category.");
+      if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error(t("stay.invalidGroup"));
+      if (!startingHotelId) throw new Error(t("stay.hotelRequired"));
+      const hotelTotal=lodgingSubtotal(startingHotelObj?.priceNumeric??null,nights,rooms);
+      if(hotelTotal!==null&&hotelTotal>budget){
+        const money=(value:number)=>new Intl.NumberFormat(language+'-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(value);
+        const values:Record<string,string|number>={total:money(hotelTotal),nights,rooms,budget:money(budget),shortfall:money(hotelTotal-budget)};
+        setStep(2);
+        throw new Error(t('stay.overBudget').replace(/\{(\w+)\}/g,(match,key)=>String(values[key]??match)));
+      }
       if (!session.token()) { setCreatedTrip(null); onRequireAuthentication(config); return; }
       const key=JSON.stringify(config);
       let id=createdTrip?.key===key ? createdTrip.id : undefined;
@@ -594,13 +601,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                 </div>
 
                 <div className="bg-white border border-stone/40 p-4 space-y-3 rounded-xl col-span-1 md:col-span-2">
-                  <label className="block text-xs">Start date (optional)<input aria-label="Trip start date" type="date" value={startDate} onChange={e=>setStartDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Travelers<input aria-label="Travelers" type="number" min="1" max="20" value={travelers} onChange={e=>setTravelers(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Rooms<input aria-label="Rooms" type="number" min="1" max="20" value={rooms} onChange={e=>setRooms(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Lodging nights<input aria-label="Lodging nights" type="number" min="0" max={tripDays+1} value={nights} onChange={e=>setLodgingNights(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Accommodation arrival (optional)<input aria-label="Accommodation arrival" type="date" value={arrivalDate} onChange={e=>setArrivalDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">Accommodation departure (optional)<input aria-label="Accommodation departure" type="date" value={departureDate} onChange={e=>setDepartureDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <p className="text-xs text-stone">Hotel subtotal = nightly estimate times {nights} night(s) times {rooms} room(s). Set zero nights for a day trip; the selected property is a route anchor, not a booking. Optional accommodation dates must agree with nights. Confirm room occupancy, taxes and fees; they are not guaranteed by this estimate. Admission and meal estimates are per traveler.</p>
+                  <label className="block text-xs">{t("stay.startLabel")}<input aria-label={t("stay.startAria")} type="date" value={startDate} onChange={e=>setStartDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.travelers")}<input aria-label={t("stay.travelers")} type="number" min="1" max="20" value={travelers} onChange={e=>setTravelers(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.rooms")}<input aria-label={t("stay.rooms")} type="number" min="1" max="20" value={rooms} onChange={e=>setRooms(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.nights")}<input aria-label={t("stay.nights")} type="number" min="0" max={tripDays+1} value={nights} onChange={e=>setLodgingNights(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.arrivalLabel")}<input aria-label={t("stay.arrivalAria")} type="date" value={arrivalDate} onChange={e=>setArrivalDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.departureLabel")}<input aria-label={t("stay.departureAria")} type="date" value={departureDate} onChange={e=>setDepartureDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <p className="text-xs text-stone">{t("stay.rule").replace("{nights}",String(nights)).replace("{rooms}",String(rooms))}</p>
                 </div>
                 <PriorityControls value={weights} onChange={setWeights}/>
                 {/* 5. Accessibility Constraint Toggle */}

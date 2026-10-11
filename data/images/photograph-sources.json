@@ -385,5 +385,41 @@
       "attractions:Bhadra Fort"
     ],
     "recovered": false
+  },
+  {
+    "key": "amritavarshini-vav-interior",
+    "file": "File:Amritavarshini Vav (Stepwell) 4.jpg",
+    "title": "Amritavarshini Vav, Ahmedabad",
+    "records": [
+      "attractions:amritavarshini-vav-ahmedabad"
+    ],
+    "names": [
+      "attractions:Amritavarshini Vav"
+    ],
+    "recovered": false
+  },
+  {
+    "key": "raipur-gate-ahmedabad",
+    "file": "File:Raipur Gate.jpg",
+    "title": "Raipur Gate, Ahmedabad",
+    "records": [
+      "attractions:raipur-gate-ahmedabad"
+    ],
+    "names": [
+      "attractions:Raipur Gate"
+    ],
+    "recovered": false
+  },
+  {
+    "key": "teen-darwaza-ahmedabad",
+    "file": "File:Teen Darwaza.JPG",
+    "title": "Teen Darwaza, Ahmedabad",
+    "records": [
+      "attractions:teen-darwaza-ahmedabad"
+    ],
+    "names": [
+      "attractions:Teen Darwaza"
+    ],
+    "recovered": false
   }
 ]

@@ -1,0 +1,36 @@
+// Interface copy only; sourced property names and factual descriptions remain unchanged.
+export const HOTEL_TRANSLATIONS = {
+ en: {
+  'hotel.choose':'Choose hotel category and property','hotel.category':'Hotel category',
+  'hotel.Low Cost':'Low Cost','hotel.Budget':'Budget','hotel.Premium':'Premium',
+  'hotel.bands':'Nightly estimate bands: Low Cost below ₹{low}; Budget ₹{low}–₹{high}; Premium above ₹{high}. Stored prices are indicative, not live quotes or availability.',
+  'hotel.order':'Order hotels','hotel.orderAria':'Order matching hotels','hotel.distance':'Distance','hotel.price':'Price','hotel.rating':'Rating',
+  'hotel.loading':'Finding matching hotels...','hotel.retry':'Retry',
+  'hotel.empty':'No {category} properties with a known price and location were found within the expanded {radius} km search area. Choose another category; no other category is substituted.',
+  'hotel.expanded':'Search expanded to {radius} km from {anchor} because fewer than {minimum} matching properties were recorded nearby.',
+  'hotel.select':'Select Hotel','hotel.selected':'Selected Hotel','hotel.prompt':'Choose a matching property','hotel.night':'night',
+  'hotel.distanceUnknown':'Distance unavailable','hotel.straightLine':'{distance} km approximate straight-line from {anchor}','hotel.source':'Record source',
+ },
+ hi: {
+  'hotel.choose':'होटल श्रेणी और होटल चुनें','hotel.category':'होटल श्रेणी',
+  'hotel.Low Cost':'कम लागत','hotel.Budget':'बजट','hotel.Premium':'प्रीमियम',
+  'hotel.bands':'प्रति रात अनुमान की श्रेणियाँ: कम लागत ₹{low} से कम; बजट ₹{low}–₹{high}; प्रीमियम ₹{high} से अधिक। दर्ज कीमतें सांकेतिक हैं; ये वर्तमान दरें या उपलब्धता नहीं बतातीं।',
+  'hotel.order':'होटलों का क्रम','hotel.orderAria':'मिलते-जुलते होटलों का क्रम','hotel.distance':'दूरी','hotel.price':'कीमत','hotel.rating':'रेटिंग',
+  'hotel.loading':'मिलते-जुलते होटल खोजे जा रहे हैं...','hotel.retry':'फिर प्रयास करें',
+  'hotel.empty':'विस्तारित {radius} किमी खोज क्षेत्र में ज्ञात कीमत और स्थान वाले {category} होटल नहीं मिले। दूसरी श्रेणी चुनें; श्रेणी अपने आप नहीं बदली जाती।',
+  'hotel.expanded':'पास में {minimum} से कम उपयुक्त होटल दर्ज होने के कारण {anchor} से खोज क्षेत्र {radius} किमी तक बढ़ाया गया है।',
+  'hotel.select':'होटल चुनें','hotel.selected':'चुना गया होटल','hotel.prompt':'उपयुक्त होटल चुनें','hotel.night':'रात',
+  'hotel.distanceUnknown':'दूरी उपलब्ध नहीं','hotel.straightLine':'{anchor} से लगभग {distance} किमी सीधी दूरी','hotel.source':'जानकारी का स्रोत',
+ },
+ gu: {
+  'hotel.choose':'હોટેલની શ્રેણી અને હોટેલ પસંદ કરો','hotel.category':'હોટેલની શ્રેણી',
+  'hotel.Low Cost':'ઓછી કિંમત','hotel.Budget':'બજેટ','hotel.Premium':'પ્રીમિયમ',
+  'hotel.bands':'પ્રતિ રાતના અંદાજની શ્રેણીઓ: ઓછી કિંમત ₹{low}થી ઓછી; બજેટ ₹{low}–₹{high}; પ્રીમિયમ ₹{high}થી વધુ. નોંધેલી કિંમતો સૂચક છે; તે વર્તમાન દરો કે ઉપલબ્ધતા દર્શાવતી નથી.',
+  'hotel.order':'હોટેલોનો ક્રમ','hotel.orderAria':'મેળ ખાતી હોટેલોનો ક્રમ','hotel.distance':'અંતર','hotel.price':'કિંમત','hotel.rating':'રેટિંગ',
+  'hotel.loading':'મેળ ખાતી હોટેલો શોધાઈ રહી છે...','hotel.retry':'ફરી પ્રયાસ કરો',
+  'hotel.empty':'વિસ્તૃત {radius} કિમી શોધ વિસ્તારમાં જાણીતી કિંમત અને સ્થાન ધરાવતી {category} હોટેલો મળી નથી. બીજી શ્રેણી પસંદ કરો; શ્રેણી આપમેળે બદલાતી નથી.',
+  'hotel.expanded':'નજીકમાં {minimum}થી ઓછી યોગ્ય હોટેલો નોંધાયેલી હોવાથી {anchor}થી શોધ વિસ્તાર {radius} કિમી સુધી વધારવામાં આવ્યો છે.',
+  'hotel.select':'હોટેલ પસંદ કરો','hotel.selected':'પસંદ કરેલી હોટેલ','hotel.prompt':'મેળ ખાતી હોટેલ પસંદ કરો','hotel.night':'રાત',
+  'hotel.distanceUnknown':'અંતર ઉપલબ્ધ નથી','hotel.straightLine':'{anchor}થી લગભગ {distance} કિમી સીધું અંતર','hotel.source':'માહિતીનો સ્રોત',
+ },
+};

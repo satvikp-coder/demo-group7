@@ -108,12 +108,15 @@ with sync_playwright() as p:
         page.locator('#planner-budget-input').fill("3000")
         page.locator('[role=dialog] input[type=checkbox]').check()
         page.get_by_role("button", name="Review Plan").click()
-        with page.expect_response(lambda r: "/generate-itinerary" in r.url) as generated:
-            page.get_by_role("button", name="Generate Circular Plan").click()
-        assert generated.value.status == 422
-        expect(page.get_by_text("No feasible itinerary", exact=False)).to_be_visible()
-        check("Weighted UI rejects infeasible selected hotel without fake generation", status=422)
-        page.get_by_role("button", name="Adjust Logistics").click()
+        rejected_writes=[]
+        def record_rejected(request):
+            if request.method=='POST' and ('/trips' in request.url):rejected_writes.append(request.url)
+        page.on('request',record_rejected)
+        page.get_by_role("button", name="Generate Circular Plan").click()
+        expect(page.get_by_role('alert')).to_contain_text('Accommodation alone is '+budget_label)
+        assert not rejected_writes,rejected_writes
+        page.remove_listener('request',record_rejected)
+        check("Weighted UI rejects unaffordable hotel with exact cost before creating a trip", noTripWrites=True)
         page.locator('#planner-budget-input').fill("30000")
         page.locator('[role=dialog] input[type=checkbox]').uncheck()
         page.get_by_role("button", name="Review Plan").click()

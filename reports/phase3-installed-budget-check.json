@@ -1,0 +1,23 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "installedPreflight": true,
+      "rejectedBeforeWrite": true,
+      "correctedGuestHandoff": true
+    },
+    {
+      "width": 768,
+      "installedPreflight": true,
+      "rejectedBeforeWrite": true,
+      "correctedGuestHandoff": true
+    },
+    {
+      "width": 390,
+      "installedPreflight": true,
+      "rejectedBeforeWrite": true,
+      "correctedGuestHandoff": true
+    }
+  ]
+}

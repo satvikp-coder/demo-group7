@@ -1,0 +1,437 @@
+{
+  "verified": true,
+  "coverage": [
+    {
+      "slug": "ahmedabad",
+      "categories": {
+        "Low Cost": 1,
+        "Budget": 0,
+        "Premium": 3
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 4,
+          "evaluated": 6,
+          "total": 225
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 4,
+          "evaluated": 6,
+          "total": 200
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 4,
+          "evaluated": 6,
+          "total": 200
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 6,
+          "evaluated": 6,
+          "total": 3450
+        }
+      ]
+    },
+    {
+      "slug": "champaner",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 1,
+        "Premium": 1
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 335
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 335
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 335
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 4935
+        }
+      ]
+    },
+    {
+      "slug": "dwarka",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 2,
+        "Premium": 0
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 340
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 340
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 340
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 5940
+        }
+      ]
+    },
+    {
+      "slug": "gir-national-park",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 0,
+        "Premium": 1
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 450
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 450
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 450
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 1,
+          "evaluated": 1,
+          "total": 10028
+        }
+      ]
+    },
+    {
+      "slug": "modhera",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 1,
+        "Premium": 0
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 420
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 420
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 420
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 6886
+        }
+      ]
+    },
+    {
+      "slug": "rann-of-kutch",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 0,
+        "Premium": 1
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 100
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 100
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 100
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 2,
+          "evaluated": 2,
+          "total": 11650
+        }
+      ]
+    },
+    {
+      "slug": "saputara",
+      "categories": {
+        "Low Cost": 0,
+        "Budget": 0,
+        "Premium": 1
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 2,
+          "evaluated": 1,
+          "total": 350
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 2,
+          "evaluated": 1,
+          "total": 350
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 2,
+          "evaluated": 1,
+          "total": 350
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 2,
+          "evaluated": 1,
+          "total": 10170
+        }
+      ]
+    },
+    {
+      "slug": "somnath",
+      "categories": {
+        "Low Cost": 2,
+        "Budget": 2,
+        "Premium": 0
+      },
+      "scenarios": [
+        {
+          "days": 1,
+          "weights": {
+            "distance": 80,
+            "cost": 10,
+            "rating": 10
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 600
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 80,
+            "rating": 10
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 600
+        },
+        {
+          "days": 1,
+          "weights": {
+            "distance": 10,
+            "cost": 10,
+            "rating": 80
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 600
+        },
+        {
+          "days": 3,
+          "weights": {
+            "distance": 34,
+            "cost": 33,
+            "rating": 33
+          },
+          "visits": 4,
+          "evaluated": 4,
+          "total": 3300
+        }
+      ]
+    }
+  ]
+}

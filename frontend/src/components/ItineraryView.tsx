@@ -1,4 +1,5 @@
 import type {PriorityWeights} from '../../../dsa/planning/priorities';
+import {resizeAccommodation} from '../../../dsa/planning/resizeAccommodation';
 import { displayNumber } from "../api";
 import React, { useState, useRef, useMemo, useEffect } from "react";
 import { DESIGN_TOKENS } from "../data/colors";
@@ -187,7 +188,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const handleSaveWhatIfVersion = async () => {
     setPendingSave(true); setSaveError("");
     try {
-      const saved = await createItinerary({...request.data.config,budget:sliderBudget,tripDays:sliderDays});
+      const saved = await createItinerary({...resizeAccommodation(request.data.config,sliderDays),budget:sliderBudget});
       setActiveConfig(saved.config); onPersistedConfig?.(saved.config);
       setIsSavedWhatIfNotice(true); setIsWhatIfOpen(false);
     } catch(error) { setSaveError(errorMessage(error)); }
@@ -450,6 +451,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             originalDays={config.tripDays || 2}
             sliderBudget={sliderBudget}
             sliderDays={sliderDays}
+            proposedNights={resizeAccommodation(request.data.config,sliderDays).lodgingNights??sliderDays}
             onBudgetChange={setSliderBudget}
             onDaysChange={setSliderDays}
             liveAttractionCount={liveResult.attractionCount}

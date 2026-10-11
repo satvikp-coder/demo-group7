@@ -7,6 +7,8 @@ and shared DSA. Preserve architecture, design, real user data and source provena
 
 ## Current Goal
 
+Phase3 local repairs verified and publication authorized. Publish normally on the existing phase2/university-release branch; preserve the existing PR. No merge or public deployment. Current authority: reports/PHASE3_LOCAL_DEMO_READINESS.md and reports/PHASE3_FULL_TEST_RESULTS.md.
+
 Phase2 university release. Publish a reviewed feature branch and PR, verify CI,
 without merging or activating public deployment. Current authority:
 reports/PHASE2_FINAL_READINESS.md and reports/PHASE2_PROGRESS.md.
@@ -18,6 +20,8 @@ Installed local catalog:8 destinations,44 attractions,43 hotels,12 restaurants,
 rows and existing user preserved; verified backup restored separately.
 
 ## Completed
+
+Phase3: exact lodging-budget preflight before writes, backend422 diagnosis, bounded alternative-start candidate search, sourced Gir per-vehicle/seasonal policy, correct WhatIf room-night resizing, EN/HI/GU hotel/accommodation/priority controls, six guarded attraction corrections and three licensed photos. Local full18/18, container16/16 and56 backend tests PASS; enriched32 destination scenarios,3 budget browser recoveries and9 hotel language/viewport checks PASS. Image associations38, intentional fallbacks69, broken references0. Missing rates/metadata/localization remain documented.
 
 31 source-backed records and159 modelled road connections; explicit lodging
 nights/dates with legacy compatibility; historical hotel tariff exclusion;
@@ -93,5 +97,7 @@ regression evidence. Code and PR1 published; exact-code CI passed. Final documen
 verified outcome and remaining Vercel/public hosting limitations.
 
 ## Last Updated
+
+2026-10-11 UTC: Phase3 publication preparation.
 
 2026-10-10T14:26:14.586007+00:00 UTC / Asia/Calcutta (UTC+05:30).

@@ -1,4 +1,5 @@
 import {datedOperation} from './operatingSchedule.js';
+import {admissionEstimate} from './admissionPolicy.js';
 import {accommodationNights,lodgingSubtotal} from '../../dsa/planning/accommodation.ts';
 import {createHash} from 'node:crypto';
 import {utility,weightedScore,validWeights,DEFAULT_WEIGHTS,STRATEGY_WEIGHTS} from '../../dsa/planning/priorities.ts';
@@ -15,7 +16,7 @@ const minutes = (value) => Number(value.slice(0,2))*60+Number(value.slice(3,5));
 const time = (value) => String(Math.floor(value/60)).padStart(2,"0")+":"+String(value%60).padStart(2,"0")+":00";
 
 // Scheduling adapter around the existing DSA. Routes/prices/accessibility come only from PostgreSQL.
-function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
+function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firstAttractionId=null) {
   const travelers=trip.travelers??1,rooms=trip.rooms??1;
   const excluded = [];
   const eligible = attractions.filter((a) => {
@@ -26,7 +27,7 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
     else if (a.duration_hours === null) reason = "visit_duration_unknown";
     if (reason) excluded.push({id:a.id,name:a.name,reason});
     return !reason;
-  }).map(a => ({...a,entryFeeNumeric:Number(a.entry_fee_numeric)*travelers,durationHours:Number(a.duration_hours),rating:a.rating==null?null:Number(a.rating),lat:Number(a.lat),lng:Number(a.lng)}));
+  }).map(a => ({...a,entryFeeNumeric:admissionEstimate(a,travelers,trip.start_date).cost,durationHours:Number(a.duration_hours),rating:a.rating==null?null:Number(a.rating),lat:Number(a.lat),lng:Number(a.lng)}));
   const graph = new Graph();
   const attractionIds = new HashTable();
   // Filter inaccessible intermediate attraction nodes too, not only final candidates.
@@ -93,6 +94,8 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
   const legs=[];
   const skippedMeals=[];
   for (let day=1;day<=trip.trip_days;day++) {
+    // Apply dated/group pricing before budget pruning, not after selecting candidates.
+    const dailyEligible=eligible.map(a=>{const estimate=admissionEstimate(a,travelers,trip.start_date,day);return {...a,entryFeeNumeric:estimate.cost,best_time_note:estimate.advisory??a.best_time_note};});
     let clock=minutes(trip.start_time);
     let current=hotel;
     let order=0;
@@ -126,13 +129,14 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
     // Allocate purchased room nights to daily ledger rows; optional extra arrival/departure nights go on day one.
     const chargedNights=(day<=Math.min(nights,trip.trip_days)?1:0)+(day===1?Math.max(0,nights-trip.trip_days):0);
     stop("hotel",hotel,clock,15,lodgingSubtotal(hotel.price_per_night,chargedNights,rooms),"departure");
-    const quota=getMaxAttractionsPerDay(filterAttractionsByBudget(eligible,remaining,visited).length,trip.trip_days-day+1,trip.strategy);
+    const quota=getMaxAttractionsPerDay(filterAttractionsByBudget(dailyEligible,remaining,visited).length,trip.trip_days-day+1,trip.strategy);
     let count=0;
     while(count<quota) {
       if(isLunchTime(clock,lunch)) { meal("lunch",750,870); lunch=true; }
       const queue=new MinHeap((a,b)=>b.score-a.score || a.attraction.id.localeCompare(b.attraction.id));
       const choices=[];
-      for(const a of filterAttractionsByBudget(eligible,remaining,visited)) {
+      for(const a of filterAttractionsByBudget(dailyEligible,remaining,visited)) {
+        if(day===1&&count===0&&firstAttractionId&&a.id!==firstAttractionId)continue;
         const route=leg(current.id,a.id),back=leg(a.id,hotel.id);
         if(!route || !back) continue;
         let arrival=clock+route.minutes;
@@ -142,7 +146,8 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
         const operation=datedOperation(a,trip.start_date,day,clock+route.minutes,duration);
         if(operation?.closed)continue;
         let scheduled=a;
-        if(operation){arrival=operation.arrival;closing=operation.closing;scheduled={...a,entryFeeNumeric:operation.fee*travelers,best_time_note:operation.advisory};}
+        if(operation){arrival=operation.arrival;closing=operation.closing;scheduled={...a,best_time_note:operation.advisory};}
+        else if(!a.opening_time||!a.closing_time)scheduled={...a,best_time_note:[a.best_time_note,'Opening hours are unverified; confirm access before following this estimated schedule.'].filter(Boolean).join(' ')};
         if(scheduled.entryFeeNumeric>remaining)continue;
         if(arrival+duration>closing || arrival+duration+back.minutes+15>1439) continue;
         choices.push({attraction:scheduled,route,arrival,duration,distance:route.distance_km+back.distance_km,cost:scheduled.entryFeeNumeric,rating:a.rating});
@@ -189,10 +194,20 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }) {
 export function buildPlan(trip,resources) {
  if(!trip.weights)return buildGreedyPlan(trip,resources); // Existing stored/API strategy-only plans remain compatible.
  if(!validWeights(trip.weights))throw new HttpError(400,'Priorities must be whole percentages totaling exactly 100');
+ const nights=accommodationNights({days:trip.trip_days,lodging_nights:trip.lodging_nights,arrival_date:trip.arrival_date,departure_date:trip.departure_date});
+ const rooms=trip.rooms??1,hotelTotal=lodgingSubtotal(resources.hotel.price_per_night,nights,rooms);
+ if(hotelTotal!==null&&hotelTotal>trip.budget){
+  const money=value=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(value);
+  throw new HttpError(422,`No feasible itinerary: accommodation alone is ${money(hotelTotal)} for ${nights} night(s) × ${rooms} room(s), exceeding your ${money(trip.budget)} budget by ${money(hotelTotal-trip.budget)}. Reduce nights or rooms, select a lower-priced hotel, or increase the budget. Other trip costs are additional.`);
+ }
  const guidance=[trip.weights,DEFAULT_WEIGHTS,...Object.values(STRATEGY_WEIGHTS),{distance:100,cost:0,rating:0},{distance:0,cost:100,rating:0},{distance:0,cost:0,rating:100}];
+ // Greedy weights alone can all choose the same first stop and miss directed-route
+ // tradeoffs. Explore at most12 stable alternative starts using the same scheduler.
+ const starts=resources.attractions.filter(a=>a.entry_fee_numeric!=null&&a.duration_hours!=null).map(a=>a.id).sort().slice(0,12);
+ const attempts=[...guidance.map(weights=>({weights,first:null})),...starts.map(first=>({weights:trip.weights,first}))];
  const unique=new Map();
- for(const weights of guidance) {
-  const plan=buildGreedyPlan({...trip,weights},resources);
+ for(const {weights,first} of attempts) {
+  const plan=buildGreedyPlan({...trip,weights},resources,first);
   const visits=plan.stops.filter(s=>s.stop_type==='attraction');
   const cost=Math.round(plan.stops.reduce((sum,s)=>sum+s.cost,0)*100)/100;
   if(!visits.length||cost>trip.budget)continue;
@@ -212,7 +227,8 @@ export function buildPlan(trip,resources) {
  candidates.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
  const selected=candidates[0];
  selected.plan.summary.optimization={method:'bounded_multi_start_greedy',weights:trip.weights,selected_candidate_id:selected.id,score:selected.score,evaluated_count:candidates.length,
-  distance_basis:'Sum of saved route legs; return estimates retain provenance warnings',cost_basis:'Known hotel room-night, per-traveler admission and meal estimates only; unknown transport fares excluded',rating_basis:'Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value',
+  distance_basis:'Sum of saved route legs; return estimates retain provenance warnings',cost_basis:'Known hotel room-night, source-unit admission (per traveler or vehicle) and meal estimates only; unknown transport fares excluded',rating_basis:'Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value',
+  search_attempts:attempts.length,alternative_start_limit:12,
   normalization:'Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage',
   optimality:'Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed',
   candidates:candidates.map(({plan,...metrics},index)=>({...metrics,rank:index+1,feasible:true})),travelers:trip.travelers??1,rooms:trip.rooms??1,lodging_nights:selected.plan.summary.lodging_nights};

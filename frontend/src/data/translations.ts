@@ -1,4 +1,5 @@
 import {GUJARATI} from "./gujarati";
+import {PHASE3_TRANSLATIONS} from './phase3Translations';
 export type Language = "en" | "hi" | "gu";
 
 export interface TranslationDictionary {
@@ -6,8 +7,9 @@ export interface TranslationDictionary {
 }
 
 export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
-  gu: GUJARATI,
+  gu: {...GUJARATI,...PHASE3_TRANSLATIONS.gu},
   en: {
+    ...PHASE3_TRANSLATIONS.en,
     // Navbar & Navigation
     "nav.brand": "Gujarat Heritage Directory",
     "nav.subtitle": "Stepwell Geometric Itinerary Engine",
@@ -152,6 +154,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
     "common.plan_trip": "Plan Custom Route",
   },
   hi: {
+    ...PHASE3_TRANSLATIONS.hi,
     // Navbar & Navigation
     "nav.brand": "गुजरात विरासत निर्देशिका",
     "nav.subtitle": "स्टेपवेल ज्यामितीय यात्रा इंजन",

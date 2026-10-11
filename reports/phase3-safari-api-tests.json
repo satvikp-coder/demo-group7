@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "cases": [
+    {
+      "date": "2026-10-19",
+      "travelers": 3,
+      "expectedSafariCost": 4700,
+      "actualSafariCost": 4700,
+      "persisted": true
+    },
+    {
+      "date": "2026-10-19",
+      "travelers": 7,
+      "expectedSafariCost": 9400,
+      "actualSafariCost": 9400,
+      "persisted": true
+    },
+    {
+      "date": "2026-10-17",
+      "travelers": 3,
+      "expectedSafariCost": 4900,
+      "actualSafariCost": 4900,
+      "persisted": true
+    },
+    {
+      "date": "2026-10-12",
+      "travelers": 3,
+      "expectedSafariCost": null,
+      "actualSafariCost": null,
+      "persisted": true
+    }
+  ]
+}
