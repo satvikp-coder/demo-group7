@@ -82,6 +82,7 @@ try{
  report.checks.push('Real browser explicit zero-night generation, refresh, decoded images and overflow at 1440/768/390');
  if(phase3){
   await run('python',['tests/frontend/itinerary_phase3.py'],{env:{...env,FRONTEND_TEST_URL:'http://localhost:4310',API_TEST_URL:'http://localhost:5310/api'},name:'phase3-browser'});
+  await run('python',['tests/frontend/sightseeing_quality.py'],{env:{...env,FRONTEND_TEST_URL:'http://localhost:4310',API_TEST_URL:'http://localhost:5310/api'},name:'sightseeing-browser'});
   report.checks.push('Phase3 browser seven-day to one-day saved version, checkout/night recalculation and reload at 1440/768/390');
   if(!scheduling){
   await run('python',['tests/frontend/hotel_localization.py'],{env:{...env,FRONTEND_TEST_URL:'http://localhost:4310'},name:'phase3-hotel-localization'});

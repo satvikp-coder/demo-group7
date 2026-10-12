@@ -140,8 +140,10 @@ try {
   assert.ok(summary.excluded_attractions.some(s=>s.id===unknown && s.reason==="accessibility_unknown"));
   assert.ok(summary.legs.some(l=>l.from===a && l.to===b && l.method==="dijkstra"));
   assert.ok(summary.legs.some(l=>l.from===b && l.to===c && l.method==="direct"));
-  assert.equal(accessible.budget.total, 1350);
-  assert.equal(accessible.budget.meals, 200);
+  assert.equal(accessible.budget.total, 1150);
+  assert.equal(accessible.budget.meals, 0);
+  assert.equal(accessible.fetched.days.flatMap(d=>d.stops).filter(s=>s.stop_type==='meal').length,0);
+  assert.ok(accessible.fetched.days[0].stops.at(-1).arrival_time < '12:00:00');
   for (const leg of summary.legs) {
     assert.ok(!leg.path.includes(inaccessible) && !leg.path.includes(unknown));
   }
@@ -154,7 +156,8 @@ try {
   assert.equal(overBudget.fetched.trip.generation_summary.hotel_replaced,false);
   const multiDay = await flow("fixture_two_days", {...input,days:2,wheelchair_accessible_only:true},token);
   assert.equal(multiDay.budget.hotel,2000);
-  assert.equal(multiDay.budget.meals,400);
+  assert.equal(multiDay.budget.meals,0);
+  assert.ok(multiDay.fetched.days.every(d=>d.stops.at(-1).arrival_time < '12:00:00'));
   assert.equal(multiDay.budget.attractions,150);
   const regenerated = await request("POST",accessible.path+"/generate-itinerary",{},token);
   assert.equal(regenerated.days.flatMap(d=>d.stops).length,accessible.fetched.days.flatMap(d=>d.stops).length);

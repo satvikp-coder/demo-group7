@@ -1,0 +1,3846 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 9,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 9,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 9,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 9,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 11,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 2800,
+      "total": 3300
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 11,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 14,
+      "hotelTotal": 2800,
+      "total": 3300
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 11,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 2800,
+      "total": 3300
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Maruti",
+      "hotelId": "dd97e927-349c-4490-8a4c-c52e1037f0b7",
+      "distanceKm": 1.7384464074968675,
+      "visits": 11,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 2800,
+      "total": 3500
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 9,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 9,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 9,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 9,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 11,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 3400,
+      "total": 3900
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 11,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 3400,
+      "total": 3900
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 11,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 3400,
+      "total": 3900
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "hotelId": "47cd24d7-10ec-4257-ad33-61ef1a89dbc1",
+      "distanceKm": 0.3149342003655755,
+      "visits": 11,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 3400,
+      "total": 3900
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 1,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 9,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 1,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 9,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 1,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 9,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 1,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 9,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 50
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 3,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 11,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 10478,
+      "total": 10978
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 3,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 11,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 10478,
+      "total": 10978
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 3,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 11,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 10478,
+      "total": 10978
+    },
+    {
+      "slug": "ahmedabad",
+      "category": "Premium",
+      "days": 3,
+      "choices": 3,
+      "hotel": "Lemon Tree Premier",
+      "hotelId": "847a809b-349f-4a81-85bb-ca6233e787b5",
+      "distanceKm": 0.485095304541622,
+      "visits": 11,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 16,
+      "hotelTotal": 10478,
+      "total": 11178
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 1600,
+      "total": 1670
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 1600,
+      "total": 1670
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 1600,
+      "total": 1670
+    },
+    {
+      "slug": "champaner",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "hotelId": "f5901d15-c74d-48d0-af67-66b33bee097f",
+      "distanceKm": 7.720153969826546,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 1600,
+      "total": 1670
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 4000,
+      "total": 4070
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 4000,
+      "total": 4070
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 4000,
+      "total": 4070
+    },
+    {
+      "slug": "champaner",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sarvottam, Baska",
+      "hotelId": "eec880a6-9a18-48aa-93d2-114843cabe1b",
+      "distanceKm": 9.834773339039746,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 4000,
+      "total": 4070
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 0,
+      "total": 70
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 18184,
+      "total": 18254
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 18184,
+      "total": 18254
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 18184,
+      "total": 18254
+    },
+    {
+      "slug": "champaner",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Champaner Heritage Resort",
+      "hotelId": "12df080e-bbd7-45cf-b4bd-88988ee81602",
+      "distanceKm": 9.039668291879098,
+      "visits": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 1,
+      "hotelTotal": 18184,
+      "total": 18254
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 340
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 1792,
+      "total": 1792
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 1792,
+      "total": 2132
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 1792,
+      "total": 1792
+    },
+    {
+      "slug": "dwarka",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Mathura Bhavan, Dwarka",
+      "hotelId": "a8993ac9-6f26-4257-90b7-df3f223aed6c",
+      "distanceKm": 0.3831076376708003,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 1792,
+      "total": 2132
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 340
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 340
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 340
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 4920,
+      "total": 4920
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 4920,
+      "total": 5260
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 4920,
+      "total": 4920
+    },
+    {
+      "slug": "dwarka",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Hotel Darshan Palace",
+      "hotelId": "b86589e5-66ff-4d66-9e55-8e0454787d93",
+      "distanceKm": 1.4453297979250015,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 4920,
+      "total": 5260
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 340
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 0,
+      "total": 340
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 10312,
+      "total": 10312
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 10312,
+      "total": 10652
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 10312,
+      "total": 10312
+    },
+    {
+      "slug": "dwarka",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "IRA by Orchid Dwarka",
+      "hotelId": "55e93b5f-d565-4113-8eb3-8a26c4666776",
+      "distanceKm": 0.18321695062803756,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 5,
+      "hotelTotal": 10312,
+      "total": 10652
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 1816,
+      "total": 7116
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 1816,
+      "total": 7116
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 1816,
+      "total": 7116
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sapphire, Junagadh",
+      "hotelId": "e2ea30aa-94d8-4a5d-be30-acb699a48a0f",
+      "distanceKm": 42.08919881096884,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 1816,
+      "total": 7116
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5300
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 4318,
+      "total": 9618
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 4318,
+      "total": 9618
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 4318,
+      "total": 9618
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "hotelId": "9feab954-60c9-47ac-8b01-709c41d89819",
+      "distanceKm": 34.59132933104807,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 4318,
+      "total": 9618
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5000
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5000
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5000
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 5000
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 8978,
+      "total": 13978
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 8978,
+      "total": 13978
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 8978,
+      "total": 13978
+    },
+    {
+      "slug": "gir-national-park",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Anil Farms Gir Jungle Resort",
+      "hotelId": "3ada5fc6-9340-4e40-a69c-e1cfb6b4aee9",
+      "distanceKm": 2.2692906262949393,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 8978,
+      "total": 13978
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2100,
+      "total": 2140
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2100,
+      "total": 2140
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2100,
+      "total": 2140
+    },
+    {
+      "slug": "modhera",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "The Grand Takshak, Mehsana",
+      "hotelId": "1bf8fdde-ee99-4bc9-b6ad-b8c17d66d094",
+      "distanceKm": 20.10791674768859,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2100,
+      "total": 2140
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5666,
+      "total": 5706
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5666,
+      "total": 5706
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5666,
+      "total": 5706
+    },
+    {
+      "slug": "modhera",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Modhera Sunrise Resort",
+      "hotelId": "7393825a-3622-40ab-873c-2e03f701e832",
+      "distanceKm": 0.4129743245011875,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5666,
+      "total": 5706
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 40
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9758,
+      "total": 9798
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9758,
+      "total": 9798
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9758,
+      "total": 9798
+    },
+    {
+      "slug": "modhera",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Shankus Waterpark and Resort, Mehsana",
+      "hotelId": "f7fe8db7-efc0-4c7c-9116-f2c0ca0c3ef1",
+      "distanceKm": 29.064369265852203,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9758,
+      "total": 9798
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2398,
+      "total": 3098
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2398,
+      "total": 3098
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2398,
+      "total": 3098
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "hotelId": "9f5b7b21-336f-4ba0-bd4f-56a2266ef1dd",
+      "distanceKm": 67.55382623923666,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2398,
+      "total": 3098
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5122,
+      "total": 5822
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5122,
+      "total": 5822
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5122,
+      "total": 5822
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "hotelId": "4625f1c5-a261-4f6f-9a70-3909866d08fe",
+      "distanceKm": 68.80905590964838,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5122,
+      "total": 5822
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 200
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 11550,
+      "total": 11750
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 11550,
+      "total": 11750
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 11550,
+      "total": 11750
+    },
+    {
+      "slug": "rann-of-kutch",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Gateway to Rann Resort",
+      "hotelId": "c7f21187-0a61-47ff-9058-c5fd8ef4e5ea",
+      "distanceKm": 5.262025306644954,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 11550,
+      "total": 11750
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2860,
+      "total": 2860
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2860,
+      "total": 2860
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2860,
+      "total": 2860
+    },
+    {
+      "slug": "saputara",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Manas Cottage, Saputara",
+      "hotelId": "a293fc54-80e6-47cc-817b-bab796acf5e6",
+      "distanceKm": 0.5611695349424055,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 2860,
+      "total": 2860
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5600,
+      "total": 5600
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5600,
+      "total": 5600
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5600,
+      "total": 5600
+    },
+    {
+      "slug": "saputara",
+      "category": "Budget",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Savshanti Motels, Saputara",
+      "hotelId": "72686ded-a940-4245-bfee-8b24b5fb6ab4",
+      "distanceKm": 0.39802830891041074,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 5600,
+      "total": 5600
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9120,
+      "total": 9120
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9120,
+      "total": 9120
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9120,
+      "total": 9120
+    },
+    {
+      "slug": "saputara",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Aakar Lords Inn Saputara",
+      "hotelId": "1768d703-2bf2-4de3-866e-40620618eaa6",
+      "distanceKm": 0.32495477521915855,
+      "visits": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 2,
+      "mealOnlyDays": 0,
+      "candidates": 2,
+      "hotelTotal": 9120,
+      "total": 9120
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 600
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 600
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 600
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 1500,
+      "total": 1500
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 1500,
+      "total": 1500
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 1500,
+      "total": 1500
+    },
+    {
+      "slug": "somnath",
+      "category": "Low Cost",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Lilavati Atithigruh",
+      "hotelId": "6a03ba42-6596-4394-b1cb-9a147481b967",
+      "distanceKm": 0.5556104554217565,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 1500,
+      "total": 1500
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 1,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 6800,
+      "total": 6800
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 6800,
+      "total": 6800
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 6800,
+      "total": 6800
+    },
+    {
+      "slug": "somnath",
+      "category": "Budget",
+      "days": 3,
+      "choices": 2,
+      "hotel": "Sagar Darshan Atithigruh",
+      "hotelId": "a6df209f-2bc6-4fd4-9795-1592d88844f7",
+      "distanceKm": 0.21583933843976635,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 6,
+      "hotelTotal": 6800,
+      "total": 6800
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 8,
+      "hotelTotal": 0,
+      "total": 0
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 1,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 1,
+      "mealOnlyDays": 0,
+      "candidates": 8,
+      "hotelTotal": 0,
+      "total": 360
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 8510,
+      "total": 8510
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 7,
+      "hotelTotal": 8510,
+      "total": 8510
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 8,
+      "hotelTotal": 8510,
+      "total": 8510
+    },
+    {
+      "slug": "somnath",
+      "category": "Premium",
+      "days": 3,
+      "choices": 1,
+      "hotel": "Lords Inn Somnath",
+      "hotelId": "5c8494a2-dd36-4cc6-a180-4d79735fa41c",
+      "distanceKm": 1.2803832804194017,
+      "visits": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "sightseeingDays": 3,
+      "mealOnlyDays": 0,
+      "candidates": 8,
+      "hotelTotal": 8510,
+      "total": 8510
+    }
+  ],
+  "guestRestrictionsBeforeWrites": true
+}

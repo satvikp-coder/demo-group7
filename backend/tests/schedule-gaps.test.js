@@ -19,19 +19,18 @@ test('daily allocation does not discard available short visits at an arbitrary f
  assert.equal(plan.stops.filter(s=>s.stop_type==='attraction').length,6);
  assert.equal(getMaxAttractionsPerDay(10,2,'rating-first'),5);
 });
-test('sparse catalog lunch-to-dinner gap is explicit and excludes actual travel time',()=>{
- const restaurant={id:'r',name:'Restaurant',lat:23,lng:72,avg_cost_per_person:150};
- const plan=buildPlan(trip,{hotel,attractions:[attraction('a')],restaurants:[restaurant],routes:[edge('h','a'),edge('h','r'),edge('a','r')]});
- const lunch=plan.stops.find(s=>s.category==='lunch'),dinner=plan.stops.find(s=>s.category==='dinner');
- const gap=plan.summary.free_time.find(g=>g.before_stop_order===dinner.stop_order);
- assert.equal(lunch.departure_time,'13:30:00');assert.equal(gap.start_time,'13:30:00');assert.equal(gap.end_time,'19:30:00');assert.equal(gap.duration_minutes,360);
- assert.equal(plan.stops.filter(s=>s.stop_type==='attraction').length,1);
+test('legacy saved lunch-to-dinner gaps remain explicit without requiring new plans to force dinner',()=>{
+ const stops=[{day_number:1,stop_order:1,reference_id:'r',arrival_time:'12:30:00',departure_time:'13:30:00'},
+ {day_number:1,stop_order:2,reference_id:'r',arrival_time:'19:30:00',departure_time:'20:30:00'}];
+ const gap=scheduleGaps(stops,[])[0];
+ assert.equal(gap.start_time,'13:30:00');assert.equal(gap.end_time,'19:30:00');assert.equal(gap.duration_minutes,360);
 });
+
 test('known transfers are excluded from free intervals, with no overlap or duplicate visits',()=>{
  const restaurant={id:'r',name:'Restaurant',lat:23,lng:72,avg_cost_per_person:150};
- const plan=buildPlan(trip,{hotel,attractions:[attraction('a')],restaurants:[restaurant],routes:[edge('h','a'),edge('h','r'),edge('a','r')]});
- const wait=plan.summary.free_time.find(g=>g.before_stop_order===3);
- assert.equal(wait.end_time,'12:25:00');
+ const plan=buildPlan(trip,{hotel,attractions:[{...attraction('a'),opening_time:'11:00'}],restaurants:[restaurant],routes:[edge('h','a'),edge('h','r'),edge('a','r')]});
+ const wait=plan.summary.free_time.find(g=>g.before_stop_order===2);
+ assert.equal(wait.end_time,'10:55:00');
  for(let i=1;i<plan.stops.length;i++)assert.ok(plan.stops[i].arrival_time>=plan.stops[i-1].departure_time);
  assert.equal(new Set(plan.stops.filter(s=>s.stop_type==='attraction').map(s=>s.reference_id)).size,1);
  assert.ok(plan.summary.free_time.every(g=>g.duration_minutes>=60));

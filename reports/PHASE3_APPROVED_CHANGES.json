@@ -3,8 +3,8 @@
   "files": {
     "frontend/src/components/ItineraryView.tsx": {
       "baselineSha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
-      "sha256": "4f73b6c2b260694eff80b5495af580406dbb6635132247b77d8845fa74a082b8",
-      "reason": "Current/legacy schedule gaps, correct dinner accessibility, eagerly load off-screen images temporarily for real PDF export and bound resource waits; UI styles retained"
+      "sha256": "d6c3eb7c2e16bfd49abd0b03e5f1718cb538aef0bddae2ed750488d8145c9331",
+      "reason": "Retain schedule/PDF fixes and existing styling; disclose unschedulable sightseeing days instead of misleading meal-only tours."
     },
     "frontend/src/components/WhatIfPanel.tsx": {
       "baselineSha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",

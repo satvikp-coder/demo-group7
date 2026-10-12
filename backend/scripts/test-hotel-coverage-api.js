@@ -14,17 +14,31 @@ try{
  const email='coverage-'+randomUUID()+'@example.test',password=randomBytes(24).toString('hex')+'Aa9!';
  await call('/auth/register',{name:'Isolated hotel coverage',email,password,role:'tourist'},201);token=(await call('/auth/login',{email,password})).token;
  for(const slug of ['ahmedabad','champaner','dwarka','gir-national-park','modhera','rann-of-kutch','saputara','somnath']){
+  // Separate isolated users keep the192-case matrix within real per-user limits.
+  const cityEmail='coverage-'+randomUUID()+'@example.test',cityPassword=randomBytes(24).toString('hex')+'Aa9!';
+  await call('/auth/register',{name:'Isolated city coverage',email:cityEmail,password:cityPassword,role:'tourist'},201);
+  token=(await call('/auth/login',{email:cityEmail,password:cityPassword})).token;
   const destination=await call('/destinations/'+slug);
   for(const category of ['Low Cost','Budget','Premium']){
    const rows=await call('/destinations/'+slug+'/hotels?category='+encodeURIComponent(category));assert.ok(rows.length,slug+' '+category);
    assert.ok(rows.every(h=>h.hotel_category===category&&h.price_per_night>0&&h.distance_km>=0));
    const hotel=rows.find(h=>h.external_id?.startsWith('exp-20261011-'))??rows[0];
-   for(const days of [1,3]){
-    const input={destination_id:destination.id,starting_hotel_id:hotel.id,hotel_category:category,days,lodging_nights:days-1,rooms:1,travelers:2,budget:200000,start_time:slug==='gir-national-park'?'06:00':'08:00',start_date:'2026-11-10',weights:{distance:34,cost:33,rating:33}};
+   for(const days of [1,3])for(const weights of [{distance:34,cost:33,rating:33},{distance:100,cost:0,rating:0},{distance:0,cost:100,rating:0},{distance:0,cost:0,rating:100}]){
+    const input={destination_id:destination.id,starting_hotel_id:hotel.id,hotel_category:category,days,lodging_nights:days-1,rooms:1,travelers:2,budget:200000,start_time:slug==='gir-national-park'?'06:00':'08:00',start_date:'2026-11-10',weights};
     const created=await call('/trips',input,201),result=await call('/trips/'+created.trip.id+'/generate-itinerary',{});
     const summary=result.trip.generation_summary,stops=result.days.flatMap(d=>d.stops),visits=stops.filter(s=>s.stop_type==='attraction');
     const minute=value=>Number(value.slice(0,2))*60+Number(value.slice(3,5));
     for(const day of result.days)for(let i=1;i<day.stops.length;i++)assert.ok(minute(day.stops[i].arrival_time)>=minute(day.stops[i-1].departure_time),'Schedule must not overlap');
+    for(const day of result.days){
+     const visits=day.stops.filter(s=>s.stop_type==='attraction'),meals=day.stops.filter(s=>s.stop_type==='meal');
+     const coverage=summary.day_coverage.find(c=>c.day_number===day.day_number);
+     assert.equal(coverage.attraction_count,visits.length);
+     if(!visits.length){assert.equal(meals.length,0);assert.match(coverage.advisory,/Shorten/);}
+     const dinner=day.stops.findIndex(s=>s.category==='dinner');
+     if(dinner>=0){const prev=day.stops[dinner-1];assert.ok(prev.stop_type!=='meal'||minute(day.stops[dinner].arrival_time)-minute(prev.departure_time)<180,'No forced lunch-to-dinner six-hour wait');}
+    }
+    assert.equal(summary.optimization.score,Math.max(...summary.optimization.candidates.map(c=>c.score)));
+    assert.ok(summary.optimization.candidates.every(c=>c.attraction_count===visits.length));
     for(const gap of summary.free_time??[]){
      const day=result.days.find(d=>d.stops[0]?.day_number===gap.day_number),index=day.stops.findIndex(s=>s.stop_order===gap.before_stop_order),previous=day.stops[index-1],next=day.stops[index];
      const transfer=summary.legs.find(l=>l.day_number===gap.day_number&&l.from===previous.reference_id&&l.to===next.reference_id);
@@ -34,7 +48,7 @@ try{
     assert.equal(summary.hotel_total,Number(hotel.price_per_night)*(days-1));assert.ok(Number(result.budget.total)<=input.budget);
     assert.equal(new Set(visits.map(s=>s.reference_id)).size,visits.length);assert.deepEqual(summary.optimization.weights,input.weights);
     const restored=await call('/trips/'+created.trip.id);assert.deepEqual(restored.budget,result.budget);
-    report.results.push({slug,category,days,choices:rows.length,hotel:hotel.name,hotelId:hotel.id,distanceKm:hotel.distance_km,visits:visits.length,candidates:summary.optimization.evaluated_count,hotelTotal:summary.hotel_total,total:result.budget.total});
+    report.results.push({slug,category,days,choices:rows.length,hotel:hotel.name,hotelId:hotel.id,distanceKm:hotel.distance_km,visits:visits.length,weights,sightseeingDays:summary.day_coverage.filter(d=>d.attraction_count).length,mealOnlyDays:0,candidates:summary.optimization.evaluated_count,hotelTotal:summary.hotel_total,total:result.budget.total});
    }
   }
  }
@@ -45,5 +59,5 @@ try{
  await call('/trips',{...input,travelers:3},422);assert.equal(await count(),before);
  const accepted=await call('/trips',{...input,travelers:3,rooms:2},201);assert.equal(accepted.hotel_total,Number(hotel.price_per_night)*2);
  report.guestRestrictionsBeforeWrites=true;report.verified=true;
- console.log('Hotel coverage: all24 tiers /48 real generation-and-refresh cases and guest restrictions PASS');
+ console.log('Hotel coverage: all24 tiers /192 real generation-and-refresh cases and guest restrictions PASS');
 }finally{await pool.end();writeFileSync(new URL('../../reports/hotel-tier-api-tests.json',import.meta.url),JSON.stringify(report,null,2));}

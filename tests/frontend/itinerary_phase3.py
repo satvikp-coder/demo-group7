@@ -21,15 +21,20 @@ with sync_playwright() as p:
   response=generated.value;assert response.status==200;dto=response.json();assert dto['trip']['lodging_nights']==6
   assert dto['trip']['generation_summary']['hotel_total']>0;assert any(s['stop_type']=='attraction' for d in dto['days'] for s in d['stops'])
   page.wait_for_url('**/itinerary');expect(page.get_by_text('Base Hotel:',exact=False)).to_be_visible();page.reload();expect(page.get_by_text('Base Hotel:',exact=False)).to_be_visible();expect(page.get_by_text('Hotels (6 Nights)',exact=True)).to_be_visible()
-  assert dto['trip']['generation_summary']['free_time']
-  expect(page.get_by_test_id('itinerary-free-time').first).to_be_visible()
-  expect(page.get_by_test_id('itinerary-free-time').first).to_contain_text('Free / personal time:')
-  # Test-only old response contract: keep real saved stops/legs, omit the new metadata.
+  coverage=dto['trip']['generation_summary']['day_coverage']
+  sparse=[d for d in coverage if not d['attraction_count']]
+  assert sparse
+  expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(sparse))
+  expect(page.get_by_test_id('itinerary-day-coverage').first).to_contain_text('Shorten the sightseeing trip')
+  for day in dto['days']:
+   if not any(s['stop_type']=='attraction' for s in day['stops']):
+    assert not any(s['stop_type']=='meal' for s in day['stops'])
+  # Old response contracts continue to render: never rewrite stored itinerary stops.
   def legacy_response(route):
    response=route.fetch();body=response.json();body['trip']['generation_summary'].pop('free_time',None)
    route.fulfill(response=response,json=body)
   legacy_url='**/api/trips/'+dto['trip']['id'];page.route(legacy_url,legacy_response)
-  page.reload();expect(page.get_by_test_id('itinerary-free-time').first).to_contain_text('Free / personal time:')
+  page.reload();expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(sparse))
   page.unroute(legacy_url,legacy_response)
   page.get_by_role('button',name='What if?',exact=True).click()
   page.locator('#whatif-days-slider').fill('1')

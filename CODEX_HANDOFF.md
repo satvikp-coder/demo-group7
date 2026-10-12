@@ -6,6 +6,8 @@ Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL
 
 ## Current Goal
 
+Shared sightseeing scheduler repair verified: no forced lunch/dinner waits or meals-only days; existing graph fallback for all node types; coverage-comparable weighted ranking; unverified-hours planning cutoff and missing-day advisory. Backend71/71, full18/18 with64browser controls/PDF,192all8 destination/category/day/weight API cases,32city scenarios, exact reported Champaner3width saved/reloaded UI PASS. Local8080 installed/readiness7/7, original9table fingerprints preserved. See reports/SIGHTSEEING_QUALITY_REPAIR.md. Saved older plans remain unchanged; regenerate for new scheduling.
+
 Ranked Stays city selector verified and prepared for normal main publication. Real catalog-backed all-eight-city control; hotel loading/errors retain controls.
 
 Scheduling and hotel-tier continuation verified locally; normal main publication authorized. Earlier PR1 was merged upstream as accc245. Current evidence: reports/SCHEDULE_GAP_REPAIR.md and reports/HOTEL_TIER_COVERAGE.md. No manual merge, public deployment or secret change.

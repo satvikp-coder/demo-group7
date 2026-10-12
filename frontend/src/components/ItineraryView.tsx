@@ -507,6 +507,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               <h2 className="font-display text-xl text-gold">Your Priorities</h2>
               <p>Distance: {optimization.weights.distance}% | Cost: {optimization.weights.cost}% | Rating: {optimization.weights.rating}%</p>
               <p>Why this itinerary? It has the highest weighted score among {optimization.evaluated_count} feasible candidates evaluated by the existing greedy planner. A global optimum is not guaranteed.</p>
+              {optimization.coverage_policy && <p className="text-sm text-stone">Priorities compare tours with the fullest feasible sightseeing coverage found. A cheaper plan does not win simply by dropping visits.</p>}
               <p>{chosen?.attraction_count} attractions | {chosen?.distance_km.toFixed(1)} km of saved route estimates | INR {chosen?.known_cost.toLocaleString('en-IN')} known estimated costs | Rating: {chosen?.rating_mean == null ? 'Unknown' : chosen.rating_mean.toFixed(2) + '/5'} | Score: {optimization.score.toFixed(4)}</p>
               <p className="text-sm text-stone">Costs include {optimization.rooms} room(s) for {request.data.dto.trip.generation_summary?.lodging_nights ?? numDays} night(s) and known admission/meal costs for {optimization.travelers} traveler(s). Transport fares remain unknown. Ratings use known values with a coverage adjustment; prices are estimates, not live availability.</p>
             </section>;
@@ -731,6 +732,11 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     </div>
                   </div>
 
+                  {request.data?.dto.trip.generation_summary?.day_coverage?.filter((coverage: any) => coverage.day_number === day.dayNumber && !coverage.attraction_count).map((coverage: any) => (
+                    <p key={coverage.day_number} role="note" className="text-sm text-stone" data-testid="itinerary-day-coverage">
+                      {coverage.advisory}
+                    </p>
+                  ))}
                   {(request.data?.dto.trip.generation_summary?.free_time ?? scheduleGaps(request.data?.dto.days.flatMap((d: any)=>d.stops)??[],request.data?.dto.trip.generation_summary?.legs??[])).filter((gap: any) => gap.day_number === day.dayNumber).map((gap: any) => (
                     <p key={`${gap.day_number}-${gap.before_stop_order}`} role="note" className="text-sm text-stone" data-testid="itinerary-free-time">
                       Free / personal time: {gap.start_time.slice(0,5)}–{gap.end_time.slice(0,5)} ({gap.duration_minutes} minutes). {gap.reason}

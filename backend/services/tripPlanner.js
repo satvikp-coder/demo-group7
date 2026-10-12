@@ -69,8 +69,9 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
     if (direct) {
       stats.direct_route_hits++;
       result={path:[from,to],distance_km:direct.distanceKm,minutes:direct.travelTimeMinutes,method:"direct"};
-    } else if (attractionIds.has(from) && attractionIds.has(to)) {
-      // Only missing direct attraction pairs invoke the existing Dijkstra implementation.
+    } else if (graph.hasNode(from) && graph.hasNode(to)) {
+      // Missing direct hotel/restaurant/attraction pairs use evidenced graph edges.
+      // Walking through a node is travel, not a fabricated visit or road segment.
       stats.dijkstra_calls++;
       const route=dijkstra(graph,from,to);
       if (route.path.length>1) {
@@ -143,12 +144,12 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
         let arrival=clock+route.minutes;
         if(a.opening_time) arrival=Math.max(arrival,minutes(a.opening_time));
         const duration=Math.ceil(a.durationHours*60);
-        let closing=a.closing_time ? minutes(a.closing_time) : 1439;
+        let closing=a.closing_time ? minutes(a.closing_time) : 1080;
         const operation=datedOperation(a,trip.start_date,day,clock+route.minutes,duration);
         if(operation?.closed)continue;
         let scheduled=a;
         if(operation){arrival=operation.arrival;closing=operation.closing;scheduled={...a,best_time_note:operation.advisory};}
-        else if(!a.opening_time||!a.closing_time)scheduled={...a,best_time_note:[a.best_time_note,'Opening hours are unverified; confirm access before following this estimated schedule.'].filter(Boolean).join(' ')};
+        else if(!a.opening_time||!a.closing_time)scheduled={...a,best_time_note:[a.best_time_note,'Opening hours are unverified; confirm access. Visits without closing data are limited to an 18:00 planning cutoff, not a verified closing time.'].filter(Boolean).join(' ')};
         if(scheduled.entryFeeNumeric>remaining)continue;
         if(arrival+duration>closing || arrival+duration+back.minutes+15>1439) continue;
         choices.push({attraction:scheduled,route,arrival,duration,distance:route.distance_km+back.distance_km,cost:scheduled.entryFeeNumeric,rating:a.rating});
@@ -160,6 +161,11 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
       }
       const candidate=queue.extractMin();
       if(!candidate) break;
+      // A later-opening visit must not leap over lunch and then make the meal
+      // unreachable. Recompute from the actual restaurant after a midday break.
+      if(!lunch && clock < 810 && candidate.arrival >= 810) {
+        meal("lunch",750,870); lunch=true; continue;
+      }
       move(candidate.attraction,candidate.route);
       stop("attraction",candidate.attraction,candidate.arrival,candidate.duration,candidate.attraction.entryFeeNumeric);
       spend(candidate.attraction.entryFeeNumeric);
@@ -167,13 +173,23 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
       count++;
     }
     // Do not invent a meal/transfer when no route or affordable restaurant exists.
-    if(!lunch) { meal("lunch",750,870); lunch=true; }
-    if(isDinnerTime(Math.max(clock,1170))) meal("dinner",1170,1290);
+    // Meals support sightseeing; they must not extend a finished morning tour
+    // until evening, or manufacture a meals-only day when the catalog is exhausted.
+    if(count > 0 && !lunch && clock >= 720 && clock <= 810) meal("lunch",750,870);
+    if(count > 0 && isDinnerTime(clock)) meal("dinner",1170,1290);
     const back=leg(current.id,hotel.id);
     if(back) { move(hotel,back); stop("hotel",hotel,clock+back.minutes,15,0,"return"); }
   }
   const unvisited=eligible.filter(a=>!visited.has(a.id)).map(a=>({id:a.id,name:a.name,reason:"Not scheduled within available routes, time and budget"}));
   const warnings=[];
+  const dayCoverage=Array.from({length:trip.trip_days},(_,index)=>{
+    const dayStops=stops.filter(s=>s.day_number===index+1);
+    const visits=dayStops.filter(s=>s.stop_type==='attraction');
+    return {day_number:index+1,attraction_count:visits.length,
+      status:visits.length?'sightseeing_scheduled':'no_sightseeing_available',
+      advisory:visits.length?null:'No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour.'};
+  });
+  if(dayCoverage.some(d=>!d.attraction_count))warnings.push('insufficient_sightseeing_days');
   // A sparse catalog may legitimately leave personal time. Report the interval
   // separately from the evidenced transfer; never invent an attraction or booking.
   const freeTime=scheduleGaps(stops,legs);
@@ -185,12 +201,12 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
   if(legs.length) warnings.push("transport_fares_unknown");
   if(legs.some(l => routes.some(r => r.destination_node_id===l.from && r.source_node_id===l.to && r.reverse_distance_km==null))) warnings.push("reverse_route_estimate_unverified");
   return {stops,summary:{
-    status:!visited.size() || skippedMeals.length || unvisited.length ? "incomplete" : "scheduled",
+    status:!visited.size() || dayCoverage.some(d=>!d.attraction_count) || skippedMeals.length || unvisited.length ? "incomplete" : "scheduled",
     starting_hotel_id:hotel.id,hotel_replaced:false,hotel_total:hotelCost,
     hotel_over_budget:hotelCost>trip.budget,hotel_budget_shortfall:Math.max(0,hotelCost-trip.budget),
     lodging_nights:nights,nightly_room_estimate:hotel.price_per_night==null?null:Number(hotel.price_per_night),lodging_basis:trip.lodging_nights==null&&!trip.arrival_date?"legacy_days":"explicit_nights",lodging_taxes_known:false,transport_cost_known:legs.length===0,
     excluded_attractions:excluded,unscheduled_attractions:unvisited,skipped_meals:skippedMeals,
-    warnings,free_time:freeTime,route_rows:routes.length,routing:stats,legs,
+    warnings,day_coverage:dayCoverage,free_time:freeTime,route_rows:routes.length,routing:stats,legs,
   }};
 }
 
@@ -222,7 +238,12 @@ export function buildPlan(trip,resources) {
   const mean=known.length?known.reduce((sum,r)=>sum+Number(r.rating),0)/known.length:null;
   unique.set(signature,{id:createHash('sha256').update(signature).digest('hex').slice(0,16),plan,distance_km:plan.summary.legs.reduce((sum,l)=>sum+l.distance_km,0),known_cost:cost,rating_mean:mean,rating_coverage:known.length/rated.length,attraction_count:visits.length});
  }
- const candidates=[...unique.values()];
+ const evaluated=[...unique.values()];
+ // Compare like-for-like sightseeing coverage. Otherwise cost/distance minimization
+ // rewards dropping feasible visits, turning a tour into mostly meals and waiting.
+ const maxVisits=Math.max(0,...evaluated.map(c=>c.attraction_count));
+ const maxDays=Math.max(0,...evaluated.filter(c=>c.attraction_count===maxVisits).map(c=>c.plan.summary.day_coverage.filter(d=>d.attraction_count).length));
+ const candidates=evaluated.filter(c=>c.attraction_count===maxVisits&&c.plan.summary.day_coverage.filter(d=>d.attraction_count).length===maxDays);
  if(!candidates.length)throw new HttpError(422,'No feasible itinerary with this hotel, budget and known route/visit data. Increase the budget, choose another hotel, or relax supported filters. Unknown costs and routes are not invented.');
  for(const c of candidates) {
   c.utilities={distance:utility(c.distance_km,candidates.map(p=>p.distance_km),true),cost:utility(c.known_cost,candidates.map(p=>p.known_cost),true),rating:c.rating_mean==null?0:Math.max(0,Math.min(1,c.rating_mean/5*c.rating_coverage))};
@@ -232,7 +253,7 @@ export function buildPlan(trip,resources) {
  const selected=candidates[0];
  selected.plan.summary.optimization={method:'bounded_multi_start_greedy',weights:trip.weights,selected_candidate_id:selected.id,score:selected.score,evaluated_count:candidates.length,
   distance_basis:'Sum of saved route legs; return estimates retain provenance warnings',cost_basis:'Known hotel room-night, source-unit admission (per traveler or vehicle) and meal estimates only; unknown transport fares excluded',rating_basis:'Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value',
-  search_attempts:attempts.length,alternative_start_limit:12,
+  search_attempts:attempts.length,alternative_start_limit:12,coverage_policy:"Maximize feasible distinct visits, then sightseeing days, before applying user priorities to comparable tours",generated_candidate_count:evaluated.length,coverage_pruned_count:evaluated.length-candidates.length,
   normalization:'Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage',
   optimality:'Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed',
   candidates:candidates.map(({plan,...metrics},index)=>({...metrics,rank:index+1,feasible:true})),travelers:trip.travelers??1,rooms:trip.rooms??1,lodging_nights:selected.plan.summary.lodging_nights};

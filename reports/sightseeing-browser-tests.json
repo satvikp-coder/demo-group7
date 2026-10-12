@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "hotelPreserved": true,
+      "noForcedMealWait": true,
+      "knownTotal": 3340,
+      "promptHotelReturn": true,
+      "unsupportedDayDisclosed": true,
+      "refresh": true,
+      "imagesDecode": true,
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "hotelPreserved": true,
+      "noForcedMealWait": true,
+      "knownTotal": 3340,
+      "promptHotelReturn": true,
+      "unsupportedDayDisclosed": true,
+      "refresh": true,
+      "imagesDecode": true,
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "hotelPreserved": true,
+      "noForcedMealWait": true,
+      "knownTotal": 3340,
+      "promptHotelReturn": true,
+      "unsupportedDayDisclosed": true,
+      "refresh": true,
+      "imagesDecode": true,
+      "pageErrors": []
+    }
+  ]
+}
