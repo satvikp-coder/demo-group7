@@ -1,3 +1,4 @@
+import {getShareableUrl} from "../utils/shareUrl";
 import React, { useState, useMemo } from "react";
 import { api, useApi } from "../api";
 import { ItineraryConfig } from "./ItineraryView";
@@ -78,20 +79,13 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
   const handleShare = async () => {
     try {
-      if (navigator.share) {
-        await navigator.share({
-          title: "Gujarat Heritage Budget Ledger",
-          text: `Financial breakdown for my ${tripDays}-day Gujarat Heritage trip: Total ₹${currentEffectiveCost.toLocaleString()}`,
-          url: window.location.href,
-        });
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        setSavedShareNotice(true);
-        setTimeout(() => setSavedShareNotice(false), 3000);
-      }
+      if(!activeConfig?.tripId)throw new Error('Generate a saved trip first.');
+      await navigator.clipboard.writeText(getShareableUrl(activeConfig));
+      setSavedShareNotice(true);
+      setTimeout(() => setSavedShareNotice(false), 3000);
     } catch (error) {
       if ((error as Error).name !== "AbortError") {
-        setBudgetInputError("Unable to share the budget. Copy the page address manually.");
+        setBudgetInputError("Unable to copy the private trip link. Try again from the itinerary.");
       }
     }
   };
@@ -143,9 +137,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "hi"
-                  ? "शेयर करें"
-                  : "Share Ledger"}
+                {t("trip.privateLink", "Copy private trip link")}
               </span>
             </button>
 
@@ -166,7 +158,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
         {savedShareNotice && (
           <div className="p-3 bg-emerald-900 text-salt border border-emerald-500 text-xs font-mono flex items-center gap-2 animate-fadeIn rounded-xl">
             <Check className="w-4 h-4 text-emerald-300" />
-            <span>Budget ledger breakdown link copied to clipboard!</span>
+            <span>Private trip link copied. Owner sign-in is required.</span>
           </div>
         )}
 

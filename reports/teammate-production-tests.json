@@ -1,0 +1,296 @@
+{
+  "productionPreview": true,
+  "startedAt": "2026-10-12T17:53:11.093Z",
+  "verified": true,
+  "checks": [
+    "Dry run rolls back all records",
+    "Failed import rolls back earlier hotel insertion",
+    "Every original row preserved byte-for-byte in JSON values",
+    "Repeated import preserves IDs and values without duplicates",
+    "Phase3 six exact-record updates: dry-run rollback, conflicting last-record rollback, all unrelated fields/rows preserved and idempotence",
+    "13 sourced hotel additions: dry run, late-insert failure rollback, every original row preserved and repeat idempotence",
+    "Real authenticated API validates nights, room totals, dates and persisted generation for 10 cases",
+    "Actual Gir API: per-vehicle group costs, weekend estimate, seasonal closure and persisted budget",
+    "All24 destination/category selections generate real one-day and multi-day plans; sourced guest restrictions reject before writes",
+    "Real browser explicit zero-night generation, refresh, decoded images and overflow at 1440/768/390",
+    "Phase3 browser seven-day to one-day saved version, checkout/night recalculation and reload at 1440/768/390"
+  ],
+  "before": {
+    "destinations": 8,
+    "attractions": 33,
+    "hotels": 23,
+    "restaurants": 12,
+    "routes": 163,
+    "users": 0,
+    "trips": 0
+  },
+  "after": {
+    "destinations": 8,
+    "attractions": 44,
+    "hotels": 43,
+    "restaurants": 12,
+    "routes": 322,
+    "users": 0,
+    "trips": 0
+  },
+  "imported": {
+    "release": "20261010",
+    "dryRun": false,
+    "inserted": [
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-sarvottam-baska-champaner",
+        "id": "9c6fb210-198f-45a7-8cb3-e324018f8c43"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-sahar-ki-masjid-champaner",
+        "id": "8ccd6a21-5cba-4b70-ba8e-3b8393ab6fae"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-octagonal-stepwell-champaner",
+        "id": "29292330-94b7-4a01-b8bb-1ef0e018752d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-helical-stepwell-champaner",
+        "id": "0b28aa2a-0314-4860-ae90-e5a17f87f4d0"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-ek-minar-ki-masjid-champaner",
+        "id": "15cef075-5f23-491b-aed5-1a7f630ffc94"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-maqbara-mandvi-champaner",
+        "id": "d9c4d386-1c92-4ac7-b224-90c58626726f"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-south-bhadra-gate-champaner",
+        "id": "b58cb2f3-d733-4138-b61a-097d78294408"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-east-bhadra-gate-champaner",
+        "id": "2df8e306-e30f-46c8-b9b6-fd7ede9f71e6"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-shivalik-mehsana-modhera",
+        "id": "3f54a0b8-ef03-4754-832a-927b4b26c9b2"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-sunshine-mehsana-modhera",
+        "id": "5db38312-f3db-47ba-bd56-16ad281548af"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-the-grand-raveta-patan-modhera",
+        "id": "62bf09b4-1c0f-4055-87ad-45d6c9d61fb3"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-sun-temple-museum-modhera",
+        "id": "77b7d15f-2017-450c-850a-0e7b9f91e6ac"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-modhera-vav-modhera",
+        "id": "943ac307-9904-4ef0-9848-d8a5b451303c"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-lion-safari-camp-sasan-gir-gir-national-park",
+        "id": "5505f81f-f10e-44db-a8bc-0de9f2fa5ac3"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-gir-birding-lodge-gir-national-park",
+        "id": "57bc7350-d276-4eea-808c-773c17080612"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-sinh-sadan-guest-house-gir-national-park",
+        "id": "c26b6726-a59c-4e73-bddf-f91b961d3699"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-gokul-farmhouse-sasan-gir-gir-national-park",
+        "id": "8c148fd4-ff83-4b6d-9d40-631bba2afb04"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-toran-hill-resort-saputara",
+        "id": "1c84bf4a-a2c0-44c2-8e51-52aa775d46f5"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-purohit-saputara",
+        "id": "87f37c59-0c41-4c18-bc16-07ca5cd93564"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-lake-view-saputara",
+        "id": "bc8bec11-c4e9-4c30-9fbb-275e19ca4704"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-shilpi-hill-resort-saputara",
+        "id": "af4e7a1b-6f80-4877-92e3-987d036edaeb"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hotel-sejal-inn-saputara",
+        "id": "3b46e946-59fb-41bb-b5d9-381a7b8119b3"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-patang-residency-saputara",
+        "id": "29b4364d-a04d-4c00-8c0d-e87c74d76395"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-table-point-saputara",
+        "id": "be465897-9430-42d3-a853-22be769b6929"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261010-sunrise-point-saputara",
+        "id": "ffb5f796-af32-4e0d-b409-d60cc60558c4"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-ginger-dwarka",
+        "id": "7bd509d5-a890-4b65-bcff-6bcba1f44ef5"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-the-fern-sattva-resort-dwarka",
+        "id": "7e7ea37c-2f49-4068-8483-cbc250a5f743"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-hawthorn-suites-by-wyndham-dwarka",
+        "id": "bfc72e01-4115-4aaf-8c04-92106d92e71c"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-lemon-tree-premier-dwarka",
+        "id": "5d1162c1-c0ce-4c24-bda7-16c2a7cfd00f"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-vits-devbhumi-dwarka",
+        "id": "94113e00-8f44-419d-af11-da818d57bcbc"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261010-shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+        "id": "e560258b-49c4-4b52-bb0a-6b7a4a3c55fb"
+      }
+    ],
+    "preserved": [],
+    "routesInserted": 159
+  },
+  "enrichment": {
+    "release": "phase3-20261011",
+    "dryRun": false,
+    "updated": [
+      "amritavarshini-vav-ahmedabad",
+      "astodia-darwaza-ahmedabad",
+      "bhadra-fort-ahmedabad",
+      "raipur-gate-ahmedabad",
+      "teen-darwaza-ahmedabad",
+      "gir-jungle-safari"
+    ],
+    "unchanged": []
+  },
+  "hotelCoverage": {
+    "release": "20261011",
+    "dryRun": false,
+    "inserted": [
+      {
+        "table": "hotels",
+        "key": "exp-20261011-hotel-alka-inn-ahmedabad",
+        "id": "85f54b1d-6491-45d4-9e0b-02eaac95dbc4"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-hotel-rajdhani-and-guest-house-halol-near-champaner",
+        "id": "f225ed3c-c853-44e6-b434-80eee9e0bfb7"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-mathura-bhavan-dwarka",
+        "id": "766f8625-e3fb-45d2-8241-ba3ae612835c"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-ira-by-orchid-dwarka-dwarka",
+        "id": "0422371b-42fd-4ef3-be39-003c039b0393"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-hotel-sapphire-junagadh-near-gir-national-park",
+        "id": "c005ef83-9f6f-47df-988a-2227519238de"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-dwarkesh-farm-resort-somnath-near-gir-national-park",
+        "id": "c50d3a8f-88a1-4eaf-a2e0-94c21c19fcbc"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-the-grand-takshak-mehsana-near-modhera",
+        "id": "e9ce6ce8-a940-41da-8211-9859f40b5458"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-shankus-waterpark-and-resort-mehsana-near-modhera",
+        "id": "e3d6e07d-824f-44a8-b0b6-2a2f3832a73a"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-hotel-sahara-palace-bhuj-near-rann-of-kutch",
+        "id": "a6595315-6b06-4d18-8c75-c764af0c3108"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-hotel-prince-residency-bhuj-near-rann-of-kutch",
+        "id": "78920112-10dc-4325-b1a8-f437dcc6db60"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-manas-cottage-saputara",
+        "id": "00329008-4ff2-4fe3-a11c-d0b85e642564"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-savshanti-motels-saputara",
+        "id": "f8020373-c4cd-4ced-8bb1-d589f81ee78a"
+      },
+      {
+        "table": "hotels",
+        "key": "exp-20261011-lords-inn-somnath-somnath",
+        "id": "5e0d5807-c2b1-41e2-abc4-7919a8cbba46"
+      }
+    ],
+    "preserved": [],
+    "routesInserted": 175
+  },
+  "hotelCoverageCounts": {
+    "destinations": 8,
+    "attractions": 44,
+    "hotels": 56,
+    "restaurants": 12,
+    "routes": 497,
+    "users": 0,
+    "trips": 0
+  },
+  "isolatedDatabaseRemoved": true,
+  "finishedAt": "2026-10-12T17:56:49.450Z"
+}

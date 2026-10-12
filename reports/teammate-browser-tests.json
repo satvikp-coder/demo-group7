@@ -1,0 +1,35 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "width": 1440,
+      "unknownPriceRejectedBeforeTripWrite": true,
+      "touristAdminHiddenAndForbidden": true,
+      "privateLinkOwnerOnly": true,
+      "deletionCancelledAndFailurePreservesTrip": true,
+      "ownerDelete204AndRefresh404": true,
+      "offlineSnapshotRemoved": true,
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "unknownPriceRejectedBeforeTripWrite": true,
+      "touristAdminHiddenAndForbidden": true,
+      "privateLinkOwnerOnly": true,
+      "deletionCancelledAndFailurePreservesTrip": true,
+      "ownerDelete204AndRefresh404": true,
+      "offlineSnapshotRemoved": true,
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "unknownPriceRejectedBeforeTripWrite": true,
+      "touristAdminHiddenAndForbidden": true,
+      "privateLinkOwnerOnly": true,
+      "deletionCancelledAndFailurePreservesTrip": true,
+      "ownerDelete204AndRefresh404": true,
+      "offlineSnapshotRemoved": true,
+      "pageErrors": []
+    }
+  ]
+}

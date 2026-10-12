@@ -92,7 +92,7 @@ def run(page, context, base, api, check):
         page.get_by_role('button', name='Save this version instead', exact=True).click()
     assert changed.value.json()['trip']['budget'] == 19000
     check('What If reset and saved server version')
-    page.get_by_role('button', name='Share Route', exact=True).click()
+    page.get_by_role('button', name='Copy private trip link', exact=True).click()
     share_url = page.locator('[role=dialog] input').input_value()
     page.evaluate("() => { window.originalCopy=navigator.clipboard.writeText.bind(navigator.clipboard); navigator.clipboard.writeText=async()=>{throw new Error('Clipboard denied test')}; }")
     messages=[]

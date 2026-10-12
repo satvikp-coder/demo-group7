@@ -1,3 +1,4 @@
+import {removeTripFromOfflineCache} from "../utils/offlineStorage";
 import {STRATEGY_WEIGHTS} from '../../../dsa/planning/priorities';
 import { useEffect, useRef, useState } from "react";
 import { catalogPhoto, imageSource } from "../utils/imageSources";
@@ -180,6 +181,19 @@ export const api = {
     return created;
   },
   generate: (id:string,preferences:Row={}) => request<Row>(`/trips/${idPath(id)}/generate-itinerary`,{method:"POST",body:JSON.stringify(preferences)}).then(snapshotFromResponse),
+  deleteTrip: async (id:string) => {
+    await request<void>(`/trips/${idPath(id)}`,{method:"DELETE"});
+    // A storage failure must not misreport a successful server deletion as failed.
+    let cacheCleared=true;
+    try {removeTripFromOfflineCache(id);}catch {cacheCleared=false;}
+    for(const key of ['heritage_api_trip_ids','heritage_api_hidden_trip_ids']) {
+      try {
+        const ids=JSON.parse(sessionStorage.getItem(key)||'[]');
+        sessionStorage.setItem(key,JSON.stringify(Array.isArray(ids)?ids.filter((tripId:string)=>tripId!==id):[]));
+      }catch {cacheCleared=false;}
+    }
+    return cacheCleared;
+  },
   savedTrips: (signal?:AbortSignal) => all('/trips',signal),
   trip: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}`,{signal}).then(snapshotFromResponse) : Promise.reject(new ApiError("Generate a persisted trip first.")),
   budget: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}/budget`,{signal}).then(budgetFromResponse) : Promise.reject(new ApiError("Generate a persisted trip first.")),

@@ -347,7 +347,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                   Read-Only View
                 </span>
                 <span className="text-sm font-sans font-medium text-salt">
-                  Shared itinerary for{" "}
+                  Private saved itinerary for{" "}
                   <strong className="text-gold font-bold">{cityName}</strong> —
                   viewing only
                 </span>
@@ -426,9 +426,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             >
               <Share2 className="w-3.5 h-3.5 text-gold" />
               <span>
-                {language === "hi"
-                  ? "शेयर करें"
-                  : "Share Route"}
+                {t("trip.privateLink", "Copy private trip link")}
               </span>
             </button>
 

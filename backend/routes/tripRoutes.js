@@ -38,5 +38,6 @@ router.post("/",validate(createBody),controller.create);
 router.post("/:id/generate-itinerary",generationLimit,validate(idParams,"params"),validate(preferences.default({})),controller.generate);
 router.get("/:id/budget",validate(idParams,"params"),controller.budget);
 router.get("/:id",validate(idParams,"params"),controller.get);
+router.delete("/:id",validate(idParams,"params"),validate(z.object({}).strict().default({})),controller.remove);
 export default router;
 

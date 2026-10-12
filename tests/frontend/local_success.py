@@ -102,7 +102,7 @@ try:
   with page.expect_download(timeout=60000) as pdf:page.get_by_role('button',name='Download PDF Itinerary',exact=True).click()
   assert Path(pdf.value.path()).read_bytes().startswith(b'%PDF-')
   check('PDF download embeds cross-origin font styles without suppressing errors')
-  page.get_by_role('button',name='Share Route',exact=True).click()
+  page.get_by_role('button',name='Copy private trip link',exact=True).click()
   share_url=page.locator('[role=dialog] input').input_value();page.keyboard.press('Escape')
   subprocess.run(['node','scripts/local-stack.js','restart'],check=True)
   page.reload();expect(page.get_by_text('Base Hotel: '+hotel['name'],exact=False)).to_be_visible()
@@ -126,11 +126,13 @@ try:
   assert extra.status==201;extra_id=extra.json()['trip']['id']
   assert context.request.post(api+'/trips/'+extra_id+'/generate-itinerary',headers=headers,data={}).status==200
   page.goto(base+'/profile');expect(page.get_by_role('button',name='Open Itinerary',exact=True)).to_have_count(10)
-  page.get_by_role('button',name='Remove',exact=True).first.click()
+  page.once('dialog',lambda d:d.accept())
+  with page.expect_response(lambda r:r.request.method=='DELETE' and '/trips/' in r.url):
+   page.get_by_role('button',name='Delete Trip',exact=True).first.click()
   expect(page.get_by_role('button',name='Open Itinerary',exact=True)).to_have_count(9)
   page.reload();expect(page.get_by_role('button',name='Open Itinerary',exact=True)).to_have_count(9)
-  assert context.request.get(api+'/trips/'+extra_id,headers=headers).status==200
-  check('Existing Remove control hides session history after refresh and preserves the saved PostgreSQL trip')
+  assert context.request.get(api+'/trips/'+extra_id,headers=headers).status==404
+  check('Confirmed Delete Trip removes the owned PostgreSQL trip and stays deleted after refresh')
   page.goto(base+'/profile');page.get_by_role('button',name='Sign Out',exact=True).click()
   assert page.evaluate("sessionStorage.getItem('heritage_api_token')") is None
   check('SPA direct navigation and logout')

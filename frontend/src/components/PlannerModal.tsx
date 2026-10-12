@@ -161,6 +161,10 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
       accommodationNights({days:tripDays,lodging_nights:nights,arrival_date:arrivalDate,departure_date:departureDate});
       if (!Number.isInteger(travelers)||travelers<1||travelers>20||!Number.isInteger(rooms)||rooms<1||rooms>20) throw new Error(t("stay.invalidGroup"));
       if (!startingHotelId) throw new Error(t("stay.hotelRequired"));
+      if(!startingHotelObj || !Number.isFinite(startingHotelObj.priceNumeric)) {
+        setStep(2);
+        throw new Error(t('hotel.unpricedReason'));
+      }
       const guestIssue=lodgingGuestIssue(startingHotelObj?.bookingConditions,nights,travelers,rooms);
       if(guestIssue){
         const values:Record<string,string|number>={hotel:startingHotelObj?.name??'',minimum:guestIssue.minimum??0,capacity:guestIssue.capacity??0,rooms:guestIssue.requiredRooms??rooms,travelers};

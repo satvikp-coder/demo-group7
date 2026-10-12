@@ -83,6 +83,9 @@ self.addEventListener("fetch", (event) => {
 
 // 4. Message Event: Cache itinerary JSON payloads directly to Cache Storage
 self.addEventListener("message", (event) => {
+  if(event.data?.type==='DELETE_TRIP_DATA' && Array.isArray(event.data.tripIds)) {
+    event.waitUntil(caches.open(ITINERARY_CACHE_NAME).then(cache=>Promise.all(event.data.tripIds.map(id=>cache.delete(`/api/cached-trip/${id}`)))));
+  }
   if (event.data && event.data.type === "CACHE_TRIP_DATA") {
     const { tripId, payload } = event.data;
     if (tripId && payload) {

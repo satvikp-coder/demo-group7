@@ -17,13 +17,18 @@ def run(page, context, base, api, check):
     expect(page.get_by_text('Account editing is not available from the API yet. No changes were saved.', exact=True)).to_be_visible()
     check('Profile role and account-save controls honestly report backend capabilities')
     ids=page.evaluate("JSON.parse(sessionStorage.getItem('heritage_api_trip_ids'))")
-    page.get_by_role('button', name='Remove', exact=True).first.click()
+    page.once('dialog',lambda d:d.accept())
+    with page.expect_response(lambda r:r.request.method=='DELETE' and '/trips/' in r.url):
+        page.get_by_role('button', name='Delete Trip', exact=True).first.click()
+    page.wait_for_function('(n)=>JSON.parse(sessionStorage.getItem("heritage_api_trip_ids")).length===n',arg=len(ids)-1)
     remaining=page.evaluate("JSON.parse(sessionStorage.getItem('heritage_api_trip_ids'))")
     assert len(remaining)==len(ids)-1
     removed=next(i for i in ids if i not in remaining)
     token=page.evaluate("sessionStorage.getItem('heritage_api_token')")
-    assert context.request.get(api+'/trips/'+removed,headers={'Authorization':'Bearer '+token}).status==200
-    check('Profile Remove changes session history and preserves persisted trip')
+    assert context.request.get(api+'/trips/'+removed,headers={'Authorization':'Bearer '+token}).status==404
+    page.reload()
+    assert not page.get_by_role('button',name='Admin Panel',exact=True).count()
+    check('Confirmed profile deletion removes the owned database trip and persists after refresh; tourists have no admin button')
     page.get_by_role('button', name='Open Itinerary', exact=True).first.click()
     page.wait_for_url('**/itinerary')
     # Wait for the exiting profile before interacting with the new route.
@@ -40,8 +45,8 @@ def run(page, context, base, api, check):
         page.get_by_role('button',name=re.compile(re.escape(label))).click()
         expect(page.get_by_text('The ledger shows saved costs. Change trip parameters in the planner to generate a new budget.',exact=True)).to_be_visible()
     page.evaluate("() => { navigator.share=undefined; window.copyBefore=navigator.clipboard.writeText.bind(navigator.clipboard); navigator.clipboard.writeText=async()=>{throw Error('Denied test')}; }")
-    page.get_by_role('button',name='Share Ledger',exact=True).click()
-    expect(page.get_by_text('Unable to share the budget. Copy the page address manually.',exact=True)).to_be_visible()
+    page.get_by_role('button',name='Copy private trip link',exact=True).click()
+    expect(page.get_by_text('Unable to copy the private trip link. Try again from the itinerary.',exact=True)).to_be_visible()
     page.evaluate('() => { navigator.clipboard.writeText=window.copyBefore; }')
     check('Budget target and all savings controls preserve server totals; failed sharing is visible')
     page.get_by_role('button',name='Adjust Trip Parameters',exact=True).click()

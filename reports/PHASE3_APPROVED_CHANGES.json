@@ -1,10 +1,10 @@
 {
-  "authorization": "Phase3 explicitly requests local integration, budget correctness and localization; exact reviewed hashes only",
+  "authorization": "Exact reviewed frontend hashes for explicitly authorized local repairs, including teammate hotel validation, ownership deletion, private-link wording and operator-only controls; existing design preserved.",
   "files": {
     "frontend/src/components/ItineraryView.tsx": {
       "baselineSha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
-      "sha256": "d6c3eb7c2e16bfd49abd0b03e5f1718cb538aef0bddae2ed750488d8145c9331",
-      "reason": "Retain schedule/PDF fixes and existing styling; disclose unschedulable sightseeing days instead of misleading meal-only tours."
+      "sha256": "254adb0bfe2787515015c47ea6e94e513a689fee7e08517c1d74c2a037f3b7c4",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
     },
     "frontend/src/components/WhatIfPanel.tsx": {
       "baselineSha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",
@@ -18,8 +18,8 @@
     },
     "frontend/src/data/phase3Translations.ts": {
       "baselineSha256": null,
-      "sha256": "fbc384a83ec36f1b518ddb3f7c00baa0159283660ee8afaa10fa6276f5af4a2a",
-      "reason": "Translate accommodation inputs/validation with unchanged styles; correct admission unit advisory for vehicle-priced safari"
+      "sha256": "63f338a3d5af4ae3dea7549a0f8a8dc8687c12f95e66fc1ddc7da121c59b5c3e",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
     },
     "frontend/public/assets/photographs/manifest.json": {
       "baselineSha256": "5377425ca57e3ece6c7b87b2a992f7510b30236f19c0a5e22e5cd9d7a1c25812",
@@ -53,8 +53,8 @@
     },
     "frontend/src/components/HotelCategoryPicker.tsx": {
       "baselineSha256": "ed4c078c26d58de309bfe244618d0448749c572b13a46cf1a90dcb1554aa214a",
-      "sha256": "f6be2be35c4b87e5178ee7535a3895f1d68dd499329569404637b0f8ce1d1af2",
-      "reason": "User-requested hotel catalog/category count clarity and all recorded hotel detail visibility; no fabricated rates or selection contract changes"
+      "sha256": "20e4d646b4e8cff68a26273a663a467ba04b0b49c7e90ef392ffbc444937c217",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
     },
     "frontend/src/data/hotelTranslations.ts": {
       "baselineSha256": null,
@@ -63,8 +63,8 @@
     },
     "frontend/src/components/PlannerModal.tsx": {
       "baselineSha256": "8b6416575b9b93d7bfb89a0afa7f45056452d0848a98118a5e8c3fb969840544",
-      "sha256": "5eb9e35fba98dc72631e91ac0df3b489c92cd74ca0991f66068a78abdbbc2b78",
-      "reason": "User-requested sourced hotel tier coverage; carry explicit guest/quoted-room conditions and reject unsupported occupancy before writing trips"
+      "sha256": "e42e448cbf4dc1a2273464e61e132dea3ed28c5fa50e89b5114ce3b32524e5c4",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
     },
     "frontend/src/data/accommodationTranslations.ts": {
       "baselineSha256": null,
@@ -73,8 +73,8 @@
     },
     "frontend/src/api/index.ts": {
       "baselineSha256": "92baf76f91b4b75d325a17dd81b9de83b10a7d0cc890642a18d861f2883bba02",
-      "sha256": "038199c127d50bf7c4dcd0a753e63609022a01c4d08946fa062f0089356358a6",
-      "reason": "User-requested sourced hotel tier coverage; carry explicit guest/quoted-room conditions and reject unsupported occupancy before writing trips"
+      "sha256": "31dc7722f61132069780c73d1b6f3d8e00f5aff427b3403083d941b1b06260f0",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
     },
     "frontend/src/api/types.ts": {
       "baselineSha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac",
@@ -95,6 +95,36 @@
       "baselineSha256": "6bae86ffce11e4e68679beaddb2fa97402d2decd3bb85bc9d39c61f857582972",
       "sha256": "4c5d7182bdf7fd34482913b9bcd44e86490745fe8e2a65b4e46b594e956464a1",
       "reason": "Requested catalog-backed city selector with accessible label; hotel controls remain available during loading/errors; existing card styles preserved."
+    },
+    "frontend/src/components/ProfileDashboardView.tsx": {
+      "baselineSha256": "98778d02a44acc37503e9ec23625947ee32b7bcba7e31fadf4185b1a4305dbfd",
+      "sha256": "86cd789081fcdd6bf2a1a95239e9a2c27a4d6a7151351e96217c0692119aa7ef",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+    },
+    "frontend/src/App.tsx": {
+      "baselineSha256": "2946540a334d35e1f1e4fa85b4b9b28f066aeed86f49d50e0491c6ef21eeb125",
+      "sha256": "f5c2ca3f0cd00a9bdbd9d3901d64290a567e9def389bbcacb37bb245aec76cb3",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+    },
+    "frontend/src/components/ShareItineraryModal.tsx": {
+      "baselineSha256": "cf92e783ee19d73985c72a67cf79993b0ce3ebd99e12fb0f547899109e09a42c",
+      "sha256": "344da14ae78d3f2f527f86d1d08a11b562e2011050be2a9f185d0f7a81b14a86",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+    },
+    "frontend/src/components/BudgetPlannerView.tsx": {
+      "baselineSha256": "4087a675dd45298f6acc68fed80a06539a40a2536bdd71deea2473c460af3cd1",
+      "sha256": "06d7190fe3c89aa43e425bb28bfed1416e88d7bfbbabc15df3a69fc5d88ebb7b",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+    },
+    "frontend/src/utils/offlineStorage.ts": {
+      "baselineSha256": "c38c29c5fd28a4b18eaf8b0773e7059c91ac954e1222d427589948dab97d35dd",
+      "sha256": "4b344be2bda4744109f3988810891de11e51d810d2aa166e8a0088f6f8746221",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+    },
+    "frontend/public/sw.js": {
+      "baselineSha256": "f3b36f2f423859e1f556bc3a7ad30ae2de2872c8d5d5dc345c818c39d64a532f",
+      "sha256": "48778cbea5e00d79ad3a919121404842c9f8cafcbafb9bab74e3c3e945d1976a",
+      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
     }
   }
 }

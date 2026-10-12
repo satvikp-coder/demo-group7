@@ -6,6 +6,8 @@ Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL
 
 ## Current Goal
 
+Four teammate repairs verified: reject unknown-price selections before writes; confirmed owner-only DELETE trip204 with cascade/cache cleanup and failure handling; explicitly private trip links (including budget link); operator-only admin buttons and routes, existing backend403guard preserved. Full18/18,71backend tests,64browser controls/PDF and3focused browser widths PASS; all prior192city/category/day/weight API cases PASS. Installed locally,readiness7/7,all9originaltable fingerprints preserved. Same verified commit authorized for normal main pushes to demo-group7 and CSC210-Monsoon2026/group-07-heritage-tourism-planner, whose main is an ancestor. See reports/TEAMMATE_FIXES.md. No data reset or public-sharing claim.
+
 Shared sightseeing scheduler repair verified: no forced lunch/dinner waits or meals-only days; existing graph fallback for all node types; coverage-comparable weighted ranking; unverified-hours planning cutoff and missing-day advisory. Backend71/71, full18/18 with64browser controls/PDF,192all8 destination/category/day/weight API cases,32city scenarios, exact reported Champaner3width saved/reloaded UI PASS. Local8080 installed/readiness7/7, original9table fingerprints preserved. See reports/SIGHTSEEING_QUALITY_REPAIR.md. Saved older plans remain unchanged; regenerate for new scheduling.
 
 Ranked Stays city selector verified and prepared for normal main publication. Real catalog-backed all-eight-city control; hotel loading/errors retain controls.

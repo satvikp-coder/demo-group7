@@ -39,3 +39,8 @@ export async function get(req,res) {
 export async function budget(req,res) {
   res.json(await trips.transaction(async client => budgets.forTrip(client,await trips.ownedTrip(client,req.validated.params.id,req.user.id)),true));
 }
+
+export async function remove(req,res) {
+  await trips.transaction(client=>trips.removeOwned(client,req.validated.params.id,req.user.id));
+  res.status(204).end();
+}

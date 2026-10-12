@@ -120,3 +120,14 @@ export function registerServiceWorker(): void {
     });
   }
 }
+
+/** Remove only snapshots of a trip whose server deletion succeeded. */
+export function removeTripFromOfflineCache(serverTripId:string):void {
+  const map=getAllOfflineTripsMap();
+  const keys=Object.keys(map).filter(key=>map[key]?.config?.tripId===serverTripId);
+  if(!keys.length)return;
+  for(const key of keys)delete map[key];
+  localStorage.setItem(STORAGE_KEY_TRIPS,JSON.stringify(map));
+  if(keys.includes(localStorage.getItem(STORAGE_KEY_LATEST_ID)||''))localStorage.removeItem(STORAGE_KEY_LATEST_ID);
+  navigator.serviceWorker?.controller?.postMessage({type:'DELETE_TRIP_DATA',tripIds:keys});
+}

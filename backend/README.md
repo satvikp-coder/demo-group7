@@ -292,3 +292,7 @@ Role checks use the current database account.
 It validates all eight frontend data paths, tourist rejection and operator success on
 all four CRUD resources, explicit request failure states, and catalog preservation.
 No runtime dependencies or migrations were added by frontend integration.
+
+### Owner-only trip deletion
+
+`DELETE /api/trips/:id` requires a current authenticated account and ownership. Successful deletion returns204 and atomically cascades saved stops and the budget; foreign or missing IDs return404, missing credentials401 and malformed requests400. The dashboard confirms deletion before sending it and updates only after the API succeeds. Tests delete disposable fixtures only. Private trip links remain owner-authenticated; there is no public-sharing token or recipient access grant.

@@ -82,3 +82,10 @@ export async function savePlan(client, trip, plan) {
 export async function stops(client, tripId) {
   return (await client.query("SELECT * FROM itinerary_stops WHERE trip_id=$1 ORDER BY day_number,stop_order", [tripId])).rows;
 }
+
+export async function removeOwned(client,id,userId) {
+  // Atomic ownership predicate and existing FK cascades remove only this user's
+  // trip, stop snapshots and budget. Foreign/missing IDs have identical responses.
+  const result=await client.query('DELETE FROM trips WHERE id=$1 AND user_id=$2 RETURNING id',[id,userId]);
+  if(!result.rowCount)throw new HttpError(404,'Trip not found');
+}

@@ -44,7 +44,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
       setTimeout(() => setCopied(false), 2500);
     } catch (err) {
       console.error("Failed to copy link:", err);
-      window.alert("Unable to copy the link. Select the shareable link and copy it manually.");
+      window.alert("Unable to copy the link. Select the private link and copy it manually.");
     }
   };
 
@@ -52,14 +52,14 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
     if (!navigator.share) return;
     try {
       await navigator.share({
-        title: `Shared Itinerary for ${cityName}`,
-        text: `Check out this circular ${config.tripDays || 2}-day heritage itinerary for ${cityName}!`,
+        title: `Private itinerary for ${cityName}`,
+        text: `Owner sign-in required to open this circular ${config.tripDays || 2}-day heritage itinerary for ${cityName}!`,
         url: shareUrl,
       });
     } catch (err: any) {
       if (err?.name !== "AbortError") {
         console.warn("Native share could not be completed:", err);
-        window.alert("Unable to share the itinerary. Copy the shareable link instead.");
+        window.alert("Unable to share the itinerary. Copy the private link instead.");
       }
     }
   };
@@ -92,7 +92,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
           </div>
           <div>
             <h3 id="share-itinerary-title" className="font-display font-bold text-lg text-ink">
-              Share Itinerary
+              Copy private trip link
             </h3>
             <p className="text-xs text-stone font-mono">
               {cityName} • {config.tripDays || 2}-Day Circular Route
@@ -109,7 +109,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
         {/* Link Input + Copy Button */}
         <div className="space-y-3 mb-6">
           <label className="block text-xs font-mono font-bold text-stone uppercase tracking-wider">
-            Shareable Link
+            Private trip link
           </label>
 
           <div className="flex items-center gap-2">
@@ -154,7 +154,7 @@ export const ShareItineraryModal: React.FC<ShareItineraryModalProps> = ({
               className="w-full bg-ink hover:bg-ink/90 text-salt border border-gold px-4 py-2.5 text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs rounded-lg"
             >
               <Share2 className="w-4 h-4 text-gold" />
-              <span>Open Native Share Sheet</span>
+              <span>Send private link (owner sign-in required)</span>
             </button>
           </div>
         )}

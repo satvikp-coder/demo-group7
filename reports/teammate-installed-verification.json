@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-12T18:04:05.952Z",
+  "readOnly": true,
+  "preservation": {
+    "destinations": {
+      "count": 8,
+      "unchanged": true
+    },
+    "attractions": {
+      "count": 44,
+      "unchanged": true
+    },
+    "hotels": {
+      "count": 56,
+      "unchanged": true
+    },
+    "restaurants": {
+      "count": 12,
+      "unchanged": true
+    },
+    "routes": {
+      "count": 497,
+      "unchanged": true
+    },
+    "users": {
+      "count": 2,
+      "unchanged": true
+    },
+    "trips": {
+      "count": 5,
+      "unchanged": true
+    },
+    "itinerary_stops": {
+      "count": 43,
+      "unchanged": true
+    },
+    "budgets": {
+      "count": 4,
+      "unchanged": true
+    }
+  },
+  "installedBackend": {
+    "models/tripModel.js": true,
+    "controllers/tripController.js": true,
+    "routes/tripRoutes.js": true
+  },
+  "passed": true
+}

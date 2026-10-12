@@ -2,6 +2,7 @@ import {HOTEL_TRANSLATIONS} from './hotelTranslations';
 import {ACCOMMODATION_TRANSLATIONS} from './accommodationTranslations';
 export const PHASE3_TRANSLATIONS = {
  en: {
+  "trip.privateLink":"Copy private trip link",
   ...HOTEL_TRANSLATIONS.en,
   ...ACCOMMODATION_TRANSLATIONS.en,
   'priority.title':'Your Priorities',
@@ -15,6 +16,7 @@ export const PHASE3_TRANSLATIONS = {
   'whatif.savedRoute':'Saved route:',
  },
  hi: {
+  "trip.privateLink":"निजी यात्रा लिंक कॉपी करें",
   ...HOTEL_TRANSLATIONS.hi,
   ...ACCOMMODATION_TRANSLATIONS.hi,
   'priority.title':'आपकी प्राथमिकताएँ',
@@ -28,6 +30,7 @@ export const PHASE3_TRANSLATIONS = {
   'whatif.savedRoute':'सहेजा गया मार्ग:',
  },
  gu: {
+  "trip.privateLink":"ખાનગી પ્રવાસની લિંક કૉપી કરો",
   ...HOTEL_TRANSLATIONS.gu,
   ...ACCOMMODATION_TRANSLATIONS.gu,
   'priority.title':'તમારી પ્રાથમિકતાઓ',

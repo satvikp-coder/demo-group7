@@ -188,9 +188,10 @@ with sync_playwright() as p:
         assert denied.status == 403
         check("Tourist admin read rejected", status=403)
         page.goto(BASE + "/admin")
-        expect(page.get_by_role("alert").first).to_be_visible()
+        page.wait_for_url("**/profile")
+        expect(page.get_by_role("button", name="Admin Panel", exact=True)).to_have_count(0)
         expect(page.get_by_role("button", name="Add New Record", exact=True)).to_have_count(0)
-        check("Tourist admin screen shows rejection, no catalog table")
+        check("Tourist admin route returns to profile with no admin controls; API still rejects403")
         page.goto(BASE + "/explore")
         search = page.get_by_placeholder("Search destinations or districts...")
         expect(page.get_by_role("button", name="Inspect Site").first).to_be_visible()

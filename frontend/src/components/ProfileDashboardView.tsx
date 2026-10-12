@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { api, useApi, loadItinerary } from "../api";
+import React, { useState, useEffect, useRef } from "react";
+import { api, useApi, loadItinerary, errorMessage } from "../api";
 import { ItineraryConfig } from "./ItineraryView";
 import { useLanguage } from "../context/LanguageContext";
 import {
@@ -48,6 +48,7 @@ interface ProfileDashboardViewProps {
   onOpenPlanner: () => void;
   onOpenAdminDashboard?: (hotelId?: string, create?: boolean) => void;
   onLogout: () => void;
+  onTripDeleted?: (tripId:string) => void;
 }
 
 export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
@@ -57,6 +58,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
   onOpenPlanner,
   onOpenAdminDashboard,
   onLogout,
+  onTripDeleted,
 }) => {
   const { t } = useLanguage();
   const [role, setRole] = useState<"tourist" | "operator">(
@@ -84,8 +86,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
   );
 
   const request = useApi(async () => {
-    const hidden: string[] = JSON.parse(sessionStorage.getItem("heritage_api_hidden_trip_ids") || "[]");
-    const ids = (await api.savedTrips()).map(row => row.id).filter(id => !hidden.includes(id));
+    const ids = (await api.savedTrips()).map(row => row.id);
     const trips = await Promise.all(ids.map(id => loadItinerary(id)));
     const listings = currentUser?.role === "operator" ? await api.adminList("hotels") : [];
     return {trips:trips.map(({config,result,dto}) => ({id:config.tripId,title:result.activeCity.name,
@@ -108,13 +109,20 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
     }, 4000);
   };
 
-  const handleDeleteTrip = (tripId: string, e: React.MouseEvent) => {
+  const [deletingTripId,setDeletingTripId]=useState<string|null>(null);
+  const deletingRef=useRef(false);
+  const [deleteError,setDeleteError]=useState('');
+  const handleDeleteTrip = async (tripId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    const ids: string[] = JSON.parse(sessionStorage.getItem("heritage_api_trip_ids") || "[]");
-    sessionStorage.setItem("heritage_api_trip_ids", JSON.stringify(ids.filter(id => id !== tripId)));
-    const hidden: string[] = JSON.parse(sessionStorage.getItem("heritage_api_hidden_trip_ids") || "[]");
-    sessionStorage.setItem("heritage_api_hidden_trip_ids", JSON.stringify([...new Set([...hidden,tripId])]));
-    request.reload();
+    if(deletingRef.current || !window.confirm('Delete this saved trip permanently? Its itinerary and budget will also be deleted.'))return;
+    deletingRef.current=true;setDeletingTripId(tripId);setDeleteError('');
+    try {
+      const cacheCleared=await api.deleteTrip(tripId);
+      if(!cacheCleared)setDeleteError('Trip deleted on the server, but this browser could not clear its cached copy. Clear site storage before offline use.');
+      onTripDeleted?.(tripId);
+      request.reload();
+    }catch(error){setDeleteError(errorMessage(error));}
+    finally{deletingRef.current=false;setDeletingTripId(null);}
   };
 
   if(request.loading) return <p role="status">Loading account records...</p>;
@@ -122,6 +130,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-5xl mx-auto space-y-10">
+        {deleteError && <p role="alert">{deleteError}</p>}
         {/* HEADER */}
         <div className="bg-ink text-salt p-6 sm:p-8 border-2 border-gold space-y-4 shadow-lg relative overflow-hidden rounded-2xl">
           <div className="absolute top-0 right-0 w-64 h-64 bg-stepwell-pattern opacity-10 pointer-events-none" />
@@ -158,7 +167,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
                 </span>
               </button>
 
-              {currentUser && onOpenAdminDashboard && (
+              {currentUser?.role === "operator" && onOpenAdminDashboard && (
                 <button
                   onClick={() => onOpenAdminDashboard?.()}
                   className="bg-gold text-ink hover:bg-gold/90 border border-gold font-bold px-3 py-1.5 transition-colors cursor-pointer text-[11px] flex items-center gap-1.5 rounded-lg"
@@ -292,9 +301,10 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
                         <button
                           onClick={(e) => handleDeleteTrip(trip.id, e)}
+                          disabled={deletingTripId!==null}
                           className="bg-salt hover:bg-madder/10 text-stone hover:text-madder border border-stone/30 px-3 py-2 text-xs transition-colors cursor-pointer rounded-lg"
                         >
-                          Remove
+                          {deletingTripId===trip.id?'Deleting...':'Delete Trip'}
                         </button>
                       </div>
                     </div>

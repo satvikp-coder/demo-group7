@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "httpExchanges": 54,
+  "unknownPrice": {
+    "rejected422": true,
+    "noTripInserted": true
+  },
+  "deletion": {
+    "missingToken401": true,
+    "foreignOwner404": true,
+    "strictValidation": true,
+    "deleted204": true,
+    "repeat404": true,
+    "stopsAndBudgetCascade": true,
+    "otherTripsPreserved": true
+  },
+  "fixturesCleaned": true
+}

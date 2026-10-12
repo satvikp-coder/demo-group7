@@ -36,7 +36,7 @@ async function request(method, path, body, token, expected = 200) {
   assert.equal(code, 0, error);
   const split = output.lastIndexOf("\n");
   const status = Number(output.slice(split + 1));
-  const json = JSON.parse(output.slice(0, split));
+  const json = status===204?null:JSON.parse(output.slice(0, split));
   exchanges.push({ request: { method, path, body: redact(body),
     ...(token ? { authorization: "Bearer [redacted]" } : {}) }, response: { status, body: redact(json) } });
   assert.equal(status, expected, `${method} ${path}: ${JSON.stringify(json)}`);
@@ -186,6 +186,26 @@ try {
   await request('GET','/api/trips?limit=101',undefined,token,400);
   await request('GET','/api/trips',undefined,undefined,401);
   cases.persisted_account_ledger={ownedList:true,otherAccountExcluded:true,paginationValidated:true,unauthenticatedRejected:true};
+  const unpricedHotel=randomUUID();
+  await pool.query("INSERT INTO hotels(id,destination_id,name,lat,lng,price_per_night,stay_type,source) VALUES($1,$2,'Fixture unknown-price hotel',23,72,NULL,'Registered Hotel',$3)",[unpricedHotel,fixtureCity,fixtureSource]);
+  const tripCountBefore=Number((await pool.query('SELECT count(*) FROM trips')).rows[0].count);
+  await request('POST','/api/trips',{...input,starting_hotel_id:unpricedHotel},token,422);
+  assert.equal(Number((await pool.query('SELECT count(*) FROM trips')).rows[0].count),tripCountBefore);
+  cases.unknown_price_before_creation={rejected422:true,noTripInserted:true};
+  await request('DELETE',multiDay.path,undefined,undefined,401);
+  await request('DELETE',multiDay.path,undefined,otherToken,404);
+  assert.ok((await pool.query('SELECT id FROM trips WHERE id=$1',[multiDay.created.trip.id])).rowCount);
+  await request('DELETE','/api/trips/not-a-uuid',undefined,token,400);
+  await request('DELETE',multiDay.path,{unexpected:true},token,400);
+  await request('DELETE',multiDay.path,undefined,token,204);
+  await request('DELETE',multiDay.path,undefined,token,404);
+  for(const table of ['trips','itinerary_stops','budgets']) {
+    const field=table==='trips'?'id':'trip_id';
+    assert.equal((await pool.query(`SELECT count(*)::int count FROM ${table} WHERE ${field}=$1`,[multiDay.created.trip.id])).rows[0].count,0);
+  }
+  await request('GET',multiDay.path,undefined,token,404);
+  await request('GET',accessible.path,undefined,token);
+  cases.owner_deletion={missingToken401:true,foreignOwner404:true,strictValidation:true,deleted204:true,repeat404:true,stopsAndBudgetCascade:true,otherTripsPreserved:true};
   verified = true;
 } finally {
   // Only rows belonging to this run; cascading trip/stop cleanup precedes catalog cleanup.

@@ -106,6 +106,10 @@ export default function App() {
   const currentUser = authRequest.loading ? optimisticUser : (authRequest.data ?? null);
   const currentUserRef = useRef(currentUser);
   currentUserRef.current = currentUser;
+  useEffect(()=>{
+    if(showAdminDashboard && !authRequest.loading && currentUser?.role !== 'operator')navigate(currentUser?'/profile':'/login',{replace:true});
+  },[showAdminDashboard,authRequest.loading,currentUser?.role]);
+
 
   // ─── Sync state from a parsed route ─────────────────────────────────────────
   const syncStateFromRoute = useCallback(
@@ -181,6 +185,10 @@ export default function App() {
           const user = currentUserRef.current || session.token();
           if (!user) {
             navigate("/login", { replace: true });
+            break;
+          }
+          if(currentUserRef.current && currentUserRef.current.role !== 'operator') {
+            navigate('/profile',{replace:true});
             break;
           }
           clearOverlays();
@@ -566,7 +574,7 @@ export default function App() {
                     }}
                   />
                 </motion.div>
-              ) : (showAdminDashboard && Boolean(currentUser)) ? (
+              ) : (showAdminDashboard && currentUser?.role === "operator") ? (
                 /* Display Admin Dashboard View */
                 <motion.div
                   key="admin-dashboard"
@@ -606,7 +614,8 @@ export default function App() {
                       setShowProfile(false);
                       setPlannerOpen(true);
                     }}
-                    onOpenAdminDashboard={currentUser ? (hotelId, create) => navigate(hotelId ? `/admin?hotel=${encodeURIComponent(hotelId)}` : create ? "/admin?new=hotel" : "/admin") : undefined}
+                    onOpenAdminDashboard={currentUser?.role === "operator" ? (hotelId, create) => navigate(hotelId ? `/admin?hotel=${encodeURIComponent(hotelId)}` : create ? "/admin?new=hotel" : "/admin") : undefined}
+                    onTripDeleted={(id)=>{if(activeItinerary?.tripId===id){saveItineraryToSession(null);setActiveItinerary(null);setIsReadOnlyItinerary(false);}}}
                     onLogout={handleLogout}
                   />
                 </motion.div>

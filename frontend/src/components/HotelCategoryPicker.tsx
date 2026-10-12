@@ -10,7 +10,7 @@ export function HotelCategoryPicker({destinationId,category,hotelId,onCategory,o
  const [sort,setSort]=useState('distance');
  const request=useApi(signal=>api.hotels(destinationId,sort,signal,category),[destinationId,category,sort],!!destinationId);
  const catalog=useApi(signal=>api.hotels(destinationId,sort,signal),[destinationId,sort],!!destinationId);
- const hotels=request.data??[];
+ const hotels=(request.data??[]).filter(h=>Number.isFinite(h.priceNumeric));
  const allHotels=catalog.data??[];
  const otherHotels=allHotels.filter(h=>!hotels.some(selected=>selected.id===h.id));
  const unknownPrices=allHotels.filter(h=>!Number.isFinite(h.priceNumeric)).length;
@@ -18,7 +18,7 @@ export function HotelCategoryPicker({destinationId,category,hotelId,onCategory,o
    <ImageWithFallback src={h.imageUrl} alt={h.name} category="hotel" className="w-24 h-24 object-cover rounded-lg shrink-0"/>
    <div className="min-w-0 space-y-1"><h4 className="font-display text-ink font-bold">{h.name}</h4><p className="text-xs">{Number.isFinite(h.priceNumeric)?`${h.pricePerNight}/${t('hotel.night')}`:t('hotel.priceUnknown')} · {h.hotelCategory?t('hotel.'+h.hotelCategory):t('hotel.categoryUnknown')}</p><p className="text-xs text-stone">{h.location}</p><p className="text-xs text-stone">{Number.isFinite(h.priceNumeric)?h.priceBasis:t('hotel.unpricedReason')}</p><p className="text-xs text-stone">{h.distanceKm==null?t('hotel.distanceUnknown'):text('hotel.straightLine',{distance:h.distanceKm.toFixed(1),anchor:h.anchorName??''})}</p><p className="text-xs text-stone">{t('hotel.rating')}: {Number.isFinite(h.ratingNumeric)?h.rating:t('hotel.ratingUnknown')}{h.sourceUrl&&<> · <a href={h.sourceUrl} target="_blank" rel="noreferrer">{t('hotel.source')}</a></>}{h.sourceDate&&` (${h.sourceDate.slice(0,10)})`}</p>{h.facilities?.length? <p className="text-xs">{h.facilities.join(', ')}</p>:null}{selectable?<button type="button" aria-pressed={hotelId===h.id} onClick={()=>onHotel(h.id)} className="bg-ink text-gold border border-gold px-3 py-1 rounded-lg text-xs">{hotelId===h.id?t('hotel.selected'):t('hotel.select')}</button>:<p className="text-xs text-stone">{h.hotelCategory&&h.hotelCategory!==category?text('hotel.otherCategory',{category:t('hotel.'+h.hotelCategory)}):h.hotelCategory?t('hotel.outsideArea'):t('hotel.unpricedReason')}</p>}</div>
   </article>;
- useEffect(()=>{if(request.data&&!request.data.some(h=>h.id===hotelId))onHotel('')},[request.data,hotelId]);
+ useEffect(()=>{if(request.data&&!hotels.some(h=>h.id===hotelId))onHotel('')},[request.data,hotelId]);
  return <div className="space-y-3" aria-label={t('hotel.choose')}>
   <div className="flex flex-wrap gap-2" role="group" aria-label={t('hotel.category')}>{HOTEL_CATEGORIES.map(value=><button type="button" key={value} aria-pressed={category===value} onClick={()=>{onCategory(value);onHotel('')}} className={`px-3 py-2 border rounded-lg font-mono text-xs ${category===value?'bg-ink text-gold border-gold':'bg-salt text-ink border-stone/40'}`}>{t('hotel.'+value)}</button>)}</div>
   <p className="text-xs text-stone">{text('hotel.bands',{low:HOTEL_POLICY.bands.lowCostUpperExclusive.toLocaleString('en-IN'),high:HOTEL_POLICY.bands.budgetUpperInclusive.toLocaleString('en-IN')})}</p>

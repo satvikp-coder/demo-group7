@@ -30,7 +30,7 @@ with sync_playwright() as p:
  if phase=='after':assert not report['staleSavedNotice']
  else:report['issues'].append({'id':'AUD-004','reproduced':report['oldLiveClaim'] or report['staleSavedNotice'],'description':'Claims live recomputation / shows saved status for subsequently unsaved parameters.'})
  page.get_by_role('button',name='What if?',exact=True).click()
- page.get_by_role('button',name='Share Route').click();modal=page.locator('[role=dialog][aria-labelledby=share-itinerary-title]');text=modal.inner_text();report['shareText']=text
+ page.get_by_role('button',name='Copy private trip link').click();modal=page.locator('[role=dialog][aria-labelledby=share-itinerary-title]');text=modal.inner_text();report['shareText']=text
  report['shareAccessibleNameValid']=modal.evaluate('(node)=>!!document.getElementById(node.getAttribute("aria-labelledby"))');save()
  if phase=='after':assert 'owner' in text.lower() and 'sign' in text.lower() and report['shareAccessibleNameValid']
  else:report['issues'].append({'id':'AUD-005','reproduced':'owner' not in text.lower(),'description':'Share link copy promises a complete recipient itinerary without stating owner authentication.'})
