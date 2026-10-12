@@ -1,0 +1,1 @@
+Current local release documentation refreshed: root README, frontend/backend contracts, isolated testing, operations, release/image evidence, repository map and new LOCAL_DEMO.md. Nine documents,98relative links and42npm script names/code fences validated; no runtime changes. Existing dated reports remain historical. Both repositories receive the same documentation commit.

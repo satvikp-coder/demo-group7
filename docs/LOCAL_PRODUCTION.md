@@ -92,8 +92,9 @@ npm ci --prefix backend
 npm ci --prefix frontend
 python -m pip install -r requirements-tests.txt
 npm run test:all:local
+npm run test:scheduling:local
+npm run test:demo:local
 npm run test:production
-npm run test:local
 ```
 
 Install Google Chrome for the Playwright scripts (`channel=chrome`). Run suites
@@ -102,6 +103,9 @@ unified `test:all` using generated local credentials, temporarily exposes Postgr
 only on loopback port 55434, and removes that port after testing. It creates and
 removes its own isolated test database while preserving the active catalog/users.
 No manually configured developer database is needed for this setup path.
+Use these isolated wrappers for routine verification. Do not run `test:local`
+against real user data: that maintenance acceptance suite restarts/reseeds the
+active stack. Its historical description below is not a routine demo command.
 For an independently configured test service, `test:all` needs an owner
 `DATABASE_URL` in ignored `backend/.env` pointing to a reachable PostgreSQL service
 where it may create/drop **only its disposable test databases**. Supply your own
@@ -158,8 +162,9 @@ Historical hotel/meal/admission prices need source refresh; unknown transport fa
 are explicitly excluded, not verified zero. Accessibility/opening calendars and
 some exact operating facts remain unknown. OSRM routes are modelled, with reverse
 evidence where available and explicit reverse limitations elsewhere. External image
-URLs remain in provenance, but the app uses existing project-owned graphics until
-hotlink/distribution permission and reliable availability are established.
+URLs remain in provenance. The app uses exact licensed local photographs where
+available and explicit generic illustrations otherwise. Keep media attributions
+intact; do not substitute unrelated property photographs.
 
 Public hosting still requires a chosen account, production database, protected
 secrets, URLs/domain/DNS, HTTPS termination, provider backup scheduling and monitoring.
@@ -208,3 +213,43 @@ reviewed catalog in a separate temporary database; the installed user is untouch
 See [Phase 3 test evidence](../reports/PHASE3_FULL_TEST_RESULTS.md) and
 [local demo status](../reports/PHASE3_LOCAL_DEMO_READINESS.md) for current coverage
 and remaining factual/localization limitations.
+
+## Current enriched catalog and controls
+
+The latest measured enriched catalog (12 October 2026) is 8 destinations,
+44 attractions, 56 hotels, 12 restaurants and 497 routes. Already enriched
+installations need only startup and the read-only readiness check. `local:up`
+does not silently apply all later enrichment to an existing database.
+
+For a fresh base catalog, back up first and apply the reviewed sequence:
+
+```sh
+npm run local:backup -- backups/before-full-enrichment.dump
+npm run local:expand
+npm run local:enrich
+npm run local:refine -- --dry-run
+npm run local:refine
+npm run local:hotel-coverage -- --dry-run
+npm run local:hotel-coverage
+npm run local:demo:check
+```
+
+Use a new archive filename and test restoration into a new database before risky
+data corrections. Never reset existing data or overwrite curated conflicts merely
+to match a count. See [hotel provenance](../reports/HOTEL_TIER_COVERAGE.md).
+
+Ranked Stays switches all eight cities. Only supported priced hotels are
+selectable for a priced stay; other records remain visible with explanations.
+The planner validates price, rooms, guests and lodging budget before creating a
+trip. Preferences rank comparable sightseeing coverage; unsupported extra days
+are disclosed rather than filled with meals.
+
+Delete Trip is permanent after confirmation: the owner-only API deletes that
+trip's stops and budget and clears its browser snapshots. Demonstrate it only
+using a new disposable demo trip. Copy private trip link requires the same owner
+to sign in; recipients are not granted public access. Tourists cannot access
+admin controls; approved operators retain their catalog tools.
+
+Use [LOCAL_DEMO.md](LOCAL_DEMO.md) for presentation steps. Latest fixes/results:
+[TEAMMATE_FIXES.md](../reports/TEAMMATE_FIXES.md) and
+[SIGHTSEEING_QUALITY_REPAIR.md](../reports/SIGHTSEEING_QUALITY_REPAIR.md).

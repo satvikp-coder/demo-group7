@@ -1,5 +1,11 @@
 # Image sources, licensing and validation
 
+Latest measured audit (12 October 2026):120entity references,38genuine-photo
+associations,82intentional fallbacks,34unique resolved assets and0errors. This does
+not claim that fallbacks are genuine photographs. See [latest installed checks](../reports/TEAMMATE_FIXES.md)
+and [current catalog](../README.md#current-data). Earlier recovery counts below
+describe the initial image-repair stage and remain historical.
+
 The frontend serves images from `frontend/public/assets/`. Vite copies them into
 the production build; nginx serves `/assets/` as files with real 404s, independently
 of the private API/database. Express uses PostgreSQL through `pg`, without an ORM;
@@ -14,7 +20,7 @@ trip data in PostgreSQL stay unchanged. No database reset, reseed or image migra
 is needed. A supplied photo can replace an intentional missing-photo fallback.
 New slugs never inherit a different property's photo merely because names match.
 
-The 27 photographs are optimized WebP copies, each with its own CC BY, CC BY-SA,
+The local photographs are optimized WebP copies, each with its own CC BY, CC BY-SA,
 CC0 or public-domain terms. Modified CC BY-SA images remain under the stated
 share-alike license, independently of the application license. Attribution is
 available through the existing footer's **Photo credits** link and

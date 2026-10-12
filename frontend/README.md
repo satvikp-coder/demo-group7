@@ -1,4 +1,5 @@
-> Current deployment/testing workflow: [Production runbook](../docs/PRODUCTION.md).
+> Current local workflow: [Local setup](../docs/LOCAL_PRODUCTION.md),
+> [university demo](../docs/LOCAL_DEMO.md) and [latest fixes](../reports/TEAMMATE_FIXES.md).
 > Its migration ledger, guarded seed and unified tests supersede historical guidance below.
 
 # Heritage Tourism Planner Frontend  
@@ -30,7 +31,9 @@ shows an error, not a bundled-data fallback. API calls bypass service-worker cac
 | Planner | `POST /trips`, then `POST /trips/:id/generate-itinerary` |
 | Itinerary | `GET /trips/:id`, displaying persisted stop times and prices |
 | Budget | `GET /trips/:id/budget`, scoped to the same saved trip ID |
-| Hotels | `/destinations/:id/hotels?sort=value|rating|price` |
+| Hotels | Catalog-backed city selector; `/destinations/:id/hotels?sort=value|rating|price|distance`, with optional Low Cost/Budget/Premium filtering |
+| Profile | `GET /trips`; confirmed owner-only `DELETE /trips/:id` permanently removes the trip |
+| Private link | Encoded saved-trip identifier/preferences; retrieval still requires owner authentication |
 | Admin | Operator-only `/admin/{destinations,attractions,hotels,restaurants}` CRUD |
 | Authentication | `/auth/register`, `/auth/login`, `/auth/me` |
 
@@ -63,25 +66,41 @@ Large browser traces are generated locally and ignored. Curated results are in
 ## Data limitations
 
 The database has Ahmedabad, Somnath, Dwarka, Modhera, Champaner, Gir National Park,
-Rann of Kutch and Saputara: eight destinations, 25 attractions, 11 hotels,
-12 restaurants and 131 sourced road-route snapshots. Somnath Temple has verified
-wheelchair access; Rukmini Temple is marked inaccessible; 23 attraction values
-remain unknown and are excluded by wheelchair-only planning. Missing ratings,
+Rann of Kutch and Saputara. The enriched catalog measured12October2026 contains
+8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records.
+Counts depend on the reviewed imports applied. Somnath Temple has verified
+wheelchair access; Rukmini Temple is marked inaccessible. Many other suitability
+values remain unknown and are excluded by wheelchair-only planning. Missing ratings,
 travel fares, mode splits and algorithm timings remain unavailable. Unknown
 transport costs display as excluded, rather than verified free transport.
-Hotel choice is retained when over budget. New plans default to days minus one lodging nights, adjustable with optional
+Unknown-price selections are blocked with an explanation before a trip request.
+Lodging above budget is rejected instead of replacing the chosen hotel.
+New plans default to days minus one lodging nights, adjustable with optional
 arrival/departure dates. Old requests and saved rows retain their original night convention. Simulated CSV routes remain excluded.
 
 The profile discovers owned trips from PostgreSQL after a new login. There is no
 account-update, preview or verified-discount endpoint; account edits report unsupported; What If generates a new persisted version on Save; budget
 tips do not apply fabricated savings. Strategy comparisons create real server trips.
-Shared trip IDs remain owner-protected, and reloading trip data requires a network
+Copy private trip link is an owner-only bookmark, not public sharing. The budget
+copy action identifies the saved trip rather than copying a bare page address.
+Trip IDs remain owner-protected, and reloading trip data requires a network
 connection. These controls never fall back to the legacy client planner.
+
+Tourists have no Admin Panel button and direct admin navigation redirects after
+session restoration; the backend independently checks the current account role.
+Confirmed deletion prevents duplicate pending clicks, retains the card on
+cancellation/server failure, and removes only the deleted trip's session/offline
+snapshots after success. Old browser-hidden IDs no longer hide database records.
+
+The scheduler does not fill empty sightseeing days with lunch/dinner stops.
+It returns promptly and resumes feasible visits after meals through evidenced
+graph routes. Missing-day advisories disclose unsupported trip durations.
+Saved stop snapshots remain unchanged until the user regenerates.
 
 From frontend/, run `node --import tsx scripts/run-experiments.ts` with the backend
 running. It executes the original 22 scenarios through HTTP, persists/retrieves
 their trips and budgets, and removes its temporary account. Results are under
-../docs/research/. Current baseline: 22 generated, 12 budget-compliant, 48 visits;
+../docs/research/. Historical baseline: 22 generated, 12 budget-compliant, 48 visits;
 the ten over-budget selected-hotel cases are valid constraint failures.
 
 For this workspace's ports, run the browser suite in backend/ with

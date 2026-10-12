@@ -175,12 +175,20 @@ another user's trip returns 404.
   IDs are UUIDs; days is 1-30, budget is a positive integer in rupees, and start_time
   is 24-hour HH:mm between 00:00 and 21:59. Optional `strategy` is distance-first
   (default), budget-first, or rating-first; `wheelchair_accessible_only` defaults false.
+  Optional `weights` contains integer distance/cost/rating percentages totaling100.
+  `hotel_category` is Low Cost/Budget/Premium; `travelers` and `rooms` are1-20.
+  Optional `lodging_nights` is0-31; accommodation arrival/departure dates must be
+  consistent, and `start_date` enables sourced calendar policies. An unknown
+  overnight price is rejected before insertion; the UI also validates before POST.
   Returns 201 with `trip`, `hotel_total`, `hotel_over_budget`, and `hotel_replaced:false`.
   A hotel from another destination is rejected with 422. An over-budget hotel is kept.
 - `POST /api/trips/:id/generate-itinerary`: `{}` or optional strategy/accessibility
   overrides. Returns `{trip, days, budget}` with persisted stops and generation_summary.
   Regeneration atomically replaces only this trip's stops and budget cache.
 - `GET /api/trips/:id`: returns the same persisted trip, day-by-day stops and budget.
+- `DELETE /api/trips/:id`: current authenticated owner only;204 success,404
+  foreign/missing ID,401 missing/invalid session,400 invalid UUID/query/body.
+  The existing transaction/FK cascades remove only its stops and budget.
 - `GET /api/trips/:id/budget`: computes hotel/attraction/meal/transit totals with SQL
   scoped to this trip's persisted stops. Prices are snapshots taken at generation;
   later catalog price edits do not silently change an already generated trip.
@@ -190,9 +198,10 @@ and does not reset existing data.
 
 The adapter imports Graph, Dijkstra, MinHeap, HashTable and the greedy budget filter,
 route scoring and day quota/time helpers directly from dsa/. It uses database route
-rows first, with Dijkstra only for attraction pairs lacking a direct edge. It does
+rows first, with Dijkstra for missing direct hotel/restaurant/attraction pairs. It does
 not read CSV files during requests. Database distances replace the client's synthetic
-geographic fallback; unavailable hotel/restaurant transfer edges remain unavailable.
+geographic fallback; disconnected transfers remain unavailable. A path through
+existing graph edges is travel, not an invented road segment or attraction visit.
 The legacy hotel-selection helper is intentionally not called because it can replace
 an over-budget user selection. New requests may supply `lodging_nights` or both `arrival_date` and `departure_date`.
 The room subtotal is nightly estimate times nights times rooms; taxes remain unknown.
@@ -210,9 +219,20 @@ generation_summary rather than fabricated. Transport fares are unavailable in th
 route schema, so any traveled plan marks transport_cost_known=false; total is the
 known persisted cost, not a claim that transportation is free.
 
+Meals support an active sightseeing circuit; they do not extend a finished morning
+tour into a six-hour dinner wait or create meals-only days. Later opening waits
+re-evaluate travel after lunch. `day_coverage` reports unsupported sightseeing days.
+Unknown closing data uses an explicitly qualified18:00planning cutoff. Weighted
+ranking compares the fullest feasible distinct-visit/day coverage found before
+applying normalized preferences; the bounded heuristic has no global-optimum proof.
+
+Copy private trip link remains owner-authenticated: an encoded identifier does
+not grant recipient access, and no public-sharing/revocation endpoint is claimed.
+
 `npm run test:trips` uses curl, the real server entry point, Step 3 registration/login,
-and PostgreSQL. It verifies creation/generation/fetch/budget, SQL persistence, budget
-isolation, multi-day stops, regeneration, ownership, validation, accessibility, late
+and PostgreSQL. It verifies creation/generation/fetch/budget, SQL persistence,
+unknown-price rejection before insertion, ownership deletion and stop/budget
+cascades, budget isolation, multi-day stops, regeneration, validation, accessibility, late
 start times and hotel preservation. It writes `reports/trips-http-report.json`, with
 complete actual HTTP responses and redacted credentials. Test users and a uniquely
 named synthetic destination are deleted afterward by exact IDs, including their

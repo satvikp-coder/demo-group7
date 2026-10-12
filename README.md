@@ -2,6 +2,20 @@
 
 A Gujarat heritage and tourism planning platform built for CSC210 Data Structures & Algorithms, Group 07, Ahmedabad University.
 
+**Local application:** http://localhost:8080
+
+**Source repositories:** [course repository](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner) and [synchronized mirror](https://github.com/satvikp-coder/demo-group7). Both receive the same reviewed release commit.
+
+## Latest verified local release — 12 October 2026
+
+- 71 backend unit/security tests and 18/18 complete regression gates passed.
+- 64 real-browser control checks, including PDF export, passed.
+- 192 generation/save/refresh scenarios across all eight destinations passed.
+- Dedicated hotel-price, deletion, private-link and admin-role checks passed at 1440px, 768px and 390px.
+- Read-only local readiness: 7/7. Existing accounts, saved trips and catalog records were preserved.
+
+See [teammate fixes and test evidence](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). Readiness remains conditional on the documented data/photo limitations. Local tests do not establish public deployment or remote CI success.
+
 ## Overview
 
 The React application uses a real Express/PostgreSQL backend to search destinations and generate persisted itineraries. A trip covers one destination, with each day starting and ending at the selected hotel. The backend schedules eligible attractions and meals using stored road routes, time windows and the available budget. Saved stops and price snapshots remain available after login and restart.
@@ -14,6 +28,9 @@ The React application uses a real Express/PostgreSQL backend to search destinati
 - Two-stage Low Cost / Budget / Premium hotel selection, with clearly labeled straight-line proximity and stored price estimates.
 - Synchronized distance/cost/rating priorities totaling 100%, with persisted scoring explanations for evaluated feasible candidates.
 - Registration, login, authenticated trip discovery and persisted itinerary/budget retrieval.
+- Permanent, confirmed **Delete Trip** through the owner-protected API; cancellation or a failed request preserves the record. Successful deletion clears its browser snapshots and stays deleted after refresh.
+- **Copy private trip link** creates an owner-authenticated bookmark, not public recipient access. Budget links also identify the actual saved trip.
+- Tourists do not see Admin Panel controls; direct admin navigation returns them to their profile, and the API independently enforces operator permissions.
 - Route-aware, multi-day planning with selected-hotel retention and explicit incomplete-plan warnings.
 - Known-cost budget breakdowns, strategy comparison, PDF export and an educational Dijkstra visualizer.
 - Operator CRUD for destinations, attractions, hotels and restaurants, with server-side role and ownership checks.
@@ -74,14 +91,22 @@ docs/       Setup, deployment, academic design and research documentation
 |---|---|
 | [Trie](dsa/trie/Trie.ts) | Runtime prefix search over database-derived names; the cache refreshes periodically. Levenshtein fuzzy search is preserved/tested in this module but is not enabled by the public search endpoint. |
 | [Merge Sort](dsa/sorting/mergeSort.ts) | Stable hotel ordering through [hotelRanking.js](backend/services/hotelRanking.js). |
-| [Dijkstra](dsa/dijkstra/dijkstra.ts), [Graph](dsa/graph/Graph.ts), [MinHeap](dsa/priorityQueue/MinHeap.ts) | Shortest-path fallback for eligible missing-direct attraction pairs. Stored direct routes take precedence. |
+| [Dijkstra](dsa/dijkstra/dijkstra.ts), [Graph](dsa/graph/Graph.ts), [MinHeap](dsa/priorityQueue/MinHeap.ts) | Evidenced shortest-path fallback for missing direct hotel/restaurant/attraction pairs. Stored direct routes take precedence; unknown roads are not fabricated. |
 | [Trip planner](backend/services/tripPlanner.js), [greedy helpers](dsa/greedy/) | Scores candidates and schedules visits, meals and hotel returns within time/budget constraints. This is a heuristic, not a global optimum guarantee. |
 | [Trip model](backend/models/tripModel.js) | Transactional persistence, bounded serialization retries and stored cost snapshots. |
-| [Hash table](dsa/hashTable/HashTable.ts) | Preserved standalone academic implementation; see [DSA documentation](dsa/README.md). |
+| [Hash table](dsa/hashTable/HashTable.ts) | Per-request route cache and visited-attraction tracking; see [DSA documentation](dsa/README.md). |
 
 ## Current Data
 
-The approved catalog is verified during release acceptance; see [release verification](docs/RELEASE_VERIFICATION.md) for the dated measured result.
+The enriched local catalog measured on 12 October 2026 contains **8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records**. There are **29 usable indicative hotel-price estimates**; the other 27 properties have no usable rate and are not priced starting-hotel choices. All eight destinations have a sourced priced option in each hotel category after the reviewed coverage import, including clearly identified nearby towns.
+
+The latest image audit checked 120 entity references: **38 genuine-photo associations, 82 intentional fallbacks and zero broken references**. A fallback is not a recovered photograph; attribution remains in [Photo credits](frontend/public/image-credits.html).
+
+These counts do not establish live rates, availability or complete factual coverage. Unknown fees/durations can exclude a recorded site from timed scheduling. Champaner currently has only one fully costed, timed attraction, so unsupported extra sightseeing days are disclosed rather than filled with invented activities. See [hotel coverage](reports/HOTEL_TIER_COVERAGE.md) and [current data quality](reports/PHASE3_DATA_QUALITY.md).
+
+### Historical import stages
+
+The following counts describe earlier import stages, not the current enriched catalog:
 
 | Records | Base import | With reviewed 20261009 expansion |
 |---|---:|---:|
@@ -129,12 +154,15 @@ Current local repair evidence and limitations are recorded in
 Install Node.js 22.18+ and Docker with Compose v2 (Linux containers), then:
 
 ```sh
-git clone https://github.com/satvikp-coder/demo-group7.git
-cd demo-group7
+git clone https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner.git
+cd group-07-heritage-tourism-planner
 npm run local:up
+npm run local:demo:check
 ```
 
 Open **http://localhost:8080**. Startup generates private credentials, builds the images, applies migrations and imports approved data only for a fresh database. Later starts preserve existing managed data.
+
+An already enriched installation needs only `local:up`. A fresh base catalog requires the reviewed additive imports to reach the current counts. After a backup, run `local:expand`, `local:enrich`, `local:refine -- --dry-run`, `local:refine`, `local:hotel-coverage -- --dry-run`, then `local:hotel-coverage`. Do not reset or reseed existing user data to troubleshoot. See [the exact fresh-install sequence](docs/LOCAL_PRODUCTION.md#current-enriched-catalog-and-controls).
 
 ```sh
 npm run local:status
@@ -196,11 +224,13 @@ Install backend/frontend dependencies as above, Python and Google Chrome, then:
 ```sh
 python -m pip install -r requirements-tests.txt
 npm run test:all:local
+npm run test:scheduling:local
+npm run test:demo:local
 npm run test:production
-npm run test:local
+npm run audit:images
 ```
 
-Run suites sequentially. `test:all:local` adapts the unified `npm run test:all` to the local Docker database; the unified suite creates and removes an isolated test database. Container tests use an independent stack. Local acceptance checks the persistent stack and cleans exact fixture IDs.
+Run suites sequentially. `test:all:local` and the expanded scheduling/demo adapters use disposable databases, preserve active records and restore private database networking. Container tests use an independent stack. **Do not run `test:local` against real user data:** that maintenance acceptance suite restarts/reseeds the active stack. Prefer the isolated wrappers above.
 
 | Command | Coverage |
 |---|---|
@@ -208,6 +238,9 @@ Run suites sequentially. `test:all:local` adapts the unified `npm run test:all` 
 | `npm run test:planner` | Academic reference planner assertions. |
 | `npm run test:integration` | Auth, destination, trip, admin and DB constraints; requires configured test DB. |
 | `npm run test:browser` | Real browser/API flows; requires running test API/frontend. |
+| `npm run test:scheduling:local` | Isolated production-preview planning matrix, date/budget checks and teammate hotel-price/deletion/private-link/admin browser regressions. |
+| `npm run test:demo:local` | Isolated authenticated university rehearsal; does not modify the installed account. |
+| `npm run local:demo:check` | Seven read-only installed-environment checks. |
 | `npm --prefix frontend run lint` | TypeScript checking. |
 | `npm --prefix backend run build` | Backend JavaScript syntax checking. |
 | `npm run audit:source` | Credential patterns and frontend preservation. |
@@ -225,6 +258,7 @@ All categories are under `/api`:
 - `/auth`: registration, login and current account.
 - `/destinations`: catalog, search, details, attractions, hotels and restaurants.
 - `/trips`: authenticated owner trip discovery, creation, generation and persisted retrieval.
+- `DELETE /trips/:id`: confirmed permanent owner-only deletion, including that trip's stops/budget. Returns 204 on success, 404 for foreign/missing IDs, 401 without a valid session and 400 for invalid requests.
 - `/trips/:id/budget`: saved known-cost breakdown.
 - `/admin`: operator-only catalog CRUD.
 
@@ -234,7 +268,7 @@ See [backend API documentation](backend/README.md) for contracts and permissions
 
 Data comes from researched public and official tourism/business sources, with source dates, archived evidence and field-level qualifications in [data/research](data/research/) and the [provenance report](backend/reports/data-provenance.md). [Research limitations](backend/reports/COMPLETION_RESEARCH.md) distinguish verified identity, historical quotes, derived values and unknowns.
 
-Prices, opening hours and accessibility can change. Confirm them with the destination/provider before travel. Retained external image URLs are provenance, not redistribution licenses; the runtime catalog uses existing local fallback graphics.
+Prices, opening hours and accessibility can change. Confirm them with the destination/provider before travel. Retained external image URLs are provenance, not redistribution licenses. The runtime uses verified local photographs where available and explicit fallback illustrations otherwise; see [image rights and validation](docs/IMAGES.md).
 
 ## Security
 
@@ -243,6 +277,8 @@ Implemented protections include bcrypt password hashing, expiring HS256 JWTs, cu
 ## Documentation
 
 - [Local setup and operations](docs/LOCAL_PRODUCTION.md)
+- [Reproducible local university demonstration](docs/LOCAL_DEMO.md)
+- [Current teammate fixes](reports/TEAMMATE_FIXES.md) and [sightseeing quality](reports/SIGHTSEEING_QUALITY_REPAIR.md)
 - [Production deployment, backup and recovery](docs/PRODUCTION.md)
 - [Release verification and repository cleanup](docs/RELEASE_VERIFICATION.md)
 - [Testing](tests/README.md)
@@ -255,16 +291,17 @@ Academic proposals and old experiment baselines are retained as historical desig
 
 ## Known Limitations
 
-- Dated tourism information can become stale; 23 attraction accessibility values and two admission prices remain unknown in the approved dataset.
+- Dated tourism information can become stale; admission, duration, operating, rating and accessibility coverage is uneven. Some destinations cannot fill longer requested tours with supported timed visits.
 - Transport fares are unavailable and excluded from known-cost totals. OSRM times are estimates, not live traffic.
-- Planning is single-destination and date-free, with one opening interval; it cannot guarantee seasonal calendars, reservations or live availability. Some meal windows/routes remain incomplete.
-- A selected hotel that exceeds the budget stays selected and produces an explicit incomplete result.
+- Planning is single-destination and heuristic. Dates, explicit nights and sourced operating/closure policies are supported, but unsupported holidays, reservations and live availability are not guaranteed.
+- Unknown-price properties cannot be selected for priced stays. Insufficient accommodation budget is rejected with a useful explanation before trip creation; the selected hotel is not silently replaced. Historical saved rows keep their original meaning.
+- User priorities rank comparable tours after feasible distinct-visit/day coverage. Global optimality is not proven. Without known closing data, an explicit 18:00 planning cutoff is used rather than invented opening facts.
 - Public recipient sharing, account editing and password recovery are unavailable; owner links remain authenticated. Offline shell support does not make trip APIs available offline.
 - Use one API instance until shared rate-limit storage is configured. Per-token revocation and large-scale capacity certification are outside this release.
 
 ## Deployment Status
 
-**Locally production-ready.**
+**Locally demo-tested, with documented data/photo limitations.**
 **Public deployment/hosting configuration remains external.**
 
 The historical frontend demo is not a deployment of this backend/database release. Choose a host, configure protected secrets, database, domain/DNS, HTTPS, backups and monitoring using the production runbook.
@@ -283,6 +320,6 @@ After the existing expansion/enrichment/refinement imports, back up the local da
 
 ### Itinerary scheduling and personal time
 
-The scheduler balances known attractions over the remaining trip days without an arbitrary three/four-visit limit. Actual route times, admission budgets, opening windows and calendar restrictions still constrain visits. Unused intervals of at least one hour are shown as personal time, with the following evidenced transfer excluded. Sparse catalogs are not filled with invented activities or repeated visits. Older saved plans receive the same disclosure from their saved stops and legs without modifying their records. Generate a new plan to apply the expanded visit allocation.
+The scheduler balances known attractions over the remaining trip days without an arbitrary three/four-visit limit. Actual route times, admission budgets, opening windows and calendar restrictions still constrain visits. It resumes feasible sightseeing after meals through evidenced graph connections, returns promptly after the final visit, and does not manufacture meals-only days or six-hour dinner waits. Unsupported extra days show a clear advisory. Unused intervals of at least one hour exclude the evidenced transfer. Older saved plans are preserved; regenerate them to use the corrected scheduling logic.
 
-Run `npm run test:scheduling:local` for isolated eight-destination interval/overlap tests and production-browser checks of current/legacy saved responses at desktop, tablet and mobile sizes. See [scheduling repair evidence](reports/SCHEDULE_GAP_REPAIR.md).
+Run `npm run test:scheduling:local` for isolated eight-destination planning/overlap tests and production-browser checks at desktop, tablet and mobile sizes. See [current sightseeing repair evidence](reports/SIGHTSEEING_QUALITY_REPAIR.md), [legacy gap handling](reports/SCHEDULE_GAP_REPAIR.md) and [teammate regressions](reports/TEAMMATE_FIXES.md).

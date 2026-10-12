@@ -1,6 +1,37 @@
-> Historical release evidence. Current local repairs and acceptance: [Phase 3 readiness](../reports/PHASE3_LOCAL_DEMO_READINESS.md) and [test results](../reports/PHASE3_FULL_TEST_RESULTS.md).
-
 # Release verification and repository cleanup
+
+## Latest local acceptance — 12 October 2026
+
+This section supersedes the earlier dated baseline below. Current local fixes:
+all-eight-city hotel selection, sensible coverage-comparable sightseeing schedules,
+known-price preflight, permanent owner-only trip deletion, explicit private links
+and operator-only admin controls. Existing records were preserved.
+
+| Executed check | Latest result |
+|---|---|
+| Backend unit/security |71/71PASS |
+| `npm run test:all:local` |18/18PASS;64real browser controls includingPDF |
+| `npm run test:scheduling:local` |Production-preview PASS;192eight-city/tier/day/weight API plans,32existing city cases and focused browser regressions |
+| Teammate browser |1440/768/390PASS: unknown price0writes, admin visibility/redirect/403, private ownership, deletion cancel/failure/success/refresh/cache |
+| `npm run local:demo:check` |7/7PASS |
+| Preservation |All9live table fingerprints unchanged after installation |
+| Image audit |120references,38photo associations,82intentional fallbacks,0errors |
+
+Evidence: [teammate fixes](../reports/TEAMMATE_FIXES.md),
+[sightseeing repair](../reports/SIGHTSEEING_QUALITY_REPAIR.md),
+[full gates](../reports/teammate-full-tests.json),
+[production preview](../reports/teammate-production-tests.json),
+[browser](../reports/teammate-browser-tests.json),
+[installed preservation](../reports/teammate-installed-verification.json).
+
+Catalog:8destinations/44attractions/56hotels/12restaurants/497routes. Data/photo
+gaps remain explicit; this is local demo acceptance, not public-hosting approval.
+Both [course repository](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner)
+and [mirror](https://github.com/satvikp-coder/demo-group7) receive the same reviewed
+commit through normal fast-forward pushes. Consult each Actions run for remote CI;
+local passes do not establish its conclusion.
+
+## Historical release baseline
 
 Release target: `satvikp-coder/demo-group7`, branch `main`.
 The existing repository was cloned separately from the verified local application;

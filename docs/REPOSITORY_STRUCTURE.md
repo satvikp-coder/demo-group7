@@ -19,6 +19,8 @@ The [root README](../README.md) is the entry point. This is the implemented layo
 | `docs/foundation/`, `docs/diagrams/` | Historical academic design documents. |
 | `docs/research/` | Experiments with explicitly retained comparison baselines. |
 | `backend/reports/` | Curated provenance/readiness reports, required fixtures and generated local evidence. |
+| `reports/` | Current compact data, feature-repair, integration and browser evidence; private progress stays local. |
+| `docs/LOCAL_DEMO.md` | Reproducible local professor demonstration with truthful failure/deletion/sharing behavior. |
 
 No source directories were moved for this release. See
 [release verification](RELEASE_VERIFICATION.md) for artifact retention decisions.
