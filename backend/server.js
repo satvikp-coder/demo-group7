@@ -12,9 +12,10 @@ import authRoutes from "./routes/authRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import destinationRoutes from "./routes/destinationRoutes.js";
 import tripRoutes from "./routes/tripRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
 import { destinationSearchCache } from "./services/destinationSearchCache.js";
 
-export function createApp({checkDatabase = () => pool.query("SELECT generation_summary FROM trips LIMIT 0; SELECT reverse_distance_km FROM routes LIMIT 0; SELECT provenance_review FROM attractions LIMIT 0; SELECT id FROM users LIMIT 0; SELECT id FROM budgets LIMIT 0")} = {}) {
+export function createApp({chatRouter = chatRoutes, checkDatabase = () => pool.query("SELECT generation_summary FROM trips LIMIT 0; SELECT reverse_distance_km FROM routes LIMIT 0; SELECT provenance_review FROM attractions LIMIT 0; SELECT id FROM users LIMIT 0; SELECT id FROM budgets LIMIT 0")} = {}) {
   const app = express();
   app.disable("x-powered-by");
   if (env.TRUST_PROXY) app.set("trust proxy", env.TRUST_PROXY.split(","));
@@ -24,7 +25,7 @@ export function createApp({checkDatabase = () => pool.query("SELECT generation_s
   app.use(cors({ origin(origin, callback) {
     if (!origin || origins.includes(origin)) return callback(null, origin || false);
     return callback(new HttpError(403, "Origin not allowed"));
-  }, methods:["GET","POST","PUT","DELETE","OPTIONS"], allowedHeaders:["Content-Type","Authorization"], exposedHeaders:["X-Request-ID"] }));
+  }, methods:["GET","POST","PUT","DELETE","OPTIONS"], allowedHeaders:["Content-Type","Authorization"], exposedHeaders:["X-Request-ID","Retry-After"] }));
   app.use("/api", (req,res,next) => { res.set("Cache-Control", "no-store"); next(); }, limiter("api", 1200));
   app.use("/api/auth/login", limiter("login", env.AUTH_RATE_LIMIT, 15*60000));
   app.use("/api/auth/register", limiter("registration", env.AUTH_RATE_LIMIT, 15*60000));
@@ -45,6 +46,7 @@ export function createApp({checkDatabase = () => pool.query("SELECT generation_s
   app.use("/api/admin", adminRoutes);
   app.use("/api/destinations", destinationRoutes);
   app.use("/api/trips", tripRoutes);
+  app.use("/api/chat", chatRouter);
   app.use(notFound);
   app.use(errorHandler);
   return app;

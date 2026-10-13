@@ -13,7 +13,7 @@ export const session = {
   token: () => sessionStorage.getItem(TOKEN_KEY),
   clear: () => { sessionStorage.removeItem(TOKEN_KEY); sessionStorage.removeItem("heritage_api_trip_ids"); sessionStorage.removeItem("heritage_api_hidden_trip_ids"); window.dispatchEvent(new Event("heritage-auth-change")); },
 };
-export class ApiError extends Error { constructor(message: string, public status = 0) { super(message); } }
+export class ApiError extends Error { constructor(message: string, public status = 0, public retryAfter?: number) { super(message); } }
 export const errorMessage = (error: unknown) => error instanceof Error ? error.message : "Request failed";
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   if (!BASE_URL) throw new ApiError("Set VITE_API_BASE_URL to the backend API URL.");
@@ -38,7 +38,9 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
       throw new ApiError('Your session has expired. Sign in again to continue.', 401);
     }
     const issues = body?.error?.issues?.map((issue: Row) => `${issue.path}: ${issue.message}`).join("; ");
-    throw new ApiError(issues || body?.error?.message || `Request failed (${response.status})`, response.status);
+    const retryAfter = Number(response.headers.get("Retry-After"));
+    throw new ApiError(issues || body?.error?.message || `Request failed (${response.status})`, response.status,
+      response.status === 429 && Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(86400, Math.ceil(retryAfter)) : undefined);
   }
   if (body === null || typeof body !== "object") {
     throw new ApiError("Server returned an invalid response.", response.status);
@@ -126,6 +128,12 @@ export function destinationFromRow(row: Row): Destination {
 // Internal empty shape prevents render-time property errors; loading/error guards never display it as catalog data.
 export const EMPTY_DESTINATION = destinationFromRow({id:"",name:""});
 export const api = {
+  async chat(payload: {message:string;language:"en"|"hi"|"gu";mode?:"ai"|"database";context_trip_id?:string;history_token?:string;lookup?:{tool:string;arguments:Record<string,unknown>}},signal?:AbortSignal):Promise<{mode:"ai"|"database";reply:string;history_token:string|null;data?:unknown;cached?:boolean}> {
+    if(!session.token())throw new ApiError("Sign in to use Heritage Guide.",401);
+    const result=await request<Row>("/chat",{method:"POST",body:JSON.stringify(payload),signal});
+    if(!["ai","database"].includes(result.mode)||typeof result.reply!=="string"||!(result.history_token==null||typeof result.history_token==="string"))throw new ApiError("Heritage Guide returned an invalid response.");
+    return result as {mode:"ai"|"database";reply:string;history_token:string|null;data?:unknown;cached?:boolean};
+  },
   async destinations(signal?: AbortSignal) { return (await all("/destinations",signal)).map(destinationFromRow); },
   async search(prefix: string, signal?: AbortSignal) {
     if (!prefix.trim()) return api.catalog(signal);

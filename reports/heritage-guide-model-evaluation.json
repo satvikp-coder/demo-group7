@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-13",
+  "ownerBillingConfirmation": "Free Plan; no paid billing",
+  "billingApiVerification": "Not exposed by models/inference API; owner confirmation only",
+  "officialFreePlanReference": "https://console.groq.com/docs/rate-limits",
+  "accountModelsAvailable": [
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b"
+  ],
+  "evaluation": [
+    {
+      "model": "openai/gpt-oss-20b",
+      "liveGroundedQuestionsPassed": 4,
+      "failure": {
+        "httpStatus": 400,
+        "code": "tool_use_failed",
+        "tool": "get_app_help",
+        "argument": "topic=budget",
+        "requiredAllowedTopic": "categories"
+      },
+      "selection": "Not selected due to observed schema reliability issue"
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "liveDiagnosticHttpStatus": 200,
+      "tool": "get_app_help",
+      "argument": "topic=categories",
+      "accountHeaders": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000"
+      },
+      "selection": "Explicitly selected; complete live question verification pending"
+    }
+  ],
+  "paidInfrastructureAdded": false,
+  "accountUpgraded": false,
+  "automaticFallback": false,
+  "automaticRetries": 0
+}

@@ -38,6 +38,8 @@
     "audit:source": "node scripts/source-audit.js",
     "audit:images": "npm --prefix frontend run audit:images --",
     "test:itinerary": "node scripts/test-itinerary-workflow.js",
-    "local:expand": "node scripts/local-stack.js expand"
+    "local:expand": "node scripts/local-stack.js expand",
+    "test:chat": "node --import ./backend/node_modules/tsx/dist/loader.mjs --test backend/tests/chat.test.js",
+    "test:chat:local": "node scripts/test-chat-local.js"
   }
 }

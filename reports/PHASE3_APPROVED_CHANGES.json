@@ -73,8 +73,8 @@
     },
     "frontend/src/api/index.ts": {
       "baselineSha256": "92baf76f91b4b75d325a17dd81b9de83b10a7d0cc890642a18d861f2883bba02",
-      "sha256": "31dc7722f61132069780c73d1b6f3d8e00f5aff427b3403083d941b1b06260f0",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "e42cacffff93b9d83d34842c4efd6e149371d85c7f19ce447b5dfde0ce20d70f",
+      "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
     },
     "frontend/src/api/types.ts": {
       "baselineSha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac",
@@ -103,8 +103,8 @@
     },
     "frontend/src/App.tsx": {
       "baselineSha256": "2946540a334d35e1f1e4fa85b4b9b28f066aeed86f49d50e0491c6ef21eeb125",
-      "sha256": "f5c2ca3f0cd00a9bdbd9d3901d64290a567e9def389bbcacb37bb245aec76cb3",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "75b927986e91850333c79f0ee183afdb0ed6f7bee8d1aa7babd007a55b2915b7",
+      "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
     },
     "frontend/src/components/ShareItineraryModal.tsx": {
       "baselineSha256": "cf92e783ee19d73985c72a67cf79993b0ce3ebd99e12fb0f547899109e09a42c",
@@ -125,6 +125,16 @@
       "baselineSha256": "f3b36f2f423859e1f556bc3a7ad30ae2de2872c8d5d5dc345c818c39d64a532f",
       "sha256": "48778cbea5e00d79ad3a919121404842c9f8cafcbafb9bab74e3c3e945d1976a",
       "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+    },
+    "frontend/src/components/HeritageGuideChat.tsx": {
+      "baselineSha256": null,
+      "sha256": "5827e1b55463d0412b9930f19ea53d8f6411ef6dc80a5b32fe1c0fecefa50e1d",
+      "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
+    },
+    "frontend/src/components/HeritageGuidePanel.tsx": {
+      "baselineSha256": null,
+      "sha256": "cfe870aa1bb8cbb67a72da07597600b2e59b93320de402b1098739cd4f9eee9a",
+      "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
     }
   }
 }

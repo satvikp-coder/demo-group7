@@ -6,19 +6,26 @@ A Gujarat heritage and tourism planning platform built for CSC210 Data Structure
 
 **Source repositories:** [course repository](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner) and [synchronized mirror](https://github.com/satvikp-coder/demo-group7). Both receive the same reviewed release commit.
 
-## Latest verified local release — 12 October 2026
+## Latest verified local application - 13 October 2026
 
-- 71 backend unit/security tests and 18/18 complete regression gates passed.
-- 64 real-browser control checks, including PDF export, passed.
-- 192 generation/save/refresh scenarios across all eight destinations passed.
-- Dedicated hotel-price, deletion, private-link and admin-role checks passed at 1440px, 768px and 390px.
-- Read-only local readiness: 7/7. Existing accounts, saved trips and catalog records were preserved.
+- 95 backend unit/security tests;18/18 complete regression gates;17/17 production-mode gates passed.
+- Heritage Guide:24 focused tests,71 real database checks, accepted live Groq evidence for12 question scenarios, and desktop/tablet/mobile widget checks passed.
+- Existing browser controls/PDF, authentication, itinerary API matrix and5 university-demo journeys across3 cities passed.
+- Installed local readiness:7/7. All9 original table fingerprints matched after installation; accounts, saved trips and catalog records were preserved.
 
-See [teammate fixes and test evidence](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). Readiness remains conditional on the documented data/photo limitations. Local tests do not establish public deployment or remote CI success.
+See [Heritage Guide test evidence](reports/HERITAGE_GUIDE_TEST_RESULTS.md), [prior teammate fixes](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). This release includes Heritage Guide; public deployment was not performed. Existing data/photo limitations remain documented.
 
 ## Overview
 
 The React application uses a real Express/PostgreSQL backend to search destinations and generate persisted itineraries. A trip covers one destination, with each day starting and ending at the selected hotel. The backend schedules eligible attractions and meals using stored road routes, time windows and the available budget. Saved stops and price snapshots remain available after login and restart.
+
+## Heritage Guide (local Groq Free Plan)
+
+A compact, closed-by-default AI assistant reads the actual catalog and your authorized trips/budgets. It supports English/Hindi/Gujarati, bounded local tool calling, and a clearly labeled database-only mode when AI is unavailable. Messages and minimal relevant facts go to Groq; chat history stays in memory and clears on logout. No live rates/bookings or fabricated data.
+
+Use only a Groq **Free Plan with no paid billing**. Keys are backend-only in ignored `.env.local-production`; never `VITE_` variables. Default `GROQ_MODEL=openai/gpt-oss-120b`, `CHAT_FREE_PLAN_CONFIRMED=false`, `CHAT_RATE_LIMIT=6`, `CHAT_MAX_HISTORY=8`, `CHAT_MAX_OUTPUT_TOKENS=700`, `CHAT_DAILY_CALL_LIMIT=60`, `CHAT_TIMEOUT_MS=18000`, `CHAT_MOCK=false`. Inference stays disabled without a key and Free-plan confirmation. Quota exhaustion has no paid fallback or automatic retry.
+
+See [implementation](reports/HERITAGE_GUIDE_IMPLEMENTATION.md), [security](reports/HERITAGE_GUIDE_SECURITY.md), [test results](reports/HERITAGE_GUIDE_TEST_RESULTS.md), and [configuration/demo](reports/HERITAGE_GUIDE_LOCAL_DEMO.md). Run `npm run test:chat` or isolated `npm run test:chat:local`. Do not publish private keys or this workspace's private context export.
 
 ## Key Features
 
@@ -260,6 +267,7 @@ All categories are under `/api`:
 - `/trips`: authenticated owner trip discovery, creation, generation and persisted retrieval.
 - `DELETE /trips/:id`: confirmed permanent owner-only deletion, including that trip's stops/budget. Returns 204 on success, 404 for foreign/missing IDs, 401 without a valid session and 400 for invalid requests.
 - `/trips/:id/budget`: saved known-cost breakdown.
+- `POST /chat`: authenticated Heritage Guide questions or explicitly labeled read-only database lookups; bounded Groq Free-plan calls, owner-scoped trip tools and quota handling.
 - `/admin`: operator-only catalog CRUD.
 
 See [backend API documentation](backend/README.md) for contracts and permissions.

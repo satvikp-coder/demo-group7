@@ -6,6 +6,8 @@ Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL
 
 ## Current Goal
 
+2026-10-13T13:25:59.062759+00:00 USER AUTHORIZED HERITAGE GUIDE PUBLICATION TO BOTH REPOSITORIES. Product implementation and all local checks are complete. Both remote main refs and clean release checkout were1999f025 before publication. Copy only verified chat source/docs and curated test evidence; exclude private environment, PRIVATE_PROJECT_CONTEXT.md, backups, raw logs and screenshots. Preserve history and use normal fast-forward pushes. Git remote refs are authoritative for the release identity; no new product repair or live AI requests required.
+
 Current documentation refreshed after verified teammate repairs: README/API/frontend/testing/local operations/release/image/repository map and new LOCAL_DEMO.md. Validation:9docs,98relative links,42npm script names and code fences PASS. Runtime unchanged; historical evidence retained. Both repositories publish the same normal fast-forward documentation commit.
 
 Four teammate repairs verified: reject unknown-price selections before writes; confirmed owner-only DELETE trip204 with cascade/cache cleanup and failure handling; explicitly private trip links (including budget link); operator-only admin buttons and routes, existing backend403guard preserved. Full18/18,71backend tests,64browser controls/PDF and3focused browser widths PASS; all prior192city/category/day/weight API cases PASS. Installed locally,readiness7/7,all9originaltable fingerprints preserved. Same verified commit authorized for normal main pushes to demo-group7 and CSC210-Monsoon2026/group-07-heritage-tourism-planner, whose main is an ancestor. See reports/TEAMMATE_FIXES.md. No data reset or public-sharing claim.
@@ -18,33 +20,51 @@ Scheduling and hotel-tier continuation verified locally; normal main publication
 
 ## Current Project State
 
+Heritage Guide installed local13October2026. Frontend closed-by-default/no requests on open; authenticated AI uses actual PostgreSQL through seven allowlistedtools. DockerInternet/provider access verified without exposing keys. Current evidence is reports/HERITAGE_GUIDE_TEST_RESULTS.md, with machine reports under reports/heritage-guide-*.json. Overall historical application data/photo limitations persist; this task did not add/alter tourism data.
+
 Local8080 running. Catalog8destinations/44attractions/56hotels/12restaurants/497routes. All24hotel tier slots populated;29usable indicative hotel prices,27unknown. Original records preserved.
 
 ## Completed
+
+Heritage Guide end-to-end implementation, actual model evaluation/Free-limit headers, factual regression fixes (UUIDfollowups/nullfee/budgetzero/Hindi lookup/reordered historicalproperty), SQL read-only/ownership tests, real Groq browser conversation, installedruntime probe, fullregression/demo and documentation completed. Owner confirmed Free plan; billing cannot be independently read from inference key.
 
 Removed arbitrary daily visit cap while retaining balanced multi-day allocation and existing feasibility. Personal intervals exclude known transfers, display for current and legacy saved records, and do not invent activities. Fixed dinner accessibility label. PDF export prepares off-screen lazy images temporarily, restoring loading afterwards; deadlines prevent unbounded resource waits. Earlier13sourced hotels/175modelled road-route pairs, full-catalog details and guest/room validation included.
 
 ## Files Changed
 
+Chat scope: backend/server.js, backend/package.json+lock, backend/.env.example, compose.local.yml only; frontend/App.tsx and centralized api/index.ts; root package.json, scripts/run.js redaction/source-audit.js credential patterns; scripts/test-production.js new read-only chat gate; approved frontend hashes; README/backendREADME/frontendREADME and four chat reports. Privateenv configured but never published. Exact reviewed paths: reports/heritage-guide-files.json. DSA/planner/catalog/schema/autharchitecture unchanged.
+
 Planner/day allocation, itinerary presentation/PDF, shared gap/accommodation helpers, hotel catalog importer/client/picker, translations, local operations/test runners and exact reviewed frontend guard. See reports for precise files and sources.
 
 ## Files Created
+
+backend/chat/{config,systemPrompt,toolDefinitions,toolHandlers,history}.js; services/{groqService,chatService}.js; routes/chatRoutes.js; components/{HeritageGuideChat,HeritageGuidePanel}.tsx; backend/tests/chat.test.js; backend/scripts/{test-chat-db,test-chat-live,chat-test-server}.js; scripts/{test-chat-local,check-chat-preservation,check-chat-container}.js; tests/frontend/heritage_chat{,_live,_installed}.py; four HERITAGE_GUIDE reports and machine evidence/screenshots (local).
 
 Sourced hotel coverage manifest and8cached route matrices; shared scheduleGaps; API/unit/browser/preservation regressions; public derived hotel catalog/attribution; measured test summaries. Private environments, backups and live user snapshots excluded.
 
 ## Technical Decisions
 
+Groq120B chosen explicitly after20B invalid toolenum; both Free allowed, no automatic switch. Zero SDK retries;max3model calls/8tools,700outputtokens,8historymessages,6/user/minute,60providercalls/day/process,2concurrent,18swholeoperation. FreshDB facts/private budgets; only exact immutable nonprivate apphelp answers sharedcached. History AES256GCM ownerbound30min; public destinationhandles solve followup UUIDs without cachingfacts. Hotel name words parameterized independent order. DB-only neverAI and is also deadline/concurrency bounded. No model SQL/code/writes or userID trust.
+
 Keep authentic costs/routes/ratings and original algorithms. Unknowns remain unknown; no live availability claim. Significant unused time is personal, not a booked activity. Legacy records are displayed compatibly without rewriting. Use the existing PDF renderer; no new dependency or redesign.
 
 ## Dependencies / Setup Changes
+
+Officialgroq-sdk1.6.0 installedbackend(lockpinned); noAnthropic/frontendAI dependency. Backend-only ignored .env.local-production holds Groqkey, model120B and ownerconfirmationtrue. compose.local.yml passes onlyserver vars. No paid upgrade/paymentmethod/host added. HostNode24.12/DockerNode22; PG17 existingvolume unchanged. Key supplied in conversation should be rotated by owner; do not print or publish it.
 
 No new dependencies or schema migrations. Existing private persistent PostgreSQL and production-like Docker setup retained.
 
 ## Commands Used
 
+npm run test:chat; npm run test:chat:local -- --live (plus targeted CHAT_LIVE_CASES=12 after reproduced hotel-name mismatch); npm run test:all:local; npm run test:production; npm run test:demo:local; npm run audit:images; npm run audit:source; frontend lint/build with /api; npm run local:up; npm run local:demo:check; python tests/frontend/heritage_chat_installed.py; node scripts/check-chat-container.js (explicit live quota usage); node scripts/check-chat-preservation.js (privatebaseline). All required runs passed after fixing detected issues.
+
 npm run test:all:local; npm run test:scheduling:local; node scripts/test-local-all.js phase3-pdf-production; npm run local:up; npm run local:demo:check; npm run audit:images; read-only preservation/source/index/privacy checks. Hotel import: local:hotel-coverage dry-run/apply/repeat after verified backup.
 
 ## Testing Completed
+
+Publication checkout verified:95 backend tests, frontend TypeScript and source/privacy audit passed after exact source copying. Existing dependency lock entries unchanged; only official groq-sdk added. Curated public handoff retains the existing Git baseline and new continuity; full local historical handoff remains in the application folder.
+
+Finalevidence:95backend/24chat;71SQL grounding/read-only/8cities24tiers; threewidth deterministicUI tests (HTMLescape/duplicate/quota/DBmode/languages/logout); accepted12realGroq scenarios documentedcombinedsource (first11 plusfixed12); realauthenticatedwidget2question followup; Docker17gates/full18/demo5journeys+17API+7auth; installed3width/readiness7/9table preservation;11installedJSassets checked no serverkey. Earlier permissive live diagnostics rejected and markedas such; exactfailures/fixes/testcommands in HERITAGE_GUIDE_TEST_RESULTS.md. No remaining failing required check.
 
 City-selector follow-up: TypeScript/source audit PASS; local readiness7/7; Chrome24 city/viewport cases and72category/API comparisons plus3error-recovery cases PASS. Read-only, no DB writes. Evidence reports/RANKED_STAYS_CITY_SELECTOR.md.
 
@@ -52,20 +72,34 @@ Final18/18gates,65backend tests and64browser-control groups PASS, including actu
 
 ## Current Issues / Bugs
 
+No known blocker for the verified local chat workflow. Free quota/provideravailability can interruptAI; explicit database-only mode is available. LLM hallucination/injection immunity and native-speaker translation certification are not claimed. Existing unknown tourism rates/fees and82photo fallbacks remain. Counters reset perprocess/restart; existingJWTrevocation behavior preserved. No publicdeployment/newGitHubpublication verified for chatbot.
+
 Reported scheduling gap explanation/cap and PDF lazy-image hang resolved. Catalog coverage, unknown pricing/photos/metadata and provider limitations remain explicit. Local verification does not certify public hosting or live prices/availability.
 
 ## Important Warnings
+
+Keep Groqkey server-only in ignored privateenv, neverVITE/source/logs/reports. OwnerconfirmedFreePlan; neverupgrade/pay-as-you-go/autofallback. Do not rerun liveAI checks unnecessarily; check-chat-container consumesonepublicquestion and live suite uses conservativequota spacing. PRIVATE_PROJECT_CONTEXT.md remains excludedfrompublication. Applicationfolder lacksGit; preserve source and existing newline-only/cache differences. Do not reset/reseedlive data or testusingreal customeraccounts. Noactive suite; productionfixturestackstopped andPGprivate.
 
 Never run mutating suites against live data; existing wrappers create separate test databases. Preserve private env/volumes/backups and uncommitted work. Keep hash-pinned source bytes and migrations unchanged except reviewed repairs.
 
 ## Next Steps
 
+Publication checkpoint: commit the reviewed staged Heritage Guide files and push the identical main commit to origin and classroom without force. Verify both remote refs; no product repair, live inference or database operations are needed. Keep private context, environments, backups and logs excluded.
+
+User can refresh localhost8080, sign in, click bottom-right HeritageGuide and follow reports/HERITAGE_GUIDE_LOCAL_DEMO.md. Rotate exposedkey through ownerGroqsettings when practical, updateignoredprivateenv and local:up; nevercommitkey. No more implementation/retests needed absent new failures. If lateraskedtopublish, carefully copyonly reviewed scopedfiles+docs/evidence into releaseclone, exclude privatecontext/env/backups/screenshots/userdata, runprivacyreview; currenttaskdidnotpush.
+
 Inspect CI associated with latest main commit; no claim of CI success until verified. Continue from current reports for new reproducible issues. Additional facts/photos require sources/reuse rights.
 
 ## Last Session Summary
 
+2026-10-13T11:02:19.166141+00:00 Local Groq Heritage Guide delivered/installed with actualAI+PostgreSQL, English/Hindi/Gujarati and read-only privacy. Reports/README/handoff updated. All requiredregression/localdemo checks PASS and originaldata unchanged. UserFreePlanconfirmed, no paidserviceorpublicdeployment; privatekeynotbundled. No active tests or pending repairs for this feature.
+
 Verified scheduling, legacy display and real PDF export, retaining design and data. Source publication includes the previous hotel-tier continuation. No public hosting operations.
 
 ## Last Updated
+
+2026-10-13T13:28:15.963324+00:00 UTC / Asia/Calcutta.
+
+2026-10-13T13:25:59.062759+00:00 UTC / Asia/Calcutta.
 
 2026-10-11T18:43:07.811838+00:00 UTC / Asia/Calcutta (2026-10-12IST).

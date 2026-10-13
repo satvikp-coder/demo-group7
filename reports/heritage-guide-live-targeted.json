@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-13T06:42:48.088Z",
+  "provider": "Groq",
+  "model": "openai/gpt-oss-120b",
+  "plan": "Free Plan confirmed by owner; API does not expose billing plan",
+  "verified": true,
+  "questions": [
+    {
+      "index": 12,
+      "language": "en",
+      "question": "Why does Good Night Hotel in Ahmedabad have no usable current price?",
+      "reply": "Hotel Good Night in Ahmedabad shows a **null price** because the system has no current rate available. The record only contains a historical tariff (INR 1,700 per night, February 2014) and notes that the price is “unavailable — check current rates.” Therefore, the app cannot provide a usable, up‑to‑date price.",
+      "tools": [
+        "search_destinations",
+        "get_hotels"
+      ],
+      "passed": true,
+      "durationMs": 2923
+    }
+  ],
+  "calls": 3,
+  "tokens": 3913,
+  "freeLimitHeaders": {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "929",
+    "x-ratelimit-remaining-tokens": "4137"
+  },
+  "expectedQuestions": 1,
+  "finishedAt": "2026-10-13T06:42:51.205Z"
+}

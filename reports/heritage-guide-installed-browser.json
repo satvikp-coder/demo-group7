@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-13T10:54:02.397203+00:00",
+  "verified": true,
+  "readOnly": true,
+  "results": [
+    {
+      "viewport": 1440,
+      "passed": true,
+      "consoleErrors": [],
+      "providerRequests": 0,
+      "authenticationRequired": true
+    },
+    {
+      "viewport": 768,
+      "passed": true,
+      "consoleErrors": [],
+      "providerRequests": 0,
+      "authenticationRequired": true
+    },
+    {
+      "viewport": 390,
+      "passed": true,
+      "consoleErrors": [],
+      "providerRequests": 0,
+      "authenticationRequired": true
+    }
+  ]
+}

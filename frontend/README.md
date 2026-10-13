@@ -119,3 +119,11 @@ behavior that cannot be fully certified in a headless browser.
 planner imports are explicitly type-only. Neither utility nor the catalog is in
 the production bundle. `src/data/destinations.ts` itself is unchanged.
   
+
+## Heritage Guide widget
+
+The closed-by-default bottom-right `HeritageGuideChat` launcher lazily loads `HeritageGuidePanel`. It uses the existing authenticated API client and EN/HI/GU language context. The widget hides while the planner/auth/PWA prompt is active, supports focus restoration/Enter/Shift+Enter, escapes AI text, blocks duplicate sends and respects quota retry cooldowns. It makes no provider request merely by opening.
+
+Conversation state stays in memory and clears on logout/account change. The backend signs/encrypts bounded history; no assistant-role history is trusted from the browser. Structured database-only mode is explicitly not AI. The external-provider disclosure is shown before submission. No frontend API key or new Markdown dependency.
+
+Local setup, screenshots and actual browser/live-Groq evidence are in [the chat demo](../reports/HERITAGE_GUIDE_LOCAL_DEMO.md) and [test report](../reports/HERITAGE_GUIDE_TEST_RESULTS.md).

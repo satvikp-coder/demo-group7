@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-13T10:53:54.787Z",
+  "readOnly": true,
+  "ready": true,
+  "checks": [
+    {
+      "name": "local configuration",
+      "passed": true,
+      "detail": {
+        "origin": "http://localhost:8080",
+        "secretsPrinted": false
+      }
+    },
+    {
+      "name": "frontend and deep-link fallback",
+      "passed": true
+    },
+    {
+      "name": "backend and database readiness",
+      "passed": true
+    },
+    {
+      "name": "catalog availability",
+      "passed": true,
+      "detail": {
+        "destinations": 8,
+        "attractions": 44,
+        "hotels": 56,
+        "restaurants": 12
+      }
+    },
+    {
+      "name": "protected itinerary endpoint",
+      "passed": true,
+      "detail": "Missing credentials rejected before any trip lookup/write; authenticated generation requires the separate browser suite."
+    },
+    {
+      "name": "installed migration checksums",
+      "passed": true,
+      "detail": {
+        "verified": 9
+      }
+    },
+    {
+      "name": "locally served image bytes",
+      "passed": true,
+      "detail": {
+        "assets": 70,
+        "scope": "Byte identity and content types; image decoding is covered by browser/image audit tests."
+      }
+    }
+  ]
+}

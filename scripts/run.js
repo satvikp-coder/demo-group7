@@ -7,7 +7,7 @@ export async function run(command,args,{env=process.env,cwd=process.cwd(),name='
   let output='';
   for(const stream of [child.stdout,child.stderr])stream.on('data',chunk=>{output+=chunk;});
   const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});
-  for(const key of ['DATABASE_URL','DATABASE_ADMIN_URL','JWT_SECRET','POSTGRES_PASSWORD','POSTGRES_APP_PASSWORD','PGPASSWORD'])if(env[key])output=output.replaceAll(env[key],'[redacted]');
+  for(const key of ['DATABASE_URL','DATABASE_ADMIN_URL','JWT_SECRET','POSTGRES_PASSWORD','POSTGRES_APP_PASSWORD','PGPASSWORD','GROQ_API_KEY'])if(env[key])output=output.replaceAll(env[key],'[redacted]');
   writeFileSync(new URL(name+'.txt',reportDir),output);
   if(!quiet)console.log(name+': '+(code===0?'PASS':'FAIL ('+code+')'));
   if(code!==0&&!allowFailure)throw new Error(name+' failed; see production/'+name+'.txt');

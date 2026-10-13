@@ -13,6 +13,7 @@ import { ProfileDashboardView } from "./components/ProfileDashboardView";
 import { AdminDashboardView } from "./components/AdminDashboardView";
 import { Footer } from "./components/Footer";
 import { PlannerModal } from "./components/PlannerModal";
+import { HeritageGuideChat } from "./components/HeritageGuideChat";
 import { AuthView } from "./components/AuthView";
 import { HomeTransitionOverlay } from "./components/HomeTransitionOverlay";
 import { OfflineBanner } from "./components/OfflineBanner";
@@ -829,6 +830,7 @@ export default function App() {
           />
 
           {/* Non-intrusive PWA Add to Home Screen Prompt */}
+          {!plannerOpen && !authMode && !showPwaPrompt && <HeritageGuideChat key={currentUser?.id ?? "guest"} userId={currentUser?.id ?? null} destinations={destinations} tripId={activeItinerary?.tripId} onLogin={() => navigate("/login")} />}
           {showPwaPrompt && !plannerOpen && !authMode && (
             <PwaInstallPrompt
               deferredPrompt={deferredPrompt}

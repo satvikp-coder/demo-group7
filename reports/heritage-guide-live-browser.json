@@ -1,0 +1,18 @@
+{
+  "provider": "LIVE_GROQ",
+  "verified": true,
+  "questions": [
+    {
+      "question": "Tell me about Modhera.",
+      "reply": "**Modhera (Sun Temple)**  \n- **Entry fee:** INR\u202f20\u202fonline for Indian visitors; foreign online ticket INR\u202f250 (booking conditions apply).  \n- **Typical visit duration:** about\u202f2\u202fhours.  \n- **Opening hours:** 08:30\u202f\u2013\u202f17:30 (subject to change).  \n\n**Other attractions**  \n- **Modhera Vav (step\u2011well):** entry fee unknown; duration not recorded.  \n- **Modheshwari Mata Temple:** free general darshan; typical visit about\u202f1\u202fhour.  \n- **Sun Temple Museum:** entry fee unknown; duration not recorded.  \n\n*All listed costs are the known subtotals; any additional taxes, guide fees or transport charges are not included.*",
+      "status": 200
+    },
+    {
+      "question": "What are the attractions there?",
+      "reply": "**Modhera \u2013 Attractions**\n\n- **Modhera Sun Temple** \u2013 Heritage site; entry fee\u202fINR\u202f20\u202fonline for Indian visitors, foreign online ticket\u202fINR\u202f250 (booking conditions apply). Typical visit\u202f\u2248\u202f2\u202fhours. Open\u202f08:30\u202f\u2013\u202f17:30.  \n- **Modhera Vav (step\u2011well)** \u2013 Entry fee unknown; duration not recorded.  \n- **Modheshwari Mata Temple** \u2013 Free general darshan (entry fee\u202f0). Typical visit\u202f\u2248\u202f1\u202fhour.  \n- **Sun Temple Museum** \u2013 Entry fee unknown; duration not recorded.  \n\n*All listed costs are the known subtotals; any additional taxes, guide fees or transport charges are not included.*",
+      "status": 200
+    }
+  ],
+  "consoleErrors": [],
+  "viewport": 1440
+}

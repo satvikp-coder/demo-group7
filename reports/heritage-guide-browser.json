@@ -1,0 +1,26 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "viewport": 1440,
+      "passed": true,
+      "consoleErrors": [],
+      "provider": "TEST_DOUBLE_NOT_LIVE_GROQ",
+      "realDatabase": true
+    },
+    {
+      "viewport": 768,
+      "passed": true,
+      "consoleErrors": [],
+      "provider": "TEST_DOUBLE_NOT_LIVE_GROQ",
+      "realDatabase": true
+    },
+    {
+      "viewport": 390,
+      "passed": true,
+      "consoleErrors": [],
+      "provider": "TEST_DOUBLE_NOT_LIVE_GROQ",
+      "realDatabase": true
+    }
+  ]
+}

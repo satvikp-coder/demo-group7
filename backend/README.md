@@ -316,3 +316,13 @@ No runtime dependencies or migrations were added by frontend integration.
 ### Owner-only trip deletion
 
 `DELETE /api/trips/:id` requires a current authenticated account and ownership. Successful deletion returns204 and atomically cascades saved stops and the budget; foreign or missing IDs return404, missing credentials401 and malformed requests400. The dashboard confirms deletion before sending it and updates only after the API succeeds. Tests delete disposable fixtures only. Private trip links remain owner-authenticated; there is no public-sharing token or recipient access grant.
+
+## Heritage Guide - local Groq Free Plan
+
+`POST /api/chat` reuses Bearer JWT/current-account authentication. AI requests accept `{message, language, history_token?, context_trip_id?}` with a1-1500-character message and en/hi/gu language. Only server-produced encrypted history is accepted; client roles, user IDs and arbitrary tool calls are rejected. Success returns `{mode, reply, history_token, cached?}`.
+
+Structured non-AI lookup uses `{message, mode:"database", lookup:{tool, arguments}, language?}`. The tool allowlist covers destinations, attractions, hotels, restaurants, owned trips/budgets and verified app help. UUIDs come from actual catalog/trip endpoints. Tools use parameterized SQL inside READ ONLY transactions, bounded rows and existing ownership/price policies. No model-generated SQL/code or database writes.
+
+Server-only `GROQ_API_KEY` and owner-confirmed `CHAT_FREE_PLAN_CONFIRMED=true` enable live inference. Default `GROQ_MODEL=openai/gpt-oss-120b`; no paid/provider fallback or SDK retries. Missing configuration leaves ordinary APIs and labeled database mode operational. Statuses include400 invalid requests/history,401 authentication,415 content type,429 usage/concurrency quota,503 unavailable provider and504 timeout; Retry-After is exposed safely. Database lookup errors are structured in `data.error`, not fabricated facts.
+
+See [implementation](../reports/HERITAGE_GUIDE_IMPLEMENTATION.md), [security](../reports/HERITAGE_GUIDE_SECURITY.md), [verified tests](../reports/HERITAGE_GUIDE_TEST_RESULTS.md) and [local demo](../reports/HERITAGE_GUIDE_LOCAL_DEMO.md). Root commands `npm run test:chat` and `npm run test:chat:local` provide isolated tests. `-- --live` explicitly consumes confirmed Free-plan quota. Keep keys out of VITE variables, source, reports and logs.

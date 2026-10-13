@@ -59,6 +59,23 @@ try {
  const city=await (await fetch(origin+'/api/destinations/modhera')).json();const hotels=await(await fetch(origin+'/api/destinations/'+city.id+'/hotels')).json();
  const trip=await(await fetch(origin+'/api/trips',{method:'POST',headers,body:JSON.stringify({destination_id:city.id,days:2,budget:20000,starting_hotel_id:hotels[0].id,start_time:'08:00'})})).json();
  const generated=await(await fetch(origin+'/api/trips/'+trip.trip.id+'/generate-itinerary',{method:'POST',headers,body:'{}'})).json();
+ await gate('chat-read-only-runtime-and-provider-isolation',async()=>{
+  const assert=(await import('node:assert/strict')).default;
+  const chat=async(body,status=200,authenticated=true)=>{
+   const response=await fetch(origin+'/api/chat',{method:'POST',headers:authenticated?headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(25000)});
+   assert.equal(response.status,status);return response.json();
+  };
+  await chat({message:'Modhera'},401,false);
+  const lookup=async(tool,arguments_)=>chat({message:tool,mode:'database',lookup:{tool,arguments:arguments_}});
+  const found=await lookup('search_destinations',{query:'Modhera'});assert.equal(found.mode,'database');assert.equal(found.data.destinations[0].id,city.id);
+  const stays=await lookup('get_hotels',{destinationId:city.id});assert(stays.data.hotels.length>0);
+  const attractions=await lookup('get_attractions',{destinationId:city.id});assert(attractions.data.records.length>0);
+  const saved=await lookup('get_trip',{tripId:trip.trip.id});assert.equal(saved.data.trip.id,trip.trip.id);assert(saved.data.stops.length>0);assert(!JSON.stringify(saved.data).includes(user.user.email));
+  const budget=await lookup('get_budget',{tripId:trip.trip.id});assert.equal(budget.data.total,generated.budget.total);assert.match(budget.data.interpretation,/no recorded charge/);
+  const disabled=await chat({message:'Tell me about Modhera.'},503);assert.match(disabled.error.message,/disabled|unavailable/i);
+  assert.deepEqual(await(await fetch(origin+'/api/trips/'+trip.trip.id,{headers})).json(),generated);
+  report.chatReadOnlyRuntime=true;report.chatUnconfiguredProviderIsolated=true;
+ });
  await gate('whole-stack-restart-persistence-and-new-login',async()=>{
   const assert=(await import('node:assert/strict')).default;
   await compose(['restart','postgres','backend','frontend'],'whole-stack-restart');await waitFor(origin+'/ready');

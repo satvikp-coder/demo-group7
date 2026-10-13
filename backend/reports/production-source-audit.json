@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-11T18:43:40.358Z",
-  "scanned": 743,
+  "checkedAt": "2026-10-13T13:28:49.224Z",
+  "scanned": 796,
   "findings": [],
   "privateEnvironmentFilesExcluded": [
     ".env.local-production"

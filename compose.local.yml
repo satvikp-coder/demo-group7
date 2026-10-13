@@ -24,6 +24,16 @@ services:
         max-size: '10m'
         max-file: '5'
   backend:
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-120b}
+      CHAT_FREE_PLAN_CONFIRMED: ${CHAT_FREE_PLAN_CONFIRMED:-false}
+      CHAT_RATE_LIMIT: ${CHAT_RATE_LIMIT:-6}
+      CHAT_MAX_HISTORY: ${CHAT_MAX_HISTORY:-8}
+      CHAT_MAX_OUTPUT_TOKENS: ${CHAT_MAX_OUTPUT_TOKENS:-700}
+      CHAT_DAILY_CALL_LIMIT: ${CHAT_DAILY_CALL_LIMIT:-60}
+      CHAT_TIMEOUT_MS: ${CHAT_TIMEOUT_MS:-18000}
+      CHAT_MOCK: 'false'
     depends_on:
       bootstrap:
         condition: service_completed_successfully

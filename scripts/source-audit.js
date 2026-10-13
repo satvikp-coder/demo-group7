@@ -48,7 +48,7 @@ function visit(dir,relative='') {
   if(path.endsWith('source-audit.js'))continue;
   const text=readFileSync(url,'utf8');scanned++;
   for(const [index,line]of text.split('\n').entries()){
-   if(/-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{30,}|AIza[A-Za-z0-9_-]{35}|eyJ[A-Za-z0-9_-]{15,}\.[A-Za-z0-9_-]{15,}\.[A-Za-z0-9_-]{15,}/.test(line))findings.push({path,line:index+1,type:'secret-pattern'});
+   if(/-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|AKIA[0-9A-Z]{16}|gsk_[A-Za-z0-9]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|AIza[A-Za-z0-9_-]{35}|eyJ[A-Za-z0-9_-]{15,}\.[A-Za-z0-9_-]{15,}\.[A-Za-z0-9_-]{15,}/.test(line))findings.push({path,line:index+1,type:'secret-pattern'});
    const urls=line.match(/postgres(?:ql)?:\/\/[^\s"'`<>]+/g)??[];
    for(const value of urls){try{const u=new URL(value);if(u.password&&!/PASSWORD|REPLACE|YOUR|URL_ENCODED|\$|\{|\}|^pass$|^test$/i.test(u.password))findings.push({path,line:index+1,type:'database-credential'});}catch{}}
   }

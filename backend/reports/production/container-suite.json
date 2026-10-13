@@ -1,6 +1,6 @@
 {
-  "startedAt": "2026-10-09T14:28:48.986Z",
-  "project": "heritage-prod-1ca71b9b",
+  "startedAt": "2026-10-13T10:46:11.458Z",
+  "project": "heritage-prod-3292fd8a",
   "verified": true,
   "gates": [
     {
@@ -44,6 +44,10 @@
       "passed": true
     },
     {
+      "name": "chat-read-only-runtime-and-provider-isolation",
+      "passed": true
+    },
+    {
       "name": "whole-stack-restart-persistence-and-new-login",
       "passed": true
     },
@@ -75,8 +79,10 @@
   },
   "rotatedLogs": true,
   "edgeLogsRedacted": true,
-  "memoryBefore": "68.27MiB / 3.825GiB",
-  "memoryAfter": "68.36MiB / 3.825GiB",
+  "memoryBefore": "57.99MiB / 3.825GiB",
+  "memoryAfter": "78.23MiB / 3.825GiB",
+  "chatReadOnlyRuntime": true,
+  "chatUnconfiguredProviderIsolated": true,
   "restartPersistence": true,
   "recoveryCounts": {
     "destinations": 8,
@@ -86,13 +92,13 @@
     "routes": 131,
     "users": 1,
     "trips": 1,
-    "itinerary_stops": 10,
+    "itinerary_stops": 6,
     "budgets": 1
   },
   "recoveredTripDays": 2,
-  "recoveredBudget": 6486,
-  "archiveBytes": 119764,
+  "recoveredBudget": 5686,
+  "archiveBytes": 118974,
   "maintenanceConnectionInterrupted": true,
   "stagingStopped": true,
-  "finishedAt": "2026-10-09T14:34:17.447Z"
+  "finishedAt": "2026-10-13T10:50:25.340Z"
 }
