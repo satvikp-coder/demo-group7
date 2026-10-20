@@ -9,6 +9,7 @@ import re
 import secrets
 import time
 from pathlib import Path
+from cost_assertions import assert_known_budget
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -135,7 +136,7 @@ with sync_playwright() as p:
             page.get_by_role("button", name="Budget Planner", exact=True).first.click()
         budget = budget_response.value.json()
         assert budget["total"] == dto["budget"]["total"]
-        assert budget["total"] == sum(float(stop["cost"]) for day in dto["days"] for stop in day["stops"])
+        assert_known_budget(dto)
         assert budget["hotel"] == expected_hotel_total
         expect(page.get_by_text(budget_label, exact=True).first).to_be_visible()
         assert "Save ₹2,200" not in page.locator("body").inner_text()

@@ -1,6 +1,7 @@
 """Additional real-browser coverage for the existing controls and all cities."""
 import re
 from pathlib import Path
+from cost_assertions import assert_known_budget
 from playwright.sync_api import expect
 
 def run(page, context, base, api, check):
@@ -51,10 +52,13 @@ def run(page, context, base, api, check):
         allowed = {r['id'] for rows in children.values() for r in rows}
         for day in dto['days']:
             assert day['stops'][0]['reference_id'] == day['stops'][-1]['reference_id'] == hotel['id']
-            assert all(s['reference_id'] in allowed for s in day['stops'])
+            for stop in day['stops']:
+                if stop['reference_id'] is None:
+                    assert stop['stop_type']=='meal' and stop['cost'] is None and stop['lat'] is None and stop['lng'] is None
+                else:assert stop['reference_id'] in allowed
             assert all(s['arrival_time'] <= s['departure_time'] for s in day['stops'])
             assert all(a['departure_time'] <= b['arrival_time'] for a,b in zip(day['stops'],day['stops'][1:]))
-        assert sum(float(s['cost']) for d in dto['days'] for s in d['stops']) == dto['budget']['total']
+        assert_known_budget(dto)
         page.reload()
         expect(page.get_by_text('Base Hotel: ' + hotel['name'], exact=False)).to_be_visible()
         page.get_by_role('button', name='View budget breakdown', exact=True).click()

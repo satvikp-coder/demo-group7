@@ -1,0 +1,55 @@
+{
+  "startedAt": "2026-10-20T09:01:47.166Z",
+  "verified": true,
+  "gates": [
+    {
+      "name": "attraction-quality",
+      "command": "npm run test:attractions:local -- --production",
+      "passed": true,
+      "finishedAt": "2026-10-20T09:09:39.978Z"
+    },
+    {
+      "name": "full",
+      "command": "npm run test:all:local",
+      "passed": true,
+      "finishedAt": "2026-10-20T09:16:23.518Z"
+    },
+    {
+      "name": "production",
+      "command": "npm run test:production",
+      "passed": true,
+      "finishedAt": "2026-10-20T09:22:38.032Z"
+    },
+    {
+      "name": "phase2",
+      "command": "npm run test:phase2:production:local",
+      "passed": true,
+      "finishedAt": "2026-10-20T09:24:20.338Z"
+    },
+    {
+      "name": "phase3",
+      "command": "npm run test:phase3:production:local",
+      "passed": true,
+      "finishedAt": "2026-10-20T13:38:25.978Z"
+    },
+    {
+      "name": "demo",
+      "command": "npm run test:demo:local",
+      "passed": true,
+      "finishedAt": "2026-10-20T13:40:43.802Z"
+    },
+    {
+      "name": "chat",
+      "command": "npm run test:chat:local",
+      "passed": true,
+      "finishedAt": "2026-10-20T13:42:09.661Z"
+    },
+    {
+      "name": "localization",
+      "command": "npm run test:localization",
+      "passed": true,
+      "finishedAt": "2026-10-20T13:42:10.382Z"
+    }
+  ],
+  "finishedAt": "2026-10-20T13:42:10.383Z"
+}

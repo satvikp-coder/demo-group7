@@ -24,8 +24,9 @@ with sync_playwright() as p:
   coverage=dto['trip']['generation_summary']['day_coverage']
   sparse=[d for d in coverage if not d['attraction_count']]
   assert sparse
-  expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(sparse))
-  expect(page.get_by_test_id('itinerary-day-coverage').first).to_contain_text('Shorten the sightseeing trip')
+  expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(coverage))
+  expect(page.get_by_test_id('itinerary-day-coverage').filter(has_text='Unallocated sightseeing day.')).to_have_count(len(sparse))
+  expect(page.get_by_test_id('itinerary-day-coverage').filter(has_text='Unallocated sightseeing day.').first).to_contain_text('Shorten the sightseeing trip')
   for day in dto['days']:
    if not any(s['stop_type']=='attraction' for s in day['stops']):
     assert not any(s['stop_type']=='meal' for s in day['stops'])
@@ -34,7 +35,7 @@ with sync_playwright() as p:
    response=route.fetch();body=response.json();body['trip']['generation_summary'].pop('free_time',None)
    route.fulfill(response=response,json=body)
   legacy_url='**/api/trips/'+dto['trip']['id'];page.route(legacy_url,legacy_response)
-  page.reload();expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(sparse))
+  page.reload();expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(coverage));expect(page.get_by_test_id('itinerary-day-coverage').filter(has_text='Unallocated sightseeing day.')).to_have_count(len(sparse))
   page.unroute(legacy_url,legacy_response)
   page.get_by_role('button',name='What if?',exact=True).click()
   page.locator('#whatif-days-slider').fill('1')

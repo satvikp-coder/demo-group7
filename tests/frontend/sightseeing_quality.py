@@ -1,6 +1,8 @@
 """Actual reported Champaner flow; isolated test service only."""
 import os,json,secrets,time,re
 from pathlib import Path
+from decimal import Decimal
+from cost_assertions import assert_known_budget
 from playwright.sync_api import sync_playwright,expect
 base=os.environ['FRONTEND_TEST_URL'];api=os.environ['API_TEST_URL'];assert ':5310/' in api
 results=[]
@@ -21,17 +23,37 @@ with sync_playwright() as p:
   with page.expect_response(lambda r:'/generate-itinerary' in r.url) as generated:page.get_by_role('button',name='Generate Circular Plan').click()
   assert generated.value.status==200,generated.value.text();dto=generated.value.json();summary=dto['trip']['generation_summary']
   assert summary['optimization']['weights']=={'distance':0,'cost':100,'rating':0}
-  assert not any(s['stop_type']=='meal' for d in dto['days'] for s in d['stops'])
-  assert dto['days'][0]['stops'][-1]['arrival_time']<'11:00:00'
-  assert summary['day_coverage'][1]['attraction_count']==0
-  assert dto['budget']['total']==3340
-  page.wait_for_url('**/itinerary');expect(page.get_by_test_id('itinerary-day-coverage')).to_contain_text('Shorten the sightseeing trip')
-  page.reload();expect(page.get_by_test_id('itinerary-day-coverage')).to_contain_text('Shorten the sightseeing trip')
+  visits=[s for d in dto['days'] for s in d['stops'] if s['stop_type']=='attraction']
+  assert len(visits)>1 and len({s['reference_id'] for s in visits})==len(visits)
+  assert all(d['attraction_count']>0 for d in summary['day_coverage'])
+  for day in dto['days']:
+   stops=day['stops'];assert stops[0]['reference_id']==stops[-1]['reference_id']==hotel['id']
+   assert all(a['departure_time']<=b['arrival_time'] for a,b in zip(stops,stops[1:]))
+   assert stops[-1]['departure_time']<='21:00:00'
+   for i,stop in enumerate(stops):
+    if stop['stop_type']!='meal':continue
+    if stop['category']=='lunch':assert '12:00:00'<=stop['arrival_time']<=stop['departure_time']<='14:00:00'
+    if stop['category']=='dinner':assert '19:00:00'<=stop['arrival_time']<=stop['departure_time']<='21:00:00'
+    if stop['reference_id'] is None:assert stop['cost'] is None and stop['lat'] is None and stop['lng'] is None
+    prior=[v for v in stops[:i] if v['stop_type']=='attraction'];later=[v for v in stops[i+1:] if v['stop_type']=='attraction']
+    def minute(value):return int(value[:2])*60+int(value[3:5])
+    # A meal cannot manufacture a late tour hours after the last sightseeing stop.
+    assert not (prior and not later and minute(stop['arrival_time'])-minute(prior[-1]['departure_time'])>120)
+  assert_known_budget(dto);assert dto['budget']['total']<=8500
+  hotels=ctx.request.get(api+'/destinations/'+dto['trip']['destination_id']+'/hotels').json()
+  selected=next(h for h in hotels if h['id']==hotel['id'])
+  assert Decimal(str(dto['budget']['hotel']))==Decimal(str(selected['price_per_night']))*2*2
+  assert dto['budget']['cost_details']['final_total'] is None
+  def check_notes():
+   expect(page.get_by_test_id('itinerary-day-coverage')).to_have_count(len(summary['day_coverage']))
+   assert not page.get_by_test_id('itinerary-day-coverage').filter(has_text='Unallocated sightseeing day.').count()
+   expect(page.get_by_role('region',name='Your Priorities')).to_contain_text('Cost utility is neutralized')
+  page.wait_for_url('**/itinerary');check_notes();page.reload();check_notes()
   assert not errors and page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-  page.locator('img').evaluate_all('(images)=>images.forEach(i=>i.loading="eager")');page.wait_for_timeout(700)
+  page.locator('img').evaluate_all('(images)=>images.forEach(i=>i.loading="eager")');page.wait_for_function('Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)')
   assert page.locator('img').evaluate_all('(images)=>images.every(i=>i.complete&&i.naturalWidth>0)')
   page.screenshot(path=f'reports/sightseeing-champaner-{width}.png',full_page=True)
-  results.append({'width':width,'hotelPreserved':dto['trip']['starting_hotel_id']==hotel['id'],'noForcedMealWait':True,'knownTotal':dto['budget']['total'],'promptHotelReturn':True,'unsupportedDayDisclosed':True,'refresh':True,'imagesDecode':True,'pageErrors':errors});ctx.close()
+  results.append({'width':width,'hotelPreserved':dto['trip']['starting_hotel_id']==hotel['id'],'noForcedMealWait':True,'knownSubtotal':dto['budget']['total'],'sightseeingDays':len(summary['day_coverage']),'distinctVisits':len(visits),'noEmptyTour':True,'unknownCostsDisclosed':True,'refresh':True,'imagesDecode':True,'pageErrors':errors});ctx.close()
  browser.close()
 Path('reports/sightseeing-browser-tests.json').write_text(json.dumps({'verified':True,'results':results},indent=2),encoding='utf-8')
 print('Reported Champaner sightseeing quality: 3 actual browser journeys PASS')

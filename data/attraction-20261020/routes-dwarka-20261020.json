@@ -1,0 +1,1488 @@
+{
+  "city": "dwarka",
+  "checked": "2026-10-20",
+  "source_url": "https://routing.openstreetmap.de/routed-car/table/v1/driving/68.978602,22.245748;68.960179,22.240855;69.01058,22.209819;69.014184,22.202806;69.019296,22.224518;68.968727,22.244199;68.966474,22.243349;68.9678,22.2394;68.970864,22.239272;68.964398,22.257331;68.967512,22.237774;69.087015,22.336061;69.095999,22.451995;68.964614,22.239932;68.9682,22.2405;68.955727,22.334739;69.101814,22.083046;69.108253,22.370194;68.967722,22.236815;68.958453,22.23808;68.9664,22.23464?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "h202",
+      "lat": 22.245748,
+      "lng": 68.978602
+    },
+    {
+      "kind": "hotel",
+      "external_id": "h201",
+      "lat": 22.240855,
+      "lng": 68.960179
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-ginger-dwarka",
+      "lat": 22.209819,
+      "lng": 69.01058
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-the-fern-sattva-resort-dwarka",
+      "lat": 22.202806,
+      "lng": 69.014184
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-hawthorn-suites-by-wyndham-dwarka",
+      "lat": 22.224518,
+      "lng": 69.019296
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-lemon-tree-premier-dwarka",
+      "lat": 22.244199,
+      "lng": 68.968727
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-vits-devbhumi-dwarka",
+      "lat": 22.243349,
+      "lng": 68.966474
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-ira-by-orchid-dwarka-dwarka",
+      "lat": 22.2394,
+      "lng": 68.9678
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-mathura-bhavan-dwarka",
+      "lat": 22.239272,
+      "lng": 68.970864
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a203",
+      "lat": 22.257331,
+      "lng": 68.964398
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a201",
+      "lat": 22.237774,
+      "lng": 68.967512
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a202",
+      "lat": 22.336061,
+      "lng": 69.087015
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a204",
+      "lat": 22.451995,
+      "lng": 69.095999
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r202",
+      "lat": 22.239932,
+      "lng": 68.964614
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r201",
+      "lat": 22.2405,
+      "lng": 68.9682
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-shivrajpur-beach",
+      "lat": 22.334739,
+      "lng": 68.955727
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-okha-madhi-beach",
+      "lat": 22.083046,
+      "lng": 69.101814
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-gopi-talav-dwarka",
+      "lat": 22.370194,
+      "lng": 69.108253
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-gomti-ghat-dwarka",
+      "lat": 22.236815,
+      "lng": 68.967722
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-dwarka-lighthouse-viewpoint",
+      "lat": 22.23808,
+      "lng": 68.958453
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-dwarka-beach",
+      "lat": 22.23464,
+      "lng": 68.9664
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        2911.6,
+        8946,
+        8089.2,
+        6932,
+        1605.6,
+        2019.3,
+        1723.7,
+        1280,
+        3649.4,
+        2045.3,
+        16189.7,
+        34782.2,
+        2502.7,
+        1588.8,
+        13884.9,
+        23102.1,
+        21402.7,
+        2106.2,
+        3074.4,
+        2960.5
+      ],
+      [
+        2477.7,
+        0,
+        10236.2,
+        9379.4,
+        8222.2,
+        1366.3,
+        981.2,
+        1095.1,
+        1459.1,
+        2047.5,
+        1119.9,
+        17674.4,
+        33080.2,
+        686.4,
+        1185.3,
+        12183,
+        24392.3,
+        22887.3,
+        1167.8,
+        368.7,
+        1058.7
+      ],
+      [
+        6755.8,
+        7609.5,
+        0,
+        3813,
+        2655.8,
+        6605.7,
+        6717.1,
+        6421.6,
+        5977.9,
+        8347.3,
+        6743.2,
+        22913.8,
+        39480.1,
+        7200.6,
+        6286.7,
+        18582.8,
+        18825.9,
+        28126.7,
+        6804.1,
+        7772.3,
+        7658.4
+      ],
+      [
+        7583.3,
+        8437.1,
+        1036.7,
+        0,
+        3483.4,
+        7433.3,
+        7544.7,
+        7249.2,
+        6805.5,
+        9174.8,
+        7570.8,
+        23741.4,
+        40307.7,
+        8028.2,
+        7114.2,
+        19410.4,
+        19653.5,
+        28954.3,
+        7631.6,
+        8599.9,
+        8486
+      ],
+      [
+        7345,
+        8198.8,
+        5229.1,
+        4372.3,
+        0,
+        7195,
+        7306.4,
+        7010.9,
+        6567.2,
+        8936.5,
+        7332.5,
+        23503.1,
+        40069.4,
+        7789.9,
+        6875.9,
+        19172.1,
+        19385.2,
+        28716,
+        7393.3,
+        8361.6,
+        8247.7
+      ],
+      [
+        1605.8,
+        1243.3,
+        9364.2,
+        8507.4,
+        7350.3,
+        0,
+        605.7,
+        855.4,
+        1033.5,
+        2003.6,
+        1234.9,
+        16558.5,
+        33136.5,
+        968.6,
+        643.5,
+        12239.2,
+        23520.3,
+        21771.4,
+        1315.3,
+        1406.1,
+        1453.5
+      ],
+      [
+        1733.6,
+        988.6,
+        9492.1,
+        8635.3,
+        7478.1,
+        622.2,
+        0,
+        700,
+        1064.1,
+        1726.4,
+        835.3,
+        16930.3,
+        32859.3,
+        569,
+        771.4,
+        11962,
+        23648.2,
+        22143.2,
+        915.7,
+        1151.5,
+        1053.8
+      ],
+      [
+        1832.3,
+        1093.5,
+        9114.5,
+        8257.7,
+        7100.5,
+        720.9,
+        700,
+        0,
+        537.4,
+        2231.5,
+        408.6,
+        17028.9,
+        33364.4,
+        407.1,
+        263.6,
+        12467.1,
+        23270.5,
+        22241.9,
+        469.5,
+        1092.2,
+        864.9
+      ],
+      [
+        1664,
+        1533.5,
+        8577.1,
+        7720.3,
+        6563.1,
+        1103.7,
+        1140,
+        443.7,
+        0,
+        2671.5,
+        765.3,
+        17411.8,
+        33804.4,
+        847.1,
+        646.5,
+        12907.1,
+        22733.2,
+        22624.7,
+        826.1,
+        1532.2,
+        1304.9
+      ],
+      [
+        3199.3,
+        2052.2,
+        10957.8,
+        10101,
+        8943.8,
+        2087.9,
+        1702.7,
+        2225.9,
+        2589.9,
+        0,
+        2361.1,
+        18395.9,
+        31476.7,
+        2094.8,
+        2237,
+        10579.4,
+        25113.9,
+        23608.9,
+        2441.5,
+        2215.1,
+        2579.7
+      ],
+      [
+        2305.9,
+        1119.9,
+        9342.4,
+        8485.6,
+        7328.4,
+        1194.5,
+        832,
+        647,
+        765.3,
+        2363.5,
+        0,
+        17502.6,
+        33496.3,
+        514.2,
+        737.2,
+        12599.1,
+        23498.5,
+        22715.5,
+        189,
+        958.3,
+        731.1
+      ],
+      [
+        16181,
+        17671.6,
+        25030.6,
+        24173.9,
+        23016.7,
+        16423.9,
+        16779.2,
+        17028.9,
+        17207,
+        18409.4,
+        17502.6,
+        0,
+        21784.9,
+        17262.7,
+        16817,
+        28644.9,
+        39186.7,
+        5324,
+        17582.9,
+        17834.4,
+        17720.5
+      ],
+      [
+        34303,
+        33057.2,
+        42061.5,
+        41204.7,
+        40047.5,
+        33191.6,
+        32806.5,
+        33329.6,
+        33693.7,
+        31409.2,
+        33464.9,
+        21775.5,
+        0,
+        33198.5,
+        33340.8,
+        24935.9,
+        56217.6,
+        21887.4,
+        33545.2,
+        33220,
+        33683.4
+      ],
+      [
+        2067.6,
+        686.4,
+        9349.8,
+        8493,
+        7335.8,
+        956.2,
+        569,
+        408.6,
+        772.7,
+        2100.5,
+        514.2,
+        17264.2,
+        33233.3,
+        0,
+        498.9,
+        12336,
+        23505.8,
+        22477.2,
+        594.5,
+        616.6,
+        484.9
+      ],
+      [
+        1620.4,
+        1183.8,
+        9018.8,
+        8162,
+        7004.8,
+        509,
+        613.7,
+        263.6,
+        441.7,
+        2145.2,
+        737.2,
+        16817,
+        33278,
+        497.4,
+        0,
+        12380.7,
+        23174.9,
+        22029.9,
+        817.6,
+        1182.4,
+        955.2
+      ],
+      [
+        13442.3,
+        12196.5,
+        21200.8,
+        20344,
+        19186.8,
+        12330.9,
+        11945.8,
+        12468.9,
+        12832.9,
+        10548.5,
+        12604.1,
+        28639,
+        24951.9,
+        12337.8,
+        12480,
+        0,
+        35356.9,
+        26864.2,
+        12684.5,
+        12359.3,
+        12822.7
+      ],
+      [
+        23761.7,
+        24615.4,
+        17215.1,
+        16358.3,
+        19661.8,
+        23611.7,
+        23723.1,
+        23427.5,
+        22983.8,
+        25353.2,
+        23749.1,
+        39919.7,
+        56486,
+        24206.5,
+        23292.6,
+        35588.7,
+        0,
+        45132.7,
+        23810,
+        24778.2,
+        24664.3
+      ],
+      [
+        21269.1,
+        22759.7,
+        30118.7,
+        29261.9,
+        28104.8,
+        21512,
+        21867.3,
+        22117,
+        22295.1,
+        23497.5,
+        22590.7,
+        5199.2,
+        21772,
+        22350.8,
+        21905.1,
+        26652.6,
+        34695.9,
+        0,
+        22671,
+        22922.5,
+        22808.6
+      ],
+      [
+        2386.3,
+        1167.8,
+        9403.3,
+        8546.5,
+        7389.3,
+        1274.9,
+        912.4,
+        727.3,
+        826.1,
+        2443.9,
+        189,
+        17582.9,
+        33576.7,
+        594.5,
+        817.6,
+        12679.4,
+        23559.3,
+        22795.9,
+        0,
+        1006.2,
+        779
+      ],
+      [
+        2640.5,
+        368.7,
+        10033.3,
+        9176.5,
+        8019.3,
+        1529.1,
+        1277.2,
+        1092.2,
+        1456.2,
+        2210.3,
+        958.3,
+        17837.2,
+        33243,
+        616.6,
+        1182.4,
+        12345.8,
+        24189.4,
+        23050.1,
+        1006.2,
+        0,
+        897.1
+      ],
+      [
+        2551.9,
+        1058.2,
+        9834.1,
+        8977.3,
+        7820.1,
+        1440.5,
+        1053.3,
+        893,
+        1257,
+        2584.8,
+        730.6,
+        17748.6,
+        33717.7,
+        484.4,
+        983.3,
+        12820.4,
+        23990.2,
+        22961.5,
+        778.5,
+        896.6,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "w8n7jcbJ-41zAAAADwAAAAAAAAAAAAAAdsefQinIIkEAAAAAAAAAAHMAAAAPAAAAAAAAAAAAAAD0KAEAWoccBEBxUwGqhxwEdHFTAQAADwkAAAAA",
+        "location": [
+          68.978522,
+          22.245696
+        ],
+        "name": "",
+        "distance": 10.05900434
+      },
+      {
+        "hint": "kR2OlJUdjpSvAAAAjwAAAGAAAAD6AAAAvaESQrRy7UEEJaFBQhNQQlcAAABIAAAAMAAAAHwAAAD0KAEA1j4cBFReUwGzPxwEV15TAQgAfxYAAAAA",
+        "location": [
+          68.959958,
+          22.240852
+        ],
+        "name": "",
+        "distance": 22.78718196
+      },
+      {
+        "hint": "1KrLk9aqy5MoAAAALQAAAAAAAAAAAAAA2TbeQSR9-UEAAAAAAAAAACgAAAAtAAAAAAAAAAAAAAD0KAEAmwQdBK3kUgGUBB0EG-VSAQAArxAAAAAA",
+        "location": [
+          69.010587,
+          22.209709
+        ],
+        "name": "",
+        "distance": 12.20202622
+      },
+      {
+        "hint": "nKrLk5-qy5OkAAAAEwAAAD4AAACcAQAAThEJQrQBfUC7GVBBlg2sQlIAAAAKAAAAHwAAAM4AAAD0KAEAPhMdBPrJUgGoEh0EtslSAQIAnwkAAAAA",
+        "location": [
+          69.014334,
+          22.202874
+        ],
+        "name": "",
+        "distance": 17.20052252
+      },
+      {
+        "hint": "na_pklpP0ZMIAAAAEwAAAN4BAABSAAAAmRZaQMOT_kAoKEdDrCkHQggAAAATAAAA3gEAAFIAAAD0KAEA9CYdBCMeUwGgJh0Ehh5TARoATwMAAAAA",
+        "location": [
+          69.01938,
+          22.224419
+        ],
+        "name": "",
+        "distance": 13.97064298
+      },
+      {
+        "hint": "8Cnoif___38nAAAARgAAAAwAAAAdAAAAtiExQnQoB0IgHVpB7S3-QScAAABGAAAADAAAAB0AAAD0KAEAVGEcBFNsUwEXYRwEZ2tTAQQAvxEAAAAA",
+        "location": [
+          68.968788,
+          22.244435
+        ],
+        "name": "",
+        "distance": 26.87914854
+      },
+      {
+        "hint": "5JWUlOeVlJQPAAAAAAAAAHwAAAB0AAAAi6vMQAAAAAD6oU5CeJNAQg8AAAAAAAAAfAAAAHQAAAD0KAEANVgcBNloUwFKWBwEFWhTAQQAjwUAAAAA",
+        "location": [
+          68.966453,
+          22.243545
+        ],
+        "name": "",
+        "distance": 21.81145244
+      },
+      {
+        "hint": "MyEAjgjCy5NdAAAAPwAAAAAAAAAKAAAAaiGcQWiHT0EAAAAA_ksHQC4AAAAgAAAAAAAAAAUAAAD0KAEAJ10cBKRYUwF4XRwEqFhTAQAAHwsAAAAA",
+        "location": [
+          68.967719,
+          22.239396
+        ],
+        "name": "",
+        "distance": 8.362713794
+      },
+      {
+        "hint": "3TZ9iM3By5MNAAAACgAAAAAAAAAAAAAAImOhQWTVa0EAAAAAAAAAAA0AAAAKAAAAAAAAAAAAAAD0KAEAcmkcBB5YUwFwaRwEKFhTAQAATxAAAAAA",
+        "location": [
+          68.970866,
+          22.239262
+        ],
+        "name": "Jakat Nakat Road",
+        "distance": 1.126367622
+      },
+      {
+        "hint": "1_q5hdqcQ5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAAD0KAEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "8sHLk7atzpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAAD0KAEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "Evu5hdCcepMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAAD0KAEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "bdVfg0VkbZUUAAAAFQAAAD8BAAASAAAAmGS3QfUBs0FJqK9D4pSdQRQAAAAVAAAAPwEAABIAAAD0KAEAcFMeBEOXVgE_Uh4EG5dWAR4AvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "8IqXgkd92ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAAD0KAEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      },
+      {
+        "hint": "I1OJiX6RlJQLAAAABAAAAAwAAAAhAAAAiuxDQf5AeEAHpllB5PUQQgsAAAAEAAAADAAAACEAAAD0KAEAml8cBA1eUwEIXxwE9FxTAQIAfxIAAAAA",
+        "location": [
+          68.968346,
+          22.240781
+        ],
+        "name": "",
+        "distance": 34.56563914
+      },
+      {
+        "hint": "qXR7lat0e5UYAAAAgQAAAAAAAABBAAAAyj2IQZfWsUIAAAAAhls0QhgAAACBAAAAAAAAAEEAAAD0KAEAgy4cBPfMVAFPLhwEE81UAQAA7wEAAAAA",
+        "location": [
+          68.955779,
+          22.334711
+        ],
+        "name": "",
+        "distance": 6.189856129
+      },
+      {
+        "hint": "aaaPk4mmj5NiAAAAAAAAAGoBAAAAAAAAYx2IQgAAAAA83HtDAAAAAGIAAAAAAAAAagEAAAAAAAD0KAEAYV0eBJgNUQH2aB4E5vVQAQ4Abw4AAAAA",
+        "location": [
+          69.098849,
+          22.089112
+        ],
+        "name": "",
+        "distance": 738.1180379
+      },
+      {
+        "hint": "98skkl1-bZUAAAAATgAAAAAAAAAAAAAAAAAAAOYAWkIAAAAAAAAAAAAAAABOAAAAAAAAAAAAAAD0KAEAhoIeBMtcVQEdgh4EkldVAQAAHwAAAAAA",
+        "location": [
+          69.108358,
+          22.371531
+        ],
+        "name": "",
+        "distance": 148.4475799
+      },
+      {
+        "hint": "F8LLkxrCy5MAAAAAMQAAAAAAAAAuAQAAAAAAAG3NIkEAAAAARtN7QgAAAAAYAAAAAAAAAJcAAAD0KAEAflwcBC1QUwEqXRwEj05TAQAAzw8AAAAA",
+        "location": [
+          68.96755,
+          22.237229
+        ],
+        "name": "",
+        "distance": 49.15376097
+      },
+      {
+        "hint": "HSEAjiAhAI4jAAAAAAAAAHMAAADOAQAAOSrBQQAAAAA6zp5CSligQyMAAAAAAAAAcwAAAM4BAAD0KAEAzD0cBIZZUwH1OBwEgFNTAQgAvxAAAAAA",
+        "location": [
+          68.959692,
+          22.239622
+        ],
+        "name": "",
+        "distance": 213.2441805
+      },
+      {
+        "hint": "2sHLk____38CAAAAAgAAAFkAAAAhAAAAy6IbQAAAAADscshC-xkUQgIAAAACAAAAWQAAACEAAAD0KAEAdFUcBPNKUwEAWBwEEEZTARYALw8AAAAA",
+        "location": [
+          68.965748,
+          22.235891
+        ],
+        "name": "",
+        "distance": 153.9752949
+      }
+    ],
+    "durations": [
+      [
+        0,
+        212,
+        487.6,
+        459.7,
+        389.7,
+        132.9,
+        141.6,
+        149.8,
+        103.2,
+        235.2,
+        198.3,
+        968.9,
+        1627.7,
+        160,
+        128.6,
+        753.8,
+        1154.7,
+        1315.4,
+        214.5,
+        212.6,
+        205.8
+      ],
+      [
+        196.2,
+        0,
+        558.2,
+        530.3,
+        460.3,
+        123.5,
+        112.6,
+        109.8,
+        124.6,
+        177.2,
+        124.3,
+        1041.5,
+        1564.9,
+        74.7,
+        114,
+        691,
+        1225.3,
+        1388,
+        139,
+        54.6,
+        99.3
+      ],
+      [
+        353.2,
+        394.6,
+        0,
+        263,
+        184.8,
+        320.3,
+        324.2,
+        337.2,
+        290.6,
+        417.8,
+        385.7,
+        1238.3,
+        1810.3,
+        342.6,
+        311.2,
+        936.4,
+        958,
+        1584.8,
+        401.9,
+        395.2,
+        388.4
+      ],
+      [
+        395.6,
+        437,
+        81.9,
+        0,
+        227.2,
+        362.7,
+        366.6,
+        379.6,
+        333,
+        460.2,
+        428.1,
+        1280.7,
+        1852.7,
+        385,
+        353.6,
+        978.8,
+        1000.4,
+        1627.2,
+        444.3,
+        437.6,
+        430.8
+      ],
+      [
+        413.1,
+        454.5,
+        347.3,
+        319.4,
+        0,
+        380.2,
+        384.1,
+        397.1,
+        350.5,
+        477.7,
+        445.6,
+        1298.2,
+        1870.2,
+        402.5,
+        371.1,
+        996.3,
+        1014.4,
+        1644.7,
+        461.8,
+        455.1,
+        448.3
+      ],
+      [
+        134.3,
+        124.2,
+        496.3,
+        468.4,
+        398.4,
+        0,
+        61.8,
+        79.8,
+        76.2,
+        150.4,
+        122.1,
+        954.3,
+        1542.9,
+        74.5,
+        54.9,
+        669,
+        1163.4,
+        1300.8,
+        137.4,
+        124.8,
+        121
+      ],
+      [
+        131.1,
+        103.5,
+        493.1,
+        465.2,
+        395.2,
+        58.4,
+        0,
+        67.8,
+        82.6,
+        126.7,
+        98.5,
+        976.4,
+        1519.2,
+        50.9,
+        64.6,
+        645.3,
+        1160.2,
+        1322.9,
+        113.8,
+        104.1,
+        97.4
+      ],
+      [
+        142,
+        109.1,
+        496.3,
+        468.4,
+        398.4,
+        66.1,
+        67.1,
+        0,
+        47.8,
+        158.5,
+        74.3,
+        984.1,
+        1551,
+        38.1,
+        37.2,
+        677.1,
+        1163.4,
+        1330.6,
+        90.5,
+        93.2,
+        83.9
+      ],
+      [
+        121,
+        129.1,
+        448.5,
+        420.6,
+        350.6,
+        81.7,
+        87.1,
+        46.6,
+        0,
+        178.5,
+        95.1,
+        999.7,
+        1571,
+        58.1,
+        52.8,
+        697.1,
+        1115.6,
+        1346.2,
+        111.3,
+        113.2,
+        103.9
+      ],
+      [
+        216.1,
+        172.9,
+        578.1,
+        550.2,
+        480.2,
+        143.4,
+        132.5,
+        155.3,
+        170.1,
+        0,
+        186,
+        1061.4,
+        1461.7,
+        138.4,
+        149.6,
+        587.8,
+        1245.2,
+        1407.9,
+        201.3,
+        173.5,
+        184.9
+      ],
+      [
+        186.5,
+        127.4,
+        534.7,
+        506.8,
+        436.8,
+        110.6,
+        92.6,
+        77.5,
+        86.2,
+        184,
+        0,
+        1028.6,
+        1576.5,
+        62.1,
+        81.7,
+        702.6,
+        1201.8,
+        1375.1,
+        45.2,
+        101.9,
+        92.6
+      ],
+      [
+        965.6,
+        1039.1,
+        1402.2,
+        1374.3,
+        1304.3,
+        937.8,
+        968.7,
+        986.7,
+        983.1,
+        1062.3,
+        1031.1,
+        0,
+        1500.6,
+        985.9,
+        961.8,
+        1580.9,
+        2069.3,
+        392,
+        1046.4,
+        1039.7,
+        1031.7
+      ],
+      [
+        1596,
+        1550.5,
+        1958,
+        1930.1,
+        1860.1,
+        1523.3,
+        1512.4,
+        1535.2,
+        1550,
+        1450.8,
+        1565.9,
+        1492.5,
+        0,
+        1518.3,
+        1529.5,
+        1253.1,
+        2625.1,
+        1404.7,
+        1581.2,
+        1551.1,
+        1564.8
+      ],
+      [
+        144.1,
+        71,
+        498.4,
+        470.5,
+        400.5,
+        68.2,
+        47.8,
+        35.1,
+        49.9,
+        139.2,
+        63.7,
+        986.2,
+        1531.7,
+        0,
+        39.3,
+        657.8,
+        1165.5,
+        1332.7,
+        79,
+        60.6,
+        46.5
+      ],
+      [
+        120.2,
+        104.4,
+        479.1,
+        451.2,
+        381.2,
+        44.3,
+        60.2,
+        34.2,
+        30.6,
+        151.6,
+        78.6,
+        962.3,
+        1544.1,
+        33.4,
+        0,
+        670.2,
+        1146.2,
+        1308.8,
+        93.9,
+        88.5,
+        79.2
+      ],
+      [
+        739.6,
+        694.1,
+        1101.6,
+        1073.7,
+        1003.7,
+        666.9,
+        656,
+        678.8,
+        693.6,
+        594.4,
+        709.5,
+        1584.9,
+        1272.4,
+        661.9,
+        673.1,
+        0,
+        1768.7,
+        1662.7,
+        724.8,
+        694.7,
+        708.4
+      ],
+      [
+        1164.2,
+        1205.6,
+        850.5,
+        822.6,
+        995.8,
+        1131.3,
+        1135.2,
+        1148.2,
+        1101.6,
+        1228.8,
+        1196.7,
+        2049.3,
+        2621.3,
+        1153.6,
+        1122.2,
+        1747.4,
+        0,
+        2395.8,
+        1212.9,
+        1206.2,
+        1199.4
+      ],
+      [
+        1285.5,
+        1359,
+        1722.1,
+        1694.2,
+        1624.2,
+        1257.7,
+        1288.6,
+        1306.6,
+        1303,
+        1382.2,
+        1351,
+        368.6,
+        1381.6,
+        1305.8,
+        1281.7,
+        1620,
+        2275.5,
+        0,
+        1366.3,
+        1359.6,
+        1351.6
+      ],
+      [
+        201.6,
+        141.2,
+        550.6,
+        522.7,
+        452.7,
+        125.7,
+        107.7,
+        92.6,
+        102.1,
+        199.1,
+        41.7,
+        1043.7,
+        1591.6,
+        77.2,
+        96.8,
+        717.7,
+        1217.7,
+        1390.2,
+        0,
+        115.7,
+        106.4
+      ],
+      [
+        196.4,
+        59.8,
+        554.6,
+        526.7,
+        456.7,
+        123.7,
+        106.4,
+        91.3,
+        106.1,
+        177.4,
+        100.1,
+        1041.7,
+        1565.1,
+        59.5,
+        95.5,
+        691.2,
+        1221.7,
+        1388.2,
+        114.8,
+        0,
+        75.1
+      ],
+      [
+        187.8,
+        102.3,
+        542.1,
+        514.2,
+        444.2,
+        111.9,
+        91.5,
+        78.8,
+        93.6,
+        182.9,
+        90.9,
+        1029.9,
+        1575.4,
+        43.7,
+        83,
+        701.5,
+        1209.2,
+        1376.4,
+        105.6,
+        76.8,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "w8n7jcbJ-41zAAAADwAAAAAAAAAAAAAAdsefQinIIkEAAAAAAAAAAHMAAAAPAAAAAAAAAAAAAAD0KAEAWoccBEBxUwGqhxwEdHFTAQAADwkAAAAA",
+        "location": [
+          68.978522,
+          22.245696
+        ],
+        "name": "",
+        "distance": 10.05900434
+      },
+      {
+        "hint": "kR2OlJUdjpSvAAAAjwAAAGAAAAD6AAAAvaESQrRy7UEEJaFBQhNQQlcAAABIAAAAMAAAAHwAAAD0KAEA1j4cBFReUwGzPxwEV15TAQgAfxYAAAAA",
+        "location": [
+          68.959958,
+          22.240852
+        ],
+        "name": "",
+        "distance": 22.78718196
+      },
+      {
+        "hint": "1KrLk9aqy5MoAAAALQAAAAAAAAAAAAAA2TbeQSR9-UEAAAAAAAAAACgAAAAtAAAAAAAAAAAAAAD0KAEAmwQdBK3kUgGUBB0EG-VSAQAArxAAAAAA",
+        "location": [
+          69.010587,
+          22.209709
+        ],
+        "name": "",
+        "distance": 12.20202622
+      },
+      {
+        "hint": "nKrLk5-qy5OkAAAAEwAAAD4AAACcAQAAThEJQrQBfUC7GVBBlg2sQlIAAAAKAAAAHwAAAM4AAAD0KAEAPhMdBPrJUgGoEh0EtslSAQIAnwkAAAAA",
+        "location": [
+          69.014334,
+          22.202874
+        ],
+        "name": "",
+        "distance": 17.20052252
+      },
+      {
+        "hint": "na_pklpP0ZMIAAAAEwAAAN4BAABSAAAAmRZaQMOT_kAoKEdDrCkHQggAAAATAAAA3gEAAFIAAAD0KAEA9CYdBCMeUwGgJh0Ehh5TARoATwMAAAAA",
+        "location": [
+          69.01938,
+          22.224419
+        ],
+        "name": "",
+        "distance": 13.97064298
+      },
+      {
+        "hint": "8Cnoif___38nAAAARgAAAAwAAAAdAAAAtiExQnQoB0IgHVpB7S3-QScAAABGAAAADAAAAB0AAAD0KAEAVGEcBFNsUwEXYRwEZ2tTAQQAvxEAAAAA",
+        "location": [
+          68.968788,
+          22.244435
+        ],
+        "name": "",
+        "distance": 26.87914854
+      },
+      {
+        "hint": "5JWUlOeVlJQPAAAAAAAAAHwAAAB0AAAAi6vMQAAAAAD6oU5CeJNAQg8AAAAAAAAAfAAAAHQAAAD0KAEANVgcBNloUwFKWBwEFWhTAQQAjwUAAAAA",
+        "location": [
+          68.966453,
+          22.243545
+        ],
+        "name": "",
+        "distance": 21.81145244
+      },
+      {
+        "hint": "MyEAjgjCy5NdAAAAPwAAAAAAAAAKAAAAaiGcQWiHT0EAAAAA_ksHQC4AAAAgAAAAAAAAAAUAAAD0KAEAJ10cBKRYUwF4XRwEqFhTAQAAHwsAAAAA",
+        "location": [
+          68.967719,
+          22.239396
+        ],
+        "name": "",
+        "distance": 8.362713794
+      },
+      {
+        "hint": "3TZ9iM3By5MNAAAACgAAAAAAAAAAAAAAImOhQWTVa0EAAAAAAAAAAA0AAAAKAAAAAAAAAAAAAAD0KAEAcmkcBB5YUwFwaRwEKFhTAQAATxAAAAAA",
+        "location": [
+          68.970866,
+          22.239262
+        ],
+        "name": "Jakat Nakat Road",
+        "distance": 1.126367622
+      },
+      {
+        "hint": "1_q5hdqcQ5UIAAAAGwAAABIAAABEAQAAa_5UQUXGHkLiKeBB8Iv3QwgAAAAbAAAAEgAAAEQBAAD0KAEAzFAcBOSeUwEuUBwEs55TAQQAXxUAAAAA",
+        "location": [
+          68.964556,
+          22.25738
+        ],
+        "name": "",
+        "distance": 17.16398752
+      },
+      {
+        "hint": "8sHLk7atzpMAAAAADwAAAF0AAAAAAAAAJ8hiPiopJkEZdX9CAAAAAAAAAAAPAAAAXQAAAAAAAAD0KAEA11ocBCFSUwFYXBwETlJTAQwADxYAAAAA",
+        "location": [
+          68.967127,
+          22.237729
+        ],
+        "name": "",
+        "distance": 40.00446544
+      },
+      {
+        "hint": "Evu5hdCcepMNAAAAAAAAAAAAAABlAAAA7MwLQQAAAAAAAAAAyBeMQg0AAAAAAAAAAAAAAGUAAAD0KAEA0iweBNfRVAEnLx4EPdJUAQAArwkAAAAA",
+        "location": [
+          69.086418,
+          22.335959
+        ],
+        "name": "",
+        "distance": 62.53454619
+      },
+      {
+        "hint": "bdVfg0VkbZUUAAAAFQAAAD8BAAASAAAAmGS3QfUBs0FJqK9D4pSdQRQAAAAVAAAAPwEAABIAAAD0KAEAcFMeBEOXVgE_Uh4EG5dWAR4AvwoAAAAA",
+        "location": [
+          69.096304,
+          22.452035
+        ],
+        "name": "",
+        "distance": 31.6999853
+      },
+      {
+        "hint": "8IqXgkd92ZMCAAAADwAAAAcAAAAFAAAAbBNGQKJrskH-wSZBFzb2QAIAAAAPAAAABwAAAAUAAAD0KAEACVEcBI9aUwEGURwEvFpTAQIAfwUAAAAA",
+        "location": [
+          68.964617,
+          22.239887
+        ],
+        "name": "Mandir Chowk Avenue",
+        "distance": 4.992589239
+      },
+      {
+        "hint": "I1OJiX6RlJQLAAAABAAAAAwAAAAhAAAAiuxDQf5AeEAHpllB5PUQQgsAAAAEAAAADAAAACEAAAD0KAEAml8cBA1eUwEIXxwE9FxTAQIAfxIAAAAA",
+        "location": [
+          68.968346,
+          22.240781
+        ],
+        "name": "",
+        "distance": 34.56563914
+      },
+      {
+        "hint": "qXR7lat0e5UYAAAAgQAAAAAAAABBAAAAyj2IQZfWsUIAAAAAhls0QhgAAACBAAAAAAAAAEEAAAD0KAEAgy4cBPfMVAFPLhwEE81UAQAA7wEAAAAA",
+        "location": [
+          68.955779,
+          22.334711
+        ],
+        "name": "",
+        "distance": 6.189856129
+      },
+      {
+        "hint": "aaaPk4mmj5NiAAAAAAAAAGoBAAAAAAAAYx2IQgAAAAA83HtDAAAAAGIAAAAAAAAAagEAAAAAAAD0KAEAYV0eBJgNUQH2aB4E5vVQAQ4Abw4AAAAA",
+        "location": [
+          69.098849,
+          22.089112
+        ],
+        "name": "",
+        "distance": 738.1180379
+      },
+      {
+        "hint": "98skkl1-bZUAAAAATgAAAAAAAAAAAAAAAAAAAOYAWkIAAAAAAAAAAAAAAABOAAAAAAAAAAAAAAD0KAEAhoIeBMtcVQEdgh4EkldVAQAAHwAAAAAA",
+        "location": [
+          69.108358,
+          22.371531
+        ],
+        "name": "",
+        "distance": 148.4475799
+      },
+      {
+        "hint": "F8LLkxrCy5MAAAAAMQAAAAAAAAAuAQAAAAAAAG3NIkEAAAAARtN7QgAAAAAYAAAAAAAAAJcAAAD0KAEAflwcBC1QUwEqXRwEj05TAQAAzw8AAAAA",
+        "location": [
+          68.96755,
+          22.237229
+        ],
+        "name": "",
+        "distance": 49.15376097
+      },
+      {
+        "hint": "HSEAjiAhAI4jAAAAAAAAAHMAAADOAQAAOSrBQQAAAAA6zp5CSligQyMAAAAAAAAAcwAAAM4BAAD0KAEAzD0cBIZZUwH1OBwEgFNTAQgAvxAAAAAA",
+        "location": [
+          68.959692,
+          22.239622
+        ],
+        "name": "",
+        "distance": 213.2441805
+      },
+      {
+        "hint": "2sHLk____38CAAAAAgAAAFkAAAAhAAAAy6IbQAAAAADscshC-xkUQgIAAAACAAAAWQAAACEAAAD0KAEAdFUcBPNKUwEAWBwEEEZTARYALw8AAAAA",
+        "location": [
+          68.965748,
+          22.235891
+        ],
+        "name": "",
+        "distance": 153.9752949
+      }
+    ]
+  }
+}

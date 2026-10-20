@@ -1,0 +1,23 @@
+{
+  "checked": "2026-10-20",
+  "threshold_metres": 150,
+  "policy": "Proximity flags require identity review, not automatic deletion: adjacent named landmarks can be distinct. Normalized names/slugs/source identities were checked before release.",
+  "pairs": [
+    {
+      "names": [
+        "Rose Garden (Saputara)",
+        "Saputara Museum"
+      ],
+      "metres": 132.9,
+      "resolution": "Distinct mapped garden and museum; community garden identity is explicitly qualified. Museum remains closed/excluded."
+    },
+    {
+      "names": [
+        "Gomti Ghat",
+        "Dwarkadhish Temple"
+      ],
+      "metres": 108.8,
+      "resolution": "Distinct riverfront ghat and temple within the same precinct; separate identity sources are retained."
+    }
+  ]
+}

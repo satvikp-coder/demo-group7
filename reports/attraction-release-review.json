@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "staged_files": 80,
+  "exported_files_scanned": 800,
+  "secret_findings": 0,
+  "unapproved_frontend_changes": 0,
+  "private_path_and_environment_value_check": "PASS",
+  "whitespace_check": "PASS"
+}

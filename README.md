@@ -8,17 +8,31 @@ A Gujarat heritage and tourism planning platform built for CSC210 Data Structure
 
 ## Latest verified local application - 20 October 2026
 
-- 104 backend unit/security tests, 18/18 complete regression gates and 17/17 final container gates passed.
-- Interactive itinerary map and unknown-cost repair: all eight destinations, 10 viewport cases and all-day PDF export verified.
+- 118 backend unit/security tests, 18/18 complete regression gates and 17/17 final container gates passed.
+- 56 sourced attractions added safely:100 total across eight destinations;833 additive road-metric relationships.
+- 448 authenticated itinerary scenarios, four-day Kutch/PDF at three widths and all-eight-destination map checks passed.
+- Installed browser:24 read-only city/viewport checks passed with decoded images and no API failures or writes.
 - Heritage Guide:24 focused tests,71 real database checks, accepted live Groq evidence for12 question scenarios, and desktop/tablet/mobile widget checks passed.
 - Existing browser controls/PDF, authentication, itinerary API matrix and5 university-demo journeys across3 cities passed.
 - Installed local readiness:7/7. All9 original table fingerprints matched after installation; accounts, saved trips and catalog records were preserved.
 
-See [Heritage Guide test evidence](reports/HERITAGE_GUIDE_TEST_RESULTS.md), [prior teammate fixes](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). This release adds the itinerary route map and explicit unknown-cost budgets while retaining Heritage Guide; public deployment was not performed. Existing data/photo limitations remain documented.
+See [current local readiness](reports/FINAL_LOCAL_DEMO_READINESS.md), [full regression evidence](reports/FULL_REGRESSION_RESULTS.md), [before/after coverage](reports/ALL_DESTINATION_QUALITY_MATRIX.md), [Kutch regression](reports/RANN_OF_KUTCH_BEFORE_AFTER.md), [Heritage Guide test evidence](reports/HERITAGE_GUIDE_TEST_RESULTS.md), [prior teammate fixes](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). This release expands sourced attractions and repairs provisional scheduling, multi-day allocation and meals, preserving the map, unknown-cost budgets and Heritage Guide. Public deployment was not performed. Fees/access/photos still have documented gaps; known subtotal is not a complete-cost guarantee.
 
 ## Overview
 
 The React application uses a real Express/PostgreSQL backend to search destinations and generate persisted itineraries. A trip covers one destination, with each day starting and ending at the selected hotel. The backend schedules eligible attractions and meals using stored road routes, time windows and the available budget. Saved stops and price snapshots remain available after login and restart.
+
+## Sourced attractions and multi-day sightseeing
+
+The additive20 October attraction release expands the eight destination catalogs from44 to100 places/experiences: Ahmedabad16, Champaner12, Dwarka10, Gir10, Modhera12, Kutch14, Saputara14 and Somnath12. Regional excursions are explicitly labeled; mapped points are approximate source references, not surveyed entrances.
+
+Source-backed visits with missing fees/durations can be planned provisionally using labeled duration allowances. Unknown fees stay unpriced, known closures remain hard constraints, and unknown operating information requires confirmation. The planner balances reachable visits across requested days instead of letting disconnected records exhaust the daily allocation. Hotel-only days remain explicitly unallocated. Nearby sourced meals or unlocated personal breaks support sightseeing; a finished morning tour is not extended to dinner artificially.
+
+Cost preferences receive no false advantage from unpriced stops. With incomparable incomplete costs, candidate cost utility is neutralized rather than treating missing fees as free; known subtotal never guarantees the complete budget. The bounded greedy optimizer and its documented optimality limits remain.
+
+Apply only after a backup: `npm run local:up`, `npm run local:attractions -- --dry-run`, then `npm run local:attractions`. Repeating the import is safe; do not seed/reset an existing database. Restart the local stack after import to refresh in-memory catalog indexes. Existing saved itineraries are preserved; generate a new plan to use the expanded catalog.
+
+See [research and source limits](reports/ATTRACTION_RESEARCH_SOURCES.md), [import/preservation](reports/ATTRACTION_DATA_IMPORT.md), [algorithm repair](reports/ITINERARY_ALGORITHM_IMPROVEMENTS.md) and [quality matrix](reports/ALL_DESTINATION_QUALITY_MATRIX.md). Run `npm run test:attractions` or the isolated `npm run test:attractions:local -- --production`. New records retain intentional photo fallbacks until correctly licensed photographs are available.
 
 ## Interactive itinerary map and honest budgets
 

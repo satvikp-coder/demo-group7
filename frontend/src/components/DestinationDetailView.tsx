@@ -316,13 +316,13 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   <div>
                     <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
                       {language === "hi"
-                        ? "शहर के स्मारक और आकर्षण"
-                        : "Monuments & Intra-City Heritage Attractions"}
+                        ? "क्षेत्र के स्मारक और आकर्षण"
+                        : "Destination & Nearby Heritage Attractions"}
                     </span>
                     <h3 className="font-display text-2xl sm:text-3xl text-charcoal font-bold">
                       {language === "hi"
                         ? `${getName(destination)} मुख्य आकर्षण`
-                        : `Key Monuments in ${getName(destination)}`}
+                        : `Key Monuments in and around ${getName(destination)}`}
                     </h3>
                   </div>
                   <span className="font-mono text-xs text-stone">

@@ -1,0 +1,137 @@
+{
+  "verified": true,
+  "cities": [
+    {
+      "name": "Ahmedabad",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Champaner",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Dwarka",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Gir National Park",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Modhera",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Rann of Kutch",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Saputara",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    },
+    {
+      "name": "Somnath",
+      "days": [
+        1,
+        3
+      ],
+      "verified": true
+    }
+  ],
+  "browser": [
+    {
+      "city": "Ahmedabad",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "routing": "Configured offline; deterministic provider tests separate",
+  "pdf": {
+    "bytes": 1040673,
+    "all_saved_days_captured": true,
+    "map_omitted": true,
+    "map_day_selection_restored": true
+  },
+  "fixture_checks": [
+    "routing failure fallback",
+    "mixed road/estimated styling",
+    "stale stop identity rejected",
+    "missing coordinates",
+    "empty day",
+    "single stop"
+  ]
+}

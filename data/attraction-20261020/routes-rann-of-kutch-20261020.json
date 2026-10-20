@@ -1,0 +1,1272 @@
+{
+  "city": "rann-of-kutch",
+  "checked": "2026-10-20",
+  "source_url": "https://routing.openstreetmap.de/routed-car/table/v1/driving/69.50528,23.796686;69.599903,23.672862;69.670918,23.249184;69.64731,23.233137;69.52256,23.84129;69.813823,23.933547;69.50528,23.796686;69.66868,23.255192;69.666308,23.254588;69.664104,23.248723;69.659206,23.251822;69.654725,23.251787;69.513695,23.463522;69.797611,23.236646;69.282572,22.834091;69.307337,22.826787;69.381967,22.822114;69.904203,22.911373;69.301041,23.59259?annotations=distance,duration",
+  "nodes": [
+    {
+      "kind": "hotel",
+      "external_id": "h701",
+      "lat": 23.796686,
+      "lng": 69.50528
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261010-shaam-e-sarhad-village-resort-hodka-rann-of-kutch",
+      "lat": 23.672862,
+      "lng": 69.599903
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-hotel-sahara-palace-bhuj-near-rann-of-kutch",
+      "lat": 23.249184,
+      "lng": 69.670918
+    },
+    {
+      "kind": "hotel",
+      "external_id": "exp-20261011-hotel-prince-residency-bhuj-near-rann-of-kutch",
+      "lat": 23.233137,
+      "lng": 69.64731
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a701",
+      "lat": 23.84129,
+      "lng": 69.52256
+    },
+    {
+      "kind": "attraction",
+      "external_id": "a702",
+      "lat": 23.933547,
+      "lng": 69.813823
+    },
+    {
+      "kind": "restaurant",
+      "external_id": "r701",
+      "lat": 23.796686,
+      "lng": 69.50528
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-aina-mahal",
+      "lat": 23.255192,
+      "lng": 69.66868
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-prag-mahal",
+      "lat": 23.254588,
+      "lng": 69.666308
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-kutch-museum",
+      "lat": 23.248723,
+      "lng": 69.664104
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-hamirsar-lake--bhuj",
+      "lat": 23.251822,
+      "lng": 69.659206
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-sharad-bagh-palace",
+      "lat": 23.251787,
+      "lng": 69.654725
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-nirona",
+      "lat": 23.463522,
+      "lng": 69.513695
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-living-and-learning-design-centre-crafts-museum",
+      "lat": 23.236646,
+      "lng": 69.797611
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-vijay-vilas-palace",
+      "lat": 22.834091,
+      "lng": 69.282572
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-mandvi-beach",
+      "lat": 22.826787,
+      "lng": 69.307337
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-shyamji-krishna-varma-memorial",
+      "lat": 22.822114,
+      "lng": 69.381967
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-bhadreshwar",
+      "lat": 22.911373,
+      "lng": 69.904203
+    },
+    {
+      "kind": "attraction",
+      "external_id": "exp-20261020-chhari-dhand-wetland-reserve",
+      "lat": 23.59259,
+      "lng": 69.301041
+    }
+  ],
+  "response": {
+    "code": "Ok",
+    "distances": [
+      [
+        0,
+        18317.6,
+        80953.1,
+        83427.6,
+        3721.5,
+        46437.9,
+        0,
+        79808.4,
+        79882.5,
+        81154.5,
+        80817.4,
+        81538.1,
+        72158.4,
+        93283.8,
+        146992,
+        144778.6,
+        141577.1,
+        154885,
+        60495.8
+      ],
+      [
+        18317.6,
+        0,
+        63193.4,
+        65667.8,
+        21922.2,
+        49133.3,
+        18317.6,
+        62048.6,
+        62122.8,
+        63394.8,
+        63057.6,
+        63778.4,
+        54398.6,
+        75524,
+        129232.3,
+        127018.9,
+        123817.4,
+        137125.2,
+        70835.4
+      ],
+      [
+        81129.3,
+        63369.6,
+        0,
+        3352.4,
+        84734,
+        88918.4,
+        81129.3,
+        1360.1,
+        1279.8,
+        763.9,
+        2162.2,
+        2883,
+        40179.4,
+        14654.7,
+        66916.9,
+        64703.5,
+        61502,
+        65416.7,
+        82493
+      ],
+      [
+        83872.5,
+        66112.8,
+        3622.3,
+        0,
+        87477.2,
+        91661.6,
+        83872.5,
+        4753.8,
+        4157.6,
+        3047.3,
+        4160.5,
+        3818.8,
+        42922.6,
+        17164.7,
+        63671.5,
+        61458,
+        58256.6,
+        64315.8,
+        79247.6
+      ],
+      [
+        3721.5,
+        21922.2,
+        84557.7,
+        87032.2,
+        0,
+        48103.3,
+        3721.5,
+        83413,
+        83487.1,
+        84759.1,
+        84422,
+        85142.7,
+        75763,
+        96888.4,
+        150596.6,
+        148383.2,
+        145181.7,
+        158489.6,
+        64100.4
+      ],
+      [
+        46437.9,
+        49133.3,
+        88742.2,
+        91216.6,
+        48103.3,
+        0,
+        46437.9,
+        87597.4,
+        87671.6,
+        88943.6,
+        88606.4,
+        89327.2,
+        79947.4,
+        101072.8,
+        154781,
+        152567.6,
+        149366.2,
+        162674,
+        119410.9
+      ],
+      [
+        0,
+        18317.6,
+        80953.1,
+        83427.6,
+        3721.5,
+        46437.9,
+        0,
+        79808.4,
+        79882.5,
+        81154.5,
+        80817.4,
+        81538.1,
+        72158.4,
+        93283.8,
+        146992,
+        144778.6,
+        141577.1,
+        154885,
+        60495.8
+      ],
+      [
+        79814.8,
+        62055,
+        1272.5,
+        4273.6,
+        83419.4,
+        87603.8,
+        79814.8,
+        0,
+        721.8,
+        1257.6,
+        1663.4,
+        2384.1,
+        38864.8,
+        14727.5,
+        67838,
+        65624.6,
+        62423.1,
+        76328.7,
+        83414.2
+      ],
+      [
+        79832.3,
+        62072.5,
+        1569.3,
+        3677.3,
+        83436.9,
+        87621.3,
+        79832.3,
+        721.8,
+        0,
+        1035,
+        1067.1,
+        1787.9,
+        38882.3,
+        15236.6,
+        67241.8,
+        65028.4,
+        61826.9,
+        76837.8,
+        82817.9
+      ],
+      [
+        81143.9,
+        63384.1,
+        1125.5,
+        2555.9,
+        84748.5,
+        88932.9,
+        81143.9,
+        1107.4,
+        1027.1,
+        0,
+        1431.8,
+        2152.6,
+        40193.9,
+        15179.7,
+        66120.4,
+        63907,
+        60705.5,
+        65276.1,
+        81696.5
+      ],
+      [
+        82207.7,
+        64448,
+        4284.5,
+        4834.7,
+        85812.3,
+        89996.8,
+        82207.7,
+        3400.6,
+        2804.4,
+        3218.4,
+        0,
+        1325,
+        41257.8,
+        18054.8,
+        68193.3,
+        65979.9,
+        62778.4,
+        79656,
+        83769.5
+      ],
+      [
+        81628.3,
+        63868.5,
+        3394.2,
+        3212.9,
+        85232.9,
+        89417.3,
+        81628.3,
+        2510.4,
+        1914.2,
+        2328.2,
+        1917.1,
+        0,
+        40678.3,
+        17164.5,
+        67613.9,
+        65400.4,
+        62199,
+        66708.7,
+        83190
+      ],
+      [
+        72158.4,
+        54398.6,
+        40003.2,
+        42477.6,
+        75763,
+        79947.4,
+        72158.4,
+        38858.4,
+        38932.6,
+        40204.6,
+        39867.4,
+        40588.2,
+        0,
+        52333.8,
+        106042.1,
+        103828.7,
+        100627.2,
+        113935,
+        57802.9
+      ],
+      [
+        93328.7,
+        75569,
+        14447.6,
+        17614.4,
+        96933.4,
+        101117.8,
+        93328.7,
+        15241.2,
+        15258.7,
+        15202.2,
+        16344.5,
+        17065.3,
+        52378.8,
+        0,
+        81178.8,
+        78965.4,
+        75764,
+        65654.4,
+        96755
+      ],
+      [
+        148418,
+        130658.2,
+        67816.4,
+        66871.3,
+        152022.6,
+        156207,
+        148418,
+        69141,
+        69086.7,
+        67736.8,
+        69135.1,
+        69463,
+        107468,
+        80908.3,
+        0,
+        2603.8,
+        12308.1,
+        71804.6,
+        105994.8
+      ],
+      [
+        146204.6,
+        128444.8,
+        65603,
+        64657.9,
+        149809.2,
+        153993.6,
+        146204.6,
+        66927.6,
+        66873.3,
+        65523.4,
+        66921.7,
+        67249.6,
+        105254.6,
+        78694.9,
+        2603.8,
+        0,
+        10094.7,
+        69591.2,
+        103781.4
+      ],
+      [
+        143003.1,
+        125243.3,
+        62401.5,
+        61456.5,
+        146607.7,
+        150792.1,
+        143003.1,
+        63726.2,
+        63671.9,
+        62321.9,
+        63720.2,
+        64048.1,
+        102053.1,
+        75493.4,
+        12422.2,
+        10208.8,
+        0,
+        62908.1,
+        107726.3
+      ],
+      [
+        154842.3,
+        137082.5,
+        75961.2,
+        66145,
+        158446.9,
+        162631.3,
+        154842.3,
+        76754.8,
+        76772.2,
+        76715.7,
+        77858,
+        78578.8,
+        113892.3,
+        65611.4,
+        71923.8,
+        69710.4,
+        62913.2,
+        0,
+        135397.6
+      ],
+      [
+        60495.8,
+        70835.4,
+        82697.2,
+        79429.5,
+        64100.4,
+        119410.9,
+        60495.8,
+        83828.7,
+        83232.5,
+        82122.2,
+        83235.4,
+        82893.7,
+        57802.9,
+        96239.5,
+        105994.8,
+        103781.4,
+        107612.1,
+        133415.4,
+        0
+      ]
+    ],
+    "destinations": [
+      {
+        "hint": "udJtjHzbm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAD0KAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "OoKdiDuCnYgSAAAAAAAAAIABAAAAAAAA0blHQQAAAACbNYVDAAAAABIAAAAAAAAAgAEAAAAAAAD0KAEARQMmBGY4aQGfAiYEHjhpARQArxIAAAAA",
+        "location": [
+          69.600069,
+          23.672934
+        ],
+        "name": "",
+        "distance": 18.71665782
+      },
+      {
+        "hint": "11aQjv___38EAQAAlQEAAAkAAAAaAAAAKCZZQr7t8EFt6_g_PVCqQIIAAADLAAAABQAAAA0AAAD0KAEADRgnBLfBYgEGGCcEIMFiAQIADxEAAAAA",
+        "location": [
+          69.670925,
+          23.249335
+        ],
+        "name": "",
+        "distance": 16.73816282
+      },
+      {
+        "hint": "HrgIjR-4CI2AAAAAPwAAAAAAAAAAAAAAbv5VQkGy0UEAAAAAAAAAAIAAAAA_AAAAAAAAAAAAAAD0KAEAerwmBMyCYgHOuyYEcYJiAQAAXwkAAAAA",
+        "location": [
+          69.647482,
+          23.233228
+        ],
+        "name": "",
+        "distance": 20.28508857
+      },
+      {
+        "hint": "FnArhMKxj44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAAD0KAEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "rUAriDZxvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAAD0KAEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "udJtjHzbm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAD0KAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "Wiybh8lMaIwrAAAAAAAAAIMAAAAAAAAAqnyOQQAAAAAW3llCAAAAACsAAAAAAAAAgwAAAAAAAAD0KAEAQg8nBAnYYgFIDycEmNhiAQIA_xQAAAAA",
+        "location": [
+          69.668674,
+          23.255049
+        ],
+        "name": "",
+        "distance": 15.84883883
+      },
+      {
+        "hint": "4mi2gzlskI4OAAAAAAAAAE4AAAApAAAAYSF8QQAAAAAd1q5CPIozQg4AAAAAAAAATgAAACkAAAD0KAEA_QYnBLfWYgEEBicEPNZiAQgADxQAAAAA",
+        "location": [
+          69.666557,
+          23.254711
+        ],
+        "name": "",
+        "distance": 28.88927922
+      },
+      {
+        "hint": "HkzmjJBX3ZEPAAAABgAAAAAAAABfAAAASRSGQT0f10AAAAAAKlfUQg8AAAAGAAAAAAAAAF8AAAD0KAEAp_0mBDa_YgFo_SYEU79iAQAA7wwAAAAA",
+        "location": [
+          69.664167,
+          23.248694
+        ],
+        "name": "",
+        "distance": 7.203724008
+      },
+      {
+        "hint": "PlPmjD1gro4SAAAAAAAAAMICAABsAAAAMUHuQAAAAADaU5NDKPEzQhIAAAAAAAAAwgIAAGwAAAD0KAEAXO0mBNHMYgFG6iYEbstiASYA_woAAAAA",
+        "location": [
+          69.659996,
+          23.252177
+        ],
+        "name": "",
+        "distance": 89.88237589
+      },
+      {
+        "hint": "ctAIjXXQCI1EAAAAAAAAAFQAAAAAAAAAXdg9QgAAAAAUDGhCAAAAAEQAAAAAAAAAVAAAAAAAAAD0KAEAnNcmBFjJYgHF2CYES8tiAQQAHwUAAAAA",
+        "location": [
+          69.654428,
+          23.251288
+        ],
+        "name": "",
+        "distance": 63.06662668
+      },
+      {
+        "hint": "olO2gw5ti46SAAAAOAAAAAEBAAAhAgAALRGEQyZEyELGkedDvCV1RJIAAAA4AAAAAQEAACECAAD0KAEAULUkBCYRZgHfsSQEYgZmARIA7xEAAAAA",
+        "location": [
+          69.514576,
+          23.466278
+        ],
+        "name": "Nakhatrana-Loria",
+        "distance": 318.2220608
+      },
+      {
+        "hint": "E222g9JEqo6wAAAAHQAAAAAAAAAAAAAA1i_1QmfcnkEAAAAAAAAAALAAAAAdAAAAAAAAAAAAAAD0KAEAcwYpBAiQYgHrBikEJpBiAQAATwoAAAAA",
+        "location": [
+          69.797491,
+          23.236616
+        ],
+        "name": "",
+        "distance": 12.72365267
+      },
+      {
+        "hint": "SnK9jMNyvYwlAAAAZwAAAG0IAACWAwAABEB5Qd2kK0KOlWBEY4K_QyUAAABnAAAAbQgAAJYDAAD0KAEAqSshBFhxXAEMKyEEq2tcARQA_wUAAAAA",
+        "location": [
+          69.282729,
+          22.835544
+        ],
+        "name": "",
+        "distance": 161.7126236
+      },
+      {
+        "hint": "ppqzg6eas4MAAAAAdgAAAAAAAAAAAAAAAAAAAELdREIAAAAAAAAAAAAAAAB2AAAAAAAAAAAAAAD0KAEA6IAhBDmEXAHJiyEEI09cAQAArxUAAAAA",
+        "location": [
+          69.304552,
+          22.840377
+        ],
+        "name": "",
+        "distance": 1531.89192
+      },
+      {
+        "hint": "Hi19iB8tfYg5AAAAJgMAAAAAAAAAAAAAAN-_QUvbp0MAAAAAAAAAADkAAAAmAwAAAAAAAAAAAAD0KAEAY7YiBEw6XAFPryIE4jxcAQAAnwwAAAAA",
+        "location": [
+          69.383779,
+          22.821452
+        ],
+        "name": "",
+        "distance": 199.9350072
+      },
+      {
+        "hint": "doWMi3SQm47ZAAAASgAAAAAAAABlDwAAH9dxQ13IokIAAAAAre-IRdkAAABKAAAAAAAAAGUPAAD0KAEANaIqBAKZXQFLpyoEjZldAQAAHxYAAAAA",
+        "location": [
+          69.902901,
+          22.911234
+        ],
+        "name": "",
+        "distance": 134.4421271
+      },
+      {
+        "hint": "VA7djNY-i45cAAAAAAAAADpBAAAAAAAA8wzMQQAAAAC58pBFAAAAAFwAAAAAAAAAOkEAAAAAAAD0KAEAFmshBNDlZwExcyEEjv5nAf4AzwEAAAAA",
+        "location": [
+          69.298966,
+          23.586256
+        ],
+        "name": "",
+        "distance": 732.7868488
+      }
+    ],
+    "durations": [
+      [
+        0,
+        1192.4,
+        4018.9,
+        4164,
+        747.5,
+        3690.7,
+        0,
+        4008.4,
+        3973.1,
+        4017.4,
+        4056.3,
+        4091,
+        3800.9,
+        4561,
+        8016.4,
+        7619.1,
+        7364.5,
+        7622.7,
+        5477.2
+      ],
+      [
+        1191.8,
+        0,
+        2917.6,
+        3062.7,
+        1912.7,
+        2781.9,
+        1191.8,
+        2907.1,
+        2871.8,
+        2916.1,
+        2955,
+        2989.7,
+        2699.6,
+        3459.7,
+        6915.1,
+        6517.8,
+        6263.2,
+        6521.4,
+        5933.6
+      ],
+      [
+        4037.2,
+        2930,
+        0,
+        249.1,
+        4758.1,
+        4338.1,
+        4037.2,
+        208.8,
+        124.6,
+        72.6,
+        214.4,
+        249.1,
+        1964.3,
+        738.1,
+        4101.5,
+        3704.2,
+        3449.6,
+        3913.7,
+        6959.8
+      ],
+      [
+        4200.2,
+        3093,
+        254.5,
+        0,
+        4921.1,
+        4501.1,
+        4200.2,
+        377.8,
+        280.6,
+        227.3,
+        325.8,
+        321.2,
+        2127.3,
+        908.6,
+        3888.8,
+        3491.5,
+        3236.9,
+        3860.9,
+        6747.1
+      ],
+      [
+        747.5,
+        1918.1,
+        4744.6,
+        4889.7,
+        0,
+        4243,
+        747.5,
+        4734.1,
+        4698.8,
+        4743.1,
+        4782,
+        4816.7,
+        4526.6,
+        5286.7,
+        8742.1,
+        8344.8,
+        8090.2,
+        8348.4,
+        6202.9
+      ],
+      [
+        3693.3,
+        2777.6,
+        4327.6,
+        4472.7,
+        4243.3,
+        0,
+        3693.3,
+        4317.1,
+        4281.8,
+        4326.1,
+        4365,
+        4399.7,
+        4109.6,
+        4869.7,
+        8325.1,
+        7927.8,
+        7673.2,
+        7931.4,
+        8626.6
+      ],
+      [
+        0,
+        1192.4,
+        4018.9,
+        4164,
+        747.5,
+        3690.7,
+        0,
+        4008.4,
+        3973.1,
+        4017.4,
+        4056.3,
+        4091,
+        3800.9,
+        4561,
+        8016.4,
+        7619.1,
+        7364.5,
+        7622.7,
+        5477.2
+      ],
+      [
+        4024.9,
+        2917.7,
+        196.4,
+        358.2,
+        4745.8,
+        4325.8,
+        4024.9,
+        0,
+        121.8,
+        183,
+        250.5,
+        285.2,
+        1952,
+        806.4,
+        4210.6,
+        3813.3,
+        3558.7,
+        3868.1,
+        7068.9
+      ],
+      [
+        3983.6,
+        2876.4,
+        143.3,
+        257.2,
+        4704.5,
+        4284.5,
+        3983.6,
+        111.9,
+        0,
+        94.4,
+        149.5,
+        184.2,
+        1910.7,
+        765.8,
+        4109.6,
+        3712.3,
+        3457.7,
+        3827.5,
+        6967.9
+      ],
+      [
+        4030.1,
+        2922.9,
+        98.2,
+        203.9,
+        4751,
+        4331,
+        4030.1,
+        179.1,
+        94.9,
+        0,
+        155.7,
+        190.4,
+        1957.2,
+        755.9,
+        4056.3,
+        3659,
+        3404.4,
+        3914,
+        6914.6
+      ],
+      [
+        4176.4,
+        3069.2,
+        364,
+        392.2,
+        4897.3,
+        4477.3,
+        4176.4,
+        358.7,
+        261.5,
+        275.3,
+        0,
+        189.7,
+        2103.5,
+        971.1,
+        4226.9,
+        3829.6,
+        3575,
+        4032.8,
+        7085.2
+      ],
+      [
+        4120.1,
+        3012.9,
+        306.7,
+        330.6,
+        4841,
+        4421,
+        4120.1,
+        301.4,
+        204.2,
+        218,
+        249.4,
+        0,
+        2047.2,
+        913.8,
+        4170.6,
+        3773.3,
+        3518.7,
+        4090,
+        7028.9
+      ],
+      [
+        3808.9,
+        2701.7,
+        1951.6,
+        2096.7,
+        4529.8,
+        4109.8,
+        3808.9,
+        1941.1,
+        1905.8,
+        1950.1,
+        1989,
+        2023.7,
+        0,
+        2493.7,
+        5949.1,
+        5551.8,
+        5297.2,
+        5555.4,
+        5411.9
+      ],
+      [
+        4579.3,
+        3472.1,
+        735.5,
+        900.2,
+        5300.2,
+        4880.2,
+        4579.3,
+        812.1,
+        778.7,
+        772,
+        862.8,
+        897.5,
+        2506.4,
+        0,
+        4752.6,
+        4355.3,
+        4100.7,
+        3395.5,
+        7610.9
+      ],
+      [
+        8274.4,
+        7167.2,
+        4313.2,
+        4263.4,
+        8995.3,
+        8575.3,
+        8274.4,
+        4482.9,
+        4401.7,
+        4316.6,
+        4458.4,
+        4458,
+        6201.5,
+        4959.1,
+        0,
+        470.3,
+        1256.6,
+        4513.3,
+        8791.7
+      ],
+      [
+        7873.9,
+        6766.7,
+        3912.7,
+        3862.9,
+        8594.8,
+        8174.8,
+        7873.9,
+        4082.4,
+        4001.2,
+        3916.1,
+        4057.9,
+        4057.5,
+        5801,
+        4558.6,
+        473.4,
+        0,
+        856.1,
+        4112.8,
+        8391.2
+      ],
+      [
+        7619,
+        6511.8,
+        3657.8,
+        3608,
+        8339.9,
+        7919.9,
+        7619,
+        3827.5,
+        3746.3,
+        3661.2,
+        3803,
+        3802.6,
+        5546.1,
+        4303.7,
+        1260.1,
+        862.8,
+        0,
+        3672.3,
+        8524.2
+      ],
+      [
+        7635.7,
+        6528.5,
+        3791.9,
+        3873.9,
+        8356.6,
+        7936.6,
+        7635.7,
+        3868.5,
+        3835.1,
+        3828.4,
+        3919.2,
+        3953.9,
+        5562.8,
+        3387.2,
+        4526.8,
+        4129.5,
+        3676.7,
+        0,
+        10010.7
+      ],
+      [
+        5480.5,
+        5931,
+        6955.9,
+        6765.1,
+        6201.4,
+        8621.8,
+        5480.5,
+        7079.2,
+        6982,
+        6928.7,
+        7027.2,
+        7022.6,
+        5414.9,
+        7610,
+        8786.3,
+        8389,
+        8521.4,
+        9973.6,
+        0
+      ]
+    ],
+    "sources": [
+      {
+        "hint": "udJtjHzbm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAD0KAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "OoKdiDuCnYgSAAAAAAAAAIABAAAAAAAA0blHQQAAAACbNYVDAAAAABIAAAAAAAAAgAEAAAAAAAD0KAEARQMmBGY4aQGfAiYEHjhpARQArxIAAAAA",
+        "location": [
+          69.600069,
+          23.672934
+        ],
+        "name": "",
+        "distance": 18.71665782
+      },
+      {
+        "hint": "11aQjv___38EAQAAlQEAAAkAAAAaAAAAKCZZQr7t8EFt6_g_PVCqQIIAAADLAAAABQAAAA0AAAD0KAEADRgnBLfBYgEGGCcEIMFiAQIADxEAAAAA",
+        "location": [
+          69.670925,
+          23.249335
+        ],
+        "name": "",
+        "distance": 16.73816282
+      },
+      {
+        "hint": "HrgIjR-4CI2AAAAAPwAAAAAAAAAAAAAAbv5VQkGy0UEAAAAAAAAAAIAAAAA_AAAAAAAAAAAAAAD0KAEAerwmBMyCYgHOuyYEcYJiAQAAXwkAAAAA",
+        "location": [
+          69.647482,
+          23.233228
+        ],
+        "name": "",
+        "distance": 20.28508857
+      },
+      {
+        "hint": "FnArhMKxj44AAAAAPgoAAAAAAAAADAAAAAAAANmViEQAAAAAfwSgRAAAAAA-CgAAAAAAAAAMAAD0KAEAXcokBI2PawGA1CQECsprAQAArwwAAAAA",
+        "location": [
+          69.519965,
+          23.826317
+        ],
+        "name": "",
+        "distance": 1679.290521
+      },
+      {
+        "hint": "rUAriDZxvYwFAAAARAAAAGUAAAAAAAAAh30dQPZV4EGoFSpCAAAAAAUAAABEAAAAZQAAAAAAAAD0KAEAeUYpBBEybQE_RikEazJtAQgAvwMAAAAA",
+        "location": [
+          69.813881,
+          23.933457
+        ],
+        "name": "",
+        "distance": 11.58590097
+      },
+      {
+        "hint": "udJtjHzbm44CAAAABQAAAIkAAACiAQAAUHWFP0L07z-4k2VCy6ItQwIAAAAFAAAAiQAAAKIBAAD0KAEAepIkBFwbawEAkSQEzhtrAQQAbwwAAAAA",
+        "location": [
+          69.505658,
+          23.796572
+        ],
+        "name": "",
+        "distance": 40.5448133
+      },
+      {
+        "hint": "Wiybh8lMaIwrAAAAAAAAAIMAAAAAAAAAqnyOQQAAAAAW3llCAAAAACsAAAAAAAAAgwAAAAAAAAD0KAEAQg8nBAnYYgFIDycEmNhiAQIA_xQAAAAA",
+        "location": [
+          69.668674,
+          23.255049
+        ],
+        "name": "",
+        "distance": 15.84883883
+      },
+      {
+        "hint": "4mi2gzlskI4OAAAAAAAAAE4AAAApAAAAYSF8QQAAAAAd1q5CPIozQg4AAAAAAAAATgAAACkAAAD0KAEA_QYnBLfWYgEEBicEPNZiAQgADxQAAAAA",
+        "location": [
+          69.666557,
+          23.254711
+        ],
+        "name": "",
+        "distance": 28.88927922
+      },
+      {
+        "hint": "HkzmjJBX3ZEPAAAABgAAAAAAAABfAAAASRSGQT0f10AAAAAAKlfUQg8AAAAGAAAAAAAAAF8AAAD0KAEAp_0mBDa_YgFo_SYEU79iAQAA7wwAAAAA",
+        "location": [
+          69.664167,
+          23.248694
+        ],
+        "name": "",
+        "distance": 7.203724008
+      },
+      {
+        "hint": "PlPmjD1gro4SAAAAAAAAAMICAABsAAAAMUHuQAAAAADaU5NDKPEzQhIAAAAAAAAAwgIAAGwAAAD0KAEAXO0mBNHMYgFG6iYEbstiASYA_woAAAAA",
+        "location": [
+          69.659996,
+          23.252177
+        ],
+        "name": "",
+        "distance": 89.88237589
+      },
+      {
+        "hint": "ctAIjXXQCI1EAAAAAAAAAFQAAAAAAAAAXdg9QgAAAAAUDGhCAAAAAEQAAAAAAAAAVAAAAAAAAAD0KAEAnNcmBFjJYgHF2CYES8tiAQQAHwUAAAAA",
+        "location": [
+          69.654428,
+          23.251288
+        ],
+        "name": "",
+        "distance": 63.06662668
+      },
+      {
+        "hint": "olO2gw5ti46SAAAAOAAAAAEBAAAhAgAALRGEQyZEyELGkedDvCV1RJIAAAA4AAAAAQEAACECAAD0KAEAULUkBCYRZgHfsSQEYgZmARIA7xEAAAAA",
+        "location": [
+          69.514576,
+          23.466278
+        ],
+        "name": "Nakhatrana-Loria",
+        "distance": 318.2220608
+      },
+      {
+        "hint": "E222g9JEqo6wAAAAHQAAAAAAAAAAAAAA1i_1QmfcnkEAAAAAAAAAALAAAAAdAAAAAAAAAAAAAAD0KAEAcwYpBAiQYgHrBikEJpBiAQAATwoAAAAA",
+        "location": [
+          69.797491,
+          23.236616
+        ],
+        "name": "",
+        "distance": 12.72365267
+      },
+      {
+        "hint": "SnK9jMNyvYwlAAAAZwAAAG0IAACWAwAABEB5Qd2kK0KOlWBEY4K_QyUAAABnAAAAbQgAAJYDAAD0KAEAqSshBFhxXAEMKyEEq2tcARQA_wUAAAAA",
+        "location": [
+          69.282729,
+          22.835544
+        ],
+        "name": "",
+        "distance": 161.7126236
+      },
+      {
+        "hint": "ppqzg6eas4MAAAAAdgAAAAAAAAAAAAAAAAAAAELdREIAAAAAAAAAAAAAAAB2AAAAAAAAAAAAAAD0KAEA6IAhBDmEXAHJiyEEI09cAQAArxUAAAAA",
+        "location": [
+          69.304552,
+          22.840377
+        ],
+        "name": "",
+        "distance": 1531.89192
+      },
+      {
+        "hint": "Hi19iB8tfYg5AAAAJgMAAAAAAAAAAAAAAN-_QUvbp0MAAAAAAAAAADkAAAAmAwAAAAAAAAAAAAD0KAEAY7YiBEw6XAFPryIE4jxcAQAAnwwAAAAA",
+        "location": [
+          69.383779,
+          22.821452
+        ],
+        "name": "",
+        "distance": 199.9350072
+      },
+      {
+        "hint": "doWMi3SQm47ZAAAASgAAAAAAAABlDwAAH9dxQ13IokIAAAAAre-IRdkAAABKAAAAAAAAAGUPAAD0KAEANaIqBAKZXQFLpyoEjZldAQAAHxYAAAAA",
+        "location": [
+          69.902901,
+          22.911234
+        ],
+        "name": "",
+        "distance": 134.4421271
+      },
+      {
+        "hint": "VA7djNY-i45cAAAAAAAAADpBAAAAAAAA8wzMQQAAAAC58pBFAAAAAFwAAAAAAAAAOkEAAAAAAAD0KAEAFmshBNDlZwExcyEEjv5nAf4AzwEAAAAA",
+        "location": [
+          69.298966,
+          23.586256
+        ],
+        "name": "",
+        "distance": 732.7868488
+      }
+    ]
+  }
+}

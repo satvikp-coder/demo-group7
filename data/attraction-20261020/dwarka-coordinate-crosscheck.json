@@ -1,0 +1,62 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {
+        "from": "Gopi_Talav",
+        "to": "Gopi Talav"
+      },
+      {
+        "from": "Bhadkeshwar_Mahadev_Temple",
+        "to": "Bhadkeshwar Mahadev Temple"
+      },
+      {
+        "from": "Dwarka_Lighthouse",
+        "to": "Dwarka Lighthouse"
+      },
+      {
+        "from": "Gomti_Ghat",
+        "to": "Gomti Ghat"
+      },
+      {
+        "from": "Hanuman_Dandi",
+        "to": "Hanuman Dandi"
+      }
+    ],
+    "pages": {
+      "-1": {
+        "ns": 0,
+        "title": "Bhadkeshwar Mahadev Temple",
+        "missing": ""
+      },
+      "-2": {
+        "ns": 0,
+        "title": "Dwarka Lighthouse",
+        "missing": ""
+      },
+      "-3": {
+        "ns": 0,
+        "title": "Gomti Ghat",
+        "missing": ""
+      },
+      "-4": {
+        "ns": 0,
+        "title": "Hanuman Dandi",
+        "missing": ""
+      },
+      "48747373": {
+        "pageid": 48747373,
+        "ns": 0,
+        "title": "Gopi Talav",
+        "coordinates": [
+          {
+            "lat": 21.18858333,
+            "lon": 72.82938889,
+            "primary": "",
+            "globe": "earth"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "prag-mahal": {
+    "lat": 23.254588,
+    "lng": 69.666308,
+    "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html",
+        "https://www.irctctourism.com/packagedetails/WMR155.pdf"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 90,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [
+          4
+        ],
+        "access_status": "verify_before_travel",
+        "windows": [
+          [
+            570,
+            735
+          ],
+          [
+            900,
+            1065
+          ]
+        ]
+      },
+      "geography": {
+        "scope": "local_area",
+        "locality": "Bhuj/Kutch region",
+        "anchor_name": "Hotel Prince Residency, Bhuj",
+        "destination_anchor_straight_line_km": 3.08,
+        "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+        "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available"
+    }
+  },
+  "kutch-museum": {
+    "lat": 23.248723,
+    "lng": 69.664104,
+    "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html",
+        "https://www.irctctourism.com/packagedetails/WMR155.pdf"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 90,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [
+          3
+        ],
+        "access_status": "verify_before_travel",
+        "closed_month_weeks": [
+          2,
+          4
+        ],
+        "closed_month_weekday": 6
+      },
+      "geography": {
+        "scope": "local_area",
+        "locality": "Bhuj/Kutch region",
+        "anchor_name": "Hotel Prince Residency, Bhuj",
+        "destination_anchor_straight_line_km": 2.44,
+        "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+        "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available"
+    }
+  },
+  "shivrajpur-beach": {
+    "lat": 22.334739,
+    "lng": 68.955727,
+    "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/shivrajpur-beach.html",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/shivrajpur-beach.html",
+        "https://www.openstreetmap.org/node/14201226426"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 60,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [],
+        "access_status": "verify_before_travel"
+      },
+      "geography": {
+        "scope": "local_area",
+        "locality": "Dwarka region",
+        "anchor_name": "Rukmini Devi Temple",
+        "destination_anchor_straight_line_km": 8.99,
+        "coordinate_basis": "OSM mapped beach/visitor locality cross-check; replaces an offshore tourism-page map reference, not a surveyed entrance.",
+        "coordinate_source": "https://www.openstreetmap.org/node/14201226426"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available"
+    }
+  },
+  "okha-madhi-beach": {
+    "lat": 22.083046,
+    "lng": 69.101814,
+    "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/okha-madhi-beach.html",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/okha-madhi-beach.html",
+        "https://www.openstreetmap.org/node/12212763902"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 60,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [],
+        "access_status": "verify_before_travel"
+      },
+      "geography": {
+        "scope": "nearby_excursion",
+        "locality": "Dwarka region",
+        "anchor_name": "Rukmini Devi Temple",
+        "destination_anchor_straight_line_km": 20.94,
+        "coordinate_basis": "OSM mapped beach/visitor locality cross-check; replaces an offshore tourism-page map reference, not a surveyed entrance.",
+        "coordinate_source": "https://www.openstreetmap.org/node/12212763902"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available"
+    }
+  },
+  "echo-point": {
+    "lat": 20.575731,
+    "lng": 73.734016,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "https://en.wikivoyage.org/wiki/Saputara"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 45,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [],
+        "access_status": "verify_before_travel"
+      },
+      "geography": {
+        "scope": "local_area",
+        "locality": "Saputara hill town",
+        "anchor_name": "Saputara Lake",
+        "destination_anchor_straight_line_km": 1.23,
+        "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+        "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available",
+      "identity_basis": "Community travel listing; approximate map location, not independently surveyed or venue-confirmed."
+    }
+  },
+  "nageshwar-mahadev": {
+    "lat": 20.57326,
+    "lng": 73.74424,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "https://en.wikivoyage.org/wiki/Saputara"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 60,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [],
+        "access_status": "verify_before_travel"
+      },
+      "geography": {
+        "scope": "local_area",
+        "locality": "Saputara hill town",
+        "anchor_name": "Saputara Lake",
+        "destination_anchor_straight_line_km": 0.41,
+        "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+        "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available",
+      "identity_basis": "Community travel listing; approximate map location, not independently surveyed or venue-confirmed."
+    }
+  },
+  "rose-garden": {
+    "lat": 20.57981,
+    "lng": 73.75018,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "provenance_review": {
+      "checked": "2026-10-20",
+      "sources": [
+        "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "https://en.wikivoyage.org/wiki/Saputara"
+      ],
+      "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+      "planning": {
+        "duration_minutes": 45,
+        "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+        "closed_weekdays": [],
+        "access_status": "verify_before_travel"
+      },
+      "geography": {
+        "scope": "local_area",
+        "locality": "Saputara hill town",
+        "anchor_name": "Saputara Lake",
+        "destination_anchor_straight_line_km": 0.58,
+        "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+        "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+      },
+      "fee_basis": "Unknown, never free",
+      "rating_basis": "Unknown, no invented score",
+      "image_basis": "Intentional fallback until licensed exact media is available",
+      "identity_basis": "Community travel listing; approximate map location, not independently surveyed or venue-confirmed."
+    }
+  }
+}

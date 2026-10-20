@@ -3,8 +3,8 @@
   "files": {
     "frontend/src/components/ItineraryView.tsx": {
       "baselineSha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
-      "sha256": "a239d7cfdc435349ccde79e4cc6b9c94cd3d1fa6e45caa09be57f76cfb582110",
-      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+      "sha256": "a09315b3609ee1c5d4808015d6e5cd271dba9c64cabdc2d17fea4777ce5a3759",
+      "reason": "User-authorized multi-day regional attraction repair: accurate local/excursion wording, provisional day/meal and unknown-cost presentation where applicable; preserve existing layout and styling."
     },
     "frontend/src/components/WhatIfPanel.tsx": {
       "baselineSha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",
@@ -63,8 +63,8 @@
     },
     "frontend/src/components/PlannerModal.tsx": {
       "baselineSha256": "8b6416575b9b93d7bfb89a0afa7f45056452d0848a98118a5e8c3fb969840544",
-      "sha256": "e42e448cbf4dc1a2273464e61e132dea3ed28c5fa50e89b5114ce3b32524e5c4",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "bb2039830e5547ac4f65d59969532165ef2f1348da295f2e3401410789bd7b7f",
+      "reason": "User-authorized multi-day regional attraction repair: accurate local/excursion wording, provisional day/meal and unknown-cost presentation where applicable; preserve existing layout and styling."
     },
     "frontend/src/data/accommodationTranslations.ts": {
       "baselineSha256": null,
@@ -73,8 +73,8 @@
     },
     "frontend/src/api/index.ts": {
       "baselineSha256": "92baf76f91b4b75d325a17dd81b9de83b10a7d0cc890642a18d861f2883bba02",
-      "sha256": "3ac51ae2f67019d192ea390a32c55605517b110686bf1fc2f06dee6483d7ccb0",
-      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+      "sha256": "ea7e113f917584440cdfde886fdd929711c1e27aa63d95762805fa61b90ce85e",
+      "reason": "User-authorized multi-day regional attraction repair: accurate local/excursion wording, provisional day/meal and unknown-cost presentation where applicable; preserve existing layout and styling."
     },
     "frontend/src/api/types.ts": {
       "baselineSha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac",
@@ -83,7 +83,7 @@
     },
     "frontend/public/data-credits.html": {
       "baselineSha256": "caef151a887839811dca6ed8bd3d2f9db8e915bb60d4880fc8c4ab4d0d7d72be",
-      "sha256": "e970345948a9e910eb5eeca561afa898de7a6de387d5f9a0473d882006d29322",
+      "sha256": "852ead1a4827961f753bdfd0692594a0de88ab960bf7ad7bc67fba7ab4df1199",
       "reason": "Public derived hotel coverage download and attribution; no product layout changes"
     },
     "frontend/public/catalog-hotel-coverage.json": {
@@ -137,7 +137,7 @@
       "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
     },
     "frontend/src/components/ItineraryRouteMap.tsx": {
-      "sha256": "276e6a089576c8c8d95cab1f0f99ec8794562ea104715bbae95c6e60072e80e7",
+      "sha256": "917be70b7d358fa31e446a2ae2c1d38d57b064d6e60f4568b1bf84b45136781c",
       "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     },
     "frontend/src/components/ItineraryRouteMap.css": {
@@ -155,6 +155,15 @@
     "frontend/src/components/StrategyComparisonModal.tsx": {
       "sha256": "b78ec066aba0538fbbaa05b3d488db13d5b635982ac2102196797b990bc3806d",
       "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+    },
+    "frontend/public/catalog-attraction-20261020.json": {
+      "sha256": "157ff7a3fb0d7d31d5550b2821151eab6a8119cfb5037f42752e669864dcd4d7",
+      "reason": "User-authorized sourced attraction expansion with explicit licensing, unknown fees and planning estimates."
+    },
+    "frontend/src/components/DestinationDetailView.tsx": {
+      "baselineSha256": "35bed600e23444b4d5a048074389976b666d2a03940fc8bc21c1b331269315f9",
+      "sha256": "15bcfa4f8ee1515ad77815a106515ebf180df1b99b265bc7a915fcaab4f7dbcc",
+      "reason": "User-authorized regional attraction expansion requires truthful destination/nearby-excursion heading; text-only correction, preserve all layout and styles."
     }
   }
 }

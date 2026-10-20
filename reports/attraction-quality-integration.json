@@ -1,0 +1,529 @@
+{
+  "startedAt": "2026-10-20T09:01:47.829Z",
+  "verified": true,
+  "import": {
+    "release": "20261020",
+    "dryRun": false,
+    "inserted": [
+      {
+        "table": "attractions",
+        "key": "exp-20261020-kocharab-ashram",
+        "id": "27202c2a-0c85-4176-9a6d-7171e38a21d2"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-lalbhai-dalpatbhai-museum",
+        "id": "d6649ac3-031f-475e-8c91-f00d17c8cd9f"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-citadel",
+        "id": "44b40d70-087d-4ded-8e9a-33cbe4236e8c"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-pavagadh-hill---kalika-mata-temple",
+        "id": "6028163a-3f78-47ca-8134-99c839def4bf"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-jambughoda-wildlife-sanctuary",
+        "id": "553e59da-04b0-4f6d-ad26-defc605027bb"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-aina-mahal",
+        "id": "949b26ad-8a3f-4002-84cb-4d21e5d36896"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-prag-mahal",
+        "id": "c49f30b1-6b87-413f-9233-bba9dc97ab61"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-kutch-museum",
+        "id": "56081a84-70af-40d4-9bc0-4063f048d66a"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-hamirsar-lake--bhuj",
+        "id": "4949eb05-a678-4aa2-a5f3-8eb84a65d392"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-sharad-bagh-palace",
+        "id": "dc7bf522-f6f3-44a3-a025-7cb48fab5e5d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-nirona",
+        "id": "67afb530-eb21-45ca-80f7-94b4e0420976"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-living-and-learning-design-centre-crafts-museum",
+        "id": "1a46374a-07eb-45fe-b75f-8ac5283803fe"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-vijay-vilas-palace",
+        "id": "45047d5a-0877-46b9-b4c9-b9996ef412a3"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-mandvi-beach",
+        "id": "74bd7405-e17a-4d05-87cd-0cb08735bedf"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-shyamji-krishna-varma-memorial",
+        "id": "db3b60d3-3cd4-4d27-b72a-fade560b8741"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-bhadreshwar",
+        "id": "44308d92-7df3-40fc-9c6e-9d04aa31d438"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-chhari-dhand-wetland-reserve",
+        "id": "0081acb6-53ba-4ab4-89f2-ba2b978ea22d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-bahuchar-mata-temple-becharaji",
+        "id": "f3529cc9-8920-4755-8980-b009c4e236cc"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-kirti-toran--vadnagar",
+        "id": "2535bf82-a7ba-4930-b2af-4fb4bfb547eb"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-vadnagar",
+        "id": "5907cb37-b34a-4fab-b1eb-463d1b35ba9d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-taranga-hill",
+        "id": "63ef0bf9-54c3-405d-bfca-2a3de48825a8"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-panchasara-parshwanath-jain-derasar",
+        "id": "80b82551-4d67-4e4c-ad2e-38a9a2968d82"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-patan-patola-heritage-museum",
+        "id": "3204b713-97ae-45cc-b1f3-f4493f72eb81"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-rani-ki-vav",
+        "id": "87c6285e-b068-4a30-90ab-7c9c2f5efbcb"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-sidhpur",
+        "id": "a7d55000-4dd7-4350-bc3d-d46fe48fcaef"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-adi-kadi-vav-and-navghan-kuwo",
+        "id": "3bda9bd2-8b9a-47c9-aaea-67ba21207a8e"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-ashok-edicts",
+        "id": "0ebe4ee6-1cb9-4035-bc87-e6fc4d3d2b8e"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-buddhist-caves",
+        "id": "1790505f-e6f9-4091-8226-f2677822708f"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-damodar-kund",
+        "id": "ae4cd331-4e78-4f5c-946f-ab68c5797fe3"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-girnar-hill",
+        "id": "6e0ca28e-b968-45d0-ab54-0e5c33979c2c"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-mahabat-khan-maqbara",
+        "id": "82f4c96a-85b7-493c-8d6d-bf3886b178e2"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-uparkot-fort",
+        "id": "807bb4e6-2767-4c46-9d1c-d1fce65ff679"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-shri-bai-ashram",
+        "id": "a4e39839-c3c1-4c43-b184-a27489dec07c"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-prabhas-patan-museum",
+        "id": "b87af8a0-5313-4e89-af35-162497d7cdc1"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-geeta-temple",
+        "id": "fb2e3db7-2946-42ab-8f68-352e7546e973"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-prachi-tirth",
+        "id": "0a9b684e-f5fb-4311-8593-cc03fc0bfbd1"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-mool-dwarka",
+        "id": "9dbb0c2e-b67e-4361-ab03-29c4ad6e5749"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-jamjir-waterfall",
+        "id": "d011b2c0-1b11-4535-a5ef-fb27f3f8131c"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-jhoolta-minara",
+        "id": "9ac2f3db-8d4a-4db8-bb3a-6697c0fa7626"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-gupt-prayag",
+        "id": "4c3fb364-fc19-4d8c-bc84-346ad2f423b8"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-sana-caves",
+        "id": "9be62736-dfd8-4eba-9511-fcfe130582ad"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-gira-waterfalls",
+        "id": "d78f522c-958f-433e-9fd0-9de7f25f0689"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-waghai-botanical-gardens",
+        "id": "238b9cad-50d6-4231-9e01-7d0d89e1c566"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-mahal-campsite",
+        "id": "3186d907-91d4-4698-b5a6-e98cfa276b0d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-shivrajpur-beach",
+        "id": "1e054d95-7fb7-439f-a56e-c215eddb42c5"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-okha-madhi-beach",
+        "id": "069aa340-b61a-4736-a0bb-f436d6dd88ee"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-echo-point",
+        "id": "0acc7dcb-b55b-40ec-a6f9-e27c1e31bb5d"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-nageshwar-mahadev",
+        "id": "fa8e0a99-a48d-4dd3-8215-f54ea91f1d61"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-lake-garden",
+        "id": "777cd90e-2f04-402c-b71e-bb69d8a0c7d1"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-rose-garden",
+        "id": "97aaac3d-16c0-4ea4-b4ce-47bbea261475"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-step-garden",
+        "id": "add9d9fb-e46a-4277-8914-d29066d64def"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-hatgadh-fort",
+        "id": "dd8a4ad6-9e73-46c0-9d36-56aa05013887"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-gopi-talav-dwarka",
+        "id": "22b675cb-7024-4fb2-8c7a-5bafe9abad18"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-gomti-ghat-dwarka",
+        "id": "fd32778e-18dc-482d-b9ef-a9285b7b73ca"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-dwarka-lighthouse-viewpoint",
+        "id": "f7089298-2e0e-43dc-966c-640c7d572f64"
+      },
+      {
+        "table": "attractions",
+        "key": "exp-20261020-dwarka-beach",
+        "id": "7e27647a-6edf-42a0-8126-d284b07c5ad0"
+      }
+    ],
+    "preserved": [],
+    "routesInserted": 833
+  },
+  "repeat": {
+    "release": "20261020",
+    "dryRun": false,
+    "inserted": [],
+    "preserved": [
+      {
+        "key": "exp-20261020-kocharab-ashram",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-lalbhai-dalpatbhai-museum",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-citadel",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-pavagadh-hill---kalika-mata-temple",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-jambughoda-wildlife-sanctuary",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-aina-mahal",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-prag-mahal",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-kutch-museum",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-hamirsar-lake--bhuj",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-sharad-bagh-palace",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-nirona",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-living-and-learning-design-centre-crafts-museum",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-vijay-vilas-palace",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-mandvi-beach",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-shyamji-krishna-varma-memorial",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-bhadreshwar",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-chhari-dhand-wetland-reserve",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-bahuchar-mata-temple-becharaji",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-kirti-toran--vadnagar",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-vadnagar",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-taranga-hill",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-panchasara-parshwanath-jain-derasar",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-patan-patola-heritage-museum",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-rani-ki-vav",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-sidhpur",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-adi-kadi-vav-and-navghan-kuwo",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-ashok-edicts",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-buddhist-caves",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-damodar-kund",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-girnar-hill",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-mahabat-khan-maqbara",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-uparkot-fort",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-shri-bai-ashram",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-prabhas-patan-museum",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-geeta-temple",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-prachi-tirth",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-mool-dwarka",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-jamjir-waterfall",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-jhoolta-minara",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-gupt-prayag",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-sana-caves",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-gira-waterfalls",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-waghai-botanical-gardens",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-mahal-campsite",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-shivrajpur-beach",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-okha-madhi-beach",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-echo-point",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-nageshwar-mahadev",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-lake-garden",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-rose-garden",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-step-garden",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-hatgadh-fort",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-gopi-talav-dwarka",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-gomti-ghat-dwarka",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-dwarka-lighthouse-viewpoint",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      },
+      {
+        "key": "exp-20261020-dwarka-beach",
+        "reason": "Existing identity/name/slug preserved without overwriting"
+      }
+    ],
+    "routesInserted": 0
+  },
+  "originalRowsPreserved": true,
+  "dryRunRollback": true,
+  "failedImportRollback": true,
+  "productionPreview": true,
+  "finishedAt": "2026-10-20T09:09:39.875Z"
+}

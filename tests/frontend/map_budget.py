@@ -26,7 +26,7 @@ with sync_playwright() as p:
     for i,leg in enumerate(route['legs']):
      assert leg['from_stop_id']==day['stops'][i]['id'] and leg['to_stop_id']==day['stops'][i+1]['id'];assert leg['status'] in ['estimated','unavailable','same_location'];assert leg['duration_minutes'] is None
    assert before==ctx.request.get(api+'/trips/'+id,headers=headers).json(),'Map mutated saved itinerary'
-   budget=ctx.request.get(api+'/trips/'+id+'/budget',headers=headers).json();assert budget==dto['budget'];d=budget['cost_details'];assert d['final_total'] is None and not d['complete'];assert abs(d['known_subtotal']-sum(float(s['cost']) for day in dto['days'] for s in day['stops']))<.01
+   budget=ctx.request.get(api+'/trips/'+id+'/budget',headers=headers).json();assert budget==dto['budget'];d=budget['cost_details'];assert d['final_total'] is None and not d['complete'];assert abs(d['known_subtotal']-sum(float(s['cost']) for day in dto['days'] for s in day['stops'] if s['cost'] is not None))<.01
    assert d['categories']['hotel']['known_subtotal']==round(float(hotel['price_per_night'])*(days-1)*2,2)
    assert d['categories']['transit']['state']=='UNKNOWN';assert 'Food' in d['unknown_components'] or 'Additional food outside scheduled meals' in d['unknown_components']
    assert ctx.request.get(api+'/trips/'+id+'/map/1').status==401
@@ -43,12 +43,12 @@ with sync_playwright() as p:
    assert page.locator('.leaflet-container').count()==0
    page.get_by_role('button',name='Open interactive route map').click();expect(page.locator('.leaflet-container')).to_be_visible()
    expect(page.locator('[data-testid=route-coverage]')).to_contain_text('Solid blue')
-   assert page.locator('.leaflet-marker-icon').count()==len(dto['days'][0]['stops'])
+   assert page.locator('.leaflet-marker-icon').count()==sum(s['lat'] is not None and s['lng'] is not None for s in dto['days'][0]['stops'])
    expect(page.locator('.leaflet-control-attribution')).to_contain_text('OpenStreetMap')
    page.get_by_role('button',name='Fit route',exact=True).click();page.locator('.leaflet-control-zoom-in').click();page.locator('.leaflet-control-zoom-out').click()
    page.wait_for_timeout(400);page.get_by_role('button',name='Fit route',exact=True).click();page.locator('.leaflet-container').evaluate('(e)=>e.scrollIntoView({block:"center"})');page.wait_for_timeout(400)
    page.screenshot(path='reports/map-before-marker.png')
-   marker=page.locator('.leaflet-marker-icon').nth(1);marker.click();expect(page.locator('.leaflet-popup')).to_be_visible();expect(page.locator('.itinerary-stop-card[data-map-selected=true]')).to_have_count(1)
+   markers=page.locator('.leaflet-marker-icon');visible=[i for i in range(markers.count()) if markers.nth(i).evaluate('(e)=>{const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return hit===e||e.contains(hit)}')];assert visible,'At least one marker must be clickable';marker=markers.nth(visible[0]);marker.click();expect(page.locator('.leaflet-popup')).to_be_visible();expect(page.locator('.itinerary-stop-card[data-map-selected=true]')).to_have_count(1)
    # Select an attraction from the actual schedule using keyboard.
    stop=page.locator('.itinerary-day-card').first.locator('.itinerary-stop-card').nth(1);stop.focus();stop.press('Enter');expect(stop).to_have_attribute('data-map-selected','true')
    page.get_by_role('button',name='Day 2',exact=True).click();expect(page.get_by_role('heading',name='Day 2 route map')).to_be_visible();assert page.locator('.itinerary-stop-card[data-map-selected=true]').count()==0
@@ -92,7 +92,7 @@ with sync_playwright() as p:
     def invalid_trip(route):route.fulfill(status=200,json=invalid)
     page.route(trip_pattern,invalid_trip);page.reload();page.get_by_role('button',name='Open interactive route map').click()
     expect(page.get_by_text('Map location unavailable: '+invalid['days'][0]['stops'][1]['name'],exact=True)).to_be_visible()
-    assert page.locator('.leaflet-marker-icon').count()==len(invalid['days'][0]['stops'])-1
+    assert page.locator('.leaflet-marker-icon').count()==sum(s['lat'] is not None and s['lng'] is not None for s in invalid['days'][0]['stops'])
     page.get_by_role('button',name='Day 2',exact=True).click();expect(page.get_by_text('No valid map locations for this day.',exact=True)).to_be_visible()
     page.get_by_role('button',name='Day 3',exact=True).click();expect(page.locator('.leaflet-marker-icon')).to_have_count(1)
     page.unroute(trip_pattern,invalid_trip)

@@ -386,7 +386,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <p className="text-xs text-stone font-body">
                     {language === "hi"
                       ? "एक शहर चुनें ताकि दैनिक यात्रा योजना तैयार की जा सके।"
-                      : "Pick one city for a dedicated intra-city day-by-day circular itinerary."}
+                      : "Pick one destination for a dedicated day-by-day circular itinerary, including relevant nearby excursions."}
                   </p>
                 </div>
               </div>
