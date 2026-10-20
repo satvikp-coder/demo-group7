@@ -6,7 +6,7 @@ Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL
 
 ## Current Goal
 
-Scoped itinerary map and unknown-budget repair implemented and installed locally. Publish reviewed changes on feature/itinerary-map-budget to origin and classroom without force or merge. Baseline f65b96407623010f10dacb2ec9c07cbc6526f8df matched both main branches. See reports/DUAL_GITHUB_PUBLICATION.md for final publication evidence; earlier main/chat instructions below are historical.
+Scoped itinerary map and unknown-budget repair implemented, installed locally and published as44da101 to feature/itinerary-map-budget on origin and classroom. Both tips verified; PR2(origin) andPR1(classroom) open/unmerged. Documentation follow-up publishes this record; final tip is authoritative. No force or merge. Baseline f65b96407623010f10dacb2ec9c07cbc6526f8df matched both main branches. See reports/DUAL_GITHUB_PUBLICATION.md for final publication evidence; earlier main/chat instructions below are historical.
 
 2026-10-13T13:25:59.062759+00:00 USER AUTHORIZED HERITAGE GUIDE PUBLICATION TO BOTH REPOSITORIES. Product implementation and all local checks are complete. Both remote main refs and clean release checkout were1999f025 before publication. Copy only verified chat source/docs and curated test evidence; exclude private environment, PRIVATE_PROJECT_CONTEXT.md, backups, raw logs and screenshots. Preserve history and use normal fast-forward pushes. Git remote refs are authoritative for the release identity; no new product repair or live AI requests required.
 
