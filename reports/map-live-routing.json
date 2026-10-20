@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-19T15:48:07.208Z",
+  "source": "https://routing.openstreetmap.de/routed-car",
+  "origin": {
+    "id": "77c6cd3d-a35b-41ec-8bf4-467f20bf7927",
+    "name": "Modhera Sunrise Resort",
+    "lat": "23.586714",
+    "lng": "72.131204"
+  },
+  "destination": {
+    "id": "383ea996-d973-4d13-8c28-33bfb03725a6",
+    "name": "Modhera Sun Temple",
+    "lat": "23.583421",
+    "lng": "72.133078"
+  },
+  "route": {
+    "from_stop_id": "77c6cd3d-a35b-41ec-8bf4-467f20bf7927",
+    "to_stop_id": "383ea996-d973-4d13-8c28-33bfb03725a6",
+    "status": "road",
+    "coordinates": [
+      [
+        72.131223,
+        23.586807
+      ],
+      [
+        72.131664,
+        23.586731
+      ],
+      [
+        72.131543,
+        23.586171
+      ],
+      [
+        72.132091,
+        23.585861
+      ],
+      [
+        72.132497,
+        23.585532
+      ],
+      [
+        72.132579,
+        23.58535
+      ],
+      [
+        72.132626,
+        23.585327
+      ],
+      [
+        72.133108,
+        23.585093
+      ],
+      [
+        72.133342,
+        23.584849
+      ],
+      [
+        72.133543,
+        23.584721
+      ],
+      [
+        72.13364,
+        23.584701
+      ],
+      [
+        72.133838,
+        23.584677
+      ],
+      [
+        72.133905,
+        23.584642
+      ],
+      [
+        72.133967,
+        23.584551
+      ],
+      [
+        72.134189,
+        23.584288
+      ],
+      [
+        72.134189,
+        23.584288
+      ]
+    ],
+    "distance_km": 0.4609,
+    "duration_minutes": 1.1033333333333333,
+    "basis": "OSRM driving route estimate; not live traffic or confirmed access",
+    "checked_at": "2026-10-19T15:48:07.207Z",
+    "provider": "OSRM / OpenStreetMap"
+  },
+  "liveRoadVerified": true
+}

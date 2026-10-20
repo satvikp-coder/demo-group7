@@ -6,18 +6,29 @@ A Gujarat heritage and tourism planning platform built for CSC210 Data Structure
 
 **Source repositories:** [course repository](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner) and [synchronized mirror](https://github.com/satvikp-coder/demo-group7). Both receive the same reviewed release commit.
 
-## Latest verified local application - 13 October 2026
+## Latest verified local application - 20 October 2026
 
-- 95 backend unit/security tests;18/18 complete regression gates;17/17 production-mode gates passed.
+- 104 backend unit/security tests, 18/18 complete regression gates and 17/17 final container gates passed.
+- Interactive itinerary map and unknown-cost repair: all eight destinations, 10 viewport cases and all-day PDF export verified.
 - Heritage Guide:24 focused tests,71 real database checks, accepted live Groq evidence for12 question scenarios, and desktop/tablet/mobile widget checks passed.
 - Existing browser controls/PDF, authentication, itinerary API matrix and5 university-demo journeys across3 cities passed.
 - Installed local readiness:7/7. All9 original table fingerprints matched after installation; accounts, saved trips and catalog records were preserved.
 
-See [Heritage Guide test evidence](reports/HERITAGE_GUIDE_TEST_RESULTS.md), [prior teammate fixes](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). This release includes Heritage Guide; public deployment was not performed. Existing data/photo limitations remain documented.
+See [Heritage Guide test evidence](reports/HERITAGE_GUIDE_TEST_RESULTS.md), [prior teammate fixes](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). This release adds the itinerary route map and explicit unknown-cost budgets while retaining Heritage Guide; public deployment was not performed. Existing data/photo limitations remain documented.
 
 ## Overview
 
 The React application uses a real Express/PostgreSQL backend to search destinations and generate persisted itineraries. A trip covers one destination, with each day starting and ending at the selected hotel. The backend schedules eligible attractions and meals using stored road routes, time windows and the available budget. Saved stops and price snapshots remain available after login and restart.
+
+## Interactive itinerary map and honest budgets
+
+Open **Open interactive route map** on a generated or saved itinerary. Select a day, then select a numbered marker or schedule stop to inspect its actual location and time. Solid blue legs use validated OSRM road geometry; dashed legs are explicitly straight-line estimates, with no invented travel time. Missing locations and provider failures leave the textual itinerary available. OpenStreetMap attribution remains visible.
+
+The backend-only `MAP_ROUTING_URL` defaults to the best-effort FOSSGIS OSRM driving endpoint. Set it to an empty value to disable external routing; estimated connections still work. Requests are rate-limited, cached and bounded. Public routing and map tiles require Internet access and are not an availability guarantee. No paid provider is required.
+
+Budgets distinguish known positive prices, recorded zero charges and unavailable prices. **Known subtotal** excludes unpriced expenses; it is not the complete trip cost. Food outside scheduled meals, missing transport fares and unknown fees remain explicit. Accommodation uses purchased nights and rooms. Existing saved records are not repriced or rewritten.
+
+See [map implementation](reports/ITINERARY_MAP_IMPLEMENTATION.md), [routing evidence](reports/ROUTING_VERIFICATION.md), [budget semantics](reports/BUDGET_UNKNOWN_COST_FIX.md), and [test results](reports/MAP_BUDGET_TEST_RESULTS.md). Run `npm run test:map-budget` for deterministic tests or `npm run test:map-budget:local -- --production` for isolated PostgreSQL/API/browser tests. The automated browser suite substitutes tile responses rather than downloading public tiles in bulk.
 
 ## Heritage Guide (local Groq Free Plan)
 

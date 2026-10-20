@@ -1,3 +1,5 @@
+import {mapRouter} from "../services/mapRouting.js";
+import {HttpError} from "../middleware/errorHandler.js";
 import {lodgingSubtotal} from '../../dsa/planning/accommodation.ts';
 import * as trips from "../models/tripModel.js";
 import * as budgets from "../models/budgetModel.js";
@@ -43,4 +45,16 @@ export async function budget(req,res) {
 export async function remove(req,res) {
   await trips.transaction(client=>trips.removeOwned(client,req.validated.params.id,req.user.id));
   res.status(204).end();
+}
+
+export async function map(req,res) {
+  const {id,day}=req.validated.params;
+  const stops=await trips.transaction(async client=>{
+    const trip=await trips.ownedTrip(client,id,req.user.id);
+    if(day>trip.trip_days)throw new HttpError(404,'Trip day not found');
+    return (await trips.stops(client,id)).filter(s=>s.day_number===day);
+  },true);
+  const abort=new AbortController();const close=()=>abort.abort();res.on('close',close);
+  try {const result=await mapRouter.day(stops,abort.signal);if(!abort.signal.aborted)res.json({trip_id:id,day_number:day,...result});}
+  finally {res.off('close',close);}
 }

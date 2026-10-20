@@ -1,0 +1,186 @@
+{
+  "full": {
+    "startedAt": "2026-10-20T03:35:20.270Z",
+    "finishedAt": "2026-10-20T03:41:23.226Z",
+    "verified": true,
+    "gates": [
+      {
+        "name": "backend-unit-security",
+        "passed": true
+      },
+      {
+        "name": "frontend-unit-and-reference-planner",
+        "passed": true
+      },
+      {
+        "name": "frontend-types",
+        "passed": true
+      },
+      {
+        "name": "backend-syntax",
+        "passed": true
+      },
+      {
+        "name": "frontend-production-build-source-audit",
+        "passed": true
+      },
+      {
+        "name": "fresh-migration-and-repeat-migration",
+        "passed": true
+      },
+      {
+        "name": "reseed-preservation",
+        "passed": true
+      },
+      {
+        "name": "http-auth",
+        "passed": true
+      },
+      {
+        "name": "http-destinations",
+        "passed": true
+      },
+      {
+        "name": "http-trips",
+        "passed": true
+      },
+      {
+        "name": "http-admin",
+        "passed": true
+      },
+      {
+        "name": "http-db",
+        "passed": true
+      },
+      {
+        "name": "browser-development-full-controls",
+        "passed": true
+      },
+      {
+        "name": "api-client-malformed-responses",
+        "passed": true
+      },
+      {
+        "name": "research-browser",
+        "passed": true
+      },
+      {
+        "name": "dependency-backend",
+        "passed": true
+      },
+      {
+        "name": "dependency-frontend",
+        "passed": true
+      },
+      {
+        "name": "source-and-ui-preservation",
+        "passed": true
+      }
+    ]
+  },
+  "production": {
+    "startedAt": "2026-10-20T03:43:03.866Z",
+    "finishedAt": "2026-10-20T03:47:41.007Z",
+    "verified": true,
+    "gates": [
+      {
+        "name": "container-build",
+        "passed": true
+      },
+      {
+        "name": "fresh-local-bootstrap-migrations-and-approved-seed",
+        "passed": true
+      },
+      {
+        "name": "container-seed",
+        "passed": true
+      },
+      {
+        "name": "container-reseed",
+        "passed": true
+      },
+      {
+        "name": "container-data-verify",
+        "passed": true
+      },
+      {
+        "name": "runtime-privileges-security-headers-and-log-redaction",
+        "passed": true
+      },
+      {
+        "name": "https-edge-configuration",
+        "passed": true
+      },
+      {
+        "name": "production-api-security-load-and-concurrency",
+        "passed": true
+      },
+      {
+        "name": "built-spa-browser-all-cities-admin",
+        "passed": true
+      },
+      {
+        "name": "built-spa-platform",
+        "passed": true
+      },
+      {
+        "name": "chat-read-only-runtime-and-provider-isolation",
+        "passed": true
+      },
+      {
+        "name": "whole-stack-restart-persistence-and-new-login",
+        "passed": true
+      },
+      {
+        "name": "backup-restorable-archive",
+        "passed": true
+      },
+      {
+        "name": "restore-clean-database",
+        "passed": true
+      },
+      {
+        "name": "restored-persisted-trip-budget",
+        "passed": true
+      },
+      {
+        "name": "database-outage-and-recovery",
+        "passed": true
+      },
+      {
+        "name": "graceful-stop-and-restart",
+        "passed": true
+      }
+    ]
+  },
+  "map_budget": {
+    "startedAt": "2026-10-19T21:16:22.317Z",
+    "finishedAt": "2026-10-19T21:19:33.864Z",
+    "verified": true,
+    "productionPreview": true
+  },
+  "demo": {
+    "startedAt": "2026-10-20T03:31:20.299Z",
+    "finishedAt": "2026-10-20T03:33:52.710Z",
+    "verified": true
+  },
+  "chat": {
+    "startedAt": "2026-10-20T03:33:58.592Z",
+    "finishedAt": "2026-10-20T03:35:15.206Z",
+    "verified": true,
+    "liveGroq": "LIVE_GROQ_NOT_VERIFIED"
+  },
+  "chat_database_checks": 71,
+  "map_browser_cases": 10,
+  "map_destinations": 8,
+  "backend_tests": 104,
+  "live_routing_legs": 1,
+  "installed_readiness": "7/7 passed",
+  "images": {
+    "records": 120,
+    "photos": 38,
+    "fallbacks": 82,
+    "errors": 0
+  },
+  "original_tables_preserved": 9
+}

@@ -40,6 +40,8 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
+  // External map tiles use normal browser HTTP caching and image CSP, never offline prefetch.
+  if (url.origin !== location.origin && event.request.destination === "image") return;
   if (event.request.cache === "no-store" || event.request.headers.has("Authorization") || url.pathname.startsWith("/api/")) return;
 
   // Handle standard page & asset requests with Network-first, fallback to Cache

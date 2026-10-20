@@ -182,7 +182,7 @@ export const StrategyComparisonModal: React.FC<
                 <thead>
                   <tr className="bg-salt border-b-2 border-stone/30 text-stone uppercase tracking-wider">
                     <th className="p-2.5 font-bold text-ink">Strategy Name</th>
-                    <th className="p-2.5 font-bold text-ink">Total Cost (₹)</th>
+                    <th className="p-2.5 font-bold text-ink">Known subtotal (₹)</th>
                     <th className="p-2.5 font-bold text-ink">Distance (km)</th>
                     <th className="p-2.5 font-bold text-ink">Attractions</th>
                     <th className="p-2.5 font-bold text-ink">Est. Runtime</th>
@@ -346,7 +346,7 @@ export const StrategyComparisonModal: React.FC<
                   <div className="p-3 bg-salt border-b border-stone/20 grid grid-cols-2 gap-2 font-mono text-xs">
                     <div className="bg-white p-2 border border-stone/30 rounded-lg">
                       <span className="text-[10px] text-stone uppercase block">
-                        Total Cost
+                        Known subtotal
                       </span>
                       <span className="font-bold text-ink text-sm">
                         ₹{displayNumber(res.totalCost)}

@@ -1,0 +1,33 @@
+{
+  "files": [
+    "backend/controllers/tripController.js",
+    "backend/routes/tripRoutes.js",
+    "backend/models/budgetModel.js",
+    "backend/services/tripPlanner.js",
+    "backend/services/costStatus.js",
+    "backend/services/mapRouting.js",
+    "backend/tests/map-budget.test.js",
+    "backend/.env.example",
+    "compose.local.yml",
+    "frontend/package.json",
+    "frontend/package-lock.json",
+    "frontend/src/api/index.ts",
+    "frontend/src/utils/itineraryPlanner.ts",
+    "frontend/src/utils/costPresentation.ts",
+    "frontend/src/components/ItineraryView.tsx",
+    "frontend/src/components/ItineraryRouteMap.tsx",
+    "frontend/src/components/ItineraryRouteMap.css",
+    "frontend/src/components/BudgetPlannerView.tsx",
+    "frontend/src/components/ProfileDashboardView.tsx",
+    "frontend/src/components/StrategyComparisonModal.tsx",
+    "frontend/public/sw.js",
+    "package.json",
+    "scripts/test-map-budget-local.js",
+    "scripts/check-map-budget-preservation.js",
+    "scripts/verify-live-map-route.js",
+    "tests/frontend/map_budget.py",
+    "tests/frontend/completion_auxiliary.py",
+    "reports/PHASE3_APPROVED_CHANGES.json",
+    "frontend/src/components/WhatIfPanel.tsx"
+  ]
+}

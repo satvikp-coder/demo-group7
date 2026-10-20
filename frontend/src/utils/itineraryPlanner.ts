@@ -112,6 +112,7 @@ export interface PlannerConfigPayload {
 }
 
 export interface ItineraryStop {
+  costState?: string;
   legDistanceKm?: number;
   id: string;
   type: "hotel" | "attraction" | "meal" | "transit" | "cultural";

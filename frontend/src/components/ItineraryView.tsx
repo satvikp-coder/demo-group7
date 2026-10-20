@@ -1,14 +1,21 @@
+import {costLabel,stopCostLabel} from "../utils/costPresentation";
 import {scheduleGaps} from '../../../dsa/planning/scheduleGaps';
 import type {PriorityWeights} from '../../../dsa/planning/priorities';
 import {resizeAccommodation} from '../../../dsa/planning/resizeAccommodation';
 import { displayNumber } from "../api";
-import React, { useState, useRef, useMemo, useEffect } from "react";
+import React, { useState, useRef, useMemo, useEffect, lazy, Suspense } from "react";
 import { DESIGN_TOKENS } from "../data/colors";
 import { motion, AnimatePresence } from "motion/react";
 import type { Destination } from "../api/types";
 import { loadItinerary, createItinerary, useApi, errorMessage } from "../api";
 import { DijkstraVisualizer } from "./DijkstraVisualizer";
-import { OfflineRouteMap } from "./OfflineRouteMap";
+const ItineraryRouteMap = lazy(()=>import("./ItineraryRouteMap"));
+class RouteMapBoundary extends React.Component<{children?:React.ReactNode},{failed:boolean}> {
+  declare props: {children?:React.ReactNode};
+  state={failed:false};
+  static getDerivedStateFromError(){return {failed:true};}
+  render(){return this.state.failed?<p role="status">Map unavailable. The saved schedule remains available. Close and reopen the map to retry.</p>:this.props.children;}
+}
 import { useLanguage } from "../context/LanguageContext";
 import type {
   OptimizationStrategy,
@@ -142,6 +149,10 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 }) => {
   const { language, t, getName } = useLanguage();
 
+  const [mapOpen,setMapOpen]=useState(false);
+  const [mapDay,setMapDay]=useState(1);
+  const [selectedStop,setSelectedStop]=useState<string|null>(null);
+  useEffect(()=>{setMapDay(1);setSelectedStop(null);setMapOpen(false);},[config.tripId]);
   const [showAlgorithm, setShowAlgorithm] = useState<boolean>(false);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState<boolean>(false);
@@ -228,6 +239,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const handleDownloadPdf = async () => {
     if (!pdfContainerRef.current) return;
     const imageLoadingStates: {image: HTMLImageElement;loading: string|null}[] = [];
+    const exportDisplayStates: {element: HTMLElement;display: string}[] = [];
     setIsGeneratingPdf(true);
     try {
       const [jspdfModule, html2canvasModule] = await Promise.all([
@@ -238,6 +250,11 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       const html2canvas = html2canvasModule.default || (html2canvasModule as any);
 
       const element = pdfContainerRef.current;
+      // Capture every saved day, regardless of the interactive map's day filter.
+      element.querySelectorAll<HTMLElement>('.itinerary-day-card, [data-itinerary-map-panel]').forEach(node => {
+        exportDisplayStates.push({element:node,display:node.style.display});
+        node.style.display = node.hasAttribute('data-itinerary-map-panel') ? 'none' : 'block';
+      });
       // Decode can remain pending for off-screen lazy images. Start those local
       // requests before either renderer clones the itinerary; restore lazy loading later.
       element.querySelectorAll('img').forEach(image => {
@@ -317,6 +334,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
       console.error("Error generating itinerary PDF:", err);
       window.print();
     } finally {
+      exportDisplayStates.forEach(({element,display}) => {element.style.display=display;});
       imageLoadingStates.forEach(({image,loading}) => {
         if (loading===null) image.removeAttribute('loading'); else image.setAttribute('loading',loading);
       });
@@ -650,18 +668,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             </div>
           )}
 
-          {/* Graceful Offline Circular Route Map Circuit */}
-          <div className="no-print">
-            <OfflineRouteMap
-              dayPlans={dayPlans}
-              cityName={cityName}
-              startingHotelName={startingHotel.name}
-              totalDistanceKm={totalDistanceKm}
-              isOffline={
-                typeof navigator !== "undefined" ? !navigator.onLine : false
-              }
-            />
-          </div>
+          <section data-itinerary-map-panel className="no-print border-2 border-gold bg-white p-4 rounded-xl">
+            <button className="font-bold text-ink" aria-expanded={mapOpen} onClick={()=>setMapOpen(!mapOpen)}>{mapOpen?'Close route map':'Open interactive route map'}</button>
+            {mapOpen && <>
+              <div className="flex flex-wrap gap-2 my-3" aria-label="Itinerary day selection">{dayPlans.map(day=><button key={day.dayNumber} aria-pressed={mapDay===day.dayNumber} className={`border border-gold rounded px-3 py-1 ${mapDay===day.dayNumber?"bg-ink text-gold":""}`} onClick={()=>{setMapDay(day.dayNumber);setSelectedStop(null);}}>Day {day.dayNumber}</button>)}</div>
+              <RouteMapBoundary><Suspense fallback={<p role="status">Loading map...</p>}><ItineraryRouteMap key={activeConfig.tripId} tripId={activeConfig.tripId!} dayNumber={mapDay} stops={dayPlans.find(d=>d.dayNumber===mapDay)?.stops??[]} selected={selectedStop} onSelect={setSelectedStop}/></Suspense></RouteMapBoundary>
+            </>}
+          </section>
 
           {/* Dijkstra Supporting Algorithm Visualizer Accordion */}
           <div className="border-2 border-gold bg-white p-4 space-y-3 no-print rounded-xl">
@@ -704,6 +717,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               {dayPlans.map((day, dayIdx) => (
                 <motion.div
                   key={`day-${day.dayNumber}`}
+                  style={{display:mapOpen&&day.dayNumber!==mapDay?"none":undefined}}
                   layout
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -725,7 +739,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     <div className="flex items-center gap-3 font-mono text-xs text-stone">
                       <span>{day.totalKm} km local circuit</span>
                       <span className="font-bold text-ink">
-                        Est. Day Cost: ₹{displayNumber(day.totalCost)}
+                        Known day subtotal: ₹{displayNumber(day.totalCost)}
                       </span>
                     </div>
                   </div>
@@ -754,11 +768,15 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                               ? isFinalStop
                                 ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, completing circular route`
                                 : `Stop ${stopNumber} of ${day.stops.length} (Start): Depart ${stop.name}, depart at ${stop.departureTime}`
-                              : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stop.cost > 0 ? "₹" + displayNumber(stop.cost) : "Free"}`;
+                              : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stopCostLabel(stop.cost,stop.type,stop.costState)}`;
 
                         return (
                           <motion.div
                             key={stop.id}
+                            id={`stop-${stop.id}`}
+                            data-map-selected={selectedStop===stop.id}
+                            onClick={()=>{setMapDay(day.dayNumber);setSelectedStop(stop.id);}}
+                            onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setMapDay(day.dayNumber);setSelectedStop(stop.id);}}}
                             layout
                             initial={{ opacity: 0, x: -12, scale: 0.98 }}
                             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -891,9 +909,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                             {/* Cost & Duration */}
                             <div className="text-right shrink-0 self-end sm:self-auto border-t sm:border-t-0 pt-2 sm:pt-0 border-stone/20 w-full sm:w-auto flex sm:flex-col justify-between items-center sm:items-end">
                               <span className="font-bold text-ink text-sm">
-                                {stop.cost > 0
-                                  ? `₹${displayNumber(stop.cost)}`
-                                  : stop.type === "hotel" ? "No room charge at this stop" : "Free / Included"}
+                                {stopCostLabel(stop.cost,stop.type,stop.costState)}
                               </span>
                               <span className="text-[10px] text-stone">
                                 Duration: {stop.durationMinutes} mins
@@ -934,7 +950,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Hotels ({request.data.dto.trip.generation_summary?.lodging_nights ?? numDays} Nights)
                     </span>
                     <span className="font-bold text-salt text-sm">
-                      ₹{displayNumber(totalHotelCost)}
+                      {costLabel(request.data.dto.budget.cost_details?.categories.hotel)}
                     </span>
                   </div>
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
@@ -942,7 +958,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Attraction Entry Fees
                     </span>
                     <span className="font-bold text-salt text-sm">
-                      ₹{displayNumber(totalAttractionCost)}
+                      {costLabel(request.data.dto.budget.cost_details?.categories.attractions)}
                     </span>
                   </div>
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
@@ -950,7 +966,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Meals & Dining
                     </span>
                     <span className="font-bold text-gold text-sm">
-                      ₹{displayNumber(totalMealCost)}
+                      {costLabel(request.data.dto.budget.cost_details?.categories.meals)}
                     </span>
                   </div>
                   <div className="p-3 bg-salt/10 border border-stone/30 rounded-xl">
@@ -958,17 +974,14 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                       Transit & Ferry
                     </span>
                     <span className="font-bold text-salt text-sm">
-                      {request.data.dto.budget.transport_cost_known === false
-                        ? "Unknown (excluded)"
-                        : totalTransitCost > 0
-                        ? `₹${displayNumber(totalTransitCost)}`
-                        : "Included (₹0)"}
+                      {costLabel(request.data.dto.budget.cost_details?.categories.transit)}
                     </span>
                   </div>
                 </div>
 
+                <p>Final trip cost: Not fully available. Additional unpriced expenses: {request.data.dto.budget.cost_details?.unknown_components?.join(", ") ?? "Food, transport and other unrecorded costs"}.</p>
                 <div className="flex items-center justify-between pt-2 border-t border-stone/30 font-mono text-sm">
-                  <span className="text-stone">Estimated Total Outlay:</span>
+                  <span className="text-stone">Known subtotal:</span>
                   <span className="font-bold text-gold text-lg">
                     ₹{displayNumber(estimatedTotalCost)}
                   </span>

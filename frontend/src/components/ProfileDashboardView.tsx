@@ -265,7 +265,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
                       <div className="text-right shrink-0 font-mono">
                         <span className="text-[10px] text-stone uppercase block">
-                          Est. Total Outlay
+                          Known subtotal
                         </span>
                         <span className="text-lg font-bold text-ink">
                           ₹{trip.totalCost.toLocaleString()}

@@ -1,3 +1,4 @@
+import {knownAmount,comparableCostUtility} from "./costStatus.js";
 import {scheduleGaps} from '../../dsa/planning/scheduleGaps.ts';
 import {datedOperation} from './operatingSchedule.js';
 import {admissionEstimate} from './admissionPolicy.js';
@@ -24,7 +25,7 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
     let reason;
     if (trip.wheelchair_accessible_only && a.wheelchair_accessible !== true)
       reason = a.wheelchair_accessible === false ? "not_wheelchair_accessible" : "accessibility_unknown";
-    else if (a.entry_fee_numeric === null) reason = "entry_price_unknown";
+    else if (knownAmount(a.entry_fee_numeric) === null) reason = "entry_price_unknown";
     else if (a.duration_hours === null) reason = "visit_duration_unknown";
     if (reason) excluded.push({id:a.id,name:a.name,reason});
     return !reason;
@@ -115,7 +116,7 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
     }
     function meal(kind,earliest,latest) {
       for(const restaurant of restaurants) {
-        if(restaurant.avg_cost_per_person===null || (Number(restaurant.avg_cost_per_person)*travelers)>remaining) continue;
+        if(knownAmount(restaurant.avg_cost_per_person)===null || (Number(restaurant.avg_cost_per_person)*travelers)>remaining) continue;
         const route=leg(current.id,restaurant.id), back=leg(restaurant.id,hotel.id);
         if(!route || !back) continue;
         const arrival=Math.max(clock+route.minutes,earliest);
@@ -201,6 +202,7 @@ function buildGreedyPlan(trip, { hotel, attractions, restaurants, routes }, firs
   if(legs.length) warnings.push("transport_fares_unknown");
   if(legs.some(l => routes.some(r => r.destination_node_id===l.from && r.source_node_id===l.to && r.reverse_distance_km==null))) warnings.push("reverse_route_estimate_unverified");
   return {stops,summary:{
+    cost_states:Object.fromEntries(stops.map(s=>[`${s.day_number}:${s.stop_order}`,s.cost>0?'KNOWN_POSITIVE':s.stop_type==='hotel'?'KNOWN_ZERO':([...attractions,...restaurants].find(r=>r.id===s.reference_id)?.source_url?'KNOWN_ZERO':'UNKNOWN')])),
     status:!visited.size() || dayCoverage.some(d=>!d.attraction_count) || skippedMeals.length || unvisited.length ? "incomplete" : "scheduled",
     starting_hotel_id:hotel.id,hotel_replaced:false,hotel_total:hotelCost,
     hotel_over_budget:hotelCost>trip.budget,hotel_budget_shortfall:Math.max(0,hotelCost-trip.budget),
@@ -236,7 +238,7 @@ export function buildPlan(trip,resources) {
   const rated=[resources.hotel,...visits.map(s=>resources.attractions.find(a=>a.id===s.reference_id))];
   const known=rated.filter(r=>r?.rating!=null&&Number.isFinite(Number(r.rating)));
   const mean=known.length?known.reduce((sum,r)=>sum+Number(r.rating),0)/known.length:null;
-  unique.set(signature,{id:createHash('sha256').update(signature).digest('hex').slice(0,16),plan,distance_km:plan.summary.legs.reduce((sum,l)=>sum+l.distance_km,0),known_cost:cost,rating_mean:mean,rating_coverage:known.length/rated.length,attraction_count:visits.length});
+  unique.set(signature,{id:createHash('sha256').update(signature).digest('hex').slice(0,16),plan,distance_km:plan.summary.legs.reduce((sum,l)=>sum+l.distance_km,0),known_cost:cost,priced_meal_count:plan.stops.filter(s=>s.stop_type==="meal").length,rating_mean:mean,rating_coverage:known.length/rated.length,attraction_count:visits.length});
  }
  const evaluated=[...unique.values()];
  // Compare like-for-like sightseeing coverage. Otherwise cost/distance minimization
@@ -246,13 +248,13 @@ export function buildPlan(trip,resources) {
  const candidates=evaluated.filter(c=>c.attraction_count===maxVisits&&c.plan.summary.day_coverage.filter(d=>d.attraction_count).length===maxDays);
  if(!candidates.length)throw new HttpError(422,'No feasible itinerary with this hotel, budget and known route/visit data. Increase the budget, choose another hotel, or relax supported filters. Unknown costs and routes are not invented.');
  for(const c of candidates) {
-  c.utilities={distance:utility(c.distance_km,candidates.map(p=>p.distance_km),true),cost:utility(c.known_cost,candidates.map(p=>p.known_cost),true),rating:c.rating_mean==null?0:Math.max(0,Math.min(1,c.rating_mean/5*c.rating_coverage))};
+  c.utilities={distance:utility(c.distance_km,candidates.map(p=>p.distance_km),true),cost:comparableCostUtility(c,candidates),rating:c.rating_mean==null?0:Math.max(0,Math.min(1,c.rating_mean/5*c.rating_coverage))};
   c.score=weightedScore(c.utilities,trip.weights);
  }
  candidates.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
  const selected=candidates[0];
  selected.plan.summary.optimization={method:'bounded_multi_start_greedy',weights:trip.weights,selected_candidate_id:selected.id,score:selected.score,evaluated_count:candidates.length,
-  distance_basis:'Sum of saved route legs; return estimates retain provenance warnings',cost_basis:'Known hotel room-night, source-unit admission (per traveler or vehicle) and meal estimates only; unknown transport fares excluded',rating_basis:'Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value',
+  distance_basis:'Sum of saved route legs; return estimates retain provenance warnings',cost_basis:'Known room-night, admission and scheduled meal estimates only. Candidates omitting priced meals receive no cost advantage over fuller meal coverage. Unpriced food, transport and taxes remain outside complete-budget feasibility',rating_basis:'Known hotel/attraction mean divided by 5 and multiplied by known-rating coverage; missing ratings receive no invented value',
   search_attempts:attempts.length,alternative_start_limit:12,coverage_policy:"Maximize feasible distinct visits, then sightseeing days, before applying user priorities to comparable tours",generated_candidate_count:evaluated.length,coverage_pruned_count:evaluated.length-candidates.length,
   normalization:'Candidate-relative min-max distance/cost utilities (constant values give equal utility 1); rating uses the documented 0-5 scale with coverage',
   optimality:'Highest score among feasible evaluated greedy candidates; global optimality is not guaranteed',

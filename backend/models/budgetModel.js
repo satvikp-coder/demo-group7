@@ -1,3 +1,4 @@
+import {costDetails} from "../services/costStatus.js";
 // Costs are snapshots of the database prices at generation, scoped to persisted stops.
 export async function forTrip(client, trip) {
   const row = (await client.query(
@@ -9,7 +10,10 @@ export async function forTrip(client, trip) {
       FROM itinerary_stops WHERE trip_id=$1`, [trip.id],
   )).rows[0];
   const amounts = Object.fromEntries(Object.entries(row).map(([key,value]) => [key,Number(value)]));
+  const stopRows=(await client.query("SELECT day_number,stop_order,stop_type,cost FROM itinerary_stops WHERE trip_id=$1",[trip.id])).rows;
+  const cost_details=costDetails(trip,stopRows);
   return {
+    cost_details,
     trip_id:trip.id, budget:trip.budget, ...amounts, remaining:trip.budget-amounts.total,
     over_budget:amounts.total>trip.budget, generated:Boolean(trip.generated_at),
     hotel_over_budget:trip.generation_summary?.hotel_over_budget ?? false,

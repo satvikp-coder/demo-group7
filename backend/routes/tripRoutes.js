@@ -36,6 +36,7 @@ router.get('/',validate(paginationQuery,'query'),controller.list);
 router.use(validate(emptyQuery,"query"));
 router.post("/",validate(createBody),controller.create);
 router.post("/:id/generate-itinerary",generationLimit,validate(idParams,"params"),validate(preferences.default({})),controller.generate);
+router.get("/:id/map/:day",limiter("map_routes",30,60000,true),validate(z.object({id:z.string().uuid(),day:z.coerce.number().int().min(1).max(30)}),"params"),controller.map);
 router.get("/:id/budget",validate(idParams,"params"),controller.budget);
 router.get("/:id",validate(idParams,"params"),controller.get);
 router.delete("/:id",validate(idParams,"params"),validate(z.object({}).strict().default({})),controller.remove);

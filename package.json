@@ -40,6 +40,8 @@
     "test:itinerary": "node scripts/test-itinerary-workflow.js",
     "local:expand": "node scripts/local-stack.js expand",
     "test:chat": "node --import ./backend/node_modules/tsx/dist/loader.mjs --test backend/tests/chat.test.js",
-    "test:chat:local": "node scripts/test-chat-local.js"
+    "test:chat:local": "node scripts/test-chat-local.js",
+    "test:map-budget": "node --import ./backend/node_modules/tsx/dist/loader.mjs --test backend/tests/map-budget.test.js",
+    "test:map-budget:local": "node scripts/test-map-budget-local.js"
   }
 }
