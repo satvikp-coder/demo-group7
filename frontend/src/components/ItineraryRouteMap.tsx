@@ -8,7 +8,7 @@ import {api,errorMessage} from '../api';
 import 'leaflet/dist/leaflet.css';
 import './ItineraryRouteMap.css';
 
-type Stop={id:string;name:string;type:string;lat?:number;lng?:number;arrivalTime?:string;departureTime?:string;durationMinutes?:number};
+type Stop={id:string;referenceId?:string;name:string;type:string;lat?:number;lng?:number;arrivalTime?:string;departureTime?:string;durationMinutes?:number};
 type Leg={from_stop_id:string;to_stop_id:string;status:string;coordinates:[number,number][];distance_km:number|null;duration_minutes:number|null;basis:string};
 type Route={legs:Leg[];road_legs:number;estimated_legs:number;unavailable_legs:number};
 export function location(s:Stop):LatLngTuple|null {
@@ -60,7 +60,7 @@ export default function ItineraryRouteMap({tripId,dayNumber,stops,selected,onSel
     <p className="text-xs mt-3" data-testid="route-coverage">Solid blue: routed road geometry ({route?.road_legs??0} legs). Dashed gold: straight-line estimates ({route?.estimated_legs??fallback.filter(l=>l.coordinates.length).length} legs). Missing connections: {route?.unavailable_legs??fallback.filter(l=>!l.coordinates.length).length}.</p>
     <p className="text-xs">Map distance: {legs.filter(l=>l.status==='road').reduce((n,l)=>n+(l.distance_km??0),0).toFixed(2)} km routed; {legs.filter(l=>l.status==='estimated').reduce((n,l)=>n+(l.distance_km??0),0).toFixed(2)} km straight-line. </p>
     <p className="text-xs">Map routing estimates may differ from saved planning distances and times. They do not confirm access, traffic or fares. Routing: <a href="https://routing.openstreetmap.de/about.html">OSRM / FOSSGIS</a> | <a href="https://www.openstreetmap.org/fixthemap">Report a map issue</a>.</p>
-    {stops.filter(s=>!location(s)).map(s=><p key={s.id}>Map location unavailable: {s.name}</p>)}
+    {stops.filter(s=>!location(s)).map(s=><p key={s.id}>{s.type==='meal'&&!s.referenceId?'Personal meal break has no fixed map location: ':'Map location unavailable: '}{s.name}</p>)}
     <ol className="flex flex-wrap gap-2 mt-3" aria-label="Map stop selection">{stops.map((s,i)=><li key={s.id}><button className="border border-gold rounded px-2 py-1 text-xs" aria-pressed={selected===s.id} onClick={()=>onSelect(s.id)}>{i+1}. {s.name}</button></li>)}</ol>
   </section>;
 }

@@ -1,0 +1,1839 @@
+{
+  "checkedAt": "2026-10-20T07:52:46.899Z",
+  "phase": "before",
+  "readOnly": true,
+  "destinations": [
+    {
+      "id": "b02ec0dc-3a52-48b3-8dd2-dfa559c7c1d5",
+      "name": "Ahmedabad",
+      "slug": "ahmedabad",
+      "records": 14,
+      "valid_coordinates": 14,
+      "known_fees": 11,
+      "known_durations": 11,
+      "known_hours": 11,
+      "legacy_eligible": 11,
+      "connected": 14,
+      "attractions": [
+        {
+          "name": "Sarkhej Roza",
+          "id": "6cca73aa-876d-417f-a181-a0d4c6af9567",
+          "slug": "sarkhej-roza-ahmedabad",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 22.993679,
+          "lng": 72.505393,
+          "source_url": "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around"
+        },
+        {
+          "name": "Sidi Saiyyed Mosque & Old Pols",
+          "id": "fff920bc-e67b-4420-b727-cb777a952e2d",
+          "slug": "sidi-saiyyed-mosque-old-pols-ahmedabad",
+          "fee": 0,
+          "duration": 2,
+          "lat": 23.02702,
+          "lng": 72.58101,
+          "source_url": "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around"
+        },
+        {
+          "name": "Calico Textile Museum",
+          "id": "ab4b6e65-4a34-48ba-8792-9c0b5af11bad",
+          "slug": "calico-textile-museum-ahmedabad",
+          "fee": 0,
+          "duration": 2,
+          "lat": 23.05418,
+          "lng": 72.592476,
+          "source_url": "https://calicomuseum.org/tours/haveli"
+        },
+        {
+          "name": "Kankaria Lake",
+          "id": "0b7d9a31-7570-4093-978f-98a843f6a4cf",
+          "slug": "kankaria-lake-ahmedabad",
+          "fee": 25,
+          "duration": 2,
+          "lat": 23.006143,
+          "lng": 72.599521,
+          "source_url": "https://router.project-osrm.org/table/v1/driving/72.505393,22.993679;72.580136,23.167140;72.592476,23.054180;72.581010,23.027020;72.599521,23.006143;72.580638,23.060165;72.576958,23.029284;72.581536,23.027062;72.591743,23.018845;72.535706,22.993642;72.581617,23.027038;72.589368,23.024425?annotations=distance,duration"
+        },
+        {
+          "name": "Bhadra Fort",
+          "id": "6836e31b-89e0-4b68-a140-0734a907089b",
+          "slug": "bhadra-fort-ahmedabad",
+          "fee": 0,
+          "duration": 0.5,
+          "lat": 23.023971,
+          "lng": 72.5812,
+          "source_url": "https://www.openstreetmap.org/way/843168356"
+        },
+        {
+          "name": "Sabarmati Ashram",
+          "id": "be5730b8-4c1f-4e0d-a1e1-541b9c94ba36",
+          "slug": "sabarmati-ashram-ahmedabad",
+          "fee": 0,
+          "duration": 2,
+          "lat": 23.060165,
+          "lng": 72.580638,
+          "source_url": "https://gujarattourism.com/central-zone/ahmedabad.html"
+        },
+        {
+          "name": "Adalaj Ni Vav Stepwell",
+          "id": "32c4a8e4-fedd-4548-ad78-1d83380d3640",
+          "slug": "adalaj-ni-vav-stepwell-ahmedabad",
+          "fee": 25,
+          "duration": 1.5,
+          "lat": 23.16714,
+          "lng": 72.580136,
+          "source_url": "https://gujarattourism.com/central-zone/ahmedabad.html"
+        },
+        {
+          "name": "Kalupur Darwaza",
+          "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+          "slug": "kalupur-darwaza-ahmedabad",
+          "fee": null,
+          "duration": null,
+          "lat": 23.030843,
+          "lng": 72.597937,
+          "source_url": "https://www.openstreetmap.org/node/885247897"
+        },
+        {
+          "name": "Manek Burj",
+          "id": "e01c4277-1f41-459e-a335-186895f6538d",
+          "slug": "manek-burj-ahmedabad",
+          "fee": null,
+          "duration": null,
+          "lat": 23.022075,
+          "lng": 72.577339,
+          "source_url": "https://www.openstreetmap.org/way/605629475"
+        },
+        {
+          "name": "Tomb of Ahmad Shah",
+          "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+          "slug": "tomb-of-ahmad-shah-ahmedabad",
+          "fee": null,
+          "duration": null,
+          "lat": 23.023791,
+          "lng": 72.587928,
+          "source_url": "https://www.openstreetmap.org/node/10591957837"
+        },
+        {
+          "name": "Amritavarshini Vav",
+          "id": "8c36d270-6bbf-4a53-bb97-8138c4afa106",
+          "slug": "amritavarshini-vav-ahmedabad",
+          "fee": 0,
+          "duration": 0.33,
+          "lat": 23.024664,
+          "lng": 72.597106,
+          "source_url": "https://www.openstreetmap.org/node/4937816350"
+        },
+        {
+          "name": "Astodia Darwaza",
+          "id": "c42e1d44-2f14-4dd7-bd0a-3c879b89addf",
+          "slug": "astodia-darwaza-ahmedabad",
+          "fee": 0,
+          "duration": 0.08,
+          "lat": 23.016842,
+          "lng": 72.590971,
+          "source_url": "https://www.openstreetmap.org/node/2377178503"
+        },
+        {
+          "name": "Raipur Gate",
+          "id": "c63a5333-57bd-44df-bc8e-f824bef61f4e",
+          "slug": "raipur-gate-ahmedabad",
+          "fee": 0,
+          "duration": 0.17,
+          "lat": 23.017436,
+          "lng": 72.594781,
+          "source_url": "https://www.openstreetmap.org/node/440367265"
+        },
+        {
+          "name": "Teen Darwaza",
+          "id": "045d43c6-4ca3-46e6-8684-fad2c48006d6",
+          "slug": "teen-darwaza-ahmedabad",
+          "fee": 0,
+          "duration": 0.17,
+          "lat": 23.024349,
+          "lng": 72.584555,
+          "source_url": "https://www.openstreetmap.org/node/2377178507"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Maruti",
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 8,
+          "known_subtotal": 4690,
+          "distance_km": 54.42999999999999,
+          "exclusions": [
+            {
+              "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+              "name": "Kalupur Darwaza",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "e01c4277-1f41-459e-a335-186895f6538d",
+              "name": "Manek Burj",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+              "name": "Tomb of Ahmad Shah",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 9,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Maruti",
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 5,
+          "known_subtotal": 6340,
+          "distance_km": 108.88000000000001,
+          "exclusions": [
+            {
+              "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+              "name": "Kalupur Darwaza",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "e01c4277-1f41-459e-a335-186895f6538d",
+              "name": "Manek Burj",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+              "name": "Tomb of Ahmad Shah",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 6,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 5,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Maruti",
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 16,
+          "known_subtotal": 9860,
+          "distance_km": 118.90999999999998,
+          "exclusions": [
+            {
+              "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+              "name": "Kalupur Darwaza",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "e01c4277-1f41-459e-a335-186895f6538d",
+              "name": "Manek Burj",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+              "name": "Tomb of Ahmad Shah",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Maruti",
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 16,
+          "known_subtotal": 11260,
+          "distance_km": 125.59,
+          "exclusions": [
+            {
+              "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+              "name": "Kalupur Darwaza",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "e01c4277-1f41-459e-a335-186895f6538d",
+              "name": "Manek Burj",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+              "name": "Tomb of Ahmad Shah",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8ad9145c-fbeb-466b-9a4d-78d032a476cb",
+      "name": "Champaner",
+      "slug": "champaner",
+      "records": 9,
+      "valid_coordinates": 9,
+      "known_fees": 1,
+      "known_durations": 2,
+      "known_hours": 1,
+      "legacy_eligible": 1,
+      "connected": 9,
+      "attractions": [
+        {
+          "name": "Jami Masjid, Champaner",
+          "id": "cc7eae7f-e761-43e5-aee2-2c2671c050c2",
+          "slug": "jami-masjid-champaner",
+          "fee": 35,
+          "duration": 1.5,
+          "lat": 22.485817,
+          "lng": 73.537715,
+          "source_url": "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html"
+        },
+        {
+          "name": "Kevada Masjid",
+          "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+          "slug": "kevada-masjid",
+          "fee": null,
+          "duration": 1,
+          "lat": 22.489315,
+          "lng": 73.53354,
+          "source_url": "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html"
+        },
+        {
+          "name": "South Bhadra Gate",
+          "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+          "slug": "south-bhadra-gate-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.483262,
+          "lng": 73.532551,
+          "source_url": "https://www.openstreetmap.org/way/718548509"
+        },
+        {
+          "name": "East Bhadra Gate",
+          "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+          "slug": "east-bhadra-gate-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.484901,
+          "lng": 73.536441,
+          "source_url": "https://www.openstreetmap.org/way/718548512"
+        },
+        {
+          "name": "Sahar ki Masjid",
+          "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+          "slug": "sahar-ki-masjid-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.483638,
+          "lng": 73.531558,
+          "source_url": "https://www.openstreetmap.org/way/186046398"
+        },
+        {
+          "name": "Octagonal Stepwell",
+          "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+          "slug": "octagonal-stepwell-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.486446,
+          "lng": 73.537602,
+          "source_url": "https://www.openstreetmap.org/way/272040337"
+        },
+        {
+          "name": "Helical Stepwell",
+          "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+          "slug": "helical-stepwell-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.484352,
+          "lng": 73.517769,
+          "source_url": "https://gujarattourism.com/central-zone/panchmahal/helical-stepwell.html"
+        },
+        {
+          "name": "Ek Minar ki Masjid",
+          "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+          "slug": "ek-minar-ki-masjid-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.489625,
+          "lng": 73.515027,
+          "source_url": "https://www.openstreetmap.org/way/718548502"
+        },
+        {
+          "name": "Maqbara Mandvi",
+          "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+          "slug": "maqbara-mandvi-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.4954,
+          "lng": 73.511911,
+          "source_url": "https://www.openstreetmap.org/way/718548504"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "attraction_count": 1,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 70,
+          "distance_km": 17.92,
+          "exclusions": [
+            {
+              "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+              "name": "Kevada Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+              "name": "South Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+              "name": "East Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+              "name": "Sahar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+              "name": "Octagonal Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+              "name": "Helical Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+              "name": "Ek Minar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+              "name": "Maqbara Mandvi",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "attraction_count": 1,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 1,
+          "candidates": 1,
+          "known_subtotal": 870,
+          "distance_km": 17.92,
+          "exclusions": [
+            {
+              "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+              "name": "Kevada Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+              "name": "South Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+              "name": "East Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+              "name": "Sahar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+              "name": "Octagonal Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+              "name": "Helical Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+              "name": "Ek Minar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+              "name": "Maqbara Mandvi",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "attraction_count": 1,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 2,
+          "candidates": 1,
+          "known_subtotal": 1670,
+          "distance_km": 17.92,
+          "exclusions": [
+            {
+              "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+              "name": "Kevada Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+              "name": "South Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+              "name": "East Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+              "name": "Sahar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+              "name": "Octagonal Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+              "name": "Helical Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+              "name": "Ek Minar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+              "name": "Maqbara Mandvi",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "attraction_count": 1,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 3,
+          "candidates": 1,
+          "known_subtotal": 2470,
+          "distance_km": 17.92,
+          "exclusions": [
+            {
+              "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+              "name": "Kevada Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+              "name": "South Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+              "name": "East Bhadra Gate",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+              "name": "Sahar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+              "name": "Octagonal Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+              "name": "Helical Stepwell",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+              "name": "Ek Minar ki Masjid",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+              "name": "Maqbara Mandvi",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4bae3552-396e-49f3-9e29-5e41c0a7f0fe",
+      "name": "Dwarka",
+      "slug": "dwarka",
+      "records": 4,
+      "valid_coordinates": 4,
+      "known_fees": 4,
+      "known_durations": 4,
+      "known_hours": 4,
+      "legacy_eligible": 4,
+      "connected": 4,
+      "attractions": [
+        {
+          "name": "Rukmini Devi Temple",
+          "id": "aef1c74b-72e8-4f77-ac7f-115fa1d95cb8",
+          "slug": "rukmini-devi-temple-dwarka",
+          "fee": 0,
+          "duration": 1,
+          "lat": 22.257331,
+          "lng": 68.964398,
+          "source_url": "https://www.openstreetmap.org/node/3903603202"
+        },
+        {
+          "name": "Dwarkadhish Temple",
+          "id": "6b8e35ba-ec90-45cb-953e-55f24a66473b",
+          "slug": "dwarkadhish-temple-dwarka",
+          "fee": 0,
+          "duration": 2,
+          "lat": 22.237774,
+          "lng": 68.967512,
+          "source_url": "https://www.openstreetmap.org/way/91573157"
+        },
+        {
+          "name": "Nageshwar Jyotirlinga",
+          "id": "9208093c-d349-4443-a149-a8c54b2aba7d",
+          "slug": "nageshwar-jyotirlinga-dwarka",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 22.336061,
+          "lng": 69.087015,
+          "source_url": "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-jyotirlinga.html"
+        },
+        {
+          "name": "Bet Dwarka",
+          "id": "e42a26be-0f64-4e38-82e7-453fee298070",
+          "slug": "bet-dwarka-dwarka",
+          "fee": 0,
+          "duration": 3,
+          "lat": 22.451995,
+          "lng": 69.095999,
+          "source_url": "https://www.google.com/maps/search/Bet+Dwarka+Temple"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 340,
+          "distance_km": 102.58,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 1576,
+          "distance_km": 104.2,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 2132,
+          "distance_km": 108.83,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 2688,
+          "distance_km": 108.79999999999998,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2bb9f6cb-05df-45ce-a1dc-208df990c799",
+      "name": "Gir National Park",
+      "slug": "gir-national-park",
+      "records": 2,
+      "valid_coordinates": 2,
+      "known_fees": 2,
+      "known_durations": 2,
+      "known_hours": 1,
+      "legacy_eligible": 2,
+      "connected": 2,
+      "attractions": [
+        {
+          "name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+          "id": "d10d7caa-eebe-4488-b2d0-24368392de75",
+          "slug": "gir-jungle-safari",
+          "fee": 4700,
+          "duration": 3,
+          "lat": 21.168967,
+          "lng": 70.598454,
+          "source_url": "https://girlion.gujarat.gov.in/asset/gir-terms.pdf"
+        },
+        {
+          "name": "Devalia Interpretation Zone Bus Safari",
+          "id": "4cc3f543-a81b-44a1-9256-f2bbb1d7823e",
+          "slug": "devalia-bus-safari",
+          "fee": 150,
+          "duration": 0.5,
+          "lat": 21.169664,
+          "lng": 70.504063,
+          "source_url": "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 5300,
+          "distance_km": 123.27999999999999,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 6208,
+          "distance_km": 219.70000000000002,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 1,
+          "candidates": 2,
+          "known_subtotal": 7116,
+          "distance_km": 219.7,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 2,
+          "candidates": 2,
+          "known_subtotal": 8024,
+          "distance_km": 219.7,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ca25aeb9-9816-438c-8433-2d37d5a2d380",
+      "name": "Modhera",
+      "slug": "modhera",
+      "records": 4,
+      "valid_coordinates": 4,
+      "known_fees": 2,
+      "known_durations": 2,
+      "known_hours": 1,
+      "legacy_eligible": 2,
+      "connected": 4,
+      "attractions": [
+        {
+          "name": "Modhera Sun Temple",
+          "id": "383ea996-d973-4d13-8c28-33bfb03725a6",
+          "slug": "modhera-sun-temple",
+          "fee": 20,
+          "duration": 2,
+          "lat": 23.583421,
+          "lng": 72.133078,
+          "source_url": "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html"
+        },
+        {
+          "name": "Modheshwari Mata Temple",
+          "id": "0eef628e-41fc-4608-a2de-b7fcc17fd770",
+          "slug": "modheshwari-mata-temple",
+          "fee": 0,
+          "duration": 1,
+          "lat": 23.583383,
+          "lng": 72.145478,
+          "source_url": "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html"
+        },
+        {
+          "name": "Sun Temple Museum, Modhera",
+          "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+          "slug": "sun-temple-museum-modhera",
+          "fee": null,
+          "duration": null,
+          "lat": 23.582391,
+          "lng": 72.134128,
+          "source_url": "https://www.openstreetmap.org/way/911907267"
+        },
+        {
+          "name": "Modhera Vav",
+          "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+          "slug": "modhera-vav-modhera",
+          "fee": null,
+          "duration": null,
+          "lat": 23.582665,
+          "lng": 72.137004,
+          "source_url": "https://www.openstreetmap.org/way/911907271"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "The Grand Takshak, Mehsana",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 40,
+          "distance_km": 46.32,
+          "exclusions": [
+            {
+              "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+              "name": "Sun Temple Museum, Modhera",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+              "name": "Modhera Vav",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "The Grand Takshak, Mehsana",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 1090,
+          "distance_km": 89.42,
+          "exclusions": [
+            {
+              "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+              "name": "Sun Temple Museum, Modhera",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+              "name": "Modhera Vav",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "The Grand Takshak, Mehsana",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 1,
+          "candidates": 2,
+          "known_subtotal": 2140,
+          "distance_km": 89.42,
+          "exclusions": [
+            {
+              "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+              "name": "Sun Temple Museum, Modhera",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+              "name": "Modhera Vav",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "The Grand Takshak, Mehsana",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 2,
+          "candidates": 2,
+          "known_subtotal": 3190,
+          "distance_km": 89.42,
+          "exclusions": [
+            {
+              "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+              "name": "Sun Temple Museum, Modhera",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+              "name": "Modhera Vav",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e5840a55-a2b0-4ced-8b9b-da41c9f64214",
+      "name": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "records": 2,
+      "valid_coordinates": 2,
+      "known_fees": 2,
+      "known_durations": 2,
+      "known_hours": 0,
+      "legacy_eligible": 2,
+      "connected": 2,
+      "attractions": [
+        {
+          "name": "White Rann near Dhordo",
+          "id": "461b6d70-9192-4b82-9aef-0e28eb35eb72",
+          "slug": "white-rann-dhordo",
+          "fee": 100,
+          "duration": 2.5,
+          "lat": 23.84129,
+          "lng": 69.52256,
+          "source_url": "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo"
+        },
+        {
+          "name": "Kalo Dungar",
+          "id": "18896d46-3687-4141-a079-84644b9dfb20",
+          "slug": "kalo-dungar",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 23.933547,
+          "lng": 69.813823,
+          "source_url": "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 200,
+          "distance_km": 230.29,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 3261,
+          "distance_km": 360.97999999999996,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 1,
+          "candidates": 2,
+          "known_subtotal": 5822,
+          "distance_km": 360.97999999999996,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 2,
+          "candidates": 2,
+          "known_subtotal": 8383,
+          "distance_km": 360.97999999999996,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9ff9f987-9e4a-4e8a-b2e6-2fd518ac063f",
+      "name": "Saputara",
+      "slug": "saputara",
+      "records": 5,
+      "valid_coordinates": 5,
+      "known_fees": 2,
+      "known_durations": 3,
+      "known_hours": 0,
+      "legacy_eligible": 2,
+      "connected": 5,
+      "attractions": [
+        {
+          "name": "Saputara Lake",
+          "id": "b41bbbf1-5f2c-4e19-8450-f62bae8ae452",
+          "slug": "saputara-lake",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 20.576641,
+          "lng": 73.74577,
+          "source_url": "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+        },
+        {
+          "name": "Sunset Point Saputara",
+          "id": "ae7290ed-3050-4654-8070-a2573aacb2ee",
+          "slug": "sunset-point-saputara",
+          "fee": 0,
+          "duration": 1,
+          "lat": 20.57455,
+          "lng": 73.732339,
+          "source_url": "https://www.openstreetmap.org/node/4832550858"
+        },
+        {
+          "name": "Saputara Museum",
+          "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+          "slug": "saputara-museum",
+          "fee": null,
+          "duration": 1,
+          "lat": 20.578855,
+          "lng": 73.749413,
+          "source_url": "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf"
+        },
+        {
+          "name": "Table Point, Saputara",
+          "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+          "slug": "table-point-saputara",
+          "fee": null,
+          "duration": null,
+          "lat": 20.569208,
+          "lng": 73.741176,
+          "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf"
+        },
+        {
+          "name": "Sunrise Point, Saputara",
+          "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+          "slug": "sunrise-point-saputara",
+          "fee": null,
+          "duration": null,
+          "lat": 20.587355,
+          "lng": 73.759793,
+          "source_url": "https://www.openstreetmap.org/node/4832558992"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Manas Cottage, Saputara",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 0,
+          "distance_km": 4.7700000000000005,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+              "name": "Table Point, Saputara",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+              "name": "Sunrise Point, Saputara",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Manas Cottage, Saputara",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 1430,
+          "distance_km": 5.96,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+              "name": "Table Point, Saputara",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+              "name": "Sunrise Point, Saputara",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Manas Cottage, Saputara",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 1,
+          "candidates": 2,
+          "known_subtotal": 2860,
+          "distance_km": 5.96,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+              "name": "Table Point, Saputara",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+              "name": "Sunrise Point, Saputara",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Manas Cottage, Saputara",
+          "attraction_count": 2,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 2,
+          "candidates": 2,
+          "known_subtotal": 4290,
+          "distance_km": 5.96,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+              "name": "Table Point, Saputara",
+              "reason": "entry_price_unknown"
+            },
+            {
+              "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+              "name": "Sunrise Point, Saputara",
+              "reason": "entry_price_unknown"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 0,
+              "status": "no_sightseeing_available",
+              "advisory": "No additional visit fits the known admission, duration, routes and operating constraints. Shorten the sightseeing trip or review the listed excluded sites; this day is not a generated tour."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "42ac1244-c2e0-434e-9f46-e739a188301e",
+      "name": "Somnath",
+      "slug": "somnath",
+      "records": 4,
+      "valid_coordinates": 4,
+      "known_fees": 4,
+      "known_durations": 4,
+      "known_hours": 4,
+      "legacy_eligible": 4,
+      "connected": 4,
+      "attractions": [
+        {
+          "name": "Somnath Temple",
+          "id": "6b153aac-83f0-415c-8491-0df6e32d1829",
+          "slug": "somnath-temple-somnath",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 20.887761,
+          "lng": 70.401391,
+          "source_url": "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html"
+        },
+        {
+          "name": "Triveni Sangam",
+          "id": "84e92094-41ca-47f1-b98a-f5e86f60dde5",
+          "slug": "triveni-sangam-somnath",
+          "fee": 0,
+          "duration": 1,
+          "lat": 20.884563,
+          "lng": 70.412766,
+          "source_url": "https://girsomnath.nic.in/tourist-place/triveni-sangam/"
+        },
+        {
+          "name": "Somnath Beach",
+          "id": "137e5d83-1522-4411-a2dc-cc95f2766c1b",
+          "slug": "somnath-beach-somnath",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 20.885133,
+          "lng": 70.402828,
+          "source_url": "https://router.project-osrm.org/table/v1/driving/70.384880,20.911796;70.401391,20.887761;70.412766,20.884563;70.402828,20.885133;70.393221,20.926537;70.408111,20.899600?annotations=distance,duration"
+        },
+        {
+          "name": "Bhalka Tirth",
+          "id": "122cef78-7c4f-4bf1-a61a-b1e1db6cd012",
+          "slug": "bhalka-tirth-somnath",
+          "fee": 0,
+          "duration": 1,
+          "lat": 20.911796,
+          "lng": 70.38488,
+          "source_url": "https://indiacinehub.gov.in/location/somnath"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Lilavati Atithigruh",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 600,
+          "distance_km": 17.080000000000002,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Lilavati Atithigruh",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 750,
+          "distance_km": 12.96,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Lilavati Atithigruh",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 6,
+          "known_subtotal": 1500,
+          "distance_km": 14,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Lilavati Atithigruh",
+          "attraction_count": 4,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 5,
+          "known_subtotal": 2250,
+          "distance_km": 15.579999999999998,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 1,
+              "status": "sightseeing_scheduled",
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

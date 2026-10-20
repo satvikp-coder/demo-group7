@@ -1,5 +1,6 @@
 import os,json,time,secrets,re
 from pathlib import Path
+from cost_assertions import assert_known_budget
 from playwright.sync_api import sync_playwright,expect
 base=os.environ['FRONTEND_TEST_URL'];api=os.environ['API_TEST_URL'];report={'verified':False,'checks':[],'runs':[],'pageErrors':[],'consoleErrors':[]}
 with sync_playwright() as p:
@@ -50,7 +51,7 @@ with sync_playwright() as p:
   assert len(submitted)==2,submitted
   assert response.value.status==200,response.value.text();dto=response.value.json();assert dto['trip']['weights']==weights;assert dto['trip']['starting_hotel_id']==selected['id'];assert 'authorization' in response.value.request.headers
   opt=dto['trip']['generation_summary']['optimization'];assert opt['score']==max(c['score'] for c in opt['candidates'])
-  assert abs(dto['budget']['total']-sum(float(s['cost']) for d in dto['days'] for s in d['stops']))<.01
+  assert_known_budget(dto)
   expect(page.get_by_role('region',name='Your Priorities')).to_be_visible();page.reload(wait_until='domcontentloaded');expect(page.get_by_role('region',name='Your Priorities')).to_contain_text(priority.capitalize()+': 80%')
   prompt=page.get_by_role('dialog',name='Add Heritage Tourism Planner to Home Screen',exact=True)
   if prompt.count():prompt.get_by_role('button',name='Maybe Later',exact=True).click()

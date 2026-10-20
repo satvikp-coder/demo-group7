@@ -40,6 +40,7 @@ export async function localAction(action,args=[]){
  }else if(action==='seed'||action==='verify'||action==='expand')await localCompose(['run','--rm','--build','maintenance','npm','run',action==='seed'?'db:seed':action==='expand'?'db:expand':'db:verify'],'local-'+action,env);
  else if(action==='enrich')await localCompose(['run','--rm','--build','maintenance','npm','run','db:expand','--','--phase2'],'local-enrich',env);
  else if(action==='refine')await localCompose(['run','--rm','--build','maintenance','node','scripts/enrich-catalog.js',...args],'local-refine',env);
+ else if(action==='attractions')await localCompose(['run','--rm','--build','maintenance','node','scripts/expand-catalog.js','--attraction-quality',...args],'local-attractions',env);
  else if(action==='hotel-coverage')await localCompose(['run','--rm','--build','maintenance','node','scripts/expand-catalog.js','--hotel-coverage',...args],'local-hotel-coverage',env);
  else if(action==='operator'){
   if(args.length!==1||!/^\S+@\S+\.\S+$/.test(args[0]))throw new Error('Usage: npm run local:operator -- EMAIL');

@@ -1,0 +1,8166 @@
+{
+  "verified": true,
+  "cities": [
+    {
+      "name": "Ahmedabad",
+      "attractions": 16,
+      "hotels_tested": [
+        "Hotel Maruti",
+        "Hotel Alka Inn, Ahmedabad"
+      ]
+    },
+    {
+      "name": "Champaner",
+      "attractions": 12,
+      "hotels_tested": [
+        "Hotel Rajdhani And Guest House, Halol",
+        "Hotel Sarvottam, Baska"
+      ]
+    },
+    {
+      "name": "Dwarka",
+      "attractions": 10,
+      "hotels_tested": [
+        "Mathura Bhavan, Dwarka",
+        "Hotel Darshan Palace"
+      ]
+    },
+    {
+      "name": "Gir National Park",
+      "attractions": 10,
+      "hotels_tested": [
+        "Hotel Sapphire, Junagadh",
+        "Dwarkesh Farm & Resort, Somnath"
+      ]
+    },
+    {
+      "name": "Modhera",
+      "attractions": 12,
+      "hotels_tested": [
+        "The Grand Takshak, Mehsana",
+        "Modhera Sunrise Resort"
+      ]
+    },
+    {
+      "name": "Rann of Kutch",
+      "attractions": 14,
+      "hotels_tested": [
+        "Hotel Prince Residency, Bhuj",
+        "Hotel Sahara Palace, Bhuj"
+      ]
+    },
+    {
+      "name": "Saputara",
+      "attractions": 14,
+      "hotels_tested": [
+        "Manas Cottage, Saputara",
+        "Savshanti Motels, Saputara"
+      ]
+    },
+    {
+      "name": "Somnath",
+      "attractions": 12,
+      "hotels_tested": [
+        "Lilavati Atithigruh",
+        "Maheshwari Samaj Atithi Gruh"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 7,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 21.240000000000002,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 2550.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 104.69,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 104.69,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 5,
+      "distance_km": 101.81,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 104.69,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 104.69,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 104.69,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 5,
+      "distance_km": 104.69,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 5,
+      "distance_km": 111.8,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10400.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 15,
+      "distance_km": 111.8,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10400.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 15,
+      "distance_km": 111.8,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10400.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 15,
+      "distance_km": 111.8,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10400.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 4,
+      "distance_km": 111.8,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10400.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 9,
+      "distance_km": 121.27,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10220.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 15,
+      "distance_km": 116.23,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10400.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 4,
+      "distance_km": 112.17,
+      "meal_breaks": 4,
+      "unknown_costs": 6,
+      "known_subtotal": 11800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 15,
+      "distance_km": 112.17,
+      "meal_breaks": 4,
+      "unknown_costs": 6,
+      "known_subtotal": 11800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 15,
+      "distance_km": 112.17,
+      "meal_breaks": 4,
+      "unknown_costs": 6,
+      "known_subtotal": 11800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 15,
+      "distance_km": 112.17,
+      "meal_breaks": 4,
+      "unknown_costs": 6,
+      "known_subtotal": 11800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 5,
+      "distance_km": 112.17,
+      "meal_breaks": 4,
+      "unknown_costs": 6,
+      "known_subtotal": 11800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 15,
+      "distance_km": 115.25,
+      "meal_breaks": 3,
+      "unknown_costs": 6,
+      "known_subtotal": 9300.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Maruti",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 15,
+      "distance_km": 115.25,
+      "meal_breaks": 3,
+      "unknown_costs": 6,
+      "known_subtotal": 9300.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 7,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 19.94,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 2750.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 14,
+      "sightseeing_days": 2,
+      "candidates": 3,
+      "distance_km": 90.98,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 4300.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 14,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 90.98,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 4300.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 100.54,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 14,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 90.98,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 4300.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 14,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 44.04,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 4250.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 14,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 98.29,
+      "meal_breaks": 2,
+      "unknown_costs": 3,
+      "known_subtotal": 6800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 15,
+      "sightseeing_days": 2,
+      "candidates": 6,
+      "distance_km": 95.08,
+      "meal_breaks": 2,
+      "unknown_costs": 4,
+      "known_subtotal": 6800.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 13,
+      "distance_km": 100.14999999999999,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 11000.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 16,
+      "distance_km": 102.57,
+      "meal_breaks": 2,
+      "unknown_costs": 5,
+      "known_subtotal": 8500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 16,
+      "distance_km": 102.57,
+      "meal_breaks": 2,
+      "unknown_costs": 5,
+      "known_subtotal": 8500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 16,
+      "distance_km": 102.57,
+      "meal_breaks": 2,
+      "unknown_costs": 5,
+      "known_subtotal": 8500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 5,
+      "distance_km": 102.57,
+      "meal_breaks": 2,
+      "unknown_costs": 5,
+      "known_subtotal": 8500.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 10,
+      "distance_km": 119.82,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 10820.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 16,
+      "sightseeing_days": 3,
+      "candidates": 16,
+      "distance_km": 110.09,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 11000.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 16,
+      "distance_km": 106.08,
+      "meal_breaks": 4,
+      "unknown_costs": 5,
+      "known_subtotal": 12900.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 16,
+      "distance_km": 106.53,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 12700.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 16,
+      "distance_km": 106.53,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 12700.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 16,
+      "distance_km": 106.53,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 12700.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 5,
+      "distance_km": 106.53,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 12700.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 16,
+      "distance_km": 123.94,
+      "meal_breaks": 4,
+      "unknown_costs": 5,
+      "known_subtotal": 15020.0,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "hotel": "Hotel Alka Inn, Ahmedabad",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 16,
+      "sightseeing_days": 4,
+      "candidates": 16,
+      "distance_km": 113.41,
+      "meal_breaks": 3,
+      "unknown_costs": 7,
+      "known_subtotal": 7700.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 4,
+      "distance_km": 28.25,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 47.08,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 47.08,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 47.08,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 4,
+      "distance_km": 34.37,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 46.11,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 7,
+      "distance_km": 46.02,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 73.74,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1170.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.63,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 1470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.63,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 1470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.63,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 1470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 81.84,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1170.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.63,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 1470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 83.63,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1170.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 73.64,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1670.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 78.64,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1970.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 78.64,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1970.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 78.64,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1970.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 73.4,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1670.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 93.33,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1970.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 93.33,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1970.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 83.71000000000001,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 2470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 83.71000000000001,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 2470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 83.71000000000001,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 2470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 83.71000000000001,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 2470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 83.66,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 2470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 103.21000000000001,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 2770.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Rajdhani And Guest House, Halol",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 98.35,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 2470.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 36.61,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 43.28,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 43.28,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 43.28,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 43.35,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 54.46,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 55.09,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 70.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 90.45,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 2370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.5,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 2370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.5,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 2370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.5,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 2370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.55,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 2370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 125.23,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2670.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 98.85,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 2370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 92.78,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 4370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 92.78,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 4370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 92.78,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 4370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 92.78,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 4370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 91.91,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 4670.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 97.82000000000001,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 4370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 124.46,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 4370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 117.16,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 6070.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 117.16,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 6070.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 117.16,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 6070.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 117.16,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 6070.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 117.10000000000001,
+      "meal_breaks": 0,
+      "unknown_costs": 9,
+      "known_subtotal": 6070.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 124.49,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 6370.0,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "hotel": "Hotel Sarvottam, Baska",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 125.14999999999999,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 6370.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 53.26,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 61.480000000000004,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 61.480000000000004,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 61.480000000000004,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 51.99,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 61.480000000000004,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 61.480000000000004,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 112.69,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 1236.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 112.9,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 1236.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 112.9,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 1236.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 112.9,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 1236.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 109.06,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 1236.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 151.59,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 1916.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 168.06,
+      "meal_breaks": 2,
+      "unknown_costs": 5,
+      "known_subtotal": 1576.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 108.28,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2132.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 126.43,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 3028.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 127.12,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 3028.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 127.12,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 3028.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 127.12,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 3028.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 126.79,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 2688.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 145.37,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 3028.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Mathura Bhavan, Dwarka",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 178.24,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 3028.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 53.22,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 53.22,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 61.73,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 53.22,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 51.379999999999995,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 61.73,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 61.73,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 340.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 113.47,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 115.42,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 115.42,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 115.42,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 113.47,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 153.94,
+      "meal_breaks": 3,
+      "unknown_costs": 5,
+      "known_subtotal": 3480.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 14,
+      "distance_km": 176.89,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 112.4,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 112.4,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 112.4,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 112.4,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 112.4,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 156.46,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 144.15,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 5260.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 131.18,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 7720.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 131.87,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 7720.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 131.87,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 7720.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 131.87,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 7720.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 131.87,
+      "meal_breaks": 2,
+      "unknown_costs": 6,
+      "known_subtotal": 7720.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 151.32,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 7720.0,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "hotel": "Hotel Darshan Palace",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 166.02,
+      "meal_breaks": 2,
+      "unknown_costs": 7,
+      "known_subtotal": 7380.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 148.08,
+      "meal_breaks": 0,
+      "unknown_costs": 7,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 10.62,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 10.62,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 10.62,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 148.08,
+      "meal_breaks": 0,
+      "unknown_costs": 7,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 10.62,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 7,
+      "distance_km": 115.24,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 360.92,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 6,
+      "distance_km": 263.29,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 6,
+      "distance_km": 263.29,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 6,
+      "distance_km": 263.29,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 360.92,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 3,
+      "distance_km": 268.53,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 5,
+      "distance_km": 361.74,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 5908.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 5,
+      "distance_km": 257.22,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 7116.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 11,
+      "distance_km": 267.19,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 7116.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 11,
+      "distance_km": 268.33,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 7116.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 11,
+      "distance_km": 268.33,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 7116.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 5,
+      "distance_km": 257.22,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 7116.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 11,
+      "distance_km": 366.76,
+      "meal_breaks": 1,
+      "unknown_costs": 8,
+      "known_subtotal": 6816.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 11,
+      "distance_km": 365.19,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 6816.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 6,
+      "distance_km": 263.05,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 8024.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 272.52,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 8024.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 274.18,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 7724.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 274.18,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 7724.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 11,
+      "distance_km": 263.05,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 8024.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 274.12,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 8024.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Hotel Sapphire, Junagadh",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 265.6,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 8024.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 197.58,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 300.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 310.32,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 310.32,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 310.32,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 310.32,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 324.17,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 315.64,
+      "meal_breaks": 2,
+      "unknown_costs": 8,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 8,
+      "sightseeing_days": 2,
+      "candidates": 9,
+      "distance_km": 303.8,
+      "meal_breaks": 2,
+      "unknown_costs": 7,
+      "known_subtotal": 7459.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 3,
+      "candidates": 12,
+      "distance_km": 476.31,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9318.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 665.11,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 11477.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 665.53,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 11477.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 665.53,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 11477.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 665.53,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 11477.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 665.11,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 11477.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 883.98,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 11777.0,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "hotel": "Dwarkesh Farm & Resort, Somnath",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 782.87,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 11477.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 115.64,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 40.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 132.11,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 40.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 132.11,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 40.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 132.11,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 40.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 115.77,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 132.11,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 40.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 132.11,
+      "meal_breaks": 0,
+      "unknown_costs": 4,
+      "known_subtotal": 40.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 11,
+      "distance_km": 246.36999999999998,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1490.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 11,
+      "distance_km": 246.36999999999998,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1490.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 11,
+      "distance_km": 246.36999999999998,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1490.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 11,
+      "distance_km": 246.36999999999998,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1490.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 10,
+      "distance_km": 245.98999999999998,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1090.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 300.64,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1090.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 300.64,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1090.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 311.97999999999996,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2140.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 311.97999999999996,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2140.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 311.97999999999996,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2140.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 311.97999999999996,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2140.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 311.97999999999996,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2140.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 530.63,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 2540.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 519.4,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2940.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 394.07,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3590.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 409.03000000000003,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3190.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 409.03000000000003,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3190.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 409.03000000000003,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3190.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 393.69,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 3190.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 546.89,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3190.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "The Grand Takshak, Mehsana",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 576.37,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 3990.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 5,
+      "distance_km": 101.16,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 5,
+      "distance_km": 101.16,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 5,
+      "distance_km": 101.16,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 5,
+      "distance_km": 101.16,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 4,
+      "distance_km": 101.26,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 101.27000000000001,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 101.27000000000001,
+      "meal_breaks": 1,
+      "unknown_costs": 4,
+      "known_subtotal": 440.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 211.54000000000002,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 211.54000000000002,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 211.54000000000002,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 211.54000000000002,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 7,
+      "distance_km": 211.54000000000002,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 278.68,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 2,
+      "distance_km": 278.68,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 3273.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 276.46,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 6106.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 276.46,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 6106.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 276.46,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 6106.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 276.46,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 6106.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 13,
+      "distance_km": 276.46,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 6106.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 497.36,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 6106.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 564.98,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 6506.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 365.77000000000004,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 8939.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 365.77000000000004,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 8939.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 365.77000000000004,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 8939.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 365.77000000000004,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 8939.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 13,
+      "distance_km": 368.35,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 8539.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 495.56,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9339.0,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "hotel": "Modhera Sunrise Resort",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 596.37,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 9339.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 5,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 41.7,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 11.29,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 11.29,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 5,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 41.7,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 5,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 41.7,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 11.29,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 3,
+      "distance_km": 209.81,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 200.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 240.12,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2561.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 8,
+      "distance_km": 464.88,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 1,
+      "distance_km": 583.29,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 1,
+      "distance_km": 583.29,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 8,
+      "distance_km": 464.88,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 8,
+      "distance_km": 464.88,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 3,
+      "distance_km": 528.61,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 10,
+      "sightseeing_days": 3,
+      "candidates": 6,
+      "distance_km": 603.25,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 5322.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 10,
+      "distance_km": 489.51,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 11,
+      "distance_km": 485.57,
+      "meal_breaks": 3,
+      "unknown_costs": 12,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 11,
+      "distance_km": 485.57,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 10,
+      "distance_km": 489.51,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 10,
+      "distance_km": 489.51,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 3,
+      "distance_km": 601.26,
+      "meal_breaks": 3,
+      "unknown_costs": 12,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Prince Residency, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 3,
+      "distance_km": 601.26,
+      "meal_breaks": 3,
+      "unknown_costs": 12,
+      "known_subtotal": 7883.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 5,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 11.47,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 7.94,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 7.94,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 5,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 11.47,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 5,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 11.47,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 1,
+      "distance_km": 7.94,
+      "meal_breaks": 1,
+      "unknown_costs": 5,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 4,
+      "sightseeing_days": 1,
+      "candidates": 4,
+      "distance_km": 205.87,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 200.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 262.06,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 183.98,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 8,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 183.98,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 262.06,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 9,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 262.06,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 183.98,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 8,
+      "sightseeing_days": 2,
+      "candidates": 1,
+      "distance_km": 183.98,
+      "meal_breaks": 1,
+      "unknown_costs": 9,
+      "known_subtotal": 1199.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 1,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 1,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 3,
+      "candidates": 1,
+      "distance_km": 548.18,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 2598.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 11,
+      "distance_km": 486.54,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 486.45,
+      "meal_breaks": 3,
+      "unknown_costs": 12,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 12,
+      "distance_km": 486.45,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 11,
+      "distance_km": 486.54,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 11,
+      "distance_km": 486.54,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 4,
+      "distance_km": 604.58,
+      "meal_breaks": 3,
+      "unknown_costs": 12,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "hotel": "Hotel Sahara Palace, Bhuj",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 4,
+      "candidates": 4,
+      "distance_km": 604.58,
+      "meal_breaks": 3,
+      "unknown_costs": 12,
+      "known_subtotal": 3797.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 14.09,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 14.09,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 14.09,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 14.09,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 14.39,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 14.89,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 14.89,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.19,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1780.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.19,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1780.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.19,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1780.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.19,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1780.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.77,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 1780.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 297.03,
+      "meal_breaks": 0,
+      "unknown_costs": 10,
+      "known_subtotal": 1430.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 297.99,
+      "meal_breaks": 0,
+      "unknown_costs": 10,
+      "known_subtotal": 1430.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 202.09,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3210.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 202.09,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3210.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 202.09,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3210.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 202.09,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3210.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 202.57,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3210.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 203.83,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 3560.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 298.49,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 3210.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 202.28,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 4640.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 202.28,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 4640.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 202.28,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 4640.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 202.28,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 4640.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 202.24,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 4640.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 300.39,
+      "meal_breaks": 3,
+      "unknown_costs": 11,
+      "known_subtotal": 4990.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Manas Cottage, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 298.92,
+      "meal_breaks": 1,
+      "unknown_costs": 11,
+      "known_subtotal": 4290.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 15.11,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 15.11,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 15.11,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 8,
+      "distance_km": 15.11,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 9,
+      "distance_km": 14.99,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 15.12,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 8,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 15.12,
+      "meal_breaks": 1,
+      "unknown_costs": 6,
+      "known_subtotal": 350.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.76,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 3150.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.76,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 3150.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.76,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 3150.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 203.76,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 3150.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 200.93,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 3150.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 8,
+      "distance_km": 294.67,
+      "meal_breaks": 1,
+      "unknown_costs": 11,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 2,
+      "candidates": 4,
+      "distance_km": 296.64,
+      "meal_breaks": 1,
+      "unknown_costs": 11,
+      "known_subtotal": 2800.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 201.19,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 201.19,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 201.19,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 201.19,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 15,
+      "distance_km": 201.38,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 363.01,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 14,
+      "distance_km": 298.92,
+      "meal_breaks": 2,
+      "unknown_costs": 11,
+      "known_subtotal": 5950.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 203.16,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 8750.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 203.16,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 8750.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 203.16,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 8750.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 203.16,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 8750.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 15,
+      "distance_km": 202.32,
+      "meal_breaks": 1,
+      "unknown_costs": 10,
+      "known_subtotal": 8750.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 299.99,
+      "meal_breaks": 1,
+      "unknown_costs": 11,
+      "known_subtotal": 8400.0,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "hotel": "Savshanti Motels, Saputara",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 203.73,
+      "meal_breaks": 1,
+      "unknown_costs": 11,
+      "known_subtotal": 8400.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 11,
+      "distance_km": 19.07,
+      "meal_breaks": 1,
+      "unknown_costs": 2,
+      "known_subtotal": 600.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 62.83,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 62.83,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 62.83,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 4,
+      "distance_km": 58.89,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 11,
+      "distance_km": 21.09,
+      "meal_breaks": 1,
+      "unknown_costs": 2,
+      "known_subtotal": 600.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 169.34,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 231.69,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 229.60999999999999,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 229.60999999999999,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 229.60999999999999,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 226.0,
+      "meal_breaks": 0,
+      "unknown_costs": 7,
+      "known_subtotal": 750.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 3,
+      "distance_km": 231.69,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 3,
+      "distance_km": 231.69,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.02,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 365.90999999999997,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 365.90999999999997,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 365.90999999999997,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 4,
+      "distance_km": 366.02,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.02,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 520.67,
+      "meal_breaks": 2,
+      "unknown_costs": 10,
+      "known_subtotal": 1500.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 381.9,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 381.9,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 381.9,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 381.9,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 381.9,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 6,
+      "distance_km": 429.49,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Lilavati Atithigruh",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 6,
+      "distance_km": 432.15,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 3450.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 11,
+      "distance_km": 19.17,
+      "meal_breaks": 1,
+      "unknown_costs": 2,
+      "known_subtotal": 600.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 62.91,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 62.91,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 62.91,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 4,
+      "distance_km": 58.98,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 6,
+      "sightseeing_days": 1,
+      "candidates": 11,
+      "distance_km": 167.78,
+      "meal_breaks": 1,
+      "unknown_costs": 2,
+      "known_subtotal": 600.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 1,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 7,
+      "sightseeing_days": 1,
+      "candidates": 2,
+      "distance_km": 169.44,
+      "meal_breaks": 0,
+      "unknown_costs": 3,
+      "known_subtotal": 0.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 231.89000000000001,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 229.8,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 229.8,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 229.8,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 13,
+      "distance_km": 226.20000000000002,
+      "meal_breaks": 0,
+      "unknown_costs": 7,
+      "known_subtotal": 750.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 3,
+      "distance_km": 233.91,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 2,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 11,
+      "sightseeing_days": 2,
+      "candidates": 3,
+      "distance_km": 233.91,
+      "meal_breaks": 1,
+      "unknown_costs": 7,
+      "known_subtotal": 1350.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.32,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.19,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.19,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.19,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 4,
+      "distance_km": 366.32,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.32,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 3,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 3,
+      "candidates": 2,
+      "distance_km": 366.32,
+      "meal_breaks": 3,
+      "unknown_costs": 10,
+      "known_subtotal": 2100.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 80,
+        "cost": 10,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 382.28999999999996,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 80,
+        "rating": 10
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 382.28999999999996,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 10,
+        "cost": 10,
+        "rating": 80
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 382.28999999999996,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 34,
+        "cost": 33,
+        "rating": 33
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 382.28999999999996,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 100,
+        "cost": 0,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 14,
+      "distance_km": 382.28999999999996,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 100,
+        "rating": 0
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 6,
+      "distance_km": 494.28999999999996,
+      "meal_breaks": 2,
+      "unknown_costs": 9,
+      "known_subtotal": 2850.0,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "hotel": "Maheshwari Samaj Atithi Gruh",
+      "days": 4,
+      "weights": {
+        "distance": 0,
+        "cost": 0,
+        "rating": 100
+      },
+      "attractions": 12,
+      "sightseeing_days": 4,
+      "candidates": 6,
+      "distance_km": 494.28999999999996,
+      "meal_breaks": 3,
+      "unknown_costs": 9,
+      "known_subtotal": 3450.0,
+      "passed": true
+    }
+  ],
+  "browser": [
+    {
+      "width": 1440,
+      "four_days": true,
+      "actual_selected_hotel": "Hotel Prince Residency, Bhuj",
+      "pdf_bytes": 990846,
+      "all_requested_days_captured": true,
+      "map_omitted": true,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "four_days": true,
+      "actual_selected_hotel": "Hotel Prince Residency, Bhuj",
+      "pdf_bytes": 840341,
+      "all_requested_days_captured": true,
+      "map_omitted": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "four_days": true,
+      "actual_selected_hotel": "Hotel Prince Residency, Bhuj",
+      "pdf_bytes": 807242,
+      "all_requested_days_captured": true,
+      "map_omitted": true,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "api_verified": true
+}

@@ -1,0 +1,2866 @@
+{
+  "version": 1,
+  "release": "20261020",
+  "checked": "2026-10-20",
+  "attribution": "OpenStreetMap contributors ODbL-1.0 https://www.openstreetmap.org/copyright; Wikivoyage contributors CC BY-SA 4.0 https://en.wikivoyage.org/wiki/Saputara; cited tourism authorities, factual references only. No copied media.",
+  "records": [
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261020-kocharab-ashram",
+      "values": {
+        "slug": "kocharab-ashram",
+        "name": "Kochrab Ashram",
+        "lat": 23.01577,
+        "lng": 72.566693,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Kochrab Ashram is a visitor site in Ahmedabad region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/central-zone/ahmedabad/kocharab-ashram.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Ahmedabad region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/central-zone/ahmedabad/kocharab-ashram.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                540,
+                1020
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Ahmedabad region",
+            "anchor_name": "Sarkhej Roza",
+            "destination_anchor_straight_line_km": 6.74,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/central-zone/ahmedabad/kocharab-ashram.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "ahmedabad",
+      "key": "exp-20261020-lalbhai-dalpatbhai-museum",
+      "values": {
+        "slug": "lalbhai-dalpatbhai-museum",
+        "name": "Lalbhai Dalpatbhai Museum",
+        "lat": 23.033097,
+        "lng": 72.547621,
+        "rating": null,
+        "duration_hours": null,
+        "category": "museum",
+        "description": "Lalbhai Dalpatbhai Museum is a visitor site in Ahmedabad region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/central-zone/ahmedabad/lalbhai-dalpatbhai-museum.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Ahmedabad region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/central-zone/ahmedabad/lalbhai-dalpatbhai-museum.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              1
+            ],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                630,
+                1020
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Ahmedabad region",
+            "anchor_name": "Sarkhej Roza",
+            "destination_anchor_straight_line_km": 6.16,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/central-zone/ahmedabad/lalbhai-dalpatbhai-museum.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261020-citadel",
+      "values": {
+        "slug": "citadel",
+        "name": "Champaner Citadel walk",
+        "lat": 22.470177,
+        "lng": 73.526052,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Champaner Citadel walk is a visitor site in Champaner-Pavagadh region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/citadel.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Champaner-Pavagadh region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/central-zone/panchmahal/citadel.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                480,
+                1080
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Champaner-Pavagadh region",
+            "anchor_name": "Jami Masjid, Champaner",
+            "destination_anchor_straight_line_km": 2.11,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/central-zone/panchmahal/citadel.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261020-pavagadh-hill---kalika-mata-temple",
+      "values": {
+        "slug": "pavagadh-hill---kalika-mata-temple",
+        "name": "Pavagadh Hill and Kalika Mata Temple",
+        "lat": 22.46359,
+        "lng": 73.515407,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Pavagadh Hill and Kalika Mata Temple is a visitor site in Champaner-Pavagadh region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/pavagadh-hill---kalika-mata-temple.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Champaner-Pavagadh region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/central-zone/panchmahal/pavagadh-hill---kalika-mata-temple.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 180,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Champaner-Pavagadh region",
+            "anchor_name": "Jami Masjid, Champaner",
+            "destination_anchor_straight_line_km": 3.37,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/central-zone/panchmahal/pavagadh-hill---kalika-mata-temple.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "champaner",
+      "key": "exp-20261020-jambughoda-wildlife-sanctuary",
+      "values": {
+        "slug": "jambughoda-wildlife-sanctuary",
+        "name": "Jambughoda Wildlife Sanctuary",
+        "lat": 22.355212,
+        "lng": 73.675425,
+        "rating": null,
+        "duration_hours": null,
+        "category": "nature",
+        "description": "Jambughoda Wildlife Sanctuary is a visitor site in Champaner-Pavagadh region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/jambughoda-wildlife-sanctuary.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Champaner-Pavagadh region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim. Observe local weather, forest/permit and seasonal access restrictions; no swimming or unrestricted wildlife entry is implied.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/central-zone/panchmahal/jambughoda-wildlife-sanctuary.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 120,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Champaner-Pavagadh region",
+            "anchor_name": "Jami Masjid, Champaner",
+            "destination_anchor_straight_line_km": 20.28,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/central-zone/panchmahal/jambughoda-wildlife-sanctuary.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-aina-mahal",
+      "values": {
+        "slug": "aina-mahal",
+        "name": "Aina Mahal",
+        "lat": 23.255192,
+        "lng": 69.66868,
+        "rating": null,
+        "duration_hours": null,
+        "category": "palace",
+        "description": "Aina Mahal is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/aina-mahal.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/aina-mahal.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              4
+            ],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                540,
+                705
+              ],
+              [
+                900,
+                1065
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 3.28,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/aina-mahal.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-prag-mahal",
+      "values": {
+        "slug": "prag-mahal",
+        "name": "Prag Mahal",
+        "lat": 23.254588,
+        "lng": 69.666308,
+        "rating": null,
+        "duration_hours": null,
+        "category": "palace",
+        "description": "Prag Mahal is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html",
+            "https://www.irctctourism.com/packagedetails/WMR155.pdf"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              4
+            ],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                570,
+                735
+              ],
+              [
+                900,
+                1065
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 3.08,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-kutch-museum",
+      "values": {
+        "slug": "kutch-museum",
+        "name": "Kutch Museum",
+        "lat": 23.248723,
+        "lng": 69.664104,
+        "rating": null,
+        "duration_hours": null,
+        "category": "museum",
+        "description": "Kutch Museum is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html",
+            "https://www.irctctourism.com/packagedetails/WMR155.pdf"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              3
+            ],
+            "access_status": "verify_before_travel",
+            "closed_month_weeks": [
+              2,
+              4
+            ],
+            "closed_month_weekday": 6
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 2.44,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-hamirsar-lake--bhuj",
+      "values": {
+        "slug": "hamirsar-lake--bhuj",
+        "name": "Hamirsar Lake",
+        "lat": 23.251822,
+        "lng": 69.659206,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Hamirsar Lake is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/hamirsar-lake--bhuj.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/hamirsar-lake--bhuj.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 2.41,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/hamirsar-lake--bhuj.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-sharad-bagh-palace",
+      "values": {
+        "slug": "sharad-bagh-palace",
+        "name": "Sharad Bagh Palace",
+        "lat": 23.251787,
+        "lng": 69.654725,
+        "rating": null,
+        "duration_hours": null,
+        "category": "palace",
+        "description": "Sharad Bagh Palace is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/sharad-bagh-palace.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/sharad-bagh-palace.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              5
+            ],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                540,
+                720
+              ],
+              [
+                900,
+                1065
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 2.21,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/sharad-bagh-palace.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-nirona",
+      "values": {
+        "slug": "nirona",
+        "name": "Nirona craft village",
+        "lat": 23.463522,
+        "lng": 69.513695,
+        "rating": null,
+        "duration_hours": null,
+        "category": "craft",
+        "description": "Nirona craft village is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/nirona.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/nirona.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 29.02,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/nirona.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-living-and-learning-design-centre-crafts-museum",
+      "values": {
+        "slug": "living-and-learning-design-centre-crafts-museum",
+        "name": "Living and Learning Design Centre, Ajrakhpur",
+        "lat": 23.236646,
+        "lng": 69.797611,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Living and Learning Design Centre, Ajrakhpur is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/living-and-learning-design-centre-crafts-museum.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/living-and-learning-design-centre-crafts-museum.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              1
+            ],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 15.36,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/living-and-learning-design-centre-crafts-museum.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-vijay-vilas-palace",
+      "values": {
+        "slug": "vijay-vilas-palace",
+        "name": "Vijay Vilas Palace",
+        "lat": 22.834091,
+        "lng": 69.282572,
+        "rating": null,
+        "duration_hours": null,
+        "category": "palace",
+        "description": "Vijay Vilas Palace is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/vijay-vilas-palace.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/vijay-vilas-palace.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                420,
+                1140
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 57.98,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/vijay-vilas-palace.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-mandvi-beach",
+      "values": {
+        "slug": "mandvi-beach",
+        "name": "Mandvi Beach",
+        "lat": 22.826787,
+        "lng": 69.307337,
+        "rating": null,
+        "duration_hours": null,
+        "category": "beach",
+        "description": "Mandvi Beach is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/mandvi-beach.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/mandvi-beach.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 57.03,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/mandvi-beach.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-shyamji-krishna-varma-memorial",
+      "values": {
+        "slug": "shyamji-krishna-varma-memorial",
+        "name": "Shyamji Krishna Varma Memorial",
+        "lat": 22.822114,
+        "lng": 69.381967,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Shyamji Krishna Varma Memorial is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/shyamji-krishna-varma-memorial.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/shyamji-krishna-varma-memorial.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              4
+            ],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 53.16,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/shyamji-krishna-varma-memorial.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-bhadreshwar",
+      "values": {
+        "slug": "bhadreshwar",
+        "name": "Bhadreshwar Jain Tirth Derasar",
+        "lat": 22.911373,
+        "lng": 69.904203,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Bhadreshwar Jain Tirth Derasar is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/bhadreshwar.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/bhadreshwar.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 44.39,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/bhadreshwar.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "rann-of-kutch",
+      "key": "exp-20261020-chhari-dhand-wetland-reserve",
+      "values": {
+        "slug": "chhari-dhand-wetland-reserve",
+        "name": "Chhari Dhand Wetland Reserve",
+        "lat": 23.59259,
+        "lng": 69.301041,
+        "rating": null,
+        "duration_hours": null,
+        "category": "nature",
+        "description": "Chhari Dhand Wetland Reserve is a visitor site in Bhuj/Kutch region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/chhari-dhand-wetland-reserve.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Bhuj/Kutch region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim. Observe local weather, forest/permit and seasonal access restrictions; no swimming or unrestricted wildlife entry is implied.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/kutch-zone/kutch/chhari-dhand-wetland-reserve.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 120,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Bhuj/Kutch region",
+            "anchor_name": "Hotel Prince Residency, Bhuj",
+            "destination_anchor_straight_line_km": 53.35,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/kutch-zone/kutch/chhari-dhand-wetland-reserve.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-bahuchar-mata-temple-becharaji",
+      "values": {
+        "slug": "bahuchar-mata-temple-becharaji",
+        "name": "Bahuchar Mata Temple Becharaji",
+        "lat": 23.500086,
+        "lng": 72.042632,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Bahuchar Mata Temple Becharaji is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/mehsana/bahuchar-mata-temple-becharaji.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/mehsana/bahuchar-mata-temple-becharaji.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 13.07,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/mehsana/bahuchar-mata-temple-becharaji.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-kirti-toran--vadnagar",
+      "values": {
+        "slug": "kirti-toran--vadnagar",
+        "name": "Kirti Toran, Vadnagar",
+        "lat": 23.790798,
+        "lng": 72.641776,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Kirti Toran, Vadnagar is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/mehsana/kirti-toran--vadnagar.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/mehsana/kirti-toran--vadnagar.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 56.7,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/mehsana/kirti-toran--vadnagar.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-vadnagar",
+      "values": {
+        "slug": "vadnagar",
+        "name": "Vadnagar heritage precinct",
+        "lat": 23.782553,
+        "lng": 72.612763,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Vadnagar heritage precinct is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/mehsana/vadnagar.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/mehsana/vadnagar.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 53.63,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/mehsana/vadnagar.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-taranga-hill",
+      "values": {
+        "slug": "taranga-hill",
+        "name": "Taranga (Hill) Jain Temple",
+        "lat": 23.965822,
+        "lng": 72.743697,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Taranga (Hill) Jain Temple is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/mehsana/taranga-hill.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/mehsana/taranga-hill.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 75.29,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/mehsana/taranga-hill.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-panchasara-parshwanath-jain-derasar",
+      "values": {
+        "slug": "panchasara-parshwanath-jain-derasar",
+        "name": "Panchasara Parshwanath Jain Derasar",
+        "lat": 23.853957,
+        "lng": 72.114899,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Panchasara Parshwanath Jain Derasar is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/patan/panchasara-parshwanath-jain-derasar.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/patan/panchasara-parshwanath-jain-derasar.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 30.14,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/patan/panchasara-parshwanath-jain-derasar.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-patan-patola-heritage-museum",
+      "values": {
+        "slug": "patan-patola-heritage-museum",
+        "name": "Patan Patola Heritage Museum",
+        "lat": 23.855808,
+        "lng": 72.105105,
+        "rating": null,
+        "duration_hours": null,
+        "category": "museum",
+        "description": "Patan Patola Heritage Museum is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/patan/patan-patola-heritage-museum.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/patan/patan-patola-heritage-museum.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                600,
+                1080
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 30.42,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/patan/patan-patola-heritage-museum.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-rani-ki-vav",
+      "values": {
+        "slug": "rani-ki-vav",
+        "name": "Rani Ki Vav, Patan",
+        "lat": 23.858902,
+        "lng": 72.099728,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Rani Ki Vav, Patan is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/patan/rani-ki-vav.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/patan/rani-ki-vav.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 30.82,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/patan/rani-ki-vav.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "modhera",
+      "key": "exp-20261020-sidhpur",
+      "values": {
+        "slug": "sidhpur",
+        "name": "Bohra Vad, Sidhpur",
+        "lat": 23.916126,
+        "lng": 72.370435,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Bohra Vad, Sidhpur is a visitor site in Modhera-Patan-Mehsana region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/north-zone/patan/sidhpur.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Modhera-Patan-Mehsana region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/north-zone/patan/sidhpur.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Modhera-Patan-Mehsana region",
+            "anchor_name": "Modhera Sun Temple",
+            "destination_anchor_straight_line_km": 44.18,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/north-zone/patan/sidhpur.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-adi-kadi-vav-and-navghan-kuwo",
+      "values": {
+        "slug": "adi-kadi-vav-and-navghan-kuwo",
+        "name": "Adi-Kadi Vav",
+        "lat": 21.52683,
+        "lng": 70.469626,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Adi-Kadi Vav is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/adi-kadi-vav-and-navghan-kuwo.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/adi-kadi-vav-and-navghan-kuwo.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 41.97,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/adi-kadi-vav-and-navghan-kuwo.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-ashok-edicts",
+      "values": {
+        "slug": "ashok-edicts",
+        "name": "Ashoka Edicts",
+        "lat": 21.525086,
+        "lng": 70.477268,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Ashoka Edicts is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/ashok-edicts.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/ashok-edicts.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                480,
+                1080
+              ]
+            ]
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 41.54,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/ashok-edicts.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-buddhist-caves",
+      "values": {
+        "slug": "buddhist-caves",
+        "name": "Buddhist Caves of Khapra Kodiya",
+        "lat": 21.529843,
+        "lng": 70.466008,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Buddhist Caves of Khapra Kodiya is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/buddhist-caves.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/buddhist-caves.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 42.41,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/buddhist-caves.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-damodar-kund",
+      "values": {
+        "slug": "damodar-kund",
+        "name": "Damodar Kund",
+        "lat": 21.525666,
+        "lng": 70.486148,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Damodar Kund is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/damodar-kund.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/damodar-kund.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 41.33,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/damodar-kund.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-girnar-hill",
+      "values": {
+        "slug": "girnar-hill",
+        "name": "Girnar Hill",
+        "lat": 21.531745,
+        "lng": 70.550061,
+        "rating": null,
+        "duration_hours": null,
+        "category": "nature",
+        "description": "Girnar Hill is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/girnar-hill.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim. Observe local weather, forest/permit and seasonal access restrictions; no swimming or unrestricted wildlife entry is implied. Six-hour planning allowance for a strenuous hill visit; ropeway/permits and fitness require confirmation.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/girnar-hill.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 360,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 40.65,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/girnar-hill.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-mahabat-khan-maqbara",
+      "values": {
+        "slug": "mahabat-khan-maqbara",
+        "name": "Mahabat Khan Maqbara",
+        "lat": 21.527203,
+        "lng": 70.457974,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Mahabat Khan Maqbara is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/mahabat-khan-maqbara.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/mahabat-khan-maqbara.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 42.41,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/mahabat-khan-maqbara.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-uparkot-fort",
+      "values": {
+        "slug": "uparkot-fort",
+        "name": "Uparkot Fort",
+        "lat": 21.524752,
+        "lng": 70.467865,
+        "rating": null,
+        "duration_hours": null,
+        "category": "fort",
+        "description": "Uparkot Fort is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/uparkot-fort.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/junagadh/uparkot-fort.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 120,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 41.81,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/junagadh/uparkot-fort.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "gir-national-park",
+      "key": "exp-20261020-shri-bai-ashram",
+      "values": {
+        "slug": "shri-bai-ashram",
+        "name": "Shri Bai Ashram",
+        "lat": 21.060975,
+        "lng": 70.530312,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Shri Bai Ashram is a visitor site in Junagadh/Sasan Gir region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/shri-bai-ashram/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Junagadh/Sasan Gir region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/shri-bai-ashram/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Junagadh/Sasan Gir region",
+            "anchor_name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+            "destination_anchor_straight_line_km": 13.93,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/shri-bai-ashram/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-prabhas-patan-museum",
+      "values": {
+        "slug": "prabhas-patan-museum",
+        "name": "Prabhas Patan Museum",
+        "lat": 20.890527,
+        "lng": 70.399848,
+        "rating": null,
+        "duration_hours": null,
+        "category": "museum",
+        "description": "Prabhas Patan Museum is a visitor site in Somnath region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/gir-somnath/prabhas-patan-museum.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/gir-somnath/prabhas-patan-museum.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [
+              3
+            ],
+            "access_status": "verify_before_travel",
+            "windows": [
+              [
+                630,
+                1050
+              ]
+            ],
+            "closed_month_weeks": [
+              2,
+              4
+            ],
+            "closed_month_weekday": 6
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 0.35,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/saurashtra/gir-somnath/prabhas-patan-museum.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-geeta-temple",
+      "values": {
+        "slug": "geeta-temple",
+        "name": "Geeta Temple",
+        "lat": 20.887033,
+        "lng": 70.415658,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Geeta Temple is a visitor site in Somnath region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/geeta-temple/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/geeta-temple/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 1.48,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/geeta-temple/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-prachi-tirth",
+      "values": {
+        "slug": "prachi-tirth",
+        "name": "Prachi Tirth",
+        "lat": 20.921512,
+        "lng": 70.608755,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Prachi Tirth is a visitor site in Somnath region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/prachi-tirth/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/prachi-tirth/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 21.86,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/prachi-tirth/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-mool-dwarka",
+      "values": {
+        "slug": "mool-dwarka",
+        "name": "Mool Dwarka",
+        "lat": 20.76878,
+        "lng": 70.66621,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Mool Dwarka is a visitor site in Somnath region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/mool-dwarka/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/mool-dwarka/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 30.54,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/mool-dwarka/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-jamjir-waterfall",
+      "values": {
+        "slug": "jamjir-waterfall",
+        "name": "Jamjir Waterfall",
+        "lat": 20.96564,
+        "lng": 70.76557,
+        "rating": null,
+        "duration_hours": null,
+        "category": "nature",
+        "description": "Jamjir Waterfall is a visitor site in Somnath region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/jamjir-waterfall/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim. Observe local weather, forest/permit and seasonal access restrictions; no swimming or unrestricted wildlife entry is implied.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/jamjir-waterfall/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 120,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 38.8,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/jamjir-waterfall/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-jhoolta-minara",
+      "values": {
+        "slug": "jhoolta-minara",
+        "name": "Jhoolta Minara Mosque",
+        "lat": 20.77482,
+        "lng": 71.04506,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Jhoolta Minara Mosque is a visitor site in Somnath region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/jhoolta-minara/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/jhoolta-minara/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 68.06,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/jhoolta-minara/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-gupt-prayag",
+      "values": {
+        "slug": "gupt-prayag",
+        "name": "Gupt Prayag",
+        "lat": 20.78353,
+        "lng": 71.02079,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Gupt Prayag is a visitor site in Somnath region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/gupt-prayag/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/gupt-prayag/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 65.41,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/gupt-prayag/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "somnath",
+      "key": "exp-20261020-sana-caves",
+      "values": {
+        "slug": "sana-caves",
+        "name": "Sana Caves",
+        "lat": 20.962568,
+        "lng": 71.203014,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Sana Caves is a visitor site in Somnath region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://girsomnath.nic.in/tourist-place/sana-caves/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Somnath region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://girsomnath.nic.in/tourist-place/sana-caves/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Somnath region",
+            "anchor_name": "Somnath Temple",
+            "destination_anchor_straight_line_km": 83.67,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://girsomnath.nic.in/tourist-place/sana-caves/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-gira-waterfalls",
+      "values": {
+        "slug": "gira-waterfalls",
+        "name": "Gira Waterfalls",
+        "lat": 20.73714,
+        "lng": 73.491896,
+        "rating": null,
+        "duration_hours": null,
+        "category": "nature",
+        "description": "Gira Waterfalls is a visitor site in Saputara/Dang region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/south-zone/dang/gira-waterfalls.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara/Dang region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim. Observe local weather, forest/permit and seasonal access restrictions; no swimming or unrestricted wildlife entry is implied.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/south-zone/dang/gira-waterfalls.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 120,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Saputara/Dang region",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 31.88,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/south-zone/dang/gira-waterfalls.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-waghai-botanical-gardens",
+      "values": {
+        "slug": "waghai-botanical-gardens",
+        "name": "Waghai Botanical Garden",
+        "lat": 20.754382,
+        "lng": 73.500504,
+        "rating": null,
+        "duration_hours": null,
+        "category": "heritage",
+        "description": "Waghai Botanical Garden is a visitor site in Saputara/Dang region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/south-zone/dang/waghai-botanical-gardens.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara/Dang region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/south-zone/dang/waghai-botanical-gardens.html"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Saputara/Dang region",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 32.28,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.gujarattourism.com/south-zone/dang/waghai-botanical-gardens.html"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-mahal-campsite",
+      "values": {
+        "slug": "mahal-campsite",
+        "name": "Mahal Campsite",
+        "lat": 20.915567,
+        "lng": 73.669073,
+        "rating": null,
+        "duration_hours": null,
+        "category": "palace",
+        "description": "Mahal Campsite is a visitor site in Saputara/Dang region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://dangs.nic.in/tourist-place/mahal-campsite/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara/Dang region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://dangs.nic.in/tourist-place/mahal-campsite/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 90,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Saputara/Dang region",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 38.52,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://dangs.nic.in/tourist-place/mahal-campsite/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "dwarka",
+      "key": "exp-20261020-shivrajpur-beach",
+      "values": {
+        "slug": "shivrajpur-beach",
+        "name": "Shivrajpur Beach",
+        "lat": 22.334739,
+        "lng": 68.955727,
+        "rating": null,
+        "duration_hours": null,
+        "category": "beach",
+        "description": "Shivrajpur Beach is a visitor site in Dwarka region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/shivrajpur-beach.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Dwarka region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/shivrajpur-beach.html",
+            "https://www.openstreetmap.org/node/14201226426"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Dwarka region",
+            "anchor_name": "Rukmini Devi Temple",
+            "destination_anchor_straight_line_km": 8.65,
+            "coordinate_basis": "OSM mapped beach/visitor locality cross-check; replaces an offshore tourism-page map reference, not a surveyed entrance.",
+            "coordinate_source": "https://www.openstreetmap.org/node/14201226426"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "dwarka",
+      "key": "exp-20261020-okha-madhi-beach",
+      "values": {
+        "slug": "okha-madhi-beach",
+        "name": "Okha Madhi Beach",
+        "lat": 22.083046,
+        "lng": 69.101814,
+        "rating": null,
+        "duration_hours": null,
+        "category": "beach",
+        "description": "Okha Madhi Beach is a visitor site in Dwarka region, listed by the referenced tourism or geographic source. It is a regional excursion, not a city-centre attraction.",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/okha-madhi-beach.html",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Dwarka region. Nearby regional excursion; road travel must fit a separate day. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/okha-madhi-beach.html",
+            "https://www.openstreetmap.org/node/12212763902"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "nearby_excursion",
+            "locality": "Dwarka region",
+            "anchor_name": "Rukmini Devi Temple",
+            "destination_anchor_straight_line_km": 24.0,
+            "coordinate_basis": "OSM mapped beach/visitor locality cross-check; replaces an offshore tourism-page map reference, not a surveyed entrance.",
+            "coordinate_source": "https://www.openstreetmap.org/node/12212763902"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-echo-point",
+      "values": {
+        "slug": "echo-point",
+        "name": "Echo Point (Saputara)",
+        "lat": 20.575731,
+        "lng": 73.734016,
+        "rating": null,
+        "duration_hours": null,
+        "category": "viewpoint",
+        "description": "Echo Point (Saputara) is a visitor site in Saputara hill town, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara hill town. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+            "https://en.wikivoyage.org/wiki/Saputara"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 45,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Saputara hill town",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 1.23,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available",
+          "identity_basis": "Community travel listing; approximate map location, not independently surveyed or venue-confirmed."
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-nageshwar-mahadev",
+      "values": {
+        "slug": "nageshwar-mahadev",
+        "name": "Nageshwar Mahadev (Saputara)",
+        "lat": 20.57326,
+        "lng": 73.74424,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Nageshwar Mahadev (Saputara) is a visitor site in Saputara hill town, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara hill town. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+            "https://en.wikivoyage.org/wiki/Saputara"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Saputara hill town",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 0.41,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available",
+          "identity_basis": "Community travel listing; approximate map location, not independently surveyed or venue-confirmed."
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-lake-garden",
+      "values": {
+        "slug": "lake-garden",
+        "name": "Lake Garden (Saputara)",
+        "lat": 20.57476,
+        "lng": 73.7465,
+        "rating": null,
+        "duration_hours": null,
+        "category": "garden",
+        "description": "Lake Garden (Saputara) is a visitor site in Saputara hill town, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara hill town. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+            "https://en.wikivoyage.org/wiki/Saputara"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 45,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Saputara hill town",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 0.22,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-rose-garden",
+      "values": {
+        "slug": "rose-garden",
+        "name": "Rose Garden (Saputara)",
+        "lat": 20.57981,
+        "lng": 73.75018,
+        "rating": null,
+        "duration_hours": null,
+        "category": "garden",
+        "description": "Rose Garden (Saputara) is a visitor site in Saputara hill town, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara hill town. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+            "https://en.wikivoyage.org/wiki/Saputara"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 45,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Saputara hill town",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 0.58,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available",
+          "identity_basis": "Community travel listing; approximate map location, not independently surveyed or venue-confirmed."
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-step-garden",
+      "values": {
+        "slug": "step-garden",
+        "name": "Step Garden (Saputara)",
+        "lat": 20.57972,
+        "lng": 73.74457,
+        "rating": null,
+        "duration_hours": null,
+        "category": "garden",
+        "description": "Step Garden (Saputara) is a visitor site in Saputara hill town, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Saputara hill town. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+            "https://en.wikivoyage.org/wiki/Saputara"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 45,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Saputara hill town",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 0.36,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "saputara",
+      "key": "exp-20261020-hatgadh-fort",
+      "values": {
+        "slug": "hatgadh-fort",
+        "name": "Hatgadh Fort",
+        "lat": 20.54251,
+        "lng": 73.76084,
+        "rating": null,
+        "duration_hours": null,
+        "category": "fort",
+        "description": "Hatgadh Fort is a visitor site in Hatgadh, Maharashtra border excursion, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Hatgadh, Maharashtra border excursion. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf",
+            "https://en.wikivoyage.org/wiki/Saputara"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 120,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Hatgadh, Maharashtra border excursion",
+            "anchor_name": "Saputara Lake",
+            "destination_anchor_straight_line_km": 4.11,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://en.wikivoyage.org/wiki/Saputara"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "dwarka",
+      "key": "exp-20261020-gopi-talav-dwarka",
+      "values": {
+        "slug": "gopi-talav-dwarka",
+        "name": "Gopi Talav temple precinct",
+        "lat": 22.370194,
+        "lng": 69.108253,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Gopi Talav temple precinct is a visitor site in Dwarka/Okhamandal region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://devbhumidwarka.nic.in/places-of-interest/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Dwarka/Okhamandal region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://devbhumidwarka.nic.in/places-of-interest/",
+            "https://www.openstreetmap.org/way/1484037090"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Dwarka/Okhamandal region",
+            "anchor_name": "Rukmini Devi Temple",
+            "destination_anchor_straight_line_km": 19.4,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.openstreetmap.org/way/1484037090"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "dwarka",
+      "key": "exp-20261020-gomti-ghat-dwarka",
+      "values": {
+        "slug": "gomti-ghat-dwarka",
+        "name": "Gomti Ghat",
+        "lat": 22.236815,
+        "lng": 68.967722,
+        "rating": null,
+        "duration_hours": null,
+        "category": "temple",
+        "description": "Gomti Ghat is a visitor site in Dwarka/Okhamandal region, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://devbhumidwarka.nic.in/places-of-interest/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Dwarka/Okhamandal region. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://devbhumidwarka.nic.in/places-of-interest/",
+            "https://www.openstreetmap.org/node/12427736062"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Dwarka/Okhamandal region",
+            "anchor_name": "Rukmini Devi Temple",
+            "destination_anchor_straight_line_km": 2.31,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.openstreetmap.org/node/12427736062"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "dwarka",
+      "key": "exp-20261020-dwarka-lighthouse-viewpoint",
+      "values": {
+        "slug": "dwarka-lighthouse-viewpoint",
+        "name": "Dwarka Lighthouse viewpoint",
+        "lat": 22.23808,
+        "lng": 68.958453,
+        "rating": null,
+        "duration_hours": null,
+        "category": "viewpoint",
+        "description": "Dwarka Lighthouse viewpoint is a visitor site in Dwarka coast, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://chanceht.org/lighthouse/dwarka-point/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Dwarka coast. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://chanceht.org/lighthouse/dwarka-point/"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 45,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Dwarka coast",
+            "anchor_name": "Rukmini Devi Temple",
+            "destination_anchor_straight_line_km": 2.23,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://chanceht.org/lighthouse/dwarka-point/"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    },
+    {
+      "table": "attractions",
+      "city": "dwarka",
+      "key": "exp-20261020-dwarka-beach",
+      "values": {
+        "slug": "dwarka-beach",
+        "name": "Dwarka Beach",
+        "lat": 22.23464,
+        "lng": 68.9664,
+        "rating": null,
+        "duration_hours": null,
+        "category": "beach",
+        "description": "Dwarka Beach is a visitor site in Dwarka coast, listed by the referenced tourism or geographic source. ",
+        "entry_fee": "Price unavailable",
+        "entry_fee_numeric": null,
+        "opening_time": null,
+        "closing_time": null,
+        "image_url": null,
+        "source": "Source-backed identity and approximate mapped location; operational uncertainty retained",
+        "source_url": "https://devbhumidwarka.nic.in/places-of-interest/",
+        "source_date": "2026-10-20",
+        "provenance_status": "project_approved",
+        "best_time_note": "Dwarka coast. Admission price unavailable; current hours/access must be confirmed. Duration is a planning estimate. No booking or availability claim.",
+        "provenance_review": {
+          "checked": "2026-10-20",
+          "sources": [
+            "https://devbhumidwarka.nic.in/places-of-interest/",
+            "https://www.openstreetmap.org/node/12413875829"
+          ],
+          "license": "Factual source references only; no photographs copied. OpenStreetMap contributors ODbL-1.0 / Wikivoyage contributors CC BY-SA 4.0 where listed.",
+          "planning": {
+            "duration_minutes": 60,
+            "duration_basis": "Explicit project planning estimate by attraction type; not an official published visit duration",
+            "closed_weekdays": [],
+            "access_status": "verify_before_travel"
+          },
+          "geography": {
+            "scope": "local_area",
+            "locality": "Dwarka coast",
+            "anchor_name": "Rukmini Devi Temple",
+            "destination_anchor_straight_line_km": 2.53,
+            "coordinate_basis": "Approximate tourism-authority map reference or explicitly cited community map point; not a surveyed entrance",
+            "coordinate_source": "https://www.openstreetmap.org/node/12413875829"
+          },
+          "fee_basis": "Unknown, never free",
+          "rating_basis": "Unknown, no invented score",
+          "image_basis": "Intentional fallback until licensed exact media is available"
+        }
+      }
+    }
+  ]
+}

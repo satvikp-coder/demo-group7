@@ -1,0 +1,95 @@
+[
+  {
+    "query": "Bhadkeshwar Mahadev Temple Dwarka",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Bhadkeshwar+Mahadev+Temple+Dwarka&format=jsonv2&countrycodes=in&viewbox=68.85%2C22.52%2C69.2%2C22.15&bounded=1&limit=2",
+    "checked": "2026-10-20",
+    "license": "OpenStreetMap contributors ODbL-1.0",
+    "results": []
+  },
+  {
+    "query": "Gopi Talav Dwarka",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Gopi+Talav+Dwarka&format=jsonv2&countrycodes=in&viewbox=68.85%2C22.52%2C69.2%2C22.15&bounded=1&limit=2",
+    "checked": "2026-10-20",
+    "license": "OpenStreetMap contributors ODbL-1.0",
+    "results": [
+      {
+        "place_id": 248756261,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1484037090,
+        "lat": "22.3701943",
+        "lon": "69.1082525",
+        "category": "amenity",
+        "type": "place_of_worship",
+        "place_rank": 30,
+        "importance": 9.99999999995449e-06,
+        "addresstype": "amenity",
+        "name": "Shri Gopinathji Temple Gopi Talav",
+        "display_name": "Shri Gopinathji Temple Gopi Talav, Nageshwar Road, Padmini, Ghanshyam Nagar, Devbhumi Dwarka, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, India",
+        "boundingbox": [
+          "22.3701537",
+          "22.3702817",
+          "69.1081821",
+          "69.1083162"
+        ]
+      },
+      {
+        "place_id": 248861335,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 13607423552,
+        "lat": "22.3701358",
+        "lon": "69.1079868",
+        "category": "amenity",
+        "type": "place_of_worship",
+        "place_rank": 30,
+        "importance": 9.99999999995449e-06,
+        "addresstype": "amenity",
+        "name": "Shri Ram Mandir Gopi Talav",
+        "display_name": "Shri Ram Mandir Gopi Talav, Nageshwar Road, Padmini, Ghanshyam Nagar, Devbhumi Dwarka, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, India",
+        "boundingbox": [
+          "22.3700858",
+          "22.3701858",
+          "69.1079368",
+          "69.1080368"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Gomti Ghat Dwarka",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Gomti+Ghat+Dwarka&format=jsonv2&countrycodes=in&viewbox=68.85%2C22.52%2C69.2%2C22.15&bounded=1&limit=2",
+    "checked": "2026-10-20",
+    "license": "OpenStreetMap contributors ODbL-1.0",
+    "results": [
+      {
+        "place_id": 248373845,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 12427736062,
+        "lat": "22.2368149",
+        "lon": "68.9677224",
+        "category": "tourism",
+        "type": "viewpoint",
+        "place_rank": 30,
+        "importance": 5.55939574272834e-05,
+        "addresstype": "tourism",
+        "name": "Gomti Ghat Dwarka",
+        "display_name": "Gomti Ghat Dwarka, Sudama Setu, Old, Aboti Brahmin Vadi, Devbhumi Dwarka, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, 361335, India",
+        "boundingbox": [
+          "22.2367649",
+          "22.2368649",
+          "68.9676724",
+          "68.9677724"
+        ]
+      }
+    ]
+  },
+  {
+    "query": "Hanuman Dandi Bet Dwarka",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Hanuman+Dandi+Bet+Dwarka&format=jsonv2&countrycodes=in&viewbox=68.85%2C22.52%2C69.2%2C22.15&bounded=1&limit=2",
+    "checked": "2026-10-20",
+    "license": "OpenStreetMap contributors ODbL-1.0",
+    "results": []
+  }
+]

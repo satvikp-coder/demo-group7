@@ -1,0 +1,481 @@
+{
+  "baselineCommit": "3fbcae1e9d8a28a3270112812996536d41e533d0",
+  "checkedAt": "2026-10-20T13:38:37.763Z",
+  "readOnly": true,
+  "basis": "Reconstructed exact baseline engine on preserved pre-change PostgreSQL catalog snapshot; no database connection or writes",
+  "cases": [
+    {
+      "city": "Ahmedabad",
+      "slug": "ahmedabad",
+      "days": 1,
+      "attractions": 9,
+      "meal_breaks": 2,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 4690,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Ahmedabad",
+      "slug": "ahmedabad",
+      "days": 2,
+      "attractions": 11,
+      "meal_breaks": 3,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 6340,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Ahmedabad",
+      "slug": "ahmedabad",
+      "days": 3,
+      "attractions": 11,
+      "meal_breaks": 3,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 9860,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Ahmedabad",
+      "slug": "ahmedabad",
+      "days": 4,
+      "attractions": 11,
+      "meal_breaks": 3,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 11260,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Champaner",
+      "slug": "champaner",
+      "days": 1,
+      "attractions": 1,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 70,
+      "unpriced_components": [
+        "Food",
+        "Transport"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Champaner",
+      "slug": "champaner",
+      "days": 2,
+      "attractions": 1,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 870,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Champaner",
+      "slug": "champaner",
+      "days": 3,
+      "attractions": 1,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 1670,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Champaner",
+      "slug": "champaner",
+      "days": 4,
+      "attractions": 1,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 2470,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Dwarka",
+      "slug": "dwarka",
+      "days": 1,
+      "attractions": 4,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 340,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Dwarka",
+      "slug": "dwarka",
+      "days": 2,
+      "attractions": 4,
+      "meal_breaks": 2,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 1576,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Dwarka",
+      "slug": "dwarka",
+      "days": 3,
+      "attractions": 4,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 2132,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Dwarka",
+      "slug": "dwarka",
+      "days": 4,
+      "attractions": 4,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 2688,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Gir National Park",
+      "slug": "gir-national-park",
+      "days": 1,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 5300,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Gir National Park",
+      "slug": "gir-national-park",
+      "days": 2,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 6208,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Gir National Park",
+      "slug": "gir-national-park",
+      "days": 3,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 7116,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Gir National Park",
+      "slug": "gir-national-park",
+      "days": 4,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 8024,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Modhera",
+      "slug": "modhera",
+      "days": 1,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 40,
+      "unpriced_components": [
+        "Food",
+        "Transport"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Modhera",
+      "slug": "modhera",
+      "days": 2,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 1090,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Modhera",
+      "slug": "modhera",
+      "days": 3,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 2140,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Modhera",
+      "slug": "modhera",
+      "days": 4,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 3190,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "days": 1,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 200,
+      "unpriced_components": [
+        "Food",
+        "Transport"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "days": 2,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 3261,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "days": 3,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 5822,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "days": 4,
+      "attractions": 2,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 8383,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Saputara",
+      "slug": "saputara",
+      "days": 1,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 0,
+      "unpriced_components": [
+        "Food",
+        "Transport"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Saputara",
+      "slug": "saputara",
+      "days": 2,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 1430,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Saputara",
+      "slug": "saputara",
+      "days": 3,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 2860,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Saputara",
+      "slug": "saputara",
+      "days": 4,
+      "attractions": 2,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 4290,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Somnath",
+      "slug": "somnath",
+      "days": 1,
+      "attractions": 4,
+      "meal_breaks": 1,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 600,
+      "unpriced_components": [
+        "Transport",
+        "Additional food outside scheduled meals"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Somnath",
+      "slug": "somnath",
+      "days": 2,
+      "attractions": 4,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 750,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Somnath",
+      "slug": "somnath",
+      "days": 3,
+      "attractions": 4,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 1500,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    },
+    {
+      "city": "Somnath",
+      "slug": "somnath",
+      "days": 4,
+      "attractions": 4,
+      "meal_breaks": 0,
+      "unknown_stop_costs": 0,
+      "known_subtotal": 2250,
+      "unpriced_components": [
+        "Food",
+        "Transport",
+        "Accommodation taxes and fees"
+      ],
+      "complete_budget": false
+    }
+  ],
+  "verified": true
+}

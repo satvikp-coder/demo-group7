@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Shivrajpur Beach",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Shivrajpur+Beach&format=jsonv2&countrycodes=in&limit=3",
+    "checked": "2026-10-20",
+    "results": [
+      {
+        "place_id": 427828419,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 14201226426,
+        "lat": "22.3347394",
+        "lon": "68.9557271",
+        "category": "place",
+        "type": "village",
+        "place_rank": 19,
+        "importance": 0.14670416800183103,
+        "addresstype": "village",
+        "name": "Shivrajpur Beach",
+        "display_name": "Shivrajpur Beach, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, India",
+        "boundingbox": [
+          "22.3147394",
+          "22.3547394",
+          "68.9357271",
+          "68.9757271"
+        ]
+      },
+      {
+        "place_id": 248037203,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 761459677,
+        "lat": "22.3436709",
+        "lon": "68.9564048",
+        "category": "natural",
+        "type": "beach",
+        "place_rank": 22,
+        "importance": 0.11734328469919902,
+        "addresstype": "beach",
+        "name": "Shivrajpur Beach",
+        "display_name": "Shivrajpur Beach, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, India",
+        "boundingbox": [
+          "22.3317845",
+          "22.3559325",
+          "68.9496881",
+          "68.9604628"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Okha Madhi Beach",
+    "source_url": "https://nominatim.openstreetmap.org/search?q=Okha+Madhi+Beach&format=jsonv2&countrycodes=in&limit=3",
+    "checked": "2026-10-20",
+    "results": [
+      {
+        "place_id": 247809894,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 12212763902,
+        "lat": "22.0830459",
+        "lon": "69.1018142",
+        "category": "natural",
+        "type": "beach",
+        "place_rank": 22,
+        "importance": 0.10667666666666664,
+        "addresstype": "beach",
+        "name": "Okha Madhi Beach",
+        "display_name": "Okha Madhi Beach, Okha Madhi, Okhamandal Taluka, Devbhumi Dwaraka, Gujarat, India",
+        "boundingbox": [
+          "22.0829959",
+          "22.0830959",
+          "69.1017642",
+          "69.1018642"
+        ]
+      }
+    ]
+  }
+]

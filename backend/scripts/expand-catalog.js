@@ -20,15 +20,15 @@ export function loadExpansion(directoryOverride=directory,release="20261009"){
  }
  return manifest;
 }
-export async function applyExpansion(pool,{dryRun=false,phase2=false,hotelCoverage=false}={}){
- if(phase2&&hotelCoverage)throw new Error('Select one catalog release at a time');
- const release=hotelCoverage?'20261011':phase2?'20261010':'20261009',activeDirectory=hotelCoverage?new URL('../../data/hotel-coverage/',import.meta.url):phase2?new URL('../../data/phase2/',import.meta.url):directory;
+export async function applyExpansion(pool,{dryRun=false,phase2=false,hotelCoverage=false,attractionQuality=false}={}){
+ if([phase2,hotelCoverage,attractionQuality].filter(Boolean).length>1)throw new Error('Select one catalog release at a time');
+ const release=attractionQuality?'20261020':hotelCoverage?'20261011':phase2?'20261010':'20261009',activeDirectory=attractionQuality?new URL('../../data/attraction-20261020/',import.meta.url):hotelCoverage?new URL('../../data/hotel-coverage/',import.meta.url):phase2?new URL('../../data/phase2/',import.meta.url):directory;
  const catalog=loadExpansion(activeDirectory,release),client=await pool.connect(),report={release,dryRun,inserted:[],preserved:[],routesInserted:0};
  try{
   await client.query('BEGIN');await client.query('SELECT pg_advisory_xact_lock($1)',[70072026]);
   for(const r of catalog.records){
    const d=(await client.query('SELECT id FROM destinations WHERE slug=$1',[r.city])).rows[0];if(!d)throw new Error('Missing expansion destination');
-   const existing=(await client.query(`SELECT id,destination_id FROM ${r.table} WHERE external_id=$1 OR slug=$2 OR (destination_id=$3 AND lower(name)=lower($4))`,[r.key,r.values.slug,d.id,r.values.name])).rows;
+   const existing=(await client.query(`SELECT id,destination_id FROM ${r.table} WHERE external_id=$1 OR slug=$2 OR (destination_id=$3 AND regexp_replace(lower(name),'[^a-z0-9]','','g')=regexp_replace(lower($4),'[^a-z0-9]','','g'))`,[r.key,r.values.slug,d.id,r.values.name])).rows;
    if(existing.length){report.preserved.push({key:r.key,reason:'Existing identity/name/slug preserved without overwriting'});continue;}
    const values={external_id:r.key,destination_id:d.id,...r.values},columns=Object.keys(values);
    const row=(await client.query(`INSERT INTO ${r.table} (${columns.join(',')}) VALUES (${columns.map((_,i)=>'$'+(i+1)).join(',')}) RETURNING id`,Object.values(values))).rows[0];report.inserted.push({table:r.table,key:r.key,id:row.id});
@@ -38,11 +38,11 @@ export async function applyExpansion(pool,{dryRun=false,phase2=false,hotelCovera
    const d=(await client.query('SELECT id FROM destinations WHERE slug=$1',[s.city])).rows[0];const nodes=[];
    for(const n of s.nodes){
     if(!['hotel','attraction','restaurant'].includes(n.kind))throw new Error('Invalid endpoint kind');
-    const row=(await client.query(`SELECT id,lat,lng FROM ${n.kind}s WHERE external_id=$1 AND destination_id=$2`,[n.external_id,d.id])).rows[0];
+    const row=(await client.query(`SELECT id,lat,lng,source_url FROM ${n.kind}s WHERE external_id=$1 AND destination_id=$2`,[n.external_id,d.id])).rows[0];
     if(!row||Number(row.lat)!==Number(n.lat)||Number(row.lng)!==Number(n.lng))throw new Error('Route endpoint missing or changed coordinates: '+n.external_id);nodes.push(row);
    }
    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
-    const a=s.nodes[i],b=s.nodes[j];if(!(a.external_id.startsWith('exp-')||b.external_id.startsWith('exp-'))||(a.kind==='hotel'&&b.kind==='hotel'))continue;
+    const a=s.nodes[i],b=s.nodes[j];if(attractionQuality&&((a.kind==='restaurant'&&!nodes[i].source_url)||(b.kind==='restaurant'&&!nodes[j].source_url)))continue;if(!(a.external_id.startsWith('exp-')||b.external_id.startsWith('exp-'))||(a.kind==='hotel'&&b.kind==='hotel'))continue;
     if(s.response.sources[i].distance>250||s.response.sources[j].distance>250)continue;
     const [metres,seconds,reverseMetres,reverseSeconds]=[s.response.distances[i][j],s.response.durations[i][j],s.response.distances[j][i],s.response.durations[j][i]];
     if(![metres,seconds,reverseMetres,reverseSeconds].every(v=>Number.isFinite(v)&&v>0))continue;
@@ -54,4 +54,4 @@ export async function applyExpansion(pool,{dryRun=false,phase2=false,hotelCovera
   await client.query(dryRun?'ROLLBACK':'COMMIT');return report;
  }catch(e){await client.query('ROLLBACK');throw e;}finally{client.release();}
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){const pool=createPool();try{console.log(JSON.stringify(await applyExpansion(pool,{dryRun:process.argv.includes('--dry-run'),phase2:process.argv.includes('--phase2'),hotelCoverage:process.argv.includes('--hotel-coverage')}),null,2));}catch(e){console.error(e.code??e.message);process.exitCode=1;}finally{await pool.end();}}
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){const pool=createPool();try{console.log(JSON.stringify(await applyExpansion(pool,{dryRun:process.argv.includes('--dry-run'),phase2:process.argv.includes('--phase2'),hotelCoverage:process.argv.includes('--hotel-coverage'),attractionQuality:process.argv.includes('--attraction-quality')}),null,2));}catch(e){console.error(e.code??e.message);process.exitCode=1;}finally{await pool.end();}}

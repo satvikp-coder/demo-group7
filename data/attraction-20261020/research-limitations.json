@@ -1,0 +1,31 @@
+{
+  "checked": "2026-10-20",
+  "excluded": [
+    {
+      "name": "Gopi Talav (Surat)",
+      "source": "https://en.wikipedia.org/wiki/Gopi_Talav",
+      "reason": "Same-name coordinate search resolved to Surat; rejected for Dwarka. Actual Dwarka temple-precinct point sourced separately from OSM and district context."
+    },
+    {
+      "name": "Ahmedpur Mandvi official map reference",
+      "source": "https://www.gujarattourism.com/saurashtra/gir-somnath/ahmedpur-mandavi.html",
+      "reason": "Embedded map latitude22.2984844 does not match the intended Gir Somnath coastal locality; not inserted."
+    },
+    {
+      "name": "Pirotan Island",
+      "source": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/isla-pirotan-e-isla-narala1.html",
+      "reason": "Separate marine-island excursion with access/permit and boat constraints; not inserted merely to increase Dwarka count."
+    },
+    {
+      "name": "Royal Chhatardis",
+      "source": "https://www.gujarattourism.com/kutch-zone/kutch/royal-chhatardis.html",
+      "reason": "No usable coordinate found in the reviewed official page; not guessed."
+    },
+    {
+      "name": "Dandi Hanuman",
+      "source": "https://devbhumidwarka.nic.in/tourist-place/bet-dwarka-dandi-hanuman/",
+      "reason": "Reviewed coordinate sources disagree; left outside this batch pending a reliable entrance reference."
+    }
+  ],
+  "qualification": "The batch is not an exhaustive inventory of every obtainable attraction or image. Three Saputara community-only identities are explicitly sourced to Wikivoyage, not attributed as verified by the university PDF."
+}

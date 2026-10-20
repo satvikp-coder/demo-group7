@@ -1,0 +1,2799 @@
+{
+  "checkedAt": "2026-10-20T13:45:51.255Z",
+  "phase": "after",
+  "readOnly": true,
+  "catalog_counts": {
+    "destinations": 8,
+    "attractions": 100,
+    "hotels": 56,
+    "restaurants": 12,
+    "routes": 1330
+  },
+  "usable_indicative_hotel_prices": 29,
+  "stored_attraction_fees": 28,
+  "stored_attraction_ratings": 19,
+  "destinations": [
+    {
+      "planning_exclusions": [],
+      "published_window_records": 13,
+      "route_records": 398,
+      "planning_candidates": 16,
+      "estimated_durations": 5,
+      "weekly_closure_records": 1,
+      "id": "b02ec0dc-3a52-48b3-8dd2-dfa559c7c1d5",
+      "name": "Ahmedabad",
+      "slug": "ahmedabad",
+      "records": 16,
+      "valid_coordinates": 16,
+      "known_fees": 11,
+      "known_durations": 11,
+      "known_hours": 11,
+      "legacy_eligible": 11,
+      "connected": 16,
+      "attractions": [
+        {
+          "name": "Sarkhej Roza",
+          "id": "6cca73aa-876d-417f-a181-a0d4c6af9567",
+          "slug": "sarkhej-roza-ahmedabad",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 22.993679,
+          "lng": 72.505393,
+          "source_url": "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around"
+        },
+        {
+          "name": "Sidi Saiyyed Mosque & Old Pols",
+          "id": "fff920bc-e67b-4420-b727-cb777a952e2d",
+          "slug": "sidi-saiyyed-mosque-old-pols-ahmedabad",
+          "fee": 0,
+          "duration": 2,
+          "lat": 23.02702,
+          "lng": 72.58101,
+          "source_url": "https://www.incredibleindia.gov.in/en/gujarat/ahmedabad/exploring-religious-spots-in-and-around"
+        },
+        {
+          "name": "Calico Textile Museum",
+          "id": "ab4b6e65-4a34-48ba-8792-9c0b5af11bad",
+          "slug": "calico-textile-museum-ahmedabad",
+          "fee": 0,
+          "duration": 2,
+          "lat": 23.05418,
+          "lng": 72.592476,
+          "source_url": "https://calicomuseum.org/tours/haveli"
+        },
+        {
+          "name": "Kankaria Lake",
+          "id": "0b7d9a31-7570-4093-978f-98a843f6a4cf",
+          "slug": "kankaria-lake-ahmedabad",
+          "fee": 25,
+          "duration": 2,
+          "lat": 23.006143,
+          "lng": 72.599521,
+          "source_url": "https://router.project-osrm.org/table/v1/driving/72.505393,22.993679;72.580136,23.167140;72.592476,23.054180;72.581010,23.027020;72.599521,23.006143;72.580638,23.060165;72.576958,23.029284;72.581536,23.027062;72.591743,23.018845;72.535706,22.993642;72.581617,23.027038;72.589368,23.024425?annotations=distance,duration"
+        },
+        {
+          "name": "Bhadra Fort",
+          "id": "6836e31b-89e0-4b68-a140-0734a907089b",
+          "slug": "bhadra-fort-ahmedabad",
+          "fee": 0,
+          "duration": 0.5,
+          "lat": 23.023971,
+          "lng": 72.5812,
+          "source_url": "https://www.openstreetmap.org/way/843168356"
+        },
+        {
+          "name": "Sabarmati Ashram",
+          "id": "be5730b8-4c1f-4e0d-a1e1-541b9c94ba36",
+          "slug": "sabarmati-ashram-ahmedabad",
+          "fee": 0,
+          "duration": 2,
+          "lat": 23.060165,
+          "lng": 72.580638,
+          "source_url": "https://gujarattourism.com/central-zone/ahmedabad.html"
+        },
+        {
+          "name": "Adalaj Ni Vav Stepwell",
+          "id": "32c4a8e4-fedd-4548-ad78-1d83380d3640",
+          "slug": "adalaj-ni-vav-stepwell-ahmedabad",
+          "fee": 25,
+          "duration": 1.5,
+          "lat": 23.16714,
+          "lng": 72.580136,
+          "source_url": "https://gujarattourism.com/central-zone/ahmedabad.html"
+        },
+        {
+          "name": "Kalupur Darwaza",
+          "id": "d277e247-3aa2-4778-a485-b5befad08eff",
+          "slug": "kalupur-darwaza-ahmedabad",
+          "fee": null,
+          "duration": null,
+          "lat": 23.030843,
+          "lng": 72.597937,
+          "source_url": "https://www.openstreetmap.org/node/885247897"
+        },
+        {
+          "name": "Manek Burj",
+          "id": "e01c4277-1f41-459e-a335-186895f6538d",
+          "slug": "manek-burj-ahmedabad",
+          "fee": null,
+          "duration": null,
+          "lat": 23.022075,
+          "lng": 72.577339,
+          "source_url": "https://www.openstreetmap.org/way/605629475"
+        },
+        {
+          "name": "Tomb of Ahmad Shah",
+          "id": "5c3867b7-047a-4fdc-8bc4-0ca61d9412a6",
+          "slug": "tomb-of-ahmad-shah-ahmedabad",
+          "fee": null,
+          "duration": null,
+          "lat": 23.023791,
+          "lng": 72.587928,
+          "source_url": "https://www.openstreetmap.org/node/10591957837"
+        },
+        {
+          "name": "Amritavarshini Vav",
+          "id": "8c36d270-6bbf-4a53-bb97-8138c4afa106",
+          "slug": "amritavarshini-vav-ahmedabad",
+          "fee": 0,
+          "duration": 0.33,
+          "lat": 23.024664,
+          "lng": 72.597106,
+          "source_url": "https://www.openstreetmap.org/node/4937816350"
+        },
+        {
+          "name": "Astodia Darwaza",
+          "id": "c42e1d44-2f14-4dd7-bd0a-3c879b89addf",
+          "slug": "astodia-darwaza-ahmedabad",
+          "fee": 0,
+          "duration": 0.08,
+          "lat": 23.016842,
+          "lng": 72.590971,
+          "source_url": "https://www.openstreetmap.org/node/2377178503"
+        },
+        {
+          "name": "Raipur Gate",
+          "id": "c63a5333-57bd-44df-bc8e-f824bef61f4e",
+          "slug": "raipur-gate-ahmedabad",
+          "fee": 0,
+          "duration": 0.17,
+          "lat": 23.017436,
+          "lng": 72.594781,
+          "source_url": "https://www.openstreetmap.org/node/440367265"
+        },
+        {
+          "name": "Teen Darwaza",
+          "id": "045d43c6-4ca3-46e6-8684-fad2c48006d6",
+          "slug": "teen-darwaza-ahmedabad",
+          "fee": 0,
+          "duration": 0.17,
+          "lat": 23.024349,
+          "lng": 72.584555,
+          "source_url": "https://www.openstreetmap.org/node/2377178507"
+        },
+        {
+          "name": "Kochrab Ashram",
+          "id": "c1de9872-7cbe-46a6-bd1a-8c2f72a4b3d9",
+          "slug": "kocharab-ashram",
+          "fee": null,
+          "duration": null,
+          "lat": 23.01577,
+          "lng": 72.566693,
+          "source_url": "https://www.gujarattourism.com/central-zone/ahmedabad/kocharab-ashram.html"
+        },
+        {
+          "name": "Lalbhai Dalpatbhai Museum",
+          "id": "603ef878-e13d-4101-8c0e-0093700dcb6d",
+          "slug": "lalbhai-dalpatbhai-museum",
+          "fee": null,
+          "duration": null,
+          "lat": 23.033097,
+          "lng": 72.547621,
+          "source_url": "https://www.gujarattourism.com/central-zone/ahmedabad/lalbhai-dalpatbhai-museum.html"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Maruti",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 4,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals"
+          ],
+          "complete_budget": false,
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 2550,
+          "distance_km": 21.240000000000002,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 11,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Maruti",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 4,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 15,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 6500,
+          "distance_km": 104.69,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 8,
+              "status": "sightseeing_scheduled",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 7,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Maruti",
+          "meal_breaks": 3,
+          "unknown_stop_costs": 5,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 16,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 16,
+          "known_subtotal": 10400,
+          "distance_km": 105.57,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 6,
+              "status": "sightseeing_scheduled",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 5,
+              "status": "sightseeing_scheduled",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Maruti",
+          "meal_breaks": 4,
+          "unknown_stop_costs": 5,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 16,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 16,
+          "known_subtotal": 14300,
+          "distance_km": 108.43999999999997,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "sightseeing_scheduled",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "sightseeing_scheduled",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [],
+      "published_window_records": 2,
+      "route_records": 80,
+      "planning_candidates": 12,
+      "estimated_durations": 10,
+      "weekly_closure_records": 0,
+      "id": "8ad9145c-fbeb-466b-9a4d-78d032a476cb",
+      "name": "Champaner",
+      "slug": "champaner",
+      "records": 12,
+      "valid_coordinates": 12,
+      "known_fees": 1,
+      "known_durations": 2,
+      "known_hours": 1,
+      "legacy_eligible": 1,
+      "connected": 10,
+      "attractions": [
+        {
+          "name": "Jami Masjid, Champaner",
+          "id": "cc7eae7f-e761-43e5-aee2-2c2671c050c2",
+          "slug": "jami-masjid-champaner",
+          "fee": 35,
+          "duration": 1.5,
+          "lat": 22.485817,
+          "lng": 73.537715,
+          "source_url": "https://gujarattourism.com/central-zone/panchmahal/the-jami-masjid.html"
+        },
+        {
+          "name": "Kevada Masjid",
+          "id": "acbba96b-1eca-44fc-b11d-20907abc2f2f",
+          "slug": "kevada-masjid",
+          "fee": null,
+          "duration": 1,
+          "lat": 22.489315,
+          "lng": 73.53354,
+          "source_url": "https://gtbooking.gujarattourism.com/central-zone/panchmahal/champaner---pavagadh.html"
+        },
+        {
+          "name": "South Bhadra Gate",
+          "id": "b11fa754-b411-46fb-8a19-b86028f19637",
+          "slug": "south-bhadra-gate-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.483262,
+          "lng": 73.532551,
+          "source_url": "https://www.openstreetmap.org/way/718548509"
+        },
+        {
+          "name": "East Bhadra Gate",
+          "id": "412af912-f2bb-42be-a29b-c4286bd027bc",
+          "slug": "east-bhadra-gate-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.484901,
+          "lng": 73.536441,
+          "source_url": "https://www.openstreetmap.org/way/718548512"
+        },
+        {
+          "name": "Sahar ki Masjid",
+          "id": "a44957fc-c23c-4b93-85e7-6f8fd58dcb68",
+          "slug": "sahar-ki-masjid-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.483638,
+          "lng": 73.531558,
+          "source_url": "https://www.openstreetmap.org/way/186046398"
+        },
+        {
+          "name": "Octagonal Stepwell",
+          "id": "6de9aadb-2e00-4958-a09f-36873171f749",
+          "slug": "octagonal-stepwell-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.486446,
+          "lng": 73.537602,
+          "source_url": "https://www.openstreetmap.org/way/272040337"
+        },
+        {
+          "name": "Helical Stepwell",
+          "id": "22809876-15c6-4161-90de-f9fa1612d4dc",
+          "slug": "helical-stepwell-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.484352,
+          "lng": 73.517769,
+          "source_url": "https://gujarattourism.com/central-zone/panchmahal/helical-stepwell.html"
+        },
+        {
+          "name": "Ek Minar ki Masjid",
+          "id": "5e2b0898-b1a8-4fe6-959f-4db2c4c3bdcf",
+          "slug": "ek-minar-ki-masjid-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.489625,
+          "lng": 73.515027,
+          "source_url": "https://www.openstreetmap.org/way/718548502"
+        },
+        {
+          "name": "Maqbara Mandvi",
+          "id": "f1a30a49-fcf3-4d7b-b921-bf2c4586f14c",
+          "slug": "maqbara-mandvi-champaner",
+          "fee": null,
+          "duration": null,
+          "lat": 22.4954,
+          "lng": 73.511911,
+          "source_url": "https://www.openstreetmap.org/way/718548504"
+        },
+        {
+          "name": "Champaner Citadel walk",
+          "id": "002b06d9-35eb-4f38-afc7-14e1d2b7ed77",
+          "slug": "citadel",
+          "fee": null,
+          "duration": null,
+          "lat": 22.470177,
+          "lng": 73.526052,
+          "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/citadel.html"
+        },
+        {
+          "name": "Pavagadh Hill and Kalika Mata Temple",
+          "id": "8a691c9b-37ef-4254-b5f9-baa2a83c8fb6",
+          "slug": "pavagadh-hill---kalika-mata-temple",
+          "fee": null,
+          "duration": null,
+          "lat": 22.46359,
+          "lng": 73.515407,
+          "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/pavagadh-hill---kalika-mata-temple.html"
+        },
+        {
+          "name": "Jambughoda Wildlife Sanctuary",
+          "id": "04cf3652-d6e8-45a5-a1d2-5f25ba5896c9",
+          "slug": "jambughoda-wildlife-sanctuary",
+          "fee": null,
+          "duration": null,
+          "lat": 22.355212,
+          "lng": 73.675425,
+          "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/jambughoda-wildlife-sanctuary.html"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 8,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport"
+          ],
+          "complete_budget": false,
+          "attraction_count": 8,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 3,
+          "known_subtotal": 70,
+          "distance_km": 46.9,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 8,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 10,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 1170,
+          "distance_km": 91.64999999999999,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 10,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 1970,
+          "distance_km": 78.64,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Rajdhani And Guest House, Halol",
+          "meal_breaks": 0,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 10,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 2470,
+          "distance_km": 83.71,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [],
+      "published_window_records": 4,
+      "route_records": 142,
+      "planning_candidates": 10,
+      "estimated_durations": 6,
+      "weekly_closure_records": 0,
+      "id": "4bae3552-396e-49f3-9e29-5e41c0a7f0fe",
+      "name": "Dwarka",
+      "slug": "dwarka",
+      "records": 10,
+      "valid_coordinates": 10,
+      "known_fees": 4,
+      "known_durations": 4,
+      "known_hours": 4,
+      "legacy_eligible": 4,
+      "connected": 9,
+      "attractions": [
+        {
+          "name": "Rukmini Devi Temple",
+          "id": "aef1c74b-72e8-4f77-ac7f-115fa1d95cb8",
+          "slug": "rukmini-devi-temple-dwarka",
+          "fee": 0,
+          "duration": 1,
+          "lat": 22.257331,
+          "lng": 68.964398,
+          "source_url": "https://www.openstreetmap.org/node/3903603202"
+        },
+        {
+          "name": "Dwarkadhish Temple",
+          "id": "6b8e35ba-ec90-45cb-953e-55f24a66473b",
+          "slug": "dwarkadhish-temple-dwarka",
+          "fee": 0,
+          "duration": 2,
+          "lat": 22.237774,
+          "lng": 68.967512,
+          "source_url": "https://www.openstreetmap.org/way/91573157"
+        },
+        {
+          "name": "Nageshwar Jyotirlinga",
+          "id": "9208093c-d349-4443-a149-a8c54b2aba7d",
+          "slug": "nageshwar-jyotirlinga-dwarka",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 22.336061,
+          "lng": 69.087015,
+          "source_url": "https://gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-jyotirlinga.html"
+        },
+        {
+          "name": "Bet Dwarka",
+          "id": "e42a26be-0f64-4e38-82e7-453fee298070",
+          "slug": "bet-dwarka-dwarka",
+          "fee": 0,
+          "duration": 3,
+          "lat": 22.451995,
+          "lng": 69.095999,
+          "source_url": "https://www.google.com/maps/search/Bet+Dwarka+Temple"
+        },
+        {
+          "name": "Shivrajpur Beach",
+          "id": "5f9d0a3d-abe9-40ae-9b65-ee057b882ab9",
+          "slug": "shivrajpur-beach",
+          "fee": null,
+          "duration": null,
+          "lat": 22.334739,
+          "lng": 68.955727,
+          "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/shivrajpur-beach.html"
+        },
+        {
+          "name": "Okha Madhi Beach",
+          "id": "4a8235da-e515-43c5-bff4-741767e5cde7",
+          "slug": "okha-madhi-beach",
+          "fee": null,
+          "duration": null,
+          "lat": 22.083046,
+          "lng": 69.101814,
+          "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/okha-madhi-beach.html"
+        },
+        {
+          "name": "Gopi Talav temple precinct",
+          "id": "78d1647e-57ff-4758-8608-d9d0aa9e4f8c",
+          "slug": "gopi-talav-dwarka",
+          "fee": null,
+          "duration": null,
+          "lat": 22.370194,
+          "lng": 69.108253,
+          "source_url": "https://devbhumidwarka.nic.in/places-of-interest/"
+        },
+        {
+          "name": "Gomti Ghat",
+          "id": "8e898516-16c4-4b87-b6c4-00e894c15750",
+          "slug": "gomti-ghat-dwarka",
+          "fee": null,
+          "duration": null,
+          "lat": 22.236815,
+          "lng": 68.967722,
+          "source_url": "https://devbhumidwarka.nic.in/places-of-interest/"
+        },
+        {
+          "name": "Dwarka Lighthouse viewpoint",
+          "id": "5cf3ccbd-f739-491f-ad93-7b36e4a282db",
+          "slug": "dwarka-lighthouse-viewpoint",
+          "fee": null,
+          "duration": null,
+          "lat": 22.23808,
+          "lng": 68.958453,
+          "source_url": "https://chanceht.org/lighthouse/dwarka-point/"
+        },
+        {
+          "name": "Dwarka Beach",
+          "id": "9ab3384c-4e53-4fbd-8846-af23a6db2f22",
+          "slug": "dwarka-beach",
+          "fee": null,
+          "duration": null,
+          "lat": 22.23464,
+          "lng": 68.9664,
+          "source_url": "https://devbhumidwarka.nic.in/places-of-interest/"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 4,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals"
+          ],
+          "complete_budget": false,
+          "attraction_count": 7,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 340,
+          "distance_km": 61.48,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 7,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 5,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 1576,
+          "distance_km": 137.53,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 5,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 2132,
+          "distance_km": 108.28,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Mathura Bhavan, Dwarka",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 6,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 3028,
+          "distance_km": 127.12,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [],
+      "published_window_records": 2,
+      "route_records": 115,
+      "planning_candidates": 10,
+      "estimated_durations": 8,
+      "weekly_closure_records": 0,
+      "id": "2bb9f6cb-05df-45ce-a1dc-208df990c799",
+      "name": "Gir National Park",
+      "slug": "gir-national-park",
+      "records": 10,
+      "valid_coordinates": 10,
+      "known_fees": 2,
+      "known_durations": 2,
+      "known_hours": 1,
+      "legacy_eligible": 2,
+      "connected": 9,
+      "attractions": [
+        {
+          "name": "Gir Jungle Safari (Sinh Sadan reporting point)",
+          "id": "d10d7caa-eebe-4488-b2d0-24368392de75",
+          "slug": "gir-jungle-safari",
+          "fee": 4700,
+          "duration": 3,
+          "lat": 21.168967,
+          "lng": 70.598454,
+          "source_url": "https://girlion.gujarat.gov.in/asset/gir-terms.pdf"
+        },
+        {
+          "name": "Devalia Interpretation Zone Bus Safari",
+          "id": "4cc3f543-a81b-44a1-9256-f2bbb1d7823e",
+          "slug": "devalia-bus-safari",
+          "fee": 150,
+          "duration": 0.5,
+          "lat": 21.169664,
+          "lng": 70.504063,
+          "source_url": "https://girlion.gujarat.gov.in/GIZDevaliaBusBooking.aspx"
+        },
+        {
+          "name": "Adi-Kadi Vav",
+          "id": "b0c0850d-9b54-4c99-925d-ea648943c128",
+          "slug": "adi-kadi-vav-and-navghan-kuwo",
+          "fee": null,
+          "duration": null,
+          "lat": 21.52683,
+          "lng": 70.469626,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/adi-kadi-vav-and-navghan-kuwo.html"
+        },
+        {
+          "name": "Ashoka Edicts",
+          "id": "8d8fd727-a742-4dc3-ab31-86ba2c3d7d77",
+          "slug": "ashok-edicts",
+          "fee": null,
+          "duration": null,
+          "lat": 21.525086,
+          "lng": 70.477268,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/ashok-edicts.html"
+        },
+        {
+          "name": "Buddhist Caves of Khapra Kodiya",
+          "id": "a0578e99-9aab-432a-8aa2-f1b14aa93273",
+          "slug": "buddhist-caves",
+          "fee": null,
+          "duration": null,
+          "lat": 21.529843,
+          "lng": 70.466008,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/buddhist-caves.html"
+        },
+        {
+          "name": "Damodar Kund",
+          "id": "d88b7792-2c07-4173-9f62-ddf89daaac28",
+          "slug": "damodar-kund",
+          "fee": null,
+          "duration": null,
+          "lat": 21.525666,
+          "lng": 70.486148,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/damodar-kund.html"
+        },
+        {
+          "name": "Girnar Hill",
+          "id": "cc519475-8530-4eab-9265-381a62007338",
+          "slug": "girnar-hill",
+          "fee": null,
+          "duration": null,
+          "lat": 21.531745,
+          "lng": 70.550061,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/girnar-hill.html"
+        },
+        {
+          "name": "Mahabat Khan Maqbara",
+          "id": "fa9653a7-a32b-4c9a-a027-be631422e490",
+          "slug": "mahabat-khan-maqbara",
+          "fee": null,
+          "duration": null,
+          "lat": 21.527203,
+          "lng": 70.457974,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/mahabat-khan-maqbara.html"
+        },
+        {
+          "name": "Uparkot Fort",
+          "id": "75d8f8e0-df8e-45d0-8bd7-832bf1acfbb1",
+          "slug": "uparkot-fort",
+          "fee": null,
+          "duration": null,
+          "lat": 21.524752,
+          "lng": 70.467865,
+          "source_url": "https://www.gujarattourism.com/saurashtra/junagadh/uparkot-fort.html"
+        },
+        {
+          "name": "Shri Bai Ashram",
+          "id": "af2fee26-9f8b-4e66-951d-f0df69d96f7f",
+          "slug": "shri-bai-ashram",
+          "fee": null,
+          "duration": null,
+          "lat": 21.060975,
+          "lng": 70.530312,
+          "source_url": "https://girsomnath.nic.in/tourist-place/shri-bai-ashram/"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 7,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport"
+          ],
+          "complete_budget": false,
+          "attraction_count": 6,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 0,
+          "distance_km": 10.620000000000001,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 5,
+          "known_subtotal": 5908,
+          "distance_km": 263.28999999999996,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "meal_breaks": 3,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 10,
+          "known_subtotal": 7116,
+          "distance_km": 268.33000000000004,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Sapphire, Junagadh",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 12,
+          "known_subtotal": 7724,
+          "distance_km": 274.17999999999995,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [],
+      "published_window_records": 2,
+      "route_records": 138,
+      "planning_candidates": 12,
+      "estimated_durations": 10,
+      "weekly_closure_records": 0,
+      "id": "ca25aeb9-9816-438c-8433-2d37d5a2d380",
+      "name": "Modhera",
+      "slug": "modhera",
+      "records": 12,
+      "valid_coordinates": 12,
+      "known_fees": 2,
+      "known_durations": 2,
+      "known_hours": 1,
+      "legacy_eligible": 2,
+      "connected": 11,
+      "attractions": [
+        {
+          "name": "Modhera Sun Temple",
+          "id": "383ea996-d973-4d13-8c28-33bfb03725a6",
+          "slug": "modhera-sun-temple",
+          "fee": 20,
+          "duration": 2,
+          "lat": 23.583421,
+          "lng": 72.133078,
+          "source_url": "https://gujarattourism.com/north-zone/mehsana/sun-temple-modhera.html"
+        },
+        {
+          "name": "Modheshwari Mata Temple",
+          "id": "0eef628e-41fc-4608-a2de-b7fcc17fd770",
+          "slug": "modheshwari-mata-temple",
+          "fee": 0,
+          "duration": 1,
+          "lat": 23.583383,
+          "lng": 72.145478,
+          "source_url": "https://gujarattourism.com/north-zone/mehsana/modheshwari-mata-temple.html"
+        },
+        {
+          "name": "Sun Temple Museum, Modhera",
+          "id": "b279c0ed-5a9f-4fc8-bf78-6d3e0c4e9c91",
+          "slug": "sun-temple-museum-modhera",
+          "fee": null,
+          "duration": null,
+          "lat": 23.582391,
+          "lng": 72.134128,
+          "source_url": "https://www.openstreetmap.org/way/911907267"
+        },
+        {
+          "name": "Modhera Vav",
+          "id": "c6607eb9-d0ff-48e4-b089-bdbce77afba4",
+          "slug": "modhera-vav-modhera",
+          "fee": null,
+          "duration": null,
+          "lat": 23.582665,
+          "lng": 72.137004,
+          "source_url": "https://www.openstreetmap.org/way/911907271"
+        },
+        {
+          "name": "Bahuchar Mata Temple Becharaji",
+          "id": "540e128e-0d92-4daf-a678-cf5d7d4352e3",
+          "slug": "bahuchar-mata-temple-becharaji",
+          "fee": null,
+          "duration": null,
+          "lat": 23.500086,
+          "lng": 72.042632,
+          "source_url": "https://www.gujarattourism.com/north-zone/mehsana/bahuchar-mata-temple-becharaji.html"
+        },
+        {
+          "name": "Kirti Toran, Vadnagar",
+          "id": "8a87606c-dc91-46ea-b074-470277574a1d",
+          "slug": "kirti-toran--vadnagar",
+          "fee": null,
+          "duration": null,
+          "lat": 23.790798,
+          "lng": 72.641776,
+          "source_url": "https://www.gujarattourism.com/north-zone/mehsana/kirti-toran--vadnagar.html"
+        },
+        {
+          "name": "Vadnagar heritage precinct",
+          "id": "53129b26-ceeb-4928-abb4-08f0890d1cfc",
+          "slug": "vadnagar",
+          "fee": null,
+          "duration": null,
+          "lat": 23.782553,
+          "lng": 72.612763,
+          "source_url": "https://www.gujarattourism.com/north-zone/mehsana/vadnagar.html"
+        },
+        {
+          "name": "Taranga (Hill) Jain Temple",
+          "id": "63caeb02-2b7f-46d9-815f-4cd79017a7e6",
+          "slug": "taranga-hill",
+          "fee": null,
+          "duration": null,
+          "lat": 23.965822,
+          "lng": 72.743697,
+          "source_url": "https://www.gujarattourism.com/north-zone/mehsana/taranga-hill.html"
+        },
+        {
+          "name": "Panchasara Parshwanath Jain Derasar",
+          "id": "37b92e2c-9dd5-4ffc-8ec6-92fcf1f2330e",
+          "slug": "panchasara-parshwanath-jain-derasar",
+          "fee": null,
+          "duration": null,
+          "lat": 23.853957,
+          "lng": 72.114899,
+          "source_url": "https://www.gujarattourism.com/north-zone/patan/panchasara-parshwanath-jain-derasar.html"
+        },
+        {
+          "name": "Patan Patola Heritage Museum",
+          "id": "abfd7b38-1154-4f88-9a25-7f2b0cab88b1",
+          "slug": "patan-patola-heritage-museum",
+          "fee": null,
+          "duration": null,
+          "lat": 23.855808,
+          "lng": 72.105105,
+          "source_url": "https://www.gujarattourism.com/north-zone/patan/patan-patola-heritage-museum.html"
+        },
+        {
+          "name": "Rani Ki Vav, Patan",
+          "id": "aee721d8-5fe5-44b6-ad04-a3a034f60e21",
+          "slug": "rani-ki-vav",
+          "fee": null,
+          "duration": null,
+          "lat": 23.858902,
+          "lng": 72.099728,
+          "source_url": "https://www.gujarattourism.com/north-zone/patan/rani-ki-vav.html"
+        },
+        {
+          "name": "Bohra Vad, Sidhpur",
+          "id": "11adc6f3-991a-48de-8eca-9fd160a610cd",
+          "slug": "sidhpur",
+          "fee": null,
+          "duration": null,
+          "lat": 23.916126,
+          "lng": 72.370435,
+          "source_url": "https://www.gujarattourism.com/north-zone/patan/sidhpur.html"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "The Grand Takshak, Mehsana",
+          "meal_breaks": 0,
+          "unknown_stop_costs": 4,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport"
+          ],
+          "complete_budget": false,
+          "attraction_count": 6,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 8,
+          "known_subtotal": 40,
+          "distance_km": 132.11,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "The Grand Takshak, Mehsana",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 12,
+          "known_subtotal": 1490,
+          "distance_km": 246.37,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "The Grand Takshak, Mehsana",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 2140,
+          "distance_km": 311.97999999999996,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "The Grand Takshak, Mehsana",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 11,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 3190,
+          "distance_km": 409.03,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [],
+      "published_window_records": 4,
+      "route_records": 101,
+      "planning_candidates": 14,
+      "estimated_durations": 12,
+      "weekly_closure_records": 6,
+      "id": "e5840a55-a2b0-4ced-8b9b-da41c9f64214",
+      "name": "Rann of Kutch",
+      "slug": "rann-of-kutch",
+      "records": 14,
+      "valid_coordinates": 14,
+      "known_fees": 2,
+      "known_durations": 2,
+      "known_hours": 0,
+      "legacy_eligible": 2,
+      "connected": 11,
+      "attractions": [
+        {
+          "name": "White Rann near Dhordo",
+          "id": "461b6d70-9192-4b82-9aef-0e28eb35eb72",
+          "slug": "white-rann-dhordo",
+          "fee": 100,
+          "duration": 2.5,
+          "lat": 23.84129,
+          "lng": 69.52256,
+          "source_url": "https://www.google.com/maps/search/White+Rann+Viewpoint+Dhordo"
+        },
+        {
+          "name": "Kalo Dungar",
+          "id": "18896d46-3687-4141-a079-84644b9dfb20",
+          "slug": "kalo-dungar",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 23.933547,
+          "lng": 69.813823,
+          "source_url": "https://gujarattourism.com/kutch-zone/kutch/kalo-dungar.html"
+        },
+        {
+          "name": "Aina Mahal",
+          "id": "c1b3caaa-58d8-4328-863a-c32ee31f5ea9",
+          "slug": "aina-mahal",
+          "fee": null,
+          "duration": null,
+          "lat": 23.255192,
+          "lng": 69.66868,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/aina-mahal.html"
+        },
+        {
+          "name": "Prag Mahal",
+          "id": "6ee5001c-c1b6-4420-8058-6baff3bb073b",
+          "slug": "prag-mahal",
+          "fee": null,
+          "duration": null,
+          "lat": 23.254588,
+          "lng": 69.666308,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/prag-mahal.html"
+        },
+        {
+          "name": "Kutch Museum",
+          "id": "f2ff2661-c3c8-459b-b025-1e4b52bfc04a",
+          "slug": "kutch-museum",
+          "fee": null,
+          "duration": null,
+          "lat": 23.248723,
+          "lng": 69.664104,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/kutch-museum.html"
+        },
+        {
+          "name": "Hamirsar Lake",
+          "id": "cb947bd9-c7d5-4c91-b359-ae214aa234fd",
+          "slug": "hamirsar-lake--bhuj",
+          "fee": null,
+          "duration": null,
+          "lat": 23.251822,
+          "lng": 69.659206,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/hamirsar-lake--bhuj.html"
+        },
+        {
+          "name": "Sharad Bagh Palace",
+          "id": "61d6eded-4cdd-40c3-bb05-93206f910a0b",
+          "slug": "sharad-bagh-palace",
+          "fee": null,
+          "duration": null,
+          "lat": 23.251787,
+          "lng": 69.654725,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/sharad-bagh-palace.html"
+        },
+        {
+          "name": "Nirona craft village",
+          "id": "b1cfed14-495c-4491-a8c6-81addedc7fd8",
+          "slug": "nirona",
+          "fee": null,
+          "duration": null,
+          "lat": 23.463522,
+          "lng": 69.513695,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/nirona.html"
+        },
+        {
+          "name": "Living and Learning Design Centre, Ajrakhpur",
+          "id": "efa8c636-db15-403f-99ad-c15ad7980deb",
+          "slug": "living-and-learning-design-centre-crafts-museum",
+          "fee": null,
+          "duration": null,
+          "lat": 23.236646,
+          "lng": 69.797611,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/living-and-learning-design-centre-crafts-museum.html"
+        },
+        {
+          "name": "Vijay Vilas Palace",
+          "id": "06a86be2-8674-460f-8c19-f6c2cb55143d",
+          "slug": "vijay-vilas-palace",
+          "fee": null,
+          "duration": null,
+          "lat": 22.834091,
+          "lng": 69.282572,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/vijay-vilas-palace.html"
+        },
+        {
+          "name": "Mandvi Beach",
+          "id": "0fd6239d-7238-4809-842d-3ba60e410360",
+          "slug": "mandvi-beach",
+          "fee": null,
+          "duration": null,
+          "lat": 22.826787,
+          "lng": 69.307337,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/mandvi-beach.html"
+        },
+        {
+          "name": "Shyamji Krishna Varma Memorial",
+          "id": "3239e384-2040-4ad2-bea8-1439774571c0",
+          "slug": "shyamji-krishna-varma-memorial",
+          "fee": null,
+          "duration": null,
+          "lat": 22.822114,
+          "lng": 69.381967,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/shyamji-krishna-varma-memorial.html"
+        },
+        {
+          "name": "Bhadreshwar Jain Tirth Derasar",
+          "id": "d0d8e075-fef4-4799-9730-dd0dc45abef2",
+          "slug": "bhadreshwar",
+          "fee": null,
+          "duration": null,
+          "lat": 22.911373,
+          "lng": 69.904203,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/bhadreshwar.html"
+        },
+        {
+          "name": "Chhari Dhand Wetland Reserve",
+          "id": "dd2e4629-bbd5-42e1-9d1f-b568f65d0e5b",
+          "slug": "chhari-dhand-wetland-reserve",
+          "fee": null,
+          "duration": null,
+          "lat": 23.59259,
+          "lng": 69.301041,
+          "source_url": "https://www.gujarattourism.com/kutch-zone/kutch/chhari-dhand-wetland-reserve.html"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 6,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport"
+          ],
+          "complete_budget": false,
+          "attraction_count": 5,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 1,
+          "known_subtotal": 0,
+          "distance_km": 41.7,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 9,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 5,
+          "known_subtotal": 2561,
+          "distance_km": 240.11999999999998,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 10,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 9,
+          "known_subtotal": 5322,
+          "distance_km": 464.88000000000005,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Hotel Prince Residency, Bhuj",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 11,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 10,
+          "known_subtotal": 7883,
+          "distance_km": 489.51,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 2,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [
+        {
+          "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+          "name": "Saputara Museum",
+          "reason": "temporarily_closed"
+        }
+      ],
+      "published_window_records": 0,
+      "route_records": 199,
+      "planning_candidates": 13,
+      "estimated_durations": 11,
+      "weekly_closure_records": 0,
+      "id": "9ff9f987-9e4a-4e8a-b2e6-2fd518ac063f",
+      "name": "Saputara",
+      "slug": "saputara",
+      "records": 14,
+      "valid_coordinates": 14,
+      "known_fees": 2,
+      "known_durations": 3,
+      "known_hours": 0,
+      "legacy_eligible": 2,
+      "connected": 13,
+      "attractions": [
+        {
+          "name": "Saputara Lake",
+          "id": "b41bbbf1-5f2c-4e19-8450-f62bae8ae452",
+          "slug": "saputara-lake",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 20.576641,
+          "lng": 73.74577,
+          "source_url": "https://gtbooking.gujarattourism.com/south-zone/dang/saputara-lake.html"
+        },
+        {
+          "name": "Sunset Point Saputara",
+          "id": "ae7290ed-3050-4654-8070-a2573aacb2ee",
+          "slug": "sunset-point-saputara",
+          "fee": 0,
+          "duration": 1,
+          "lat": 20.57455,
+          "lng": 73.732339,
+          "source_url": "https://www.openstreetmap.org/node/4832550858"
+        },
+        {
+          "name": "Saputara Museum",
+          "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+          "slug": "saputara-museum",
+          "fee": null,
+          "duration": 1,
+          "lat": 20.578855,
+          "lng": 73.749413,
+          "source_url": "https://www.culture.gov.in/files/inline-documents/Directory_of_Indian_Museums_080620231.pdf"
+        },
+        {
+          "name": "Table Point, Saputara",
+          "id": "67dbd72a-cad5-47da-94cb-02d446cedeb9",
+          "slug": "table-point-saputara",
+          "fee": null,
+          "duration": null,
+          "lat": 20.569208,
+          "lng": 73.741176,
+          "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf"
+        },
+        {
+          "name": "Sunrise Point, Saputara",
+          "id": "f7682406-4cf3-4a8e-95da-d950d9cd5fed",
+          "slug": "sunrise-point-saputara",
+          "fee": null,
+          "duration": null,
+          "lat": 20.587355,
+          "lng": 73.759793,
+          "source_url": "https://www.openstreetmap.org/node/4832558992"
+        },
+        {
+          "name": "Gira Waterfalls",
+          "id": "55d03b00-6224-47d3-bb27-4c70496f0995",
+          "slug": "gira-waterfalls",
+          "fee": null,
+          "duration": null,
+          "lat": 20.73714,
+          "lng": 73.491896,
+          "source_url": "https://www.gujarattourism.com/south-zone/dang/gira-waterfalls.html"
+        },
+        {
+          "name": "Waghai Botanical Garden",
+          "id": "09b9d06f-2d08-4d09-80d8-e805a4e5e966",
+          "slug": "waghai-botanical-gardens",
+          "fee": null,
+          "duration": null,
+          "lat": 20.754382,
+          "lng": 73.500504,
+          "source_url": "https://www.gujarattourism.com/south-zone/dang/waghai-botanical-gardens.html"
+        },
+        {
+          "name": "Mahal Campsite",
+          "id": "ee568fdf-3f9d-4cba-aee5-0c0173afe85b",
+          "slug": "mahal-campsite",
+          "fee": null,
+          "duration": null,
+          "lat": 20.915567,
+          "lng": 73.669073,
+          "source_url": "https://dangs.nic.in/tourist-place/mahal-campsite/"
+        },
+        {
+          "name": "Echo Point (Saputara)",
+          "id": "25b36e1a-bb8a-4638-b0f6-145f7826d465",
+          "slug": "echo-point",
+          "fee": null,
+          "duration": null,
+          "lat": 20.575731,
+          "lng": 73.734016,
+          "source_url": "https://en.wikivoyage.org/wiki/Saputara"
+        },
+        {
+          "name": "Nageshwar Mahadev (Saputara)",
+          "id": "ad780bea-bb4c-4b17-93fb-41d4eef34fa7",
+          "slug": "nageshwar-mahadev",
+          "fee": null,
+          "duration": null,
+          "lat": 20.57326,
+          "lng": 73.74424,
+          "source_url": "https://en.wikivoyage.org/wiki/Saputara"
+        },
+        {
+          "name": "Lake Garden (Saputara)",
+          "id": "6f35e7cc-4b53-47e2-b181-4487e01e3a95",
+          "slug": "lake-garden",
+          "fee": null,
+          "duration": null,
+          "lat": 20.57476,
+          "lng": 73.7465,
+          "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf"
+        },
+        {
+          "name": "Rose Garden (Saputara)",
+          "id": "22df4e4c-0fa9-48ec-a8c9-a99acf8d57d0",
+          "slug": "rose-garden",
+          "fee": null,
+          "duration": null,
+          "lat": 20.57981,
+          "lng": 73.75018,
+          "source_url": "https://en.wikivoyage.org/wiki/Saputara"
+        },
+        {
+          "name": "Step Garden (Saputara)",
+          "id": "e73e20a8-ca51-422b-ab80-3de9649456cd",
+          "slug": "step-garden",
+          "fee": null,
+          "duration": null,
+          "lat": 20.57972,
+          "lng": 73.74457,
+          "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf"
+        },
+        {
+          "name": "Hatgadh Fort",
+          "id": "b907d551-960b-47fa-b5f2-08a1c4882028",
+          "slug": "hatgadh-fort",
+          "fee": null,
+          "duration": null,
+          "lat": 20.54251,
+          "lng": 73.76084,
+          "source_url": "https://nau.in/assets/uploads/76034-national-conference-12-14-oct-2023-saputara-dangs.pdf"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Manas Cottage, Saputara",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 6,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals"
+          ],
+          "complete_budget": false,
+          "attraction_count": 8,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 8,
+          "known_subtotal": 350,
+          "distance_km": 14.09,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "temporarily_closed"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 8,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Manas Cottage, Saputara",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 12,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 3,
+          "known_subtotal": 1780,
+          "distance_km": 203.19,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "temporarily_closed"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Manas Cottage, Saputara",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 11,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 12,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 3210,
+          "distance_km": 202.09,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "temporarily_closed"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Manas Cottage, Saputara",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 12,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 14,
+          "known_subtotal": 4640,
+          "distance_km": 202.28,
+          "exclusions": [
+            {
+              "id": "519024ef-05f1-445a-9123-28d9a6b5e09e",
+              "name": "Saputara Museum",
+              "reason": "temporarily_closed"
+            }
+          ],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "planning_exclusions": [],
+      "published_window_records": 5,
+      "route_records": 157,
+      "planning_candidates": 12,
+      "estimated_durations": 8,
+      "weekly_closure_records": 1,
+      "id": "42ac1244-c2e0-434e-9f46-e739a188301e",
+      "name": "Somnath",
+      "slug": "somnath",
+      "records": 12,
+      "valid_coordinates": 12,
+      "known_fees": 4,
+      "known_durations": 4,
+      "known_hours": 4,
+      "legacy_eligible": 4,
+      "connected": 12,
+      "attractions": [
+        {
+          "name": "Somnath Temple",
+          "id": "6b153aac-83f0-415c-8491-0df6e32d1829",
+          "slug": "somnath-temple-somnath",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 20.887761,
+          "lng": 70.401391,
+          "source_url": "https://gujarattourism.com/saurashtra/gir-somnath/somnath-temple.html"
+        },
+        {
+          "name": "Triveni Sangam",
+          "id": "84e92094-41ca-47f1-b98a-f5e86f60dde5",
+          "slug": "triveni-sangam-somnath",
+          "fee": 0,
+          "duration": 1,
+          "lat": 20.884563,
+          "lng": 70.412766,
+          "source_url": "https://girsomnath.nic.in/tourist-place/triveni-sangam/"
+        },
+        {
+          "name": "Somnath Beach",
+          "id": "137e5d83-1522-4411-a2dc-cc95f2766c1b",
+          "slug": "somnath-beach-somnath",
+          "fee": 0,
+          "duration": 1.5,
+          "lat": 20.885133,
+          "lng": 70.402828,
+          "source_url": "https://router.project-osrm.org/table/v1/driving/70.384880,20.911796;70.401391,20.887761;70.412766,20.884563;70.402828,20.885133;70.393221,20.926537;70.408111,20.899600?annotations=distance,duration"
+        },
+        {
+          "name": "Bhalka Tirth",
+          "id": "122cef78-7c4f-4bf1-a61a-b1e1db6cd012",
+          "slug": "bhalka-tirth-somnath",
+          "fee": 0,
+          "duration": 1,
+          "lat": 20.911796,
+          "lng": 70.38488,
+          "source_url": "https://indiacinehub.gov.in/location/somnath"
+        },
+        {
+          "name": "Prabhas Patan Museum",
+          "id": "b48c69c6-3b4b-41ef-973e-5582959ebb60",
+          "slug": "prabhas-patan-museum",
+          "fee": null,
+          "duration": null,
+          "lat": 20.890527,
+          "lng": 70.399848,
+          "source_url": "https://www.gujarattourism.com/saurashtra/gir-somnath/prabhas-patan-museum.html"
+        },
+        {
+          "name": "Geeta Temple",
+          "id": "ecf5f357-883c-43b9-916c-2611d10d4702",
+          "slug": "geeta-temple",
+          "fee": null,
+          "duration": null,
+          "lat": 20.887033,
+          "lng": 70.415658,
+          "source_url": "https://girsomnath.nic.in/tourist-place/geeta-temple/"
+        },
+        {
+          "name": "Prachi Tirth",
+          "id": "12dc5dce-de62-455d-a829-d4141fcb987d",
+          "slug": "prachi-tirth",
+          "fee": null,
+          "duration": null,
+          "lat": 20.921512,
+          "lng": 70.608755,
+          "source_url": "https://girsomnath.nic.in/tourist-place/prachi-tirth/"
+        },
+        {
+          "name": "Mool Dwarka",
+          "id": "133fff53-ec76-4c8f-827c-e064631e70a0",
+          "slug": "mool-dwarka",
+          "fee": null,
+          "duration": null,
+          "lat": 20.76878,
+          "lng": 70.66621,
+          "source_url": "https://girsomnath.nic.in/tourist-place/mool-dwarka/"
+        },
+        {
+          "name": "Jamjir Waterfall",
+          "id": "e77b4c9c-c486-411a-8a91-04da498248c2",
+          "slug": "jamjir-waterfall",
+          "fee": null,
+          "duration": null,
+          "lat": 20.96564,
+          "lng": 70.76557,
+          "source_url": "https://girsomnath.nic.in/tourist-place/jamjir-waterfall/"
+        },
+        {
+          "name": "Jhoolta Minara Mosque",
+          "id": "d1d57110-bc11-4311-a247-9b3c4a32982b",
+          "slug": "jhoolta-minara",
+          "fee": null,
+          "duration": null,
+          "lat": 20.77482,
+          "lng": 71.04506,
+          "source_url": "https://girsomnath.nic.in/tourist-place/jhoolta-minara/"
+        },
+        {
+          "name": "Gupt Prayag",
+          "id": "69be53f8-6288-4f03-8ea6-d7cf863c89e9",
+          "slug": "gupt-prayag",
+          "fee": null,
+          "duration": null,
+          "lat": 20.78353,
+          "lng": 71.02079,
+          "source_url": "https://girsomnath.nic.in/tourist-place/gupt-prayag/"
+        },
+        {
+          "name": "Sana Caves",
+          "id": "a5058ced-0a6b-44a9-909c-f8e31ef6e2ec",
+          "slug": "sana-caves",
+          "fee": null,
+          "duration": null,
+          "lat": 20.962568,
+          "lng": 71.203014,
+          "source_url": "https://girsomnath.nic.in/tourist-place/sana-caves/"
+        }
+      ],
+      "scenarios": [
+        {
+          "days": 1,
+          "hotel": "Lilavati Atithigruh",
+          "meal_breaks": 0,
+          "unknown_stop_costs": 3,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport"
+          ],
+          "complete_budget": false,
+          "attraction_count": 7,
+          "duplicates": 0,
+          "sightseeing_days": 1,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 0,
+          "distance_km": 62.83,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 7,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 2,
+          "hotel": "Lilavati Atithigruh",
+          "meal_breaks": 1,
+          "unknown_stop_costs": 7,
+          "unpriced_components": [
+            "Entry fees",
+            "Transport",
+            "Additional food outside scheduled meals",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 11,
+          "duplicates": 0,
+          "sightseeing_days": 2,
+          "empty_days": 0,
+          "candidates": 13,
+          "known_subtotal": 1350,
+          "distance_km": 229.60999999999999,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 6,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 5,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 3,
+          "hotel": "Lilavati Atithigruh",
+          "meal_breaks": 3,
+          "unknown_stop_costs": 10,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 12,
+          "duplicates": 0,
+          "sightseeing_days": 3,
+          "empty_days": 0,
+          "candidates": 2,
+          "known_subtotal": 2100,
+          "distance_km": 365.90999999999997,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 4,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        },
+        {
+          "days": 4,
+          "hotel": "Lilavati Atithigruh",
+          "meal_breaks": 2,
+          "unknown_stop_costs": 9,
+          "unpriced_components": [
+            "Entry fees",
+            "Food",
+            "Transport",
+            "Accommodation taxes and fees"
+          ],
+          "complete_budget": false,
+          "attraction_count": 12,
+          "duplicates": 0,
+          "sightseeing_days": 4,
+          "empty_days": 0,
+          "candidates": 16,
+          "known_subtotal": 2850,
+          "distance_km": 381.9,
+          "exclusions": [],
+          "day_coverage": [
+            {
+              "day_number": 1,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 2,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 3,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            },
+            {
+              "day_number": 4,
+              "attraction_count": 3,
+              "status": "provisional_sightseeing",
+              "optional_meals": [
+                "Breakfast is optional; inclusion and price are not known.",
+                "Evening dinner is optional after your return; no restaurant or price is implied."
+              ],
+              "advisory": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "preservation": [
+    {
+      "table": "destinations",
+      "original": 8,
+      "current": 8,
+      "preserved": true
+    },
+    {
+      "table": "attractions",
+      "original": 44,
+      "current": 100,
+      "preserved": true
+    },
+    {
+      "table": "hotels",
+      "original": 56,
+      "current": 56,
+      "preserved": true
+    },
+    {
+      "table": "restaurants",
+      "original": 12,
+      "current": 12,
+      "preserved": true
+    },
+    {
+      "table": "routes",
+      "original": 497,
+      "current": 1330,
+      "preserved": true
+    },
+    {
+      "table": "users",
+      "original": 2,
+      "current": 2,
+      "preserved": true
+    },
+    {
+      "table": "trips",
+      "original": 8,
+      "current": 8,
+      "preserved": true
+    },
+    {
+      "table": "itinerary_stops",
+      "original": 81,
+      "current": 81,
+      "preserved": true
+    },
+    {
+      "table": "budgets",
+      "original": 7,
+      "current": 7,
+      "preserved": true
+    }
+  ]
+}

@@ -6,6 +6,8 @@ Existing Gujarat Heritage Tourism Planner: React/TypeScript, Express, PostgreSQL
 
 ## Current Goal
 
+2026-10-20T13:48:52.651311+00:00 Attraction/itinerary release:56 sourced additions bring catalog to8destinations/100attractions/56hotels/12restaurants/1330routes. Shared provisional missing-data, closure/window,21:00return, bounded meal, reachable quota, day-status and incomplete-cost-neutrality fixes. All8finalgatesPASS:118backend/full18/production17/448API/Phase2/Phase3/demo/chat/localization. Installed8080 ready7/7,readonly24browser and176imageassociations0errors; original9table hashespreserved. Reports FINAL_LOCAL_DEMO_READINESS.md andATTRACTION_ITINERARY_PROGRESS.md are current authority. Bounded greedy, approximate source points, unknown fees/ratings/permits and138intentionalfallbacks remain honest. Newbranchfeature/attraction-itinerary-quality preparedforbothremotes,stackedonexistingmapbranch; nomerge/force/deploy. Next verified publication/CI.
+
 Scoped itinerary map and unknown-budget repair implemented, installed locally and published as44da101 to feature/itinerary-map-budget on origin and classroom. Both tips verified; PR2(origin) andPR1(classroom) open/unmerged. Documentation follow-up publishes this record; final tip is authoritative. No force or merge. Baseline f65b96407623010f10dacb2ec9c07cbc6526f8df matched both main branches. See reports/DUAL_GITHUB_PUBLICATION.md for final publication evidence; earlier main/chat instructions below are historical.
 
 2026-10-13T13:25:59.062759+00:00 USER AUTHORIZED HERITAGE GUIDE PUBLICATION TO BOTH REPOSITORIES. Product implementation and all local checks are complete. Both remote main refs and clean release checkout were1999f025 before publication. Copy only verified chat source/docs and curated test evidence; exclude private environment, PRIVATE_PROJECT_CONTEXT.md, backups, raw logs and screenshots. Preserve history and use normal fast-forward pushes. Git remote refs are authoritative for the release identity; no new product repair or live AI requests required.
@@ -22,6 +24,8 @@ Scheduling and hotel-tier continuation verified locally; normal main publication
 
 ## Current Project State
 
+2026-10-20T13:48:52.651311+00:00 Attraction/itinerary release:56 sourced additions bring catalog to8destinations/100attractions/56hotels/12restaurants/1330routes. Shared provisional missing-data, closure/window,21:00return, bounded meal, reachable quota, day-status and incomplete-cost-neutrality fixes. All8finalgatesPASS:118backend/full18/production17/448API/Phase2/Phase3/demo/chat/localization. Installed8080 ready7/7,readonly24browser and176imageassociations0errors; original9table hashespreserved. Reports FINAL_LOCAL_DEMO_READINESS.md andATTRACTION_ITINERARY_PROGRESS.md are current authority. Bounded greedy, approximate source points, unknown fees/ratings/permits and138intentionalfallbacks remain honest. Newbranchfeature/attraction-itinerary-quality preparedforbothremotes,stackedonexistingmapbranch; nomerge/force/deploy. Next verified publication/CI.
+
 Local8080 serves the route map and additive cost-status API. All original nine table fingerprints preserved. Catalog8/44/56/12/497 unchanged; no migration/reseed or saved-row rewrite. No public deployment.
 
 Heritage Guide installed local13October2026. Frontend closed-by-default/no requests on open; authenticated AI uses actual PostgreSQL through seven allowlistedtools. DockerInternet/provider access verified without exposing keys. Current evidence is reports/HERITAGE_GUIDE_TEST_RESULTS.md, with machine reports under reports/heritage-guide-*.json. Overall historical application data/photo limitations persist; this task did not add/alter tourism data.
@@ -29,6 +33,8 @@ Heritage Guide installed local13October2026. Frontend closed-by-default/no reque
 Local8080 running. Catalog8destinations/44attractions/56hotels/12restaurants/497routes. All24hotel tier slots populated;29usable indicative hotel prices,27unknown. Original records preserved.
 
 ## Completed
+
+2026-10-20T13:48:52.651311+00:00 Attraction/itinerary release:56 sourced additions bring catalog to8destinations/100attractions/56hotels/12restaurants/1330routes. Shared provisional missing-data, closure/window,21:00return, bounded meal, reachable quota, day-status and incomplete-cost-neutrality fixes. All8finalgatesPASS:118backend/full18/production17/448API/Phase2/Phase3/demo/chat/localization. Installed8080 ready7/7,readonly24browser and176imageassociations0errors; original9table hashespreserved. Reports FINAL_LOCAL_DEMO_READINESS.md andATTRACTION_ITINERARY_PROGRESS.md are current authority. Bounded greedy, approximate source points, unknown fees/ratings/permits and138intentionalfallbacks remain honest. Newbranchfeature/attraction-itinerary-quality preparedforbothremotes,stackedonexistingmapbranch; nomerge/force/deploy. Next verified publication/CI.
 
 Day-wise saved-stop Leaflet map with owner-only display routing, honest estimated fallback, synchronized numbered markers/timeline and all-day PDF capture. Unknown-cost categories/known subtotals, actual night-room labels and coverage-comparable cost utility repaired without a planner rewrite.
 
@@ -76,6 +82,8 @@ npm run test:all:local; npm run test:scheduling:local; node scripts/test-local-a
 
 ## Testing Completed
 
+2026-10-20T13:48:52.651311+00:00 Attraction/itinerary release:56 sourced additions bring catalog to8destinations/100attractions/56hotels/12restaurants/1330routes. Shared provisional missing-data, closure/window,21:00return, bounded meal, reachable quota, day-status and incomplete-cost-neutrality fixes. All8finalgatesPASS:118backend/full18/production17/448API/Phase2/Phase3/demo/chat/localization. Installed8080 ready7/7,readonly24browser and176imageassociations0errors; original9table hashespreserved. Reports FINAL_LOCAL_DEMO_READINESS.md andATTRACTION_ITINERARY_PROGRESS.md are current authority. Bounded greedy, approximate source points, unknown fees/ratings/permits and138intentionalfallbacks remain honest. Newbranchfeature/attraction-itinerary-quality preparedforbothremotes,stackedonexistingmapbranch; nomerge/force/deploy. Next verified publication/CI.
+
 Final18/18 unified gates,104 backend tests,9 focused unit cases, all8 destination/16trip API matrix,10 browser viewport cases,849162-byte all-day PDF,5demo journeys,71chat SQL checks+3width regressions PASS. Local readiness7/7/images120records0errors/original9table fingerprints PASS. Final container17/17 PASS after the PDF/profile-caption repair. Results and timestamps are in reports/MAP_BUDGET_TEST_RESULTS.md and map-budget-regression.json.
 
 Publication checkout verified:95 backend tests, frontend TypeScript and source/privacy audit passed after exact source copying. Existing dependency lock entries unchanged; only official groq-sdk added. Curated public handoff retains the existing Git baseline and new continuity; full local historical handoff remains in the application folder.
@@ -102,6 +110,8 @@ Never run mutating suites against live data; existing wrappers create separate t
 
 ## Next Steps
 
+2026-10-20T13:48:52.651311+00:00 Attraction/itinerary release:56 sourced additions bring catalog to8destinations/100attractions/56hotels/12restaurants/1330routes. Shared provisional missing-data, closure/window,21:00return, bounded meal, reachable quota, day-status and incomplete-cost-neutrality fixes. All8finalgatesPASS:118backend/full18/production17/448API/Phase2/Phase3/demo/chat/localization. Installed8080 ready7/7,readonly24browser and176imageassociations0errors; original9table hashespreserved. Reports FINAL_LOCAL_DEMO_READINESS.md andATTRACTION_ITINERARY_PROGRESS.md are current authority. Bounded greedy, approximate source points, unknown fees/ratings/permits and138intentionalfallbacks remain honest. Newbranchfeature/attraction-itinerary-quality preparedforbothremotes,stackedonexistingmapbranch; nomerge/force/deploy. Next verified publication/CI.
+
 Check publication report and remote branch tips before any further action. Do not merge, force-push or deploy automatically. Reproduce new issues before editing; retain private context/env/backups outside Git.
 
 Publication checkpoint: commit the reviewed staged Heritage Guide files and push the identical main commit to origin and classroom without force. Verify both remote refs; no product repair, live inference or database operations are needed. Keep private context, environments, backups and logs excluded.
@@ -112,6 +122,8 @@ Inspect CI associated with latest main commit; no claim of CI success until veri
 
 ## Last Session Summary
 
+2026-10-20T13:48:52.651311+00:00 Attraction/itinerary release:56 sourced additions bring catalog to8destinations/100attractions/56hotels/12restaurants/1330routes. Shared provisional missing-data, closure/window,21:00return, bounded meal, reachable quota, day-status and incomplete-cost-neutrality fixes. All8finalgatesPASS:118backend/full18/production17/448API/Phase2/Phase3/demo/chat/localization. Installed8080 ready7/7,readonly24browser and176imageassociations0errors; original9table hashespreserved. Reports FINAL_LOCAL_DEMO_READINESS.md andATTRACTION_ITINERARY_PROGRESS.md are current authority. Bounded greedy, approximate source points, unknown fees/ratings/permits and138intentionalfallbacks remain honest. Newbranchfeature/attraction-itinerary-quality preparedforbothremotes,stackedonexistingmapbranch; nomerge/force/deploy. Next verified publication/CI.
+
 Implemented and deeply tested only map/budget scope. Scoped release branch and privacy review preserve prior work; canonical private workspace handoff retains detailed local session history.
 
 2026-10-13T11:02:19.166141+00:00 Local Groq Heritage Guide delivered/installed with actualAI+PostgreSQL, English/Hindi/Gujarati and read-only privacy. Reports/README/handoff updated. All requiredregression/localdemo checks PASS and originaldata unchanged. UserFreePlanconfirmed, no paidserviceorpublicdeployment; privatekeynotbundled. No active tests or pending repairs for this feature.
@@ -119,6 +131,8 @@ Implemented and deeply tested only map/budget scope. Scoped release branch and p
 Verified scheduling, legacy display and real PDF export, retaining design and data. Source publication includes the previous hotel-tier continuation. No public hosting operations.
 
 ## Last Updated
+
+2026-10-20T13:48:52.651311+00:00 UTC / Asia/Calcutta.
 
 2026-10-20T03:44:23.768500+00:00 UTC / Asia/Calcutta.
 

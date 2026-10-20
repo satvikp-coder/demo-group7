@@ -524,6 +524,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
               <p>Distance: {optimization.weights.distance}% | Cost: {optimization.weights.cost}% | Rating: {optimization.weights.rating}%</p>
               <p>Why this itinerary? It has the highest weighted score among {optimization.evaluated_count} feasible candidates evaluated by the existing greedy planner. A global optimum is not guaranteed.</p>
               {optimization.coverage_policy && <p className="text-sm text-stone">Priorities compare tours with the fullest feasible sightseeing coverage found. A cheaper plan does not win simply by dropping visits.</p>}
+              {optimization.incomplete_costs_neutralized && <p className="text-sm text-stone">Unpriced admission or meals prevent a reliable cost comparison. Cost utility is neutralized for these candidates; known subtotal is not a full-trip budget.</p>}
               <p>{chosen?.attraction_count} attractions | {chosen?.distance_km.toFixed(1)} km of saved route estimates | INR {chosen?.known_cost.toLocaleString('en-IN')} known estimated costs | Rating: {chosen?.rating_mean == null ? 'Unknown' : chosen.rating_mean.toFixed(2) + '/5'} | Score: {optimization.score.toFixed(4)}</p>
               <p className="text-sm text-stone">Costs include {optimization.rooms} room(s) for {request.data.dto.trip.generation_summary?.lodging_nights ?? numDays} night(s) and known admission/meal costs for {optimization.travelers} traveler(s). Transport fares remain unknown. Ratings use known values with a coverage adjustment; prices are estimates, not live availability.</p>
             </section>;
@@ -535,7 +536,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             <div className="relative z-10 space-y-4">
               <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gold">
                 <Compass className="w-4 h-4 text-gold" />
-                <span>Intra-City Circular Route Plan • {currentCityName}</span>
+                <span>Destination Circular Route Plan • {currentCityName}</span>
               </div>
 
               <h1 className="font-display text-2xl sm:text-4xl text-salt font-bold">
@@ -681,7 +682,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 font-mono text-xs text-ink font-bold">
                 <Cpu className="w-4 h-4 text-gold" />
-                <span>Intra-City Shortest Path Visualizer</span>
+                <span>Destination Shortest Path Visualizer</span>
               </div>
               <button
                 onClick={() => setShowAlgorithm(!showAlgorithm)}
@@ -744,9 +745,9 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
                     </div>
                   </div>
 
-                  {request.data?.dto.trip.generation_summary?.day_coverage?.filter((coverage: any) => coverage.day_number === day.dayNumber && !coverage.attraction_count).map((coverage: any) => (
+                  {request.data?.dto.trip.generation_summary?.day_coverage?.filter((coverage: any) => coverage.day_number === day.dayNumber).map((coverage: any) => (
                     <p key={coverage.day_number} role="note" className="text-sm text-stone" data-testid="itinerary-day-coverage">
-                      {coverage.advisory}
+                      {!coverage.attraction_count ? `Unallocated sightseeing day. ${coverage.advisory}` : coverage.status === "provisional_sightseeing" ? "Provisional sightseeing day: confirm unpriced admission and operating/access information before travel." : "Sightseeing scheduled using the recorded constraints."}{coverage.optional_meals?.length ? ` ${coverage.optional_meals.join(" ")}` : ""}
                     </p>
                   ))}
                   {(request.data?.dto.trip.generation_summary?.free_time ?? scheduleGaps(request.data?.dto.days.flatMap((d: any)=>d.stops)??[],request.data?.dto.trip.generation_summary?.legs??[])).filter((gap: any) => gap.day_number === day.dayNumber).map((gap: any) => (
@@ -763,10 +764,10 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
                         const accessibleLabel =
                           stop.type === "meal"
-                            ? `Stop ${stopNumber} of ${day.stops.length}: ${stop.category} break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, estimated cost ₹${displayNumber(stop.cost)}`
+                            ? `Stop ${stopNumber} of ${day.stops.length}: ${stop.category} break at ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stopCostLabel(stop.cost,stop.type,stop.costState)}`
                             : stop.type === "hotel"
                               ? isFinalStop
-                                ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, completing circular route`
+                                ? `Stop ${stopNumber} of ${day.stops.length} (Final Stop): Return to ${stop.name}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, ${day.stops.some(s=>s.type==="attraction")?"completing circular route":"hotel anchor only; no sightseeing scheduled"}`
                                 : `Stop ${stopNumber} of ${day.stops.length} (Start): Depart ${stop.name}, depart at ${stop.departureTime}`
                               : `Stop ${stopNumber} of ${day.stops.length}: ${stop.name}, ${stop.category}, arrive ${stop.arrivalTime}, depart ${stop.departureTime}, duration ${stop.durationMinutes} minutes, cost ${stopCostLabel(stop.cost,stop.type,stop.costState)}`;
 

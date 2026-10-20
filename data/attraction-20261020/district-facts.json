@@ -1,0 +1,182 @@
+[
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/aradhana-dham/",
+    "checked": "2026-10-20",
+    "title": "Aradhana Dham",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/bet-dwarka-dandi-hanuman/",
+    "checked": "2026-10-20",
+    "title": "Bet Dwarka - Dandi Hanuman",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/ghumli/",
+    "checked": "2026-10-20",
+    "title": "Ghumli",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/gurudwara/",
+    "checked": "2026-10-20",
+    "title": "Gurudwara",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/harshad-mata/",
+    "checked": "2026-10-20",
+    "title": "Harshad Mata Temple",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/hathala/",
+    "checked": "2026-10-20",
+    "title": "Hathala",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/indreshwar-temple/",
+    "checked": "2026-10-20",
+    "title": "Indreshwar Temple",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/kileshwar/",
+    "checked": "2026-10-20",
+    "title": "Kileshwar",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/pindara/",
+    "checked": "2026-10-20",
+    "title": "Pindara",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://devbhumidwarka.nic.in/tourist-place/sonkansari-temple-bhanvad/",
+    "checked": "2026-10-20",
+    "title": "Sonkansari Temple, Bhanvad",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/banej-temple/",
+    "checked": "2026-10-20",
+    "title": "Banej Temple",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/geeta-temple/",
+    "checked": "2026-10-20",
+    "title": "Geeta Temple",
+    "map_coordinates": {
+      "lat": 20.88703327743524,
+      "lng": 70.41565781251005
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/gupt-prayag/",
+    "checked": "2026-10-20",
+    "title": "Gupt Prayag",
+    "map_coordinates": {
+      "lat": 20.78353,
+      "lng": 71.02079
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/jamjir-waterfall/",
+    "checked": "2026-10-20",
+    "title": "Jamjir Waterfall",
+    "map_coordinates": {
+      "lat": 20.96564,
+      "lng": 70.76557
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/jhoolta-minara/",
+    "checked": "2026-10-20",
+    "title": "Jhoolta Minara Mosque",
+    "map_coordinates": {
+      "lat": 20.77482,
+      "lng": 71.04506
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/mool-dwarka/",
+    "checked": "2026-10-20",
+    "title": "Mool Dwarka",
+    "map_coordinates": {
+      "lat": 20.76878,
+      "lng": 70.66621
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/prachi-tirth/",
+    "checked": "2026-10-20",
+    "title": "Prachi Tirth",
+    "map_coordinates": {
+      "lat": 20.921512,
+      "lng": 70.608755
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/sana-caves/",
+    "checked": "2026-10-20",
+    "title": "Sana Caves",
+    "map_coordinates": {
+      "lat": 20.962568,
+      "lng": 71.203014
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/shri-bai-ashram/",
+    "checked": "2026-10-20",
+    "title": "Shri Bai Ashram",
+    "map_coordinates": {
+      "lat": 21.0609745368232,
+      "lng": 70.53031242113153
+    }
+  },
+  {
+    "url": "https://girsomnath.nic.in/tourist-place/triveni-sangam/",
+    "checked": "2026-10-20",
+    "title": "Triveni Sangam",
+    "map_coordinates": null
+  },
+  {
+    "url": "https://dangs.nic.in/tourist-place/giradhod/",
+    "checked": "2026-10-20",
+    "title": "Giradhod",
+    "map_coordinates": {
+      "lat": 20.737382,
+      "lng": 73.491712
+    }
+  },
+  {
+    "url": "https://dangs.nic.in/tourist-place/mahal-campsite/",
+    "checked": "2026-10-20",
+    "title": "Mahal Campsite",
+    "map_coordinates": {
+      "lat": 20.915567,
+      "lng": 73.669073
+    }
+  },
+  {
+    "url": "https://dangs.nic.in/tourist-place/saputara/",
+    "checked": "2026-10-20",
+    "title": "Saputara Hill Station",
+    "map_coordinates": {
+      "lat": 20.5785975,
+      "lng": 73.7507276
+    }
+  },
+  {
+    "url": "https://dangs.nic.in/tourist-place/shabridham/",
+    "checked": "2026-10-20",
+    "title": "Shabridham and Pampa Sarovar",
+    "map_coordinates": {
+      "lat": 20.930959,
+      "lng": 73.791797
+    }
+  }
+]

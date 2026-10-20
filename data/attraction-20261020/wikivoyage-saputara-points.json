@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Echo Point",
+    "lat": 20.575731,
+    "lng": 73.7340159,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "license": "Wikivoyage contributors CC BY-SA 4.0"
+  },
+  {
+    "name": "Nageshwar Mahadev",
+    "lat": 20.57326,
+    "lng": 73.74424,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "license": "Wikivoyage contributors CC BY-SA 4.0"
+  },
+  {
+    "name": "Lake Garden",
+    "lat": 20.57476,
+    "lng": 73.7465,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "license": "Wikivoyage contributors CC BY-SA 4.0"
+  },
+  {
+    "name": "Rose Garden",
+    "lat": 20.57981,
+    "lng": 73.75018,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "license": "Wikivoyage contributors CC BY-SA 4.0"
+  },
+  {
+    "name": "Step Garden",
+    "lat": 20.57972,
+    "lng": 73.74457,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "license": "Wikivoyage contributors CC BY-SA 4.0"
+  },
+  {
+    "name": "Hatgadh Fort",
+    "lat": 20.54251,
+    "lng": 73.76084,
+    "source_url": "https://en.wikivoyage.org/wiki/Saputara",
+    "license": "Wikivoyage contributors CC BY-SA 4.0"
+  }
+]

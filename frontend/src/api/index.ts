@@ -267,7 +267,7 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
     const stops=day.stops.map((s:Row,index:number)=>({id:s.id,referenceId:s.reference_id,
       legDistanceKm: s.reference_id === day.stops[index+1]?.reference_id ? 0 : legs.find((l:Row)=>l.day_number===day.day_number && l.from===s.reference_id && l.to===day.stops[index+1]?.reference_id)?.distance_km,type:s.stop_type,name:s.name,
       category:s.category ?? "",arrivalTime:s.arrival_time,departureTime:s.departure_time,durationMinutes:s.duration_minutes,
-      cost:number(s.cost),costState:summary.cost_states?.[`${day.day_number}:${s.stop_order}`] ?? (Number(s.cost)>0?"KNOWN_POSITIVE":s.stop_type==="hotel"?"KNOWN_ZERO":"UNKNOWN"),location:s.location ?? "",lat:s.lat==null||String(s.lat).trim()===""?Number.NaN:Number(s.lat),lng:s.lng==null||String(s.lng).trim()===""?Number.NaN:Number(s.lng),imageUrl:catalogPhoto(({hotel:"hotels",attraction:"attractions",meal:"restaurants"} as Record<string,string>)[s.stop_type] || "attractions",s),
+      cost:number(s.cost),costState:summary.cost_states?.[`${day.day_number}:${s.stop_order}`] ?? (Number(s.cost)>0?"KNOWN_POSITIVE":s.stop_type==="hotel"?"KNOWN_ZERO":"UNKNOWN"),location:s.location ?? "",lat:s.lat==null||String(s.lat).trim()===""?Number.NaN:Number(s.lat),lng:s.lng==null||String(s.lng).trim()===""?Number.NaN:Number(s.lng),imageUrl:s.stop_type==="meal"&&!s.reference_id?undefined:catalogPhoto(({hotel:"hotels",attraction:"attractions",meal:"restaurants"} as Record<string,string>)[s.stop_type] || "attractions",s),
       description:s.description ?? "",wheelchairAccessible:s.wheelchair_accessible ?? undefined,
       physicalDemand:s.physical_demand ?? undefined,bestTimeNote:s.best_time_note ?? undefined}));
     const sum=(type:string)=>stops.filter((s:Row)=>s.type===type).reduce((n:number,s:Row)=>n+(Number.isFinite(s.cost)&&s.cost>=0?s.cost:0),0);
@@ -283,6 +283,7 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
   const minutes=allStops.reduce((n:number,s:Row)=>n+Number(s.durationMinutes ?? 0),0)+legs.reduce((n:number,l:Row)=>n+Number(l.minutes),0);
   const warnings:string[]=["Costs use catalog price snapshots, not live quotes. Confirm current tariffs, opening hours and availability before travel."];
   if(summary.warnings?.includes("reverse_route_estimate_unverified")) warnings.push("Some return-road estimates reuse forward evidence; reverse routing is unverified for those legs.");
+  if(summary.status==="provisional") warnings.push("This plan includes provisional visits or unpriced meals. Confirm access and additional costs before travel.");
   if(summary.status==="incomplete") warnings.push("The saved itinerary is incomplete: routes, accessible attractions, time or budget may be unavailable.");
   if(summary.hotel_over_budget) warnings.push("Your selected hotel exceeds the budget and has been retained.");
   if(dto.budget.transport_cost_known===false) warnings.push("Transport fares are unknown and excluded from the saved total.");
@@ -341,7 +342,7 @@ export function generateComparisonTakeaway(
   if (distSaved > 0) {
     statement += `, while Distance-first reduces total transit by ${distSaved} km.`;
   } else {
-    statement += `, while Distance-first minimizes intra-city transit times.`;
+    statement += `, while Distance-first minimizes destination-route transit times.`;
   }
 
   return statement;

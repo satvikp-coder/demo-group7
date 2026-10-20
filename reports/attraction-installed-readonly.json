@@ -1,0 +1,202 @@
+{
+  "verified": true,
+  "read_only": true,
+  "cases": [
+    {
+      "city": "Ahmedabad",
+      "width": 1440,
+      "records": 16,
+      "new_records_rendered": 2,
+      "decoded_images": 17,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "width": 1440,
+      "records": 12,
+      "new_records_rendered": 3,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "width": 1440,
+      "records": 10,
+      "new_records_rendered": 6,
+      "decoded_images": 11,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "width": 1440,
+      "records": 10,
+      "new_records_rendered": 8,
+      "decoded_images": 11,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "width": 1440,
+      "records": 12,
+      "new_records_rendered": 8,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "width": 1440,
+      "records": 14,
+      "new_records_rendered": 12,
+      "decoded_images": 15,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "width": 1440,
+      "records": 14,
+      "new_records_rendered": 9,
+      "decoded_images": 15,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "width": 1440,
+      "records": 12,
+      "new_records_rendered": 8,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "width": 768,
+      "records": 16,
+      "new_records_rendered": 2,
+      "decoded_images": 17,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "width": 768,
+      "records": 12,
+      "new_records_rendered": 3,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "width": 768,
+      "records": 10,
+      "new_records_rendered": 6,
+      "decoded_images": 11,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "width": 768,
+      "records": 10,
+      "new_records_rendered": 8,
+      "decoded_images": 11,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "width": 768,
+      "records": 12,
+      "new_records_rendered": 8,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "width": 768,
+      "records": 14,
+      "new_records_rendered": 12,
+      "decoded_images": 15,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "width": 768,
+      "records": 14,
+      "new_records_rendered": 9,
+      "decoded_images": 15,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "width": 768,
+      "records": 12,
+      "new_records_rendered": 8,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Ahmedabad",
+      "width": 390,
+      "records": 16,
+      "new_records_rendered": 2,
+      "decoded_images": 17,
+      "passed": true
+    },
+    {
+      "city": "Champaner",
+      "width": 390,
+      "records": 12,
+      "new_records_rendered": 3,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Dwarka",
+      "width": 390,
+      "records": 10,
+      "new_records_rendered": 6,
+      "decoded_images": 11,
+      "passed": true
+    },
+    {
+      "city": "Gir National Park",
+      "width": 390,
+      "records": 10,
+      "new_records_rendered": 8,
+      "decoded_images": 11,
+      "passed": true
+    },
+    {
+      "city": "Modhera",
+      "width": 390,
+      "records": 12,
+      "new_records_rendered": 8,
+      "decoded_images": 13,
+      "passed": true
+    },
+    {
+      "city": "Rann of Kutch",
+      "width": 390,
+      "records": 14,
+      "new_records_rendered": 12,
+      "decoded_images": 15,
+      "passed": true
+    },
+    {
+      "city": "Saputara",
+      "width": 390,
+      "records": 14,
+      "new_records_rendered": 9,
+      "decoded_images": 15,
+      "passed": true
+    },
+    {
+      "city": "Somnath",
+      "width": 390,
+      "records": 12,
+      "new_records_rendered": 8,
+      "decoded_images": 13,
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "api_failures": [],
+  "writes": [],
+  "external_failures": []
+}

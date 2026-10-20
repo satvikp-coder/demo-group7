@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Hanuman_Dandi_temple&prop=coordinates&format=json",
+    "matches": [],
+    "data": {
+      "batchcomplete": "",
+      "query": {
+        "normalized": [
+          {
+            "from": "Hanuman_Dandi_temple",
+            "to": "Hanuman Dandi temple"
+          }
+        ],
+        "pages": {
+          "76424852": {
+            "pageid": 76424852,
+            "ns": 0,
+            "title": "Hanuman Dandi temple",
+            "coordinates": [
+              {
+                "lat": 22.4689,
+                "lon": 69.1377,
+                "primary": "",
+                "globe": "earth"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "url": "https://www.incredibleindia.gov.in/en/gujarat/dwarka/bhadkeshwar-mahadev-temple",
+    "matches": [],
+    "data": null
+  },
+  {
+    "url": "https://www.gujarattourism.com/saurashtra/amreli/tulsishyam.html",
+    "matches": [
+      "=!1m18!1m12!1m3!1d1861.766689023316!2d71.0243489079224!3d21.05134879969375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2f21f6e4"
+    ],
+    "data": null
+  }
+]

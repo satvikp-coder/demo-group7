@@ -1,5 +1,6 @@
 import os,json,time,secrets,re
 from pathlib import Path
+from cost_assertions import assert_known_budget
 from playwright.sync_api import sync_playwright,expect
 base=os.environ['FRONTEND_TEST_URL'];api=os.environ['API_TEST_URL'];report={'verified':False,'checks':[],'scenarios':[]}
 with sync_playwright() as p:
@@ -23,7 +24,7 @@ with sync_playwright() as p:
   response=ctx.request.post(url,headers=headers,data={'weights':weight});assert response.status==200,response.text();result=response.json();opt=result['trip']['generation_summary']['optimization'];assert opt['weights']==weight
   assert opt['score']==max(c['score'] for c in opt['candidates'])
   for c in opt['candidates']:assert abs(c['score']-sum(weight[k]*c['utilities'][k]/100 for k in weight))<1e-12
-  assert abs(result['budget']['total']-sum(float(s['cost']) for day in result['days'] for s in day['stops']))<.01
+  assert_known_budget(result)
   report['scenarios'].append(opt)
   repeated=ctx.request.post(url,headers=headers,data={'weights':weight}).json();assert repeated['trip']['generation_summary']['optimization']==opt
  assert ctx.request.post(url,headers=headers,data={'weights':{'distance':80,'cost':80,'rating':10}}).status==400
