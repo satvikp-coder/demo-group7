@@ -204,6 +204,11 @@ export const api = {
   },
   savedTrips: (signal?:AbortSignal) => all('/trips',signal),
   trip: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}`,{signal}).then(snapshotFromResponse) : Promise.reject(new ApiError("Generate a persisted trip first.")),
+  tripMap: (id:string,day:number,signal?:AbortSignal) => request<Row>(`/trips/${idPath(id)}/map/${day}`,{signal}).then(value=>{
+    if(value.trip_id!==id||value.day_number!==day||!Array.isArray(value.legs)||!value.legs.every((leg:Row)=>
+      ['road','estimated','same_location','unavailable'].includes(leg.status)&&Array.isArray(leg.coordinates)&&leg.coordinates.every((p:any)=>Array.isArray(p)&&p.length===2&&Number.isFinite(p[0])&&Math.abs(p[0])<=180&&Number.isFinite(p[1])&&Math.abs(p[1])<=90)))throw new ApiError('Invalid map response.');
+    return value;
+  }),
   budget: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}/budget`,{signal}).then(budgetFromResponse) : Promise.reject(new ApiError("Generate a persisted trip first.")),
   adminList: (resource:string,signal?:AbortSignal) => all(`/admin/${idPath(resource)}`,signal),
   adminSave: async (resource:string,id:string|undefined,body:Row) => catalogMutation(request<Row>(`/admin/${idPath(resource)}${id?`/${idPath(id)}`:""}`,{method:id?"PUT":"POST",body:JSON.stringify(body)})),
@@ -262,13 +267,13 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
     const stops=day.stops.map((s:Row,index:number)=>({id:s.id,referenceId:s.reference_id,
       legDistanceKm: s.reference_id === day.stops[index+1]?.reference_id ? 0 : legs.find((l:Row)=>l.day_number===day.day_number && l.from===s.reference_id && l.to===day.stops[index+1]?.reference_id)?.distance_km,type:s.stop_type,name:s.name,
       category:s.category ?? "",arrivalTime:s.arrival_time,departureTime:s.departure_time,durationMinutes:s.duration_minutes,
-      cost:number(s.cost),location:s.location ?? "",lat:number(s.lat),lng:number(s.lng),imageUrl:catalogPhoto(({hotel:"hotels",attraction:"attractions",meal:"restaurants"} as Record<string,string>)[s.stop_type] || "attractions",s),
+      cost:number(s.cost),costState:summary.cost_states?.[`${day.day_number}:${s.stop_order}`] ?? (Number(s.cost)>0?"KNOWN_POSITIVE":s.stop_type==="hotel"?"KNOWN_ZERO":"UNKNOWN"),location:s.location ?? "",lat:s.lat==null||String(s.lat).trim()===""?Number.NaN:Number(s.lat),lng:s.lng==null||String(s.lng).trim()===""?Number.NaN:Number(s.lng),imageUrl:catalogPhoto(({hotel:"hotels",attraction:"attractions",meal:"restaurants"} as Record<string,string>)[s.stop_type] || "attractions",s),
       description:s.description ?? "",wheelchairAccessible:s.wheelchair_accessible ?? undefined,
       physicalDemand:s.physical_demand ?? undefined,bestTimeNote:s.best_time_note ?? undefined}));
-    const sum=(type:string)=>stops.filter((s:Row)=>s.type===type).reduce((n:number,s:Row)=>n+s.cost,0);
+    const sum=(type:string)=>stops.filter((s:Row)=>s.type===type).reduce((n:number,s:Row)=>n+(Number.isFinite(s.cost)&&s.cost>=0?s.cost:0),0);
     const km=Math.round(legs.filter((l:Row)=>l.day_number===day.day_number).reduce((n:number,l:Row)=>n+Number(l.distance_km),0)*100)/100;
     return {dayNumber:day.day_number,dateLabel:dto.trip.start_date?new Date(Date.parse(dto.trip.start_date.slice(0,10))+86400000*(day.day_number-1)).toISOString().slice(0,10):`DAY ${day.day_number}`,title:city.name,stops,totalKm:km,
-      roadKm:legs.length ? Number.NaN : 0,boatKm:legs.length ? Number.NaN : 0,totalCost:stops.reduce((n:number,s:Row)=>n+s.cost,0),hotelCost:sum("hotel"),
+      roadKm:legs.length ? Number.NaN : 0,boatKm:legs.length ? Number.NaN : 0,totalCost:stops.reduce((n:number,s:Row)=>n+(Number.isFinite(s.cost)&&s.cost>=0?s.cost:0),0),hotelCost:sum("hotel"),
       attractionCost:sum("attraction"),mealCost:sum("meal"),transitCost:sum("transit")};
   });
   const allStops=dayPlans.flatMap((d:Row)=>d.stops);

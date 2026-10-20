@@ -36,7 +36,7 @@ def run(page, context, base, api, check):
     page.get_by_role('button', name='View budget breakdown', exact=True).click()
     page.wait_for_url('**/budget')
     expect(page.get_by_role('heading', name=re.compile('Heritage Budget Ledger'))).to_be_visible()
-    expect(page.get_by_text('Unknown (excluded)',exact=True)).to_be_visible()
+    expect(page.get_by_text('Transit & Transport',exact=True).locator('xpath=../../..')).to_contain_text('Price unavailable')
     original=page.locator('input[type=number]').input_value()
     page.locator('input[type=number]').fill('12345')
     expect(page.get_by_text('Use Adjust Trip Parameters to save a new budget.',exact=True)).to_be_visible()

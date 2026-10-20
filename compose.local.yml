@@ -25,6 +25,7 @@ services:
         max-file: '5'
   backend:
     environment:
+      MAP_ROUTING_URL: ${MAP_ROUTING_URL-https://routing.openstreetmap.de/routed-car}
       GROQ_API_KEY: ${GROQ_API_KEY:-}
       GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-120b}
       CHAT_FREE_PLAN_CONFIRMED: ${CHAT_FREE_PLAN_CONFIRMED:-false}

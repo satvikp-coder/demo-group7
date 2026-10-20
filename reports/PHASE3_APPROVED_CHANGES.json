@@ -3,13 +3,13 @@
   "files": {
     "frontend/src/components/ItineraryView.tsx": {
       "baselineSha256": "59ec2dce00fb9a3d10b08c401f737e831965a34440b3cb75c9ceae8e685a2755",
-      "sha256": "254adb0bfe2787515015c47ea6e94e513a689fee7e08517c1d74c2a037f3b7c4",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "a239d7cfdc435349ccde79e4cc6b9c94cd3d1fa6e45caa09be57f76cfb582110",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     },
     "frontend/src/components/WhatIfPanel.tsx": {
       "baselineSha256": "0ad12d8b9bb8a5c84e7ceb8f2e31866f88433e2f1980cfda7bb31dc3644b08d4",
-      "sha256": "39f39f6ae574a9583731d3b0be448c9991592f4962f2e698a0328657b46506fd",
-      "reason": "Disclose night adjustment and correctly label saved rather than live costs; unchanged styles"
+      "sha256": "c4607b8645e0f78b88a77630464af3d13e9ffd5035268d3d1f4da00f9cb90c24",
+      "reason": "User authorized itinerary route map and unknown-cost correctness only; scoped map panel, synchronized selection, numeric status and known-subtotal labels. Existing design and unrelated behavior retained."
     },
     "frontend/src/data/translations.ts": {
       "baselineSha256": "a81f68e7f75b347c3769d00e09bf457821fa572201c3e22296d2778af75d233a",
@@ -73,8 +73,8 @@
     },
     "frontend/src/api/index.ts": {
       "baselineSha256": "92baf76f91b4b75d325a17dd81b9de83b10a7d0cc890642a18d861f2883bba02",
-      "sha256": "e42cacffff93b9d83d34842c4efd6e149371d85c7f19ce447b5dfde0ce20d70f",
-      "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
+      "sha256": "3ac51ae2f67019d192ea390a32c55605517b110686bf1fc2f06dee6483d7ccb0",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     },
     "frontend/src/api/types.ts": {
       "baselineSha256": "7981ef2fae669a13de71dd87fa264e90b708cc859d0a79edf3a989b8a0b093ac",
@@ -98,8 +98,8 @@
     },
     "frontend/src/components/ProfileDashboardView.tsx": {
       "baselineSha256": "98778d02a44acc37503e9ec23625947ee32b7bcba7e31fadf4185b1a4305dbfd",
-      "sha256": "86cd789081fcdd6bf2a1a95239e9a2c27a4d6a7151351e96217c0692119aa7ef",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "b4f96e8a3521665ea903e8b8636d1a5cb9740c22e584f6f8cc629af04362bd71",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     },
     "frontend/src/App.tsx": {
       "baselineSha256": "2946540a334d35e1f1e4fa85b4b9b28f066aeed86f49d50e0491c6ef21eeb125",
@@ -113,8 +113,8 @@
     },
     "frontend/src/components/BudgetPlannerView.tsx": {
       "baselineSha256": "4087a675dd45298f6acc68fed80a06539a40a2536bdd71deea2473c460af3cd1",
-      "sha256": "06d7190fe3c89aa43e425bb28bfed1416e88d7bfbbabc15df3a69fc5d88ebb7b",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "fe44d58cf8d734f1d1d98dbc1ca009b2bbca7047f7d39ad8ad89a6cf30ba6f1c",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     },
     "frontend/src/utils/offlineStorage.ts": {
       "baselineSha256": "c38c29c5fd28a4b18eaf8b0773e7059c91ac954e1222d427589948dab97d35dd",
@@ -123,8 +123,8 @@
     },
     "frontend/public/sw.js": {
       "baselineSha256": "f3b36f2f423859e1f556bc3a7ad30ae2de2872c8d5d5dc345c818c39d64a532f",
-      "sha256": "48778cbea5e00d79ad3a919121404842c9f8cafcbafb9bab74e3c3e945d1976a",
-      "reason": "Reviewed user-authorized teammate fixes: owner deletion, known-price validation, truthful localized private links, operator admin visibility and deletion cache cleanup; preserve styles."
+      "sha256": "acb80642b8fdd87300c255533121597a4380d3fcb107e2efbf191c0e406f18f2",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     },
     "frontend/src/components/HeritageGuideChat.tsx": {
       "baselineSha256": null,
@@ -135,6 +135,26 @@
       "baselineSha256": null,
       "sha256": "cfe870aa1bb8cbb67a72da07597600b2e59b93320de402b1098739cd4f9eee9a",
       "reason": "Explicitly requested Heritage Guide: compact closed-by-default lazy chat panel, authenticated central API, private memory, EN/HI/GU and read-only database mode; existing page styles and planner unchanged."
+    },
+    "frontend/src/components/ItineraryRouteMap.tsx": {
+      "sha256": "276e6a089576c8c8d95cab1f0f99ec8794562ea104715bbae95c6e60072e80e7",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+    },
+    "frontend/src/components/ItineraryRouteMap.css": {
+      "sha256": "87cea7bfed651be53795e609a1fac00c64dcfc3e299ed2e246aba389c08347fa",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+    },
+    "frontend/src/utils/costPresentation.ts": {
+      "sha256": "d9366e9615403efd2e7b1bdd8250d9fafea4dc2bf2439cb87a60e24bf5965d81",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+    },
+    "frontend/src/utils/itineraryPlanner.ts": {
+      "sha256": "cb8792fc86f6030848df91fe947b82eee9d86f8fb4801cb0387bcc7e0c168b65",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
+    },
+    "frontend/src/components/StrategyComparisonModal.tsx": {
+      "sha256": "b78ec066aba0538fbbaa05b3d488db13d5b635982ac2102196797b990bc3806d",
+      "reason": "Scoped user-authorized itinerary route map and unknown-cost correctness. No unrelated design or behavior change."
     }
   }
 }

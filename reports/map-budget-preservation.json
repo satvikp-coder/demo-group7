@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-20T03:42:44.556Z",
+  "verified": true,
+  "readOnly": true,
+  "tables": [
+    {
+      "table": "destinations",
+      "count": 8,
+      "preserved": true
+    },
+    {
+      "table": "attractions",
+      "count": 44,
+      "preserved": true
+    },
+    {
+      "table": "hotels",
+      "count": 56,
+      "preserved": true
+    },
+    {
+      "table": "restaurants",
+      "count": 12,
+      "preserved": true
+    },
+    {
+      "table": "routes",
+      "count": 497,
+      "preserved": true
+    },
+    {
+      "table": "users",
+      "count": 2,
+      "preserved": true
+    },
+    {
+      "table": "trips",
+      "count": 5,
+      "preserved": true
+    },
+    {
+      "table": "itinerary_stops",
+      "count": 43,
+      "preserved": true
+    },
+    {
+      "table": "budgets",
+      "count": 4,
+      "preserved": true
+    }
+  ]
+}

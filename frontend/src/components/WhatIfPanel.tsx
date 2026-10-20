@@ -64,14 +64,14 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
   }
 
   // Formatting cost delta
-  let costDeltaText = "₹0 spent";
+  let costDeltaText = "₹0 change in known subtotal";
   if (isBudgetOverage) {
     const overage = liveCost - sliderBudget;
     costDeltaText = `Over budget (+₹${overage.toLocaleString("en-IN")})`;
   } else if (costDiff < 0) {
-    costDeltaText = `-₹${Math.abs(costDiff).toLocaleString("en-IN")} spent`;
+    costDeltaText = `-₹${Math.abs(costDiff).toLocaleString("en-IN")} change in known subtotal`;
   } else if (costDiff > 0) {
-    costDeltaText = `+₹${costDiff.toLocaleString("en-IN")} spent`;
+    costDeltaText = `+₹${costDiff.toLocaleString("en-IN")} change in known subtotal`;
   }
 
   // Days delta
@@ -241,7 +241,7 @@ export const WhatIfPanel: React.FC<WhatIfPanelProps> = ({
         <div className="flex items-center gap-3">
           <span className="text-stone">{t('whatif.savedRoute')}</span>
           <span className="text-salt font-bold">
-            ₹{liveCost.toLocaleString("en-IN")} total cost
+            ₹{liveCost.toLocaleString("en-IN")} known subtotal
           </span>
           <span className="text-stone">•</span>
           <span className="text-gold font-bold">

@@ -1,3 +1,4 @@
+import {costLabel} from "../utils/costPresentation";
 import {getShareableUrl} from "../utils/shareUrl";
 import React, { useState, useMemo } from "react";
 import { api, useApi } from "../api";
@@ -101,7 +102,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-6xl mx-auto space-y-8">
-        {request.data.budget.transport_cost_known === false && <p role="status">Transport fares are unknown and excluded from this saved total.</p>}
+        <p role="status">Final trip cost: Not fully available. Additional unpriced expenses: {request.data.budget.cost_details?.unknown_components?.join(", ") ?? "Food and transport"}. Remaining budget is before these expenses.</p>
         {/* Navigation Action Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4">
           <div className="flex items-center gap-3">
@@ -243,7 +244,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
 
               <div className="sm:text-right">
                 <span className="text-stone text-[11px] uppercase tracking-wider block">
-                  Estimated Total Cost:
+                  Known subtotal:
                 </span>
                 <span
                   className={`font-bold text-lg sm:text-xl ${currentIsOver ? "text-madder" : "text-gold"}`}
@@ -325,7 +326,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 </div>
               </div>
               <span className={`font-bold text-sm ${appliedTips.includes("transit") ? "text-emerald-700" : "text-charcoal"}`}>
-                {request.data.budget.transport_cost_known === false ? "Unknown (excluded)" : `₹${effectiveTravelCost.toLocaleString("en-IN")}`}
+                {costLabel(request.data.budget.cost_details?.categories.transit)}
                 {appliedTips.includes("transit") && travelCost > 0 && (
                   <span className="block text-[10px] font-normal text-stone line-through">
                     ₹{travelCost.toLocaleString("en-IN")}
@@ -343,7 +344,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                     Heritage Stays &amp; Accommodation
                   </span>
                   <span className="text-[10px] text-stone">
-                    {tripDays} night{tripDays !== 1 ? "s" : ""} at selected hotel
+                    {request.data.dto.trip.generation_summary?.lodging_nights ?? request.data.dto.trip.lodging_nights ?? tripDays} night(s) x {request.data.dto.trip.rooms ?? 1} room(s) at selected hotel
                     {appliedTips.includes("hotel") && (
                       <span className="ml-1 text-emerald-700 font-bold">
                         (−₹2,200 Toran saving applied)
@@ -353,7 +354,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 </div>
               </div>
               <span className={`font-bold text-sm ${appliedTips.includes("hotel") ? "text-emerald-700" : "text-charcoal"}`}>
-                ₹{effectiveHotelCost.toLocaleString("en-IN")}
+                {costLabel(request.data.budget.cost_details?.categories.hotel)}
                 {appliedTips.includes("hotel") && (
                   <span className="block text-[10px] font-normal text-stone line-through">
                     ₹{hotelCost.toLocaleString("en-IN")}
@@ -381,7 +382,7 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 </div>
               </div>
               <span className={`font-bold text-sm ${appliedTips.includes("pass") ? "text-emerald-700" : "text-charcoal"}`}>
-                ₹{effectiveEntryCost.toLocaleString("en-IN")}
+                {costLabel(request.data.budget.cost_details?.categories.attractions)}
                 {appliedTips.includes("pass") && asiDiscount > 0 && (
                   <span className="block text-[10px] font-normal text-stone line-through">
                     ₹{entryCost.toLocaleString("en-IN")}
@@ -404,14 +405,14 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                 </div>
               </div>
               <span className="font-bold text-charcoal text-sm">
-                ₹{foodCost.toLocaleString("en-IN")}
+                {costLabel(request.data.budget.cost_details?.categories.meals)}
               </span>
             </div>
 
             {/* Total row */}
             <div className="flex items-center justify-between p-3 bg-ink text-salt border border-gold rounded-xl">
               <span className="font-bold text-xs uppercase tracking-wider">
-                Grand Total (persisted stops)
+                Known subtotal (persisted stops)
               </span>
               <span className="font-bold text-gold text-base">
                 ₹{currentEffectiveCost.toLocaleString("en-IN")}
