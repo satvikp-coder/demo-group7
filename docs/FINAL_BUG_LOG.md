@@ -6,7 +6,8 @@ Repo: demo-group7-release, branch `final-fixes`, baseline taken from `main` at b
 
 | ID | Area | Reproduced? | Fix summary | Commit | Proof |
 |----|------|-------------|-------------|--------|-------|
-| _none yet_ | | | | | |
+| D1 | dependencies | yes (npm audit: frontend 2, backend 4) | `npm audit fix` without --force; patch/minor only: dompurify 3.4.16->3.4.17, vite 6.4.3->6.4.5, body-parser 2.3.0->2.4.0, ip-address 10.7.2->10.7.5, qs 6.16.0->6.17.1, zod 4.6.5->4.6.7 | 859a978 | npm audit: 0 vulnerabilities in both; tsc 0, build OK, frontend tests 80+33 assertions pass, backend 118/118 |
+| D2 | docs `/api/health` | NOT REPRODUCED | none; `git grep api/health` finds no reference outside reports | n/a | grep empty. Route is `/health` |
 
 ## Baseline (read-only, no code changed)
 
@@ -42,3 +43,13 @@ Repo: demo-group7-release, branch `final-fixes`, baseline taken from `main` at b
 7. No TODO/FIXME in source. No hardcoded API keys found. No tracked `.env` files.
 8. `localhost` appears in source only inside the production CORS check in `backend/config/env.js`.
 9. Tooling note: Git Bash rewrites `VITE_API_BASE_URL=/api` to `C:/Program Files/Git/api`. Use `MSYS_NO_PATHCONV=1` or PowerShell.
+
+## Update after owner decisions
+
+- Remotes: `origin` = satvikp-coder/demo-group7; the CSC210-Monsoon2026 repo is remote `classroom`, not `origin`.
+- Tree comparison: nearly all differing files are CRLF vs LF only. See the table sent in chat. Nothing copied.
+- Database: container `group07-heritage-postgres` (127.0.0.1:55432). Fresh database `heritage_final` created; `db:migrate` (000-008) and `db:seed` run. Credentials only in ignored backend/.env. The older `heritage_planner` DB (migration 004, 25 attractions) was left untouched.
+- Real `npm start`: /health 200, /ready 200, /api/destinations 200 with 8 destinations.
+- `npm run test:integration` (auth, destinations, trips, admin, db constraints): all pass, exit 0. Generated reports under backend/reports were restored with git checkout.
+- Seed script also rewrites tracked backend/reports/seed-report.json; restored after running.
+- Pending for README step: note `MSYS_NO_PATHCONV=1` for Windows Git Bash users.
