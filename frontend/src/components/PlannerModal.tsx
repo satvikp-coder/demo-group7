@@ -1,4 +1,5 @@
 import {accommodationNights,lodgingSubtotal,lodgingGuestIssue} from '../../../dsa/planning/accommodation';
+import {nightsBetween,addNights,stayDateIssue} from '../utils/stayDates';
 import {PriorityControls} from './PriorityControls';
 import {DEFAULT_WEIGHTS,type PriorityWeights} from '../../../dsa/planning/priorities';
 import {HotelCategoryPicker} from './HotelCategoryPicker';
@@ -150,6 +151,12 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   }, [isOpen, onClose]);
 
   const nights=lodgingNights??Math.max(0,tripDays-1);
+  // Valid dates drive the nights; editing nights moves the departure date so the two always agree.
+  const changeArrival=(value:string)=>{setArrivalDate(value);const n=nightsBetween(value,departureDate);if(n!==null)setLodgingNights(n);};
+  const changeDeparture=(value:string)=>{setDepartureDate(value);const n=nightsBetween(arrivalDate,value);if(n!==null)setLodgingNights(n);};
+  const changeNights=(value:number)=>{setLodgingNights(value);const departure=addNights(arrivalDate,value);if(departure)setDepartureDate(departure);};
+  const stayIssue=stayDateIssue({days:tripDays,nights,arrival:arrivalDate,departure:departureDate});
+  const usingDefaultNights=!arrivalDate&&!departureDate&&lodgingNights===undefined;
   if (!isOpen) return null;
 
   const handleGenerate = async () => {
@@ -612,10 +619,12 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <label className="block text-xs">{t("stay.startLabel")}<input aria-label={t("stay.startAria")} type="date" value={startDate} onChange={e=>setStartDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
                   <label className="block text-xs">{t("stay.travelers")}<input aria-label={t("stay.travelers")} type="number" min="1" max="20" value={travelers} onChange={e=>setTravelers(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
                   <label className="block text-xs">{t("stay.rooms")}<input aria-label={t("stay.rooms")} type="number" min="1" max="20" value={rooms} onChange={e=>setRooms(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">{t("stay.nights")}<input aria-label={t("stay.nights")} type="number" min="0" max={tripDays+1} value={nights} onChange={e=>setLodgingNights(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">{t("stay.arrivalLabel")}<input aria-label={t("stay.arrivalAria")} type="date" value={arrivalDate} onChange={e=>setArrivalDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
-                  <label className="block text-xs">{t("stay.departureLabel")}<input aria-label={t("stay.departureAria")} type="date" value={departureDate} onChange={e=>setDepartureDate(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.nights")}<input aria-label={t("stay.nights")} type="number" min="0" max={tripDays+1} value={nights} onChange={e=>changeNights(Number(e.target.value))} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.arrivalLabel")}<input aria-label={t("stay.arrivalAria")} type="date" value={arrivalDate} onChange={e=>changeArrival(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
+                  <label className="block text-xs">{t("stay.departureLabel")}<input aria-label={t("stay.departureAria")} type="date" value={departureDate} onChange={e=>changeDeparture(e.target.value)} className="bg-salt border border-stone/40 p-2 rounded-lg"/></label>
                   <p className="text-xs text-stone">{t("stay.rule").replace("{nights}",String(nights)).replace("{rooms}",String(rooms))}</p>
+                  {stayIssue?<p role="status" className="text-xs text-stone">{stayIssue}.</p>
+                    :usingDefaultNights?<p role="status" className="text-xs text-stone">{t("stay.defaultNights","No stay dates chosen: using {nights} night(s), one fewer than the trip days. Set arrival and departure dates or change the nights to override.").replace("{nights}",String(nights))}</p>:null}
                 </div>
                 <PriorityControls value={weights} onChange={setWeights}/>
                 {/* 5. Accessibility Constraint Toggle */}
