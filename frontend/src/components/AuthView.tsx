@@ -70,16 +70,6 @@ export const AuthView: React.FC<AuthViewProps> = ({
     return "";
   };
 
-  const validatePassword = (val: string) => {
-    if (!val) {
-      return "Password cannot be blank. Enter your account password.";
-    }
-    if (val.length < 6) {
-      return "Password must be at least 6 characters long. Add more characters to proceed.";
-    }
-    return "";
-  };
-
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (pendingRef.current) return;
