@@ -1,6 +1,7 @@
 import {costLabel} from "../utils/costPresentation";
 import {getShareableUrl} from "../utils/shareUrl";
-import React, { useState, useMemo } from "react";
+import {parseBudgetCap} from "../utils/budgetCap";
+import React, { useState, useMemo, useEffect } from "react";
 import { api, useApi } from "../api";
 import { ItineraryConfig } from "./ItineraryView";
 import { useLanguage } from "../context/LanguageContext";
@@ -53,9 +54,20 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   const entryCost = request.data?.budget.attractions ?? 0;
   const foodCost = request.data?.budget.meals ?? 0;
   const totalEstimatedCost = request.data?.budget.total ?? 0;
-  const [simulatedBudget, setAllocatedBudget] = useState<number>(0);
-  const allocatedBudget = request.data?.budget.budget ?? 0;
+  // One local value for the cap: null until the user commits a simulated amount, then every figure uses it.
+  const [simulatedCap, setSimulatedCap] = useState<number | null>(null);
+  const [capText, setCapText] = useState<string | null>(null);
+  const savedBudget = request.data?.budget.budget ?? 0;
+  const allocatedBudget = simulatedCap ?? savedBudget;
   const [budgetInputError, setBudgetInputError] = useState<string>("");
+  useEffect(() => { setSimulatedCap(null); setCapText(null); setBudgetInputError(""); }, [activeConfig?.tripId]);
+  // Validate when the user leaves the field or presses Enter, not on every keystroke.
+  const commitCap = () => {
+    if (capText === null) return;
+    const parsed = parseBudgetCap(capText);
+    if (parsed.value !== null) { setSimulatedCap(parsed.value); setCapText(String(parsed.value)); setBudgetInputError(""); }
+    else { setBudgetInputError(parsed.message); setCapText(String(allocatedBudget)); }
+  };
 
   const [appliedTips, setAppliedTips] = useState<string[]>([]);
   const [savedShareNotice, setSavedShareNotice] = useState<boolean>(false);
@@ -204,23 +216,19 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
                   step="500"
                   min="0"
                   max="100000"
-                  value={allocatedBudget}
-                  onChange={(e) => {
-                    const raw = Number(e.target.value);
-                    if (isNaN(raw) || raw < 0) {
-                      setBudgetInputError("Budget cannot be negative.");
-                      setAllocatedBudget(0);
-                      setBudgetInputError("Use Adjust Trip Parameters to save a new budget.");
-                    } else {
-                      setBudgetInputError("");
-                      setAllocatedBudget(raw);
-                      setBudgetInputError("Use Adjust Trip Parameters to save a new budget.");
-                    }
-                  }}
+                  value={capText ?? String(allocatedBudget)}
+                  onChange={(e) => setCapText(e.target.value)}
+                  onBlur={commitCap}
+                  onKeyDown={(e) => { if (e.key === "Enter") commitCap(); }}
                   className="bg-salt text-ink font-mono font-bold text-base px-2 py-1 border border-gold outline-none w-28 rounded-md"
                 />
                 <span className="text-stone text-[10px]">INR</span>
               </div>
+              {simulatedCap !== null && simulatedCap !== savedBudget && !budgetInputError && (
+                <p className="text-stone text-[10px] font-mono pt-1">
+                  Simulation only; the saved trip budget is ₹{savedBudget.toLocaleString("en-IN")}. Use Adjust Trip Parameters to save a new budget.
+                </p>
+              )}
               {budgetInputError && (
                 <p className="text-madder text-[10px] font-mono flex items-center gap-1 pt-1">
                   <AlertTriangle className="w-3 h-3 shrink-0" />
