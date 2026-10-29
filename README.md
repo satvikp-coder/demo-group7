@@ -9,7 +9,7 @@ A Gujarat heritage and tourism planning platform built for CSC210 Data Structure
 ## Latest verified local application - 20 October 2026
 
 - 118 backend unit/security tests, 18/18 complete regression gates and 17/17 final container gates passed.
-- 56 sourced attractions added safely:100 total across eight destinations;833 additive road-metric relationships.
+- Optional additive attraction import (`npm run local:attractions`): 56 sourced attractions on top of the enriched catalog, 100 in total across eight destinations, with 833 additive road-metric relationships. A fresh `db:seed` installs 25 attractions.
 - 448 authenticated itinerary scenarios, four-day Kutch/PDF at three widths and all-eight-destination map checks passed.
 - Installed browser:24 read-only city/viewport checks passed with decoded images and no API failures or writes.
 - Heritage Guide:24 focused tests,71 real database checks, accepted live Groq evidence for12 question scenarios, and desktop/tablet/mobile widget checks passed.
@@ -24,7 +24,7 @@ The React application uses a real Express/PostgreSQL backend to search destinati
 
 ## Sourced attractions and multi-day sightseeing
 
-The additive20 October attraction release expands the eight destination catalogs from44 to100 places/experiences: Ahmedabad16, Champaner12, Dwarka10, Gir10, Modhera12, Kutch14, Saputara14 and Somnath12. Regional excursions are explicitly labeled; mapped points are approximate source references, not surveyed entrances.
+A fresh `db:seed` installs 25 attractions (plus 11 hotels, 12 restaurants and 131 routes). The optional additive 20 October attraction release, applied afterwards, expands the eight destination catalogs from 44 (the enriched catalog) to 100 places/experiences: Ahmedabad16, Champaner12, Dwarka10, Gir10, Modhera12, Kutch14, Saputara14 and Somnath12. Regional excursions are explicitly labeled; mapped points are approximate source references, not surveyed entrances.
 
 Source-backed visits with missing fees/durations can be planned provisionally using labeled duration allowances. Unknown fees stay unpriced, known closures remain hard constraints, and unknown operating information requires confirmation. The planner balances reachable visits across requested days instead of letting disconnected records exhaust the daily allocation. Hotel-only days remain explicitly unallocated. Nearby sourced meals or unlocated personal breaks support sightseeing; a finished morning tour is not extended to dinner artificially.
 
@@ -130,7 +130,7 @@ docs/       Setup, deployment, academic design and research documentation
 
 ## Current Data
 
-The enriched local catalog measured on 12 October 2026 contains **8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records**. There are **29 usable indicative hotel-price estimates**; the other 27 properties have no usable rate and are not priced starting-hotel choices. All eight destinations have a sourced priced option in each hotel category after the reviewed coverage import, including clearly identified nearby towns.
+A fresh `db:seed` contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 route records. After the optional enrichment imports, the local catalog measured on 12 October 2026 contains **8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records**. There are **29 usable indicative hotel-price estimates**; the other 27 properties have no usable rate and are not priced starting-hotel choices. All eight destinations have a sourced priced option in each hotel category after the reviewed coverage import, including clearly identified nearby towns.
 
 The latest image audit checked 120 entity references: **38 genuine-photo associations, 82 intentional fallbacks and zero broken references**. A fallback is not a recovered photograph; attribution remains in [Photo credits](frontend/public/image-credits.html).
 

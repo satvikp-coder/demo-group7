@@ -66,7 +66,7 @@ Large browser traces are generated locally and ignored. Curated results are in
 ## Data limitations
 
 The database has Ahmedabad, Somnath, Dwarka, Modhera, Champaner, Gir National Park,
-Rann of Kutch and Saputara. The enriched catalog measured12October2026 contains
+Rann of Kutch and Saputara. A fresh `db:seed` contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 route records. The enriched catalog measured 12 October 2026 contains
 8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records.
 Counts depend on the reviewed imports applied. Somnath Temple has verified
 wheelchair access; Rukmini Temple is marked inaccessible. Many other suitability
