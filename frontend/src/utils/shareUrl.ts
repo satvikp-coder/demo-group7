@@ -1,9 +1,34 @@
 // The encoded preferences identify a persisted private trip; they do not carry its stops or grant access.
 
 import { ItineraryConfig } from "../components/ItineraryView";
+import { validWeights } from "../../../dsa/planning/priorities";
+
+// 1: trip, city, days, budget, hotel, start time, sites, strategy.
+// 2: adds travelers, rooms, lodging nights, dates, wheelchair flag, weights and hotel category.
+const SHARE_VERSION = 2;
 
 export interface SharedItineraryPayload extends ItineraryConfig {
   v?: number;
+}
+
+const isDate = (value: unknown): value is string =>
+  typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value));
+const isCount = (value: unknown, min: number, max: number): value is number =>
+  typeof value === "number" && Number.isInteger(value) && value >= min && value <= max;
+
+// Keeps only well-formed optional preferences; anything invalid falls back to the planner default.
+function optionalPreferences(payload: SharedItineraryPayload): Partial<ItineraryConfig> {
+  const out: Partial<ItineraryConfig> = {};
+  if (isCount(payload.travelers, 1, 20)) out.travelers = payload.travelers;
+  if (isCount(payload.rooms, 1, 20)) out.rooms = payload.rooms;
+  if (isCount(payload.lodgingNights, 0, 31)) out.lodgingNights = payload.lodgingNights;
+  if (isDate(payload.arrivalDate)) out.arrivalDate = payload.arrivalDate;
+  if (isDate(payload.departureDate)) out.departureDate = payload.departureDate;
+  if (isDate(payload.startDate)) out.startDate = payload.startDate;
+  if (typeof payload.wheelchairAccessibleOnly === "boolean") out.wheelchairAccessibleOnly = payload.wheelchairAccessibleOnly;
+  if (validWeights(payload.weights)) out.weights = payload.weights;
+  if (payload.hotelCategory === "Low Cost" || payload.hotelCategory === "Budget" || payload.hotelCategory === "Premium") out.hotelCategory = payload.hotelCategory;
+  return out;
 }
 
 /**
@@ -20,7 +45,16 @@ export function encodeSharedItinerary(config: ItineraryConfig): string {
       startTime: config.startTime,
       selectedSites: config.selectedSites,
       strategy: config.strategy,
-      v: 1,
+      travelers: config.travelers,
+      rooms: config.rooms,
+      lodgingNights: config.lodgingNights,
+      arrivalDate: config.arrivalDate,
+      departureDate: config.departureDate,
+      startDate: config.startDate,
+      wheelchairAccessibleOnly: config.wheelchairAccessibleOnly,
+      weights: config.weights,
+      hotelCategory: config.hotelCategory,
+      v: SHARE_VERSION,
     };
     const jsonStr = JSON.stringify(payload);
     // Safe UTF-8 to Base64
@@ -53,7 +87,10 @@ export function decodeSharedItinerary(
         .join(""),
     );
     const payload = JSON.parse(jsonStr) as SharedItineraryPayload;
-    if (payload && payload.cityId) {
+    // Version 1 links (and links with no version) carry no extra preferences; they decode with defaults.
+    // A link from a newer app version is rejected instead of being silently misread.
+    if (typeof payload?.v === "number" && payload.v > SHARE_VERSION) return null;
+    if (payload && typeof payload.cityId === "string" && payload.cityId) {
       return {
         tripId: payload.tripId,
         cityId: payload.cityId,
@@ -63,6 +100,7 @@ export function decodeSharedItinerary(
         startTime: payload.startTime || "08:00 AM",
         selectedSites: payload.selectedSites,
         strategy: payload.strategy,
+        ...optionalPreferences(payload),
       };
     }
     return null;
