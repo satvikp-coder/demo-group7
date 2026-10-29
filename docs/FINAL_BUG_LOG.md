@@ -109,9 +109,9 @@ Status: REPRODUCED / NOT REPRODUCED / NOT VERIFIED. Severity: C critical, H high
 | B3 | Route map crash | L | REPRODUCED (latent) | `location(undefined)` throws `TypeError: Cannot read properties of undefined (reading 'lat')`. Not triggered by real data (error boundary exists). | guard the `find()` results | frontend/src/components/ItineraryRouteMap.tsx:14-16, 57 |
 | B4 | Admin hotel price NULL | n/a | NOT A BUG | Per owner: DB column NOT NULL CHECK >= 0, 11 of 11 hotels priced. | none | n/a |
 | B5 | Nights vs dates | H | REPRODUCED | `POST /trips` with days 3, lodging_nights 2, arrival 2026-11-01, departure 2026-11-02 returns 400 "Accommodation dates and nights must agree". Same error from `accommodationNights()` directly. | derive nights from the dates in the planner (do not edit dsa) | frontend/src/components/PlannerModal.tsx:152, 159, 750, 783 |
-| B6 | Password validation | M | REPRODUCED | Register with `testpass123` returns 400 (needs 12+ chars, upper, symbol); client has no matching check and a blank form is still POSTed, showing raw server text. | add the same rules client-side | frontend/src/components/AuthView.tsx:72-80, 97-109 |
+| B6 | Password validation | M | FIXED (bac7d9d) | Register with `testpass123` returns 400 (needs 12+ chars, upper, symbol); client has no matching check and a blank form is still POSTed, showing raw server text. | add the same rules client-side | frontend/src/components/AuthView.tsx:72-80, 97-109 |
 | B7 | Profile N+1 | M | REPRODUCED | `/profile` with 6 saved trips: 36 requests in 1.65 s on localhost (5 per trip, plus 4 duplicate `/destinations/catalog`, trips and `/auth/me`). Grows linearly with trips. | batch or cache per-destination fetches | frontend/src/components/ProfileDashboardView.tsx:88-98, frontend/src/api/index.ts:140-149, 300-304 |
-| B8 | Share link payload | M | REPRODUCED | Round trip drops travelers, rooms, lodgingNights, arrival/departure/start dates, wheelchair flag and weights (all `undefined` after decode). | include them in encode/decode | frontend/src/utils/shareUrl.ts:14-24, 58-67 |
+| B8 | Share link payload | M | FIXED (5f49def) | Round trip drops travelers, rooms, lodgingNights, arrival/departure/start dates, wheelchair flag and weights (all `undefined` after decode). | include them in encode/decode | frontend/src/utils/shareUrl.ts:14-24, 58-67 |
 
 ### Extra checks
 
@@ -138,3 +138,12 @@ Status: REPRODUCED / NOT REPRODUCED / NOT VERIFIED. Severity: C critical, H high
 - **Batch 5, low priority:** N1 ("Not availablems").
 
 Nothing has been fixed in this step.
+
+### Fix log (Part A)
+
+| ID | Status | Commit | Proof |
+|----|--------|--------|-------|
+| B6 | FIXED | bac7d9d | Before: Playwright register form sent a POST for a blank form, `testpass123` and `Short1!`. After: 0 POSTs for those, with "Full name is required.", "An email address is required.", "Password needs at least 12 characters, an uppercase letter, a symbol."; a strong password still registers ("Account created"). New `tests/frontend/password-policy.test.ts` (3 tests) includes a parity check against the backend `registerBody` schema. |
+| B8 | FIXED | 5f49def | Round-trip of travelers, rooms, lodging nights, arrival/departure/start dates, wheelchair flag, weights and hotel category (version 2). Version 1 and unversioned links decode with defaults; invalid optional values are dropped; links from a newer version are rejected. New `tests/frontend/share-url.test.ts` (6 tests): 3 of them fail against the old `shareUrl.ts`, all 6 pass now. Browser: v2 link stores all preferences, v1 link loads with defaults, v99 and garbage links show "Invalid Shared Itinerary Link" and "Return to Home Screen" goes to Home. |
+
+Suite after Part A: backend 118/118; frontend unit 6+2+3+6 tests and 80 and 33 assertions all pass; `tsc --noEmit` clean; production build OK; Playwright `test:frontend` verified, 64 checks.
