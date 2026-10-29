@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Hotel Alka Inn",
+    "url": "https://nominatim.openstreetmap.org/search?q=Hotel+Alka+Inn+Ahmedabad+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Hotel Rajdhani And Guest House",
+    "url": "https://nominatim.openstreetmap.org/search?q=Hotel+Rajdhani+And+Guest+House+Halol+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Mathura Bhavan",
+    "url": "https://nominatim.openstreetmap.org/search?q=Mathura+Bhavan+Dwarka+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "IRA by Orchid Dwarka",
+    "url": "https://nominatim.openstreetmap.org/search?q=IRA+by+Orchid+Dwarka+Dwarka+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Hotel Satyam",
+    "url": "https://nominatim.openstreetmap.org/search?q=Hotel+Satyam+Junagadh+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Dwarkesh Farm",
+    "url": "https://nominatim.openstreetmap.org/search?q=Dwarkesh+Farm+Sasan+Gir+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "The Grand Takshak",
+    "url": "https://nominatim.openstreetmap.org/search?q=The+Grand+Takshak+Mehsana+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Shankus Waterpark and Resort",
+    "url": "https://nominatim.openstreetmap.org/search?q=Shankus+Waterpark+and+Resort+Mehsana+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Hotel Sahara Palace",
+    "url": "https://nominatim.openstreetmap.org/search?q=Hotel+Sahara+Palace+Bhuj+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": [
+      {
+        "place_id": 246739140,
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 242516799,
+        "lat": "23.2491845",
+        "lon": "69.6709176",
+        "category": "building",
+        "type": "yes",
+        "place_rank": 30,
+        "importance": 5.135957885095014e-05,
+        "addresstype": "building",
+        "name": "Hotel Sahara Palace",
+        "display_name": "Hotel Sahara Palace, Bus Stand Road, Bhuj Sector 443, Bhuj, Bhuj Taluka, Kutch, Gujarat, 370001, India",
+        "address": {
+          "building": "Hotel Sahara Palace",
+          "road": "Bus Stand Road",
+          "residential": "Bhuj Sector 443",
+          "city": "Bhuj",
+          "county": "Bhuj Taluka",
+          "state_district": "Kutch",
+          "state": "Gujarat",
+          "ISO3166-2-lvl4": "IN-GJ",
+          "postcode": "370001",
+          "country": "India",
+          "country_code": "in"
+        },
+        "boundingbox": [
+          "23.2490745",
+          "23.2492997",
+          "69.6707732",
+          "69.6710574"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hotel Prince Residency",
+    "url": "https://nominatim.openstreetmap.org/search?q=Hotel+Prince+Residency+Bhuj+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Manas Cottage",
+    "url": "https://nominatim.openstreetmap.org/search?q=Manas+Cottage+Saputara+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Savshanti Motels",
+    "url": "https://nominatim.openstreetmap.org/search?q=Savshanti+Motels+Saputara+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  },
+  {
+    "name": "Lords Inn Somnath",
+    "url": "https://nominatim.openstreetmap.org/search?q=Lords+Inn+Somnath+Somnath+India&format=jsonv2&limit=3&addressdetails=1",
+    "results": []
+  }
+]
