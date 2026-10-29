@@ -12,7 +12,7 @@
     "test": "npm run test:unit && npm run test:planner",
     "lint": "tsc --noEmit",
     "audit:images": "tsx ../scripts/validate-catalog-images.ts",
-    "test:unit": "tsx ../tests/dsa/trie.test.ts && tsx --test ../tests/frontend/catalog-images.test.ts && tsx --test ../tests/frontend/visualizer.test.ts && tsx --test ../tests/frontend/password-policy.test.ts && tsx --test ../tests/frontend/share-url.test.ts && tsx --test ../tests/frontend/stay-dates.test.ts && tsx --test ../tests/frontend/budget-cap.test.ts",
+    "test:unit": "tsx ../tests/dsa/trie.test.ts && tsx --test ../tests/frontend/catalog-images.test.ts && tsx --test ../tests/frontend/visualizer.test.ts && tsx --test ../tests/frontend/password-policy.test.ts && tsx --test ../tests/frontend/share-url.test.ts && tsx --test ../tests/frontend/stay-dates.test.ts && tsx --test ../tests/frontend/budget-cap.test.ts && tsx --test ../tests/frontend/saved-leg-distances.test.ts",
     "test:planner": "tsx ../tests/frontend/planner.test.ts",
     "test:all": "npm test && npm run lint && npm run build"
   },
