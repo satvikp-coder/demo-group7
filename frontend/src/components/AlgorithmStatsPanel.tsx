@@ -1,4 +1,5 @@
 import { displayNumber } from "../api";
+import { executionTimeLabel } from "../utils/executionTime";
 import React, { useState } from "react";
 import type { AlgorithmStats } from "../utils/itineraryPlanner";
 import {
@@ -29,7 +30,8 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
 
-  const summaryText = `Generated in ${displayNumber(stats.executionTimeMs)}ms -- ${stats.attractionsVisited} attractions, ${stats.directRoadConnectionsUsed} direct routes, ${stats.dijkstraFallbackCalls} Dijkstra fallbacks.`;
+  const timeLabel = executionTimeLabel(stats.executionTimeMs);
+  const summaryText = `Generated ${timeLabel ? `in ${timeLabel} ` : ""}-- ${stats.attractionsVisited} attractions, ${stats.directRoadConnectionsUsed} direct routes, ${stats.dijkstraFallbackCalls} Dijkstra fallbacks.`;
 
   return (
     <div
@@ -50,10 +52,15 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
 
             {collapsible && !isExpanded && (
               <span className="font-mono text-xs text-stone truncate max-w-full sm:max-w-md">
-                Generated in{" "}
-                <strong className="font-mono text-salt font-bold">
-                  {displayNumber(stats.executionTimeMs)}ms
-                </strong>{" "}
+                Generated{" "}
+                {timeLabel && (
+                  <>
+                    in{" "}
+                    <strong className="font-mono text-salt font-bold">
+                      {timeLabel}
+                    </strong>{" "}
+                  </>
+                )}
                 --{" "}
                 <strong className="font-mono text-salt font-bold">
                   {stats.attractionsVisited}
@@ -102,7 +109,7 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Exec Time
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {displayNumber(stats.executionTimeMs)} ms
+              {timeLabel ?? "Not recorded"}
             </span>
           </div>
 
