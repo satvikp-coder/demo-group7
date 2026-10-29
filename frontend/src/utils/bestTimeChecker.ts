@@ -29,7 +29,9 @@ export function checkBestTimeConflict(
   }
 
   const arrivalMins = parseTimeToMinutes(arrivalTimeStr);
-  const noteLower = note.toLowerCase();
+  // "sunrise to sunset" describes opening hours (all daylight), not a recommended time to visit, so it
+  // must not trigger the sunrise or sunset rules below. Real recommendations such as "visit around sunset" still do.
+  const noteLower = note.toLowerCase().replace(/sunrise\s*(?:to|-|–|until|till|and)\s*sunset/g, " ");
 
   // 1. Midday avoidance (e.g. "Avoid midday (11am-3pm)", "avoid noon")
   if (
