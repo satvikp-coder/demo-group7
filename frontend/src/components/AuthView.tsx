@@ -13,6 +13,7 @@ import {
   EyeOff,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { validateRegistrationName, validateRegistrationPassword } from "../utils/passwordPolicy";
 
 interface AuthViewProps {
   notice?: string;
@@ -98,8 +99,14 @@ export const AuthView: React.FC<AuthViewProps> = ({
     e.preventDefault();
     if(pendingRef.current) return;
     setFormGeneralError(""); setSuccessMsg("");
-    if(password !== confirmPassword) { setConfirmPasswordError("Passwords do not match."); return; }
-    setConfirmPasswordError(""); pendingRef.current = true; setPending(true);
+    // Mirror the backend registration rules; the server stays authoritative.
+    const nErr = validateRegistrationName(name);
+    const eErr = validateEmail(email);
+    const pErr = validateRegistrationPassword(password);
+    const cErr = !confirmPassword ? "Please confirm your password." : password !== confirmPassword ? "Passwords do not match." : "";
+    setNameError(nErr); setEmailError(eErr); setPasswordError(pErr); setConfirmPasswordError(cErr);
+    if(nErr || eErr || pErr || cErr) return;
+    pendingRef.current = true; setPending(true);
     try {
       await api.register(name, email, password, role);
       setSuccessMsg("Account created. Sign in with your new credentials.");
