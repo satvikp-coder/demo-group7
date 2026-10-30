@@ -9,6 +9,7 @@ Baseline: backend 118/118; frontend 55 tests plus 80 Trie and 33 planner asserti
 | ID | Status | Commit | Proof |
 |----|--------|--------|-------|
 | A-H6 / narrow itinerary actions | FIXED | c4b6281 | Production Chrome before: Home/Explore scrollWidth 377 at 320 and 375; Itinerary 367 at 320. After wrapping the sort/action rows and constraining the select: scrollWidth equals innerWidth in all 35 cases (Home, Explore, Somnath city, Hotels, generated Itinerary, Budget, authenticated Profile at 320/375/390/430/768). Existing descriptions fit; no description layout change. |
+| A-M15 | FIXED | 39721b1 | Production Chrome computed colors, alpha composited through canvas to support computed oklab colors: eight Explore destination descriptions 2.270:1 and Hotels dark-panel description 2.493:1 before; all nine 8.790:1 after. Only the two description text color classes changed to the existing salt/80 value; other colors and typography unchanged. |
 
 Repo: demo-group7-release, branch `final-fixes`, baseline taken from `main` at bcbe5ab.
 
