@@ -11,17 +11,16 @@ def run(page, context, base, api, check):
         page.get_by_role('button', name=category, exact=True).click()
         expect(page.get_by_role('button', name='Inspect Site')).to_have_count(count)
     page.get_by_role('button', name='All Categories', exact=True).click()
-    for sort in ['alphabetical','fee','distance','demand','rating']:
+    for sort in ['alphabetical','fee','distance','rating']:
         page.locator('#sort-dropdown').select_option(sort)
         expect(page.get_by_role('button', name='Inspect Site')).to_have_count(8)
     page.get_by_role('button', name='Wheelchair Accessible', exact=True).click()
     expect(page.get_by_role('button', name='Inspect Site')).to_have_count(1)
     page.get_by_role('button', name='Clear Accessibility', exact=True).click()
     for demand in ['low','moderate','high']:
-        page.get_by_role('button', name=demand, exact=True).click()
-        expect(page.get_by_role('button', name='Inspect Site')).to_have_count(0)
-        page.get_by_role('button', name='Clear Accessibility', exact=True).click()
-    check('All discovery categories, sorts, known-accessibility and unknown-demand filters')
+        expect(page.get_by_role('button', name=demand, exact=True)).to_have_count(0)
+    expect(page.locator('#sort-dropdown option[value=demand]')).to_have_count(0)
+    check('All discovery categories, sorts, known-accessibility and absent unknown-demand controls')
     for slug, name in [('ahmedabad','Ahmedabad'),('somnath','Somnath'),('dwarka','Dwarka'),('modhera','Modhera'),('champaner','Champaner'),('gir-national-park','Gir National Park'),('rann-of-kutch','Rann of Kutch'),('saputara','Saputara')]:
         city = context.request.get(api + '/destinations/' + slug).json()
         children = {kind: context.request.get(api + '/destinations/' + city['id'] + '/' + kind).json() for kind in ['attractions','hotels','restaurants']}

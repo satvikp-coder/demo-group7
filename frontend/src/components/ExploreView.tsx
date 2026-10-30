@@ -146,6 +146,9 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
   // 1. Trie Search: query the memoized Suffix/Prefix Trie index to get matching destination IDs
   const search = useApi(signal => api.search(searchQuery, signal), [searchQuery], true, 300);
   const candidateDestinations = search.data ?? [];
+  const hasDemandData = candidateDestinations.some(dest =>
+    ['low', 'moderate', 'high'].includes(dest.attractions?.[0]?.physicalDemand ?? '')
+  );
 
   // 3 & 4. Filter & Sort: apply existing category/demand/accessibility filters and sorting to Trie candidates
   const filteredDestinations = useMemo(() => {
@@ -163,7 +166,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         }
 
         // Physical demand match
-        if (selectedDemands.length > 0) {
+        if (hasDemandData && selectedDemands.length > 0) {
           const primaryDemand = dest.attractions?.[0]?.physicalDemand;
           if (!selectedDemands.includes(primaryDemand)) return false;
         }
@@ -171,7 +174,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         return true;
       })
       .sort((a, b) => {
-        if (sortBy === 'rating') {
+        if (sortBy === 'rating' || (sortBy === 'demand' && !hasDemandData)) {
           return b.ratingValue - a.ratingValue;
         } else if (sortBy === 'fee') {
           return a.entryFeeNumeric - b.entryFeeNumeric;
@@ -192,7 +195,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
         }
         return 0;
       });
-  }, [candidateDestinations, selectedCategory, sortBy, wheelchairOnly, selectedDemands, getName]);
+  }, [candidateDestinations, hasDemandData, selectedCategory, sortBy, wheelchairOnly, selectedDemands, getName]);
 
   const handleResetFilters = () => {
     setSearchQuery('');
@@ -315,9 +318,9 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               {wheelchairOnly && <span className="text-[10px] bg-emerald-950 text-salt px-1 rounded">ACTIVE</span>}
             </button>
 
-            <span className="text-stone/40 hidden sm:inline">|</span>
+            {hasDemandData && <span className="text-stone/40 hidden sm:inline">|</span>}
 
-            <div className="flex flex-wrap items-center gap-1.5">
+            {hasDemandData && <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-stone font-semibold uppercase text-[10px]">Demand:</span>
               {(['low', 'moderate', 'high'] as const).map((level) => {
                 const isSelected = selectedDemands.includes(level);
@@ -339,7 +342,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                   </button>
                 );
               })}
-            </div>
+            </div>}
 
               {(wheelchairOnly || selectedDemands.length > 0) && (
                 <button
@@ -360,7 +363,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               </label>
               <select
                 id="sort-dropdown"
-                value={sortBy}
+                value={sortBy === 'demand' && !hasDemandData ? 'rating' : sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 className="min-w-0 max-w-full font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer rounded-md"
               >
@@ -376,9 +379,9 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 <option value="distance">
                   {language === 'hi' ? 'अहमदाबाद से दूरी' : 'Distance from Ahmedabad'}
                 </option>
-                <option value="demand">
+                {hasDemandData && <option value="demand">
                   {language === 'hi' ? 'शारीरिक माँग (मध्यम > उच्च > निम्न)' : 'Physical Demand (Moderate → High → Low)'}
-                </option>
+                </option>}
               </select>
             </div>
           </div>
