@@ -1,5 +1,18 @@
 # Final bug log
 
+## Phase 2 provider migration
+
+| Status | Commit | Proof |
+|--------|--------|-------|
+| IMPLEMENTED; live provider answer NOT VERIFIED | 0cf21cd | Authenticated POST /api/chat and frontend request/response fields preserved. Backend-only NVIDIA key, configurable model (listed default meta/llama-3.3-70b-instruct), native HTTPS POST, maximum 15-second deadline, existing input/grounding/history bounds plus IP limit. Provider package removed; all other lockfile dependency records unchanged. System prompt and DSA untouched. Only approved provider-name substitutions in widget copy. |
+
+- Mocked chat suite: 27/27, including success, 401, timeout, missing key, quota/network sanitization and IP-limit enforcement across users.
+- Production widget: mocked transport success HTTP 200 renders the actual app-help lookup; mocked upstream 401 becomes a friendly HTTP 503 error, textbox remains enabled, zero page errors. The normal backend was restored after testing.
+- Key presence check printed only set. Exact key matches in frontend build: 0. No key value printed or committed.
+- Single live widget/backend-route attempt: HTTP 503, no reply. No approval-review rejection occurred; no second live attempt was made. NVIDIA answer availability/quality remains NOT VERIFIED and requires manual provider testing.
+- Full baseline/post migration: backend 119/119 -> 122/122; frontend 56/56 plus 80 Trie and 33 planner assertions unchanged; TypeScript/build PASS; Playwright test:frontend 64/64 before and after, cleanup completed and original catalog preserved. Final DB: 0 users, 0 trips, 8 destinations, 25 attractions.
+- Previous-provider/switch grep: zero active runtime/config/package/current setup matches. Retained wording in 16 historical reports, unchanged instruction handoff, and original triage entries below; the exact report list is in docs/NVIDIA_CHAT.md. No reports were deleted.
+
 ## Batch 4 verification
 
 Production build served by Vite preview on localhost:3000, with same-origin /api proxy to the default API on localhost:5000. Backend CORS remains http://localhost:3000. Test URL selectors point to this preview; the production-browser operator approval path preserves the registration policy.
