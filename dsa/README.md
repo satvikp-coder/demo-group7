@@ -9,6 +9,6 @@ This directory contains standalone, pure TypeScript Data Structures and Algorith
 - `dijkstra/` — Fallback shortest path algorithm (intra-city only)
 - `priorityQueue/` — Shared Min-Heap used by Dijkstra and retained academic helpers
 - `trie/` — Unified Prefix Trie for city & attraction search autocomplete
-- `hashTable/` — Application-level Entity Hash Table for $O(1)$ city data caching
+- `hashTable/` — Per-request route cache, attraction membership and visited-attraction tracking in `backend/services/tripPlanner.js`
 - `greedy/` — Nearest-neighbor circular route, time-budget day split, and budget allocation
 - `sorting/` — Manual Merge Sort implementation for display rankings
