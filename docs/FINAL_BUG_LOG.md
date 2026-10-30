@@ -82,7 +82,7 @@ Scan at 9e2586b: 1111 working-tree files, 1675 unique historical blobs and 141 c
 | Backend | 122/122 | 122/122 |
 | Frontend | 56 tests + 80 Trie / 33 planner assertions | Same, PASS |
 | TypeScript | PASS | PASS |
-| Backend syntax | PASS | PASS |
+| Backend syntax (extra check) | Not run separately | PASS |
 | Production build with /api | PASS | PASS, 2442 modules |
 | Playwright test:frontend | 64/64 | 64/64 |
 | All-city review | pending | 8/8 journeys; typo search unsupported |
