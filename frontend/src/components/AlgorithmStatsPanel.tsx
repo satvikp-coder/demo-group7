@@ -150,10 +150,23 @@ export const AlgorithmStatsPanel: React.FC<AlgorithmStatsPanelProps> = ({
               Graph Ops
             </span>
             <span className="font-mono font-bold text-salt text-sm">
-              {displayNumber(stats.nodesVisited)}{" "}
-              <span className="text-stone font-normal text-xs">nodes</span> /{" "}
-              {displayNumber(stats.edgesRelaxed)}{" "}
-              <span className="text-stone font-normal text-xs">edges</span>
+              {Number.isFinite(stats.nodesVisited) ? (
+                <>
+                  {displayNumber(stats.nodesVisited)}{" "}
+                  <span className="text-stone font-normal text-xs">nodes</span>
+                </>
+              ) : (
+                "N/A"
+              )}{" "}
+              /{" "}
+              {Number.isFinite(stats.edgesRelaxed) ? (
+                <>
+                  {displayNumber(stats.edgesRelaxed)}{" "}
+                  <span className="text-stone font-normal text-xs">edges</span>
+                </>
+              ) : (
+                "N/A"
+              )}
             </span>
             <span className="text-[9px] text-stone">Visited & Relaxed</span>
           </div>
