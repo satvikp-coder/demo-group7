@@ -144,7 +144,7 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
             </div>
           </div>
 
-          <p className="font-mono text-xs text-stone leading-relaxed max-w-2xl">
+          <p className="font-mono text-xs text-salt/80 leading-relaxed max-w-2xl">
             Official TCGL Toran Hotels, registered heritage havelis, and artisan
             homestays in {cityName} ranked using our algorithmic value score
             index.

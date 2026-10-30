@@ -456,7 +456,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                         {getName(dest)}
                       </h3>
 
-                      <p className="text-xs font-body text-stone/90 line-clamp-2 pt-1 leading-relaxed">
+                      <p className="text-xs font-body text-salt/80 line-clamp-2 pt-1 leading-relaxed">
                         {dest.description}
                       </p>
 
