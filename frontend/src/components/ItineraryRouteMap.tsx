@@ -6,14 +6,15 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {BedDouble,Landmark,Utensils,MapPin} from 'lucide-react';
 import {api,errorMessage} from '../api';
 import {savedLegKm,savedDayKm} from '../utils/savedLegDistances';
+import {stopPoint,drawableLegs} from '../utils/routeLegs';
 import 'leaflet/dist/leaflet.css';
 import './ItineraryRouteMap.css';
 
 type Stop={id:string;referenceId?:string;name:string;type:string;lat?:number;lng?:number;arrivalTime?:string;departureTime?:string;durationMinutes?:number;legDistanceKm?:number};
 type Leg={from_stop_id:string;to_stop_id:string;status:string;coordinates:[number,number][];distance_km:number|null;duration_minutes:number|null;basis:string};
 type Route={legs:Leg[];road_legs:number;estimated_legs:number;unavailable_legs:number};
-export function location(s:Stop):LatLngTuple|null {
-  return typeof s.lat==='number'&&Number.isFinite(s.lat)&&Math.abs(s.lat)<=90&&typeof s.lng==='number'&&Number.isFinite(s.lng)&&Math.abs(s.lng)<=180?[s.lat,s.lng]:null;
+export function location(s?:Stop):LatLngTuple|null {
+  return stopPoint(s);
 }
 function View({stops,selected,fit}:{stops:Stop[];selected:string|null;fit:number}) {
   const map=useMap();
@@ -55,7 +56,7 @@ export default function ItineraryRouteMap({tripId,dayNumber,stops,selected,onSel
     {!valid.length?<p>No valid map locations for this day.</p>:<MapContainer center={location(valid[0])!} zoom={12} scrollWheelZoom={false} className="heritage-leaflet" aria-label="Map of saved itinerary stops">
       <TileLayer url={import.meta.env.VITE_MAP_TILE_URL||'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' eventHandlers={{tileerror:()=>setTileError(true)}}/>
       <View stops={stops} selected={selected} fit={fit}/>
-      {legs.filter(l=>l.coordinates.length>=2&&location(stops.find(s=>s.id===l.from_stop_id)!)&&location(stops.find(s=>s.id===l.to_stop_id)!)).map((leg,i)=><Polyline key={`${key}-${i}`} positions={leg.coordinates.map(([lng,lat])=>[lat,lng] as LatLngTuple)} pathOptions={{color:leg.status==='road'?'#2563eb':'#9a6700',weight:4,dashArray:leg.status==='road'?undefined:'7 7'}}><Popup>{leg.basis}{savedLegKm(stops,leg.from_stop_id)!==null?<p>{savedLegKm(stops,leg.from_stop_id)!.toFixed(2)} km saved route record ({leg.status==='road'?'drawn along roads':'drawn as a straight line'})</p>:leg.distance_km!=null&&<p>{leg.distance_km.toFixed(2)} km {leg.status==='road'?'routed':'straight-line'}</p>}{leg.duration_minutes!=null&&<p>{Math.round(leg.duration_minutes)} minutes routing estimate, not live traffic</p>}</Popup></Polyline>)}
+      {drawableLegs<Leg>(legs,stops).map((leg,i)=><Polyline key={`${key}-${i}`} positions={leg.coordinates.map(([lng,lat])=>[lat,lng] as LatLngTuple)} pathOptions={{color:leg.status==='road'?'#2563eb':'#9a6700',weight:4,dashArray:leg.status==='road'?undefined:'7 7'}}><Popup>{leg.basis}{savedLegKm(stops,leg.from_stop_id)!==null?<p>{savedLegKm(stops,leg.from_stop_id)!.toFixed(2)} km saved route record ({leg.status==='road'?'drawn along roads':'drawn as a straight line'})</p>:leg.distance_km!=null&&<p>{leg.distance_km.toFixed(2)} km {leg.status==='road'?'routed':'straight-line'}</p>}{leg.duration_minutes!=null&&<p>{Math.round(leg.duration_minutes)} minutes routing estimate, not live traffic</p>}</Popup></Polyline>)}
       {stops.map((s,i)=><StopMarker key={s.id} stop={s} index={i} selected={selected===s.id} onSelect={onSelect}/>)}
     </MapContainer>}
     <p className="text-xs mt-3" data-testid="route-coverage">Solid blue: routed road geometry ({route?.road_legs??0} legs). Dashed gold: straight-line estimates ({route?.estimated_legs??fallback.filter(l=>l.coordinates.length).length} legs). Missing connections: {route?.unavailable_legs??fallback.filter(l=>!l.coordinates.length).length}.</p>
