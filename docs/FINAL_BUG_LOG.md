@@ -1,5 +1,11 @@
 # Final bug log
 
+## Phase 3 final review
+
+| Finding | Status | Commit | Proof |
+|---------|--------|--------|-------|
+| README current/historical counts | FIXED (docs only) | 744f0d2 | SQL: 8 destinations, 25 attractions, 11 hotels, 12 restaurants, 131 routes. Full executed baseline: 122 backend tests, 56 frontend tests plus 80/33 assertions, types/build PASS, 64 browser checks. README now separates this checkpoint from dated 20 October expanded-catalog/test evidence; no catalog or algorithm change. |
+
 ## Phase 2 provider migration
 
 | Status | Commit | Proof |
