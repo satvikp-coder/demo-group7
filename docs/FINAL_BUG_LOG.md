@@ -1,5 +1,15 @@
 # Final bug log
 
+## Batch 4 verification
+
+Production build served by Vite preview on localhost:3000, with same-origin /api proxy to the default API on localhost:5000. Backend CORS remains http://localhost:3000. Test URL selectors point to this preview; the production-browser operator approval path preserves the registration policy.
+
+Baseline: backend 118/118; frontend 55 tests plus 80 Trie and 33 planner assertions; TypeScript and production build PASS. `npm --prefix backend run test:frontend`: verified true, 64 checks, cleanup completed, original catalog preserved. An earlier browser attempt stopped at 40 checks during a concurrent rebuild; the successful rerun used an unchanged build. Database after cleanup: 0 users, 0 trips, 8 destinations, 25 attractions.
+
+| ID | Status | Commit | Proof |
+|----|--------|--------|-------|
+| A-H6 / narrow itinerary actions | FIXED | c4b6281 | Production Chrome before: Home/Explore scrollWidth 377 at 320 and 375; Itinerary 367 at 320. After wrapping the sort/action rows and constraining the select: scrollWidth equals innerWidth in all 35 cases (Home, Explore, Somnath city, Hotels, generated Itinerary, Budget, authenticated Profile at 320/375/390/430/768). Existing descriptions fit; no description layout change. |
+
 Repo: demo-group7-release, branch `final-fixes`, baseline taken from `main` at bcbe5ab.
 
 ## Fix log
