@@ -21,6 +21,20 @@ Baseline: backend 118/118; frontend 55 tests plus 80 Trie and 33 planner asserti
 - Seeded destination/entity names and long descriptions lack stored GU/HI translations; descriptions, provenance/source notes, dated prices, hotel policy text supplied by data, and many hardcoded UI strings remain English. Observed examples include the Explore discovery subtitle/help/count/sort controls, wheelchair/demand labels, Hotels introductory description and admin editor copy. No destination descriptions were machine translated and no tourism values were invented.
 - Native review of the new short GU/HI lodging note and city search aliases is pending; see docs/TRANSLATION_REVIEW.md. This pass does not claim complete localization.
 
+### Batch 4 totals
+
+| Check | Before | After |
+|-------|--------|-------|
+| Backend tests | 118/118 | 119/119 |
+| Frontend unit tests | 55/55 plus 80 Trie assertions | 56/56 plus 80 Trie assertions |
+| Reference planner | 33/33 assertions | 33/33 assertions |
+| TypeScript | PASS | PASS |
+| Production build, VITE_API_BASE_URL=/api | PASS | PASS (2442 modules) |
+| Playwright test:frontend | 64/64 | 64/64 |
+| Extra localization suite | 2/2 | 2/2 |
+
+Final browser wrapper reports verified=true, cleanupCompleted=true, originalCatalogPreserved=true. Final SQL: 0 users, 0 trips, 8 destinations, 25 attractions. Temporary diagnostic scripts removed; no DSA, instruction or handoff file changes. No push performed.
+
 Repo: demo-group7-release, branch `final-fixes`, baseline taken from `main` at bcbe5ab.
 
 ## Fix log
