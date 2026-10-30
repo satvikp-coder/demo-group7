@@ -6,7 +6,11 @@ A Gujarat heritage and tourism planning platform built for CSC210 Data Structure
 
 **Source repositories:** [course repository](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner) and [synchronized mirror](https://github.com/satvikp-coder/demo-group7). Both receive the same reviewed release commit.
 
-## Latest verified local application - 20 October 2026
+## Current seeded review - 30 October 2026
+
+The final-review database contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 routes. Backend tests: 122; frontend tests: 56 plus 80 Trie and 33 planner assertions; TypeScript, production build and the 64-check browser regression pass. The 27 chat tests use mocked NVIDIA calls. The single live NVIDIA backend-route attempt returned 503, so live answers remain unverified. See [the final bug log](docs/FINAL_BUG_LOG.md) for scoped fixes and current evidence. No attraction expansion imports were run for this review.
+
+## Historical local verification - 20 October 2026
 
 - 118 backend unit/security tests, 18/18 complete regression gates and 17/17 final container gates passed.
 - Optional additive attraction import (`npm run local:attractions`): 56 sourced attractions on top of the enriched catalog, 100 in total across eight destinations, with 833 additive road-metric relationships. A fresh `db:seed` installs 25 attractions.
@@ -128,7 +132,7 @@ docs/       Setup, deployment, academic design and research documentation
 | [Trip model](backend/models/tripModel.js) | Transactional persistence, bounded serialization retries and stored cost snapshots. |
 | [Hash table](dsa/hashTable/HashTable.ts) | Per-request route cache and visited-attraction tracking; see [DSA documentation](dsa/README.md). |
 
-## Current Data
+## Seeded data and historical import counts
 
 A fresh `db:seed` contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 route records. After the optional enrichment imports, the local catalog measured on 12 October 2026 contains **8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records**. There are **29 usable indicative hotel-price estimates**; the other 27 properties have no usable rate and are not priced starting-hotel choices. All eight destinations have a sourced priced option in each hotel category after the reviewed coverage import, including clearly identified nearby towns.
 
