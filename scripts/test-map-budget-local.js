@@ -21,7 +21,7 @@ try{
  admin=new pg.Pool({connectionString:url.href});await admin.query("CREATE DATABASE "+database);created=true;url.pathname="/"+database;
  isolated=new pg.Pool({connectionString:url.href});
  await migrate(isolated);await seedDatabase(isolated,await loadSources());await applyExpansion(isolated);await applyExpansion(isolated,{phase2:true});await applyEnrichment(isolated);await applyExpansion(isolated,{hotelCoverage:true});
- const env={...runtime,DATABASE_URL:url.href,NODE_ENV:"test",JWT_SECRET:randomBytes(48).toString("hex"),PORT:"5310",CORS_ORIGIN:"http://localhost:4310",AUTH_RATE_LIMIT:"500",CHAT_RATE_LIMIT:"20",GROQ_API_KEY:"",CHAT_FREE_PLAN_CONFIRMED:"false",CHAT_MOCK:"false",MAP_ROUTING_URL:""};
+ const env={...runtime,DATABASE_URL:url.href,NODE_ENV:"test",JWT_SECRET:randomBytes(48).toString("hex"),PORT:"5310",CORS_ORIGIN:"http://localhost:4310",AUTH_RATE_LIMIT:"500",CHAT_RATE_LIMIT:"20",NVIDIA_API_KEY:"",MAP_ROUTING_URL:""};
  backend=spawn(process.execPath,["--import","tsx","server.js"],{cwd:new URL("../backend/",import.meta.url),env,windowsHide:true,stdio:["ignore",serverLog,serverLog]});
  await waitFor("http://localhost:5310/ready");
  const production=process.argv.includes('--production');

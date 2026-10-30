@@ -51,7 +51,7 @@ with sync_playwright() as p:
   page.evaluate("sessionStorage.removeItem('heritage_api_token');window.dispatchEvent(new Event('heritage-auth-change'))")
   page.get_by_role("button",name="Open Heritage Guide").click();expect(page.locator("#heritage-guide-panel").get_by_role("button",name="Sign in to chat")).to_be_visible()
   assert not page.locator('[data-chat-role=assistant]').count()
-  results.append({"viewport":width,"passed":True,"consoleErrors":errors,"provider":"TEST_DOUBLE_NOT_LIVE_GROQ","realDatabase":True})
+  results.append({"viewport":width,"passed":True,"consoleErrors":errors,"provider":"TEST_DOUBLE_NOT_LIVE_NVIDIA","realDatabase":True})
   # Localized launcher/panel and suggestions; opening never sends provider requests.
   for language in ["hi","gu"]:
    page.evaluate("lang=>localStorage.setItem('app_language',lang)",language);page.goto(base)

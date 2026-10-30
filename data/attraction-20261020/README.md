@@ -17,7 +17,7 @@ Do not run seed/reset. This release uses the existing expansion transaction and 
 
 - `python scripts/build-attraction-release.py` rebuilds reviewed records from cached public facts/context and curated corrections; no Internet calls are made. The importer consumes the committed manifest, so rebuilding is not required for installation.
 - `npm run test:attractions` validates policy, meals, quota regression and the data package.
-- `npm run test:attractions:local -- --production` uses a disposable PostgreSQL database, proves dry-run/late-failure rollback/idempotence/original-row preservation and exercises real API/browser/PDF paths. It does not write the installed user database or call public routing/Groq providers.
+- `npm run test:attractions:local -- --production` uses a disposable PostgreSQL database, proves dry-run/late-failure rollback/idempotence/original-row preservation and exercises real API/browser/PDF paths. It does not write the installed user database or call public routing/NVIDIA providers.
 
 The source package includes approximate coordinates, source URLs/check dates, local/excursion labels, explicitly estimated duration metadata, known closure/window rules, and unpriced fee/rating fields. Three Saputara identities use community sources and remain explicitly qualified. Old Saputara museum closure remains unresolved/excluded.
 

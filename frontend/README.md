@@ -126,4 +126,4 @@ The closed-by-default bottom-right `HeritageGuideChat` launcher lazily loads `He
 
 Conversation state stays in memory and clears on logout/account change. The backend signs/encrypts bounded history; no assistant-role history is trusted from the browser. Structured database-only mode is explicitly not AI. The external-provider disclosure is shown before submission. No frontend API key or new Markdown dependency.
 
-Local setup, screenshots and actual browser/live-Groq evidence are in [the chat demo](../reports/HERITAGE_GUIDE_LOCAL_DEMO.md) and [test report](../reports/HERITAGE_GUIDE_TEST_RESULTS.md).
+Local setup, screenshots and historical browser/provider evidence are in [the chat demo](../reports/HERITAGE_GUIDE_LOCAL_DEMO.md) and [test report](../reports/HERITAGE_GUIDE_TEST_RESULTS.md).

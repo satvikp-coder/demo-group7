@@ -4,7 +4,7 @@ import {SYSTEM_PROMPT} from "../chat/systemPrompt.js";
 import {TOOL_DEFINITIONS} from "../chat/toolDefinitions.js";
 import {runTool,APP_HELP} from "../chat/toolHandlers.js";
 import {historyCodec} from "../chat/history.js";
-import {createGroqProvider,FREE_LIMIT_MESSAGE} from "./groqService.js";
+import {createNvidiaProvider,FREE_LIMIT_MESSAGE} from "./nvidiaService.js";
 import {HttpError} from "../middleware/errorHandler.js";
 import {env} from "../config/env.js";
 async function withinDeadline(task,signal){
@@ -12,7 +12,7 @@ async function withinDeadline(task,signal){
  try{return await Promise.race([task,new Promise((_,reject)=>{abort=()=>reject(new HttpError(504,"Heritage Guide timed out. Please try again later."));if(signal.aborted)abort();else signal.addEventListener("abort",abort,{once:true});})]);}
  finally{signal.removeEventListener("abort",abort);}
 }
-export function createChatService({config=chatConfig(),provider=createGroqProvider(config),tool=runTool,secret=env.JWT_SECRET,now=()=>Date.now()}={}){
+export function createChatService({config=chatConfig(),provider=createNvidiaProvider(config),tool=runTool,secret=env.JWT_SECRET,now=()=>Date.now()}={}){
  const codec=historyCodec(secret,config.maxHistory,now);
  let active=0,day="",calls=0;
  const helpCache=new Map(),version=createHash("sha256").update(JSON.stringify(APP_HELP)+SYSTEM_PROMPT+config.model).digest("hex");
@@ -20,7 +20,7 @@ export function createChatService({config=chatConfig(),provider=createGroqProvid
  return async function chat(userId,input,{signal}={}){
   const parsed=chatBodySchema.safeParse(input);if(!parsed.success)throw new HttpError(400,"Invalid chat request. Send one message of 1–1500 characters; client message roles are not accepted.");
   const body=parsed.data,history=codec.open(userId,body.history_token);
-  if(/gsk_[A-Za-z0-9]{20,}|Bearer\s+\S+|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/.test(body.message))throw new HttpError(400,"Do not send API keys or access tokens in chat.");
+  if(/nvapi-[A-Za-z0-9_-]{20,}|gsk_[A-Za-z0-9]{20,}|Bearer\s+\S+|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/.test(body.message))throw new HttpError(400,"Do not send API keys or access tokens in chat.");
   if(active>=config.concurrency)throw new HttpError(429,"Heritage Guide is busy. Please try again shortly.");
   const key=version+":"+body.language+":"+body.message.toLowerCase();
   if(body.mode==="ai"&&!body.context_trip_id&&!history.length&&cacheable.test(body.message)&&helpCache.has(key)){
@@ -55,7 +55,7 @@ export function createChatService({config=chatConfig(),provider=createGroqProvid
     if(!requested.length){
      if(!names.length)throw new HttpError(502,"Heritage Guide could not ground this answer. Please try a simpler question.");
      if(typeof answer.content!=="string"||!answer.content.trim()||answer.content.length>6000||response.choices[0].finish_reason==="length")throw new HttpError(502,"Heritage Guide could not finish the answer. Please ask a shorter question.");
-     const reply=answer.content.trim().replace(/gsk_[A-Za-z0-9]{20,}|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g,"[credential removed]");
+     const reply=answer.content.trim().replace(/nvapi-[A-Za-z0-9_-]{20,}|gsk_[A-Za-z0-9]{20,}|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g,"[credential removed]");
      if(!body.context_trip_id&&!history.length&&cacheable.test(body.message)&&names.every(n=>n==="get_app_help")){
       if(helpCache.size>=20)helpCache.delete(helpCache.keys().next().value);helpCache.set(key,reply);
      }

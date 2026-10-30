@@ -1,15 +1,15 @@
-// Opt-in live Groq verification. Requires owner-confirmed Free Plan. No upgrades/fallbacks.
+// Opt-in live NVIDIA verification. Requires an explicitly supplied backend key. No automatic retries/fallbacks.
 import assert from "node:assert/strict";
 import {randomUUID} from "node:crypto";
 import {writeFileSync} from "node:fs";
 import {pool} from "../config/database.js";
 import {runTool} from "../chat/toolHandlers.js";
 import {createChatService} from "../services/chatService.js";
-import {createGroqProvider} from "../services/groqService.js";
+import {createNvidiaProvider} from "../services/nvidiaService.js";
 import {chatConfig} from "../chat/config.js";
-if(process.env.CHAT_FREE_PLAN_CONFIRMED!=="true"||!process.env.GROQ_API_KEY||!/^\/heritage_chat_[a-f0-9]{32}$/.test(new URL(process.env.DATABASE_URL).pathname))throw Error("Confirmed Free Plan and isolated database required");
-const config=chatConfig(),owner=randomUUID(),report={startedAt:new Date().toISOString(),provider:"Groq",model:config.model,plan:"Free Plan confirmed by owner; API does not expose billing plan",verified:false,questions:[],calls:0,tokens:0};
-const provider=createGroqProvider(config),toolEvents=[];
+if(!process.env.NVIDIA_API_KEY||!/^\/heritage_chat_[a-f0-9]{32}$/.test(new URL(process.env.DATABASE_URL).pathname))throw Error("Backend key and isolated database required");
+const config=chatConfig(),owner=randomUUID(),report={startedAt:new Date().toISOString(),provider:"NVIDIA",model:config.model,plan:"Provider billing not verified",verified:false,questions:[],calls:0,tokens:0};
+const provider=createNvidiaProvider(config),toolEvents=[];
 const service=createChatService({config,provider:async(payload,options)=>{const response=await provider(payload,options);report.calls++;report.tokens+=response.usage?.total_tokens??0;report.freeLimitHeaders=response.freeLimitHeaders??report.freeLimitHeaders;return response;},tool:async(name,args,context)=>{const data=await runTool(name,args,context);toolEvents.push({name,args,result:data});return data;}});
 try{
  const cities=await runTool("search_destinations",{query:"Modhera"},{userId:owner}),city=cities.destinations[0];assert(city);

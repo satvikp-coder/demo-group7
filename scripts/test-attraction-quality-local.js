@@ -32,7 +32,7 @@ try{
  report.originalRowsPreserved=true;for(const [table,rows] of Object.entries(original))for(const row of rows){const current=(await isolated.query(`SELECT to_jsonb(t) data FROM ${table} t WHERE id=$1`,[row.id])).rows[0]?.data;if(JSON.stringify(current)!==JSON.stringify(row))throw Error('Original row changed');}
  report.dryRunRollback=true;report.failedImportRollback=true;
 
- const env={...runtime,DATABASE_URL:url.href,NODE_ENV:"test",JWT_SECRET:randomBytes(48).toString("hex"),PORT:"5310",CORS_ORIGIN:"http://localhost:4310",AUTH_RATE_LIMIT:"500",GENERATION_RATE_LIMIT:"100",CHAT_RATE_LIMIT:"20",GROQ_API_KEY:"",CHAT_FREE_PLAN_CONFIRMED:"false",CHAT_MOCK:"false",MAP_ROUTING_URL:""};
+ const env={...runtime,DATABASE_URL:url.href,NODE_ENV:"test",JWT_SECRET:randomBytes(48).toString("hex"),PORT:"5310",CORS_ORIGIN:"http://localhost:4310",AUTH_RATE_LIMIT:"500",GENERATION_RATE_LIMIT:"100",CHAT_RATE_LIMIT:"20",NVIDIA_API_KEY:"",MAP_ROUTING_URL:""};
  backend=spawn(process.execPath,["--import","tsx","server.js"],{cwd:new URL("../backend/",import.meta.url),env,windowsHide:true,stdio:["ignore",serverLog,serverLog]});
  await waitFor("http://localhost:5310/ready");
  const production=process.argv.includes('--production');
