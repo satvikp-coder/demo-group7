@@ -1,5 +1,6 @@
 export const ACCOMMODATION_TRANSLATIONS = {
  en: {
+  'stay.defaultNights':'No stay dates chosen: using {nights} night(s), one fewer than the trip days. Set arrival and departure dates or change the nights to override.',
   'stay.minimumGuests':'{hotel}: the sourced stay requires at least {minimum} guests. Choose another property or correct the traveler count.',
   'stay.quotedRooms':'{hotel}: the listed estimate covers up to {capacity} guests per room. Select at least {rooms} rooms for {travelers} travelers; extra-guest charges are not assumed free.',
   'stay.overBudget':'Accommodation alone is {total} for {nights} night(s) × {rooms} room(s), exceeding your {budget} budget by {shortfall}. Reduce nights or rooms, select a lower-priced hotel, or increase the budget. Other trip costs are additional.',
@@ -9,6 +10,7 @@ export const ACCOMMODATION_TRANSLATIONS = {
   'stay.invalidGroup':'Choose 1 to 20 travelers and rooms.','stay.hotelRequired':'Select a hotel in the chosen category.',
  },
  hi: {
+  'stay.defaultNights':'ठहरने की तारीखें नहीं चुनी गई हैं: {nights} रातों का उपयोग होगा, यात्रा के दिनों से एक कम। इसे बदलने के लिए आगमन और प्रस्थान की तारीखें चुनें या रातों की संख्या बदलें।',
   'stay.minimumGuests':'{hotel}: स्रोत के अनुसार कम से कम {minimum} मेहमान आवश्यक हैं। दूसरा होटल चुनें या यात्रियों की संख्या सही करें।',
   'stay.quotedRooms':'{hotel}: दर्ज अनुमान प्रति कमरे में {capacity} मेहमानों तक के लिए है। {travelers} यात्रियों के लिए कम से कम {rooms} कमरे चुनें; अतिरिक्त मेहमानों का शुल्क मुफ्त नहीं माना जाता।',
   'stay.overBudget':'सिर्फ ठहरने का अनुमान {nights} रातों × {rooms} कमरों के लिए {total} है, जो आपके {budget} बजट से {shortfall} अधिक है। रातें या कमरे कम करें, कम कीमत वाला होटल चुनें या बजट बढ़ाएँ। यात्रा के अन्य खर्च अलग हैं।',
@@ -18,6 +20,7 @@ export const ACCOMMODATION_TRANSLATIONS = {
   'stay.invalidGroup':'यात्रियों और कमरों की संख्या 1 से 20 के बीच चुनें।','stay.hotelRequired':'चुनी गई श्रेणी में एक होटल चुनें।',
  },
  gu: {
+  'stay.defaultNights':'રોકાણની તારીખો પસંદ કરી નથી: {nights} રાતો ગણાશે, પ્રવાસના દિવસોથી એક ઓછી. તેને બદલવા માટે આગમન અને પ્રસ્થાનની તારીખો પસંદ કરો અથવા રાતોની સંખ્યા બદલો.',
   'stay.minimumGuests':'{hotel}: સ્ત્રોત મુજબ ઓછામાં ઓછા {minimum} મહેમાનો જરૂરી છે. બીજી હોટેલ પસંદ કરો અથવા પ્રવાસીઓની સંખ્યા સુધારો.',
   'stay.quotedRooms':'{hotel}: નોંધાયેલો અંદાજ પ્રતિ રૂમમાં {capacity} મહેમાનો સુધી માટે છે. {travelers} પ્રવાસીઓ માટે ઓછામાં ઓછા {rooms} રૂમ પસંદ કરો; વધારાના મહેમાનોનો ખર્ચ મફત માનવામાં આવતો નથી.',
   'stay.overBudget':'માત્ર રોકાણનો અંદાજ {nights} રાતો × {rooms} રૂમ માટે {total} છે, જે તમારા {budget} બજેટ કરતાં {shortfall} વધુ છે. રાતો કે રૂમ ઘટાડો, ઓછી કિંમતની હોટેલ પસંદ કરો અથવા બજેટ વધારો. પ્રવાસના અન્ય ખર્ચ અલગ છે.',
