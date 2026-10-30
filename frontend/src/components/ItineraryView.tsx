@@ -389,7 +389,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
 
         {/* Top Control Bar: Back / Actions */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone/30 pb-4 no-print">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {!isReadOnly && (
               <>
                 <button
@@ -443,7 +443,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={handleShare}
               className="inline-flex items-center gap-1.5 bg-salt border border-stone/40 hover:border-gold text-charcoal text-xs font-mono px-3 py-2 transition-colors cursor-pointer rounded-lg"

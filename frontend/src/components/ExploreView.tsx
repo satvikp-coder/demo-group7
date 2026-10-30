@@ -352,7 +352,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
             </div>
 
             {/* Right: Sort Dropdown */}
-            <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto pt-2 sm:pt-0">
+            <div className="flex flex-wrap max-w-full items-center gap-2 shrink-0 self-start sm:self-auto pt-2 sm:pt-0">
               <ArrowUpDown className="w-3.5 h-3.5 text-stone" />
               <label htmlFor="sort-dropdown" className="font-mono text-xs text-stone uppercase tracking-wider">
                 {language === 'hi' ? 'क्रम:' : 'Sort by:'}
@@ -361,7 +361,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
                 id="sort-dropdown"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer rounded-md"
+                className="min-w-0 max-w-full font-mono text-xs text-charcoal bg-transparent border-b border-stone/50 py-1 font-semibold focus:outline-none focus:border-gold cursor-pointer rounded-md"
               >
                 <option value="rating">
                   {language === 'hi' ? 'रेटिंग (उच्चतम पहले)' : 'Rating (Highest First)'}
