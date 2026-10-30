@@ -1,0 +1,101 @@
+{
+  "authorization": "User explicitly approved these exact 24 classroom-identical final-fix hashes after reviewing the proposal on final-fixes at 787f2e6. Later changes require separate review.",
+  "files": {
+    "frontend/src/App.tsx": {
+      "sha256": "55d3aa943686b9dc8b2ceccb6a472bc108bf65305b651968539844689995b331",
+      "reason": "4c9bce4 fix(offline): keep saved itineraries for offline use and show them when the server is unreachable"
+    },
+    "frontend/src/components/AdminDashboardView.tsx": {
+      "sha256": "2109d4b58b42a86d8e46b04b05a18a5a8fe7a541d45124b8efb774640a59c63a",
+      "reason": "c998973 fix(a11y): name search and record editor controls"
+    },
+    "frontend/src/components/AlgorithmStatsPanel.tsx": {
+      "sha256": "f2f40f75d2eda9a5481682ea84c5d2c4e17676688107ca78d3418231a81d3c39",
+      "reason": "5dba52a fix(itinerary): show N/A for graph counts that were not recorded"
+    },
+    "frontend/src/components/AuthView.tsx": {
+      "sha256": "805dc4a2d22bd79c7ba56e7353cfc9376c07c23666491ec36b4ae6ae97e01583",
+      "reason": "9cc2b3e chore(auth): remove unused legacy password check"
+    },
+    "frontend/src/components/BudgetPlannerView.tsx": {
+      "sha256": "5c54fecfc6143f72d3dbccbdbbcb22266476a7528a37bcc8a4442de708edc072",
+      "reason": "b8b1a6e fix(budget): make the simulated budget cap editable and drive the ledger"
+    },
+    "frontend/src/components/DijkstraVisualizer.tsx": {
+      "sha256": "c5139486f82fa2b88755f595805af8b1d0573ae39972f129b548bbfb0ffa1f95",
+      "reason": "43d3277 fix(visualizer): distinguish colliding attraction labels"
+    },
+    "frontend/src/components/ExploreView.tsx": {
+      "sha256": "362d2de9d44488fea8e6b5aacef45884b7348d25e0e7c1a89637c3109a1f6b50",
+      "reason": "b02d8a3 fix(explore): hide demand controls when values are unknown"
+    },
+    "frontend/src/components/HotelsView.tsx": {
+      "sha256": "aeb28e8fe3bcff1a9615dd18010a4806ea0014e8b4e4bdd985f1a93d1e25da62",
+      "reason": "39721b1 fix(a11y): raise dark description text contrast"
+    },
+    "frontend/src/components/ItineraryRouteMap.tsx": {
+      "sha256": "bbddac14cc1a1e653352a42f71ea230df9770f44a43813d9a2ca258125457ddc",
+      "reason": "54d554e fix(map): skip route legs whose stop is missing instead of throwing"
+    },
+    "frontend/src/components/ItineraryView.tsx": {
+      "sha256": "1fc67630ecda5c86141dbaa22accbdd61cd7d9fe081a83c99a04df8dc35b0900",
+      "reason": "c4b6281 fix(responsive): contain narrow discovery and itinerary controls"
+    },
+    "frontend/src/components/OfflineBanner.tsx": {
+      "sha256": "e3395edb9e88b8b6207d156a1724186d3bfbeaade6c52ffa305867a29c911308",
+      "reason": "4c9bce4 fix(offline): keep saved itineraries for offline use and show them when the server is unreachable"
+    },
+    "frontend/src/components/PlannerModal.tsx": {
+      "sha256": "6606230cd3939bfc4afd11d9a50383140ba3aafc1c3b9a358cbc0e358f783f35",
+      "reason": "2129771 fix(planner): derive lodging nights from arrival and departure dates"
+    },
+    "frontend/src/components/ProfileDashboardView.tsx": {
+      "sha256": "105d7b102c3bd8dd8fbf5a012f421f06f46df8a31f15e158466e82b625aba1c7",
+      "reason": "4e38ce0 perf(api): cache and de-duplicate destination catalog requests"
+    },
+    "frontend/src/data/accommodationTranslations.ts": {
+      "sha256": "fa5a46aee9ebf7fc431e329871d5c0f7daa45b554a6c469e3296692e1084bb11",
+      "reason": "40d68ac fix(i18n): translate missing default lodging note"
+    },
+    "frontend/src/utils/bestTimeChecker.ts": {
+      "sha256": "42cbcfcd6695dedc423f41398d3ce1fce2ba5053b1ccc79ea44ed5ab8853d4c2",
+      "reason": "22fa0d8 fix(itinerary): stop treating opening-hours ranges as best-time advice"
+    },
+    "frontend/src/utils/budgetCap.ts": {
+      "sha256": "fec649887fb96cdd3ea20842d7ac20e20aa0e7ffc7f0ee17cce5c40d91738cbe",
+      "reason": "b8b1a6e fix(budget): make the simulated budget cap editable and drive the ledger"
+    },
+    "frontend/src/utils/executionTime.ts": {
+      "sha256": "086063f6b93e5bea356d41ea8aaf2ab175159e6dc73aa0ba74716300367272b4",
+      "reason": "d4ab87a fix(itinerary): omit generation time when it was not recorded"
+    },
+    "frontend/src/utils/offlineStorage.ts": {
+      "sha256": "be8d2f520d6d2aaf3eefcd94bb0a26cc77b4ee3c8d28fd85e7d225ec8307d6fe",
+      "reason": "4c9bce4 fix(offline): keep saved itineraries for offline use and show them when the server is unreachable"
+    },
+    "frontend/src/utils/passwordPolicy.ts": {
+      "sha256": "d94e6e66aa444f5c06259222c9f6b4e619c739340d299ea733c8efd9295772d7",
+      "reason": "bac7d9d fix(auth): validate registration fields client-side before submit"
+    },
+    "frontend/src/utils/requestCache.ts": {
+      "sha256": "cc968838e2ef13bf046a514095e6ffec1b92ec3768d7225965049d5f824b3d42",
+      "reason": "4e38ce0 perf(api): cache and de-duplicate destination catalog requests"
+    },
+    "frontend/src/utils/routeLegs.ts": {
+      "sha256": "2d0cc1108baaf0aaafb5e623c23c95c33ec519a45402f4f2cfbd65fee565ea11",
+      "reason": "54d554e fix(map): skip route legs whose stop is missing instead of throwing"
+    },
+    "frontend/src/utils/savedLegDistances.ts": {
+      "sha256": "ba33edbcbe190d38a5b4554d01110cb0d738b255d31ad06e85bf2262b7910238",
+      "reason": "b52af5e fix(itinerary): show saved route-record distances on the route map"
+    },
+    "frontend/src/utils/shareUrl.ts": {
+      "sha256": "0c20cd951f6e06344ed1d0b93163d63fa46e1096a50718fa622ac8c86588bce7",
+      "reason": "5f49def fix(share): carry full planner preferences in share links and reject unsupported versions"
+    },
+    "frontend/src/utils/stayDates.ts": {
+      "sha256": "fcb7de7ccae1fa9f0feb54e67852c28272f3fdf5c7ad67011f07177bef1bb0da",
+      "reason": "2129771 fix(planner): derive lodging nights from arrival and departure dates"
+    }
+  }
+}
