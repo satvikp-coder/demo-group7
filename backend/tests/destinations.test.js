@@ -46,6 +46,30 @@ test("concurrent refreshes coalesce; errors preserve the real snapshot; empty DB
   assert.deepEqual(cache.search("Ori"), []);
 });
 
+test("runtime Trie finds all eight seeded cities by Gujarati and Hindi names when translations are absent", async () => {
+  const cities = [
+    ["ahmedabad", "Ahmedabad", "અમદાવાદ", "अहमदाबाद"],
+    ["somnath", "Somnath", "સોમનાથ", "सोमनाथ"],
+    ["dwarka", "Dwarka", "દ્વારકા", "द्वारका"],
+    ["modhera", "Modhera", "મોઢેરા", "मोढेरा"],
+    ["champaner", "Champaner", "ચાંપાનેર", "चंपानेर"],
+    ["gir-national-park", "Gir National Park", "ગીર રાષ્ટ્રીય ઉદ્યાન", "गिर राष्ट्रीय उद्यान"],
+    ["rann-of-kutch", "Rann of Kutch", "કચ્છનું રણ", "कच्छ का रण"],
+    ["saputara", "Saputara", "સાપુતારા", "सापुतारा"],
+  ];
+  const rows = cities.map(([slug, name]) => ({id: randomUUID(), slug, name,
+    gujarati_name: null, hindi_name: null, indexed_attraction_names: []}));
+  const cache = new DestinationSearchCache({loadRows: async () => rows});
+  await cache.refresh();
+  for (const [index, [, , gu, hi]] of cities.entries()) {
+    for (const name of [gu, hi]) {
+      assert.deepEqual(cache.search(name).map(row => row.id), [rows[index].id], name);
+    }
+  }
+  assert.deepEqual(cache.search("unrelated city"), []);
+  assert.equal(rows[0].gujarati_name, null, "aliases must not rewrite stored translations");
+});
+
 test("cache refresh timer starts once and can be stopped", async () => {
   let reads = 0;
   let onSecondRead;

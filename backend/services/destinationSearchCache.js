@@ -3,6 +3,17 @@ import { Trie } from "../../dsa/trie/Trie.ts";
 import { loadSearchRows } from "../models/destinationModel.js";
 import { HttpError } from "../middleware/errorHandler.js";
 
+const localizedAliases = {
+  ahmedabad: ["અમદાવાદ", "अहमदाबाद"],
+  somnath: ["સોમનાથ", "सोमनाथ"],
+  dwarka: ["દ્વારકા", "द्वारका"],
+  modhera: ["મોઢેરા", "मोढेरा"],
+  champaner: ["ચાંપાનેર", "चंपानेर"],
+  "gir-national-park": ["ગીર રાષ્ટ્રીય ઉદ્યાન", "गिर राष्ट्रीय उद्यान"],
+  "rann-of-kutch": ["કચ્છનું રણ", "कच्छ का रण"],
+  saputara: ["સાપુતારા", "सापुतारा"],
+};
+
 export function normalizeName(value) {
   return value.normalize("NFC").trim().replace(/\s+/g, " ").toLowerCase();
 }
@@ -27,6 +38,7 @@ export class DestinationSearchCache {
       for (const { indexed_attraction_names, ...destination } of rows) {
         const names = [
           destination.name, destination.gujarati_name, destination.hindi_name,
+          ...(Object.hasOwn(localizedAliases, destination.slug) ? localizedAliases[destination.slug] : []),
           ...(indexed_attraction_names ?? []).flat(),
         ].filter((name) => typeof name === "string" && name.trim()).map(normalizeName);
         destinations.set(destination.id, destination);
