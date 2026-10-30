@@ -1,5 +1,29 @@
 # Final bug log
 
+## Live NVIDIA verification follow-up
+
+Verified on `final-fixes` after ca46878. Initial working tree was clean. No application source, dependencies, UI, DSA, ports, CORS or database settings changed; no remote push performed.
+
+| Check | Status | Actual evidence |
+|-------|--------|-----------------|
+| Docker / database | PASS | Existing group07-heritage-postgres running on 55432; SQL connectivity succeeds. |
+| Backend configuration | PASS | Ignored backend/.env exists; key presence checked without displaying it. Only NVIDIA_MODEL changed locally to openai/gpt-oss-20b; key preserved. |
+| NVIDIA model catalog | PASS | HTTP 200, 169 ms, 85 models; candidate listed, old default absent. |
+| Existing default model | FAIL | meta/llama-3.3-70b-instruct inference returned upstream HTTP 410 in 212 ms, sanitized to application 503. Default replacement remains unresolved: candidate has not passed the complete integration deadline. |
+| Candidate with production parameters | FAIL | Direct service request timed out at 15,010 ms under the unchanged 15-second deadline. |
+| First tool response diagnostic | PASS (transport only) | Candidate returned HTTP 200 after 38,234 ms with finish_reason=tool_calls, get_app_help and parseable JSON arguments. This exceeds the application deadline and does not prove a final answer. |
+| Diagnostic tool continuation | NOT VERIFIED | Diagnostic harness omitted the authenticated user context, so its lookup was rejected. This is a harness limitation, not evidence of an application lookup bug. |
+| Low-reasoning diagnostic | FAIL | Separate reasoning_effort=low request exceeded a diagnostic-only 45-second limit (45,018 ms), without a response. Application timeout remained 15 seconds. No reasoning parameter added to source. |
+| Backend /health and /ready | PASS | Both HTTP 200 on default port 5000, started with backend npm start. |
+| Registration and login | PASS | Temporary tourist created through registration and authenticated through login; credentials/token kept in memory. |
+| Authenticated /api/chat | FAIL | Requested supported-destinations question returned HTTP 504 in 15,051 ms with friendly timeout message. No reply, ai mode or history_token returned. Deadline enforced, allowing local HTTP overhead. |
+| Database tool execution / final grounded answer | NOT VERIFIED | Live route timed out before completion; no successful full provider/tool/answer sequence observed. |
+| Second Somnath question | NOT VERIFIED | Not attempted because the required first question failed. |
+| Backend regression tests | PASS | npm --prefix backend test: 122 passed, 0 failed. These mocked/unit results do not establish live integration success. |
+| Temporary account cleanup | PASS | Exact temporary account deleted in finally; before/after SQL counts identical: 2 users, 0 trips, 8 destinations, 25 attractions. Two pre-existing users preserved. Requested zero-user target differs from initial database state; unrelated records were not deleted. |
+
+No model-default source correction was committed because a replacement has not been verified within the existing deadline. Remaining work: establish a supported tool-calling model that completes the full authenticated route within 15 seconds, then verify the Somnath follow-up and make only the proven default correction. Historical migration evidence below is retained as dated evidence, not current live availability.
+
 ## Phase 3 final review
 
 | Finding | Status | Commit | Proof |
