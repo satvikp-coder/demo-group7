@@ -29,7 +29,8 @@ export interface GraphEdge {
 export function getIntraCityGraph(dto: any): { nodes: GraphNode[]; edges: GraphEdge[] } {
   const stops = dto?.days?.flatMap((day: any) => day.stops) ?? [];
   const unique = [...new Map<string, any>(stops.map((stop: any) => [stop.reference_id, stop])).values()];
-  const nodes = unique.map((stop, index) => ({id:stop.reference_id,name:stop.name,shortName:stop.name.split(" ")[0],
+  const nodes = unique.map((stop, index) => ({id:stop.reference_id,name:stop.name,
+    shortName:unique.some(other => other.reference_id !== stop.reference_id && other.name.split(" ")[0] === stop.name.split(" ")[0]) ? stop.name : stop.name.split(" ")[0],
     x:100 + (index % 4) * 110,y:90 + Math.floor(index / 4) * 90}));
   const edges = (dto?.trip?.generation_summary?.legs ?? []).map((leg: any) => ({from:leg.from,to:leg.to,distanceKm:Number(leg.distance_km)}));
   return {nodes,edges};
