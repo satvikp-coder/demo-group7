@@ -7,6 +7,89 @@
 | README current/historical counts | FIXED (docs only) | 744f0d2 | SQL: 8 destinations, 25 attractions, 11 hotels, 12 restaurants, 131 routes. Full executed baseline: 122 backend tests, 56 frontend tests plus 80/33 assertions, types/build PASS, 64 browser checks. README now separates this checkpoint from dated 20 October expanded-catalog/test evidence; no catalog or algorithm change. |
 | HashTable runtime documentation | FIXED (docs only) | 252ceac | Existing dsa/README.md claimed city-data caching. Actual tripPlanner.js call sites use HashTable for attraction membership (34), directional route cache (58), and visited attractions (95). Corrected that description only; no TypeScript DSA code changed. |
 
+### Runtime DSA mapping
+
+| Structure / algorithm | File | Runtime call site | Test file |
+|-----------------------|------|-------------------|-----------|
+| Graph | dsa/graph/Graph.ts | backend/services/tripPlanner.js:33, builds evidenced adjacency graph | backend/tests/trips.test.js |
+| Dijkstra fallback | dsa/dijkstra/dijkstra.ts | backend/services/tripPlanner.js:77, only when a direct route is missing | backend/tests/trips.test.js; backend/tests/sightseeing-quality.test.js |
+| MinHeap | dsa/priorityQueue/MinHeap.ts | dsa/dijkstra/dijkstra.ts:26; backend/services/tripPlanner.js:60,175 | backend/tests/trips.test.js; backend/tests/sightseeing-quality.test.js |
+| Greedy route scoring | dsa/greedy/routeBuilder.ts | backend/services/tripPlanner.js:183, scoreAttraction for strategy requests without explicit weights | backend/tests/trips.test.js; tests/frontend/planner.test.ts |
+| Greedy day split | dsa/greedy/daySplitter.ts | backend/services/tripPlanner.js:171,174,203, visit quota and meal-window helpers | backend/tests/schedule-gaps.test.js; backend/tests/attraction-quality.test.js |
+| Greedy budget filter | dsa/greedy/budgetAllocator.ts | backend/services/tripPlanner.js:170,177, filterAttractionsByBudget | tests/frontend/planner.test.ts; backend/tests/trips.test.js |
+| Trie | dsa/trie/Trie.ts | backend/services/destinationSearchCache.js:35,81, indexing and prefix lookup | tests/dsa/trie.test.ts; backend/tests/destinations.test.js |
+| HashTable | dsa/hashTable/HashTable.ts | backend/services/tripPlanner.js:34,58,95, membership/cache/visited tracking | backend/tests/trips.test.js; backend/tests/schedule-gaps.test.js |
+| Merge Sort | dsa/sorting/mergeSort.ts | backend/services/hotelRanking.js:9, persisted hotel ordering | backend/tests/destinations.test.js |
+
+Graph, MinHeap and HashTable have integration coverage through the planner, rather than separate standalone unit suites. Existing frontend reference-planner tests are distinguished from backend runtime scheduling tests. No TypeScript DSA implementation changed.
+
+### All-city production browser review
+
+Executed `python tests/frontend/final_review.py` against production Vite preview on 3000 with same-origin /api proxy to the normal backend on 5000. Test implementation: 9e2586b. All cities passed English/Gujarati/Hindi search, city/hotel selection, the nine 1/2/3-day x INR 5000/15000/30000 attempts, three-strategy comparison, budget view, save/reopen, owner link, real PDF download, wheelchair filter, logout/login and reopening the saved city trip after the fresh login.
+
+| City | Generated | Correctly blocked before writes | Journey | Console errors / failed requests |
+|------|-----------|----------------------------------|---------|---------------------------------|
+| Ahmedabad | 7 | 2 | PASS | 0 / 0 |
+| Somnath | 8 | 1 | PASS | 0 / 0 |
+| Dwarka | 9 | 0 | PASS | 0 / 0 |
+| Modhera | 8 | 1 | PASS | 0 / 0 |
+| Champaner | 6 | 3 | PASS | 0 / 0 |
+| Gir National Park | 8 | 1 | PASS | 0 / 0 |
+| Rann of Kutch | 7 | 2 | PASS | 0 / 0 |
+| Saputara | 8 | 1 | PASS | 0 / 0 |
+
+Totals: 72 attempts, 61 generated and 11 correct lodging-budget rejections; 24 successful localized/English searches, 24 compared strategy plans and 8 valid PDFs. Zero page errors or HTTP errors in the final full city run. Somnath has one known accessible attraction, which the wheelchair plan visits; the other seven city filters correctly show no matching destinations, without assuming accessibility.
+
+Typos returned no match in all eight cities: NOT SUPPORTED by the documented runtime prefix-only search. The shared academic Trie has fuzzy-search tests, but the public endpoint intentionally does not enable it. Left unchanged under the no-new-features rule. Public recipient sharing also remains unavailable; tested links are owner-authenticated bookmarks. Sparse catalog data can leave disclosed sightseeing gaps; prices and suitability are not live verified facts.
+
+The initial review harness timed out after downloaded PDFs while waiting for network quiescence. It now waits for the PDF control to be enabled. Seven additional negative probes of wheelchair generation with no known eligible attractions returned the expected 422; they were not application bugs. After correcting those test assumptions, the full clean city sequence passed in one run. No application/PDF/wheelchair fix was made.
+
+### Curl authorization matrix
+
+Executed `python tests/frontend/final_auth_review.py`, 2a9dadf: 48/48 checks PASS, catalog row hashes preserved. Tokens/passwords stay in process memory and curl stdin; neither is included in reports.
+
+| Case | Observed status | Result |
+|------|-----------------|--------|
+| No token on admin/trips | 401 | PASS |
+| Bad token on admin/trips | 401 | PASS |
+| Tourist admin reads/creates/updates/deletes | 403 | PASS |
+| Operator CRUD on all four resources | 201 / 200 / 204 | PASS |
+| Another user's trip and budget | 404 | PASS |
+
+Temporary catalog rows copied required values from existing seeded records and were deleted by exact IDs. Temporary accounts/trips were also deleted; no seed/import/reset ran.
+
+### Counts-only secret scan
+
+Scan at 9e2586b: 1111 working-tree files, 1675 unique historical blobs and 141 commits across all reachable refs. Excluded dependency/build/Git-internal directories; ignored environment files were included. Read errors: 0. Broad keyword counts are references/tests/placeholders, not counts of confirmed credentials.
+
+| Pattern | Working tree | Git history |
+|---------|--------------|-------------|
+| Provider-prefix markers | 7 | 4 |
+| API-key keyword references | 40 | 101 |
+| Secret keyword references | 215 | 411 |
+| Password assignments | 38 | 79 |
+| NVIDIA token candidates | 1 | 0 |
+| Legacy provider token candidates | 0 | 0 |
+| Private-key headers | 0 | 0 |
+| Exact current credential matches | 3 | 0 |
+| Token candidates outside ignored environment files | 0 | 0 |
+| Exact current credentials outside ignored environment files | 0 | 0 |
+
+### Phase 3 gate totals
+
+| Check | Before | After |
+|-------|--------|-------|
+| Backend | 122/122 | 122/122 |
+| Frontend | 56 tests + 80 Trie / 33 planner assertions | Same, PASS |
+| TypeScript | PASS | PASS |
+| Backend syntax | PASS | PASS |
+| Production build with /api | PASS | PASS, 2442 modules |
+| Playwright test:frontend | 64/64 | 64/64 |
+| All-city review | pending | 8/8 journeys; typo search unsupported |
+| Curl matrix | pending | 48/48 |
+
+Final browser wrapper: verified=true, cleanupCompleted=true, originalCatalogPreserved=true. Final SQL: 0 users, 0 trips, 8 destinations, 25 attractions. Only documented count/DSA-description errors were fixed in Phase 3. Live NVIDIA answer remains NOT VERIFIED after the single 503; native translation review remains pending. No push; Phase 4 not started. Instruction and handoff files unchanged.
+
 ## Phase 2 provider migration
 
 | Status | Commit | Proof |
