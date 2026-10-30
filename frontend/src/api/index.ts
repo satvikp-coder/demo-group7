@@ -1,4 +1,4 @@
-import {removeTripFromOfflineCache} from "../utils/offlineStorage";
+import {removeTripFromOfflineCache,saveTripToOfflineCache,getOfflineTripByTripId,clearOfflineTrips} from "../utils/offlineStorage";
 import {createRequestCache} from "../utils/requestCache";
 import {STRATEGY_WEIGHTS} from '../../../dsa/planning/priorities';
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +15,7 @@ const apiCache = createRequestCache();
 export const clearApiCache = () => apiCache.clear();
 export const session = {
   token: () => sessionStorage.getItem(TOKEN_KEY),
-  clear: () => { clearApiCache(); sessionStorage.removeItem(TOKEN_KEY); sessionStorage.removeItem("heritage_api_trip_ids"); sessionStorage.removeItem("heritage_api_hidden_trip_ids"); window.dispatchEvent(new Event("heritage-auth-change")); },
+  clear: () => { clearApiCache(); clearOfflineTrips(); sessionStorage.removeItem(TOKEN_KEY); sessionStorage.removeItem("heritage_api_trip_ids"); sessionStorage.removeItem("heritage_api_hidden_trip_ids"); window.dispatchEvent(new Event("heritage-auth-change")); },
 };
 export class ApiError extends Error { constructor(message: string, public status = 0, public retryAfter?: number) { super(message); } }
 export const errorMessage = (error: unknown) => error instanceof Error ? error.message : "Request failed";
@@ -318,6 +318,23 @@ export async function loadItinerary(id:string,signal?:AbortSignal,options:{summa
   const dto=await api.trip(id,signal);
   const city=options.summaryOnly?await api.catalogDestination(dto.trip.destination_id,signal):await api.destination(dto.trip.destination_id,signal);
   return {dto,config:configFromTrip(dto.trip),result:persistedItinerary(dto,city)};
+}
+/**
+ * Loads a saved itinerary and keeps an offline copy. When the server cannot be reached (not for any
+ * other error), the stored copy is returned instead, marked with the time it was saved.
+ */
+export async function loadItineraryOrOfflineCopy(id:string,signal?:AbortSignal) {
+  try {
+    const loaded=await loadItinerary(id,signal);
+    try { saveTripToOfflineCache(loaded.config,loaded.result,loaded.dto); } catch { /* storage full or unavailable: the live copy still works */ }
+    return {...loaded,offlineCopySavedAt:undefined as string|undefined};
+  } catch(error) {
+    if(error instanceof ApiError&&error.status===0) {
+      const cached=getOfflineTripByTripId(id);
+      if(cached?.dto) return {dto:cached.dto as Row,config:cached.config as ReturnType<typeof configFromTrip>,result:cached.result as ReturnType<typeof persistedItinerary>,offlineCopySavedAt:cached.updatedAt as string|undefined};
+    }
+    throw error;
+  }
 }
 export async function createItinerary(config:PlannerConfigPayload,strategy?:OptimizationStrategy) {
   const {trip}=await api.createTrip({...config,strategy:strategy??config.strategy??"distance-first",weights:strategy&&config.weights?STRATEGY_WEIGHTS[strategy]:config.weights});

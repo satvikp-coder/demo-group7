@@ -265,6 +265,13 @@ export default function App() {
     typeof navigator !== "undefined" ? !navigator.onLine : false,
   );
   const [offlineCityName, setOfflineCityName] = useState<string>("");
+  // Set by the itinerary page while it shows a stored copy because the server cannot be reached.
+  const [offlineCopySavedAt, setOfflineCopySavedAt] = useState<string | null>(null);
+  useEffect(() => {
+    const onCopy = (event: Event) => setOfflineCopySavedAt((event as CustomEvent).detail?.savedAt ?? null);
+    window.addEventListener("heritage-offline-copy", onCopy);
+    return () => window.removeEventListener("heritage-offline-copy", onCopy);
+  }, []);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showPwaPrompt, setShowPwaPrompt] = useState<boolean>(false);
 
@@ -451,10 +458,11 @@ export default function App() {
       <LanguageProvider>
         <div className="min-h-screen bg-salt text-charcoal font-body flex flex-col selection:bg-gold selection:text-ink">
           {/* Persistent Offline Banner */}
-          {isOffline && (
+          {(isOffline || offlineCopySavedAt) && (
             <OfflineBanner
               cityName={offlineCityName || activeItinerary?.cityId}
               hasCachedItinerary={!!getLatestOfflineTrip()}
+              offlineCopySavedAt={offlineCopySavedAt ?? undefined}
             />
           )}
 

@@ -4,12 +4,16 @@ import { WifiOff, ShieldCheck } from "lucide-react";
 interface OfflineBannerProps {
   cityName?: string;
   hasCachedItinerary?: boolean;
+  /** ISO time the stored itinerary was saved; set while an offline copy is being shown. */
+  offlineCopySavedAt?: string;
 }
 
 export const OfflineBanner: React.FC<OfflineBannerProps> = ({
   cityName,
   hasCachedItinerary = true,
+  offlineCopySavedAt,
 }) => {
+  const savedLabel = offlineCopySavedAt ? new Date(offlineCopySavedAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" }) : "";
   return (
     <div
       role="status"
@@ -18,13 +22,19 @@ export const OfflineBanner: React.FC<OfflineBannerProps> = ({
     >
       <div className="flex items-center gap-2 font-bold">
         <WifiOff className="w-4 h-4 text-ink shrink-0 animate-pulse" />
-        <span>
-          You're offline -- reconnect to load your saved itinerary
-          {cityName ? ` for ${cityName}` : ""}.
-          <span className="font-normal ml-1 hidden sm:inline">
-            City browsing & search require connectivity.
+        {offlineCopySavedAt ? (
+          <span>
+            Offline copy -- showing your itinerary saved on {savedLabel}. Reconnect for the latest prices and availability.
           </span>
-        </span>
+        ) : (
+          <span>
+            You're offline -- reconnect to load your saved itinerary
+            {cityName ? ` for ${cityName}` : ""}.
+            <span className="font-normal ml-1 hidden sm:inline">
+              City browsing & search require connectivity.
+            </span>
+          </span>
+        )}
       </div>
 
       {hasCachedItinerary && (

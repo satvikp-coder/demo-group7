@@ -7,7 +7,7 @@ import React, { useState, useRef, useMemo, useEffect, lazy, Suspense } from "rea
 import { DESIGN_TOKENS } from "../data/colors";
 import { motion, AnimatePresence } from "motion/react";
 import type { Destination } from "../api/types";
-import { loadItinerary, createItinerary, useApi, errorMessage } from "../api";
+import { loadItineraryOrOfflineCopy, createItinerary, useApi, errorMessage } from "../api";
 import { DijkstraVisualizer } from "./DijkstraVisualizer";
 const ItineraryRouteMap = lazy(()=>import("./ItineraryRouteMap"));
 class RouteMapBoundary extends React.Component<{children?:React.ReactNode},{failed:boolean}> {
@@ -180,7 +180,13 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const activeStrategy =
     activeConfig.strategy || config.strategy || "distance-first";
 
-  const request = useApi(signal => loadItinerary(activeConfig.tripId ?? "", signal), [activeConfig.tripId]);
+  const request = useApi(signal => loadItineraryOrOfflineCopy(activeConfig.tripId ?? "", signal), [activeConfig.tripId]);
+  // Tell the app shell when this page is showing a stored copy, so its offline banner can say so.
+  const offlineCopySavedAt = request.data?.offlineCopySavedAt;
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent("heritage-offline-copy", { detail: { savedAt: offlineCopySavedAt ?? null } }));
+    return () => { window.dispatchEvent(new CustomEvent("heritage-offline-copy", { detail: { savedAt: null } })); };
+  }, [offlineCopySavedAt]);
   const [pendingSave, setPendingSave] = useState(false);
   const [saveError, setSaveError] = useState("");
   // All hooks above the loading boundary; stale rows never render while reloading.
