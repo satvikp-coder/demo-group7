@@ -5,6 +5,7 @@
 | Finding | Status | Commit | Proof |
 |---------|--------|--------|-------|
 | README current/historical counts | FIXED (docs only) | 744f0d2 | SQL: 8 destinations, 25 attractions, 11 hotels, 12 restaurants, 131 routes. Full executed baseline: 122 backend tests, 56 frontend tests plus 80/33 assertions, types/build PASS, 64 browser checks. README now separates this checkpoint from dated 20 October expanded-catalog/test evidence; no catalog or algorithm change. |
+| HashTable runtime documentation | FIXED (docs only) | 252ceac | Existing dsa/README.md claimed city-data caching. Actual tripPlanner.js call sites use HashTable for attraction membership (34), directional route cache (58), and visited attractions (95). Corrected that description only; no TypeScript DSA code changed. |
 
 ## Phase 2 provider migration
 
