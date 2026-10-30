@@ -2,7 +2,7 @@ import {HttpError} from "../middleware/errorHandler.js";
 import {chatConfig} from "../chat/config.js";
 
 export const FREE_LIMIT_MESSAGE="Heritage Guide has reached its temporary free usage limit. Please try again later.";
-export function createNvidiaProvider(config=chatConfig(),fetchImpl=globalThis.fetch){
+export function createGroqProvider(config=chatConfig(),fetchImpl=globalThis.fetch){
  return async function askModel(payload,{signal}={}){
   if(!config.apiKey)throw new HttpError(503,"Heritage Guide AI is not configured. Database-only mode remains available.");
   const controller=new AbortController(),abort=()=>controller.abort();
@@ -10,9 +10,9 @@ export function createNvidiaProvider(config=chatConfig(),fetchImpl=globalThis.fe
   if(signal?.aborted)abort();
   const timeout=setTimeout(abort,Math.min(config.timeoutMs,15000));
   try{
-   const response=await fetchImpl("https://integrate.api.nvidia.com/v1/chat/completions",{
+   const response=await fetchImpl("https://api.groq.com/openai/v1/chat/completions",{
     method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${config.apiKey}`},
-    body:JSON.stringify({...payload,model:config.model,temperature:0,max_tokens:config.maxOutputTokens,stream:false}),signal:controller.signal,
+    body:JSON.stringify({...payload,model:config.model,temperature:0,max_tokens:config.maxOutputTokens,...(config.model.startsWith("openai/gpt-oss-")?{reasoning_effort:"low"}:{}),stream:false}),signal:controller.signal,
    });
    if(response.status===429){
     const error=new HttpError(429,FREE_LIMIT_MESSAGE),raw=response.headers.get("retry-after"),n=Number(raw);

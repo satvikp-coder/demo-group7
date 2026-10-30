@@ -1,11 +1,11 @@
-"""Opt-in actual NVIDIA through browser -> authenticated API -> isolated PostgreSQL."""
+"""Opt-in actual Groq through browser -> authenticated API -> isolated PostgreSQL."""
 import os,json,time,secrets
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 base=os.environ['FRONTEND_TEST_URL'];api=os.environ['API_TEST_URL']
 assert ':5310/' in api
 time.sleep(62)  # Stay within free tokens/minute after preceding live question set.
-report={'provider':'LIVE_NVIDIA','verified':False,'questions':[]}
+report={'provider':'LIVE_Groq','verified':False,'questions':[]}
 try:
  with sync_playwright() as p:
   browser=p.chromium.launch(channel='chrome',headless=True)

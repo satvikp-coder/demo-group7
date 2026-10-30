@@ -8,7 +8,7 @@ A Gujarat heritage and tourism planning platform built for CSC210 Data Structure
 
 ## Current seeded review - 30 October 2026
 
-The final-review database contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 routes. Backend tests: 122; frontend tests: 56 plus 80 Trie and 33 planner assertions; TypeScript, production build and the 64-check browser regression pass. The 27 chat tests use mocked NVIDIA calls. The single live NVIDIA backend-route attempt returned 503, so live answers remain unverified. See [the final bug log](docs/FINAL_BUG_LOG.md) for scoped fixes and current evidence. No attraction expansion imports were run for this review.
+The final-review database contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 routes. Backend tests: 123; frontend tests: 56 plus 80 Trie and 33 planner assertions; TypeScript, production build and the 64-check browser regression pass. The 28 chat tests use mocked Groq calls. See [the final bug log](docs/FINAL_BUG_LOG.md) for Groq restoration, current live verification and scoped fixes. No attraction expansion imports were run for this review.
 
 ## Historical local verification - 20 October 2026
 
@@ -48,11 +48,11 @@ Budgets distinguish known positive prices, recorded zero charges and unavailable
 
 See [map implementation](reports/ITINERARY_MAP_IMPLEMENTATION.md), [routing evidence](reports/ROUTING_VERIFICATION.md), [budget semantics](reports/BUDGET_UNKNOWN_COST_FIX.md), and [test results](reports/MAP_BUDGET_TEST_RESULTS.md). Run `npm run test:map-budget` for deterministic tests or `npm run test:map-budget:local -- --production` for isolated PostgreSQL/API/browser tests. The automated browser suite substitutes tile responses rather than downloading public tiles in bulk.
 
-## Heritage Guide (NVIDIA NIM)
+## Heritage Guide (Groq)
 
-A compact, closed-by-default AI assistant reads the actual catalog and your authorized trips/budgets. It supports English/Hindi/Gujarati, bounded local tool calling, and a clearly labeled database-only mode when AI is unavailable. Messages and minimal relevant facts go to NVIDIA; chat history stays in memory and clears on logout. No live rates/bookings or fabricated data.
+A compact, closed-by-default AI assistant reads the actual catalog and your authorized trips/budgets. It supports English/Hindi/Gujarati, bounded local tool calling, and a clearly labeled database-only mode when AI is unavailable. Messages and minimal relevant facts go to Groq; chat history stays in memory and clears on logout. No live rates/bookings or fabricated data.
 
-Configure `NVIDIA_API_KEY` in ignored `backend/.env` and optionally `NVIDIA_MODEL` (default `meta/llama-3.3-70b-instruct`). Obtain a key from [NVIDIA](https://build.nvidia.com/meta/llama-3_3-70b-instruct). Never use `VITE_` variables for secrets. Requests have a 15-second deadline, no automatic retries and per-IP/per-user limits. Missing configuration leaves database-only mode available. See [provider setup](docs/NVIDIA_CHAT.md).
+Configure `GROQ_API_KEY` in ignored `backend/.env` and optionally `GROQ_MODEL` (default `openai/gpt-oss-20b`). Obtain a key from [Groq](https://console.groq.com/keys). Never use `VITE_` variables for secrets. Requests have a 15-second deadline, no automatic retries and per-IP/per-user limits. Missing configuration leaves database-only mode available. See [provider setup](docs/NVIDIA_CHAT.md).
 
 See [implementation](reports/HERITAGE_GUIDE_IMPLEMENTATION.md), [security](reports/HERITAGE_GUIDE_SECURITY.md), [test results](reports/HERITAGE_GUIDE_TEST_RESULTS.md), and [configuration/demo](reports/HERITAGE_GUIDE_LOCAL_DEMO.md). Run `npm run test:chat` or isolated `npm run test:chat:local`. Do not publish private keys or this workspace's private context export.
 
@@ -296,7 +296,7 @@ All categories are under `/api`:
 - `/trips`: authenticated owner trip discovery, creation, generation and persisted retrieval.
 - `DELETE /trips/:id`: confirmed permanent owner-only deletion, including that trip's stops/budget. Returns 204 on success, 404 for foreign/missing IDs, 401 without a valid session and 400 for invalid requests.
 - `/trips/:id/budget`: saved known-cost breakdown.
-- `POST /chat`: authenticated Heritage Guide questions or explicitly labeled read-only database lookups; bounded NVIDIA calls, owner-scoped trip tools and quota handling.
+- `POST /chat`: authenticated Heritage Guide questions or explicitly labeled read-only database lookups; bounded Groq calls, owner-scoped trip tools and quota handling.
 - `/admin`: operator-only catalog CRUD.
 
 See [backend API documentation](backend/README.md) for contracts and permissions.

@@ -1,5 +1,40 @@
 # Final bug log
 
+## Groq restoration after d8d2ff6
+
+Confirmed bug: NVIDIA could not complete live grounded chat under the existing 15-second total deadline. Its retired default returned HTTP 410; GPT-OSS timed out even with low reasoning; three catalog-listed Mistral alternatives returned 404. Evidence and exact timings remain below.
+
+Compared migration parent and current config, provider, chat service, route and tests. Restored only the native-fetch provider endpoint/configuration and its imports; no SDK/dependency added and no project-wide revert. Default `openai/gpt-oss-20b` uses `reasoning_effort: low`; other configurable models do not receive that model-specific option. The 15-second deadline, seven allowlisted read-only tools, system prompt, JWT/account checks, encrypted owner-bound history, EN/GU/HI handling, input limits, IP/user quotas, concurrency, daily budget and secret sanitization are retained. Widget changes are provider-name substitutions only in existing privacy/label strings; no layout/style/behavior changes. Test runners blank the current provider key, and subprocess redaction covers both providers. Existing NVIDIA secret values preserved.
+
+The key was present in the separate main project's ignored `.env.local-production`, rather than release `backend/.env`. Only the Groq key was transferred privately to ignored release backend configuration; no database or other secret settings copied. `GROQ_MODEL=openai/gpt-oss-20b`. No credential values printed or committed. Exact provider-key matches in tracked diff and built frontend: zero.
+
+Groq account model catalog: HTTP 200, 11 accessible catalog entries, including the selected model. Before source changes, the real chat service with Groq transport completed `search_destinations` (valid JSON), an authenticated real read-only database lookup, final grounded reply naming all eight seeded destinations and valid encrypted history in **1,642 ms**. Provider calls: HTTP 200 in 751 ms (tool_calls) and HTTP 200 in 860 ms (stop). No fabricated catalog data used.
+
+An initial authenticated destinations request passed HTTP 200 in 1,359 ms. The immediately following Somnath request hit a safely handled provider 429. Subsequent reliability checks back off 61 seconds between questions instead of weakening quotas or retrying automatically. These pauses are outside measured request latency.
+
+Restoration: **PASS**, authenticated HTTP route, three complete rounds with real PostgreSQL and no mocked provider. `/health` and `/ready` both HTTP 200 on default port 5000 (`backend npm start`). Each of the nine requests returned HTTP 200, mode=ai, a meaningful reply and a successfully decrypted owner-bound history token. Each request completed within 15 seconds. Follow-ups passed the returned history_token.
+
+| Question | Round 1 | Round 2 | Round 3 |
+|----------|---------|---------|---------|
+| Which destinations are supported by the planner? | 1,230 ms | 3,646 ms | 1,130 ms |
+| What is the best time to visit Somnath? | 1,173 ms | 1,998 ms | 1,044 ms |
+| Tell me about Modhera. | 1,372 ms | 1,559 ms | 1,301 ms |
+
+Reviewed all nine replies: destination lists match the eight actual seeded names; Somnath correctly says the available data does not specify a best visiting time; Modhera replies use stored attraction names, fees, duration and recorded opening times rather than invented advice. Stored price snapshots are not independently reverified current tourism rates. Native Gujarati/Hindi response quality remains unverified beyond preserved language handling/regression tests. Provider quotas still apply: rapid traffic can receive friendly 429 even though paced individual requests pass.
+
+Exact temporary tourist accounts deleted in finally. Final independent SQL after route and browser cleanup: **2 users, 0 trips, 8 destinations, 25 attractions**. Both pre-existing users preserved; no imports/reset. Only the confirmed provider restoration is committed; no push performed. Historical NVIDIA evidence and instruction/handoff files retained unchanged.
+
+| Regression gate | Result |
+|-----------------|--------|
+| Backend tests | PASS, 123/123; includes 28 chat tests, missing key, upstream 401, timeout, quota/network sanitization, IP/user rate limits, grounding, history, ownership and model-specific reasoning options |
+| Backend syntax | PASS |
+| Frontend unit tests | PASS, 56 tests plus 80 Trie and 33 planner assertions |
+| TypeScript | PASS, frontend npm run lint |
+| Production build | PASS, VITE_API_BASE_URL=/api, 2442 modules |
+| Production browser regression | PASS, 64/64 checks, zero page errors; cleanup complete and original catalog preserved |
+
+Browser harness initially failed before checks because it defaulted to isolated ports 4310/5310, then because its expected response URL used 5000 while the production frontend correctly used same-origin 3000/api. Corrected only test target variables to FRONTEND_TEST_URL=http://localhost:3000 and API_TEST_URL=http://localhost:3000/api; no CORS/port/security override. The exact orphaned tourist from the mismatched-response attempt was identified by test name/email pattern and creation time after this run began, then deleted by ID. The final browser run passed. No application bug was inferred from those harness failures.
+
 ## Timeout configuration evaluation after a31961c
 
 Status: **BLOCKED / NOT VERIFIED**. Clean starting tree on final-fixes. Four distinct models tested, once each, sequentially; no rate limits observed and no unavailable-model retries. Current authenticated NVIDIA catalog returned HTTP 200 and listed all four. Catalog listing did not establish inference availability.

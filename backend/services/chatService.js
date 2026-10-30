@@ -4,7 +4,7 @@ import {SYSTEM_PROMPT} from "../chat/systemPrompt.js";
 import {TOOL_DEFINITIONS} from "../chat/toolDefinitions.js";
 import {runTool,APP_HELP} from "../chat/toolHandlers.js";
 import {historyCodec} from "../chat/history.js";
-import {createNvidiaProvider,FREE_LIMIT_MESSAGE} from "./nvidiaService.js";
+import {createGroqProvider,FREE_LIMIT_MESSAGE} from "./groqService.js";
 import {HttpError} from "../middleware/errorHandler.js";
 import {env} from "../config/env.js";
 async function withinDeadline(task,signal){
@@ -12,7 +12,7 @@ async function withinDeadline(task,signal){
  try{return await Promise.race([task,new Promise((_,reject)=>{abort=()=>reject(new HttpError(504,"Heritage Guide timed out. Please try again later."));if(signal.aborted)abort();else signal.addEventListener("abort",abort,{once:true});})]);}
  finally{signal.removeEventListener("abort",abort);}
 }
-export function createChatService({config=chatConfig(),provider=createNvidiaProvider(config),tool=runTool,secret=env.JWT_SECRET,now=()=>Date.now()}={}){
+export function createChatService({config=chatConfig(),provider=createGroqProvider(config),tool=runTool,secret=env.JWT_SECRET,now=()=>Date.now()}={}){
  const codec=historyCodec(secret,config.maxHistory,now);
  let active=0,day="",calls=0;
  const helpCache=new Map(),version=createHash("sha256").update(JSON.stringify(APP_HELP)+SYSTEM_PROMPT+config.model).digest("hex");

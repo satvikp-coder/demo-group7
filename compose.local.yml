@@ -26,8 +26,8 @@ services:
   backend:
     environment:
       MAP_ROUTING_URL: ${MAP_ROUTING_URL-https://routing.openstreetmap.de/routed-car}
-      NVIDIA_API_KEY: ${NVIDIA_API_KEY:-}
-      NVIDIA_MODEL: ${NVIDIA_MODEL:-meta/llama-3.3-70b-instruct}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-20b}
       CHAT_RATE_LIMIT: ${CHAT_RATE_LIMIT:-6}
       CHAT_MAX_HISTORY: ${CHAT_MAX_HISTORY:-8}
       CHAT_MAX_OUTPUT_TOKENS: ${CHAT_MAX_OUTPUT_TOKENS:-700}

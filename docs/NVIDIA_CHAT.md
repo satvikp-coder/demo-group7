@@ -1,3 +1,13 @@
+# Heritage Guide provider: Groq restoration
+
+Current backend provider is Groq, using native fetch at `https://api.groq.com/openai/v1/chat/completions`. Set backend-only `GROQ_API_KEY` and optionally `GROQ_MODEL` in ignored `backend/.env`; obtain a key from https://console.groq.com/keys. Verified default: `openai/gpt-oss-20b`, with `reasoning_effort: low`. No SDK/dependency added. Restart with `npm --prefix backend start`.
+
+The existing 15-second total deadline, authenticated route, read-only tools, encrypted history, validation, IP/user limits, concurrency and secret redaction remain. `npm run test:chat` covers missing key, success, 401, timeout, quota/network failures and security protections. Provider quotas can return friendly 429 responses even when a single request is fast. Current live evidence is in `docs/FINAL_BUG_LOG.md`. Existing ignored NVIDIA credentials are preserved and unused.
+
+## Historical NVIDIA migration (superseded)
+
+The setup and verification below describe the unsuccessful NVIDIA migration; do not use its configuration for the current backend.
+
 # Heritage Guide provider
 
 The existing authenticated `POST /api/chat` route and request/response schema are unchanged. Questions are grounded through the existing read-only, allowlisted database lookups. Unknown fees/timings remain unknown; `backend/chat/systemPrompt.js` is unchanged.
