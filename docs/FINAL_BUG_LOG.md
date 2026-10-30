@@ -1,5 +1,22 @@
 # Final bug log
 
+## Timeout configuration evaluation after a31961c
+
+Status: **BLOCKED / NOT VERIFIED**. Clean starting tree on final-fixes. Four distinct models tested, once each, sequentially; no rate limits observed and no unavailable-model retries. Current authenticated NVIDIA catalog returned HTTP 200 and listed all four. Catalog listing did not establish inference availability.
+
+The temporary evaluation harness called the real createChatService with its existing system prompt, seven tools, required-first/auto-subsequent tool choice, temperature 0, 700-output-token limit and 15-second whole-operation deadline. It injected only the candidate model into the existing provider; GPT-OSS additionally received reasoning_effort=low through the test transport. Actual temporary users were created through registration, and the real read-only tool runner received their userId. No application source or local environment configuration changed in this evaluation.
+
+| Model / configuration | Upstream HTTP | First tool latency | Second response | Total workflow time | Result |
+|-----------------------|---------------|--------------------|-----------------|---------------------|--------|
+| openai/gpt-oss-20b, reasoning_effort=low | No response before abort; service 504 | NOT VERIFIED | Not reached | 15,021 ms | FAIL: deadline exceeded before any tool call |
+| mistralai/mistral-7b-instruct-v0.3 | 404; service 503 | NOT VERIFIED; rejection 202 ms | Not reached | 206 ms | FAIL: inference unavailable |
+| nv-mistralai/mistral-nemo-12b-instruct | 404; service 503 | NOT VERIFIED; rejection 100 ms | Not reached | 103 ms | FAIL: inference unavailable |
+| mistralai/mistral-large-2-instruct | 404; service 503 | NOT VERIFIED; rejection 124 ms | Not reached | 130 ms | FAIL: inference unavailable |
+
+No successful tool calls or database lookups occurred in these four attempts, so grounded final answers and history tokens remain NOT VERIFIED. These are complete-service attempts, not new authenticated HTTP-route success claims. The prior real /api/chat 504 remains the latest live route evidence. No candidate qualified for repeat consistency checks or a source/default-model correction. Existing deadline and friendly failures preserved; no dependencies, DSA, UI, CORS, ports or unrelated code changed.
+
+Each temporary account was deleted by its exact ID in finally. SQL before/after: **2 users, 0 trips, 8 destinations, 25 attractions**; both pre-existing users preserved. Temporary evaluation script removed after recording results. Regression validation: `npm --prefix backend test` passed 122 tests, 0 failed; `npm --prefix backend run build` passed backend syntax checks. No new regression test added because no source fix was justified. No push performed. Remaining blocker: no tested callable configuration completed the required provider/tool/provider sequence within 15 seconds; additional model/provider availability must be established before changing the default.
+
 ## Live NVIDIA verification follow-up
 
 Verified on `final-fixes` after ca46878. Initial working tree was clean. No application source, dependencies, UI, DSA, ports, CORS or database settings changed; no remote push performed.
