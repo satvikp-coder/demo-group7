@@ -507,6 +507,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                   </h3>
                   <button
                     onClick={() => setIsDrawerOpen(false)}
+                    aria-label="Close record editor"
                     className="text-stone hover:text-charcoal cursor-pointer"
                   >
                     <X className="w-5 h-5" />
@@ -527,6 +528,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     </label>
                     <input
                       type="text"
+                      aria-label="Record Title / Name"
                       value={editingItem.data.name || ""}
                       onChange={(e) =>
                         setEditingItem({
@@ -543,7 +545,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                     <>
                       <div>
                         <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Destination *</label>
-                        <select value={editingItem.data.destinationId || ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,destinationId:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold">
+                        <select aria-label="Destination" value={editingItem.data.destinationId || ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,destinationId:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold">
                           <option value="">Select destination</option>
                           {destinations.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
                         </select>
@@ -551,7 +553,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                       {(["lat", "lng"] as const).map(field => (
                         <div key={field}>
                           <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">{field === "lat" ? "Latitude" : "Longitude"} *</label>
-                          <input type="number" step="any" value={editingItem.data[field] ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" required />
+                          <input aria-label={field === "lat" ? "Latitude" : "Longitude"} type="number" step="any" value={editingItem.data[field] ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" required />
                         </div>
                       ))}
                     </>
@@ -561,7 +563,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                       {(["category", "visitDurationHours", "entryFeeNumeric"] as const).map(field => (
                         <div key={field}>
                           <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">{field === "category" ? "Category *" : field === "visitDurationHours" ? "Visit duration (hours) *" : "Entry price (leave blank if unknown)"}</label>
-                          <input type={field === "category" ? "text" : "number"} step="any" value={editingItem.data[field] ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" />
+                          <input aria-label={field === "category" ? "Category" : field === "visitDurationHours" ? "Visit duration (hours)" : "Entry price (leave blank if unknown)"} type={field === "category" ? "text" : "number"} step="any" value={editingItem.data[field] ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,[field]:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" />
                         </div>
                       ))}
                     </>
@@ -569,7 +571,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                   {editingItem.type === "restaurants" && (
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-stone mb-1 font-bold">Cost per person *</label>
-                      <input type="number" value={editingItem.data.avgCostPerPerson ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,avgCostPerPerson:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" required />
+                      <input aria-label="Cost per person" type="number" value={editingItem.data.avgCostPerPerson ?? ""} onChange={e => setEditingItem({...editingItem,data:{...editingItem.data,avgCostPerPerson:e.target.value}})} className="w-full p-2 bg-white border border-stone/40 outline-none focus:border-gold" required />
                     </div>
                   )}
                   {editingItem.type === "destinations" && (
@@ -580,6 +582,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                         </label>
                         <input
                           type="text"
+                          aria-label="District"
                           value={editingItem.data.district || ""}
                           onChange={(e) =>
                             setEditingItem({
@@ -599,6 +602,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                           Category
                         </label>
                         <select
+                          aria-label="Category"
                           value={
                             editingItem.data.category || CATEGORY_TAXONOMY[0]
                           }
@@ -630,6 +634,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                           Stay Type Taxonomy
                         </label>
                         <select
+                          aria-label="Stay Type Taxonomy"
                           value={
                             editingItem.data.stayType || STAY_TYPE_TAXONOMY[0]
                           }
@@ -658,6 +663,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
                         </label>
                         <input
                           type="number"
+                          aria-label="Price Per Night"
                           value={editingItem.data.pricePerNight ?? ""}
                           onChange={(e) =>
                             setEditingItem({

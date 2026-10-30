@@ -227,6 +227,7 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
               <Search className="w-6 h-6 text-stone group-focus-within:text-gold transition-colors" />
               <input
                 type="text"
+                aria-label={t('explore.searchPlaceholder', 'Search destinations or districts...')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={t('explore.searchPlaceholder', 'Search destinations or districts...')}
