@@ -228,6 +228,8 @@ npm --prefix frontend run dev
 
 Frontend: `http://localhost:3000`; API: `http://localhost:5000/api`. Match `CORS_ORIGIN` and `VITE_API_BASE_URL` to those origins. Use a dedicated development database and an owner connection for migrations. Public deployments use separate restricted runtime credentials.
 
+For a production build use `VITE_API_BASE_URL=/api npm --prefix frontend run build`. On Windows Git Bash, use `MSYS_NO_PATHCONV=1 VITE_API_BASE_URL=/api npm --prefix frontend run build` to preserve `/api`.
+
 ## Environment Variables
 
 | Name | Purpose |
@@ -328,6 +330,11 @@ Academic proposals and old experiment baselines are retained as historical desig
 
 ## Known Limitations
 
+- In the 25-attraction submission seed, Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara retain provisional or unverified data; historical enrichment reports do not certify every seeded field. Some hotel prices are dated or historical snapshots rather than live quotes.
+- Gujarati/Hindi search aliases and new short UI translations need native review; destination descriptions and other data/UI text may remain English-only. See [translation review](docs/TRANSLATION_REVIEW.md).
+- Runtime search is prefix-based; typo tolerance is not implemented by the public endpoint. Physical-demand and accessibility data are incomplete; unknown suitability is not treated as verified accessibility.
+- Heritage Guide requires a backend Groq key and is subject to provider quotas and application rate limits. Production operator self-registration is prohibited; operators need owner approval.
+- Native-device testing is not complete; browser viewport checks do not establish native-device compatibility. A live deployment may be older than this locally verified branch.
 - Dated tourism information can become stale; admission, duration, operating, rating and accessibility coverage is uneven. Some destinations cannot fill longer requested tours with supported timed visits.
 - Transport fares are unavailable and excluded from known-cost totals. OSRM times are estimates, not live traffic.
 - Planning is single-destination and heuristic. Dates, explicit nights and sourced operating/closure policies are supported, but unsupported holidays, reservations and live availability are not guaranteed.

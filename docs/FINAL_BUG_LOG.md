@@ -1,5 +1,11 @@
 # Final bug log
 
+## Final submission documentation audit
+
+Reproduced documentation omission: README Known Limitations did not explicitly list the five provisional seeded cities, pending native review of aliases/short translations, English-only descriptions, absent runtime typo tolerance, incomplete physical-demand data, provider quotas, operator signup policy or native-device testing status. Existing evidence: historical docs/TEAM_RESPONSIBILITIES.md (three reviewed cities/five pending), docs/TRANSLATION_REVIEW.md, Batch 4 findings below, current auth policy and prefix-only runtime search. Added those qualifications without changing application behavior or historical credits. README now also includes the Windows Git Bash MSYS_NO_PATHCONV=1 note for the existing /api production build. Validation: inspected against current config/call sites and existing evidence; git diff --check passes.
+
+History confirmation: CODEX_HANDOFF.md and AGENTS.md are both tracked; no Phase 4 removal was found. Neither file was changed or deleted. Current historical team document lists four role owners; current full HEAD history before this documentation correction attributes 133 commits to Satvik identities, 9 to Aryan identities, 2 to Manya and 2 to Samarth, and none to Sonam. Commit counts do not establish total individual contribution. Samarth has Git evidence but is absent from that historical role list; one Aryan identity has a malformed author-name prefix. These require human review; credits were not invented or rewritten. The original mid-semester report/Section 2 was not found among repository files, so its wording and any required submission disclosure cannot be verified here.
+
 ## Groq restoration after d8d2ff6
 
 Confirmed bug: NVIDIA could not complete live grounded chat under the existing 15-second total deadline. Its retired default returned HTTP 410; GPT-OSS timed out even with low reasoning; three catalog-listed Mistral alternatives returned 404. Evidence and exact timings remain below.
