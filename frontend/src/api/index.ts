@@ -1,4 +1,5 @@
 import {removeTripFromOfflineCache} from "../utils/offlineStorage";
+import {createRequestCache} from "../utils/requestCache";
 import {STRATEGY_WEIGHTS} from '../../../dsa/planning/priorities';
 import { useEffect, useRef, useState } from "react";
 import { catalogPhoto, imageSource } from "../utils/imageSources";
@@ -9,9 +10,12 @@ type Row = Record<string, any>;
 export interface SessionUser { id: string; name: string; email: string; role: "tourist" | "operator" }
 const BASE_URL = (import.meta.env?.VITE_API_BASE_URL || "").replace(/\/$/, "");
 const TOKEN_KEY = "heritage_api_token";
+// Session-lifetime cache for public destination data; cleared on logout and after admin edits.
+const apiCache = createRequestCache();
+export const clearApiCache = () => apiCache.clear();
 export const session = {
   token: () => sessionStorage.getItem(TOKEN_KEY),
-  clear: () => { sessionStorage.removeItem(TOKEN_KEY); sessionStorage.removeItem("heritage_api_trip_ids"); sessionStorage.removeItem("heritage_api_hidden_trip_ids"); window.dispatchEvent(new Event("heritage-auth-change")); },
+  clear: () => { clearApiCache(); sessionStorage.removeItem(TOKEN_KEY); sessionStorage.removeItem("heritage_api_trip_ids"); sessionStorage.removeItem("heritage_api_hidden_trip_ids"); window.dispatchEvent(new Event("heritage-auth-change")); },
 };
 export class ApiError extends Error { constructor(message: string, public status = 0, public retryAfter?: number) { super(message); } }
 export const errorMessage = (error: unknown) => error instanceof Error ? error.message : "Request failed";
@@ -140,14 +144,26 @@ export const api = {
     const rows = await all(`/destinations/search?prefix=${encodeURIComponent(prefix.trim())}`,signal);
     return Promise.all(rows.map(row=>api.destination(row.id,signal)));
   },
-  async destination(id: string, signal?: AbortSignal): Promise<Destination> {
+  // Destination data is fetched once per session (and shared while in flight); see clearApiCache().
+  destination(id: string, signal?: AbortSignal): Promise<Destination> {
+    return apiCache.get(`destination:${id}`, () => api.fetchDestination(id), signal);
+  },
+  catalog(signal?: AbortSignal): Promise<Destination[]> {
+    return apiCache.get("catalog", () => api.fetchCatalog(), signal);
+  },
+  // Summary use only (names and counts): the catalog already holds every destination, so use it instead of four more requests.
+  async catalogDestination(id: string, signal?: AbortSignal): Promise<Destination> {
+    const found = (await api.catalog(signal)).find(d => d.id === id);
+    return found ?? api.destination(id, signal);
+  },
+  async fetchDestination(id: string, signal?: AbortSignal): Promise<Destination> {
     const base = `/destinations/${idPath(id)}`;
     const [row,attractions,hotels,restaurants] = await Promise.all([
       request<Row>(base,{signal}),all(base+"/attractions",signal),all(base+"/hotels",signal),all(base+"/restaurants",signal),
     ]);
     return {...destinationFromRow(catalogRecordFromResponse(row)),attractions:attractions.map(attractionFromRow),hotels:hotels.map(hotelFromRow),restaurants:restaurants.map(restaurantFromRow)};
   },
-  async catalog(signal?: AbortSignal): Promise<Destination[]> {
+  async fetchCatalog(signal?: AbortSignal): Promise<Destination[]> {
     return (await all("/destinations/catalog",signal)).map(row => {
       for (const resource of ["attractions","hotels","restaurants"]) {
         if (!Array.isArray(row[resource])) throw new ApiError("Server returned an invalid catalog collection.");
@@ -217,6 +233,7 @@ export const api = {
 
 async function catalogMutation<T>(mutation: Promise<T>) {
   const result = await mutation;
+  clearApiCache(); // admin edits change the catalog: drop cached copies before listeners refetch
   window.dispatchEvent(new Event("heritage-catalog-change"));
   return result;
 }
@@ -297,9 +314,9 @@ export function persistedItinerary(dto:Row,city:Destination): GeneratedItinerary
       nodesVisited:Number.NaN,edgesRelaxed:Number.NaN,executionTimeMs:Number.NaN},warning:warnings.join(" "),
   };
 }
-export async function loadItinerary(id:string,signal?:AbortSignal) {
+export async function loadItinerary(id:string,signal?:AbortSignal,options:{summaryOnly?:boolean}={}) {
   const dto=await api.trip(id,signal);
-  const city=await api.destination(dto.trip.destination_id,signal);
+  const city=options.summaryOnly?await api.catalogDestination(dto.trip.destination_id,signal):await api.destination(dto.trip.destination_id,signal);
   return {dto,config:configFromTrip(dto.trip),result:persistedItinerary(dto,city)};
 }
 export async function createItinerary(config:PlannerConfigPayload,strategy?:OptimizationStrategy) {

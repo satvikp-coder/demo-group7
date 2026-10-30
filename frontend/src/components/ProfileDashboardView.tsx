@@ -87,7 +87,7 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
 
   const request = useApi(async () => {
     const ids = (await api.savedTrips()).map(row => row.id);
-    const trips = await Promise.all(ids.map(id => loadItinerary(id)));
+    const trips = await Promise.all(ids.map(id => loadItinerary(id, undefined, {summaryOnly: true})));
     const listings = currentUser?.role === "operator" ? await api.adminList("hotels") : [];
     return {trips:trips.map(({config,result,dto}) => ({id:config.tripId,title:result.activeCity.name,
       dates:dto.trip.created_at,daysCount:config.tripDays,totalCost:result.totalCost,planningProgress:dto.trip.generated_at?100:0,
