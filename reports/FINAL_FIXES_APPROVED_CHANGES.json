@@ -1,5 +1,5 @@
 {
-  "authorization": "User explicitly approved these exact 24 classroom-identical final-fix hashes after reviewing the proposal on final-fixes at 787f2e6. Later changes require separate review.",
+  "authorization": "User explicitly approved these exact 24 classroom-identical final-fix hashes after reviewing the proposal on final-fixes at 787f2e6. Later changes require separate review. The user separately authorized the two exact Vite photograph-manifest fix entries after baseline 87682c4; the original 24 entries are preserved.",
   "files": {
     "frontend/src/App.tsx": {
       "sha256": "55d3aa943686b9dc8b2ceccb6a472bc108bf65305b651968539844689995b331",
@@ -96,6 +96,14 @@
     "frontend/src/utils/stayDates.ts": {
       "sha256": "fcb7de7ccae1fa9f0feb54e67852c28272f3fdf5c7ad67011f07177bef1bb0da",
       "reason": "2129771 fix(planner): derive lodging nights from arrival and departure dates"
+    },
+    "frontend/src/utils/imageSources.ts": {
+      "sha256": "0d0d9e7162fb2d1ffbe70a411487ee7168d06468e6a5c6a0568f527bf61fd1e2",
+      "reason": "Separately approved by the user after baseline 87682c4: replace only the unsupported public-directory JSON import with the source-managed manifest import; resolver behavior is unchanged."
+    },
+    "frontend/src/assets/photographs/manifest.json": {
+      "sha256": "e2095411e18dcbe86b6fe69f6105d42cd086799d71a0486cd2a93ab62852b840",
+      "reason": "Separately approved by the user after baseline 87682c4: byte-identical copy of the existing public photograph manifest, preserving every photograph, credit, license, alias and catalog mapping."
     }
   }
 }

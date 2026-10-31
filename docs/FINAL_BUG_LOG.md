@@ -1,5 +1,21 @@
 # Final bug log
 
+## Vite photograph-manifest import correction
+
+Reproduced the exact Vite development warning through its middleware without opening a port: imageSources.ts imported ../../public/assets/photographs/manifest.json, which Vite rewrote to /public/assets/photographs/manifest.json?import. Public assets are served without source-module transforms. A new regression failed with that exact warning before the fix.
+
+Changed only the import to ../assets/photographs/manifest.json and added an exact copy under frontend/src/assets/photographs/. The original public manifest, all photograph files, credits and resolver functions remain unchanged. Both manifests contain 31 photos, 15 aliases, 74 record mappings and 74 name mappings. New tests check real Vite middleware/module transformation, raw-byte and parsed-JSON equality, public asset mappings and photoCredit results; all original assertions remain.
+
+The user explicitly approved both source hashes and their two additional entries in reports/FINAL_FIXES_APPROVED_CHANGES.json. All 24 previous entries and audit protections were preserved. imageSources.ts SHA-256: 0d0d9e7162fb2d1ffbe70a411487ee7168d06468e6a5c6a0568f527bf61fd1e2. Both manifest copies SHA-256: e2095411e18dcbe86b6fe69f6105d42cd086799d71a0486cd2a93ab62852b840.
+
+Release inspection found an additional checkout issue: Git would normalize the new source manifest's 668 CRLF endings to LF, while the public copy is pinned with -text. Before the pin, raw and filtered Git blob hashes differed (21ad528e vs afcef27f). The user separately approved one matching -text entry for the source copy and a raw-byte equality assertion. Afterward both Git blob hashes are 21ad528e38df017aa9e18835f54f52ffe9404379. No asset content or application behavior was changed to resolve this checkout issue.
+
+No existing manifest synchronizer covers both locations: the historical acquisition script writes the public copy only. Future approved manifest updates must update both files; the parity regression rejects divergence. Earlier browser launching was not retried through the rejected detached/encoded command. The previously authorized ordinary foreground backend/preview commands were accepted on default ports 5000/3000 for release verification, with existing CORS/security configuration retained.
+
+Release verification: backend 123/123; mocked Groq 28/28; frontend 58 tests (eight image tests), 80 Trie and 33 planner assertions; TypeScript, backend syntax and production /api build (2442 modules) PASS. Auth/destination/trip/admin HTTP suites passed 17/106/54/101 requests; database constraints rolled back their test changes. Source audit: zero credential findings and zero source mismatches; existing unauthorized-change regression PASS. Backend/frontend npm audits: zero vulnerabilities. Tracked source, reachable history and built bundle scans found zero credential-pattern/exact-current-secret matches. README's 31 relative links resolve; its earlier test totals are explicitly historical.
+
+Image verification decoded all 34 unique manifest-referenced public images without errors. The existing live catalog audit checked 56 actual records (34 photograph associations, 22 explicit fallbacks) and 30 served assets with zero errors. Full production browser suite: 64/64, zero page errors, cleanupCompleted=true, originalCatalogPreserved=true. Independent final SQL: 2 pre-existing users, 0 trips, 8 destinations, 25 attractions; zero browser fixture users remain. No provider code changed and no live Groq quota was consumed; the previous 9/9 live chat evidence remains historical. No photograph, license, database, authentication, DSA, dependency or deployment configuration changed.
+
 ## Phase 5 source-approval blocker resolution
 
 Reproduced `npm run audit:source` failure: 25 reported frontend mismatches, zero credential findings. Investigation checked every path against classroom/main, all existing approval manifests and LF/CRLF variants. Twenty-four files are byte-equivalent to the classroom baseline but contain later documented bug fixes: 17 have outdated approval hashes and seven new helpers have no approval entry. These are missing review records, not unexplained new frontend changes. Exact paths, SHA-256 values and the latest relevant fix commit are recorded in reports/FINAL_FIXES_APPROVED_CHANGES.json.

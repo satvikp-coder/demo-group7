@@ -1,8 +1,39 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {catalogImage,destinationFromRow,attractionFromRow,hotelFromRow,restaurantFromRow} from '../../frontend/src/api/index';
-import {catalogPhoto, photoCredits} from '../../frontend/src/utils/imageSources';
+import {catalogPhoto, photoCredits, imageSource, photoCredit} from '../../frontend/src/utils/imageSources';
 import {existsSync,readFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {IncomingMessage,ServerResponse} from 'node:http';
+import {PassThrough} from 'node:stream';
+
+test('Vite serves the photograph manifest as a source module without a public-import warning',async()=>{
+ const {createServer,createLogger}=await import(new URL('../../frontend/node_modules/vite/dist/node/index.js',import.meta.url).href);
+ const warnings:string[]=[];const logger=createLogger('silent');logger.warn=(message:string)=>{warnings.push(message);};
+ const server=await createServer({root:fileURLToPath(new URL('../../frontend',import.meta.url)),configFile:false,appType:'custom',customLogger:logger,server:{middlewareMode:true,hmr:false,watch:null},optimizeDeps:{noDiscovery:true,include:[]}});
+ const socket=new PassThrough();socket.on('data',()=>{});
+ try{
+  const module=await server.transformRequest('/src/utils/imageSources.ts');
+  const dependency=module.code.match(/import manifest from "([^"]+)"/)?.[1];assert.ok(dependency);
+  const request=new IncomingMessage(socket as unknown as import('node:net').Socket);request.method='GET';request.url=dependency;request.headers={host:'localhost:3000'};
+  const response=new ServerResponse(request);response.assignSocket(socket as unknown as import('node:net').Socket);
+  await new Promise<void>((resolve,reject)=>{response.on('finish',resolve);server.middlewares(request,response,(error?:Error)=>error?reject(error):response.end());});
+  assert.equal(response.statusCode,200);assert.doesNotMatch(warnings.join('\n'),/Assets in public directory cannot be imported from JavaScript/);
+  const compiled=await server.transformRequest(dependency);assert.match(compiled.code,/export default/);
+ }finally{socket.destroy();await server.close();}
+});
+
+test('source and public manifests stay identical and preserve every public mapping and credit',()=>{
+ assert.deepEqual(readFileSync(new URL('../../frontend/src/assets/photographs/manifest.json',import.meta.url)),readFileSync(new URL('../../frontend/public/assets/photographs/manifest.json',import.meta.url)));
+ const publicManifest=JSON.parse(readFileSync(new URL('../../frontend/public/assets/photographs/manifest.json',import.meta.url),'utf8'));
+ const sourceManifest=JSON.parse(readFileSync(new URL('../../frontend/src/assets/photographs/manifest.json',import.meta.url),'utf8'));
+ assert.deepEqual(sourceManifest,publicManifest);
+ const checkAsset=(path:string)=>{assert.match(path,/^\/assets\//);assert.ok(existsSync(new URL('../../frontend/public'+path,import.meta.url)));};
+ for(const [alias,path] of Object.entries(publicManifest.aliases) as [string,string][]){assert.equal(imageSource(alias),imageSource(path));checkAsset(imageSource(alias));}
+ for(const [key,path] of Object.entries(publicManifest.records) as [string,string][]){const [kind,...slug]=key.split(':');assert.equal(catalogPhoto(kind,{slug:slug.join(':')}),imageSource(path));checkAsset(imageSource(path));}
+ for(const [key,path] of Object.entries(publicManifest.names) as [string,string][]){const [kind,...name]=key.split(':');assert.equal(catalogPhoto(kind,{name:name.join(':')}),imageSource(path));checkAsset(imageSource(path));}
+ for(const photo of photoCredits){assert.equal(photoCredit(imageSource(photo.path)),photo);checkAsset(imageSource(photo.path));}
+});
 test('image resolver accepts public assets and safe remote URLs, rejecting unsafe sources',()=>{
  assert.equal(catalogImage('/assets/categories/temple.svg'),'/assets/categories/temple.svg');
  assert.equal(catalogImage(' https://example.test/a b.jpg '),'https://example.test/a%20b.jpg');

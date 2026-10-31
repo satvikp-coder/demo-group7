@@ -67,3 +67,4 @@ frontend/src/data/accommodationTranslations.ts -text
 # Exact reviewed public hotel source bytes.
 frontend/public/data-credits.html -text
 frontend/public/catalog-hotel-coverage.json -text
+frontend/src/assets/photographs/manifest.json -text

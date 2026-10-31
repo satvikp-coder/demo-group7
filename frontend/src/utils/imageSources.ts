@@ -1,4 +1,4 @@
-import manifest from "../../public/assets/photographs/manifest.json";
+import manifest from "../assets/photographs/manifest.json";
 
 export interface PhotoCredit {
   path: string;
