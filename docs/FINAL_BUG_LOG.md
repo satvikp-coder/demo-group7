@@ -1,5 +1,13 @@
 # Final bug log
 
+## Expanded-catalog browser journey inputs
+
+Reproduced the browser failure at check 9: the expanded catalog's default Low Cost category correctly offered Hotel Maruti, while the test assumed The House of MG was already selectable. After explicitly choosing Premium, the run reached Dwarka and correctly rejected the test's single traveler for Mathura Bhavan's sourced two-guest minimum. These were invalid test inputs, not missing hotels or application failures.
+
+Updated only browser tests: explicitly select the chosen hotel's real category, use known numeric prices for cheapest-hotel selection, supply the chosen property's recorded minimum guests/room capacity, and assert unknown prices remain after sorted numeric prices. Original House of MG, unaffordable-hotel rejection, selected-hotel persistence, city/route/budget, ownership, PDF and admin assertions remain. Production operator approval targets the same backend container selected for database cleanup (runner correction 4ce59ca).
+
+Final expanded-catalog run: 64/64 PASS, zero page errors, verified=true, cleanupCompleted=true and originalCatalogPreserved=true. Independent queries confirm both recorded fixture users are absent and counts are 3 existing users, 12 existing trips, 8 destinations, 56 hotels and 100 attractions. No unrelated user or trip was removed. Backend 127/127, launcher regression 1/1, backend/Python syntax, source audit and unauthorized-change guard PASS. Frontend 58 tests, 80 Trie/33 planner assertions, TypeScript, /api build and mocked chat 28/28 passed in the preceding launcher verification; frontend application bytes/dependencies were not changed afterward. Provider inference was not rerun. No UI, DSA, data or application behavior was changed.
+
 ## Browser verification database targeting
 
 Reproduced a test-runner defect: API_TEST_URL pointed at the expanded port-8080 Docker app, while the host wrapper imported backend/.env and snapshotted/deleted fixtures in the separate submission database. Thus the earlier cleanupCompleted/originalCatalogPreserved flags did not describe the database used by the browser. Preserved the failed report locally, matched its registration response, exact user ID, email and test name against the expanded database, and deleted only that one proven fixture. Existing state returned to 3 users and 12 trips; unrelated records were untouched.

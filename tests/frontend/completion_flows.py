@@ -1,5 +1,6 @@
 """Additional real-browser coverage for the existing controls and all cities."""
 import re
+import math
 from pathlib import Path
 from cost_assertions import assert_known_budget
 from playwright.sync_api import expect
@@ -38,8 +39,15 @@ def run(page, context, base, api, check):
         expect(page.locator('[role=dialog]')).to_contain_text(name)
         page.get_by_role('button', name='Continue to Logistics').click()
         hotels = page.locator('#planner-starting-hotel')
-        hotel = min(children['hotels'], key=lambda h: h['price_per_night'])
+        hotel = min((h for h in children['hotels'] if h['price_per_night'] is not None), key=lambda h: h['price_per_night'])
+        page.get_by_role('button', name=hotel['hotel_category'], exact=True).click()
+        expect(hotels).to_contain_text(hotel['name'])
         hotels.select_option(hotel['id'])
+        conditions = (hotel.get('provenance_review') or {}).get('booking_conditions') or {}
+        travelers = max(1, conditions.get('minimum_guests', 1))
+        rooms = math.ceil(travelers / conditions.get('priced_guests_per_room', travelers))
+        page.get_by_label('Travelers', exact=True).fill(str(travelers))
+        page.get_by_label('Rooms', exact=True).fill(str(rooms))
         page.locator('#planner-budget-input').fill('20000')
         page.locator('[role=dialog] input[type=checkbox]').uncheck()
         page.get_by_role('button', name='Review Plan').click()

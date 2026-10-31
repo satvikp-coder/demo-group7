@@ -97,6 +97,7 @@ with sync_playwright() as p:
         expect(page.get_by_text("3 Restaurants", exact=True)).to_be_visible()
         check("Planner restaurant count matches real Ahmedabad collection", count=3)
         page.get_by_role("button", name="Continue to Logistics").click()
+        page.get_by_role("button", name="Premium", exact=True).click()
         hotels = page.locator('#planner-starting-hotel')
         expect(hotels).to_contain_text('The House of MG')
         selected = next(o for o in hotels.locator('option').evaluate_all('(els)=>els.map(e=>({value:e.value,text:e.text}))') if "The House of MG" in o["text"])
@@ -163,7 +164,9 @@ with sync_playwright() as p:
         page.goto(BASE + "/profile")
         page.get_by_role("button", name="Create New Heritage Route").click()
         page.get_by_role("button", name="Continue to Logistics").click()
-        cheapest = min(catalog_hotels, key=lambda h: h["price_per_night"])
+        cheapest = min((h for h in catalog_hotels if h["price_per_night"] is not None), key=lambda h: h["price_per_night"])
+        page.get_by_role("button", name=cheapest["hotel_category"], exact=True).click()
+        expect(page.locator('#planner-starting-hotel')).to_contain_text(cheapest["name"])
         page.locator('#planner-starting-hotel').select_option(cheapest["id"])
         page.locator('#planner-budget-input').fill("20000")
         page.locator('[role=dialog] input[type=checkbox]').uncheck()
@@ -224,8 +227,10 @@ with sync_playwright() as p:
         expect(page.get_by_text("French Haveli Heritage Stay", exact=True).first).to_be_visible()
         with page.expect_response(lambda r: "/hotels?sort=price" in r.url) as ordered:
             page.get_by_role("button", name="Lowest Price", exact=True).click()
-        prices = [float(h["price_per_night"]) for h in ordered.value.json()]
+        sorted_hotels = ordered.value.json()
+        prices = [float(h["price_per_night"]) for h in sorted_hotels if h["price_per_night"] is not None]
         assert ordered.value.status == 200 and prices == sorted(prices)
+        assert all(h["price_per_night"] is None for h in sorted_hotels[len(prices):])
         check("Hotels sort comes from API", prices=prices)
         for label, sort in [("Highest Rated", "rating"), ("Best Value (Rating/Cost)", "value")]:
             with page.expect_response(lambda r: "/hotels?sort=" + sort in r.url) as sorted_response:
@@ -240,7 +245,9 @@ with sync_playwright() as p:
         report["users"].append(reg.json()["user"]["id"]); save()
         page.get_by_role("button", name="Sign Out", exact=True).click()
         if os.environ.get("PRODUCTION_BROWSER_TEST") == "true":
-            subprocess.run(["node", "backend/scripts/provision-operator.js", operator_email], cwd=ROOT, check=True)
+            container = os.environ.get("BROWSER_TEST_BACKEND_CONTAINER")
+            command = ["docker", "exec", container, "node", "scripts/provision-operator.js", operator_email] if container else ["node", "backend/scripts/provision-operator.js", operator_email]
+            subprocess.run(command, cwd=ROOT, check=True)
         login(page, operator_email, password)
         page.get_by_role("button", name="Submit New Property for Audit", exact=True).click()
         page.wait_for_url("**/admin?new=hotel")
