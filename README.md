@@ -1,369 +1,191 @@
-# Heritage Tourism Planner
+# Gujarat Heritage Tourism Planner
 
-A Gujarat heritage and tourism planning platform built for CSC210 Data Structures & Algorithms, Group 07, Ahmedabad University.
-
-**Local application:** http://localhost:8080
-
-**Source repositories:** [course repository](https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner) and [synchronized mirror](https://github.com/satvikp-coder/demo-group7). Both receive the same reviewed release commit.
-
-## Current seeded review - 30 October 2026
-
-The final-review database contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 routes. Backend tests: 123; frontend tests: 56 plus 80 Trie and 33 planner assertions; TypeScript, production build and the 64-check browser regression pass. The 28 chat tests use mocked Groq calls. See [the final bug log](docs/FINAL_BUG_LOG.md) for Groq restoration, current live verification and scoped fixes. No attraction expansion imports were run for this review.
-
-## Historical local verification - 20 October 2026
-
-- 118 backend unit/security tests, 18/18 complete regression gates and 17/17 final container gates passed.
-- Optional additive attraction import (`npm run local:attractions`): 56 sourced attractions on top of the enriched catalog, 100 in total across eight destinations, with 833 additive road-metric relationships. A fresh `db:seed` installs 25 attractions.
-- 448 authenticated itinerary scenarios, four-day Kutch/PDF at three widths and all-eight-destination map checks passed.
-- Installed browser:24 read-only city/viewport checks passed with decoded images and no API failures or writes.
-- Heritage Guide:24 focused tests,71 real database checks, historical provider evidence for12 question scenarios, and desktop/tablet/mobile widget checks passed.
-- Existing browser controls/PDF, authentication, itinerary API matrix and5 university-demo journeys across3 cities passed.
-- Installed local readiness:7/7. All9 original table fingerprints matched after installation; accounts, saved trips and catalog records were preserved.
-
-See [current local readiness](reports/FINAL_LOCAL_DEMO_READINESS.md), [full regression evidence](reports/FULL_REGRESSION_RESULTS.md), [before/after coverage](reports/ALL_DESTINATION_QUALITY_MATRIX.md), [Kutch regression](reports/RANN_OF_KUTCH_BEFORE_AFTER.md), [Heritage Guide test evidence](reports/HERITAGE_GUIDE_TEST_RESULTS.md), [prior teammate fixes](reports/TEAMMATE_FIXES.md), [sightseeing repair](reports/SIGHTSEEING_QUALITY_REPAIR.md) and the [local university demonstration](docs/LOCAL_DEMO.md). This release expands sourced attractions and repairs provisional scheduling, multi-day allocation and meals, preserving the map, unknown-cost budgets and Heritage Guide. Public deployment was not performed. Fees/access/photos still have documented gaps; known subtotal is not a complete-cost guarantee.
+CSC210 Data Structures & Algorithms, Monsoon 2026 ? Group 7, Ahmedabad University.
 
 ## Overview
 
-The React application uses a real Express/PostgreSQL backend to search destinations and generate persisted itineraries. A trip covers one destination, with each day starting and ending at the selected hotel. The backend schedules eligible attractions and meals using stored road routes, time windows and the available budget. Saved stops and price snapshots remain available after login and restart.
+A React, Express and PostgreSQL application for exploring Gujarat heritage destinations and planning single-destination trips. The planner builds hotel-to-attractions-to-hotel daily schedules from recorded routes, visit durations, opening information and budget constraints. Authenticated users can save, reopen and delete their own trips.
 
-## Sourced attractions and multi-day sightseeing
+## Supported destinations
 
-A fresh `db:seed` installs 25 attractions (plus 11 hotels, 12 restaurants and 131 routes). The optional additive 20 October attraction release, applied afterwards, expands the eight destination catalogs from 44 (the enriched catalog) to 100 places/experiences: Ahmedabad16, Champaner12, Dwarka10, Gir10, Modhera12, Kutch14, Saputara14 and Somnath12. Regional excursions are explicitly labeled; mapped points are approximate source references, not surveyed entrances.
+Ahmedabad, Somnath, Dwarka, Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara.
 
-Source-backed visits with missing fees/durations can be planned provisionally using labeled duration allowances. Unknown fees stay unpriced, known closures remain hard constraints, and unknown operating information requires confirmation. The planner balances reachable visits across requested days instead of letting disconnected records exhaust the daily allocation. Hotel-only days remain explicitly unallocated. Nearby sourced meals or unlocated personal breaks support sightseeing; a finished morning tour is not extended to dinner artificially.
+## Key functionality
 
-Cost preferences receive no false advantage from unpriced stops. With incomparable incomplete costs, candidate cost utility is neutralized rather than treating missing fees as free; known subtotal never guarantees the complete budget. The bounded greedy optimizer and its documented optimality limits remain.
+- Destination and attraction discovery through runtime prefix search.
+- Hotel selection, restaurant-supported meal scheduling, distance/cost/rating priorities and strategy comparison.
+- Multi-day itineraries, known-cost budgets, interactive route maps, PDF export and a Dijkstra visualizer.
+- JWT login, owner-protected saved trips, private trip bookmarks and cached offline trip viewing.
+- Operator-only catalog administration and the grounded Heritage Guide chatbot.
+- English, Gujarati and Hindi interface support, with incomplete translations and accessibility data disclosed below.
 
-Apply only after a backup: `npm run local:up`, `npm run local:attractions -- --dry-run`, then `npm run local:attractions`. Repeating the import is safe; do not seed/reset an existing database. Restart the local stack after import to refresh in-memory catalog indexes. Existing saved itineraries are preserved; generate a new plan to use the expanded catalog.
-
-See [research and source limits](reports/ATTRACTION_RESEARCH_SOURCES.md), [import/preservation](reports/ATTRACTION_DATA_IMPORT.md), [algorithm repair](reports/ITINERARY_ALGORITHM_IMPROVEMENTS.md) and [quality matrix](reports/ALL_DESTINATION_QUALITY_MATRIX.md). Run `npm run test:attractions` or the isolated `npm run test:attractions:local -- --production`. New records retain intentional photo fallbacks until correctly licensed photographs are available.
-
-## Interactive itinerary map and honest budgets
-
-Open **Open interactive route map** on a generated or saved itinerary. Select a day, then select a numbered marker or schedule stop to inspect its actual location and time. Solid blue legs use validated OSRM road geometry; dashed legs are explicitly straight-line estimates, with no invented travel time. Missing locations and provider failures leave the textual itinerary available. OpenStreetMap attribution remains visible.
-
-The backend-only `MAP_ROUTING_URL` defaults to the best-effort FOSSGIS OSRM driving endpoint. Set it to an empty value to disable external routing; estimated connections still work. Requests are rate-limited, cached and bounded. Public routing and map tiles require Internet access and are not an availability guarantee. No paid provider is required.
-
-Budgets distinguish known positive prices, recorded zero charges and unavailable prices. **Known subtotal** excludes unpriced expenses; it is not the complete trip cost. Food outside scheduled meals, missing transport fares and unknown fees remain explicit. Accommodation uses purchased nights and rooms. Existing saved records are not repriced or rewritten.
-
-See [map implementation](reports/ITINERARY_MAP_IMPLEMENTATION.md), [routing evidence](reports/ROUTING_VERIFICATION.md), [budget semantics](reports/BUDGET_UNKNOWN_COST_FIX.md), and [test results](reports/MAP_BUDGET_TEST_RESULTS.md). Run `npm run test:map-budget` for deterministic tests or `npm run test:map-budget:local -- --production` for isolated PostgreSQL/API/browser tests. The automated browser suite substitutes tile responses rather than downloading public tiles in bulk.
-
-## Heritage Guide (Groq)
-
-A compact, closed-by-default AI assistant reads the actual catalog and your authorized trips/budgets. It supports English/Hindi/Gujarati, bounded local tool calling, and a clearly labeled database-only mode when AI is unavailable. Messages and minimal relevant facts go to Groq; chat history stays in memory and clears on logout. No live rates/bookings or fabricated data.
-
-Configure `GROQ_API_KEY` in ignored `backend/.env` and optionally `GROQ_MODEL` (default `openai/gpt-oss-20b`). Obtain a key from [Groq](https://console.groq.com/keys). Never use `VITE_` variables for secrets. Requests have a 15-second deadline, no automatic retries and per-IP/per-user limits. Missing configuration leaves database-only mode available. See [provider setup](docs/NVIDIA_CHAT.md).
-
-See [implementation](reports/HERITAGE_GUIDE_IMPLEMENTATION.md), [security](reports/HERITAGE_GUIDE_SECURITY.md), [test results](reports/HERITAGE_GUIDE_TEST_RESULTS.md), and [configuration/demo](reports/HERITAGE_GUIDE_LOCAL_DEMO.md). Run `npm run test:chat` or isolated `npm run test:chat:local`. Do not publish private keys or this workspace's private context export.
-
-## Key Features
-
-- Destination and attraction search with backend Trie prefix matching; the shared academic Trie also includes tested Levenshtein fuzzy search.
-- Destination details, attractions and hotels; restaurant data supports the API and meal scheduling.
-- Hotel sorting by price, rating and value using the shared Merge Sort implementation.
-- Two-stage Low Cost / Budget / Premium hotel selection, with clearly labeled straight-line proximity and stored price estimates.
-- Synchronized distance/cost/rating priorities totaling 100%, with persisted scoring explanations for evaluated feasible candidates.
-- Registration, login, authenticated trip discovery and persisted itinerary/budget retrieval.
-- Permanent, confirmed **Delete Trip** through the owner-protected API; cancellation or a failed request preserves the record. Successful deletion clears its browser snapshots and stays deleted after refresh.
-- **Copy private trip link** creates an owner-authenticated bookmark, not public recipient access. Budget links also identify the actual saved trip.
-- Tourists do not see Admin Panel controls; direct admin navigation returns them to their profile, and the API independently enforces operator permissions.
-- Route-aware, multi-day planning with selected-hotel retention and explicit incomplete-plan warnings.
-- Known-cost budget breakdowns, strategy comparison, PDF export and an educational Dijkstra visualizer.
-- Operator CRUD for destinations, attractions, hotels and restaurants, with server-side role and ownership checks.
-- Wheelchair filtering where supported by recorded attraction data; unknown suitability is not treated as accessible.
-- Production-like local Docker stack, health checks, guarded imports, backup/restore tools and GitHub Actions verification.
-
-## Supported Destinations
-
-Ahmedabad / Somnath / Dwarka / Modhera / Champaner / Gir National Park / Rann of Kutch / Saputara.
-
-## Technology Stack
-
-Versions below describe the manifests; exact resolved dependencies are pinned in the npm lockfiles.
+## Technology stack
 
 | Area | Technologies |
 |---|---|
 | Frontend | React 19, TypeScript 5.8, Vite 6, Tailwind CSS 4, Motion, Lucide React |
-| Export | jsPDF, html2canvas, dom-to-image-more |
+| Maps / export | Leaflet, OpenStreetMap, optional OSRM geometry, jsPDF, html2canvas |
 | Backend | Node.js 22.18+, Express 5, JavaScript ES modules, shared TypeScript through tsx |
-| Database | PostgreSQL 17, node-postgres, SQL migrations |
-| Security | bcrypt, jsonwebtoken, Zod, Helmet, express-rate-limit, exact-origin CORS |
-| Infrastructure | Docker Compose, nonroot nginx/API images, optional Caddy HTTPS, GitHub Actions |
-| Testing | Node test runner, TypeScript assertion suites, Python Playwright with Google Chrome, real HTTP/PostgreSQL integration |
+| Database | PostgreSQL 17, node-postgres, ordered SQL migrations |
+| Security / testing | bcrypt, JWT, Zod, Helmet, rate limits, Node test runner, Python Playwright and Chrome |
 
-## System Architecture
+Exact versions are pinned in the backend and frontend npm lockfiles.
 
-```text
-Browser
-  -> React frontend (nginx in the local production stack)
-  -> Shared API client (frontend/src/api/index.ts)
-  -> Express REST API
-  -> Services + shared DSA modules
-  -> PostgreSQL (catalog, users, trips, stops, budgets)
-
-Public deployment: HTTPS reverse proxy -> nginx -> private API -> private database
-```
-
-The runtime catalog and planner use PostgreSQL. Bundled reference data and the older client planner remain for academic comparisons; the production build audit verifies that they are excluded from the runtime module graph.
-
-## Project Structure
+## Architecture
 
 ```text
-frontend/   React application, static assets and Vite/nginx configuration
-backend/    REST API, services, ordered migrations, tooling, unit tests and reports
-database/   Canonical schema and historical SQL examples
-data/       Approved CSVs, researched supplements and source evidence
-dsa/        Shared TypeScript algorithms and data structures
-tests/      DSA assertions and real browser/integration harnesses
-scripts/    Local operations and sequential verification runners
-deploy/     PostgreSQL initialization and optional HTTPS configuration
-docs/       Setup, deployment, academic design and research documentation
-.github/    CI workflow
+Browser -> React -> shared API client -> Express routes/services -> PostgreSQL
+                                          |
+                                     shared dsa/ modules
+Authenticated chat -> allowlisted read-only tools -> database facts -> Groq reply
 ```
 
-## Algorithms / Data Structures
+`frontend/` contains the application; `backend/` contains the API and tests; `dsa/` contains shared algorithms; `data/` and `database/` contain approved inputs and schema. `tests/`, `scripts/`, `docs/` and `reports/` hold verification tooling and evidence. Production requires protected backend/database configuration and an HTTPS reverse proxy.
 
-| Implementation | Actual purpose |
-|---|---|
-| [Trie](dsa/trie/Trie.ts) | Runtime prefix search over database-derived names; the cache refreshes periodically. Levenshtein fuzzy search is preserved/tested in this module but is not enabled by the public search endpoint. |
-| [Merge Sort](dsa/sorting/mergeSort.ts) | Stable hotel ordering through [hotelRanking.js](backend/services/hotelRanking.js). |
-| [Dijkstra](dsa/dijkstra/dijkstra.ts), [Graph](dsa/graph/Graph.ts), [MinHeap](dsa/priorityQueue/MinHeap.ts) | Evidenced shortest-path fallback for missing direct hotel/restaurant/attraction pairs. Stored direct routes take precedence; unknown roads are not fabricated. |
-| [Trip planner](backend/services/tripPlanner.js), [greedy helpers](dsa/greedy/) | Scores candidates and schedules visits, meals and hotel returns within time/budget constraints. This is a heuristic, not a global optimum guarantee. |
-| [Trip model](backend/models/tripModel.js) | Transactional persistence, bounded serialization retries and stored cost snapshots. |
-| [Hash table](dsa/hashTable/HashTable.ts) | Per-request route cache and visited-attraction tracking; see [DSA documentation](dsa/README.md). |
+## Data Structures and Algorithms
 
-## Seeded data and historical import counts
+| Structure / algorithm | Implementation | Actual runtime use |
+|---|---|---|
+| Graph | [Graph.ts](dsa/graph/Graph.ts) | Evidenced route adjacency in the trip planner |
+| Dijkstra | [dijkstra.ts](dsa/dijkstra/dijkstra.ts) | Shortest-path fallback when a direct route is missing; stored direct routes take precedence |
+| MinHeap | [MinHeap.ts](dsa/priorityQueue/MinHeap.ts) | Dijkstra queue and planner candidate/route ordering |
+| Greedy route scoring | [routeBuilder.ts](dsa/greedy/routeBuilder.ts) | Distance/cost/rating candidate scoring |
+| Greedy day splitting | [daySplitter.ts](dsa/greedy/daySplitter.ts) | Visit quotas and meal-window helpers |
+| Greedy budget filtering | [budgetAllocator.ts](dsa/greedy/budgetAllocator.ts) | Admission-budget eligibility filtering |
+| Trie | [Trie.ts](dsa/trie/Trie.ts) | Prefix lookup over names indexed from PostgreSQL |
+| HashTable | [HashTable.ts](dsa/hashTable/HashTable.ts) | Attraction membership, directional route cache and visited tracking |
+| Merge Sort | [mergeSort.ts](dsa/sorting/mergeSort.ts) | Stable hotel ranking |
 
-A fresh `db:seed` contains 8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 route records. After the optional enrichment imports, the local catalog measured on 12 October 2026 contains **8 destinations, 44 attractions, 56 hotels, 12 restaurants and 497 route records**. There are **29 usable indicative hotel-price estimates**; the other 27 properties have no usable rate and are not priced starting-hotel choices. All eight destinations have a sourced priced option in each hotel category after the reviewed coverage import, including clearly identified nearby towns.
+Runtime call sites: [tripPlanner.js](backend/services/tripPlanner.js), [destinationSearchCache.js](backend/services/destinationSearchCache.js) and [hotelRanking.js](backend/services/hotelRanking.js). Planning is a bounded heuristic, not a global optimum guarantee. The academic Trie has fuzzy-search tests, but the public endpoint does not implement typo tolerance. See the [tested DSA mapping](docs/FINAL_BUG_LOG.md#runtime-dsa-mapping).
 
-The latest image audit checked 120 entity references: **38 genuine-photo associations, 82 intentional fallbacks and zero broken references**. A fallback is not a recovered photograph; attribution remains in [Photo credits](frontend/public/image-credits.html).
+## Prerequisites and installation
 
-These counts do not establish live rates, availability or complete factual coverage. Unknown fees/durations can exclude a recorded site from timed scheduling. Champaner currently has only one fully costed, timed attraction, so unsupported extra sightseeing days are disclosed rather than filled with invented activities. See [hotel coverage](reports/HOTEL_TIER_COVERAGE.md) and [current data quality](reports/PHASE3_DATA_QUALITY.md).
-
-### Historical import stages
-
-The following counts describe earlier import stages, not the current enriched catalog:
-
-| Records | Base import | With reviewed 20261009 expansion |
-|---|---:|---:|
-| Destinations | 8 | 8 |
-| Attractions | 25 | 33 |
-| Hotels | 11 | 23 |
-| Restaurants | 12 | 12 |
-| Routes | 131 | 163 |
-
-After backing up an existing installation, `npm run local:expand` adds the reviewed
-Ahmedabad/Somnath records without overwriting originals. See
-[dataset provenance and limitations](reports/DATABASE_EXPANSION_REPORT.md) and
-[current itinerary acceptance](reports/FINAL_DEMO_READINESS.md). Unknown prices,
-ratings and visit durations remain unknown; no live availability is claimed.
-`npm run test:itinerary -- demo` runs the expanded API matrix and production-build
-browser demonstration against a disposable PostgreSQL database.
-
-These are catalog counts, not a claim that every tourism field is independently verified. The original CSVs cover only part of the catalog; researched JSON supplements supply the remaining destinations and road evidence. Simulated CSV routes are excluded from the approved import.
-
-### Phase 2 university release
-
-The additive `npm run local:enrich` import follows `local:expand` and produces
-8 destinations, 44 attractions, 43 hotels, 12 restaurants and 322 routes. Back up
-first; both imports preserve existing records. Most new hotels have unknown
-current prices and are not assigned a price category. New attractions without
-known fees/durations remain discovery records, not timed planner candidates.
-See [Phase 2 coverage](reports/PHASE2_DATA_COVERAGE.md),
-[feasibility](reports/PHASE2_ITINERARY_FEASIBILITY.md), and
-[release evidence](reports/PHASE2_FINAL_READINESS.md).
-
-New forms support explicit lodging nights and Gujarati for the existing dictionary;
-English/Hindi remain available. Some newer controls remain English.
-`npm run test:phase2:production:local` verifies the expanded catalog in an isolated
-database and production frontend at desktop, tablet and mobile widths.
-
-## Quick Start
-
-For an existing local installation, `npm run local:up` starts the frontend,
-backend and persistent PostgreSQL database together at `http://localhost:8080`.
-`npm run local:demo:check` performs read-only environment checks before presenting.
-Use `npm run test:demo:local` to rehearse the real workflow in an isolated database.
-Current local repair evidence and limitations are recorded in
-[Phase 3 test results](reports/PHASE3_FULL_TEST_RESULTS.md).
-
-Install Node.js 22.18+ and Docker with Compose v2 (Linux containers), then:
+Install Node.js 22.18+ with npm, Git and PostgreSQL 17. Docker Desktop with Linux containers and Compose v2 is optional for the documented container stack. Browser tests additionally require Python, Google Chrome and the pinned Playwright package.
 
 ```sh
 git clone https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner.git
 cd group-07-heritage-tourism-planner
-npm run local:up
-npm run local:demo:check
-```
-
-Open **http://localhost:8080**. Startup generates private credentials, builds the images, applies migrations and imports approved data only for a fresh database. Later starts preserve existing managed data.
-
-An already enriched installation needs only `local:up`. A fresh base catalog requires the reviewed additive imports to reach the current counts. After a backup, run `local:expand`, `local:enrich`, `local:refine -- --dry-run`, `local:refine`, `local:hotel-coverage -- --dry-run`, then `local:hotel-coverage`. Do not reset or reseed existing user data to troubleshoot. See [the exact fresh-install sequence](docs/LOCAL_PRODUCTION.md#current-enriched-catalog-and-controls).
-
-```sh
-npm run local:status
-npm run local:stop
-```
-
-Stop preserves the database volume. Keep the generated private environment file with that volume. See [Local Production](docs/LOCAL_PRODUCTION.md) for restart, operator approval, backup and restore.
-
-## Development Setup
-
-Use Node.js 22.18+, npm and a dedicated PostgreSQL database. Copy `backend/.env.example` to `backend/.env` and `frontend/.env.example` to `frontend/.env.local`. Set your own database connection and random signing key; examples contain no working credentials.
-
-```sh
 npm ci --prefix backend
 npm ci --prefix frontend
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env.local
+```
+
+The copy commands use Git Bash/POSIX syntax; PowerShell users can use `Copy-Item`. Create a dedicated PostgreSQL database and role. Configure ignored `backend/.env` with your own `DATABASE_URL`, a private random `JWT_SECRET`, `PORT=5000` and `CORS_ORIGIN=http://localhost:3000`. Hosted database connections require certificate verification. Set `frontend/.env.local` to `VITE_API_BASE_URL=http://localhost:5000/api`. Never put secrets in `VITE_` variables.
+
+For a **new empty database only**:
+
+```sh
 npm --prefix backend run db:migrate
 npm --prefix backend run db:seed
 npm --prefix backend run db:verify
 ```
 
-Run these in separate terminals:
+Do not reset/reseed an existing database or run historical attraction imports to reproduce the submission catalog. Back up existing installations before maintenance. See the [production runbook](docs/PRODUCTION.md).
+
+## Local startup and Docker
+
+Run in separate terminals:
 
 ```sh
-npm --prefix backend run dev
+npm --prefix backend start
 npm --prefix frontend run dev
 ```
 
-Frontend: `http://localhost:3000`; API: `http://localhost:5000/api`. Match `CORS_ORIGIN` and `VITE_API_BASE_URL` to those origins. Use a dedicated development database and an owner connection for migrations. Public deployments use separate restricted runtime credentials.
+Frontend: `http://localhost:3000`; API: `http://localhost:5000/api`. `/health` reports liveness; `/ready` checks database readiness. Production operator self-registration is prohibited; operators require owner approval.
 
-For a production build use `VITE_API_BASE_URL=/api npm --prefix frontend run build`. On Windows Git Bash, use `MSYS_NO_PATHCONV=1 VITE_API_BASE_URL=/api npm --prefix frontend run build` to preserve `/api`.
+The optional Docker stack uses port 8080; instructions, PostgreSQL volume preservation and backup procedures are in [Local Production](docs/LOCAL_PRODUCTION.md). Its protected `.env.local-production` is separate from `backend/.env`; configure server-only Groq variables there when using Compose. Do not copy database credentials between installations.
 
-## Environment Variables
-
-| Name | Purpose |
-|---|---|
-| `DATABASE_URL` | Backend PostgreSQL connection; runtime role in production. |
-| `DATABASE_ADMIN_URL` | Maintenance-only owner connection for Compose. |
-| `JWT_SECRET` | Private random signing key. |
-| `PORT`, `NODE_ENV` | Backend listening port and runtime mode. |
-| `CORS_ORIGIN` | Exact allowed frontend origin(s). |
-| `VITE_API_BASE_URL` | Public frontend API root; never put secrets in Vite variables. |
-| `POSTGRES_PASSWORD`, `POSTGRES_APP_PASSWORD` | Independent Compose owner/runtime credentials. |
-| `DATABASE_SSL`, `DATABASE_SSL_CA_FILE` | Hosted PostgreSQL certificate validation. |
-| `DB_POOL_MAX`, `DB_CONNECTION_TIMEOUT_MS`, `DB_IDLE_TIMEOUT_MS`, `DB_STATEMENT_TIMEOUT_MS`, `DB_TRANSACTION_IDLE_TIMEOUT_MS` | Connection and query limits. |
-| `TRUST_PROXY`, `AUTH_RATE_LIMIT`, `GENERATION_RATE_LIMIT` | Trusted proxy and abuse limits. |
-| `ALLOW_OPERATOR_REGISTRATION` | Development setting; production always forbids self-assignment. |
-| `HTTP_PORT`, `PUBLIC_HOSTNAME` | Local edge port and optional public TLS hostname. |
-
-See the [complete configuration reference](docs/PRODUCTION.md#environment-variables) and safe `.env.production.example`.
-
-## Database Setup
-
-`db:migrate` applies fresh schema and checksum-tracked ordered migrations. `db:seed` imports pinned approved CSVs, researched manifests and route evidence transactionally. Repeated imports preserve IDs, accounts and saved trips, and reject conflicting operator edits. `db:verify` checks approved records and relationships.
-
-Use `npm run local:verify` and, after reviewing approved data changes, `npm run local:seed` for the local Docker stack. Never apply legacy reset/seed SQL to saved data. The [production runbook](docs/PRODUCTION.md#database-migrations-and-approved-data) explains backup, reviewed adoption and safe reseeding.
-
-## Running Tests
-
-Install backend/frontend dependencies as above, Python and Google Chrome, then:
+Production frontend build in Git Bash/POSIX shells:
 
 ```sh
-python -m pip install -r requirements-tests.txt
-npm run test:all:local
-npm run test:scheduling:local
-npm run test:demo:local
-npm run test:production
-npm run audit:images
+MSYS_NO_PATHCONV=1 VITE_API_BASE_URL=/api npm --prefix frontend run build
 ```
 
-Run suites sequentially. `test:all:local` and the expanded scheduling/demo adapters use disposable databases, preserve active records and restore private database networking. Container tests use an independent stack. **Do not run `test:local` against real user data:** that maintenance acceptance suite restarts/reseeds the active stack. Prefer the isolated wrappers above.
+`MSYS_NO_PATHCONV=1` preserves `/api` on Windows Git Bash. In PowerShell set `$env:VITE_API_BASE_URL='/api'`, then run `npm --prefix frontend run build`. Serve the build with a same-origin `/api` proxy.
 
-| Command | Coverage |
+## Groq Heritage Guide
+
+Set `GROQ_API_KEY` in ignored `backend/.env`; obtain a key from [Groq Console](https://console.groq.com/keys). Optional `GROQ_MODEL` defaults to `openai/gpt-oss-20b`. GPT-OSS requests use `reasoning_effort: low`. Restart the backend after configuration changes.
+
+`POST /api/chat` requires authentication. The backend calls Groq, executes only validated read-only database tools and asks for a grounded final reply. JWT/account checks, owner-scoped trip tools, encrypted history, input limits, IP/user quotas, concurrency limits and a **15-second total deadline** remain enforced. Explicit database-only mode makes no model request and remains available when inference fails. Relevant messages/facts are sent to Groq; credentials remain backend-only.
+
+Previous live verification passed **9/9 authenticated requests** over three rounds of destination, Somnath and Modhera questions, with meaningful grounded replies and valid history tokens. Request times were **1.044?3.646 seconds**, with provider-quota backoff between questions. This is recorded evidence, not an availability guarantee. Rapid traffic can return a friendly 429; there are no automatic retries or alternate-provider fallback. The [final bug log](docs/FINAL_BUG_LOG.md) retains exact results and the superseded NVIDIA investigation.
+
+## Database and seed data
+
+The submission seed contains **8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 routes**. CSVs and researched supplements are validated before import; simulated route records are excluded. Tourism information remains dated source snapshots.
+
+Historical enrichment reports describe separate 44- and 100-attraction datasets. Those totals do not describe the submission seed, and their imports are not required for setup. See [provenance](backend/reports/data-provenance.md) and [research limitations](backend/reports/COMPLETION_RESEARCH.md).
+
+## Authentication and API routes
+
+| Route | Purpose |
 |---|---|
-| `npm run test:unit` | Backend unit/security and frontend Trie/image/planner tests. |
-| `npm run test:planner` | Academic reference planner assertions. |
-| `npm run test:integration` | Auth, destination, trip, admin and DB constraints; requires configured test DB. |
-| `npm run test:browser` | Real browser/API flows; requires running test API/frontend. |
-| `npm run test:scheduling:local` | Isolated production-preview planning matrix, date/budget checks and teammate hotel-price/deletion/private-link/admin browser regressions. |
-| `npm run test:demo:local` | Isolated authenticated university rehearsal; does not modify the installed account. |
-| `npm run local:demo:check` | Seven read-only installed-environment checks. |
-| `npm --prefix frontend run lint` | TypeScript checking. |
-| `npm --prefix backend run build` | Backend JavaScript syntax checking. |
-| `npm run audit:source` | Credential patterns and frontend preservation. |
+| `/api/auth` | Registration, login and current account |
+| `/api/destinations` | Catalog, prefix search, details, attractions, hotels and restaurants |
+| `/api/trips` | Authenticated owner trip creation, discovery and retrieval |
+| `/api/trips/:id/generate-itinerary` | Generate and persist the selected trip's itinerary |
+| `/api/trips/:id/budget` | Recorded known-cost breakdown |
+| `DELETE /api/trips/:id` | Delete only the owner's trip and dependent records |
+| `POST /api/chat` | Grounded chat or explicitly selected database-only lookup |
+| `/api/admin` | Operator-only catalog CRUD |
 
-The unified suite also builds production assets and runs both npm security audits. See [testing details](tests/README.md) for prerequisites and individual suite environments.
+See [backend contracts and permissions](backend/README.md).
 
-## Production-Like Local Verification
+## Testing and verification
 
-The repository includes the validated nginx/Express/PostgreSQL local stack, successful tourist/operator browser flows, persistence and recovery checks. Current release results are in [Release Verification](docs/RELEASE_VERIFICATION.md); earlier detailed readiness evidence is in [Local Final Readiness](backend/reports/LOCAL_FINAL_READINESS.md). These results do not claim public deployment.
+```sh
+npm run test:backend
+npm run test:chat
+npm run test:frontend
+npm --prefix frontend run lint
+npm --prefix backend run build
+npm run audit:source
+node scripts/test-source-approval.js
+python -m pip install -r requirements-tests.txt
+```
 
-## API Overview
+Frontend tests include the Trie and reference-planner suites; backend tests exercise runtime Graph/Dijkstra/heap/hash/greedy integration. Source approval uses reviewed exact hashes and rejects subsequent unapproved changes.
 
-All categories are under `/api`:
+For browser checks, finish the production build first and keep the backend on 5000. Inside `frontend/`, start preview on 3000, stopping the development server first if necessary:
 
-- `/auth`: registration, login and current account.
-- `/destinations`: catalog, search, details, attractions, hotels and restaurants.
-- `/trips`: authenticated owner trip discovery, creation, generation and persisted retrieval.
-- `DELETE /trips/:id`: confirmed permanent owner-only deletion, including that trip's stops/budget. Returns 204 on success, 404 for foreign/missing IDs, 401 without a valid session and 400 for invalid requests.
-- `/trips/:id/budget`: saved known-cost breakdown.
-- `POST /chat`: authenticated Heritage Guide questions or explicitly labeled read-only database lookups; bounded Groq calls, owner-scoped trip tools and quota handling.
-- `/admin`: operator-only catalog CRUD.
+```sh
+node --input-type=module -e "import {preview} from 'vite'; await preview({preview:{host:'127.0.0.1',port:3000,strictPort:true,proxy:{'/api':'http://localhost:5000'}}});"
+```
 
-See [backend API documentation](backend/README.md) for contracts and permissions.
+From the repository root in Git Bash/POSIX shells:
 
-## Data Sources and Provenance
+```sh
+FRONTEND_TEST_URL=http://localhost:3000 API_TEST_URL=http://localhost:3000/api npm --prefix backend run test:frontend
+```
 
-Data comes from researched public and official tourism/business sources, with source dates, archived evidence and field-level qualifications in [data/research](data/research/) and the [provenance report](backend/reports/data-provenance.md). [Research limitations](backend/reports/COMPLETION_RESEARCH.md) distinguish verified identity, historical quotes, derived values and unknowns.
+PowerShell users can set those target variables through `$env:` before the npm command. They select test URLs, not CORS policy. Run catalog-mutating suites sequentially and do not rebuild during browser tests. The wrapper cleans recorded fixture IDs and verifies catalog preservation. Additional configured-test-database checks are available through `npm run test:integration`; see [testing details](tests/README.md).
 
-Prices, opening hours and accessibility can change. Confirm them with the destination/provider before travel. Retained external image URLs are provenance, not redistribution licenses. The runtime uses verified local photographs where available and explicit fallback illustrations otherwise; see [image rights and validation](docs/IMAGES.md).
+Previous completed verification: **123 backend tests (including 28 mocked chat tests), 56 frontend tests, 80 Trie assertions, 33 planner assertions and 64 browser checks**; TypeScript, syntax, production build and source audit passed. A secret-free fresh clone passed lockfile installation, tests, types and builds. The [final bug log](docs/FINAL_BUG_LOG.md) records evidence and qualifications; historical reports do not represent new executions.
 
 ## Security
 
-Implemented protections include bcrypt password hashing, expiring HS256 JWTs, current-account role checks, trip ownership, bound SQL, Zod request validation, rate limiting, security headers and restrictive CORS. Production operators require owner approval. Private environments and database archives are ignored; only safe environment templates are tracked. Public operation requires HTTPS, independent secrets and provider backups/monitoring.
+Protections include bcrypt, expiring HS256 JWTs, current-account/role checks, trip ownership, bound SQL, Zod validation, read-only chatbot tools, restrictive CORS, Helmet, rate limits and sanitized failures. Production requires HTTPS, restricted runtime database credentials and protected secrets. Safe environment templates are tracked; private environments, dependencies, builds and database archives are ignored. Use one API instance until rate-limit storage is shared. Never commit keys or tokens.
 
-## Documentation
+## Known limitations
 
-- [Local setup and operations](docs/LOCAL_PRODUCTION.md)
-- [Reproducible local university demonstration](docs/LOCAL_DEMO.md)
-- [Current teammate fixes](reports/TEAMMATE_FIXES.md) and [sightseeing quality](reports/SIGHTSEEING_QUALITY_REPAIR.md)
-- [Production deployment, backup and recovery](docs/PRODUCTION.md)
-- [Release verification and repository cleanup](docs/RELEASE_VERIFICATION.md)
-- [Testing](tests/README.md)
-- [Backend API](backend/README.md) and [frontend integration](frontend/README.md)
-- [Data provenance](backend/reports/data-provenance.md) and [data collection report](backend/reports/DATA_COMPLETION_REPORT.md)
-- [Academic foundation](docs/foundation/) and [research experiments](docs/research/)
-- [Repository map](docs/REPOSITORY_STRUCTURE.md)
+- Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara retain provisional/unverified seeded data. Fee, hours, rating, accessibility and physical-demand coverage is incomplete.
+- Some hotel prices are historical or dated; no live booking/rate guarantee exists. Unknown-price hotels are not priced starting-hotel choices.
+- Budgets show known subtotals, excluding unavailable transport fares, unknown fees/taxes and unscheduled costs. Unknown does not mean free.
+- Routes and schedules are estimates constrained by available data. Sparse catalogs can leave disclosed gaps or unsupported sightseeing days; global optimality is not claimed.
+- Runtime search is prefix-based, without typo tolerance.
+- Gujarati/Hindi aliases and short translations need native review. Descriptions and some controls remain English-only; native chatbot-language quality is not certified.
+- Groq needs a backend key and remains subject to provider quotas and application rate limits; database-only mode is available during failures.
+- Production operators need owner approval. Public recipient sharing, account editing and password recovery are unavailable; copied trip links remain owner-authenticated.
+- Native-device testing is incomplete; viewport checks do not certify native devices. Public maps/routing depend on external services.
+- A live website may be older than the submitted branch. Local verification does not establish deployment freshness.
 
-Academic proposals and old experiment baselines are retained as historical design/research records. Current source, setup runbooks and release verification take precedence over their earlier scope/status claims.
+## Documentation and references
 
-## Known Limitations
+- [Final bug log](docs/FINAL_BUG_LOG.md) and [translation review](docs/TRANSLATION_REVIEW.md)
+- [DSA documentation](dsa/README.md), [testing guide](tests/README.md) and [frontend integration](frontend/README.md)
+- [Research sources](data/research/), [image rights](docs/IMAGES.md), [photo credits](frontend/public/image-credits.html) and [license](LICENSE)
+- [Historical team responsibilities and credits](docs/TEAM_RESPONSIBILITIES.md); Git authorship does not establish total individual contribution.
 
-- In the 25-attraction submission seed, Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara retain provisional or unverified data; historical enrichment reports do not certify every seeded field. Some hotel prices are dated or historical snapshots rather than live quotes.
-- Gujarati/Hindi search aliases and new short UI translations need native review; destination descriptions and other data/UI text may remain English-only. See [translation review](docs/TRANSLATION_REVIEW.md).
-- Runtime search is prefix-based; typo tolerance is not implemented by the public endpoint. Physical-demand and accessibility data are incomplete; unknown suitability is not treated as verified accessibility.
-- Heritage Guide requires a backend Groq key and is subject to provider quotas and application rate limits. Production operator self-registration is prohibited; operators need owner approval.
-- Native-device testing is not complete; browser viewport checks do not establish native-device compatibility. A live deployment may be older than this locally verified branch.
-- Dated tourism information can become stale; admission, duration, operating, rating and accessibility coverage is uneven. Some destinations cannot fill longer requested tours with supported timed visits.
-- Transport fares are unavailable and excluded from known-cost totals. OSRM times are estimates, not live traffic.
-- Planning is single-destination and heuristic. Dates, explicit nights and sourced operating/closure policies are supported, but unsupported holidays, reservations and live availability are not guaranteed.
-- Unknown-price properties cannot be selected for priced stays. Insufficient accommodation budget is rejected with a useful explanation before trip creation; the selected hotel is not silently replaced. Historical saved rows keep their original meaning.
-- User priorities rank comparable tours after feasible distinct-visit/day coverage. Global optimality is not proven. Without known closing data, an explicit 18:00 planning cutoff is used rather than invented opening facts.
-- Public recipient sharing, account editing and password recovery are unavailable; owner links remain authenticated. Offline shell support does not make trip APIs available offline.
-- Use one API instance until shared rate-limit storage is configured. Per-token revocation and large-scale capacity certification are outside this release.
-
-## Deployment Status
-
-**Locally demo-tested, with documented data/photo limitations.**
-**Public deployment/hosting configuration remains external.**
-
-The historical frontend demo is not a deployment of this backend/database release. Choose a host, configure protected secrets, database, domain/DNS, HTTPS, backups and monitoring using the production runbook.
-
-## License
-
-See the existing [LICENSE](LICENSE), preserved from the upstream repository. Source attribution does not independently clear third-party image/data rights.
-
-## Contributors / Team
-
-**Group 07, CSC210 / Ahmedabad University:** Satvik, Manya, Aryan and Sonam. Original responsibilities and academic credits are preserved in [Team Responsibilities](docs/TEAM_RESPONSIBILITIES.md).
-
-### Hotel category coverage
-
-After the existing expansion/enrichment/refinement imports, back up the local database with `npm run local:backup`, then run `npm run local:hotel-coverage -- --dry-run` and `npm run local:hotel-coverage`. This additive, repeatable import adds 13 sourced properties and cached road-route pairs without updating existing records. All eight destinations then have at least one priced choice in Low Cost, Budget and Premium, including clearly identified nearby towns. Published room rates are indicative snapshots; confirm current rates, taxes, occupancy and availability. Unknown ratings and photo rights remain unknown. See [hotel tier sources and validation](reports/HOTEL_TIER_COVERAGE.md).
-
-### Itinerary scheduling and personal time
-
-The scheduler balances known attractions over the remaining trip days without an arbitrary three/four-visit limit. Actual route times, admission budgets, opening windows and calendar restrictions still constrain visits. It resumes feasible sightseeing after meals through evidenced graph connections, returns promptly after the final visit, and does not manufacture meals-only days or six-hour dinner waits. Unsupported extra days show a clear advisory. Unused intervals of at least one hour exclude the evidenced transfer. Older saved plans are preserved; regenerate them to use the corrected scheduling logic.
-
-Run `npm run test:scheduling:local` for isolated eight-destination planning/overlap tests and production-browser checks at desktop, tablet and mobile sizes. See [current sightseeing repair evidence](reports/SIGHTSEEING_QUALITY_REPAIR.md), [legacy gap handling](reports/SCHEDULE_GAP_REPAIR.md) and [teammate regressions](reports/TEAMMATE_FIXES.md).
+Administrative item: official end-semester AI-tool disclosure instructions remain **NOT VERIFIED**. Confirm course requirements and disclose actual tool use honestly in the required submission materials; this README does not invent university policy.
