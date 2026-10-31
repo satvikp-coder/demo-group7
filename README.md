@@ -94,7 +94,7 @@ npm --prefix frontend run dev
 
 Frontend: `http://localhost:3000`; API: `http://localhost:5000/api`. `/health` reports liveness; `/ready` checks database readiness. Production operator self-registration is prohibited; operators require owner approval.
 
-The optional Docker stack uses port 8080; instructions, PostgreSQL volume preservation and backup procedures are in [Local Production](docs/LOCAL_PRODUCTION.md). Its protected `.env.local-production` is separate from `backend/.env`; configure server-only Groq variables there when using Compose. Do not copy database credentials between installations.
+The optional Docker stack uses port 8080; instructions, PostgreSQL volume preservation and backup procedures are in [Local Production](docs/LOCAL_PRODUCTION.md). The `local:*` launcher reads `GROQ_API_KEY` and `GROQ_MODEL` from `backend/.env` as defaults; shell variables and explicit `.env.local-production` entries take precedence. Database credentials remain separate. After changing Groq settings, run `npm run local:up` to recreate the backend. Do not copy database credentials between installations.
 
 Production frontend build in Git Bash/POSIX shells:
 

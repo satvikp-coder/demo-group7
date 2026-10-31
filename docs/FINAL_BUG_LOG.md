@@ -1,5 +1,17 @@
 # Final bug log
 
+## Shared local Groq configuration and stale Docker runtime
+
+Reproduced two local configuration problems: the port-8080 Docker launcher did not read the Groq settings already present in backend/.env, and the running Docker image still contained the older freeConfirmed gate despite the current source having removed it. The key was configured but the stale runtime rejected chat before inference.
+
+The local launcher now reads only GROQ_API_KEY and GROQ_MODEL from backend/.env as defaults. Existing process and explicit .env.local-production settings retain precedence; database credentials and JWT settings are not imported. README documents this behavior. A new isolated regression verifies absent backend configuration, quoted values, provider fallback, database/JWT isolation and both override levels without using private credentials.
+
+Rebuilt backend and frontend images from current source and recreated only those services, preserving the existing PostgreSQL volume. Runtime chat/config.js SHA-256 matches the repository; key presence is set, model is openai/gpt-oss-20b, deadline is 15000 ms, and the obsolete confirmation property is absent. Frontend, readiness and destination API return HTTP 200. Expanded catalog remains 56 hotels and 100 attractions. Existing users and saved trips were preserved; no seed/import was run. Live provider inference was not repeated and remains NOT VERIFIED for the replacement key.
+
+Executed checks: isolated launcher regression 1/1; backend 123/123; mocked chat 28/28; frontend 58 tests plus 80 Trie and 33 planner assertions; TypeScript, production /api build and backend syntax PASS. Source audit reports zero secret findings and zero source mismatches; approval guard accepts reviewed bytes and rejects unauthorized changes. Both dependency audits report zero vulnerabilities; tracked/candidate files contain zero exact private-secret matches. No application, DSA, dependency or schema changes.
+
+The initial release attempt stopped before commit/push: the existing browser suite against localhost:8080 stopped after 9 checks because #planner-starting-hotel was expected to contain The House of MG but contained Hotel Maruti instead. Further investigation identified catalog-specific test inputs and an incorrectly targeted cleanup database; those require separate test-runner fixes. The earlier 64/64 result used the submission catalog and remains historical. No hotel data or application behavior was changed.
+
 ## Vite photograph-manifest import correction
 
 Reproduced the exact Vite development warning through its middleware without opening a port: imageSources.ts imported ../../public/assets/photographs/manifest.json, which Vite rewrote to /public/assets/photographs/manifest.json?import. Public assets are served without source-module transforms. A new regression failed with that exact warning before the fix.

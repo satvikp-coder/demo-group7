@@ -2,6 +2,7 @@ import {randomBytes} from 'node:crypto';
 import {existsSync,readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {dirname,resolve} from 'node:path';
+import {parseEnv} from 'node:util';
 import {run,waitFor} from './run.js';
 export const localRoot=fileURLToPath(new URL('../',import.meta.url));
 const envFile=new URL('../.env.local-production',import.meta.url);
@@ -21,7 +22,13 @@ export function localEnvironment(create=false){
  }
  const values=Object.fromEntries(readFileSync(envFile,'utf8').split(/\r?\n/).filter(line=>line&&!line.startsWith('#')).map(line=>{const i=line.indexOf('=');if(i<1)throw new Error('Invalid local environment file');return [line.slice(0,i),line.slice(i+1)];}));
  if(values.CORS_ORIGIN!=='http://localhost:'+values.HTTP_PORT)throw new Error('Local origin must match HTTP_PORT at localhost');
- return {...process.env,...values};
+ const backendEnv=new URL('../backend/.env',import.meta.url);
+ const providerDefaults={};
+ if(existsSync(backendEnv)){
+  const backendValues=parseEnv(readFileSync(backendEnv,'utf8'));
+  for(const key of ['GROQ_API_KEY','GROQ_MODEL'])if(backendValues[key])providerDefaults[key]=backendValues[key];
+ }
+ return {...providerDefaults,...process.env,...values};
 }
 export const localArgs=['compose','--env-file',fileURLToPath(envFile),'-p','heritage-local','-f','compose.yml','-f','compose.local.yml'];
 export const localCompose=(args,name,env=localEnvironment())=>run('docker',[...localArgs,...args],{cwd:localRoot,env,name});
