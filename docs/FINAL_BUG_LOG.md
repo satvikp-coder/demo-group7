@@ -1,5 +1,13 @@
 # Final bug log
 
+## Browser verification database targeting
+
+Reproduced a test-runner defect: API_TEST_URL pointed at the expanded port-8080 Docker app, while the host wrapper imported backend/.env and snapshotted/deleted fixtures in the separate submission database. Thus the earlier cleanupCompleted/originalCatalogPreserved flags did not describe the database used by the browser. Preserved the failed report locally, matched its registration response, exact user ID, email and test name against the expanded database, and deleted only that one proven fixture. Existing state returned to 3 users and 12 trips; unrelated records were untouched.
+
+The runner now checks API/database catalog IDs before launching the browser. BROWSER_TEST_BACKEND_CONTAINER selects parameterized queries through the actual backend container without exposing PostgreSQL or copying secrets; invalid container arguments are rejected. Operator fixture provisioning uses the same selected container. Fixture cleanup verifies that recorded user IDs are absent, rather than reporting success after an unchecked DELETE. Four regression tests cover matching/mismatched catalogs, exact-ID cleanup/failed cleanup and invalid container arguments. A real mismatched API/database pair was rejected before registration.
+
+Verification: backend 127/127 and syntax PASS. The corrected browser run against the expanded Docker database completed 64/64, cleanupCompleted=true, originalCatalogPreserved=true; exact final counts are checked separately. No application security or database schema changes. The shared launcher correction is commit 67dbd8c; catalog-specific browser input corrections are recorded separately.
+
 ## Shared local Groq configuration and stale Docker runtime
 
 Reproduced two local configuration problems: the port-8080 Docker launcher did not read the Groq settings already present in backend/.env, and the running Docker image still contained the older freeConfirmed gate despite the current source having removed it. The key was configured but the stale runtime rejected chat before inference.

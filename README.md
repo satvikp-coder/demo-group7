@@ -162,6 +162,8 @@ FRONTEND_TEST_URL=http://localhost:3000 API_TEST_URL=http://localhost:3000/api n
 
 PowerShell users can set those target variables through `$env:` before the npm command. They select test URLs, not CORS policy. Run catalog-mutating suites sequentially and do not rebuild during browser tests. The wrapper cleans recorded fixture IDs and verifies catalog preservation. Additional configured-test-database checks are available through `npm run test:integration`; see [testing details](tests/README.md).
 
+For the running Docker app, set `FRONTEND_TEST_URL=http://localhost:8080`, `API_TEST_URL=http://localhost:8080/api`, `PRODUCTION_BROWSER_TEST=true` and `BROWSER_TEST_BACKEND_CONTAINER=heritage-local-backend-1` before running the same browser command. The wrapper verifies that API and cleanup catalog IDs match before creating fixtures; database queries and operator fixture approval run inside the selected backend container. This does not expose PostgreSQL or change CORS.
+
 Previous completed verification: **123 backend tests (including 28 mocked chat tests), 56 frontend tests, 80 Trie assertions, 33 planner assertions and 64 browser checks**; TypeScript, syntax, production build and source audit passed. A secret-free fresh clone passed lockfile installation, tests, types and builds. The [final bug log](docs/FINAL_BUG_LOG.md) records evidence and qualifications; historical reports do not represent new executions.
 
 ## Security

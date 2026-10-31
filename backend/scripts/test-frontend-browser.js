@@ -1,7 +1,9 @@
 import { spawnSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { pool } from "../config/database.js";
+import {browserTestDatabase,assertBrowserCatalog,removeBrowserUsers} from './browser-test-database.js';
+
+const pool=await browserTestDatabase();
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const reportPath = new URL("../reports/frontend-browser-report.json", import.meta.url);
@@ -11,6 +13,8 @@ async function snapshot() {
   for (const table of tables) result[table] = (await pool.query(`SELECT * FROM ${table} ORDER BY id`)).rows;
   return JSON.stringify(result);
 }
+try{await assertBrowserCatalog(pool,process.env.API_TEST_URL??'http://localhost:5310/api');}
+catch(error){await pool.end();throw error;}
 const before = await snapshot();
 // Never consume a previous successful report if Python/Chrome fails to launch.
 writeFileSync(reportPath, JSON.stringify({ verified: false, users: [], responses: [], checks: [], failure: "Browser run did not complete" }));
@@ -28,7 +32,7 @@ try {
       }
     }
   }
-  for (const id of report.users) await pool.query("DELETE FROM users WHERE id=$1", [id]);
+  await removeBrowserUsers(pool,report.users);
   report.cleanupCompleted = true;
   report.originalCatalogPreserved = before === await snapshot();
   writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n");
