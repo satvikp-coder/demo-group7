@@ -32,6 +32,7 @@ const LazyResearchView = React.lazy(() =>
     : Promise.resolve({ default: () => null as any })
 );
 import { getSharedFromUrl, clearSharedUrl } from "./utils/shareUrl";
+import { titleForRoute } from "./utils/pageTitle";
 import { InvalidSharedLinkView } from "./components/InvalidSharedLinkView";
 import { NotFoundView } from "./components/NotFoundView";
 import { ImageWithFallback } from "./components/ImageWithFallback";
@@ -271,6 +272,12 @@ export default function App() {
     const onCopy = (event: Event) => setOfflineCopySavedAt((event as CustomEvent).detail?.savedAt ?? null);
     window.addEventListener("heritage-offline-copy", onCopy);
     return () => window.removeEventListener("heritage-offline-copy", onCopy);
+  }, []);
+  // Keep the browser-tab title in step with the page being shown.
+  useEffect(() => {
+    const update = (route: RouteState) => { document.title = titleForRoute(route); };
+    update(getCurrentRoute());
+    return subscribeToRoute(update);
   }, []);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showPwaPrompt, setShowPwaPrompt] = useState<boolean>(false);
