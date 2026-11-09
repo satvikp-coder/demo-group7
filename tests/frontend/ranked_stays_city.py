@@ -19,15 +19,15 @@ with sync_playwright() as p:
    expect(page.get_by_role('heading',level=1)).to_contain_text(city['name'])
    response=page.request.get(base+'/api/destinations/'+city['id']+'/hotels?sort=value');assert response.ok
    rows=response.json()
-   expect(page.locator('h3')).to_have_count(len(rows))
-   assert sorted(page.locator('h3').all_text_contents())==sorted(r['name'] for r in rows)
+   expect(page.locator('main h2')).to_have_count(len(rows))
+   assert sorted(page.locator('main h2').all_text_contents())==sorted(r['name'] for r in rows)
    for category in ['Low Cost','Budget','Premium']:
     page.get_by_role('button',name=category,exact=True).click()
     response=page.request.get(base+'/api/destinations/'+city['id']+'/hotels?sort=value&category='+category.replace(' ','%20'));assert response.ok
-    matching=response.json();expect(page.locator('h3')).to_have_count(len(matching))
-    assert sorted(page.locator('h3').all_text_contents())==sorted(r['name'] for r in matching)
+    matching=response.json();expect(page.locator('main h2')).to_have_count(len(matching))
+    assert sorted(page.locator('main h2').all_text_contents())==sorted(r['name'] for r in matching)
    page.get_by_role('button',name='All categories',exact=True).click()
-   expect(page.locator('h3')).to_have_count(len(rows))
+   expect(page.locator('main h2')).to_have_count(len(rows))
    results.append({'width':width,'city':city['name'],'allHotels':len(rows),'categoriesVerified':3})
   # Controlled request failure: selector stays usable and another city recovers
   # using its real backend response, rather than cached previous-city cards.
@@ -35,9 +35,9 @@ with sync_playwright() as p:
   selector.select_option(options[0]['id'])
   expect(page.get_by_role('alert')).to_be_visible()
   expect(selector).to_be_visible()
-  expect(page.locator('h3')).to_have_count(0)
+  expect(page.locator('main h2')).to_have_count(0)
   selector.select_option(options[1]['id'])
-  expect(page.locator('h3').first).to_be_visible()
+  expect(page.locator('main h2').first).to_be_visible()
   expect(page.get_by_role('alert')).to_have_count(0)
   assert not errors and not writes
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')

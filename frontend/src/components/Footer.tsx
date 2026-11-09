@@ -70,9 +70,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Link Column 1: Heritage Circuits */}
           <div className="md:col-span-2 space-y-3">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-gold font-semibold">
+            <h2 className="font-mono text-xs uppercase tracking-wider text-gold font-semibold">
               Heritage Circuits
-            </h4>
+            </h2>
             <ul className="space-y-2 text-xs text-salt/80 font-body">
               <li>
                 <button
@@ -111,9 +111,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Link Column 2: Route Utilities */}
           <div className="md:col-span-2 space-y-3">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-gold font-semibold">
+            <h2 className="font-mono text-xs uppercase tracking-wider text-gold font-semibold">
               Route Utilities
-            </h4>
+            </h2>
             <ul className="space-y-2 text-xs text-salt/80 font-body">
               <li>
                 <button
@@ -152,9 +152,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Link Column 3: Institutional */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-gold font-semibold">
+            <h2 className="font-mono text-xs uppercase tracking-wider text-gold font-semibold">
               Heritage Preservation
-            </h4>
+            </h2>
             <p className="text-xs text-stone font-body leading-relaxed">
               Supporting sustainable local tourism, heritage conservation, and
               master craftspeople across Gujarat.

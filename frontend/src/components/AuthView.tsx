@@ -144,11 +144,11 @@ export const AuthView: React.FC<AuthViewProps> = ({
                 ? "Gujarat Route Ledger Access"
                 : "Join The Heritage Network"}
             </span>
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-salt leading-tight">
+            <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl text-salt leading-tight">
               {mode === "login"
                 ? "Your Gujarat itinerary, ready in minutes."
                 : "Plan terrace routes or present heritage stays."}
-            </h2>
+            </h1>
             <p className="text-xs font-body text-stone leading-relaxed max-w-xs">
               Access verified ticket prices, distance ledgers, and direct
               contact details for master craftspeople across Kutch, Modhera, and

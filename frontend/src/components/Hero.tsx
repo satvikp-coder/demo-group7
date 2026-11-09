@@ -179,9 +179,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Solanki Era (1026 AD)</span>
-                    <h3 className="font-display text-sm font-semibold">
+                    <h2 className="font-display text-sm font-semibold">
                       {language === 'hi' ? 'मोढेरा सूर्य मंदिर' : 'Modhera Sun Temple'}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
               </motion.div>
@@ -203,9 +203,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Salt Desert & Craft</span>
-                    <h3 className="font-display text-sm font-semibold">
+                    <h2 className="font-display text-sm font-semibold">
                       {language === 'hi' ? 'कच्छ का रण' : 'Rann of Kutch'}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
               </motion.div>
@@ -227,9 +227,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Ecological Sanctuary</span>
-                    <h3 className="font-display text-sm font-semibold">
+                    <h2 className="font-display text-sm font-semibold">
                       {language === 'hi' ? 'गिर अभयारण्य' : 'Gir Forest'}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
               </motion.div>
@@ -251,9 +251,9 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent rounded-lg"></div>
                   <div className="absolute bottom-2 left-2 right-2 text-salt">
                     <span className="font-mono text-[10px] text-gold uppercase tracking-wider block">Subterranean Stepwell</span>
-                    <h3 className="font-display text-sm font-semibold">
+                    <h2 className="font-display text-sm font-semibold">
                       {language === 'hi' ? 'अडालज की वाव' : 'Adalaj Ni Vav'}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
               </motion.div>

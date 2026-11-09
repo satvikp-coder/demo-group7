@@ -275,9 +275,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
 
                     <div className="space-y-2">
                       <div className="flex flex-wrap items-center gap-2.5">
-                        <h3 className="font-display text-lg sm:text-xl font-bold text-charcoal">
+                        <h2 className="font-display text-lg sm:text-xl font-bold text-charcoal">
                           {hotel.name}
-                        </h3>
+                        </h2>
                         {renderStayBadge(hotel.stayType)}
                         {isChosen && (
                           <span className="inline-flex items-center gap-1 bg-gold text-ink font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider border border-ink rounded-md">

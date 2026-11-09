@@ -216,9 +216,9 @@ export const ExploreView: React.FC<ExploreViewProps> = ({
           <span className="font-mono text-xs text-gold uppercase tracking-widest block mb-1">
             {language === 'hi' ? 'इंटरएक्टिव हेरिटेज खोज और खोज' : 'Interactive Heritage Search & Discovery'}
           </span>
-          <h1 className="font-display text-3xl sm:text-4xl text-charcoal tracking-tight font-bold">
+          <h2 className="font-display text-3xl sm:text-4xl text-charcoal tracking-tight font-bold">
             {t('explore.title', 'Explore Heritage Monuments')}
-          </h1>
+          </h2>
         </div>
 
         {/* TOP SECTION: Search Field, Category Chips, Sort Dropdown */}
