@@ -249,3 +249,38 @@
   word-break: break-word;
   overflow-wrap: anywhere;
 }
+
+/* Small-text contrast (WCAG 2.x AA, 4.5:1).
+   The palette's grey and gold are too faint at 10-12px on two surfaces. These unlayered rules beat
+   Tailwind's layered utilities and change a colour only where the surface behind it is known:
+   grey on the dark navy panels, gold on the light cream/white page, gold on the slate chips. */
+:root {
+  --text-stone-on-dark: #B0AB9D;  /* 6.2:1 on ink, 4.6:1 on the slate chips */
+  --text-gold-on-light: #85600F;  /* 5.2:1 on salt, 5.7:1 on white */
+  --text-gold-on-slate: #E0B657;  /* 5.6:1 on the slate chips (ink with 10% salt) */
+  --text-stone-on-light: #625D52; /* 6.0:1 on salt for the faint (80%) grey */
+}
+.bg-ink .text-stone,
+.bg-ink.text-stone,
+.bg-ink [class*="text-stone/"],
+.bg-ink[class*="text-stone/"] {
+  color: var(--text-stone-on-dark);
+}
+/* a light card nested inside a dark panel keeps the original grey */
+.bg-ink .bg-white .text-stone,
+.bg-ink .bg-salt .text-stone,
+.bg-ink .bg-white [class*="text-stone/"],
+.bg-ink .bg-salt [class*="text-stone/"] {
+  color: var(--color-stone);
+}
+.text-gold:not(.bg-ink *, .bg-ink, .bg-charcoal *, .bg-charcoal, .bg-madder *, .bg-madder, .bg-gold *, .bg-gold):not(:hover):not(:focus-visible) {
+  color: var(--text-gold-on-light);
+}
+.bg-ink .bg-salt\/10 .text-gold,
+.bg-ink .bg-salt\/10.text-gold,
+.bg-ink .bg-salt\/10 .text-gold\/80 {
+  color: var(--text-gold-on-slate);
+}
+[class*="text-stone/"]:not(.bg-ink *, .bg-ink, .bg-charcoal *, .bg-charcoal) {
+  color: var(--text-stone-on-light);
+}
