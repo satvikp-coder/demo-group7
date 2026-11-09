@@ -41,10 +41,12 @@ Nothing else is needed: `DATABASE_URL` is wired to the database automatically, a
 The API container runs `node --import tsx scripts/start.js`, which calls `scripts/bootstrap.js` and then starts the server in the same process. `bootstrap.js`:
 
 1. applies pending database migrations (safe to repeat), and
-2. seeds the approved catalog **only if the database has no destinations**. An existing catalog is never reseeded.
+2. seeds the approved catalog **only if the database has no destinations** (an existing catalog is never reseeded), and
+3. applies the four additive catalog releases that are not yet applied (more hotels, attractions and road routes: `20261009`, `20261010`, `20261011`, `20261020`). They only insert and skip anything already present, so repeating them is safe. The result is the full catalog: 8 destinations, 100 attractions, 56 hotels, 12 restaurants and 1,330 routes.
 
 In the API service **Logs** you should see: `Migrations are up to date.`, `Empty catalog detected: seeding the approved data once.`,
-`Initial seed complete.`, then a `server_start` line.
+`Initial seed complete.`, four `Catalog release ... records and ... routes added.` lines, then a `server_start` line.
+Later starts print `... already applied.` for each release and take about a second.
 
 ## 4. Check it works
 
