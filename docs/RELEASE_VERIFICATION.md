@@ -57,7 +57,7 @@ upstream history was preserved from `24a87b6`. No force push or database reset i
   baseline/source fixtures. Research HTML/JSON/map/menu evidence remains under
   `data/research/` because imports and auditability depend on it. Source attribution
   is not a blanket redistribution license.
-- Public `AGENTS.md` and a sanitized `CODEX_HANDOFF.md` preserve project continuity.
+- Project continuity notes (`AGENTS.md`, `CODEX_HANDOFF.md`) were removed from the repository root for the final submission; they remain in git history.
   The full private historical handoff stays in the original local application.
 - Historical audit path keys are now relative; the corresponding audit resolves
   them from the repository root. Git attributes preserve pinned evidence and

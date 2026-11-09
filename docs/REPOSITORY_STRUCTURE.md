@@ -16,11 +16,13 @@ The [root README](../README.md) is the entry point. This is the implemented layo
 | `dsa/` | Shared algorithms; retain for academic evaluation. |
 | `tests/`, `scripts/` | Browser/assertion harnesses, suite runners and local operation commands. |
 | `deploy/`, `compose*.yml`, `.github/` | Deployment configuration and CI. |
+| `render.yaml`, `docs/RENDER_DEPLOY.md` | Render Blueprint (database, API, website) and its step-by-step guide. |
+| `backend/scripts/bootstrap.js`, `start.js` | Start-up preparation for hosts without a shell: migrate, seed an empty database, apply the four additive catalog releases, then start the API. |
 | `docs/foundation/`, `docs/diagrams/` | Historical academic design documents. |
 | `docs/research/` | Experiments with explicitly retained comparison baselines. |
 | `backend/reports/` | Curated provenance/readiness reports, required fixtures and generated local evidence. |
 | `reports/` | Current compact data, feature-repair, integration and browser evidence; private progress stays local. |
 | `docs/LOCAL_DEMO.md` | Reproducible local professor demonstration with truthful failure/deletion/sharing behavior. |
 
-No source directories were moved for this release. See
+No source directories were moved for this release. Session notes written for AI coding tools (`AGENTS.md`, `CODEX_HANDOFF.md`) were removed from the repository root; they remain in git history. See
 [release verification](RELEASE_VERIFICATION.md) for artifact retention decisions.

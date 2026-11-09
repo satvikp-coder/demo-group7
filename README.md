@@ -1,193 +1,113 @@
 # Gujarat Heritage Tourism Planner
 
-CSC210 Data Structures & Algorithms, Monsoon 2026 ? Group 7, Ahmedabad University.
+**Live site: https://heritage-planner-web.onrender.com**
 
-## Overview
+CSC210 Data Structures & Algorithms, Monsoon 2026, Group 7, Ahmedabad University.
 
-A React, Express and PostgreSQL application for exploring Gujarat heritage destinations and planning single-destination trips. The planner builds hotel-to-attractions-to-hotel daily schedules from recorded routes, visit durations, opening information and budget constraints. Authenticated users can save, reopen and delete their own trips.
+Pick a Gujarat heritage destination, a hotel and a budget, and the app plans each day as a loop:
+**hotel → sights and meals → back to the hotel**, using real road distances, opening hours and recorded prices.
+It is a full web app (React + Express + PostgreSQL) where the course's data structures and algorithms do the real work.
 
-## Supported destinations
+> The first visit after a quiet period can take about a minute, because the free server sleeps when idle.
 
-Ahmedabad, Somnath, Dwarka, Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara.
+## Try it in two minutes
 
-## Key functionality
+1. Open the live site and browse **Explore** (8 destinations, search, filters) and **Ranked Stays** (56 hotels).
+2. **Register**, then **Plan Itinerary**: choose a city, hotel, days and budget, then **Generate**.
+3. Explore the result: day-by-day schedule, route map, budget breakdown, strategy comparison, shortest-path visualizer, PDF export and a shareable link.
+4. Open the chat button and ask the **Heritage Guide** about hotels or attractions.
 
-- Destination and attraction discovery through runtime prefix search.
-- Hotel selection, restaurant-supported meal scheduling, distance/cost/rating priorities and strategy comparison.
-- Multi-day itineraries, known-cost budgets, interactive route maps, PDF export and a Dijkstra visualizer.
-- JWT login, owner-protected saved trips, private trip bookmarks and cached offline trip viewing.
-- Operator-only catalog administration and the grounded Heritage Guide chatbot.
-- English, Gujarati and Hindi interface support, with incomplete translations and accessibility data disclosed below.
+## What it does
 
-## Technology stack
+- **Discover** 8 destinations: Ahmedabad, Somnath, Dwarka, Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara (100 attractions, 56 hotels, 12 restaurants, 1,330 road routes).
+- **Plan** multi-day trips from a chosen hotel, balancing distance, cost and rating, with meals and opening hours respected.
+- **Budget** with honest numbers: unknown prices are shown as unknown and never counted as free.
+- **Save and share** trips (login required), view a saved trip offline, export a PDF.
+- **Ask** the Heritage Guide chatbot (Groq): it only answers from the project's database.
+- **Languages:** English, Hindi and Gujarati.
 
-| Area | Technologies |
-|---|---|
-| Frontend | React 19, TypeScript 5.8, Vite 6, Tailwind CSS 4, Motion, Lucide React |
-| Maps / export | Leaflet, OpenStreetMap, optional OSRM geometry, jsPDF, html2canvas |
-| Backend | Node.js 22.18+, Express 5, JavaScript ES modules, shared TypeScript through tsx |
-| Database | PostgreSQL 17, node-postgres, ordered SQL migrations |
-| Security / testing | bcrypt, JWT, Zod, Helmet, rate limits, Node test runner, Python Playwright and Chrome |
-
-Exact versions are pinned in the backend and frontend npm lockfiles.
-
-## Architecture
+## How it works
 
 ```text
-Browser -> React -> shared API client -> Express routes/services -> PostgreSQL
-                                          |
-                                     shared dsa/ modules
-Authenticated chat -> allowlisted read-only tools -> database facts -> Groq reply
+Browser (React) → Express API → PostgreSQL
+                      │
+                      └── dsa/ (graph, Dijkstra, heap, trie, hash table, merge sort, greedy)
+Chat: signed-in user → read-only database tools → Groq → grounded answer
 ```
 
-`frontend/` contains the application; `backend/` contains the API and tests; `dsa/` contains shared algorithms; `data/` and `database/` contain approved inputs and schema. `tests/`, `scripts/`, `docs/` and `reports/` hold verification tooling and evidence. Production requires protected backend/database configuration and an HTTPS reverse proxy.
+| Data structure / algorithm | Where it is used |
+|---|---|
+| Graph | Road network between hotels, sights and restaurants |
+| Dijkstra + MinHeap | Shortest path when two places have no direct recorded route |
+| Greedy scoring | Choosing which sights fit each day and the budget |
+| Trie | Instant prefix search over destination and attraction names |
+| Hash table | Fast route and visit lookups while planning |
+| Merge sort | Stable ranking of hotels |
 
-## Data Structures and Algorithms
+The planner is a bounded heuristic: it finds a good plan, not a proven global optimum.
 
-| Structure / algorithm | Implementation | Actual runtime use |
-|---|---|---|
-| Graph | [Graph.ts](dsa/graph/Graph.ts) | Evidenced route adjacency in the trip planner |
-| Dijkstra | [dijkstra.ts](dsa/dijkstra/dijkstra.ts) | Shortest-path fallback when a direct route is missing; stored direct routes take precedence |
-| MinHeap | [MinHeap.ts](dsa/priorityQueue/MinHeap.ts) | Dijkstra queue and planner candidate/route ordering |
-| Greedy route scoring | [routeBuilder.ts](dsa/greedy/routeBuilder.ts) | Distance/cost/rating candidate scoring |
-| Greedy day splitting | [daySplitter.ts](dsa/greedy/daySplitter.ts) | Visit quotas and meal-window helpers |
-| Greedy budget filtering | [budgetAllocator.ts](dsa/greedy/budgetAllocator.ts) | Admission-budget eligibility filtering |
-| Trie | [Trie.ts](dsa/trie/Trie.ts) | Prefix lookup over names indexed from PostgreSQL |
-| HashTable | [HashTable.ts](dsa/hashTable/HashTable.ts) | Attraction membership, directional route cache and visited tracking |
-| Merge Sort | [mergeSort.ts](dsa/sorting/mergeSort.ts) | Stable hotel ranking |
+## Repository map
 
-Runtime call sites: [tripPlanner.js](backend/services/tripPlanner.js), [destinationSearchCache.js](backend/services/destinationSearchCache.js) and [hotelRanking.js](backend/services/hotelRanking.js). Planning is a bounded heuristic, not a global optimum guarantee. The academic Trie has fuzzy-search tests, but the public endpoint does not implement typo tolerance. See the [tested DSA mapping](docs/FINAL_BUG_LOG.md#runtime-dsa-mapping).
+| Folder | What is inside |
+|---|---|
+| `frontend/` | React 19 + TypeScript + Vite app (pages in `src/components`, API client in `src/api`) |
+| `backend/` | Express API: routes, controllers, services, SQL migrations (`migrations/`), tests, maintenance scripts (`scripts/`) |
+| `dsa/` | The shared algorithms and data structures, written in TypeScript |
+| `database/` | Base schema and historical SQL examples |
+| `data/` | Researched source data (CSVs and JSON with citations) used to build the catalog |
+| `tests/`, `scripts/` | Browser and assertion test harnesses, suite runners, local operations |
+| `docs/` | Guides: [deploy to Render](docs/RENDER_DEPLOY.md), [production](docs/PRODUCTION.md), [local demo](docs/LOCAL_DEMO.md), [repository map](docs/REPOSITORY_STRUCTURE.md), [bug log](docs/FINAL_BUG_LOG.md) |
+| `reports/`, `backend/reports/` | Verification evidence (audit scripts and CI read these, so they stay) |
+| `deploy/`, `compose*.yml`, `render.yaml`, `.github/` | Docker, Render blueprint and CI configuration |
 
-## Prerequisites and installation
+## Run it on your computer
 
-Install Node.js 22.18+ with npm, Git and PostgreSQL 17. Docker Desktop with Linux containers and Compose v2 is optional for the documented container stack. Browser tests additionally require Python, Google Chrome and the pinned Playwright package.
+You need Node.js 22.18+ and PostgreSQL 17 (or Docker for the database).
 
 ```sh
 git clone https://github.com/CSC210-Monsoon2026/group-07-heritage-tourism-planner.git
 cd group-07-heritage-tourism-planner
 npm ci --prefix backend
 npm ci --prefix frontend
-cp backend/.env.example backend/.env
+cp backend/.env.example backend/.env       # then fill in DATABASE_URL and JWT_SECRET (see below)
 cp frontend/.env.example frontend/.env.local
+npm --prefix backend run db:bootstrap      # empty database: schema + data + all hotels and attractions
+npm --prefix backend start                 # API on http://localhost:5000
+npm --prefix frontend run dev              # app on http://localhost:3000
 ```
 
-The copy commands use Git Bash/POSIX syntax; PowerShell users can use `Copy-Item`. Create a dedicated PostgreSQL database and role. Configure ignored `backend/.env` with your own `DATABASE_URL`, a private random `JWT_SECRET`, `PORT=5000` and `CORS_ORIGIN=http://localhost:3000`. Hosted database connections require certificate verification. Set `frontend/.env.local` to `VITE_API_BASE_URL=http://localhost:5000/api`. Never put secrets in `VITE_` variables.
+In `backend/.env` set `DATABASE_URL` (your PostgreSQL URL), `PORT=5000`, `CORS_ORIGIN=http://localhost:3000`, and a random
+`JWT_SECRET` (32+ characters; generate one with `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`).
+To enable the chatbot, add `GROQ_API_KEY` from [console.groq.com/keys](https://console.groq.com/keys) (optional; the rest of the app works without it).
+Windows Git Bash users: prefix commands that pass `/api` with `MSYS_NO_PATHCONV=1`.
 
-For a **new empty database only**:
+No PostgreSQL installed? `npm run local:up` starts the whole stack in Docker at http://localhost:8080
+(see [docs/LOCAL_PRODUCTION.md](docs/LOCAL_PRODUCTION.md)). It starts with the small base catalog; add the extra hotels and
+attractions with `npm run local:expand`, `local:enrich`, `local:hotel-coverage` and `local:attractions`, in that order.
+
+## Tests
 
 ```sh
-npm --prefix backend run db:migrate
-npm --prefix backend run db:seed
-npm --prefix backend run db:verify
+npm --prefix backend test          # API and planner unit tests
+npm --prefix frontend test         # frontend unit tests and planner assertions
+npm --prefix frontend run lint     # TypeScript type check
+npm --prefix backend run test:integration   # real HTTP + PostgreSQL checks (needs the database)
+npm --prefix backend run test:frontend      # Chrome browser journeys (needs Python, Playwright, Chrome)
 ```
 
-Do not reset/reseed an existing database or run historical attraction imports to reproduce the submission catalog. Back up existing installations before maintenance. See the [production runbook](docs/PRODUCTION.md).
+## Deploying
 
-## Local startup and Docker
+`render.yaml` describes the whole deployment (database, API, website). Step by step guide: [docs/RENDER_DEPLOY.md](docs/RENDER_DEPLOY.md).
+On every start the API applies pending migrations and, on an empty database, loads the full catalog automatically.
 
-Run in separate terminals:
+## Data and honest limits
 
-```sh
-npm --prefix backend start
-npm --prefix frontend run dev
-```
+- Prices, hours and accessibility come from dated public sources and are **snapshots, not live quotes**. Check before you travel.
+- Where a fact is not known (a ticket price, a transport fare, wheelchair access) the app says "not available" instead of guessing.
+- Maps use OpenStreetMap; road geometry from OSRM is display-only and the planner uses the recorded route distances.
+- The free hosting plan sleeps when idle and its database expires after 30 days.
 
-Frontend: `http://localhost:3000`; API: `http://localhost:5000/api`. `/health` reports liveness; `/ready` checks database readiness. Production operator self-registration is prohibited; operators require owner approval.
+## Team
 
-The optional Docker stack uses port 8080; instructions, PostgreSQL volume preservation and backup procedures are in [Local Production](docs/LOCAL_PRODUCTION.md). The `local:*` launcher reads `GROQ_API_KEY` and `GROQ_MODEL` from `backend/.env` as defaults; shell variables and explicit `.env.local-production` entries take precedence. Database credentials remain separate. After changing Groq settings, run `npm run local:up` to recreate the backend. Do not copy database credentials between installations.
-
-Production frontend build in Git Bash/POSIX shells:
-
-```sh
-MSYS_NO_PATHCONV=1 VITE_API_BASE_URL=/api npm --prefix frontend run build
-```
-
-`MSYS_NO_PATHCONV=1` preserves `/api` on Windows Git Bash. In PowerShell set `$env:VITE_API_BASE_URL='/api'`, then run `npm --prefix frontend run build`. Serve the build with a same-origin `/api` proxy.
-
-## Groq Heritage Guide
-
-Set `GROQ_API_KEY` in ignored `backend/.env`; obtain a key from [Groq Console](https://console.groq.com/keys). Optional `GROQ_MODEL` defaults to `openai/gpt-oss-20b`. GPT-OSS requests use `reasoning_effort: low`. Restart the backend after configuration changes.
-
-`POST /api/chat` requires authentication. The backend calls Groq, executes only validated read-only database tools and asks for a grounded final reply. JWT/account checks, owner-scoped trip tools, encrypted history, input limits, IP/user quotas, concurrency limits and a **15-second total deadline** remain enforced. Explicit database-only mode makes no model request and remains available when inference fails. Relevant messages/facts are sent to Groq; credentials remain backend-only.
-
-Previous live verification passed **9/9 authenticated requests** over three rounds of destination, Somnath and Modhera questions, with meaningful grounded replies and valid history tokens. Request times were **1.044?3.646 seconds**, with provider-quota backoff between questions. This is recorded evidence, not an availability guarantee. Rapid traffic can return a friendly 429; there are no automatic retries or alternate-provider fallback. The [final bug log](docs/FINAL_BUG_LOG.md) retains exact results and the superseded NVIDIA investigation.
-
-## Database and seed data
-
-The submission seed contains **8 destinations, 25 attractions, 11 hotels, 12 restaurants and 131 routes**. CSVs and researched supplements are validated before import; simulated route records are excluded. Tourism information remains dated source snapshots.
-
-Historical enrichment reports describe separate 44- and 100-attraction datasets. Those totals do not describe the submission seed, and their imports are not required for setup. See [provenance](backend/reports/data-provenance.md) and [research limitations](backend/reports/COMPLETION_RESEARCH.md).
-
-## Authentication and API routes
-
-| Route | Purpose |
-|---|---|
-| `/api/auth` | Registration, login and current account |
-| `/api/destinations` | Catalog, prefix search, details, attractions, hotels and restaurants |
-| `/api/trips` | Authenticated owner trip creation, discovery and retrieval |
-| `/api/trips/:id/generate-itinerary` | Generate and persist the selected trip's itinerary |
-| `/api/trips/:id/budget` | Recorded known-cost breakdown |
-| `DELETE /api/trips/:id` | Delete only the owner's trip and dependent records |
-| `POST /api/chat` | Grounded chat or explicitly selected database-only lookup |
-| `/api/admin` | Operator-only catalog CRUD |
-
-See [backend contracts and permissions](backend/README.md).
-
-## Testing and verification
-
-```sh
-npm run test:backend
-npm run test:chat
-npm run test:frontend
-npm --prefix frontend run lint
-npm --prefix backend run build
-npm run audit:source
-node scripts/test-source-approval.js
-python -m pip install -r requirements-tests.txt
-```
-
-Frontend tests include the Trie and reference-planner suites; backend tests exercise runtime Graph/Dijkstra/heap/hash/greedy integration. Source approval uses reviewed exact hashes and rejects subsequent unapproved changes.
-
-For browser checks, finish the production build first and keep the backend on 5000. Inside `frontend/`, start preview on 3000, stopping the development server first if necessary:
-
-```sh
-node --input-type=module -e "import {preview} from 'vite'; await preview({preview:{host:'127.0.0.1',port:3000,strictPort:true,proxy:{'/api':'http://localhost:5000'}}});"
-```
-
-From the repository root in Git Bash/POSIX shells:
-
-```sh
-FRONTEND_TEST_URL=http://localhost:3000 API_TEST_URL=http://localhost:3000/api npm --prefix backend run test:frontend
-```
-
-PowerShell users can set those target variables through `$env:` before the npm command. They select test URLs, not CORS policy. Run catalog-mutating suites sequentially and do not rebuild during browser tests. The wrapper cleans recorded fixture IDs and verifies catalog preservation. Additional configured-test-database checks are available through `npm run test:integration`; see [testing details](tests/README.md).
-
-For the running Docker app, set `FRONTEND_TEST_URL=http://localhost:8080`, `API_TEST_URL=http://localhost:8080/api`, `PRODUCTION_BROWSER_TEST=true` and `BROWSER_TEST_BACKEND_CONTAINER=heritage-local-backend-1` before running the same browser command. The wrapper verifies that API and cleanup catalog IDs match before creating fixtures; database queries and operator fixture approval run inside the selected backend container. This does not expose PostgreSQL or change CORS.
-
-Previous completed verification: **123 backend tests (including 28 mocked chat tests), 56 frontend tests, 80 Trie assertions, 33 planner assertions and 64 browser checks**; TypeScript, syntax, production build and source audit passed. A secret-free fresh clone passed lockfile installation, tests, types and builds. The [final bug log](docs/FINAL_BUG_LOG.md) records evidence and qualifications; historical reports do not represent new executions.
-
-## Security
-
-Protections include bcrypt, expiring HS256 JWTs, current-account/role checks, trip ownership, bound SQL, Zod validation, read-only chatbot tools, restrictive CORS, Helmet, rate limits and sanitized failures. Production requires HTTPS, restricted runtime database credentials and protected secrets. Safe environment templates are tracked; private environments, dependencies, builds and database archives are ignored. Use one API instance until rate-limit storage is shared. Never commit keys or tokens.
-
-## Known limitations
-
-- Modhera, Champaner, Gir National Park, Rann of Kutch and Saputara retain provisional/unverified seeded data. Fee, hours, rating, accessibility and physical-demand coverage is incomplete.
-- Some hotel prices are historical or dated; no live booking/rate guarantee exists. Unknown-price hotels are not priced starting-hotel choices.
-- Budgets show known subtotals, excluding unavailable transport fares, unknown fees/taxes and unscheduled costs. Unknown does not mean free.
-- Routes and schedules are estimates constrained by available data. Sparse catalogs can leave disclosed gaps or unsupported sightseeing days; global optimality is not claimed.
-- Runtime search is prefix-based, without typo tolerance.
-- Gujarati/Hindi aliases and short translations need native review. Descriptions and some controls remain English-only; native chatbot-language quality is not certified.
-- Groq needs a backend key and remains subject to provider quotas and application rate limits; database-only mode is available during failures.
-- Production operators need owner approval. Public recipient sharing, account editing and password recovery are unavailable; copied trip links remain owner-authenticated.
-- Native-device testing is incomplete; viewport checks do not certify native devices. Public maps/routing depend on external services.
-- A live website may be older than the submitted branch. Local verification does not establish deployment freshness.
-
-## Documentation and references
-
-- [Final bug log](docs/FINAL_BUG_LOG.md) and [translation review](docs/TRANSLATION_REVIEW.md)
-- [DSA documentation](dsa/README.md), [testing guide](tests/README.md) and [frontend integration](frontend/README.md)
-- [Research sources](data/research/), [image rights](docs/IMAGES.md), [photo credits](frontend/public/image-credits.html) and [license](LICENSE)
-- [Historical team responsibilities and credits](docs/TEAM_RESPONSIBILITIES.md); Git authorship does not establish total individual contribution.
-
-Administrative item: official end-semester AI-tool disclosure instructions remain **NOT VERIFIED**. Confirm course requirements and disclose actual tool use honestly in the required submission materials; this README does not invent university policy.
+Satvik (frontend, DSA integration), Manya (data collection, documentation), Aryan (DSA and backend), Sonam (research and testing).
+Licensed under the terms in [LICENSE](LICENSE).
