@@ -1,3 +1,4 @@
+import { StatusPanel } from "./StatusPanel";
 import {costLabel,stopCostLabel} from "../utils/costPresentation";
 import {scheduleGaps} from '../../../dsa/planning/scheduleGaps';
 import type {PriorityWeights} from '../../../dsa/planning/priorities';
@@ -190,8 +191,8 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
   const [pendingSave, setPendingSave] = useState(false);
   const [saveError, setSaveError] = useState("");
   // All hooks above the loading boundary; stale rows never render while reloading.
-  if(request.loading || pendingSave) return <p role="status">Loading persisted itinerary...</p>;
-  if(request.error || !request.data) return <p role="alert">{request.error || "No persisted itinerary available."} <button onClick={request.reload}>Retry</button> <button onClick={onBackToPlanner}>Open planner</button></p>;
+  if(request.loading || pendingSave) return <StatusPanel kind="loading" title="Your Itinerary" message="Loading persisted itinerary..." />;
+  if(request.error || !request.data) return <StatusPanel kind="error" title="Your Itinerary" message={request.error || "Plan an itinerary first, and it will appear here."} actions={[{label:"Retry",onClick:request.reload},{label:"Open planner",onClick:onBackToPlanner,primary:true}]} />;
   const generatedResult = request.data.result;
   const baselineResult = generatedResult;
   const activeResult = generatedResult;

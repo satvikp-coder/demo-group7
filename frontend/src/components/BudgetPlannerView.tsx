@@ -1,3 +1,4 @@
+import { StatusPanel } from "./StatusPanel";
 import {costLabel} from "../utils/costPresentation";
 import {getShareableUrl} from "../utils/shareUrl";
 import {parseBudgetCap} from "../utils/budgetCap";
@@ -108,8 +109,8 @@ export const BudgetPlannerView: React.FC<BudgetPlannerViewProps> = ({
   };
   const activeCity = request.data?.city;
   const cityName = activeCity ? getName(activeCity) : "";
-  if(request.loading) return <p role="status">Loading saved trip budget...</p>;
-  if(request.error || !request.data) return <p role="alert">{request.error || "Generate a trip first."} <button onClick={request.reload}>Retry</button> <button onClick={onBackToPlanner}>Open planner</button></p>;
+  if(request.loading) return <StatusPanel kind="loading" title="Budget Planner" message="Loading saved trip budget..." />;
+  if(request.error || !request.data) return <StatusPanel kind="error" title="Budget Planner" message={request.error || "Plan an itinerary first, and its budget will appear here."} actions={[{label:"Retry",onClick:request.reload},{label:"Open planner",onClick:onBackToPlanner,primary:true}]} />;
 
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">

@@ -1,3 +1,4 @@
+import { StatusPanel } from "./StatusPanel";
 import { displayNumber } from "../api";
 import React, { useState } from "react";
 import { api, useApi, EMPTY_DESTINATION } from "../api";
@@ -72,8 +73,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
     return true;
   });
 
-  if (request.loading) return <p role="status">Loading destination...</p>;
-  if (request.error) return <p role="alert">{request.error} <button onClick={request.reload}>Retry</button></p>;
+  if (request.loading) return <StatusPanel kind="loading" title="Destination" message="Loading destination..." />;
+  if (request.error) return <StatusPanel kind="error" title="Destination" message={request.error} actions={[{label:"Retry",onClick:request.reload,primary:true}]} />;
   return (
     <div className="bg-salt min-h-screen border-b border-stone/30 animate-fadeIn">
       {/* 1. FULL-WIDTH HERO IMAGE BAND */}

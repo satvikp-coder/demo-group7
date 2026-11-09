@@ -219,13 +219,13 @@ export const api = {
     return cacheCleared;
   },
   savedTrips: (signal?:AbortSignal) => all('/trips',signal),
-  trip: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}`,{signal}).then(snapshotFromResponse) : Promise.reject(new ApiError("Generate a persisted trip first.")),
+  trip: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}`,{signal}).then(snapshotFromResponse) : Promise.reject(new ApiError("Plan an itinerary first, and it will appear here.")),
   tripMap: (id:string,day:number,signal?:AbortSignal) => request<Row>(`/trips/${idPath(id)}/map/${day}`,{signal}).then(value=>{
     if(value.trip_id!==id||value.day_number!==day||!Array.isArray(value.legs)||!value.legs.every((leg:Row)=>
       ['road','estimated','same_location','unavailable'].includes(leg.status)&&Array.isArray(leg.coordinates)&&leg.coordinates.every((p:any)=>Array.isArray(p)&&p.length===2&&Number.isFinite(p[0])&&Math.abs(p[0])<=180&&Number.isFinite(p[1])&&Math.abs(p[1])<=90)))throw new ApiError('Invalid map response.');
     return value;
   }),
-  budget: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}/budget`,{signal}).then(budgetFromResponse) : Promise.reject(new ApiError("Generate a persisted trip first.")),
+  budget: (id:string,signal?:AbortSignal) => id ? request<Row>(`/trips/${idPath(id)}/budget`,{signal}).then(budgetFromResponse) : Promise.reject(new ApiError("Plan an itinerary first, and it will appear here.")),
   adminList: (resource:string,signal?:AbortSignal) => all(`/admin/${idPath(resource)}`,signal),
   adminSave: async (resource:string,id:string|undefined,body:Row) => catalogMutation(request<Row>(`/admin/${idPath(resource)}${id?`/${idPath(id)}`:""}`,{method:id?"PUT":"POST",body:JSON.stringify(body)})),
   adminDelete: async (resource:string,id:string) => catalogMutation(request<void>(`/admin/${idPath(resource)}/${idPath(id)}`,{method:"DELETE"})),

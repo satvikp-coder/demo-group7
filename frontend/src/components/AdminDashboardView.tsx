@@ -1,3 +1,4 @@
+import { StatusPanel } from "./StatusPanel";
 import React, { useState, useEffect, useRef } from "react";
 import { api, useApi, errorMessage } from "../api";
 import { HotelData } from "./HotelsView";
@@ -209,8 +210,8 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
     catch(error) { setRequestError(errorMessage(error)); }
     finally { setPending(false); }
   };
-  if(request.loading || pending) return <p role="status">{pending ? "Saving catalog changes..." : "Loading operator catalog..."}</p>;
-  if(request.error || requestError) return <p role="alert">{request.error || requestError} <button onClick={() => {setRequestError(""); request.reload();}}>Retry</button> <button onClick={onBackToProfile}>Back to profile</button></p>;
+  if(request.loading || pending) return <StatusPanel kind="loading" title="Operator Admin" message={pending ? "Saving catalog changes..." : "Loading operator catalog..."} />;
+  if(request.error || requestError) return <StatusPanel kind="error" title="Operator Admin" message={request.error || requestError} actions={[{label:"Retry",onClick:() => {setRequestError(""); request.reload();},primary:true},{label:"Back to profile",onClick:onBackToProfile}]} />;
 
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink font-mono text-xs">

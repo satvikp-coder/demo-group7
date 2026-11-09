@@ -1,3 +1,4 @@
+import { StatusPanel } from "./StatusPanel";
 import {HOTEL_CATEGORIES,type HotelCategory} from '../../../dsa/planning/hotelPolicy';
 import { displayNumber } from "../api";
 import React, { useEffect, useState } from "react";
@@ -111,9 +112,9 @@ export const HotelsView: React.FC<HotelsViewProps> = ({
     }
   };
 
-  if(catalog.loading) return <p role="status">Loading hotels...</p>;
-  if(catalog.error) return <p role="alert">{catalog.error} <button onClick={() => {catalog.reload(); hotelsRequest.reload();}}>Retry</button></p>;
-  if(!activeDestination.id) return <p role="status">No destinations available.</p>;
+  if(catalog.loading) return <StatusPanel kind="loading" title="Ranked Stays" message="Loading hotels..." />;
+  if(catalog.error) return <StatusPanel kind="error" title="Ranked Stays" message={catalog.error} actions={[{label:"Retry",onClick:() => {catalog.reload(); hotelsRequest.reload();},primary:true}]} />;
+  if(!activeDestination.id) return <StatusPanel kind="empty" title="Ranked Stays" message="No destinations available." />;
   const totalSelectedCount = Object.keys(activePreferredMap).length;
 
   return (

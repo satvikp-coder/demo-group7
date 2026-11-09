@@ -1,3 +1,4 @@
+import { StatusPanel } from "./components/StatusPanel";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -491,8 +492,8 @@ export default function App() {
           {/* Main Content Area */}
           <main className="flex-grow">
             <AnimatePresence mode="wait">
-              {((showProfile || showAdminDashboard) && authRequest.loading) ? <p role="status">Checking your session...</p>
-                : ((showProfile || showAdminDashboard) && authRequest.error) ? <p role="alert">{authRequest.error} <button onClick={authRequest.reload}>Retry</button></p>
+              {((showProfile || showAdminDashboard) && authRequest.loading) ? <StatusPanel kind="loading" title="Account" message="Checking your session..." />
+                : ((showProfile || showAdminDashboard) && authRequest.error) ? <StatusPanel kind="error" title="Account" message={authRequest.error} actions={[{label:"Retry",onClick:authRequest.reload,primary:true}]} />
                 : sharedLinkError ? (
                 <motion.div
                   key="invalid-shared-link"

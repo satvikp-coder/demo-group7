@@ -1,3 +1,4 @@
+import { StatusPanel } from "./StatusPanel";
 import React, { useState, useEffect, useRef } from "react";
 import { api, useApi, loadItinerary, errorMessage } from "../api";
 import { ItineraryConfig } from "./ItineraryView";
@@ -125,8 +126,8 @@ export const ProfileDashboardView: React.FC<ProfileDashboardViewProps> = ({
     finally{deletingRef.current=false;setDeletingTripId(null);}
   };
 
-  if(request.loading) return <p role="status">Loading account records...</p>;
-  if(request.error) return <p role="alert">{request.error} <button onClick={request.reload}>Retry</button></p>;
+  if(request.loading) return <StatusPanel kind="loading" title="My Profile" message="Loading account records..." />;
+  if(request.error) return <StatusPanel kind="error" title="My Profile" message={request.error} actions={[{label:"Retry",onClick:request.reload,primary:true}]} />;
   return (
     <div className="bg-salt min-h-screen py-8 px-4 sm:px-6 lg:px-8 border-b border-stone/30 animate-fadeIn selection:bg-gold selection:text-ink">
       <div className="max-w-5xl mx-auto space-y-10">
