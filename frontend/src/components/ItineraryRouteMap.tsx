@@ -5,7 +5,7 @@ import {divIcon,Marker as LeafletMarker,LatLngTuple} from 'leaflet';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {BedDouble,Landmark,Utensils,MapPin} from 'lucide-react';
 import {api,errorMessage} from '../api';
-import {savedLegKm,savedDayKm} from '../utils/savedLegDistances';
+import {savedLegKm} from '../utils/savedLegDistances';
 import {stopPoint,drawableLegs} from '../utils/routeLegs';
 import 'leaflet/dist/leaflet.css';
 import './ItineraryRouteMap.css';
@@ -32,7 +32,7 @@ const StopMarker: React.FC<{stop:Stop;index:number;selected:boolean;onSelect:(id
     <Popup><strong>{index+1}. {stop.name}</strong><p>{stop.type==='meal'?'Restaurant':stop.type}</p><p>{stop.arrivalTime??'Arrival unavailable'} - {stop.departureTime??'Departure unavailable'}</p><p>{stop.durationMinutes==null?'Visit duration unavailable':`${stop.durationMinutes} minutes at stop`}</p></Popup>
   </Marker>;
 }
-export default function ItineraryRouteMap({tripId,dayNumber,stops,selected,onSelect}:{tripId:string;dayNumber:number;stops:Stop[];selected:string|null;onSelect:(id:string)=>void}) {
+export default function ItineraryRouteMap({tripId,dayNumber,stops,selected,onSelect,dayTotalKm}:{tripId:string;dayNumber:number;stops:Stop[];selected:string|null;onSelect:(id:string)=>void;dayTotalKm?:number}) {
   const [routeResult,setRoute]=useState<{key:string;data:Route}|null>(null),[loading,setLoading]=useState(false),[error,setError]=useState(''),[fit,setFit]=useState(0),[tileError,setTileError]=useState(false);
   // Component-scoped cache is discarded on trip/account unmount. Keys include exact stops.
   const cache=useRef(new Map<string,Route>());
@@ -60,7 +60,7 @@ export default function ItineraryRouteMap({tripId,dayNumber,stops,selected,onSel
       {stops.map((s,i)=><StopMarker key={s.id} stop={s} index={i} selected={selected===s.id} onSelect={onSelect}/>)}
     </MapContainer>}
     <p className="text-xs mt-3" data-testid="route-coverage">Solid blue: routed road geometry ({route?.road_legs??0} legs). Dashed gold: straight-line estimates ({route?.estimated_legs??fallback.filter(l=>l.coordinates.length).length} legs). Missing connections: {route?.unavailable_legs??fallback.filter(l=>!l.coordinates.length).length}.</p>
-    {savedDayKm(stops)!==null?<p className="text-xs" data-testid="route-day-km">Day distance (saved route records): {savedDayKm(stops)!.toFixed(2)} km.</p>
+    {Number.isFinite(dayTotalKm)?<p className="text-xs" data-testid="route-day-km">Day distance (saved route records): {Number(dayTotalKm).toFixed(2)} km.</p>
       :<p className="text-xs">Map distance: {legs.filter(l=>l.status==='road').reduce((n,l)=>n+(l.distance_km??0),0).toFixed(2)} km routed; {legs.filter(l=>l.status==='estimated').reduce((n,l)=>n+(l.distance_km??0),0).toFixed(2)} km straight-line. </p>}
     <p className="text-xs">Map routing estimates may differ from saved planning distances and times. They do not confirm access, traffic or fares. Routing: <a href="https://routing.openstreetmap.de/about.html">OSRM / FOSSGIS</a> | <a href="https://www.openstreetmap.org/fixthemap">Report a map issue</a>.</p>
     {stops.filter(s=>!location(s)).map(s=><p key={s.id}>{s.type==='meal'&&!s.referenceId?'Personal meal break has no fixed map location: ':'Map location unavailable: '}{s.name}</p>)}

@@ -679,7 +679,7 @@ export const ItineraryView: React.FC<ItineraryViewProps> = ({
             <button className="font-bold text-ink" aria-expanded={mapOpen} onClick={()=>setMapOpen(!mapOpen)}>{mapOpen?'Close route map':'Open interactive route map'}</button>
             {mapOpen && <>
               <div className="flex flex-wrap gap-2 my-3" aria-label="Itinerary day selection">{dayPlans.map(day=><button key={day.dayNumber} aria-pressed={mapDay===day.dayNumber} className={`border border-gold rounded px-3 py-1 ${mapDay===day.dayNumber?"bg-ink text-gold":""}`} onClick={()=>{setMapDay(day.dayNumber);setSelectedStop(null);}}>Day {day.dayNumber}</button>)}</div>
-              <RouteMapBoundary><Suspense fallback={<p role="status">Loading map...</p>}><ItineraryRouteMap key={activeConfig.tripId} tripId={activeConfig.tripId!} dayNumber={mapDay} stops={dayPlans.find(d=>d.dayNumber===mapDay)?.stops??[]} selected={selectedStop} onSelect={setSelectedStop}/></Suspense></RouteMapBoundary>
+              <RouteMapBoundary><Suspense fallback={<p role="status">Loading map...</p>}><ItineraryRouteMap key={activeConfig.tripId} tripId={activeConfig.tripId!} dayNumber={mapDay} stops={dayPlans.find(d=>d.dayNumber===mapDay)?.stops??[]} dayTotalKm={dayPlans.find(d=>d.dayNumber===mapDay)?.totalKm} selected={selectedStop} onSelect={setSelectedStop}/></Suspense></RouteMapBoundary>
             </>}
           </section>
 
