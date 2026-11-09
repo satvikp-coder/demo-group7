@@ -92,6 +92,7 @@ Optional tuning variables, only if you need them: `CHAT_RATE_LIMIT` (default 6 p
 | API deploy fails with `Missing or invalid environment variables: JWT_SECRET` | The secret was left empty or is under 48 characters. Re-paste the 96-character value. |
 | Browser shows "Origin not allowed" or sign-in fails with a network error | `CORS_ORIGIN` must equal the app's exact origin. If Render gave the static site a different URL, update `CORS_ORIGIN`. |
 | `/api/...` on the app host returns the HTML page instead of JSON | The rewrite destination does not match the real API URL. Fix the API service name or the `routes` entry. |
+| Deploy exits with status 127 and `... not found` | The service still has an old Docker Command. Set it to `node --import tsx scripts/start.js` under **Settings**; a push alone does not change it. |
 | `/ready` returns 503 | The database is not reachable or still starting; check the database status and the API logs. |
 | Many users get "too many attempts" | Rate limits key on the client IP. `TRUST_PROXY=uniquelocal` assumes Render's proxies use private addresses; if all users appear to share one IP, set `TRUST_PROXY` to the proxy address range shown in Render's connection logs. |
 
@@ -103,13 +104,24 @@ Verified on the development machine:
 - the production frontend build, behind a proxy that mimics the `/api/*` rewrite and applies the security headers from `render.yaml`, completes register, sign-in, plan generation and the budget page with every API call successful and no browser console or Content-Security-Policy errors;
 - the chatbot without a key returns the documented "not configured" response and requires sign-in.
 
-NOT VERIFIED (needs a real Render account):
+Verified on the live Render deployment (9 November 2026):
 
-- Render accepting `render.yaml` as written (the Render CLI was not available to validate it);
-- Render's edge forwarding the `Origin` header unchanged through the `/api/*` rewrite;
-- whether `TRUST_PROXY=uniquelocal` matches Render's proxy addresses, which affects per-user rate limiting only;
-- the live Groq call (no key was available here); and
-- the free database plan accepting the internal connection without TLS (`DATABASE_SSL=disable`, allowed only on a private network).
+- `render blueprints validate render.yaml` reports the file valid;
+- the API starts with `node --import tsx scripts/start.js`, `/health` and `/ready` return 200 (so the database is reachable over the internal URL with `DATABASE_SSL=disable`), and `/api/destinations` through the app host returns the 8 destinations;
+- Render's `/api/*` rewrite forwards the browser's `Origin` header unchanged: a login attempt from the app origin gets a normal 401 for bad credentials, and the same request from a foreign origin gets 403 "Origin not allowed";
+- the app loads with 8 destination cards, the single-page-app fallback works for deep links, the security headers from `render.yaml` are served, and the browser console shows no errors; and
+- the chatbot endpoint requires sign-in (401 without a token).
+
+NOT VERIFIED:
+
+- registering a real account and generating a plan on the live site (it would write to the live database; the same flow was exercised against the identical production image and headers locally);
+- the live Groq answer, which needs a signed-in user asking a question (see section 5);
+- whether `TRUST_PROXY=uniquelocal` matches Render's proxy addresses, which only affects per-user rate limiting.
+
+Lesson from the first deploys: changing `render.yaml` and pushing does not update a service's stored Docker command after the
+Blueprint has been created. The first command (`sh -c "..."`) was rejected by Render and kept being used until it was changed
+through the Render API (`PATCH /v1/services/<id>` with `serviceDetails.envSpecificDetails.dockerCommand`), or by editing **Docker Command**
+under the service's **Settings**. The Render CLI's `services update --start-command` only supports native runtimes, not Docker.
 
 ## 9. Operator accounts
 
