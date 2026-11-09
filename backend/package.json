@@ -18,6 +18,7 @@
     "test:db": "node scripts/test-db-constraints.js",
     "test:destinations": "node --import tsx scripts/test-destinations-http.js",
     "db:migrate": "node scripts/migrate.js",
+    "db:bootstrap": "node scripts/bootstrap.js",
     "test:trips": "node --import tsx scripts/test-trips-http.js",
     "test:admin": "node --import tsx scripts/test-admin-http.js",
     "test:frontend": "node scripts/test-frontend-browser.js",
