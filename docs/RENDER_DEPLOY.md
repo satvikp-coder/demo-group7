@@ -38,7 +38,7 @@ Nothing else is needed: `DATABASE_URL` is wired to the database automatically, a
 
 ## 3. What happens on first start
 
-The API container runs `node scripts/bootstrap.js` and then the server. `bootstrap.js`:
+The API container runs `node --import tsx scripts/start.js`, which calls `scripts/bootstrap.js` and then starts the server in the same process. `bootstrap.js`:
 
 1. applies pending database migrations (safe to repeat), and
 2. seeds the approved catalog **only if the database has no destinations**. An existing catalog is never reseeded.
@@ -99,7 +99,7 @@ Optional tuning variables, only if you need them: `CHAT_RATE_LIMIT` (default 6 p
 
 Verified on the development machine:
 
-- the backend Docker image builds and, run with production settings and the exact start command above against an empty database, migrates, seeds, and serves `/health`, `/ready` and 8 destinations;
+- the backend Docker image builds and, run with production settings and the exact start command above (`node --import tsx scripts/start.js`) against an empty database, migrates, seeds, and serves `/health`, `/ready` and 8 destinations;
 - the production frontend build, behind a proxy that mimics the `/api/*` rewrite and applies the security headers from `render.yaml`, completes register, sign-in, plan generation and the budget page with every API call successful and no browser console or Content-Security-Policy errors;
 - the chatbot without a key returns the documented "not configured" response and requires sign-in.
 

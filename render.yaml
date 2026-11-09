@@ -18,8 +18,9 @@ services:
     plan: free
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
-    # Free plans have no pre-deploy step or shell, so migrate (idempotent) and seed an EMPTY catalog first.
-    dockerCommand: sh -c "node scripts/bootstrap.js && node --import tsx server.js"
+    # Free plans have no pre-deploy step or shell, so start.js first migrates (idempotent) and seeds an EMPTY
+    # catalog, then starts the API. One plain command: no shell operators or quotes for Render to misparse.
+    dockerCommand: node --import tsx scripts/start.js
     healthCheckPath: /ready
     envVars:
       - key: NODE_ENV
