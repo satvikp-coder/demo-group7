@@ -1,57 +1,57 @@
 {
-  "authorization": "User explicitly approved these exact 24 classroom-identical final-fix hashes after reviewing the proposal on final-fixes at 787f2e6. Later changes require separate review. The user separately authorized the two exact Vite photograph-manifest fix entries after baseline 87682c4; the original 24 entries are preserved.",
+  "authorization": "User explicitly approved these exact 24 classroom-identical final-fix hashes after reviewing the proposal on final-fixes at 787f2e6. Later changes require separate review. The user separately authorized the two exact Vite photograph-manifest fix entries after baseline 87682c4; the original 24 entries are preserved. During the final QA pass (9 November 2026) the user asked for the UI/UX issues found in the live-site and accessibility audits to be fixed and, when asked, explicitly approved recording these 17 resulting file hashes (entries whose reason starts with 'final-qa'): styled loading and error panels, per-page titles, heading structure, carousel tap targets, small-text contrast, the minimum-guest hint and the route-map day total. The commit list is the record of what changed.",
   "files": {
     "frontend/src/App.tsx": {
-      "sha256": "55d3aa943686b9dc8b2ceccb6a472bc108bf65305b651968539844689995b331",
-      "reason": "4c9bce4 fix(offline): keep saved itineraries for offline use and show them when the server is unreachable"
+      "sha256": "7d8bcddd24d46fec36bcc970525882ec9880b93727a44d157fa8c28c2a636f6a",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
     },
     "frontend/src/components/AdminDashboardView.tsx": {
-      "sha256": "2109d4b58b42a86d8e46b04b05a18a5a8fe7a541d45124b8efb774640a59c63a",
-      "reason": "c998973 fix(a11y): name search and record editor controls"
+      "sha256": "a7a047f3b23879720ccaaffe3e443c2966568947d8ff21c2a4555a8ec9411e8a",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
     },
     "frontend/src/components/AlgorithmStatsPanel.tsx": {
       "sha256": "f2f40f75d2eda9a5481682ea84c5d2c4e17676688107ca78d3418231a81d3c39",
       "reason": "5dba52a fix(itinerary): show N/A for graph counts that were not recorded"
     },
     "frontend/src/components/AuthView.tsx": {
-      "sha256": "805dc4a2d22bd79c7ba56e7353cfc9376c07c23666491ec36b4ae6ae97e01583",
-      "reason": "9cc2b3e chore(auth): remove unused legacy password check"
+      "sha256": "25d427ec13024d32f3b237812178c2a70b77d6b7d9a7d0522756e41ca26596a1",
+      "reason": "final-qa: 67557bf fix(a11y): one h1 per page and no skipped heading levels"
     },
     "frontend/src/components/BudgetPlannerView.tsx": {
-      "sha256": "5c54fecfc6143f72d3dbccbdbbcb22266476a7528a37bcc8a4442de708edc072",
-      "reason": "b8b1a6e fix(budget): make the simulated budget cap editable and drive the ledger"
+      "sha256": "a77b39ef1f56db6436ce5cf4859b385a13d356ed6ba5a5fd88d4c2d2bc42da4b",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
     },
     "frontend/src/components/DijkstraVisualizer.tsx": {
       "sha256": "c5139486f82fa2b88755f595805af8b1d0573ae39972f129b548bbfb0ffa1f95",
       "reason": "43d3277 fix(visualizer): distinguish colliding attraction labels"
     },
     "frontend/src/components/ExploreView.tsx": {
-      "sha256": "362d2de9d44488fea8e6b5aacef45884b7348d25e0e7c1a89637c3109a1f6b50",
-      "reason": "b02d8a3 fix(explore): hide demand controls when values are unknown"
+      "sha256": "729e84cfc3e5bf33eb2dd134e8f17661c3ab3e3b665ae5adadd30f025fa6e959",
+      "reason": "final-qa: 67557bf fix(a11y): one h1 per page and no skipped heading levels"
     },
     "frontend/src/components/HotelsView.tsx": {
-      "sha256": "aeb28e8fe3bcff1a9615dd18010a4806ea0014e8b4e4bdd985f1a93d1e25da62",
-      "reason": "39721b1 fix(a11y): raise dark description text contrast"
+      "sha256": "166e72703c946de82bc62e7a689aeff60e8fb459bb1fad583c4caead40a91ac4",
+      "reason": "final-qa: 67557bf fix(a11y): one h1 per page and no skipped heading levels"
     },
     "frontend/src/components/ItineraryRouteMap.tsx": {
-      "sha256": "bbddac14cc1a1e653352a42f71ea230df9770f44a43813d9a2ca258125457ddc",
-      "reason": "54d554e fix(map): skip route legs whose stop is missing instead of throwing"
+      "sha256": "f1a2851beff4c35ea3a2888e10db6ce0f130120eb83e08b2fdd0d22a97d1ac2a",
+      "reason": "final-qa: 453e406 fix(itinerary): show the list's own day total on the route map"
     },
     "frontend/src/components/ItineraryView.tsx": {
-      "sha256": "1fc67630ecda5c86141dbaa22accbdd61cd7d9fe081a83c99a04df8dc35b0900",
-      "reason": "c4b6281 fix(responsive): contain narrow discovery and itinerary controls"
+      "sha256": "f620c34844379377628d114197bb6391f18305c160f019a0b6ec239864457f28",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
     },
     "frontend/src/components/OfflineBanner.tsx": {
       "sha256": "e3395edb9e88b8b6207d156a1724186d3bfbeaade6c52ffa305867a29c911308",
       "reason": "4c9bce4 fix(offline): keep saved itineraries for offline use and show them when the server is unreachable"
     },
     "frontend/src/components/PlannerModal.tsx": {
-      "sha256": "6606230cd3939bfc4afd11d9a50383140ba3aafc1c3b9a358cbc0e358f783f35",
-      "reason": "2129771 fix(planner): derive lodging nights from arrival and departure dates"
+      "sha256": "813cdb1c1a2ce0a69e09ff872cc16ec85c8e50c250bf8f21bd045d3152a5888e",
+      "reason": "final-qa: 36bb4c9 feat(planner): warn about a hotel's minimum guests before generating"
     },
     "frontend/src/components/ProfileDashboardView.tsx": {
-      "sha256": "105d7b102c3bd8dd8fbf5a012f421f06f46df8a31f15e158466e82b625aba1c7",
-      "reason": "4e38ce0 perf(api): cache and de-duplicate destination catalog requests"
+      "sha256": "2251460188f5ac5aa103512dd905936f538dc245a8ba924813b6add8e003ed02",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
     },
     "frontend/src/data/accommodationTranslations.ts": {
       "sha256": "fa5a46aee9ebf7fc431e329871d5c0f7daa45b554a6c469e3296692e1084bb11",
@@ -86,8 +86,8 @@
       "reason": "54d554e fix(map): skip route legs whose stop is missing instead of throwing"
     },
     "frontend/src/utils/savedLegDistances.ts": {
-      "sha256": "ba33edbcbe190d38a5b4554d01110cb0d738b255d31ad06e85bf2262b7910238",
-      "reason": "b52af5e fix(itinerary): show saved route-record distances on the route map"
+      "sha256": "8f69d64bd32c13cc7ffab7d2efc8393199a5719068109f8f66aa0805b39ed400",
+      "reason": "final-qa: 453e406 fix(itinerary): show the list's own day total on the route map"
     },
     "frontend/src/utils/shareUrl.ts": {
       "sha256": "0c20cd951f6e06344ed1d0b93163d63fa46e1096a50718fa622ac8c86588bce7",
@@ -104,6 +104,30 @@
     "frontend/src/assets/photographs/manifest.json": {
       "sha256": "e2095411e18dcbe86b6fe69f6105d42cd086799d71a0486cd2a93ab62852b840",
       "reason": "Separately approved by the user after baseline 87682c4: byte-identical copy of the existing public photograph manifest, preserving every photograph, credit, license, alias and catalog mapping."
+    },
+    "frontend/src/components/DestinationDetailView.tsx": {
+      "sha256": "dcb0e06c648f8d23129c2f3a9052b137b43cfd2afce0865cac0b459fda0b4b69",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
+    },
+    "frontend/src/components/Footer.tsx": {
+      "sha256": "8f75275a0bab9a081ea6f65427907dd8c054b217942d45293c4147b480f55056",
+      "reason": "final-qa: 67557bf fix(a11y): one h1 per page and no skipped heading levels"
+    },
+    "frontend/src/components/Hero.tsx": {
+      "sha256": "dc00b8f441b97c3800b26dab7264696bb30f02b2cb60a4c8b65c1d4a280b2ebf",
+      "reason": "final-qa: 2c8df70 fix(a11y): give the headline carousel dots a 24px tap area"
+    },
+    "frontend/src/components/StatusPanel.tsx": {
+      "sha256": "05f821d146d3fa7b2f0e0d70c32152e9778382b9e8f3babc133010b72b4e5994",
+      "reason": "final-qa: 20d42f7 feat(ux): show styled panels instead of bare text for page-level loading and error states"
+    },
+    "frontend/src/index.css": {
+      "sha256": "ab63529e8a7242b0c66301520d5e57d4d34b8536093f229b823b97c910b73efb",
+      "reason": "final-qa: 2997bf0 fix(a11y): make small grey and gold text meet 4.5:1 contrast on their surfaces"
+    },
+    "frontend/src/utils/pageTitle.ts": {
+      "sha256": "af7e20d7feb3859495152a2c5aea56d45816340c2a47a762d2216d6d31564672",
+      "reason": "final-qa: ba92b41 feat(ux): give each page its own browser-tab title"
     }
   }
 }
