@@ -204,6 +204,13 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
   if(!activeCity.id) return <p role="status">No destinations available. <button onClick={onClose}>Close</button></p>;
   const startingHotelObj =
     activeCity.hotels.find((h) => h.id === startingHotelId);
+  // Same guest rules that Generate enforces, shown as soon as the hotel and traveler count conflict.
+  const liveGuestIssue = startingHotelObj && Number.isInteger(travelers) && Number.isInteger(rooms) && travelers >= 1 && rooms >= 1
+    ? lodgingGuestIssue(startingHotelObj.bookingConditions, nights, travelers, rooms) : null;
+  const guestHint = liveGuestIssue
+    ? t(liveGuestIssue.kind === 'minimum' ? 'stay.minimumGuests' : 'stay.quotedRooms').replace(/\{(\w+)\}/g, (match, key) =>
+        String(({hotel: startingHotelObj?.name ?? '', minimum: liveGuestIssue.minimum ?? 0, capacity: liveGuestIssue.capacity ?? 0, rooms: liveGuestIssue.requiredRooms ?? rooms, travelers} as Record<string, string | number>)[key] ?? match))
+    : '';
 
   return (
     <div
@@ -625,6 +632,7 @@ export const PlannerModal: React.FC<PlannerModalProps> = ({
                   <p className="text-xs text-stone">{t("stay.rule").replace("{nights}",String(nights)).replace("{rooms}",String(rooms))}</p>
                   {stayIssue?<p role="status" className="text-xs text-stone">{stayIssue}.</p>
                     :usingDefaultNights?<p role="status" className="text-xs text-stone">{t("stay.defaultNights","No stay dates chosen: using {nights} night(s), one fewer than the trip days. Set arrival and departure dates or change the nights to override.").replace("{nights}",String(nights))}</p>:null}
+                  {guestHint?<p role="status" data-testid="guest-hint" className="text-xs text-madder">{guestHint}</p>:null}
                 </div>
                 <PriorityControls value={weights} onChange={setWeights}/>
                 {/* 5. Accessibility Constraint Toggle */}
