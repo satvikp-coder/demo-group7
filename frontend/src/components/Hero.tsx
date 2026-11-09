@@ -70,19 +70,26 @@ export const Hero: React.FC<HeroProps> = ({ onStartPlanning, onExploreClick }) =
               </h1>
 
               {/* Minimal headline toggle pills */}
-              <div className="mt-3 flex items-center gap-2">
-                <span className="text-[11px] font-mono text-stone uppercase tracking-wider">
+              <div className="mt-3 flex items-center">
+                <span className="mr-2 text-[11px] font-mono text-stone uppercase tracking-wider">
                   {language === 'hi' ? 'दृष्टिकोण:' : 'Perspective:'}
                 </span>
                 {HEADLINE_OPTIONS.map((_, idx) => (
                   <button
                     key={idx}
+                    type="button"
                     onClick={() => setHeadlineIndex(idx)}
-                    className={`h-2 transition-all duration-200 cursor-pointer rounded-full ${
-                      headlineIndex === idx ? 'w-8 bg-gold' : 'w-2 bg-stone/40 hover:bg-stone'
-                    }`}
+                    aria-label={`Headline view ${idx + 1}`}
+                    aria-pressed={headlineIndex === idx}
                     title={`Headline view ${idx + 1}`}
-                  />
+                    className="group flex h-6 min-w-6 items-center justify-center cursor-pointer"
+                  >
+                    <span
+                      className={`h-2 transition-all duration-200 rounded-full ${
+                        headlineIndex === idx ? 'w-8 bg-gold' : 'w-2 bg-stone/40 group-hover:bg-stone'
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
             </motion.div>
