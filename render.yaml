@@ -1,0 +1,92 @@
+# Render Blueprint: PostgreSQL + API (Docker) + static frontend. See docs/RENDER_DEPLOY.md.
+# Names below form the public URLs (https://<name>.onrender.com). If Render reports a name is taken,
+# change it here AND in CORS_ORIGIN and the /api rewrite destination so all three agree.
+databases:
+  - name: heritage-planner-db
+    databaseName: heritage_planner
+    user: heritage_owner
+    region: singapore
+    plan: free
+    postgresMajorVersion: "17"
+    ipAllowList: [] # private network only; the API reaches it through the internal URL
+
+services:
+  - type: web
+    name: heritage-planner-api
+    runtime: docker
+    region: singapore
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    # Free plans have no pre-deploy step or shell, so migrate (idempotent) and seed an EMPTY catalog first.
+    dockerCommand: sh -c "node scripts/bootstrap.js && node --import tsx server.js"
+    healthCheckPath: /ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: heritage-planner-db
+          property: connectionString
+      # Internal URL on Render's private network, which is the only case the docs allow DATABASE_SSL=disable.
+      - key: DATABASE_SSL
+        value: disable
+      # Not generated: production requires at least 48 random characters. Paste the output of
+      #   node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+      - key: JWT_SECRET
+        sync: false
+      # Exact origin of the static site below: no path, no trailing slash.
+      - key: CORS_ORIGIN
+        value: https://heritage-planner-web.onrender.com
+      - key: TRUST_PROXY
+        value: uniquelocal
+      - key: DB_POOL_MAX
+        value: "5"
+      # Heritage Guide chatbot (Groq). Server-side only: never a VITE_ variable. Render asks for the value
+      # when the Blueprint is created and it can be changed later under Environment. Without a key the app
+      # still works and the chatbot answers "AI is not configured; database-only mode remains available".
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+
+  - type: web
+    name: heritage-planner-web
+    runtime: static
+    buildCommand: cd frontend && npm ci && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Public build setting only (never a secret). /api is proxied to the API by the first route below.
+      - key: VITE_API_BASE_URL
+        value: /api
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://heritage-planner-api.onrender.com/api/*
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    # Same policy as frontend/nginx.conf, which Render's static hosting does not use.
+    headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
